@@ -1,0 +1,357 @@
+**DEFINITIONS OF PARAMETERS**
+=====================================
+
+*****************************
+Input for Cartesian mode
+*****************************
+
+Following are descriptions of parameters in input.txt
+
+*NOTE:   all parameter names are capital sensitive.*
+
+**TITLE**:    title of your case, only used for log file. 
+
+**SPECIFICATION OF HOT START**
+
+ *  HOT\_START:  logical parameter, T for hot start, F for cold start. Note that hot start in the present version is not available. However, a user can use the option INI\_UVZ to restart the model. For this mode, time derivative terms are ignored at the hot start. 
+
+ *  FileNumber\_HOTSTART: number of hotstart file used for a hot start, e.g., 1,2, ...
+
+**SPECIFICATION OF MULTI-PROCESSORS**
+
+ *  PX:  processor numbers in X
+ *  PY :  processor numbers in Y  
+
+*NOTE:  PX and PY must be consistency with number of processors defined in mpirun command, e.g., mpirun -np n (where n = px . py). PX (PY) should be a common factor of Mglob(Nglob) in the present version.*
+
+ 
+**SPECIFICATION OF WATER DEPTH**
+ 
+ *  DEPTH\_TYPE: depth input type. 
+
+   DEPTH\_TYPE=DATA: from a depth file. 
+   
+   The program includes several simple bathymetry configurations such as
+   
+      DEPTH\_TYPE=FLAT:  flat bottom, need DEPTH\_FLAT 
+                
+      DEPTH\_TYPE=SLOPE:  plane beach along x direction. It needs three parameters: slope,SLP,  slope starting point, Xslp and flat part of depth, DEPTH\_FLAT
+
+ *   DEPTH\_FILE: bathymetry file if  DEPTH\_TYPE=DATA, file dimension should be Mglob x Nglob with the first point as the south-west corner.  The read format in the code is shown below.
+
+       DO J=1,Nglob
+       
+        READ(1,*)(Depth(I,J),I=1,Mglob)
+        
+       ENDDO
+ 
+ *  DEPTH\_FLAT: water depth of flat bottom if DEPTH\_TYPE=FLAT or DEPTH\_TYPE=SLOPE (flat part of a plane beach).
+ 
+ *  SLP: slope if DEPTH\_TYPE=SLOPE
+
+ *  Xslp: starting x (m) of a slope, if DEPTH\_TYPE=SLOPE
+
+
+**SPECIFICATION OF RESULT FOLDER**   
+  
+ *  RESULT\_FOLDER: result folder name, e.g., RESULT\_FOLDER = /Users/tmp/
+
+**SPECIFICATION OF DIMENSION**
+
+ *  Mglob: global dimension in x direction.
+
+ *  Nglob: global dimension in y direction.
+
+**SPECIFICATION OF TIME**
+ 
+ *  TOTAL\_TIME: simulation time in seconds
+
+ *  PLOT\_INTV: output interval in seconds (Note, output time is not exact because adaptive dt is used.)
+
+ *  SCREEN\_INTV: time interval (s) of screen print. 
+
+ *  PLOT\_INTV\_STATION: time interval (s) of gauge output
+
+ *    SPECIFICATION OF GRID SIZE}
+
+ *  DX: grid size(m) in x direction.
+
+ *  DY:   grid size(m) in y direction.
+
+**SPECIFICATION OF INITIAL CONDITION**
+ 
+ *  INT\_UVZ : logical parameter for initial condition, default is FALSE
+ 
+ 
+ *  ETA\_FILE: name of file for initial :math:`\eta`, e.g., ETA\_FILE= /Users/work/input/CVV\_H.grd, data format is the same as depth data.
+
+ *  U\_FILE:  name of file for initial u, e.g.,U\_FILE= /Users/fengyanshi/input/CVV\_U.grd, data format is the same as depth data.
+
+ *  V\_FILE:  name of file for initial v, e.g., V\_FILE= /Users/work/input/CVV\_V.grd, data format is the same as depth data.
+
+ *  MASK\_FILE:  name of file for initial MASK, e.g., MASK\_FILE= /Users/work/input/CVV\_MASK.grd, data format is the same as depth data. Usually a MASK\_FILE is from a model output and the format is REAL numbers. If there is no MASK\_FILE, MASK values will be re-specified according to ETA and DEPTH.  
+
+**SPECIFICATION OF WIND EFFECT**
+ 
+ *  WindForce: logical parameter representing if wind effect is taken into account. T or F. Note: spatially uniform wind field is assumed in this version.   
+
+ *  WIND\_FILE: file name for wind data. The following is an example of data format.
+
+ wind data
+
+ 100  - number of data
+
+ 0.0 ,    10.0 0.0   ---  time(s), wu, wv (m/s)
+
+ 2000.0,   10.0,  0.0
+
+ 8000.0,  10.0,   0.0
+ 
+... 
+
+
+ *  Cdw: wind stress coefficient for the quadratic formula. 
+
+ *  WindCrestPercent: ratio of the forced wave crest height to the maximum surface elevation. 
+
+**SPECIFICATION OF WAVEMAKER**
+
+ *  WAVEMAKER: wavemaker type. 
+
+ WAVEMAKER = INI\_REC: initial rectangular hump, need  Xc,Yc and WID
+
+ WAVEMAKER = LEF\_SOL: left boundary solitary, need AMP,DEP, and LAGTIME
+
+ WAVEMAKER = INI\_SOL: initial solitary wave, WKN B solution, need AMP, DEP, and XWAVEMAKER 
+
+ WAVEMAKER = INI\_OTH:  other initial distribution specified by users
+
+ WAVEMAKER = WK\_REG: Wei and Kirby 1999 internal wave maker, need Xc\_WK, Yc\_WK, Tperiod, AMP\_WK, DEP\_WK, Theta\_WK, and Time\_ramp (factor of period)
+
+ WAVEMAKER = WK\_IRR:  Wei and Kirby 1999 TMA spectrum wavemaker, need Xc\_WK, Yc\_WK, Ywidth\_WK, DEP\_WK, Time\_ramp, Delta\_WK,  FreqPeak, FreqMin,FreqMax, Hmo, GammaTMA(default: 3.3 ), ThetaPeak (default: 0.0), Nfreq(default: 45), Ntheta(default: 24)
+            
+ WAVEMAKER = JON\_2D:  JONSWAP spectrum wavemaker, need Xc\_WK, Yc\_WK, Ywidth\_WK,
+           DEP\_WK, Time\_ramp, Delta\_WK,  FreqPeak, FreqMin,FreqMax,
+            Hmo, GammaTMA(default: 3.3 ), ThetaPeak (default: 0.0),Nfreq(default: 45), Ntheta(default: 24)
+            
+ WAVEMAKER = JON\_1D:  JONSWAP 1D spectrum wavemaker, need Xc\_WK, Yc\_WK, Ywidth\_WK,
+           DEP\_WK, Time\_ramp, Delta\_WK,  FreqPeak, FreqMin,FreqMax,
+            Hmo, GammaTMA(default: 3.3 ), Nfreq(default: 45)  
+            
+ WAVEMAKER = TMA\_1D:  TMA 1D spectrum wavemaker, need Xc\_WK, Yc\_WK, Ywidth\_WK,
+           DEP\_WK, Time\_ramp, Delta\_WK,  FreqPeak, FreqMin,FreqMax,
+            Hmo, GammaTMA(Note, still use TMA Gamma, default: 3.3 ), Nfreq(default: 45)                                   
+
+ WAVEMAKER = WK\_TIME\_SERIES: {\em fft  a time series to get each wave component and then use Wei and Kirby's ( 1999) wavemaker.  The wave angle is zero (x direction) for all wave components. Need input WaveCompFile (including 3 columns: per,amp,pha) and NumWaveComp,PeakPeriod,DEP\_WK, Xc\_WK,Ywidth\_WK
+ 
+ WAVEMAKER = WAVE\_DATA:  2D directional spectrum data specified in WaveCompFile. Need Xc\_WK, Yc\_WK, DEP\_WK, Delta\_WK. See WaveCompFile for file format. 
+            
+ WAVEMAKER = GAUSIAN: initial Gausian hump, need AMP, Xc, Yc, and WID.          
+
+ *  WaveCompFile: Wave component file when    WAVEMAKER = WAVE\_DATA is selected.  
+
+ *  AMP: amplitude (m) of initial :math:`\eta`, if  WAVEMAKER = INI\_REC, WAVEMAKER = INI\_SOL, WAVEMAKER = LEF\_SOL.
+
+ *  DEP: water depth at wavemaker location, if WAVEMAKER = INI\_SOL, WAVEMAKER = LEF\_SOL.
+
+ *  LAGTIME, time lag (s) for the solitary wave generated on the left boundary, e.g., WAVEMAKER = LEF\_SOL. 
+ 
+ *  XWAVEMAKER: x  (m) coordinate for WAVEMAKER = INI\_SOL.
+
+
+ *  Xc: x (m) coordinate of the center of  a rectangular hump if WAVEMAKER = INI\_REC.
+
+ *  Yc: y (m) coordinate of the center of  a rectangular hump if WAVEMAKER = INI\_REC.
+
+ *  WID: width (m) of  a rectangular hump if WAVEMAKER = INI\_REC, or INI\_GAU.
+
+
+ *  Time\_ramp: time ramp (s) for Wei and Kirby (1999) wavemaker. 
+ 
+ *  Delta\_WK:  width parameter :math:`\delta`  for Wei and Kirby (1999) wavemaker.    Need trial and error, usually, :math:`\delta` =  :math:`0.3 \sim 0.6`
+
+ *  DEP\_WK: water depth (m) for Wei and Kirby (1999) wavemaker.
+
+ *  Xc\_WK: x coordinate (m) for Wei and Kirby (1999) wavemaker.
+
+ *  Ywidth\_WK: width (m) in y direction for Wei and Kirby (1999) wavemaker.
+
+ *  Tperiod:  period (s) of regular wave for Wei and Kirby (1999) wavemaker.
+
+ *  AMP\_WK: amplitude (m) of regular wave for Wei and Kirby (1999) wavemaker.
+
+ *  Theta\_WK: direction (degrees) of regular wave for Wei and Kirby (1999) wavemaker. Note: it may be adjusted for a periodic boundary case by the program. A warning will be given if adjustment is made. 
+ 
+ *  FreqPeak: peak frequency (1/s) for Wei and Kirby (1999) irregular wavemaker.
+
+ *  FreqMin: low frequency cutoff (1/s) for Wei and Kirby (1999) irregular wavemaker.
+ 
+ *  FreqMax: high frequency cutoff (1/s) for Wei and Kirby (1999) irregular wavemaker.
+
+ *  Hmo: Hmo (m) for Wei and Kirby (1999) irregular wavemaker.
+
+ *  GammaTMA, TMA parameter :math:`\gamma` for Wei and Kirby (1999) irregular wavemaker.
+
+ *  ThetaPeak: peak direction (degrees) for Wei and Kirby (1999) irregular wavemaker. 
+
+ *  Sigma\_Theta: parameter of directional spectrum for Wei and Kirby (1999) irregular wavemaker.
+
+**SPECIFICATION OF PERIODIC BOUNDARY CONDITION** 
+
+
+ *  PERIODIC: logical parameter for periodic boundary condition, T - periodic, F - wall boundary condition.
+
+
+**SPECIFICATION OF SPONGE LAYER**
+ 
+ *  DIRECT\_SPONGE: logical parameter for L-D type sponge, T - sponge layer, F - no sponge layer.
+ 
+  *  FRICTION\_SPONGE: logical parameter for friction type sponge, T - sponge layer, F - no sponge layer.
+ 
+  *  DIFFUSION\_SPONGE: logical parameter for diffusion type sponge, T - sponge layer, F - no sponge layer.
+ 
+ *  Csp: The maximum diffusion coefficient for diffusion type sponge.
+ 
+ *  CDsponge: The maximum Cd for friction type sponge.
+ 
+ *  Sponge\_west\_width: width (m) of sponge layer at west boundary.
+
+ *  Sponge\_east\_width:   width (m) of sponge layer at east boundary.
+
+ *  Sponge\_south\_width: width (m) of sponge layer at south boundary.
+
+ *  Sponge\_north\_width width (m) of sponge layer at north boundary
+
+ *  R\_sponge: decay rate in L-D type sponge layer. Its values are between 0.85 :math:`\sim` 0.95.
+
+ *  A\_sponge: maximum damping magnitude in L-D type sponge. The value is :math:`\sim` 5.0. 
+
+**SPECIFICATION OF OBSTACLES**
+
+ *  OBSTACLE\_FILE: name of obstacle file. 1 - water point, 0 - permanent dry point. Data dimension is (Mglob . Nglob). Data format is the same as the depth data. 
+ 
+**SPECIFICATION OF PHYSICS**
+  
+ *  DISPERSION: logical parameter for inclusion of dispersion terms.  T - calculate dispersion, F - no dispersion terms
+
+ *  Gamma1: parameter for linear dispersive terms. 1.0 - inclusion of linear dispersive terms, 0.0 - no linear dispersive terms. 
+
+ *  Gamma2: parameter for nonlinear dispersive terms. 1.0 - inclusion of nonlinear dispersive terms, 0.0 - no nonlinear dispersive terms. 
+
+  Gamma1=1.0, Gamma2=0.0 for  NG's equations.
+  Gamma1=1.0, Gamma2=1.0 for the fully nonlinear Boussinesq equations.
+  
+ *  Gamma3: parameter for linear shallow water equations (Gamma3 = 1.0). When Gamma3 = 0.0, Gamma1 and Gamma2 automatically become zero.   
+
+ *  Beta\_ref:  parameter :math:`\beta` defined for the reference level. :math:`\beta` = -0.531 for NG's and FUNWAVE equations.
+
+ *  VISCOSITY\_BREAKING : logical parameter for viscous breaking. When this option is selected, Cbrk1 and Cbrk2 needed. Default is shock-capturing type breaking
+
+ *  SWE\_ETA\_DEP: ratio of height/depth for switching from Boussinesq to NSWE for shock-capturing breaking.  The value is :math:`\sim` 0.80. 
+
+**SPECIFICATION OF FRICTION**
+  
+ *  FRICTION\_MATRIX: logical parameter for homogeneous and inhomogeneous frction feild.  T - inhomogeneous, F - homogeneous
+
+ *  FRICTION\_FILE: file file if  FRICTION\_MATRIX= T , file dimension should be Mglob x Nglob with the first point as the south-west corner.  The read format in the code is shown below.
+
+       DO J=1,Nglob
+       
+        READ(1,*)(Cd(I,J),I=1,Mglob)
+        
+       ENDDO
+ *  Cd\_fixed: fixed bottom friction coefficient.
+
+**SPECIFICATION OF NUMERICS**  
+
+
+ *  Time\_Scheme: stepping option,  Runge\_Kutta or Predictor\_Corrector (not suggested for this version).
+
+ *  HIGH\_ORDER: spatial scheme option,  FOURTH for the fourth-order, THIRD for the third-order, and SECOND for the second-order (not suggested for Boussinesq modeling). NOTE:  Abadie et al. (2012) pointed out that the fourth-order TVD scheme in RUNWAVE-TVD has an stability problem for simulations in deep water. We also encountered the similar problem in some cases. For this reason, the third-order  scheme is suggested for the present version. 
+
+ *SM Abadie, JC Harris, ST Grilli, R Fabre, 2012, Numerical modeling of tsunami waves generated by the flank collapse of the Cumbre Vieja Volcano (La Palma, Canary Islands): Tsunami source and near field effects, Journal of Geophysical Research: Oceans (1978Ð2012) 117 (C5)*
+
+ *  CONSTRUCTION: construction method,  HLL for HLL scheme, otherwise for averaging scheme.
+
+ *  CFL: CFL number, CFL :math:`\sim` 0.5.
+
+ *  FroudeCap: cap for Froude number in velocity calculation for efficiency. The value could be 5 :math:`\sim` 10.0.
+
+ *  MinDepth: minimum water depth (m) for wetting and drying scheme. Suggestion: MinDepth = 0.001 for lab scale and 0.01 for field scale. 
+
+ *  MinDepthFrc: minimum water depth (m) to limit bottom friction value. Suggestion: MinDepthFrc = 0.01 for lab scale and 0.1 for field scale. 
+
+ *  SHOW\_BREAKING: logical parameter to calculate breaking index. Note that, if VISCOSITY\_BREAKING is not selected,  breaking is calculated using shock wave capturing scheme. The index calculated here is based on Kennedy et al. (2000). 
+
+ *  Cbrk1: parameter C1 in Kennedy et al. (2000).  
+
+ *  Cbrk2:  parameter C2 in Kennedy et al. (2000).
+
+ *  WAVEMAKER\_Cbrk: breaking parameter inside wavemaker. For some cases, wave breaks inside the wavemaker. This parameter provides Cbrk inside the wavemaker domain. For most of cases, set WAVEMAKER\_Cbrk = Cbrk1 or higher. 
+
+ *  STEADY\_TIME: starting time ( :math:`t_1` for calculating mean values, significant/RMS wave height (when WaveHeight = T, output parameter below).
+
+ *  T\_INTV\_mean: time interval ( :math:`t_2-t_1` for calculating mean values, significant/RMS wave height (when WaveHeight = T, output parameter below).
+
+
+**SPECIFICATION OF OUTPUT VARIABLES**
+
+ *  NumberStations: number of station for output. If NumberStations :math:`> 0`, need input i,j in STATION\_FILE
+ 
+ *  DEPTH\_OUT: logical parameter for output depth. T or F. 
+ *  U: logical parameter for output u. T or F. 
+ *   V: logical parameter for output v. T or F. 
+ *  ETA: logical parameter for output :math:`\eta`. T or F. 
+ *  MASK: logical parameter for output wetting-drying MASK. T or F. 
+ *  MASK9: logical parameter for output MASK9 (switch for Boussinesq/NSWE). T or F. 
+ *  SourceX: logical parameter for output source terms in x direction. T or F. 
+ *  SourceY:  logical parameter for output source terms in y direction. T or F. 
+ *  P:   logical parameter for output of  momentum flux in x direction. T or F. 
+ *  Q:  logical parameter for output of  momentum flux in y direction. T or F. 
+ *  Fx: logical parameter for output of numerical flux F in x direction. T or F. 
+ *   Fy: logical parameter for output of numerical flux F in y direction. T or F. 
+ *  Gx: logical parameter for output of numerical flux G in x direction. T or F. 
+ *  Gy: logical parameter for output of numerical flux G in y direction. T or F. 
+ *  AGE: logical parameter for output of breaking age. T or F. 
+ *  HMAX: logical parameter for output of recorded maximum surface elevation . T or F. 
+ *  HMIN: logical parameter for output of recorded minimum surface elevation . T or F. 
+ *  UMAX: logical parameter for output of recorded maximum velocity . T or F. 
+ *  VORMAX: logical parameter for output of recorded maximum vorticity . T or F. 
+ *  MFMAX: logical parameter for output of recorded maximum momentum flux . T or F. 
+ *  WaveHeight: logical parameter for output of wave height, Hsig, Hrms, Havg. T or F.
+
+*****************************
+Input for Spherical mode
+*****************************
+
+All input parameters, except the following grid information, are the same as for the Cartesian code.
+
+ * Lon\_West: longitude (degrees) of west boundary.
+ * Lat\_South: latitude (degrees) of south boundary.
+ * Dphi: :math:`d\phi` (degrees)
+ * Dtheta: :math:`d\theta` (degrees) 
+
+ In addition, it is not necessary to specify  Gamma2 (for nonlinear dispersive terms) in the spherical code.  
+
+ Another feature of the spherical code is that a computational grid can be a stretched grid. For a stretched grid, a user should set  StretchGrid = T and provide grid files for DX and DY and a file for Coriolis parameters at each grid point.  For example,
+
+ DX\_FILE = dx\_str.txt
+
+ DY\_FILE = dy\_str.txt
+
+ CORIOLIS\_FILE = cori\_str.txt
+
+However, use of a stretched grid is not recommended in terms of decrease in numerical accuracy for  higher order numerical schemes. 
+
+*****************************
+Output files
+*****************************
+
+The output files are saved in the result directory defined by RESULT\_FOLDER in input.txt. For outputs in ASCII,  a file name is a combination of variable name and an output series number such eta\_00001, eta\_00002, .... The format  and read/write algorithm are  consistent with a depth file.  Output for stations is a series of numbered files such as sta\_00001, sta\_00002 .... 
+
+Other output formats are under development. 
+
+
+
+
+
