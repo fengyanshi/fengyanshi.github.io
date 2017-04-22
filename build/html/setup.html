@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>MODEL DOWNLOAD AND SETUP &#8212; funwave  documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="DEFINITIONS OF PARAMETERS" href="definition.html" />
+    <link rel="prev" title="ARCHITECTURE" href="flowchart.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="model-download-and-setup">
+<h1><strong>MODEL DOWNLOAD AND SETUP</strong><a class="headerlink" href="#model-download-and-setup" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="download-source-code">
+<h2>Download source code<a class="headerlink" href="#download-source-code" title="Permalink to this headline">¶</a></h2>
+<p>Version 3.0: Released Apr 2017 <a class="reference download internal" href="_downloads/funwave_tvd_30.zip" download=""><code class="xref download docutils literal"><span class="pre">download</span> <span class="pre">here</span></code></a></p>
+<p><a class="reference external" href="https://github.com/fengyanshi/FUNWAVE-TVD">Version 3.1 (beta version): click here to download from GitHub</a></p>
+<p>Versions 1.0, 1.1, 2.0, 2.1: Please contact <a class="reference external" href="mailto:fyshi&#37;&#52;&#48;udel&#46;edu">fyshi<span>&#64;</span>udel<span>&#46;</span>edu</a></p>
+</div>
+<div class="section" id="download-simple-examples">
+<h2>Download simple examples<a class="headerlink" href="#download-simple-examples" title="Permalink to this headline">¶</a></h2>
+<p>We are preparing some simple examples for testing your system. If you want to make a test now, please visit <strong>Download Benchmark tests</strong></p>
+<ul class="simple">
+<li>Solitary wave propagation on a flat bottom</li>
+<li>Solitary wave propagation on a conical island</li>
+<li>Japanese Tohoku tsunami (Ocean-basin scale)</li>
+<li>Waves and wave-induced current on a beach</li>
+</ul>
+</div>
+<div class="section" id="download-benchmark-tests">
+<h2>Download benchmark tests<a class="headerlink" href="#download-benchmark-tests" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://github.com/fengyanshi/BENCHMARK_FUNWAVE">Available benchmarks: click here to download from GitHub</a></p>
+</div>
+<div class="section" id="compile-and-setup">
+<h2>Compile and setup<a class="headerlink" href="#compile-and-setup" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>uncompress the code from the package downloaded</li>
+<li>modify <em>Makefile</em> if needed. There are several necessary flags in Makefile needed to specify below.</li>
+</ol>
+<ul class="simple">
+<li>&#8211;DDOUBLE_PRECISION: use double precision, default is single precision.</li>
+<li>&#8211;DPARALLEL: use parallel mode, default is serial mode.</li>
+<li>&#8211;DSAMPLES: include all samples, default is no sample included.</li>
+<li>&#8211;DCARTESIAN: Cartesian version, otherwise Spherical version</li>
+<li>&#8211;DINTEL: if INTEL compiler is used, this option can make use of FPORT for the RAND() function</li>
+<li>&#8211;DCRAY: for CRAY RAND() and system commands</li>
+<li>&#8211;DMIXING: include Smagorinsky mixing.</li>
+<li>&#8211;DCOUPLING: nesting mode.</li>
+<li>&#8211;DMANNING: Using Manning coefficient for friction calculation.</li>
+<li>CPP: path to CPP directory.</li>
+<li>FC: Fortran compiler.</li>
+</ul>
+<ol class="arabic simple" start="3">
+<li>compile the code</li>
+</ol>
+<p>in command line type</p>
+<p>&gt; make clean</p>
+<p>&gt; make</p>
+<p>The executable file such as &#8216;funwave&#8217; or &#8216;mytvd&#8217; (specified in <em>Makefile</em>) will be generated.   Note: always use &#8216;make clean&#8217; after modifying Makefile.</p>
+<ol class="arabic simple" start="4">
+<li>run the model</li>
+</ol>
+<p>Modify input.txt if needed and run.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#"><strong>MODEL DOWNLOAD AND SETUP</strong></a><ul>
+<li><a class="reference internal" href="#download-source-code">Download source code</a></li>
+<li><a class="reference internal" href="#download-simple-examples">Download simple examples</a></li>
+<li><a class="reference internal" href="#download-benchmark-tests">Download benchmark tests</a></li>
+<li><a class="reference internal" href="#compile-and-setup">Compile and setup</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="flowchart.html" title="previous chapter"><strong>ARCHITECTURE</strong></a></li>
+      <li>Next: <a href="definition.html" title="next chapter"><strong>DEFINITIONS OF PARAMETERS</strong></a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/setup.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, Fengyan Shi.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+      |
+      <a href="_sources/setup.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

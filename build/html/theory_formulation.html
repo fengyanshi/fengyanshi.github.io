@@ -1,0 +1,288 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>INTRODUCTION &#8212; funwave  documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="ARCHITECTURE" href="flowchart.html" />
+    <link rel="prev" title="FUNWAVE-TVD" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="introduction">
+<h1><strong>INTRODUCTION</strong><a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="what-is-funwave-tvd">
+<h2><strong>What is FUNWAVE&#8211;TVD</strong><a class="headerlink" href="#what-is-funwave-tvd" title="Permalink to this headline">¶</a></h2>
+<p>FUNWAVE&#8211;TVD is the TVD version of the fully nonlinear Boussinesq wave model (FUNWAVE) initially developed by Kirby et al. (1998). The development of the present version was motivated by recent needs for modeling of  surfzone&#8211;scale optical properties in a Boussinesq model framework,  and  modeling of  Tsunami wave in both a regional/coastal scale for prediction of coastal inundation and a basin scale for wave propagation.  This version  features  several theoretical and numerical improvements, including 1) a more complete set of fully nonlinear Boussinesq equations; 2) MUSCL&#8211;TVD solver with adaptive Runge&#8211;Kutta time stepping; 3) Shock&#8211;capturing wave breaking scheme; 4) wetting&#8211;drying moving boundary condition with incorporation of HLL construction method into the scheme; 5) an option for parallel computation.
+The documentation provides derivations of the conservation form of theoretical equations, re&#8211;arrangement of pressure gradient term in order to obtain a numerically well&#8211;balanced form, detailed numerical schemes, users&#8217; manual and examples.</p>
+</div>
+<div class="section" id="formulations-and-numerical-schemes">
+<h2><strong>Formulations and Numerical Schemes</strong><a class="headerlink" href="#formulations-and-numerical-schemes" title="Permalink to this headline">¶</a></h2>
+<p>A complete set of fully nonlinear Boussinesq equations and derivations of the conservation form of theoretical equations can be found in Shi et al. (2012) (<a class="reference external" href="http://www.sciencedirect.com/science/article/pii/S1463500311002010">doi:10.1016/j.ocemod.2011.12.004</a>).</p>
+<p>Formulations in the spherical cooridinates can be found in Kirby et al. (2013) (<a class="reference external" href="http://www.sciencedirect.com/science/article/pii/S1463500312001692">doi:10.1016/j.ocemod.2012.11.009</a>).</p>
+</div>
+<div class="section" id="functions">
+<h2><strong>Functions</strong><a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="wave-breaking">
+<h3>Wave breaking<a class="headerlink" href="#wave-breaking" title="Permalink to this headline">¶</a></h3>
+<p>There are two breaking algorithms implemented in the model. One takes the advantage of the shock&#8211;capturing scheme in TVD.
+It  follows the approach of Tonelli and Petti (2009),  who successfully used the ability of  NSWE  with a TVD scheme to model moving hydraulic jumps. Thus, the fully nonlinear Boussinesq equations are switched  to NSWE at cells where the Froude number exceeds  a certain threshold. Following Tonelli and Petti, the ratio of wave height to total water depth is chosen as  the criterion to switch from Boussinesq to NSWE, with  threshold value  set to 0.8,  as suggested by Tonelli and Petti.</p>
+<p>The other one is the original eddy&#8211;viscosity scheme used in the previous version of FUNWAVE (Kennedy et al., 2000). To fit the eddy&#8211;viscosity method in the TVD scheme, the artificial eddy viscosity terms.</p>
+<div class="math">
+<p><img src="_images/math/716b0389a8b924f39fce149776265a2b341bb2f3.png" alt="{\bf R}_{bx} = \frac{\partial }{\partial x} (\nu \frac{\partial P}{\partial x}) + \frac{\partial }{\partial y} (\nu \frac{\partial P}{\partial y} )"/></p>
+</div><div class="math">
+<p><img src="_images/math/1e16df4577c075f610f11f9757e27d8a3ee99a3b.png" alt="{\bf R}_{by} = \frac{\partial }{\partial y} (\nu \frac{\partial Q}{\partial y}) + \frac{\partial }{\partial x} (\nu \frac{\partial Q}{\partial x})"/></p>
+</div><p>Note that the form is slightly different from that in Kennedy et al. (2000). The present form was found to give a more stable numerical solution as the cross&#8211;derivatives removed. In the present form, <img class="math" src="_images/math/ca3b8fa4180eee2dfc3af9d13fae1da451cd2c31.png" alt="\nu"/> is the artificial eddy viscosity defined by</p>
+<div class="math">
+<p><img src="_images/math/e781fcafb64caf83b64eb8756d029db2d0c21967.png" alt="\nu = B \delta_b^2 (h+\eta) \eta_t"/></p>
+</div><p>where <img class="math" src="_images/math/f3d85a99c071169fad4f35bff7807e6c831004af.png" alt="\delta_b = 1.2"/>. In Kennedy et al. (2000), <img class="math" src="_images/math/9805f44feec6f81d376d09e88b8236635edbb3c8.png" alt="B"/> varies smoothly from 0 to 1 so as to avoid an impulsive start of breaking and the resulting instability. In the present TVD model, because there is no instability problem found, we adopt a constant value <img class="math" src="_images/math/cb9dae7066c21b15c0cc2911b7c11efaf6bbb22e.png" alt="B=1"/> as breaking is initiated</p>
+<div class="math">
+<p><img src="_images/math/ea3c8b347f7fafee90cf6be017a559e9a5d0c3d7.png" alt="B =  1 \ \ \  \eta_t \ge  \eta_t^*"/></p>
+</div><div class="math">
+<p><img src="_images/math/a4c18c0086eb3dbc454c1fc26b27caef2d235cdf.png" alt="B =  0 \ \ \  \eta_t &lt;  \eta_t^*"/></p>
+</div><p>The parameter <img class="math" src="_images/math/f10433454094a1a2a90434679731b1f6a60786dc.png" alt="\eta_t^*"/> determines the onset and cessation of breaking. Following Kennedy et al., a breaking event begins when <img class="math" src="_images/math/6068226ddfa5d3e1f1bffc31e450fbcab5cea71a.png" alt="\eta_t"/> exceeds some initial threshold value <img class="math" src="_images/math/711a88a96391d3149c7d913b66b9fdf38d1b9063.png" alt="\eta_t^{(I)}"/>, as breaking develops, the wave will continue to break until <img class="math" src="_images/math/6068226ddfa5d3e1f1bffc31e450fbcab5cea71a.png" alt="\eta_t"/> drops below <img class="math" src="_images/math/e762d28280be64b4a9a2fefce72ebd678dfd13e7.png" alt="\eta_t^{(F)}"/>. However, we do not use the smooth transition as in Kennedy et al. because the present TVD scheme did not encounter any instability problem.  The default values of <img class="math" src="_images/math/711a88a96391d3149c7d913b66b9fdf38d1b9063.png" alt="\eta_t^{(I)}"/> and <img class="math" src="_images/math/e762d28280be64b4a9a2fefce72ebd678dfd13e7.png" alt="\eta_t^{(F)}"/> are <img class="math" src="_images/math/34466b51ba16fb18b41f78a4db4ae0a019d7b632.png" alt="0.65\times 2  \sqrt{gh}"/> and  <img class="math" src="_images/math/2e81c577bde26c739c15945338baf8158c5b2af8.png" alt="0.15 \sqrt{gh}"/> as in the previous FUNWAVE version (i.e., Cbrk1 = 0.65 and Cbrk2=0.15 in the present version, see the example in the next section). However, the recent tests showed <img class="math" src="_images/math/711a88a96391d3149c7d913b66b9fdf38d1b9063.png" alt="\eta_t^{(I)}"/> should be slightly larger to match the laboratory data.</p>
+</div>
+<div class="section" id="sponge-layer">
+<h3>Sponge layer<a class="headerlink" href="#sponge-layer" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Larsen and Dancy (L&#8211;D type, 1983)</li>
+</ul>
+<p>The sponge layer technique introduced by Larsen and Dancy (L&#8211;D type, 1983) is implemented in the code. In this method, the variables <img class="math" src="_images/math/e0b813ab20e5e6ccc010f8a52ecb3ff2beb08b62.png" alt="\phi`( i.e., :math:"/>eta, u, v`) are directly attenuated at every time step:</p>
+<div class="math">
+<p><img src="_images/math/ceb224947bda2dad2152a6a0739c8722b81900ca.png" alt="\phi = \phi /C_s"/></p>
+</div><p>where <img class="math" src="_images/math/ad8b876457c8cc5548d741bf94ba98d093c5b5d5.png" alt="C_s"/> is a damping coefficient function defined by</p>
+<div class="math">
+<p><img src="_images/math/f72f8a6168a96b2eb64b6de881be4b9eea48bf46.png" alt="C_s = \alpha_s^{\gamma_x^{i-1}}, \ \ \ \ \ i=1,2, ..., n"/></p>
+</div><p>where <img class="math" src="_images/math/d9671966c2133cb6897405630dd7dab2216c8042.png" alt="\alpha_s"/> and <img class="math" src="_images/math/d6f3d70f05e0228f634b826030c6313dbdf673d3.png" alt="\gamma_s"/> are two free parameters. <img class="math" src="_images/math/df0deb143e5ac127f00bd248ee8001ecae572adc.png" alt="i"/> represents grid numbers. Chen et al. (1999) suggested that <img class="math" src="_images/math/833e584320cc115bb7dd7eceba1bddb5faed101b.png" alt="\alpha_s =2"/>, gamma_s = 0.88 - 0.92`, and <img class="math" src="_images/math/b1e93792764cf2a600d98fab0e489ff61563cb99.png" alt="n=50 - 100"/>. The length of the sponge layer is usually taken to be one or two times the typical wavelength. Chen et al also pointed out that the damping coefficients for optimal absorption are somewhat case&#8211;sensitive.</p>
+<p>Recently, some problem was found in application of L&#8211;D type sponge layer for long&#8211;term simulations. The direct damping method combined with the TVD scheme  generates sawtooth noises with a <img class="math" src="_images/math/88c8eb6502a190bb2692ba5ca0524d612f6a599e.png" alt="2 dx"/> wave length. The sawtooth noises are usually not noticeable due to small magnitudes. However, they grow gradually with time and may become significant in a long term simulation. If this problem occurs, we suggest using the following friction&#8211;type or viscous type sponge layers. Using the combination of L&#8211;D and friction/viscous sponge layers may remove the sawtooth noises and also make the wave damping more efficient.</p>
+<ul class="simple">
+<li>Friction type and Diffusion type</li>
+</ul>
+<p>The friction&#8211;type and viscous type sponge layers directly use the friction terms and diffusion terms existing in the model. The source term for the friction&#8211;type sponge can be described as</p>
+<div class="math">
+<p><img src="_images/math/305c1e136d7873b49e7d72fefadb5e96feadca9d.png" alt="F_{frc} = - C_{sponge} |{\bf u_\alpha}|  (u_\alpha, v_\alpha) h"/></p>
+</div><p>Note that depth <img class="math" src="_images/math/293fb39e1b93282c804a86186e721b32f829f1b2.png" alt="h"/> is added in the formula above to make the source term depth&#8211;independent in terms of the flux&#8211;type momentum equations. For the diffusion&#8211;type sponge, the description of diffusion term follows exactly the eddy&#8211;viscosity breaking formulation with spatial varying viscosity coefficients <img class="math" src="_images/math/05d734643e2eaed2ab66a02979021820f7f490fc.png" alt="\nu_{sponge}"/>.  Both coefficients are smoothly ramped in space at the sponge layer boundaries. For example, for a sponge layer on the left end of the domain,  <img class="math" src="_images/math/8d6c4e18e6aa1c62bc4418f4f2211ba3f2e9a465.png" alt="C_{sponge}"/> can be written as</p>
+<div class="math">
+<p><img src="_images/math/11148dee5e143aff68c757b8902730f5cc954c71.png" alt="C_{sponge} = C_{max} \left (1-  \mbox{tanh} \frac{10 (i-1)}{I_{\mbox{width}}-1} \right)"/></p>
+</div><p>where <img class="math" src="_images/math/4d50eb2e10761fa1fbe2e722db8dc86073ef4618.png" alt="C_{max}"/> is the maximum value of <img class="math" src="_images/math/8d6c4e18e6aa1c62bc4418f4f2211ba3f2e9a465.png" alt="C_{sponge}"/> used in the sponger layer. <img class="math" src="_images/math/df0deb143e5ac127f00bd248ee8001ecae572adc.png" alt="i"/> and <img class="math" src="_images/math/726ee3834b1a11a54a48baff093642f17e1be436.png" alt="I_{\mbox{width}}"/> represent point number and the layer width in points. Similar expressions can be obtained for sponge layers on three other ends of the domain as well as  the viscous sponge layer.</p>
+<p>The width of the sponge layer is usually taken to be two or three wave lengths for the friction&#8211;type and viscous sponge layers. Narrow sponge layers can be used for L&#8211;D type sponge layer with a good efficiency but sawtooth noises generated by the method is a concern for long&#8211;term simulation.</p>
+</div>
+<div class="section" id="boundary-conditions">
+<h3>Boundary conditions<a class="headerlink" href="#boundary-conditions" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Wall boundary condition</li>
+</ul>
+<p>A mirror boundary condition is used for a fully reflective wall.</p>
+<ul class="simple">
+<li>Periodic boundary condition</li>
+</ul>
+<p>The periodic boundary condition in y (south/north) direction was implemented in the  code.</p>
+</div>
+<div class="section" id="wave-maker">
+<h3>Wave&#8211;maker<a class="headerlink" href="#wave-maker" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Internal wavemaker theory</li>
+</ul>
+<p>Internal wavemaker was implemented based on Wei and Kirby&#8217;s (1999) two&#8211;way internal wavemaker and Chawla and Kirby&#8217;s (2000) one&#8211;way internal wavemaker (under development). Here, we briefly summarize the formulations used in the wavemakers. Detailed theory can be found in Wei and Kirby (1999) and Chawla and Kirby (2000).</p>
+<p>Wei and Kirby (1999) followed the approach of Larsen and Dancy (1983) who used an ad&#8211;hoc source mechanism where water mass is added and subtracted along a straight source/sink line inside the computing domain. This approach works well in a staggered&#8211;grid differencing scheme, where water is essentially being added to or drained from a single grid block. In applying this technique to the Boussinesq model on an unstaggered grid, however, Wei and Kirby found that use of a single source line accused high frequency noise, leading to blowup of the model. They then used a partially distributed mass source <img class="math" src="_images/math/235ddbc02353c50cb291781a37a056db6d24b760.png" alt="f(x,y,t)"/></p>
+<div class="math">
+<p><img src="_images/math/41f44ca343a6c5631a3f0fcc08a979b781b59496.png" alt="f(x,y,t) = g(x) s(y,t)"/></p>
+</div><p>where <img class="math" src="_images/math/f7d450172ff247e375a81d22940fc8b488d13343.png" alt="g(x)"/> is a Gaussian shape function and <img class="math" src="_images/math/92f46b75417b5f198918f47a56f96b014d68ab51.png" alt="s(y,t)"/> the input time series of the magnitude of source function with an assumption that the center of the source region is parallel to the y&#8211;axis. The functions <img class="math" src="_images/math/f7d450172ff247e375a81d22940fc8b488d13343.png" alt="g(x)"/> and <img class="math" src="_images/math/92f46b75417b5f198918f47a56f96b014d68ab51.png" alt="s(y,t)"/> are defined as</p>
+<div class="math">
+<p><img src="_images/math/ba6c5580a7581369b08a5aec76e566acd14d0483.png" alt="g(x) = \mbox{exp}[-\beta(x-x_s)^2]"/></p>
+</div><div class="math">
+<p><img src="_images/math/88a923052b02758896670780772160fdab577e90.png" alt="s(y,t) = D \mbox{sin} (\lambda y -\omega t)"/></p>
+</div><p>where <img class="math" src="_images/math/410a9d0df9c135dd73b269cba7ef04dcfd932b1f.png" alt="\beta"/> is the shape coefficient for the source function, and <img class="math" src="_images/math/1514c939d86b56b1d47cfef99412c57bfbcf70ca.png" alt="x_s"/> is the central location of the source in the <img class="math" src="_images/math/a59f68a4202623bb859a7093f0316bf466e6f75d.png" alt="x"/> direction, for a source oriented parallel to the <img class="math" src="_images/math/276f7e256cbddeb81eee42e1efc348f3cb4ab5f8.png" alt="y"/> axis, as shown in Figure.  <img class="math" src="_images/math/3cf5aa5abe312e6fd4996975341a43aa566e8d8d.png" alt="D"/> is the magnitude of the source function, <img class="math" src="_images/math/fe63fee123759767733e67c0c9a43bee4e2c3876.png" alt="\lambda = k \mbox{sin} (\theta)"/> the wavenumber in the <img class="math" src="_images/math/276f7e256cbddeb81eee42e1efc348f3cb4ab5f8.png" alt="y"/> direction, and <img class="math" src="_images/math/0b7c1e16a3a8a849bb8ffdcdbf86f65fd1f30438.png" alt="k"/> is the linear wavenumber.</p>
+<p>For a monochromatic wave or a single wave component of a random wave train, the magnitude <img class="math" src="_images/math/3cf5aa5abe312e6fd4996975341a43aa566e8d8d.png" alt="D"/> of source function can be determined by</p>
+<div class="math">
+<p><img src="_images/math/2c3a6394752040f81f3bcbeb73b85ff49a484edf.png" alt="D = \frac{2 a_0 \cos (\theta) (\omega^2 - \alpha_1 g k^4 h^3) }{\omega k I [1-\alpha(kh)^2]}"/></p>
+</div><p>where <img class="math" src="_images/math/2d347364f22f0dad20dd6c5eadd9de39edf84887.png" alt="\alpha = -0.390, \alpha_1 = \alpha + 1/3"/>, and <img class="math" src="_images/math/d2ed2630e579be280a30b6646f4d706103c337ce.png" alt="I"/> is the integral given by</p>
+<div class="math">
+<p><img src="_images/math/78e187c7b55a7a00656b102cc425693b62226b11.png" alt="I = \int^\infty_{-\infty} \exp (-\beta x^2) \exp (-ilx) dx = \sqrt{\frac{\pi}{\beta}} \exp(- l^2/4\beta)"/></p>
+</div><p>where <img class="math" src="_images/math/d1e71c110691041917e6a354efdff66943da774c.png" alt="l=k\cos (\theta)"/> is the wavenumber in <img class="math" src="_images/math/a59f68a4202623bb859a7093f0316bf466e6f75d.png" alt="x"/> direction. In theory, the shape coefficient <img class="math" src="_images/math/410a9d0df9c135dd73b269cba7ef04dcfd932b1f.png" alt="\beta"/> can be any number. The larger the value <img class="math" src="_images/math/410a9d0df9c135dd73b269cba7ef04dcfd932b1f.png" alt="\beta"/> is, the narrower the source function becomes. The definition of the source function width <img class="math" src="_images/math/953bde2ab2fca30897f66185e5b37b73747b8b46.png" alt="W"/> is not unique, and here we define <img class="math" src="_images/math/953bde2ab2fca30897f66185e5b37b73747b8b46.png" alt="W"/> to be the distance between two coordinates <img class="math" src="_images/math/fdf6501bec5987984965f15d09235c645fe06ccb.png" alt="x_1"/> and <img class="math" src="_images/math/1f1a225cd22b81817fc48b3a84dcf8f1a9e145d8.png" alt="x_2"/> where the corresponding source function heights are equal to <img class="math" src="_images/math/bf160d5867b546bb9757cf0b92325a06b3d2e07f.png" alt="\exp (-5) = 0.0067"/> times the maximum height <img class="math" src="_images/math/3cf5aa5abe312e6fd4996975341a43aa566e8d8d.png" alt="D"/>. Then <img class="math" src="_images/math/fdf6501bec5987984965f15d09235c645fe06ccb.png" alt="x_1"/> and <img class="math" src="_images/math/1f1a225cd22b81817fc48b3a84dcf8f1a9e145d8.png" alt="x_2"/> must satisfy the quadratic equation</p>
+<div class="math">
+<p><img src="_images/math/4e5f0dce4c3f4bcb09bb07e50572aaa1170ef0c5.png" alt="\beta (x-x_s)^2 = 5"/></p>
+</div><p>from which the width of source function is given by</p>
+<div class="math">
+<p><img src="_images/math/d5e889a290ebcafc8fad133a64d64aa86addc843.png" alt="W = |x_2 - x_1| = 2\sqrt{\frac{5}{\beta}}"/></p>
+</div><p>In the previous version of FUNWAVE (Kirby et al., 1998), it is suggested that <img class="math" src="_images/math/953bde2ab2fca30897f66185e5b37b73747b8b46.png" alt="W"/> equals about half of the wavelength for monochromatic wave. If <img class="math" src="_images/math/ae2b750f71e1fc0daaa3de9a85d42794d7cd1326.png" alt="L"/> is the wavelength, the requirement of <img class="math" src="_images/math/001f581a691652585ce81c71666d5b6b0fc367e8.png" alt="W=\delta L/2"/> (where <img class="math" src="_images/math/a702e781dfc76762a3a132c2031fba8898430925.png" alt="\delta"/> is of order 1) results in</p>
+<div class="math">
+<p><img src="_images/math/542b76f68fedf5e24b928cd552c7630574fd267b.png" alt="\beta = \frac{5}{(\delta L/4)^2} = \frac{80}{\delta^2 L^2}"/></p>
+</div><p>For random waves, the value of $beta$ is determined according to the peak frequency component and then used for all components in the wave train. FUNWAVE&#8211;TVD follows the criteria for determining <img class="math" src="_images/math/410a9d0df9c135dd73b269cba7ef04dcfd932b1f.png" alt="\beta"/> though a narrow <img class="math" src="_images/math/953bde2ab2fca30897f66185e5b37b73747b8b46.png" alt="W"/> does not seem to cause any problem.</p>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="_images/wavemaker.jpg"><img alt="alternate text" src="_images/wavemaker.jpg" style="width: 300px; height: 250px;" /></a>
+</div>
+<p>For the irregular wavemaker, an extension was made to incorporate an  alongshore periodicity into wave generation,  in order to eliminate a boundary effect on wave simulations. The technique exactly follows the strategy in Chen et al. (2003), who adjusted the distribution of wave directions in each frequency bin to obtain alongshore periodicity. This approach is effective in modeling of  breaking wave&#8211;induced nearshore circulation such as alongshore currents and rip currents.</p>
+<ul class="simple">
+<li>Regular wave generation</li>
+</ul>
+<p>The generation of monochromatic wave using the internal wavemaker is straightforward. Following the formulations given in 3.7.1, the magnitude of source function <img class="math" src="_images/math/3cf5aa5abe312e6fd4996975341a43aa566e8d8d.png" alt="D"/> is calculated by D equation shown above for given wave amplitude <img class="math" src="_images/math/d1a15392374eb2875fc3efa1ae555846991e0553.png" alt="a_0"/>, wave angle <img class="math" src="_images/math/3be04d4207434584251f6921820c24ac9fa8c6f1.png" alt="\theta"/>, water depth <img class="math" src="_images/math/293fb39e1b93282c804a86186e721b32f829f1b2.png" alt="h"/> and wave period. The source function can be obtained using the Source function above.</p>
+<ul class="simple">
+<li>Irregular wave generation using directional spectral data</li>
+</ul>
+<p>Irregular waves can be generated by integrating wave components split by frequency and direction and with random phases Each wave component contains wave amplitude <img class="math" src="_images/math/d1a15392374eb2875fc3efa1ae555846991e0553.png" alt="a_0"/> converted from wave energy, wave angle <img class="math" src="_images/math/3be04d4207434584251f6921820c24ac9fa8c6f1.png" alt="\theta"/> and wave period. The source function for each component can be obtained using the source function.</p>
+<ul class="simple">
+<li>Irregular wave generation using analytical spectrum function</li>
+</ul>
+<p>The input for the wavemaker can be wave bulk parameters or directional spectral data. TMA shallow&#8211;water spectrum, JONSWAP spectrum and a wrapped&#8211;normal directional&#8211;spreading function are used to simulate a directional sea state. The combined spectrum function can be expressed as</p>
+<div class="math">
+<p><img src="_images/math/866c740e7b15b71f2c02e17630ec4dff4c9f7021.png" alt="S(f,h,\theta) = E(f,h) G(\theta)"/></p>
+</div><p><img class="math" src="_images/math/4b6222b865b812d2a59368cd1629eed6b54454d5.png" alt="E"/> is the energy density distribution as follows</p>
+<div class="math">
+<p><img src="_images/math/3e6b20dd0f97e6f3cd5104ceb784583e68c12bb3.png" alt="E (f,h) = \alpha g^2 f^{-5} (2 \pi)^{-4} \Phi (2\pi f, h) e^{-5/4(f/f_p)^{-4}} \gamma^{e^{[-(f/f_p -1)^2 /2\sigma^2]}}"/></p>
+</div><p>in which <img class="math" src="_images/math/deba8bb5afe0b990a5f560e6653fd24f43985c1a.png" alt="f_p"/> is the peak frequency.  <img class="math" src="_images/math/3666981dc77862de77b6ecfcb64aad59b425cbaf.png" alt="\gamma"/> presents a frequency spreading parameter, and <img class="math" src="_images/math/877d234f4cec6974ce218fc2e975a486a7972dfd.png" alt="\alpha"/> and <img class="math" src="_images/math/011e5790a6c33043ceadca81d9657dde6c61d769.png" alt="\sigma"/> are coefficients which may be found in Bouws et al. (1985).  $alpha$ is obtained using the input <img class="math" src="_images/math/e98fe6e860d2ecfdc05d1b7111d9ce1856086cc6.png" alt="H_{mo}/H_{sig}"/>,</p>
+<div class="math">
+<p><img src="_images/math/df7f249970655f06a3aa045cdd14674fc7c988f6.png" alt="\sigma = 0.07  \ \ \ \  f \leq f_p"/></p>
+</div><div class="math">
+<p><img src="_images/math/7f3486462b0af9987d3e7ed3dc2a5ccc50b259d2.png" alt="\sigma = 0.09  \ \ \ \  f &gt; f_p"/></p>
+</div><p><img class="math" src="_images/math/e486de19dbb61c9a63584f6e4ddd6e92ef03d665.png" alt="\Phi"/> = 1.0 for the JONSWAP spectrum. For TMA,  <img class="math" src="_images/math/e486de19dbb61c9a63584f6e4ddd6e92ef03d665.png" alt="\Phi"/> may be expressed as</p>
+<div class="math">
+<p><img src="_images/math/16cd3caf852f99947504d91cf04a59a856226afc.png" alt="\Phi (2 \pi f, h) =\frac{1}{2} \omega_h^2 \ \ \ \  \omega_h \leq 1"/></p>
+</div><div class="math">
+<p><img src="_images/math/ee77dfab72e2a8ab57f9626484ba37a932408872.png" alt="\Phi (2 \pi f, h) = 1-\frac{1}{2}(2-\omega_h)^2 \ \ \ \ 2 &gt; \omega_h &gt;1"/></p>
+</div><div class="math">
+<p><img src="_images/math/381b70cfb62288ed18bc44466caf100c79aa4a66.png" alt="\Phi (2 \pi f, h) = 1    \ \ \ \  \omega_h \geq 2"/></p>
+</div><p>where</p>
+<div class="math">
+<p><img src="_images/math/c637f30a05fec2bd7c2cfac1858cc852e2657aca.png" alt="\omega_h = 2 \pi f (\frac{h}{g})^{1/2}"/></p>
+</div><p>here <img class="math" src="_images/math/1a9ed0718e1d9040cf7605ad016bec01dbf8bb15.png" alt="G(\theta)"/> is the wrapped normal directional spreading function written as</p>
+<div class="math">
+<p><img src="_images/math/9ab0ee9f1fc92a4c1a3d3bf4e4a3731ae7b4adaf.png" alt="G(\theta) = \frac{1}{2\pi} +\frac{1}{\pi} \sum^N_{n=1} e^{[-\frac{( \sigma_{\theta})^2}{2}]} \cos n\theta"/></p>
+</div><p>where <img class="math" src="_images/math/40f9129d55234c2414e891b374950c59342a4c19.png" alt="\sigma_{\theta}"/> denotes circular deviation of the wrapped normal
+spreading function. To avoid the computational underflow, <img class="math" src="_images/math/98e5bf115a9110959d2aadedf950ce14a6aaf01b.png" alt="N = 20"/> in the model.</p>
+<p>In the spectral wavemaker, the directional spectrum is first divided into <img class="math" src="_images/math/f758e9564e014f06b93cdd9c48b82702d4da7193.png" alt="1000"/> frequency components and then reconstructed into a user&#8211;specified number of components with the equal energy. The directional components s evenly split in each frequency. The source function technique (Wei, et al., 1999) is then used for each component and the final surface elevation function can be written as</p>
+<div class="math">
+<p><img src="_images/math/3f801115a4d447907858e57bf273ff03ed1a2b04.png" alt="\eta = \sum^M_{m=1} C_m \cos \omega _m t + \sum^M_{m=1} S_m \sin \omega _m t"/></p>
+</div><p>where</p>
+<div class="math">
+<p><img src="_images/math/7808d98da9e3dfd66acaf6891dc57294ded7e878.png" alt="C_m  = \sum^k_{n=1} D_{mn} \cos (k_{mn}y + \varepsilon_{mn})"/></p>
+</div><div class="math">
+<p><img src="_images/math/2a4e70f3745b60a3b14d5a3fb8a86434b1728888.png" alt="S_m =  \sum^k_{n=1} D_{mn} \sin (k_{mn}y + \varepsilon_{mn})"/></p>
+</div><p>in which y&#8211;axis is oriented along the main axis of the wave maker. <img class="math" src="_images/math/c9b51953ba86dda4c713e3a06c692bebf6678f64.png" alt="D_{mn}, k _{mn}"/> and <img class="math" src="_images/math/e3b5c2ba8338c20e3e4aa856a53719c692eb62fc.png" alt="\varepsilon_{mn}"/> are respectively the amplitude, wave number in the y direction and phase of a component. The phase can be random.</p>
+<p>The model also provides an option for 1&#8211;D spectral wave generation (uni&#8211;directional).</p>
+</div>
+<div class="section" id="other-functions">
+<h3>Other functions<a class="headerlink" href="#other-functions" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Wind effect</li>
+</ul>
+<p>Wind effects are modeled using the wind stress forcing proposed by Chen et al. (2004). The wind stress is expressed by</p>
+<div class="math">
+<p><img src="_images/math/eff26cb7357892588d2c2de13092de7ecbe23c6a.png" alt="{\bf R}_w = \frac{\rho_a}{\rho} C_{dw} |{\bf U}_{10} - {\bf C}| ({\bf U}_{10} - {\bf C})"/></p>
+</div><p>where <img class="math" src="_images/math/b5d177481e40e6e7e0fc9b1a5b7312e1cfb343dd.png" alt="\rho_a"/> and <img class="math" src="_images/math/9a51ab9a0b521705e1e8762fac6bdd6f11771758.png" alt="\rho"/> represent air density and  water density, respectively, <img class="math" src="_images/math/e8e91450186bb2d9cf75130efddff2f3301b676c.png" alt="\bf C"/> is wave celerity.  The wind stress is only applied on wave crests. A free parameter representing a ratio of the forced crest height to maximum surface elevation is implemented in the model.</p>
+<ul class="simple">
+<li>Wave height calculation</li>
+</ul>
+<p>For spectral wave simulations, both average wave height and root-mean-square wave height are calculated using zero-crossing at each grid point. Significant wave height is evaluated using Goda&#8217;s (2000) formula</p>
+<div class="math">
+<p><img src="_images/math/b5cbb544f287e5b05e1b2b3e71ebf08ebf4f14f1.png" alt="H_{1/3} = 4.004\sqrt{m_0}"/></p>
+</div><p>where</p>
+<div class="math">
+<p><img src="_images/math/5fd44e24ee40d6c2b39d81c1faaade382b35358b.png" alt="m_0 = \frac{1}{t_2-t_1} \int^{t_2}_{t_1} \eta^2 dt"/></p>
+</div></div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#"><strong>INTRODUCTION</strong></a><ul>
+<li><a class="reference internal" href="#what-is-funwave-tvd"><strong>What is FUNWAVE&#8211;TVD</strong></a></li>
+<li><a class="reference internal" href="#formulations-and-numerical-schemes"><strong>Formulations and Numerical Schemes</strong></a></li>
+<li><a class="reference internal" href="#functions"><strong>Functions</strong></a><ul>
+<li><a class="reference internal" href="#wave-breaking">Wave breaking</a></li>
+<li><a class="reference internal" href="#sponge-layer">Sponge layer</a></li>
+<li><a class="reference internal" href="#boundary-conditions">Boundary conditions</a></li>
+<li><a class="reference internal" href="#wave-maker">Wave&#8211;maker</a></li>
+<li><a class="reference internal" href="#other-functions">Other functions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">FUNWAVE-TVD</a></li>
+      <li>Next: <a href="flowchart.html" title="next chapter"><strong>ARCHITECTURE</strong></a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/theory_formulation.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, Fengyan Shi.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+      |
+      <a href="_sources/theory_formulation.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
