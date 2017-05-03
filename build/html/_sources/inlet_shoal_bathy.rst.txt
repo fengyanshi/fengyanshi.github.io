@@ -1,0 +1,10 @@
+
+Bathymetry
+###########
+
+.. figure:: images/simple_cases/inlet_shoal.jpg
+    :width: 300px
+    :align: center
+    :height: 500px
+    :alt: alternate text
+    :figclass: align-center

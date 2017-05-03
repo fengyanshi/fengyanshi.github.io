@@ -5,7 +5,10 @@
 Simple tests
 *******************
 
-You can download some benchmarks for now. `click here <https://github.com/fengyanshi/BENCHMARK_FUNWAVE>`_.
+.. toctree::
+   :maxdepth: 2
+
+   inlet_shoal
 
 ******************
 Benchmarks
