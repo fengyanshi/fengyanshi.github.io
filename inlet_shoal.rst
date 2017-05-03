@@ -13,5 +13,9 @@ Inlet + Sandbar + Beach
 
    inlet_shoal_info
    inlet_shoal_regular_wave
+   inlet_shoal_regular_wave_30deg
+   inlet_shoal_irregular_wave
+   inlet_shoal_irregular_wave_30deg
+   
 
 

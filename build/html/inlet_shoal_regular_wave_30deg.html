@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Inlet + Sandbar + Beach &#8212; funwave  documentation</title>
+    <title>Regular wave 30 deg oblique incidence &#8212; funwave  documentation</title>
     
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -26,8 +26,8 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Basic info" href="inlet_shoal_info.html" />
-    <link rel="prev" title="EXAMPLES" href="examples.html" />
+    <link rel="next" title="Irregular wave" href="inlet_shoal_irregular_wave.html" />
+    <link rel="prev" title="Regular wave" href="inlet_shoal_regular_wave.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -43,20 +43,25 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="inlet-sandbar-beach">
-<h1>Inlet + Sandbar + Beach<a class="headerlink" href="#inlet-sandbar-beach" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="regular-wave-30-deg-oblique-incidence">
+<h1>Regular wave 30 deg oblique incidence<a class="headerlink" href="#regular-wave-30-deg-oblique-incidence" title="Permalink to this headline">¶</a></h1>
 <div class="align-center figure">
-<a class="reference internal image-reference" href="_images/eta_inlet_shoal_reg.jpg"><img alt="alternate text" src="_images/eta_inlet_shoal_reg.jpg" style="width: 500px; height: 300px;" /></a>
+<a class="reference internal image-reference" href="_images/eta_inlet_shoal_reg_30deg.jpg"><img alt="alternate text" src="_images/eta_inlet_shoal_reg_30deg.jpg" style="width: 500px; height: 300px;" /></a>
 </div>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="inlet_shoal_info.html">Basic info</a></li>
-<li class="toctree-l1"><a class="reference internal" href="inlet_shoal_regular_wave.html">Regular wave</a></li>
-<li class="toctree-l1"><a class="reference internal" href="inlet_shoal_regular_wave_30deg.html">Regular wave 30 deg oblique incidence</a></li>
-<li class="toctree-l1"><a class="reference internal" href="inlet_shoal_irregular_wave.html">Irregular wave</a></li>
-<li class="toctree-l1"><a class="reference internal" href="inlet_shoal_irregular_wave_30deg.html">Irregular waves with 30 deg oblique incidence</a></li>
+<ul class="simple">
+<li>Add wavemaker</li>
 </ul>
-</div>
+<p>WAVEMAKER = WK_REG</p>
+<p>DEP_WK = 10.0</p>
+<p>Xc_WK = 250.0</p>
+<p>Yc_WK = 0.0</p>
+<p>Tperiod = 12.0</p>
+<p>AMP_WK = 1.0</p>
+<p>Theta_WK = 0.0</p>
+<ul class="simple">
+<li>Add periodic boundary condition</li>
+</ul>
+<p>PERIODIC = T</p>
 </div>
 
 
@@ -69,8 +74,10 @@
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
   <li><a href="examples.html"><strong>EXAMPLES</strong></a><ul>
-      <li>Previous: <a href="examples.html" title="previous chapter"><strong>EXAMPLES</strong></a></li>
-      <li>Next: <a href="inlet_shoal_info.html" title="next chapter">Basic info</a></li>
+  <li><a href="inlet_shoal.html">Inlet + Sandbar + Beach</a><ul>
+      <li>Previous: <a href="inlet_shoal_regular_wave.html" title="previous chapter">Regular wave</a></li>
+      <li>Next: <a href="inlet_shoal_irregular_wave.html" title="next chapter">Irregular wave</a></li>
+  </ul></li>
   </ul></li>
   </ul></li>
 </ul>
@@ -78,7 +85,7 @@
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/inlet_shoal.rst.txt"
+      <li><a href="_sources/inlet_shoal_regular_wave_30deg.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -104,7 +111,7 @@
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
       
       |
-      <a href="_sources/inlet_shoal.rst.txt"
+      <a href="_sources/inlet_shoal_regular_wave_30deg.rst.txt"
           rel="nofollow">Page source</a>
     </div>
 

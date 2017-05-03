@@ -4,6 +4,7 @@
 *******************
 Simple tests
 *******************
+ .. note:: Simpel tests are included in the downloaded package /simple_cases/
 
 .. toctree::
    :maxdepth: 2
