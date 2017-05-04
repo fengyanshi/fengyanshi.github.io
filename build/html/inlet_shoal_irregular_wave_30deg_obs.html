@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Inlet + Sandbar + Beach &#8212; funwave  documentation</title>
+    <title>30 deg irregular waves and an obstacle &#8212; funwave  documentation</title>
     
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -26,8 +26,8 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Basic info" href="inlet_shoal_info.html" />
-    <link rel="prev" title="EXAMPLES" href="examples.html" />
+    <link rel="next" title="30 deg irregular waves and an breakwater and full reflection" href="inlet_shoal_irregular_wave_30deg_brkwtr.html" />
+    <link rel="prev" title="Irregular waves with 30 deg oblique incidence" href="inlet_shoal_irregular_wave_30deg.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -43,23 +43,34 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="inlet-sandbar-beach">
-<h1>Inlet + Sandbar + Beach<a class="headerlink" href="#inlet-sandbar-beach" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="deg-irregular-waves-and-an-obstacle">
+<h1>30 deg irregular waves and an obstacle<a class="headerlink" href="#deg-irregular-waves-and-an-obstacle" title="Permalink to this headline">¶</a></h1>
 <div class="align-center figure">
-<a class="reference internal image-reference" href="_images/eta_inlet_shoal_irr_30deg_brk_abs.jpg"><img alt="alternate text" src="_images/eta_inlet_shoal_irr_30deg_brk_abs.jpg" style="width: 500px; height: 300px;" /></a>
+<a class="reference internal image-reference" href="_images/eta_inlet_shoal_irr_30deg_obs.jpg"><img alt="alternate text" src="_images/eta_inlet_shoal_irr_30deg_obs.jpg" style="width: 500px; height: 300px;" /></a>
 </div>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="inlet_shoal_info.html">Basic info</a></li>
-<li class="toctree-l1"><a class="reference internal" href="inlet_shoal_regular_wave.html">Regular wave</a></li>
-<li class="toctree-l1"><a class="reference internal" href="inlet_shoal_regular_wave_30deg.html">Regular wave 30 deg oblique incidence</a></li>
-<li class="toctree-l1"><a class="reference internal" href="inlet_shoal_irregular_wave.html">Irregular wave</a></li>
-<li class="toctree-l1"><a class="reference internal" href="inlet_shoal_irregular_wave_30deg.html">Irregular waves with 30 deg oblique incidence</a></li>
-<li class="toctree-l1"><a class="reference internal" href="inlet_shoal_irregular_wave_30deg_obs.html">30 deg irregular waves and an obstacle</a></li>
-<li class="toctree-l1"><a class="reference internal" href="inlet_shoal_irregular_wave_30deg_brkwtr.html">30 deg irregular waves, a submerged breakwater with full reflection</a></li>
-<li class="toctree-l1"><a class="reference internal" href="inlet_shoal_irregular_wave_30deg_brkwtr_abs.html">30 deg irregular waves, a submerged breakwater with partial reflection</a></li>
+<ul class="simple">
+<li>Add wavemaker</li>
 </ul>
-</div>
+<p>WAVEMAKER = WK_IRR</p>
+<p>DEP_WK = 10.0</p>
+<p>Xc_WK = 250.0</p>
+<p>Yc_WK = 0.0</p>
+<p>Ywidth_WK = 20000.0</p>
+<p>FreqPeak = 0.0893</p>
+<p>FreqMin = 0.03</p>
+<p>FreqMax = 0.3</p>
+<p>Hmo = 1.00</p>
+<p>GammaTMA = 3.3</p>
+<p>ThetaPeak = 30.0</p>
+<p>Sigma_Theta = 10.0</p>
+<ul class="simple">
+<li>Add periodic boundary condition</li>
+</ul>
+<p>PERIODIC = T</p>
+<ul class="simple">
+<li>Add OBSTACLE FILE</li>
+</ul>
+<p>OBSTACLE_FILE = obs_shoal_inlet.txt</p>
 </div>
 
 
@@ -72,8 +83,10 @@
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
   <li><a href="examples.html"><strong>EXAMPLES</strong></a><ul>
-      <li>Previous: <a href="examples.html" title="previous chapter"><strong>EXAMPLES</strong></a></li>
-      <li>Next: <a href="inlet_shoal_info.html" title="next chapter">Basic info</a></li>
+  <li><a href="inlet_shoal.html">Inlet + Sandbar + Beach</a><ul>
+      <li>Previous: <a href="inlet_shoal_irregular_wave_30deg.html" title="previous chapter">Irregular waves with 30 deg oblique incidence</a></li>
+      <li>Next: <a href="inlet_shoal_irregular_wave_30deg_brkwtr.html" title="next chapter">30 deg irregular waves and an breakwater and full reflection</a></li>
+  </ul></li>
   </ul></li>
   </ul></li>
 </ul>
@@ -81,7 +94,7 @@
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/inlet_shoal.rst.txt"
+      <li><a href="_sources/inlet_shoal_irregular_wave_30deg_obs.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -107,7 +120,7 @@
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
       
       |
-      <a href="_sources/inlet_shoal.rst.txt"
+      <a href="_sources/inlet_shoal_irregular_wave_30deg_obs.rst.txt"
           rel="nofollow">Page source</a>
     </div>
 

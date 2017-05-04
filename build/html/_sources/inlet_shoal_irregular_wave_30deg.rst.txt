@@ -1,7 +1,7 @@
 Irregular waves with 30 deg oblique incidence
 ################################################
 
-.. figure:: images/simple_cases/eta_inlet_shoal_reg.jpg
+.. figure:: images/simple_cases/eta_inlet_shoal_irr_30deg.jpg
     :width: 500px
     :align: center
     :height: 300px

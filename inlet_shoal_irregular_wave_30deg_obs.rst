@@ -1,7 +1,7 @@
-Irregular waves with 30 deg oblique incidence
+30 deg irregular waves and an obstacle
 ################################################
 
-.. figure:: images/simple_cases/eta_inlet_shoal_irr_30deg.jpg
+.. figure:: images/simple_cases/eta_inlet_shoal_irr_30deg_obs.jpg
     :width: 500px
     :align: center
     :height: 300px
@@ -37,4 +37,8 @@ Sigma_Theta = 10.0
 * Add periodic boundary condition
 
 PERIODIC = T
+
+* Add OBSTACLE FILE
+
+OBSTACLE_FILE = obs_shoal_inlet.txt
 

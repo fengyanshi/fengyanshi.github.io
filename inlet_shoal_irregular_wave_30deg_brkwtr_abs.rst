@@ -1,7 +1,7 @@
-Irregular waves with 30 deg oblique incidence
-################################################
+30 deg irregular waves, a submerged breakwater with partial reflection
+#######################################################################
 
-.. figure:: images/simple_cases/eta_inlet_shoal_irr_30deg.jpg
+.. figure:: images/simple_cases/eta_inlet_shoal_irr_30deg_brk_abs.jpg
     :width: 500px
     :align: center
     :height: 300px
@@ -37,4 +37,11 @@ Sigma_Theta = 10.0
 * Add periodic boundary condition
 
 PERIODIC = T
+
+* Add BREAKWATER FILE for partial reflection
+
+BREAKWATER_FILE = brk_shoal_inlet.txt
+
+* Replace dep_shoal_inlet.txt with dep_shoal_inlet_brk.txt
+
 
