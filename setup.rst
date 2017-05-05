@@ -16,18 +16,18 @@ Versions 1.0, 1.1, 2.0, 2.1: Please contact fyshi@udel.edu
 Download simple examples
 *************************
 
-We are preparing some simple examples for testing your system. If you want to make a test now, please visit **Download Benchmark tests** 
+Simple examples are included in the package of Version 3.1 or higher (`click here to download from GitHub <https://github.com/fengyanshi/FUNWAVE-TVD>`_) . They are located in the directory /simple_cases/. 
+The simple examples serve as baseline cases for testing your system. You can also choose a simple case similar to your modeling scenario to set up your case. The following simple cases available.
 
-* Solitary wave propagation on a flat bottom
-* Solitary wave propagation on a conical island
+* `Surface waves at an inlet-beach-shoal system <inlet_shoal.html>`_
+
 * Japanese Tohoku tsunami (Ocean-basin scale)
-* Waves and wave-induced current on a beach
 
 ***************************
 Download benchmark tests
 ***************************
 
-`Available benchmarks: click here to download from GitHub <https://github.com/fengyanshi/BENCHMARK_FUNWAVE>`_
+Benchmark tests are validation and verification (V & V) cases with model comparisons with lab or field experiment data. `Available benchmarks: click here to download from GitHub <https://github.com/fengyanshi/BENCHMARK_FUNWAVE>`_
 
 
 *************************
@@ -43,9 +43,8 @@ Compile and setup
 * --DCARTESIAN: Cartesian version, otherwise Spherical version
 * --DINTEL: if INTEL compiler is used, this option can make use of FPORT for the RAND() function
 * --DCRAY: for CRAY RAND() and system commands
-* --DMIXING: include Smagorinsky mixing. 
 * --DCOUPLING: nesting mode.
-* --DMANNING: Using Manning coefficient for friction calculation.
+* --DVESSLE: include shipwake module
 * CPP: path to CPP directory.
 * FC: Fortran compiler. 
 

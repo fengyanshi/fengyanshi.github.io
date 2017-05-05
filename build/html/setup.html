@@ -53,17 +53,16 @@
 </div>
 <div class="section" id="download-simple-examples">
 <h2>Download simple examples<a class="headerlink" href="#download-simple-examples" title="Permalink to this headline">¶</a></h2>
-<p>We are preparing some simple examples for testing your system. If you want to make a test now, please visit <strong>Download Benchmark tests</strong></p>
+<p>Simple examples are included in the package of Version 3.1 or higher (<a class="reference external" href="https://github.com/fengyanshi/FUNWAVE-TVD">click here to download from GitHub</a>) . They are located in the directory /simple_cases/.
+The simple examples serve as baseline cases for testing your system. You can also choose a simple case similar to your modeling scenario to set up your case. The following simple cases available.</p>
 <ul class="simple">
-<li>Solitary wave propagation on a flat bottom</li>
-<li>Solitary wave propagation on a conical island</li>
+<li><a class="reference external" href="inlet_shoal.html">Surface waves at an inlet-beach-shoal system</a></li>
 <li>Japanese Tohoku tsunami (Ocean-basin scale)</li>
-<li>Waves and wave-induced current on a beach</li>
 </ul>
 </div>
 <div class="section" id="download-benchmark-tests">
 <h2>Download benchmark tests<a class="headerlink" href="#download-benchmark-tests" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="https://github.com/fengyanshi/BENCHMARK_FUNWAVE">Available benchmarks: click here to download from GitHub</a></p>
+<p>Benchmark tests are validation and verification (V &amp; V) cases with model comparisons with lab or field experiment data. <a class="reference external" href="https://github.com/fengyanshi/BENCHMARK_FUNWAVE">Available benchmarks: click here to download from GitHub</a></p>
 </div>
 <div class="section" id="compile-and-setup">
 <h2>Compile and setup<a class="headerlink" href="#compile-and-setup" title="Permalink to this headline">¶</a></h2>
@@ -78,9 +77,8 @@
 <li>&#8211;DCARTESIAN: Cartesian version, otherwise Spherical version</li>
 <li>&#8211;DINTEL: if INTEL compiler is used, this option can make use of FPORT for the RAND() function</li>
 <li>&#8211;DCRAY: for CRAY RAND() and system commands</li>
-<li>&#8211;DMIXING: include Smagorinsky mixing.</li>
 <li>&#8211;DCOUPLING: nesting mode.</li>
-<li>&#8211;DMANNING: Using Manning coefficient for friction calculation.</li>
+<li>&#8211;DVESSLE: include shipwake module</li>
 <li>CPP: path to CPP directory.</li>
 <li>FC: Fortran compiler.</li>
 </ul>

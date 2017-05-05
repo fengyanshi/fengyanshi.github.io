@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Basic info &#8212; funwave  documentation</title>
+    <title>Basics for model setup &#8212; funwave  documentation</title>
     
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -43,19 +43,42 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="basic-info">
-<h1>Basic info<a class="headerlink" href="#basic-info" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="basics-for-model-setup">
+<h1>Basics for model setup<a class="headerlink" href="#basics-for-model-setup" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li>Bathymetry image</li>
+<li>computational domain</li>
 </ul>
 <div class="align-center figure">
 <a class="reference internal image-reference" href="_images/inlet_shoal.jpg"><img alt="alternate text" src="_images/inlet_shoal.jpg" style="width: 300px; height: 500px;" /></a>
 </div>
-<ul class="simple">
-<li>Dimensions 512 X 1024</li>
-<li>DX = DY = 2.0 m</li>
-<li>Wavemaker located at x = 250.0 m</li>
-<li>Sponge layer: x = 0.0 &#8211; 180.0 m</li>
+<p>Basic info</p>
+<blockquote>
+<div><p>Dimensions 512 X 1024</p>
+<p>DX = DY = 2.0 m</p>
+<p>Wavemaker located at x = 250.0 m</p>
+<p>Sponge layer: x = 0.0 &#8211; 180.0 m</p>
+</div></blockquote>
+<ul>
+<li><p class="first">input.txt
+several input files in the folder /simple_cases/input_files/ for different cases. When run a case, copy one of them to &#8220;input.txt&#8221;</p>
+<p>input_reg.txt &#8211; monochromatic wave, normal incidence</p>
+<p>input_reg_30deg.txt &#8211; monochromatic wave, 30-degree incidence</p>
+<p>input_irr.txt &#8211; irregular waves, peak direction - 0.0</p>
+<p>input_irr_30deg.txt &#8211; irregular waves, peak direction - 30.0</p>
+<p>input_irr_30deg_obs.txt &#8211; irregular waves, peak direction - 30.0, plus an obstacle (breakwater)</p>
+<p>input_irr_30deg_brkwtr.txt &#8211; irregular waves, peak direction - 30.0, plus submerged breakwater with partial reflection (full reflection if removing breakwater file (brk_shoal_inlet.txt) in the input file)</p>
+</li>
+<li><p class="first">Bathymetry files</p>
+<p>in the folder /simple_cases/bathy/</p>
+<p>dep_shoal_inlet.txt  &#8211; basic bathymetry</p>
+<p>dep_shoal_inlet_brk.txt  &#8211; bathymetry with a breakwater geometry</p>
+</li>
+<li><p class="first">breakwater file</p>
+<p>brk_shoal_inlet.txt &#8211; same i/o format as bathymetry file but only contains breakwater width info</p>
+</li>
+<li><p class="first">obstacle file</p>
+<p>obs_shoal_inlet.txt &#8211; same i/o format as bathymetry file but only contains 0/1 with 0 indicating an obstacle point</p>
+</li>
 </ul>
 </div>
 
