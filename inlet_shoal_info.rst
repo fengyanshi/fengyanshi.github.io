@@ -5,7 +5,7 @@ Basics for model setup
 * computational domain
 
 .. figure:: images/simple_cases/inlet_shoal.jpg
-    :width: 300px
+    :width: 400px
     :align: center
     :height: 500px
     :alt: alternate text
