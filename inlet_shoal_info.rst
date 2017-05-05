@@ -22,7 +22,7 @@ Basic info
  Sponge layer: x = 0.0 -- 180.0 m
 
 * input.txt
-  several input files in the folder /simple_cases/input_files/ for different cases. When run a case, copy one of them to "input.txt"
+  several input files in the folder /simple_cases/inlet_shoal/input_files/ for different cases. When run a case, copy one of them to "input.txt"
 
   input_reg.txt -- monochromatic wave, normal incidence
 

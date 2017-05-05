@@ -9,6 +9,7 @@ Simple tests
 .. toctree::
    :maxdepth: 2
 
+   slope
    inlet_shoal
 
 ******************
