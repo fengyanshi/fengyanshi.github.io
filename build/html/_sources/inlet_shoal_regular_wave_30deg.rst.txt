@@ -10,21 +10,21 @@ Regular wave 30 deg oblique incidence
 
 * Add wavemaker
 
-WAVEMAKER = WK_REG
+ WAVEMAKER = WK_REG
 
-DEP_WK = 10.0 
+ DEP_WK = 10.0 
 
-Xc_WK = 250.0 
+ Xc_WK = 250.0 
 
-Yc_WK = 0.0 
+ Yc_WK = 0.0 
 
-Tperiod = 12.0 
+ Tperiod = 12.0 
 
-AMP_WK = 1.0 
+ AMP_WK = 1.0 
 
-Theta_WK = 0.0 
+ Theta_WK = 0.0 
 
 * Add periodic boundary condition
 
-PERIODIC = T
+ PERIODIC = T
 

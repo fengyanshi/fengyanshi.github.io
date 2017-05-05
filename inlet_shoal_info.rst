@@ -52,3 +52,7 @@ Basic info
 
   obs_shoal_inlet.txt -- same i/o format as bathymetry file but only contains 0/1 with 0 indicating an obstacle point
 
+* postprocessing
+
+  matlab examples of postprocessing are located in /simple_cases/inlet_shoal/postprocessing/
+
