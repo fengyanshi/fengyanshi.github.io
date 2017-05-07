@@ -26,6 +26,12 @@
 
   <iframe width="560" height="315" src="https://www.youtube.com/embed/KShcVpRAa1Q" frameborder="0" allowfullscreen></iframe>
 
+* Lab case: Mase and Kirby, VIS breaker vs. SWE breaker
+
+.. raw:: html
+
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/9ibTRPqXgew" frameborder="0" allowfullscreen></iframe>
+
 * Spectral waves at Ponce de Leon Inlet
 
 .. raw:: html
@@ -37,3 +43,18 @@
 .. raw:: html
 
   <iframe width="560" height="315" src="https://www.youtube.com/embed/reea6Egm7NM" frameborder="0" allowfullscreen></iframe>
+
+* Shipwakes in Galveston Navigation Channel
+
+.. raw:: html
+
+ <iframe width="854" height="480" src="https://www.youtube.com/embed/y16V-TTVcDg" frameborder="0" allowfullscreen></iframe>
+
+* Tsunami waves and nearshore morphological changes
+
+.. raw:: html
+
+ <iframe width="560" height="315" src="https://www.youtube.com/embed/jHnd0APkWro" frameborder="0" allowfullscreen></iframe>
+
+
+
