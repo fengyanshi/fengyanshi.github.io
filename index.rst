@@ -18,6 +18,7 @@ FUNWAVE-TVD
    examples
    references
    authors
+   gallery
    news
 
 Indices and tables
