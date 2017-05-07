@@ -20,4 +20,8 @@
 
     <iframe width="560" height="315" src="https://www.youtube.com/embed/Ti_37bNYmzo" frameborder="0" allowfullscreen></iframe>
 
+* Waves on beach, 1D simulation
 
+.. raw:: html
+
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/KShcVpRAa1Q" frameborder="0" allowfullscreen></iframe>
