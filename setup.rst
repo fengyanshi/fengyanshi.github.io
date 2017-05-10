@@ -21,6 +21,8 @@ The simple examples serve as baseline cases for testing your system. You can als
 
 * `Surface waves at an inlet-beach-shoal system <inlet_shoal.html>`_
 
+* 'Waves on 1D slope <slope.html>`_
+
 * Japanese Tohoku tsunami (Ocean-basin scale)
 
 ***************************
