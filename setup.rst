@@ -19,9 +19,9 @@ Download simple examples
 Simple examples are included in the package of Version 3.1 or higher (`click here to download from GitHub <https://github.com/fengyanshi/FUNWAVE-TVD>`_) . They are located in the directory /simple_cases/. 
 The simple examples serve as baseline cases for testing your system. You can also choose a simple case similar to your modeling scenario to set up your case. The following simple cases available.
 
-* `Surface waves at an inlet-beach-shoal system <inlet_shoal.html>`_
+* `Waves on 1D slope <slope.html>`_
 
-* 'Waves on 1D slope <slope.html>`_
+* `Surface waves at an inlet-beach-shoal system <inlet_shoal.html>`_
 
 * Japanese Tohoku tsunami (Ocean-basin scale)
 
