@@ -11,6 +11,7 @@ Simple tests
 
    slope
    inlet_shoal
+   tohoku
 
 ******************
 Benchmarks

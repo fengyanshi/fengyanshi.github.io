@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Tohoku Low Resolution &#8212; funwave  documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="REFERENCES" href="references.html" />
+    <link rel="prev" title="Basics for model setup" href="tohoku_info.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="tohoku-low-resolution">
+<h1>Tohoku Low Resolution<a class="headerlink" href="#tohoku-low-resolution" title="Permalink to this headline">¶</a></h1>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="_images/tohoku_surface.jpg"><img alt="alternate text" src="_images/tohoku_surface.jpg" style="width: 400px; height: 700px;" /></a>
+</div>
+<ul>
+<li><p class="first">Specify bathymetry</p>
+<p>DEPTH_TYPE = DATA</p>
+<p>DEPTH_FILE = ../external_files/depth_30min.txt</p>
+</li>
+<li><p class="first">Dimensions</p>
+<p>Mglob = 320</p>
+<p>Nglob = 240</p>
+</li>
+<li><p class="first">Grid</p>
+<p>Lon_West = 132.01667</p>
+<p>Lat_South = -59.98333</p>
+<p>Dphi = 0.5</p>
+<p>Dtheta = 0.5</p>
+</li>
+<li><p class="first">Add initial conditions</p>
+<p>INI_UVZ = T</p>
+<p>ETA_FILE = ../external_files/ETA_30min.txt</p>
+<p>U_FILE = ../external_files/U_30min.txt</p>
+<p>V_FILE = ../external_files/V_30min.txt</p>
+</li>
+<li><p class="first">Add Sponge layers</p>
+</li>
+</ul>
+<p>SPONGE_ON = T</p>
+<blockquote>
+<div><p>Sponge_west_width =  100000.0</p>
+<p>Sponge_east_width =  100000.0</p>
+<p>Sponge_south_width = 100000.0</p>
+<p>Sponge_north_width = 100000.0</p>
+</div></blockquote>
+<ul>
+<li><p class="first">Add friction</p>
+<p>Cd = 0.001</p>
+</li>
+<li><p class="first">Avoid inundation in the basin scale</p>
+<p>MinDepth= 10.0</p>
+</li>
+<li><p class="first">Output</p>
+<p>ETA = T
+Hmax = T</p>
+</li>
+</ul>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="examples.html"><strong>EXAMPLES</strong></a><ul>
+  <li><a href="tohoku.html">Tohoku Tsunami</a><ul>
+      <li>Previous: <a href="tohoku_info.html" title="previous chapter">Basics for model setup</a></li>
+      <li>Next: <a href="references.html" title="next chapter"><strong>REFERENCES</strong></a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/tohoku_low_resolution.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, Fengyan Shi.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+      |
+      <a href="_sources/tohoku_low_resolution.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
