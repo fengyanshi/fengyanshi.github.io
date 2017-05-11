@@ -4,7 +4,7 @@ Tohoku Low Resolution
 .. figure:: images/simple_cases/tohoku_surface.jpg
     :width: 400px
     :align: center
-    :height: 700px
+    :height: 600px
     :alt: alternate text
     :figclass: align-center
 
@@ -42,7 +42,7 @@ Tohoku Low Resolution
 
 * Add Sponge layers
 
-SPONGE_ON = T
+  SPONGE_ON = T
  
   Sponge_west_width =  100000.0 
 
@@ -63,6 +63,7 @@ SPONGE_ON = T
 * Output
 
   ETA = T
+
   Hmax = T
 
 

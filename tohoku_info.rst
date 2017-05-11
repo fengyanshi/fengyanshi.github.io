@@ -28,6 +28,10 @@ Basic info
 * bathymetry
   
   located in /simple_cases/external_files/depth_30min.txt
+
+* files for initial condition
+
+  located in /simple_cases/external_files/
   
 * postprocessing
 

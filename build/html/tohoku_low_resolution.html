@@ -46,7 +46,7 @@
   <div class="section" id="tohoku-low-resolution">
 <h1>Tohoku Low Resolution<a class="headerlink" href="#tohoku-low-resolution" title="Permalink to this headline">¶</a></h1>
 <div class="align-center figure">
-<a class="reference internal image-reference" href="_images/tohoku_surface.jpg"><img alt="alternate text" src="_images/tohoku_surface.jpg" style="width: 400px; height: 700px;" /></a>
+<a class="reference internal image-reference" href="_images/tohoku_surface.jpg"><img alt="alternate text" src="_images/tohoku_surface.jpg" style="width: 400px; height: 600px;" /></a>
 </div>
 <ul>
 <li><p class="first">Specify bathymetry</p>
@@ -70,16 +70,12 @@
 <p>V_FILE = ../external_files/V_30min.txt</p>
 </li>
 <li><p class="first">Add Sponge layers</p>
-</li>
-</ul>
 <p>SPONGE_ON = T</p>
-<blockquote>
-<div><p>Sponge_west_width =  100000.0</p>
+<p>Sponge_west_width =  100000.0</p>
 <p>Sponge_east_width =  100000.0</p>
 <p>Sponge_south_width = 100000.0</p>
 <p>Sponge_north_width = 100000.0</p>
-</div></blockquote>
-<ul>
+</li>
 <li><p class="first">Add friction</p>
 <p>Cd = 0.001</p>
 </li>
@@ -87,8 +83,8 @@
 <p>MinDepth= 10.0</p>
 </li>
 <li><p class="first">Output</p>
-<p>ETA = T
-Hmax = T</p>
+<p>ETA = T</p>
+<p>Hmax = T</p>
 </li>
 </ul>
 </div>
