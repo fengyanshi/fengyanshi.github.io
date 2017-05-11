@@ -3,7 +3,7 @@ Tohoku Tsunami
 .. figure:: images/simple_cases/tohoku_dem.jpg
     :width: 600px
     :align: center
-    :height: 350px
+    :height: 400px
     :alt: alternate text
     :figclass: align-center
 

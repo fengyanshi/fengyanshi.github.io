@@ -4,7 +4,7 @@ Basics for model setup
 * computational domain
 
 .. figure:: images/simple_cases/tohoku_dem.jpg
-    :width: 500px
+    :width: 600px
     :align: center
     :height: 400px
     :alt: alternate text
