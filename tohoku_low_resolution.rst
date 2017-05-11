@@ -22,9 +22,9 @@ Tohoku Low Resolution
 
 * Grid
 
-  Lon_West = 132.01667
+  Lon_West = 132.0
 
-  Lat_South = -59.98333
+  Lat_South = -60.0
 
   Dphi = 0.5
 
