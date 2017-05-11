@@ -10,9 +10,9 @@ In parallelizing the computational model, we used a domain decomposition techniq
 *************
 Flow chart
 *************
-.. figure:: images/chart.png
-    :width: 300px
+.. figure:: images/flow_chart.jpg
+    :width: 400px
     :align: center
-    :height: 500px
+    :height: 550px
     :alt: alternate text
     :figclass: align-center
