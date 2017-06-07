@@ -137,25 +137,6 @@
 <li>MASK_FILE:  name of file for initial MASK, e.g., MASK_FILE= /Users/results/mask_00100. A MASK_FILE could be from a model output and the format is REAL numbers. If there is no MASK_FILE, MASK values will be re-specified according to ETA and DEPTH.</li>
 </ul>
 </div></blockquote>
-<p><strong>SPECIFICATION OF WIND EFFECT</strong></p>
-<blockquote>
-<div><ul class="simple">
-<li>WindForce: logical parameter representing if wind effect is taken into account. T or F. Note: spatially uniform wind field is assumed in this version.</li>
-<li>WIND_FILE: file name for wind data. The following is an example of data format.</li>
-</ul>
-<p>wind data</p>
-<p>100  - number of data</p>
-<p>0.0 ,    10.0 0.0   &#8212;  time(s), wu, wv (m/s)</p>
-<p>2000.0,   10.0,  0.0</p>
-<p>8000.0,  10.0,   0.0</p>
-</div></blockquote>
-<p>...</p>
-<blockquote>
-<div><ul class="simple">
-<li>Cdw: wind stress coefficient for the quadratic formula.</li>
-<li>WindCrestPercent: ratio of the forced wave crest height to the maximum surface elevation.</li>
-</ul>
-</div></blockquote>
 <p><strong>SPECIFICATION OF WAVEMAKER</strong></p>
 <blockquote>
 <div><ul class="simple">
@@ -310,6 +291,60 @@
 <li>T_INTV_mean: time interval ( <img class="math" src="_images/math/760298053e1d79c88f483a0fa5e39d589c6b5d5f.png" alt="t_2-t_1"/> for calculating mean values, significant/RMS wave height (when WaveHeight = T, output parameter below). Default: LARGE.</li>
 </ul>
 </div></blockquote>
+<p><strong>APPLICATION OF WIND AND PRESSURE FIELD</strong></p>
+<p><strong>SPECIFICATION OF WIND EFFECT</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li>WindForce: logical parameter representing if wind effect is taken into account. T or F.</li>
+<li>AirPressure: logical parameter representing if pressure effect is taken into account. T or F.</li>
+<li>WindWaveInteraction: logical parameter representing if wave-wind interaction (Chen et al. 2003) based on the formula presented in &#8216;METEO module&#8217; in INTRODUCTION section. The parameter WindCrestPercent will be used.</li>
+<li>Cdw: wind stress coefficient for the quadratic formula if WindForce = T. Default: 0.002.</li>
+<li>WindCrestPercent: ratio of the forced wave crest height to the maximum surface elevation, if WindForce = T. Default: 100% (for storm surges).</li>
+<li>WindConstantField: logical parameter for constant wind field. T or F.</li>
+<li>WIND_FILE: file name for the constant wind field. The following is an example of data format.</li>
+</ul>
+<p>wind data</p>
+<p>100  - number of data</p>
+<p>0.0 ,    10.0 0.0   &#8212;  time(s), wu, wv (m/s)</p>
+<p>2000.0,   10.0,  0.0</p>
+<p>8000.0,  10.0,   0.0</p>
+</div></blockquote>
+<p>...</p>
+<blockquote>
+<div><ul class="simple">
+<li>WindHollandModel: logical parameter for Holland model. T or F.</li>
+<li>STORM_FILE: name of file contains paramters used for Holland hurricane model</li>
+</ul>
+<blockquote>
+<div><p>A sample:</p>
+<blockquote>
+<div><p>STORM FILE (model does not read)</p>
+<p>Sandy - storm name</p>
+<p>time(s),     x(m), y(m),    pn(mb),   pc(mb),   A,    B (model does not read)</p>
+<p>0.0,  800000.0, 400000.0,   1005.0, 950.0, 23.0, 1.50 - time, x,y, pn, pc, A, B</p>
+<p>120000.0,  800000.0, 1500000.0,  1005.0, 950.0, 23.0, 1.50</p>
+</div></blockquote>
+</div></blockquote>
+<ul class="simple">
+<li>SlideModel: logical parameter for landslide model. T or F.</li>
+<li>SLIDE_FILE: name of file contains landslide parameters</li>
+</ul>
+<blockquote>
+<div><p>A sample:</p>
+<blockquote>
+<div><p>slide_file (not read by model)</p>
+<p>Grilli - slide name</p>
+<p>Length(m), Width(m), Alpha(m), Beta(m), P(unit) (not read by model)</p>
+<p>0.395  0.68 1.0 1.0 0.082</p>
+<p>Time, X(m), Y(m)  (relative to the orgin of the coordinates) (not read by model)</p>
+<p>0.0000    2.0340    1.8500</p>
+<p>0.0100    2.0341    1.8500</p>
+<p>0.0200    2.0342    1.8500</p>
+<p>0.0300    2.0345    1.8500</p>
+<p>...</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
 <p><strong>SPECIFICATION OF OUTPUT VARIABLES</strong></p>
 <blockquote>
 <div><ul class="simple">
@@ -335,6 +370,7 @@
 <li>VORMAX: logical parameter for output of recorded maximum vorticity . T or F.</li>
 <li>MFMAX: logical parameter for output of recorded maximum momentum flux . T or F.</li>
 <li>WaveHeight: logical parameter for output of wave height, Hsig, Hrms, Havg. T or F.</li>
+<li>OUT_METEO: logical parameter for output of pressure field. T or F.</li>
 </ul>
 </div></blockquote>
 </div>

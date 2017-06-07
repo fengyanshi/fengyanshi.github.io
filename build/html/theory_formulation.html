@@ -196,7 +196,7 @@ spreading function. To avoid the computational underflow, <img class="math" src=
 <p>The model also provides an option for 1&#8211;D spectral wave generation (uni&#8211;directional).</p>
 </div>
 <div class="section" id="meteo-module">
-<h3>METEO Module<a class="headerlink" href="#meteo-module" title="Permalink to this headline">¶</a></h3>
+<h3>METEO module<a class="headerlink" href="#meteo-module" title="Permalink to this headline">¶</a></h3>
 <p>The METEO module was initially developed for simulations of meteotsnamis. It now includes subroutines for simulating the wind effects on waves, storm surges, landslide-generated tsunamis and processes related to atmospheric pressure effects.</p>
 <ul class="simple">
 <li>Wind effect on waves</li>
@@ -205,6 +205,39 @@ spreading function. To avoid the computational underflow, <img class="math" src=
 <div class="math">
 <p><img src="_images/math/eff26cb7357892588d2c2de13092de7ecbe23c6a.png" alt="{\bf R}_w = \frac{\rho_a}{\rho} C_{dw} |{\bf U}_{10} - {\bf C}| ({\bf U}_{10} - {\bf C})"/></p>
 </div><p>where <img class="math" src="_images/math/b5d177481e40e6e7e0fc9b1a5b7312e1cfb343dd.png" alt="\rho_a"/> and <img class="math" src="_images/math/9a51ab9a0b521705e1e8762fac6bdd6f11771758.png" alt="\rho"/> represent air density and  water density, respectively, <img class="math" src="_images/math/e8e91450186bb2d9cf75130efddff2f3301b676c.png" alt="\bf C"/> is wave celerity.  The wind stress is only applied on wave crests. A free parameter representing a ratio of the forced crest height to maximum surface elevation is implemented in the model.</p>
+<ul class="simple">
+<li>Holland model</li>
+</ul>
+<p>Holland model is an analytic model of wind and pressure profiles described based on Hurricanes. The pressure distribution can be expressed by</p>
+<div class="math">
+<p><img src="_images/math/70e4bd749a5a5bc0d273860f688bac825f6883f4.png" alt="p = p_c + (p_n-p_c) exp(-A/r^B)"/></p>
+</div><p>where <img class="math" src="_images/math/27d463da4622be5b3ef1d4176ced7d7a323c6425.png" alt="p"/> is the pressure at radius <img class="math" src="_images/math/eaa6ad49a7f78fe5a13b486690163bf2dc7e3e60.png" alt="r"/>, <img class="math" src="_images/math/d1371fb15b538285161239d783a977de32bb8e7f.png" alt="p_c"/> and <img class="math" src="_images/math/66b30555c6212f4bfbe96c9a9dfceb59d818aef6.png" alt="p_n"/> are the central pressure and the ambient pressure, respectively. <img class="math" src="_images/math/0043fe6507e9b1d112e07a2801e24927e267dd50.png" alt="A"/> and <img class="math" src="_images/math/9805f44feec6f81d376d09e88b8236635edbb3c8.png" alt="B"/> are scaling paramters from the model input. The velocity distribution can be described by</p>
+<div class="math">
+<p><img src="_images/math/93df018451ae84bc3af4e5da3feb95883d4791fd.png" alt="V_c = [AB(p_n-p_c)exp(-A/r^B)/\rho_a r^B]^{1/2}"/></p>
+</div><p>Based on the formulations above, it is easy to obtain the following storm parameters</p>
+<p>The radius of maximum winds (RMW) is</p>
+<div class="math">
+<p><img src="_images/math/624fc5d665f32d2a528798c79a26298dd0ae58b3.png" alt="R_w = A^{1/B}"/></p>
+</div><p>The maximum wind speed</p>
+<div class="math">
+<p><img src="_images/math/d41589af03422bf4f8762728b21a473f3697b731.png" alt="V_m = C(p_n-p_c)^{1/2}"/></p>
+</div><p>where</p>
+<div class="math">
+<p><img src="_images/math/c5ef2a7aaf34eb51f1d4ad3537bcb5f3d0e171a4.png" alt="C = (B/\rho_a e)^{1/2}"/></p>
+</div><ul class="simple">
+<li>Storm surge</li>
+</ul>
+<p>To calculate storm surges, wind stress is applied</p>
+<div class="math">
+<p><img src="_images/math/974eb958f3b7771cf298dcca1ec99c033b192a28.png" alt="{\bf R}_w = \frac{\rho_a}{\rho} C_{dw} |{\bf U}_{10}| ({\bf U}_{10})"/></p>
+</div><p>Note that <img class="math" src="_images/math/e8e91450186bb2d9cf75130efddff2f3301b676c.png" alt="\bf C"/> is not used, compared to the formula for &#8216;Wind effect on waves&#8217;.</p>
+<ul class="simple">
+<li>Landslide-generated tsunami</li>
+</ul>
+<p>Landslide-generated tsunami can be calculated using the same approach as the meteotsunami. Details will be reported by Woodruff (2017).</p>
+</div>
+<div class="section" id="post-calculations">
+<h3>Post Calculations<a class="headerlink" href="#post-calculations" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>Wave height calculation</li>
 </ul>
@@ -234,7 +267,8 @@ spreading function. To avoid the computational underflow, <img class="math" src=
 <li><a class="reference internal" href="#sponge-layer">Sponge layer</a></li>
 <li><a class="reference internal" href="#boundary-conditions">Boundary conditions</a></li>
 <li><a class="reference internal" href="#wave-maker">Wave&#8211;maker</a></li>
-<li><a class="reference internal" href="#meteo-module">METEO Module</a></li>
+<li><a class="reference internal" href="#meteo-module">METEO module</a></li>
+<li><a class="reference internal" href="#post-calculations">Post Calculations</a></li>
 </ul>
 </li>
 </ul>

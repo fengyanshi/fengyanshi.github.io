@@ -86,28 +86,6 @@ Following are descriptions of parameters in input.txt
 
  *  MASK\_FILE:  name of file for initial MASK, e.g., MASK\_FILE= /Users/results/mask_00100. A MASK\_FILE could be from a model output and the format is REAL numbers. If there is no MASK\_FILE, MASK values will be re-specified according to ETA and DEPTH.  
 
-**SPECIFICATION OF WIND EFFECT**
- 
- *  WindForce: logical parameter representing if wind effect is taken into account. T or F. Note: spatially uniform wind field is assumed in this version.   
-
- *  WIND\_FILE: file name for wind data. The following is an example of data format.
-
- wind data
-
- 100  - number of data
-
- 0.0 ,    10.0 0.0   ---  time(s), wu, wv (m/s)
-
- 2000.0,   10.0,  0.0
-
- 8000.0,  10.0,   0.0
- 
-... 
-
-
- *  Cdw: wind stress coefficient for the quadratic formula. 
-
- *  WindCrestPercent: ratio of the forced wave crest height to the maximum surface elevation. 
 
 **SPECIFICATION OF WAVEMAKER**
 
@@ -294,11 +272,84 @@ Following are descriptions of parameters in input.txt
 
  *  T\_INTV\_mean: time interval ( :math:`t_2-t_1` for calculating mean values, significant/RMS wave height (when WaveHeight = T, output parameter below). Default: LARGE.
 
+**APPLICATION OF WIND AND PRESSURE FIELD**
+
+**SPECIFICATION OF WIND EFFECT**
+
+ *  WindForce: logical parameter representing if wind effect is taken into account. T or F. 
+
+ * AirPressure: logical parameter representing if pressure effect is taken into account. T or F. 
+
+ * WindWaveInteraction: logical parameter representing if wave-wind interaction (Chen et al. 2003) based on the formula presented in 'METEO module' in INTRODUCTION section. The parameter WindCrestPercent will be used.  
+
+ *  Cdw: wind stress coefficient for the quadratic formula if WindForce = T. Default: 0.002.
+
+ *  WindCrestPercent: ratio of the forced wave crest height to the maximum surface elevation, if WindForce = T. Default: 100\% (for storm surges). 
+
+
+ * WindConstantField: logical parameter for constant wind field. T or F.
+    
+ *  WIND\_FILE: file name for the constant wind field. The following is an example of data format.
+
+ wind data
+
+ 100  - number of data
+
+ 0.0 ,    10.0 0.0   ---  time(s), wu, wv (m/s)
+
+ 2000.0,   10.0,  0.0
+
+ 8000.0,  10.0,   0.0
+ 
+... 
+
+
+ * WindHollandModel: logical parameter for Holland model. T or F. 
+
+ * STORM\_FILE: name of file contains paramters used for Holland hurricane model
+
+  A sample: 
+
+    STORM FILE (model does not read)
+
+    Sandy - storm name
+
+    time(s),     x(m), y(m),    pn(mb),   pc(mb),   A,    B (model does not read)
+
+    0.0,  800000.0, 400000.0,   1005.0, 950.0, 23.0, 1.50 - time, x,y, pn, pc, A, B
+
+    120000.0,  800000.0, 1500000.0,  1005.0, 950.0, 23.0, 1.50 
+
+
+ * SlideModel: logical parameter for landslide model. T or F.
+
+ * SLIDE\_FILE: name of file contains landslide parameters
+
+  A sample:
+   
+   slide\_file (not read by model)
+
+   Grilli - slide name
+
+   Length(m), Width(m), Alpha(m), Beta(m), P(unit) (not read by model)
+
+   0.395  0.68 1.0 1.0 0.082
+
+   Time, X(m), Y(m)  (relative to the orgin of the coordinates) (not read by model)
+
+   0.0000    2.0340    1.8500
+
+   0.0100    2.0341    1.8500
+
+   0.0200    2.0342    1.8500
+
+   0.0300    2.0345    1.8500
+
+   ...
 
 **SPECIFICATION OF OUTPUT VARIABLES**
 
- *  NumberStations: number of station for output. If NumberStations :math:`> 0`, need input i,j in STATION\_FILE
- 
+ * NumberStations: number of station for output. If NumberStations :math:`> 0`, need input i,j in STATION\_FILE
  *  DEPTH\_OUT: logical parameter for output depth. T or F. 
  *  U: logical parameter for output u. T or F. 
  *   V: logical parameter for output v. T or F. 
@@ -320,6 +371,7 @@ Following are descriptions of parameters in input.txt
  *  VORMAX: logical parameter for output of recorded maximum vorticity . T or F. 
  *  MFMAX: logical parameter for output of recorded maximum momentum flux . T or F. 
  *  WaveHeight: logical parameter for output of wave height, Hsig, Hrms, Havg. T or F.
+ *  OUT_METEO: logical parameter for output of pressure field. T or F. 
 
 *****************************
 Input for Spherical mode
