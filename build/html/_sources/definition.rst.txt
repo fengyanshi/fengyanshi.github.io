@@ -291,17 +291,17 @@ Following are descriptions of parameters in input.txt
     
  *  WIND\_FILE: file name for the constant wind field. The following is an example of data format.
 
- wind data
+  wind data
 
- 100  - number of data
+  100  - number of data
 
- 0.0 ,    10.0 0.0   ---  time(s), wu, wv (m/s)
+  0.0 ,    10.0 0.0   ---  time(s), wu, wv (m/s)
 
- 2000.0,   10.0,  0.0
+  2000.0,   10.0,  0.0
 
- 8000.0,  10.0,   0.0
+  8000.0,  10.0,   0.0
  
-... 
+  ... 
 
 
  * WindHollandModel: logical parameter for Holland model. T or F. 
