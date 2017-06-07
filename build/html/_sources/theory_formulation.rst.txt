@@ -202,7 +202,7 @@ The model also provides an option for 1--D spectral wave generation (uni--direct
 METEO Module
 ####################
 
-The METEO module was initially developed for simulations of meteotsnamis. It now includes subroutines for simulating the wind effects on waves, storm surges and processes related to atmospheric pressure effects. 
+The METEO module was initially developed for simulations of meteotsnamis. It now includes subroutines for simulating the wind effects on waves, storm surges, landslide-generated tsunamis and processes related to atmospheric pressure effects. 
 
 * Wind effect on waves
 
