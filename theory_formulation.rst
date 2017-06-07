@@ -199,10 +199,12 @@ in which y--axis is oriented along the main axis of the wave maker. :math:`D_{mn
 The model also provides an option for 1--D spectral wave generation (uni--directional). 
 
 
-Other functions
+METEO Module
 ####################
 
-* Wind effect
+The METEO module was initially developed for simulations of meteotsnamis. It now includes subroutines for simulating the wind effects on waves, storm surges and processes related to atmospheric pressure effects. 
+
+* Wind effect on waves
 
 Wind effects are modeled using the wind stress forcing proposed by Chen et al. (2004). The wind stress is expressed by
 
