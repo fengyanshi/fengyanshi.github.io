@@ -15,6 +15,7 @@ NOTE: the workshop will not have a registration fee.
    agenda
    attendees
    hotels
+   transportation
    moreinfo
 
 
