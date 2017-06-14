@@ -16,8 +16,7 @@ Day 1: Tuesday July 25th
  * 1:45-3:00 Training session #1 -- Shi, Malej, student tutor 
  * 3:00-3:30 Break
  * 3:35-5:00 Training session #2 -- Shi, Malej, student tutor 
-
-  .. note::  6:30         Group dinner at downtown Newark (location to be decided)
+ * 6:30         Group dinner at downtown Newark (location to be decided)
 
 Day 2: Wednesday July 26th
 
@@ -33,7 +32,7 @@ Day 2: Wednesday July 26th
  * 1:45-3:00 Training session #3 -- Shi, Malej, student tutor 
  * 3:00-3:30 Break
  * 3:35-5:00 Training session #4 -- Shi, Malej, student tutor 
- * Group dinner at downtown Newark (location to be decided)
+ * 6:30 Group dinner at downtown Newark (location to be decided)
 
 Day 3: Wednesday July 27th
 
@@ -50,6 +49,6 @@ Day 3: Wednesday July 27th
  * 3:00-3:30 Break
  * 3:35-5:00 Training session #6 -- Shi, Malej, student tutor 
 
-** Training Session Topics **
+**Training Session Topics**
    (update later)
 
