@@ -13,11 +13,11 @@ Day 1: Tuesday July 25th
  * 11:00-11:30 Model development and applications in Corps -- Matt Malej
  * 11:30-12:00 Short discussion
  * 12:00-1:30 Lunch
- * 1:45-3:00 Training session -- Shi, Malej, student tutor 
+ * 1:45-3:00 Training session #1 -- Shi, Malej, student tutor 
  * 3:00-3:30 Break
- * 3:35-5:00 Training session -- Shi, Malej, student tutor 
+ * 3:35-5:00 Training session #2 -- Shi, Malej, student tutor 
 
-  .. note::  6:30         Group dinner at downtown Newark 
+  .. note::  6:30         Group dinner at downtown Newark (location to be decided)
 
 Day 2: Wednesday July 26th
 
@@ -26,13 +26,14 @@ Day 2: Wednesday July 26th
  * 9:40-10:00 Numerical modeling of wave interactions with flexible vegetation -- Navid Tahvildari, 
  * 10:00-10:20 Wave model applications for flood mitigation design -- Shan Zou
  * 10:20-11:00 Break
- * 11:00-11:20 Parallel I/O in FUNWAVE-TVD -- Michael LAM
+ * 11:00-11:20 Optimization in FUNWAVE-TVD with parallel I/O -- Michael Lam
  * 11:20-11:40 FUNWAVE-TVD Benchmarks in HR Wallingford -- Nigel Tozer
  * 11:40-12:00 Short discussion
  * 12:00-1:30 Lunch
- * 1:45-3:00 Training session -- Shi, Malej, student tutor 
+ * 1:45-3:00 Training session #3 -- Shi, Malej, student tutor 
  * 3:00-3:30 Break
- * 3:35-5:00 Training session -- Shi, Malej, student tutor 
+ * 3:35-5:00 Training session #4 -- Shi, Malej, student tutor 
+ * Group dinner at downtown Newark (location to be decided)
 
 Day 3: Wednesday July 27th
 
@@ -43,8 +44,12 @@ Day 3: Wednesday July 27th
  * 10:20-11:00 Break
  * 11:00-11:20 Alex Sinclair
  * 11:20-11:40 Earthquake-induced Tsunami Risk in the Cascadia Subduction Zone -- Rozita Jalali Farahani
- * 11:20-12:00 Discussion
- * 12:00-1:30 Lunch
- * 1:45-3:00 Training session -- Shi, Malej, student tutor 
+ * 11:20-12:20 Round Table Discussion on the Future Model Development Efforts and Enhancements
+ * 12:20-1:30 Lunch
+ * 1:45-3:00 Training session #5 -- Shi, Malej, student tutor 
  * 3:00-3:30 Break
- * 3:35-5:00 Training session -- Shi, Malej, student tutor 
+ * 3:35-5:00 Training session #6 -- Shi, Malej, student tutor 
+
+** Training Session Topics **
+   (update later)
+
