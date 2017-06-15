@@ -11,7 +11,7 @@ HOTELS
 
  Check-in: 24-JUL-2017
 
- Check-out: 26-JUL-2017
+ Check-out: 26-JUL-2017 (you can also check out on 27th with the same rate)
 
  Hotel Name: Embassy Suites by Hilton Newark Wilmington South
 
