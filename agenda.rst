@@ -34,14 +34,14 @@ Day 2: Wednesday July 26th
  * 3:35-5:00 Training session #4 -- Shi, Malej, student tutor 
  * 6:30 Group dinner at downtown Newark (location to be decided)
 
-Day 3: Wednesday July 27th
+Day 3: Thursday July 27th
 
  * 9:00-9:20 Introduction to a nonhydrostatic wave model -- NHWAVE, Kirby/Shi 
  * 9:20-9:40  Coupling between FUNWAVE-TVD and NHWAVE in Tsunami applications -- Stephan Grilli
  * 9:40-10:00 Sediment transport module in FUNWAVE-TVD -- Jim Kirby
  * 10:00 - 10:20 Boussinesq Model applied to Harbour agitation and Resonance, for laboratory and field data -- Gabriel Díaz-Hernández
  * 10:20-11:00 Break
- * 11:00-11:20 Alex Sinclair
+ * 11:00-11:20 will be rescheduled
  * 11:20-11:40 Earthquake-induced Tsunami Risk in the Cascadia Subduction Zone -- Rozita Jalali Farahani
  * 11:20-12:20 Round Table Discussion on the Future Model Development Efforts and Enhancements
  * 12:20-1:30 Lunch
