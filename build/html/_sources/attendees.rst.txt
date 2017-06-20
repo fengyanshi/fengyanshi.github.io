@@ -5,7 +5,7 @@ ATTENDEES
 * Timothy Callappi (Army Corps of Eng - Detroit)
 * Qin J Chen (LSU, qchen@lsu.edu)
 * Drew Condon (Army Corps of Eng - Jacksonville)
-* Gavriel Diaz-Hernandez (UNICAN)   
+* Gabriel Diaz-Hernandez (UNICAN-IHCantabria)   
 * Celso Ferreira (GMU)
 * Stephan Grilli (URI)
 * A student of Stephan Grilli (URI)
