@@ -19,7 +19,6 @@ ATTENDEES
 * Wenwen Li (AECOM)   
 * Matt Malej (CHL - USACE)    
 * Rachel Malburg (Army Corps of Eng - Detroit)
-* Gabriela Salgado (CHL, gabriela.salgado@upr.edu)
 * Fatima Nemati (URI)
 * Fernando Salazar Monroy (UNAM)  
 * Gabriela Salgado-Dominguez (CHL - USACE)
