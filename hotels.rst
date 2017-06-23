@@ -25,7 +25,7 @@ HOTELS
 
 `BAYMONT INN AND SUITES NEWARK (0.0 miles from Embassy Suites) <https://www.wyndhamhotels.com/baymont/newark-delaware/baymont-inn-and-suites-newark-at-university-of-delaware/overview>`_
 
-`HOMEWOOD SUITES NEWORK (0.0 miles from Embassy Suites) <http://homewoodsuites3.hilton.com/en/hotels/delaware/homewood-suites-by-hilton-newark-wilmington-south-area-NEWHWHW/index.html>`_
+`HOMEWOOD SUITES NEWARK (0.0 miles from Embassy Suites) <http://homewoodsuites3.hilton.com/en/hotels/delaware/homewood-suites-by-hilton-newark-wilmington-south-area-NEWHWHW/index.html>`_
 
 `RED ROOF INN AND SUITES NEWARK (0.6 miles from Embassy Suites) <https://www.redroof.com/property/DE/Newark/RRI812>`_
 
