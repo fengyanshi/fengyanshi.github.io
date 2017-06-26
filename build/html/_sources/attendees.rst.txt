@@ -14,6 +14,7 @@ ATTENDEES
 * Rozita Jalali Farahani(Risk Management Solutions)   
 * Rozita Kian (TAMU)
 * Michael Lam (CHL)   
+* Jonghyun Harry Lee (Stanford Univ.)
 * Kelly Legault (Army Corps of Eng - Jacksoville)
 * Arslaan Khalid(GMU)
 * Wenwen Li (AECOM)   
