@@ -31,7 +31,7 @@ ATTENDEES
 * Nigel Tozer (HR Wallingford)   
 * Panagiotis Vasarmidis (UGent) 
 * Gregory Westcott (URI)  
-* India Woodruff
+* India Woodruff (UDel)
 * Long Xu (Woods Hole Group) 
 * Yilang Xu (Stanford Univ.)  
 * Shouxian Zhu (Hohai U.)   
