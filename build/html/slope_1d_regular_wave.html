@@ -48,26 +48,89 @@
 <div class="align-center figure">
 <a class="reference internal image-reference" href="_images/eta_1d_reg.jpg"><img alt="alternate text" src="_images/eta_1d_reg.jpg" style="width: 600px; height: 300px;" /></a>
 </div>
-<ul class="simple">
-<li>Add wavemaker</li>
-</ul>
-<blockquote>
-<div><p>WAVEMAKER = WK_REG</p>
-<p>DEP_WK = 10.0</p>
-<p>Xc_WK = 250.0</p>
-<p>Yc_WK = 0.0</p>
-<p>Tperiod = 12.0</p>
-<p>AMP_WK = 0.5</p>
-<p>Delta_WK = 3.0  ! the default is 0.5, set a larger number for nonlinear waves</p>
-</div></blockquote>
-<ul class="simple">
-<li>Add sponge layer</li>
-</ul>
-<blockquote>
-<div><p>FRICTION_SPONGE = T</p>
-<p>DIRECT_SPONGE = T</p>
-<p>Sponge_west_width =  180.0</p>
-</div></blockquote>
+<div class="line-block">
+<div class="line"><strong>Parallel (if applicable)</strong></div>
+<div class="line-block">
+<div class="line">PX = 2</div>
+<div class="line">PY = 1</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Depth</strong></div>
+<div class="line-block">
+<div class="line">DEPTH_TYPE = SLOPE</div>
+<div class="line">DEPTH_FLAT = 10.0</div>
+<div class="line">SLP = 0.05</div>
+<div class="line">Xslp = 800.0</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Dimensions</strong></div>
+<div class="line-block">
+<div class="line">Mglob = 1024</div>
+<div class="line">Nglob = 3</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Time</strong></div>
+<div class="line-block">
+<div class="line">TOTAL_TIME = 200.0</div>
+<div class="line">PLOT_INTV = 10.0</div>
+<div class="line">SCREEN_INTV = 10.0</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Grid sizes</strong></div>
+<div class="line-block">
+<div class="line">DX = 1.0</div>
+<div class="line">DY = 1.0</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Add wavemaker</strong></div>
+<div class="line-block">
+<div class="line">WAVEMAKER = WK_REG</div>
+<div class="line">DEP_WK = 10.0</div>
+<div class="line">Xc_WK = 250.0</div>
+<div class="line">Yc_WK = 0.0</div>
+<div class="line">Tperiod = 12.0</div>
+<div class="line">AMP_WK = 0.5</div>
+<div class="line">Delta_WK = 3.0  ! the default is 0.5, set a larger number for nonlinear waves</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Add sponge layer</strong></div>
+<div class="line-block">
+<div class="line">FRICTION_SPONGE = T</div>
+<div class="line">DIRECT_SPONGE = T</div>
+<div class="line">Sponge_west_width =  180.0</div>
+<div class="line">Sponge_east_width =  0.0</div>
+<div class="line">Sponge_south_width = 0.0</div>
+<div class="line">Sponge_north_width = 0.0</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Breaking scheme (default: SWE breaker)</strong></div>
+<div class="line-block">
+<div class="line">VISCOSITY_BREAKING = T</div>
+<div class="line">Cbrk1 = 0.65</div>
+<div class="line">Cbrk2 = 0.35</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Wetting and Drying</strong></div>
+<div class="line-block">
+<div class="line">MinDepth=0.01</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Output</strong></div>
+<div class="line-block">
+<div class="line">RESULT_FOLDER = output/</div>
+<div class="line">ETA = T</div>
+<div class="line">MASK = T</div>
+</div>
+</div>
 </div>
 
 

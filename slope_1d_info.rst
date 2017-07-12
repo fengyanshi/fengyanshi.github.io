@@ -4,10 +4,10 @@ Basics for model setup
 
 * computational domain
 
-.. figure:: images/simple_cases/eta_1d_reg.jpg
+.. figure:: images/simple_cases/layout_1dbeach.jpg
     :width: 600px
     :align: center
-    :height: 300px
+    :height: 275px
     :alt: alternate text
     :figclass: align-center
 

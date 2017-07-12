@@ -10,6 +10,7 @@ Simple tests
    :maxdepth: 2
 
    slope
+   beach_2d
    inlet_shoal
    tohoku
    vessel

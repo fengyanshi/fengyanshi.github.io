@@ -8,21 +8,52 @@ Solitary wave
     :alt: alternate text
     :figclass: align-center
 
-* Add wavemaker
+|  **Parallel (if applicable)**
+|   PX = 2
+|   PY = 1
 
- WAVEMAKER = INI_SOLITARY
+|  **Depth**
+|   DEPTH_TYPE = SLOPE
+|   DEPTH_FLAT = 10.0
+|   SLP = 0.05
+|   Xslp = 800.0
 
- AMP = 1.0
+|  **Dimensions**
+|   Mglob = 1024
+|   Nglob = 3
 
- DEP = 10.0 
+|  **Time**
+|   TOTAL_TIME = 200.0 
+|   PLOT_INTV = 10.0 
+|   SCREEN_INTV = 10.0 
 
- XWAVEMAKER = 300.0 
+|  **Grid sizes**
+|   DX = 1.0 
+|   DY = 1.0 
 
-* Add sponge layer
+|  **Add wavemaker**
+|   WAVEMAKER = INI_SOLITARY
+|   AMP = 1.0
+|   DEP = 10.0 
+|   XWAVEMAKER = 300.0 
 
- FRICTION_SPONGE = T 
+|  **Add sponge layer**
+|   FRICTION_SPONGE = T 
+|   DIRECT_SPONGE = T 
+|   Sponge_west_width =  180.0 
+|   Sponge_east_width =  0.0 
+|   Sponge_south_width = 0.0 
+|   Sponge_north_width = 0.0 
 
- DIRECT_SPONGE = T 
+|  **Breaking scheme (default: SWE breaker)**
+|   VISCOSITY_BREAKING = T  
+|   Cbrk1 = 0.65 
+|   Cbrk2 = 0.35 
 
- Sponge_west_width =  180.0 
+|  **Wetting and Drying**
+|   MinDepth=0.01 
 
+|  **Output**
+|   RESULT_FOLDER = output/
+|   ETA = T 
+|   MASK = T 

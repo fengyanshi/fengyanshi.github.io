@@ -2,7 +2,7 @@ ATTENDEES
 =============
 
 * Mahsa Arabi (Stony Brook)   
-* Timothy Callappi (Army Corps of Eng - Detroit)
+* Katherine Labuhn (Army Corps of Eng - Detroit)
 * Qin J Chen (LSU, qchen@lsu.edu)
 * Drew Condon (Army Corps of Eng - Jacksonville)
 * Gabriel Diaz-Hernandez (UNICAN-IHCantabria)   

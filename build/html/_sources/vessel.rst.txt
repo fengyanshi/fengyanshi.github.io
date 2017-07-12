@@ -11,8 +11,8 @@ Ship-wakes
 .. toctree::
    :maxdepth: 2
 
-   vessel_info
-   single_vessel_circular_basin
+   vessel_flat_bottom
+   vessel_circular_basin
 
 
 

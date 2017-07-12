@@ -26,8 +26,8 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Inlet + Sandbar + Beach" href="inlet_shoal.html" />
-    <link rel="prev" title="Basics for model setup" href="slope_1d_info.html" />
+    <link rel="next" title="Solitary wave" href="slope_1d_solitary.html" />
+    <link rel="prev" title="Regular wave" href="slope_1d_regular_wave.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -48,27 +48,90 @@
 <div class="align-center figure">
 <a class="reference internal image-reference" href="_images/eta_1d_irr.jpg"><img alt="alternate text" src="_images/eta_1d_irr.jpg" style="width: 500px; height: 300px;" /></a>
 </div>
-<ul class="simple">
-<li>Add wavemaker</li>
-</ul>
-<blockquote>
-<div><p>WAVEMAKER = JON_1D</p>
-<p>DEP_WK = 10.0</p>
-<p>Xc_WK = 250.0</p>
-<p>Yc_WK = 0.0</p>
-<p>FreqPeak = 0.0667</p>
-<p>FreqMin = 0.03</p>
-<p>FreqMax = 0.3</p>
-<p>Hmo = 1.0</p>
-</div></blockquote>
-<ul class="simple">
-<li>Add sponge layer</li>
-</ul>
-<blockquote>
-<div><p>FRICTION_SPONGE = T</p>
-<p>DIRECT_SPONGE = T</p>
-<p>Sponge_west_width =  180.0</p>
-</div></blockquote>
+<div class="line-block">
+<div class="line"><strong>Parallel (if applicable)</strong></div>
+<div class="line-block">
+<div class="line">PX = 2</div>
+<div class="line">PY = 1</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Depth</strong></div>
+<div class="line-block">
+<div class="line">DEPTH_TYPE = SLOPE</div>
+<div class="line">DEPTH_FLAT = 10.0</div>
+<div class="line">SLP = 0.05</div>
+<div class="line">Xslp = 800.0</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Dimensions</strong></div>
+<div class="line-block">
+<div class="line">Mglob = 1024</div>
+<div class="line">Nglob = 3</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Time</strong></div>
+<div class="line-block">
+<div class="line">TOTAL_TIME = 200.0</div>
+<div class="line">PLOT_INTV = 10.0</div>
+<div class="line">SCREEN_INTV = 10.0</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Grid sizes</strong></div>
+<div class="line-block">
+<div class="line">DX = 1.0</div>
+<div class="line">DY = 1.0</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Add wavemaker</strong></div>
+<div class="line-block">
+<div class="line">WAVEMAKER = JON_1D</div>
+<div class="line">DEP_WK = 10.0</div>
+<div class="line">Xc_WK = 250.0</div>
+<div class="line">Yc_WK = 0.0</div>
+<div class="line">FreqPeak = 0.0667</div>
+<div class="line">FreqMin = 0.03</div>
+<div class="line">FreqMax = 0.3</div>
+<div class="line">Hmo = 1.0</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Add sponge layer</strong></div>
+<div class="line-block">
+<div class="line">FRICTION_SPONGE = T</div>
+<div class="line">DIRECT_SPONGE = T</div>
+<div class="line">Sponge_west_width =  180.0</div>
+<div class="line">Sponge_east_width =  0.0</div>
+<div class="line">Sponge_south_width = 0.0</div>
+<div class="line">Sponge_north_width = 0.0</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Breaking scheme (default: SWE breaker)</strong></div>
+<div class="line-block">
+<div class="line">VISCOSITY_BREAKING = T</div>
+<div class="line">Cbrk1 = 0.65</div>
+<div class="line">Cbrk2 = 0.35</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Wetting and Drying</strong></div>
+<div class="line-block">
+<div class="line">MinDepth=0.01</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Output</strong></div>
+<div class="line-block">
+<div class="line">RESULT_FOLDER = output/</div>
+<div class="line">ETA = T</div>
+<div class="line">MASK = T</div>
+</div>
+</div>
 </div>
 
 
@@ -82,8 +145,8 @@
   <li><a href="index.html">Documentation overview</a><ul>
   <li><a href="examples.html"><strong>EXAMPLES</strong></a><ul>
   <li><a href="slope.html">Waves on 1D Slope</a><ul>
-      <li>Previous: <a href="slope_1d_info.html" title="previous chapter">Basics for model setup</a></li>
-      <li>Next: <a href="inlet_shoal.html" title="next chapter">Inlet + Sandbar + Beach</a></li>
+      <li>Previous: <a href="slope_1d_regular_wave.html" title="previous chapter">Regular wave</a></li>
+      <li>Next: <a href="slope_1d_solitary.html" title="next chapter">Solitary wave</a></li>
   </ul></li>
   </ul></li>
   </ul></li>
