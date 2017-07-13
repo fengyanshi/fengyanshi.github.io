@@ -8,7 +8,6 @@ Compile the code for 2D beach case
 
 |  FLAGS
 |            FLAG_1 = -DDOUBLE_PRECISION
-|            FLAG_3 = -DSAMPLES
 |            FLAG_4 = -DCARTESIAN 
 |   if parallel add
 |            FLAG_2 = -DPARALLEL

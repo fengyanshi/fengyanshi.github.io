@@ -8,7 +8,6 @@ Compile the code for spherical case
 
 |  FLAGS
 |            FLAG_1 = -DDOUBLE_PRECISION
-|            FLAG_3 = -DSAMPLES
 |   if parallel add
 |            FLAG_2 = -DPARALLEL
 |   if intel compiler add

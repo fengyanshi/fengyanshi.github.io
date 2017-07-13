@@ -8,7 +8,6 @@ Compile the code for shipwake case
 
 |  FLAGS
 |            FLAG_1 = -DDOUBLE_PRECISION
-|            FLAG_3 = -DSAMPLES
 |            FLAG_4 = -DCARTESIAN 
 |            FLAG_12 = -DVESSEL
 |   if parallel add
