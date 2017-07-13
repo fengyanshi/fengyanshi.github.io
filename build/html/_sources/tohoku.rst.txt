@@ -12,5 +12,6 @@ Tohoku Tsunami
 .. toctree::
    :maxdepth: 2
 
+   tohoku_compile
    tohoku_info
    tohoku_low_resolution

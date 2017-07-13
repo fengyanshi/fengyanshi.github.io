@@ -27,7 +27,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Irregular wave" href="inlet_shoal_irregular_wave.html" />
-    <link rel="prev" title="Regular wave" href="inlet_shoal_regular_wave.html" />
+    <link rel="prev" title="Regular wave (baseline case)" href="inlet_shoal_regular_wave.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -48,23 +48,27 @@
 <div class="align-center figure">
 <a class="reference internal image-reference" href="_images/eta_inlet_shoal_reg_30deg.jpg"><img alt="alternate text" src="_images/eta_inlet_shoal_reg_30deg.jpg" style="width: 500px; height: 300px;" /></a>
 </div>
-<ul class="simple">
-<li>Add wavemaker</li>
-</ul>
+<p><strong>input.txt is the same as the baseline case (regular wave) except:</strong></p>
 <blockquote>
-<div><p>WAVEMAKER = WK_REG</p>
-<p>DEP_WK = 10.0</p>
-<p>Xc_WK = 250.0</p>
-<p>Yc_WK = 0.0</p>
-<p>Tperiod = 12.0</p>
-<p>AMP_WK = 1.0</p>
-<p>Theta_WK = 0.0</p>
-</div></blockquote>
-<ul class="simple">
-<li>Add periodic boundary condition</li>
-</ul>
-<blockquote>
-<div>PERIODIC = T</div></blockquote>
+<div><a class="reference external" href="inlet_shoal_regular_wave.html">(Baseline case)</a></div></blockquote>
+<div class="line-block">
+<div class="line"><strong>Wavemaker</strong></div>
+<div class="line-block">
+<div class="line">WAVEMAKER = WK_REG</div>
+<div class="line">DEP_WK = 10.0</div>
+<div class="line">Xc_WK = 250.0</div>
+<div class="line">Yc_WK = 0.0</div>
+<div class="line">Tperiod = 12.0</div>
+<div class="line">AMP_WK = 1.0</div>
+<div class="line"><em>Theta_WK = 30.0</em></div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Add periodic boundary condition</strong></div>
+<div class="line-block">
+<div class="line">PERIODIC = T</div>
+</div>
+</div>
 </div>
 
 
@@ -78,7 +82,7 @@
   <li><a href="index.html">Documentation overview</a><ul>
   <li><a href="examples.html"><strong>EXAMPLES</strong></a><ul>
   <li><a href="inlet_shoal.html">Inlet + Sandbar + Beach</a><ul>
-      <li>Previous: <a href="inlet_shoal_regular_wave.html" title="previous chapter">Regular wave</a></li>
+      <li>Previous: <a href="inlet_shoal_regular_wave.html" title="previous chapter">Regular wave (baseline case)</a></li>
       <li>Next: <a href="inlet_shoal_irregular_wave.html" title="next chapter">Irregular wave</a></li>
   </ul></li>
   </ul></li>

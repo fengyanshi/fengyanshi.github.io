@@ -11,6 +11,7 @@ Waves on 1D Slope
 .. toctree::
    :maxdepth: 2
 
+   slope_1d_compile
    slope_1d_info
    slope_1d_regular_wave
    slope_1d_jonswap

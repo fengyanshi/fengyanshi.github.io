@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Regular wave &#8212; funwave  documentation</title>
+    <title>Regular wave (baseline case) &#8212; funwave  documentation</title>
     
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -43,23 +43,109 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="regular-wave">
-<h1>Regular wave<a class="headerlink" href="#regular-wave" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="regular-wave-baseline-case">
+<h1>Regular wave (baseline case)<a class="headerlink" href="#regular-wave-baseline-case" title="Permalink to this headline">¶</a></h1>
 <div class="align-center figure">
 <a class="reference internal image-reference" href="_images/eta_inlet_shoal_reg.jpg"><img alt="alternate text" src="_images/eta_inlet_shoal_reg.jpg" style="width: 500px; height: 300px;" /></a>
 </div>
-<ul class="simple">
-<li>Add wavemaker</li>
-</ul>
-<blockquote>
-<div><p>WAVEMAKER = WK_REG</p>
-<p>DEP_WK = 10.0</p>
-<p>Xc_WK = 250.0</p>
-<p>Yc_WK = 0.0</p>
-<p>Tperiod = 12.0</p>
-<p>AMP_WK = 1.0</p>
-<p>Theta_WK = 0.0</p>
-</div></blockquote>
+<p><strong>input.txt:</strong></p>
+<div class="line-block">
+<div class="line"><strong>Parallel(if applicable)</strong></div>
+<div class="line-block">
+<div class="line">PX = 8</div>
+<div class="line">PY = 16</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Depth</strong></div>
+<div class="line-block">
+<div class="line">DEPTH_TYPE = DATA</div>
+<div class="line">DEPTH_FILE = ../bathy/dep_shoal_inlet.txt</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Output folder</strong></div>
+<div class="line-block">
+<div class="line">RESULT_FOLDER = output/</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Dimensions</strong></div>
+<div class="line-block">
+<div class="line">Mglob = 512</div>
+<div class="line">Nglob = 1024</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Time</strong></div>
+<div class="line-block">
+<div class="line">TOTAL_TIME = 1200.0</div>
+<div class="line">PLOT_INTV = 30.0</div>
+<div class="line">PLOT_INTV_STATION = 0.5</div>
+<div class="line">SCREEN_INTV = 30.0</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Grid sizes</strong></div>
+<div class="line-block">
+<div class="line">DX = 2.0</div>
+<div class="line">DY = 2.0</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Wavemaker</strong></div>
+<div class="line-block">
+<div class="line">WAVEMAKER = WK_REG</div>
+<div class="line">DEP_WK = 10.0</div>
+<div class="line">Xc_WK = 250.0</div>
+<div class="line">Yc_WK = 0.0</div>
+<div class="line">Tperiod = 12.0</div>
+<div class="line">AMP_WK = 1.0</div>
+<div class="line">Theta_WK = 0.0</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Sponge layer</strong></div>
+<div class="line-block">
+<div class="line">FRICTION_SPONGE = T</div>
+<div class="line">DIRECT_SPONGE = T</div>
+<div class="line">Csp = 0.0</div>
+<div class="line">CDsponge = 1.0</div>
+<div class="line">Sponge_west_width =  180.0</div>
+<div class="line">Sponge_east_width =  0.0</div>
+<div class="line">Sponge_south_width = 0.0</div>
+<div class="line">Sponge_north_width = 0.0</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Wetting and drying</strong></div>
+<div class="line-block">
+<div class="line">MinDepth=0.01</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Breaking scheme</strong></div>
+<div class="line-block">
+<div class="line">VISCOSITY_BREAKING = T</div>
+<div class="line">Cbrk1 = 0.65</div>
+<div class="line">Cbrk2 = 0.35</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Wave averaging property</strong></div>
+<div class="line-block">
+<div class="line">T_INTV_mean = 240.0</div>
+<div class="line">STEADY_TIME=480.0</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Output</strong></div>
+<div class="line-block">
+<div class="line">ETA = T</div>
+<div class="line">MASK = T</div>
+<div class="line">WaveHeight = T</div>
+</div>
+</div>
 </div>
 
 

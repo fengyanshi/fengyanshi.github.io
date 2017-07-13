@@ -8,23 +8,19 @@ Regular wave 30 deg oblique incidence
     :alt: alternate text
     :figclass: align-center
 
-* Add wavemaker
+**input.txt is the same as the baseline case (regular wave) except:**
 
- WAVEMAKER = WK_REG
+  `(Baseline case) <inlet_shoal_regular_wave.html>`_
 
- DEP_WK = 10.0 
+|  **Wavemaker** 
+|   WAVEMAKER = WK_REG
+|   DEP_WK = 10.0 
+|   Xc_WK = 250.0 
+|   Yc_WK = 0.0 
+|   Tperiod = 12.0 
+|   AMP_WK = 1.0 
+|   *Theta_WK = 30.0*
 
- Xc_WK = 250.0 
-
- Yc_WK = 0.0 
-
- Tperiod = 12.0 
-
- AMP_WK = 1.0 
-
- Theta_WK = 0.0 
-
-* Add periodic boundary condition
-
- PERIODIC = T
+|  **Add periodic boundary condition**
+|   PERIODIC = T
 

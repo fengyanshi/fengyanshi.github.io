@@ -11,6 +11,7 @@ Inlet + Sandbar + Beach
 .. toctree::
    :maxdepth: 2
 
+   inlet_shoal_compile
    inlet_shoal_info
    inlet_shoal_regular_wave
    inlet_shoal_regular_wave_30deg

@@ -11,6 +11,7 @@
 .. toctree::
    :maxdepth: 2
 
+   beach_2d_compile
    beach_2d_info
    beach_2d_regular_wave_30deg
    beach_2d_irregular_wave_30deg
