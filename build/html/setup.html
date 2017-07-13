@@ -54,11 +54,13 @@
 <div class="section" id="download-simple-examples">
 <h2>Download simple examples<a class="headerlink" href="#download-simple-examples" title="Permalink to this headline">¶</a></h2>
 <p>Simple examples are included in the package of Version 3.1 or higher (<a class="reference external" href="https://github.com/fengyanshi/FUNWAVE-TVD">click here to download from GitHub</a>) . They are located in the directory /simple_cases/.
-The simple examples serve as baseline cases for testing your system. You can also choose a simple case similar to your modeling scenario to set up your case. The following simple cases available.</p>
+The simple examples serve as baseline cases for testing your system. You can also choose a simple case similar to your modeling scenario to set up your case. The following simple cases available. The simple examples are also used during the FUNWAVE training workshop.</p>
 <ul class="simple">
 <li><a class="reference external" href="slope.html">Waves on 1D slope</a></li>
+<li><a class="reference external" href="beach_2d.html">Waves on 2D beach</a></li>
 <li><a class="reference external" href="inlet_shoal.html">Surface waves at an inlet-beach-shoal system</a></li>
-<li>Japanese Tohoku tsunami (Ocean-basin scale)</li>
+<li><a class="reference external" href="tohoku.html">Japanese Tohoku tsunami (Ocean-basin scale)</a></li>
+<li><a class="reference external" href="vessel.html">ship-wakes</a></li>
 </ul>
 </div>
 <div class="section" id="download-benchmark-tests">
@@ -74,7 +76,6 @@ The simple examples serve as baseline cases for testing your system. You can als
 <ul class="simple">
 <li>&#8211;DDOUBLE_PRECISION: use double precision, default is single precision.</li>
 <li>&#8211;DPARALLEL: use parallel mode, default is serial mode.</li>
-<li>&#8211;DSAMPLES: include all samples, default is no sample included.</li>
 <li>&#8211;DCARTESIAN: Cartesian version, otherwise Spherical version</li>
 <li>&#8211;DINTEL: if INTEL compiler is used, this option can make use of FPORT for the RAND() function</li>
 <li>&#8211;DCRAY: for CRAY RAND() and system commands</li>
@@ -89,7 +90,7 @@ The simple examples serve as baseline cases for testing your system. You can als
 <p>in command line type</p>
 <p>&gt; make clean</p>
 <p>&gt; make</p>
-<p>The executable file such as &#8216;funwave&#8217; or &#8216;mytvd&#8217; (specified in <em>Makefile</em>) will be generated.   Note: always use &#8216;make clean&#8217; after modifying Makefile.</p>
+<p>The executable file such as &#8216;funwave&#8217; or &#8216;mytvd&#8217; (specified in <em>Makefile</em>) will be generated.   <strong>Note: always use &#8216;make clean&#8217; after modifying Makefile</strong>.</p>
 <ol class="arabic simple" start="4">
 <li>run the model</li>
 </ol>
