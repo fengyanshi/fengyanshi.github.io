@@ -47,5 +47,49 @@ Day 3: Thursday July 27th
  * 3:30--5:00 Training session #6 -- Shi, Malej
 
 **Training Session Topics**
-   (update later)
+   
+**TUESDAY:** Training Session #1 (Hands-on afternoon sessions) [Lead: Matt Malej]
+ * FUNWAVE-TVD and Parallel Computing (MPI) - Documentation Wiki 
+ * Latest version (3.1) - current capabilities and those in development 
+ * Where do I get the code? - Version Control (Github)
+ * Sandbox for USACE and DoD member with GUI
+ * How to build (compile/link) and install FUNWAVE-TVD on different machines for parallel computation?
+ 
+**TUESDAY:** Training Session #2 [Lead: Matt Malej]
+ * How to run FUNWAVE-TVD? Navigating the basic sections within the INPUT file for different simulations (numerics, physics, input, output, etc.).
+ * Setting up (Linux/Mac OS X and HPC machines with PBS scheduler), running, and post-processing your first FUNWAVE-TVD simulation (1D beach runup or levee overtopping with shoaling and wetting/drying).
+ * PROGRESSION (for those participants needed additional challenge) - use the levee bathymetry to simulate a regular monochromatic wave overtopping the levee
+ 
+ 
+**WEDNESDAY:** Training Session #3 [Lead: Fengyan Shi, Assist: Matt Malej]
+ * 2D plane beach case with various wave conditions (different wavemakers)
+  
+   1)monochromatic waves 
+
+   2)Irregular waves
+ * PROGRESSION (for those participants needed additional challenge) - Analysis of wave-averaged properties. 
+ 
+ 
+**WEDNESDAY:** Training Session #4 [Lead: Fengyan Shi, Assist: Matt Malej]
+ * Wave simulation on 2D random bathymetry with complex shoreline geometries
+  
+   1)Inlet problem (to include post-processing analysis of Harbor Resonance)
+
+   2)Obstacles and Breakwaters (partially absorbing and reflecting inner boundaries) 
+ * PROGRESSION (for those participants needed additional challenge) - Set up your own surface wave case
+ 
+**THURSDAY:** Training Session #5 [Lead: Fengyan Shi, Assist: Matt Malej]
+ * Ship-wakes
+
+   1)Setup with multiple vessels (paths, size, velocities)
+
+   2)A vessel moving on random bathymetry 
+ 
+ * PROGRESSION (for those participants needed additional challenge) - Try the case of the circular island and set up a different path. 
+ 
+**THURSDAY:** Training Session #6 [Lead: Fatima Nemati, Assist: Fengyan Shi]
+ * Tsunami simulation
+ * Tsunami simulation using the spherical coordinates
+ * Tsunami sources
+
 
