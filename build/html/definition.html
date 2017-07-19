@@ -139,46 +139,127 @@
 </div></blockquote>
 <p><strong>SPECIFICATION OF WAVEMAKER</strong></p>
 <blockquote>
-<div><ul class="simple">
-<li>WAVEMAKER: wavemaker type.</li>
-<li>WAVEMAKER = INI_REC: initial rectangular hump, need  Xc,Yc and WID</li>
-<li>WAVEMAKER = LEF_SOL: left boundary solitary, need AMP,DEP, and LAGTIME</li>
-<li>WAVEMAKER = INI_SOL: initial solitary wave propagate in +y direction, WKN B solution, need AMP, DEP, and XWAVEMAKER</li>
-<li>WAVEMAKER = INI_OTH:  other initial distribution specified in the code by users</li>
-<li>WAVEMAKER = WK_REG: Wei and Kirby 1999 internal wave maker, need Xc_WK, Yc_WK, Tperiod, AMP_WK, DEP_WK, Theta_WK, and Time_ramp (factor of period)</li>
-<li>WAVEMAKER = WK_IRR:  Wei and Kirby 1999 TMA spectrum wavemaker, need Xc_WK, Yc_WK, Ywidth_WK, DEP_WK, Time_ramp, Delta_WK,  FreqPeak, FreqMin,FreqMax, Hmo, GammaTMA(default: 3.3 ), ThetaPeak (default: 0.0), Nfreq(default: 45), Ntheta(default: 24)</li>
+<div><ul>
+<li><p class="first">WAVEMAKER: wavemaker type.</p>
+</li>
 <li><dl class="first docutils">
-<dt>WAVEMAKER = JON_2D:  JONSWAP spectrum wavemaker, need Xc_WK, Yc_WK, Ywidth_WK,</dt>
-<dd><dl class="first last docutils">
-<dt>DEP_WK, Time_ramp, Delta_WK,  FreqPeak, FreqMin,FreqMax,</dt>
-<dd>Hmo, GammaTMA(default: 3.3 ), ThetaPeak (default: 0.0),Nfreq(default: 45), Ntheta(default: 24)</dd>
-</dl>
+<dt>WAVEMAKER = INI_REC: initial rectangular hump</dt>
+<dd><p class="first last">need Xc,Yc and WID</p>
 </dd>
 </dl>
 </li>
 <li><dl class="first docutils">
-<dt>WAVEMAKER = JON_1D:  JONSWAP 1D spectrum wavemaker, need Xc_WK, Yc_WK, Ywidth_WK,</dt>
-<dd><dl class="first last docutils">
-<dt>DEP_WK, Time_ramp, Delta_WK,  FreqPeak, FreqMin,FreqMax,</dt>
-<dd>Hmo, GammaTMA(default: 3.3 ), Nfreq(default: 45)</dd>
-</dl>
+<dt>WAVEMAKER = LEF_SOL: left boundary solitary</dt>
+<dd><p class="first last">need AMP,DEP, and LAGTIME</p>
 </dd>
 </dl>
 </li>
 <li><dl class="first docutils">
-<dt>WAVEMAKER = TMA_1D:  TMA 1D spectrum wavemaker, need Xc_WK, Yc_WK, Ywidth_WK,</dt>
-<dd><dl class="first last docutils">
-<dt>DEP_WK, Time_ramp, Delta_WK,  FreqPeak, FreqMin,FreqMax,</dt>
-<dd>Hmo, GammaTMA(Note, still use TMA Gamma, default: 3.3 ), Nfreq(default: 45)</dd>
-</dl>
+<dt>WAVEMAKER = INI_SOL: initial solitary wave propagate in +y direction, WKN B solution</dt>
+<dd><p class="first last">need AMP, DEP, and XWAVEMAKER</p>
 </dd>
 </dl>
 </li>
-<li>WAVEMAKER = WK_TIME_SERIES: {em fft  a time series to get each wave component and then use Wei and Kirby&#8217;s ( 1999) wavemaker.  The wave angle is zero (x direction) for all wave components. Need input WaveCompFile (including 3 columns: per,amp,pha) and NumWaveComp,PeakPeriod,DEP_WK, Xc_WK,Ywidth_WK</li>
-<li>WAVEMAKER = WAVE_DATA:  2D directional spectrum data specified in WaveCompFile. Need Xc_WK, Yc_WK, DEP_WK, Delta_WK. See WaveCompFile for file format.</li>
-<li>WAVEMAKER = GAUSIAN: initial Gausian hump, need AMP, Xc, Yc, and WID.</li>
-<li>WaveCompFile: Wave component file when    WAVEMAKER = WAVE_DATA is selected.</li>
-<li>AMP: amplitude (m) of initial <img class="math" src="_images/math/5635a7c34414599c2452d72430811e816b460335.png" alt="\eta"/>, if  WAVEMAKER = INI_REC, WAVEMAKER = INI_SOL, WAVEMAKER = LEF_SOL.</li>
+<li><p class="first">WAVEMAKER = INI_OTH:  other initial distribution specified in the code by users</p>
+</li>
+<li><dl class="first docutils">
+<dt>WAVEMAKER = WK_REG: Wei and Kirby 1999 internal wave maker</dt>
+<dd><p class="first last">need Xc_WK, Yc_WK, Ywidth_WK, Tperiod, AMP_WK, DEP_WK, Theta_WK, and Time_ramp (factor of period)</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>WAVEMAKER = WK_IRR:  Wei and Kirby 1999 TMA spectrum wavemaker</dt>
+<dd><blockquote class="first">
+<div><p>need Xc_WK, Yc_WK, Ywidth_WK, DEP_WK, Time_ramp, Delta_WK,  FreqPeak, FreqMin,FreqMax, Hmo, GammaTMA(default: 3.3 ), ThetaPeak (default: 0.0), Nfreq(default: 45), Ntheta(default: 24)</p>
+</div></blockquote>
+<p class="last">EqualEnergy (=T means the frequency splitting is based on Equal-Energy, otherwise, based on Equal-Frequency space</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>WAVEMAKER = JON_2D:  JONSWAP spectrum wavemaker</dt>
+<dd><p class="first last">need Xc_WK, Yc_WK, Ywidth_WK,
+DEP_WK, Time_ramp, Delta_WK,  FreqPeak, FreqMin,FreqMax,
+Hmo, GammaTMA(default: 3.3 ), ThetaPeak (default: 0.0),Nfreq(default: 45), Ntheta(default: 24)</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>WAVEMAKER = JON_1D:  JONSWAP 1D spectrum wavemaker</dt>
+<dd><p class="first last">need Xc_WK, Yc_WK, Ywidth_WK,
+DEP_WK, Time_ramp, Delta_WK,  FreqPeak, FreqMin,FreqMax,
+Hmo, GammaTMA(default: 3.3 ), Nfreq(default: 45)</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>WAVEMAKER = TMA_1D:  TMA 1D spectrum wavemaker</dt>
+<dd><p class="first last">need Xc_WK, Yc_WK, Ywidth_WK,
+DEP_WK, Time_ramp, Delta_WK,  FreqPeak, FreqMin,FreqMax,
+Hmo, GammaTMA(Note, still use TMA Gamma, default: 3.3 ), Nfreq(default: 45)</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>WAVEMAKER = WK_TIME_SERIES:</dt>
+<dd><p class="first last">fft  a time series to get each wave component and then use Wei and Kirby&#8217;s ( 1999) wavemaker.  The wave angle is zero (x direction) for all wave components. Need input WaveCompFile (including 3 columns: per,amp,pha) and NumWaveComp,PeakPeriod,DEP_WK, Xc_WK,Ywidth_WK</p>
+</dd>
+</dl>
+</li>
+<li><p class="first">WAVEMAKER = WAVE_DATA:  2D directional spectrum data specified in WaveCompFile. Need Xc_WK, Yc_WK, DEP_WK, Delta_WK.</p>
+<blockquote>
+<div><blockquote>
+<div><p>Format of WaveCompFile:</p>
+<blockquote>
+<div><p>62  35   - NumFreq NumDir</p>
+<p>0.0925000011921 - PeakPeriod</p>
+<p>0.0400 - Freq</p>
+<p>0.0475 - Freq
+...
+-0.05  - Dir (rad)</p>
+<p>0.0    - Dir (rad)
+...
+0.01133044 0.00973217 ... (amplitude,m)</p>
+</div></blockquote>
+</div></blockquote>
+<p>The read format in fortran:</p>
+<blockquote>
+<div><blockquote>
+<div><p>OPEN(1,FILE=TRIM(WaveCompFile))</p>
+<blockquote>
+<div><p>READ(1,*)NumFreq,NumDir</p>
+<p>ALLOCATE (Amp_Ser(NumFreq,NumDir),  &amp;</p>
+<blockquote>
+<div><p>Per_Ser(NumFreq),Theta_Ser(NumDir))</p>
+</div></blockquote>
+<p>READ(1,*)PeakPeriod</p>
+<p>DO J=1,NumFreq</p>
+<blockquote>
+<div><p>READ(1,*)Per_Ser(J)</p>
+</div></blockquote>
+<p>ENDDO</p>
+<p>DO I=1,NumDir</p>
+<blockquote>
+<div><p>READ(1,*)Theta_Ser(I)</p>
+</div></blockquote>
+<p>ENDDO</p>
+<p>DO I=1,NumDir</p>
+<blockquote>
+<div><p>READ(1,*)(Amp_Ser(J,I),J=1,NumFreq)</p>
+</div></blockquote>
+<p>ENDDO</p>
+</div></blockquote>
+</div></blockquote>
+<p>CLOSE(1)</p>
+</div></blockquote>
+</div></blockquote>
+</li>
+<li><p class="first">WAVEMAKER = GAUSIAN: initial Gausian hump, need AMP, Xc, Yc, and WID.</p>
+</li>
+<li><p class="first">Definations</p>
+<ul class="simple">
+<li>AMP : amplitude (m) of initial <img class="math" src="_images/math/5635a7c34414599c2452d72430811e816b460335.png" alt="\eta"/>, if  WAVEMAKER = INI_REC, WAVEMAKER = INI_SOL, WAVEMAKER = LEF_SOL.</li>
 <li>DEP: water depth at wavemaker location, if WAVEMAKER = INI_SOL, WAVEMAKER = LEF_SOL.</li>
 <li>LAGTIME, time lag (s) for the solitary wave generated on the left boundary, e.g., WAVEMAKER = LEF_SOL.</li>
 <li>XWAVEMAKER: x  (m) coordinate for WAVEMAKER = INI_SOL.</li>
@@ -202,6 +283,8 @@
 <li>GammaTMA, TMA parameter <img class="math" src="_images/math/3666981dc77862de77b6ecfcb64aad59b425cbaf.png" alt="\gamma"/> for Wei and Kirby (1999) irregular wavemaker. GammaTMA = 3.3 if JONSWAP is used.</li>
 <li>ThetaPeak: peak direction (degrees) for Wei and Kirby (1999) irregular wavemaker.</li>
 <li>Sigma_Theta: parameter of directional spectrum for Wei and Kirby (1999) irregular wavemaker.</li>
+</ul>
+</li>
 </ul>
 </div></blockquote>
 <p><strong>SPECIFICATION OF PERIODIC BOUNDARY CONDITION</strong></p>

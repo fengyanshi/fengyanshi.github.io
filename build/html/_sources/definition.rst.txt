@@ -91,87 +91,147 @@ Following are descriptions of parameters in input.txt
 
  *  WAVEMAKER: wavemaker type. 
 
- * WAVEMAKER = INI\_REC: initial rectangular hump, need  Xc,Yc and WID
+ * WAVEMAKER = INI\_REC: initial rectangular hump 
+     need Xc,Yc and WID
 
- * WAVEMAKER = LEF\_SOL: left boundary solitary, need AMP,DEP, and LAGTIME
+ * WAVEMAKER = LEF\_SOL: left boundary solitary
+     need AMP,DEP, and LAGTIME
 
- * WAVEMAKER = INI\_SOL: initial solitary wave propagate in +y direction, WKN B solution, need AMP, DEP, and XWAVEMAKER 
+ * WAVEMAKER = INI\_SOL: initial solitary wave propagate in +y direction, WKN B solution
+     need AMP, DEP, and XWAVEMAKER 
 
  * WAVEMAKER = INI\_OTH:  other initial distribution specified in the code by users
 
- * WAVEMAKER = WK\_REG: Wei and Kirby 1999 internal wave maker, need Xc\_WK, Yc\_WK, Tperiod, AMP\_WK, DEP\_WK, Theta\_WK, and Time\_ramp (factor of period)
+ * WAVEMAKER = WK\_REG: Wei and Kirby 1999 internal wave maker
+      need Xc\_WK, Yc\_WK, Ywidth\_WK, Tperiod, AMP\_WK, DEP\_WK, Theta\_WK, and Time\_ramp (factor of period)
 
- * WAVEMAKER = WK\_IRR:  Wei and Kirby 1999 TMA spectrum wavemaker, need Xc\_WK, Yc\_WK, Ywidth\_WK, DEP\_WK, Time\_ramp, Delta\_WK,  FreqPeak, FreqMin,FreqMax, Hmo, GammaTMA(default: 3.3 ), ThetaPeak (default: 0.0), Nfreq(default: 45), Ntheta(default: 24)
-            
- * WAVEMAKER = JON\_2D:  JONSWAP spectrum wavemaker, need Xc\_WK, Yc\_WK, Ywidth\_WK,
-           DEP\_WK, Time\_ramp, Delta\_WK,  FreqPeak, FreqMin,FreqMax,
-            Hmo, GammaTMA(default: 3.3 ), ThetaPeak (default: 0.0),Nfreq(default: 45), Ntheta(default: 24)
-            
- * WAVEMAKER = JON\_1D:  JONSWAP 1D spectrum wavemaker, need Xc\_WK, Yc\_WK, Ywidth\_WK,
-           DEP\_WK, Time\_ramp, Delta\_WK,  FreqPeak, FreqMin,FreqMax,
-            Hmo, GammaTMA(default: 3.3 ), Nfreq(default: 45)  
-            
- * WAVEMAKER = TMA\_1D:  TMA 1D spectrum wavemaker, need Xc\_WK, Yc\_WK, Ywidth\_WK,
-           DEP\_WK, Time\_ramp, Delta\_WK,  FreqPeak, FreqMin,FreqMax,
-            Hmo, GammaTMA(Note, still use TMA Gamma, default: 3.3 ), Nfreq(default: 45)                                   
-
- * WAVEMAKER = WK\_TIME\_SERIES: {\em fft  a time series to get each wave component and then use Wei and Kirby's ( 1999) wavemaker.  The wave angle is zero (x direction) for all wave components. Need input WaveCompFile (including 3 columns: per,amp,pha) and NumWaveComp,PeakPeriod,DEP\_WK, Xc\_WK,Ywidth\_WK
+ * WAVEMAKER = WK\_IRR:  Wei and Kirby 1999 TMA spectrum wavemaker
+      need Xc\_WK, Yc\_WK, Ywidth\_WK, DEP\_WK, Time\_ramp, Delta\_WK,  FreqPeak, FreqMin,FreqMax, Hmo, GammaTMA(default: 3.3 ), ThetaPeak (default: 0.0), Nfreq(default: 45), Ntheta(default: 24)
  
- * WAVEMAKER = WAVE\_DATA:  2D directional spectrum data specified in WaveCompFile. Need Xc\_WK, Yc\_WK, DEP\_WK, Delta\_WK. See WaveCompFile for file format. 
+     EqualEnergy (=T means the frequency splitting is based on Equal-Energy, otherwise, based on Equal-Frequency space
+           
+ * WAVEMAKER = JON\_2D:  JONSWAP spectrum wavemaker
+      need Xc\_WK, Yc\_WK, Ywidth\_WK,
+      DEP\_WK, Time\_ramp, Delta\_WK,  FreqPeak, FreqMin,FreqMax,
+      Hmo, GammaTMA(default: 3.3 ), ThetaPeak (default: 0.0),Nfreq(default: 45), Ntheta(default: 24)
+            
+ * WAVEMAKER = JON\_1D:  JONSWAP 1D spectrum wavemaker
+      need Xc\_WK, Yc\_WK, Ywidth\_WK,
+      DEP\_WK, Time\_ramp, Delta\_WK,  FreqPeak, FreqMin,FreqMax,
+      Hmo, GammaTMA(default: 3.3 ), Nfreq(default: 45)  
+            
+ * WAVEMAKER = TMA\_1D:  TMA 1D spectrum wavemaker
+      need Xc\_WK, Yc\_WK, Ywidth\_WK,
+      DEP\_WK, Time\_ramp, Delta\_WK,  FreqPeak, FreqMin,FreqMax,
+      Hmo, GammaTMA(Note, still use TMA Gamma, default: 3.3 ), Nfreq(default: 45)                                   
+
+ * WAVEMAKER = WK\_TIME\_SERIES: 
+      fft  a time series to get each wave component and then use Wei and Kirby's ( 1999) wavemaker.  The wave angle is zero (x direction) for all wave components. Need input WaveCompFile (including 3 columns: per,amp,pha) and NumWaveComp,PeakPeriod,DEP\_WK, Xc\_WK,Ywidth\_WK
+ 
+ * WAVEMAKER = WAVE\_DATA:  2D directional spectrum data specified in WaveCompFile. Need Xc\_WK, Yc\_WK, DEP\_WK, Delta\_WK. 
+
+     Format of WaveCompFile:
+
+       62  35   - NumFreq NumDir 
+
+       0.0925000011921 - PeakPeriod 
+
+       0.0400 - Freq 
+
+       0.0475 - Freq 
+       ... 
+       -0.05  - Dir (rad)
+
+       0.0    - Dir (rad)
+       ...
+       0.01133044 0.00973217 ... (amplitude,m)
+
+    The read format in fortran:
+
+      OPEN(1,FILE=TRIM(WaveCompFile))
+
+       READ(1,*)NumFreq,NumDir
+
+       ALLOCATE (Amp_Ser(NumFreq,NumDir),  &
+
+          Per_Ser(NumFreq),Theta_Ser(NumDir))
+
+       READ(1,*)PeakPeriod  
+
+       DO J=1,NumFreq
+
+          READ(1,*)Per_Ser(J)  
+
+       ENDDO
+
+       DO I=1,NumDir
+
+          READ(1,*)Theta_Ser(I)
+
+       ENDDO
+
+       DO I=1,NumDir
+
+         READ(1,*)(Amp_Ser(J,I),J=1,NumFreq)
+
+       ENDDO
+
+     CLOSE(1)
+ 
             
  * WAVEMAKER = GAUSIAN: initial Gausian hump, need AMP, Xc, Yc, and WID.          
 
- *  WaveCompFile: Wave component file when    WAVEMAKER = WAVE\_DATA is selected.  
+ * Definations
 
- *  AMP: amplitude (m) of initial :math:`\eta`, if  WAVEMAKER = INI\_REC, WAVEMAKER = INI\_SOL, WAVEMAKER = LEF\_SOL.
+   * AMP : amplitude (m) of initial :math:`\eta`, if  WAVEMAKER = INI\_REC, WAVEMAKER = INI\_SOL, WAVEMAKER = LEF\_SOL.
 
- *  DEP: water depth at wavemaker location, if WAVEMAKER = INI\_SOL, WAVEMAKER = LEF\_SOL.
+   *  DEP: water depth at wavemaker location, if WAVEMAKER = INI\_SOL, WAVEMAKER = LEF\_SOL.
 
- *  LAGTIME, time lag (s) for the solitary wave generated on the left boundary, e.g., WAVEMAKER = LEF\_SOL. 
+   *  LAGTIME, time lag (s) for the solitary wave generated on the left boundary, e.g., WAVEMAKER = LEF\_SOL. 
  
- *  XWAVEMAKER: x  (m) coordinate for WAVEMAKER = INI\_SOL.
+   *  XWAVEMAKER: x  (m) coordinate for WAVEMAKER = INI\_SOL.
 
 
- *  Xc: x (m) coordinate of the center of  a rectangular hump if WAVEMAKER = INI\_REC.
+   *  Xc: x (m) coordinate of the center of  a rectangular hump if WAVEMAKER = INI\_REC.
 
- *  Yc: y (m) coordinate of the center of  a rectangular hump if WAVEMAKER = INI\_REC.
+   *  Yc: y (m) coordinate of the center of  a rectangular hump if WAVEMAKER = INI\_REC.
 
- *  WID: width (m) of  a rectangular hump if WAVEMAKER = INI\_REC, or INI\_GAU.
+   *  WID: width (m) of  a rectangular hump if WAVEMAKER = INI\_REC, or INI\_GAU.
 
 
- *  Time\_ramp: time ramp (s) for Wei and Kirby (1999) wavemaker. Default: 0.0.
+   *  Time\_ramp: time ramp (s) for Wei and Kirby (1999) wavemaker. Default: 0.0.
  
- *  Delta\_WK:  width parameter :math:`\delta`  for Wei and Kirby (1999) wavemaker.    Need trial and error, usually, :math:`\delta` =  :math:`0.3 \sim 0.6`. Default: 0.5. 
+   *  Delta\_WK:  width parameter :math:`\delta`  for Wei and Kirby (1999) wavemaker.    Need trial and error, usually, :math:`\delta` =  :math:`0.3 \sim 0.6`. Default: 0.5. 
 
- *  DEP\_WK: water depth (m) for Wei and Kirby (1999) wavemaker.
+   *  DEP\_WK: water depth (m) for Wei and Kirby (1999) wavemaker.
 
- *  Xc\_WK: x coordinate (m) for Wei and Kirby (1999) wavemaker.
+   *  Xc\_WK: x coordinate (m) for Wei and Kirby (1999) wavemaker.
 
- *  Ywidth\_WK: width (m) in y direction for Wei and Kirby (1999) wavemaker. Default: LARGE (999999.0).
+   *  Ywidth\_WK: width (m) in y direction for Wei and Kirby (1999) wavemaker. Default: LARGE (999999.0).
 
- *  Tperiod:  period (s) of regular wave for Wei and Kirby (1999) wavemaker.
+   *  Tperiod:  period (s) of regular wave for Wei and Kirby (1999) wavemaker.
 
- *  AMP\_WK: amplitude (m) of regular wave for Wei and Kirby (1999) wavemaker.
+   *  AMP\_WK: amplitude (m) of regular wave for Wei and Kirby (1999) wavemaker.
 
- *  Theta\_WK: direction (degrees) of regular wave for Wei and Kirby (1999) wavemaker. Note: it may be adjusted if a periodic boundary condition is used. A warning will be given if adjustment is made. 
+   *  Theta\_WK: direction (degrees) of regular wave for Wei and Kirby (1999) wavemaker. Note: it may be adjusted if a periodic boundary condition is used. A warning will be given if adjustment is made. 
  
- *  Nfreq: number of frequency components. Default: 45.
+   *  Nfreq: number of frequency components. Default: 45.
 
- *  Ntheta: number of direction components. Default: 24.
+   *  Ntheta: number of direction components. Default: 24.
 
- *  FreqPeak: peak frequency (1/s) for Wei and Kirby (1999) irregular wavemaker.
+   *  FreqPeak: peak frequency (1/s) for Wei and Kirby (1999) irregular wavemaker.
 
- *  FreqMin: low frequency cutoff (1/s) for Wei and Kirby (1999) irregular wavemaker.
+   *  FreqMin: low frequency cutoff (1/s) for Wei and Kirby (1999) irregular wavemaker.
  
- *  FreqMax: high frequency cutoff (1/s) for Wei and Kirby (1999) irregular wavemaker.
+   *  FreqMax: high frequency cutoff (1/s) for Wei and Kirby (1999) irregular wavemaker.
 
- *  Hmo: Hmo (m) for Wei and Kirby (1999) irregular wavemaker.
+   *  Hmo: Hmo (m) for Wei and Kirby (1999) irregular wavemaker.
 
- *  GammaTMA, TMA parameter :math:`\gamma` for Wei and Kirby (1999) irregular wavemaker. GammaTMA = 3.3 if JONSWAP is used. 
+   *  GammaTMA, TMA parameter :math:`\gamma` for Wei and Kirby (1999) irregular wavemaker. GammaTMA = 3.3 if JONSWAP is used. 
 
- *  ThetaPeak: peak direction (degrees) for Wei and Kirby (1999) irregular wavemaker. 
+   *  ThetaPeak: peak direction (degrees) for Wei and Kirby (1999) irregular wavemaker. 
 
- *  Sigma\_Theta: parameter of directional spectrum for Wei and Kirby (1999) irregular wavemaker.
+   *  Sigma\_Theta: parameter of directional spectrum for Wei and Kirby (1999) irregular wavemaker.
 
 **SPECIFICATION OF PERIODIC BOUNDARY CONDITION** 
 
@@ -187,21 +247,21 @@ Following are descriptions of parameters in input.txt
  
  *  DIFFUSION\_SPONGE: logical parameter for diffusion type sponge, T - sponge layer, F - no sponge layer.
  
-  *  Csp: The maximum diffusion coefficient for diffusion type sponge. Default: 1.0
+   *  Csp: The maximum diffusion coefficient for diffusion type sponge. Default: 1.0
  
-  *  CDsponge: The maximum Cd for friction type sponge. Default: 10.0
+   *  CDsponge: The maximum Cd for friction type sponge. Default: 10.0
  
-  *  Sponge\_west\_width: width (m) of sponge layer at west boundary.
+   *  Sponge\_west\_width: width (m) of sponge layer at west boundary.
 
-  *  Sponge\_east\_width:   width (m) of sponge layer at east boundary.
+   *  Sponge\_east\_width:   width (m) of sponge layer at east boundary.
 
-  *  Sponge\_south\_width: width (m) of sponge layer at south boundary.
+   *  Sponge\_south\_width: width (m) of sponge layer at south boundary.
 
-  *  Sponge\_north\_width width (m) of sponge layer at north boundary
+   *  Sponge\_north\_width width (m) of sponge layer at north boundary
 
-  *  R\_sponge: decay rate in L-D type sponge layer. Its values are between 0.85 :math:`\sim` 0.95. Default: 0.85.
+   *  R\_sponge: decay rate in L-D type sponge layer. Its values are between 0.85 :math:`\sim` 0.95. Default: 0.85.
 
-  *  A\_sponge: maximum damping magnitude in L-D type sponge. The value is :math:`\sim` 5.0. Default: 5.0
+   *  A\_sponge: maximum damping magnitude in L-D type sponge. The value is :math:`\sim` 5.0. Default: 5.0
 
 **SPECIFICATION OF OBSTACLES or BREAKWATER**
 
