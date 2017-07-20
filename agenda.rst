@@ -78,7 +78,12 @@ Day 3: Thursday July 27th
    2)Obstacles and Breakwaters (partially absorbing and reflecting inner boundaries) 
  * PROGRESSION (for those participants needed additional challenge) - Set up your own surface wave case
  
-**THURSDAY:** Training Session #5 [Lead: Fengyan Shi, Assist: Matt Malej]
+**THURSDAY:** Training Session #5 [Lead: Fatima Nemati, Assist: Fengyan Shi]
+ * Tsunami simulation
+ * Tsunami simulation using the spherical coordinates
+ * Tsunami sources
+
+**THURSDAY:** Training Session #6 [Lead: Fengyan Shi, Assist: Matt Malej]
  * Ship-wakes
 
    1)Setup with multiple vessels (paths, size, velocities)
@@ -87,9 +92,6 @@ Day 3: Thursday July 27th
  
  * PROGRESSION (for those participants needed additional challenge) - Try the case of the circular island and set up a different path. 
  
-**THURSDAY:** Training Session #6 [Lead: Fatima Nemati, Assist: Fengyan Shi]
- * Tsunami simulation
- * Tsunami simulation using the spherical coordinates
- * Tsunami sources
+
 
 
