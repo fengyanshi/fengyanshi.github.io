@@ -1,4 +1,4 @@
-AGENDA (draft)
+AGENDA
 ==================
 
 Monday July 24th: Ice-breaker:  5:30pm-7:30pm, Embassy Suites Atrium
