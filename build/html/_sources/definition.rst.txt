@@ -138,12 +138,16 @@ Following are descriptions of parameters in input.txt
 
        0.0400 - Freq 
 
-       0.0475 - Freq 
-       ... 
+       0.0475 - Freq
+ 
+       ...
+ 
        -0.05  - Dir (rad)
 
        0.0    - Dir (rad)
+
        ...
+
        0.01133044 0.00973217 ... (amplitude,m)
 
     The read format in fortran:
