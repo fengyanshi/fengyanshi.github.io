@@ -1,6 +1,8 @@
 AGENDA
 ==================
 
+ .. note:: **Tutorial will be printed for you. You can also download the tutorial -** :download:`click here <images/workshop/funwave_tutorial_2017.pdf>`
+
 Monday July 24th: Ice-breaker:  5:30pm-7:30pm, Embassy Suites Atrium
  
 Day 1: Tuesday July 25th
@@ -91,6 +93,8 @@ Day 3: Thursday July 27th
    2)A vessel moving on random bathymetry 
  
  * PROGRESSION (for those participants needed additional challenge) - Try the case of the circular island and set up a different path. 
+
+
  
 
 
