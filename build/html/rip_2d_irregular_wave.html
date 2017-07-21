@@ -1,0 +1,225 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Irregular wave 30 deg oblique incidence &#8212; funwave  documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Inlet + Sandbar + Beach" href="inlet_shoal.html" />
+    <link rel="prev" title="Basics for model setup" href="rip_2d_info.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="irregular-wave-30-deg-oblique-incidence">
+<h1>Irregular wave 30 deg oblique incidence<a class="headerlink" href="#irregular-wave-30-deg-oblique-incidence" title="Permalink to this headline">¶</a></h1>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="_images/rip_vort.jpg"><img alt="alternate text" src="_images/rip_vort.jpg" style="width: 500px; height: 300px;" /></a>
+</div>
+<p>Figure: (left) snapshot of surfave elevation, (middle) vorticity field, (right) mean current field</p>
+<p><strong>input.txt:</strong></p>
+<div class="line-block">
+<div class="line"><strong>Parallel(if applicable)</strong></div>
+<div class="line-block">
+<div class="line">PX = 4</div>
+<div class="line">PY = 4</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Depth</strong></div>
+<div class="line-block">
+<div class="line">DEPTH_TYPE = DATA</div>
+<div class="line">DEPTH_FILE = ../bathy/depth_a15.txt</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Output folder</strong></div>
+<div class="line-block">
+<div class="line">RESULT_FOLDER = output/</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Dimensions</strong></div>
+<div class="line-block">
+<div class="line">Mglob = 512</div>
+<div class="line">Nglob = 250</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Time</strong></div>
+<div class="line-block">
+<div class="line">TOTAL_TIME = 1200.0</div>
+<div class="line">PLOT_INTV = 50.0</div>
+<div class="line">PLOT_INTV_STATION = 0.5</div>
+<div class="line">SCREEN_INTV = 50.0</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Wave averaging property</strong></div>
+<div class="line-block">
+<div class="line">T_INTV_mean = 50.0</div>
+<div class="line">STEADY_TIME= 100.0</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Grid sizes</strong></div>
+<div class="line-block">
+<div class="line">DX = 1.0</div>
+<div class="line">DY = 2.0</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Wavemaker</strong></div>
+<div class="line-block">
+<div class="line">WAVEMAKER = WK_IRR</div>
+<div class="line">DEP_WK = 13.0</div>
+<div class="line">Xc_WK = 425.0</div>
+<div class="line">Yc_WK = 0.0</div>
+<div class="line">FreqPeak = 0.1</div>
+<div class="line">FreqMin = 0.03</div>
+<div class="line">FreqMax = 0.5</div>
+<div class="line">Hmo = 1.0</div>
+<div class="line">GammaTMA = 5.0</div>
+<div class="line">ThetaPeak = 0.0</div>
+<div class="line">Sigma_Theta = 10.0</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Sponge layer</strong></div>
+<div class="line-block">
+<div class="line">FRICTION_SPONGE = T</div>
+<div class="line">DIRECT_SPONGE = T</div>
+<div class="line">Csp = 0.0</div>
+<div class="line">CDsponge = 1.0</div>
+<div class="line">Sponge_west_width =  0.0</div>
+<div class="line">Sponge_east_width =  60.0</div>
+<div class="line">Sponge_south_width = 0.0</div>
+<div class="line">Sponge_north_width = 0.0</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Lateral boundary condition</strong></div>
+<div class="line-block">
+<div class="line">PERIODIC = T</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Wetting and drying</strong></div>
+<div class="line-block">
+<div class="line">MinDepth=0.01</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Physics</strong></div>
+<div class="line-block">
+<div class="line">Cd = 0.002</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Breaking scheme</strong></div>
+<div class="line-block">
+<div class="line">VISCOSITY_BREAKING = F</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Output</strong></div>
+<div class="line-block">
+<div class="line">ETA = T</div>
+<div class="line">U = T</div>
+<div class="line">V = T</div>
+<div class="line">Umean = T</div>
+<div class="line">Vmean = T</div>
+<div class="line">MASK = T</div>
+<div class="line">WaveHeight = T</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="examples.html"><strong>EXAMPLES</strong></a><ul>
+  <li><a href="rip_2d.html">Rip Current on 2D Beach</a><ul>
+      <li>Previous: <a href="rip_2d_info.html" title="previous chapter">Basics for model setup</a></li>
+      <li>Next: <a href="inlet_shoal.html" title="next chapter">Inlet + Sandbar + Beach</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/rip_2d_irregular_wave.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, Fengyan Shi.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+      |
+      <a href="_sources/rip_2d_irregular_wave.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -23,6 +23,8 @@ The simple examples serve as baseline cases for testing your system. You can als
 
 * `Waves on 2D beach <beach_2d.html>`_
 
+* `Waves and rip currents on 2D beach <rip_2d.html>`_
+
 * `Surface waves at an inlet-beach-shoal system <inlet_shoal.html>`_
 
 * `Japanese Tohoku tsunami (Ocean-basin scale) <tohoku.html>`_

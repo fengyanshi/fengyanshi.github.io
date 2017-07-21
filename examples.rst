@@ -11,6 +11,7 @@ Simple tests (for workshop)
 
    slope
    beach_2d
+   rip_2d
    inlet_shoal
    tohoku
    vessel
