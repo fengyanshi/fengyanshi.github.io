@@ -1,121 +1,4 @@
-**REFERENCES**
-===============
+**BIBLIOGRAPHY**
+=================
 
- *  Agnon, Y., Madsen, P. A. and Schaffer, H. A., 1999, "A new approach to high-order Boussinesq models", *J. Fluid Mech.*, *399*, 319-333.
-
- *  Berkhoff, J. C. W., Booy, N. and Radder, A. C., 1982, "Verification of numerical wave propagation models for simple harmonic linear water waves", *Coast. Engrg.*, *6*, 255-279.
-
- *  Bermudez, A. and  Vazquez, M. E., 1994, "Upwind methods for hyperbolic conservation laws with source terms", *Comput. Fluids*, *23* (8), 1049-1071.
-
- *  Briggs, M. J., Synolakis, C. E., and Harkins, G. S., 1994,  "Tsunami run- up on a conical island",  *Proc., Waves-Physical and Numerical Modelling*, International Association for Hydraulic Research, Delft, The Netherlands, 446-455.
-
- * Brown, J., MacMahan, J.,  Reniers, A. J. H. M. and Thornton, E., 2009, "Surf zone diffusivity on a rip-channeled beach", *J. Geophys. Res.*, *114*, C11015, doi:10.1029/2008JC005158.
-
- *  Chen, Q., Dalrymple, R. A.,   Kirby, J. T.,  Kennedy, A. B.  and  Haller, M. C., 1999, "Boussinesq modelling of a rip current system",  *J. Geophys. Res.*, *104*, 20,617-20,637.
-
- *  Chen, Q., Kirby, J. T., Dalrymple, R. A., Kennedy, A. B. and Chawla, A., 2000, "Boussinesq modeling of wave transformation, breaking and runup.  II: 2D", *J. Waterway, Port, Coastal and Ocean Engineering*, *126*, 48-56.
-
- *  Chen, Q., Kirby, J. T., Dalrymple, R. A., Shi, F. and Thornton, E. B., 2003, "Boussinesq modeling of longshore currents", *Journal of Geophysical Research*, *108* (C11), 3362, doi:10.1029/2002JC001308.
-
- *  Chen, Q., Kaihatu, J. M., and Hwang, P. A., 2004, "Incorporation of Wind Effects Into Boussinesq Wave Models", *J. Waterway, Port, Coastal and Ocean Engineering*, *130*, 312-321.
-
- *  Chen, Q., 2006, "Fully nonlinear Boussinesq-type equations for waves and currents over porous beds", * Journal of Engineering Mechanics.* *132* (2): 220-230.
-
- *  Erduran, K. S., Ilic, S., and Kutija, V., 2005, "Hybrid finite-volume finite-difference scheme for the solution of Boussinesq equations", *Int. J. Numer. Meth. Fluid.*, *49*, 1213-1232.
-
- *  Gobbi, M. F., Kirby, J. T. and Wei, G., 2000,  "A fully nonlinear Boussinesq model for surface waves. II. Extension to :math:`O(kh^4)`", *Journal of Fluid Mechanics*,  *405*, pp. 181-210.
-
- *  Goda, Y., 2000, Random seas and design of maritime structures, *Advanced Series on Ocean Engineering*, Volume 15, 2nd Edition, World Scientific, Singapore. 
-
- *  Gottlieb, S., Shu C.-W., and Tadmore, E., 2001, "Strong stability-preserving high-order time discretization methods", *SIAM Review*, *43* (1), 89 - 112.
-
- *  Hansen, J. B., and Svendsen, I. A., 1979,  "Regular waves in shoaling water: Experimental data",  Tech. Rep. ISVA Ser., 21, Technical Univ. of Denmark, Denmark.
-
- *  Kennedy, A. B., Chen, Q., Kirby, J. T. and Dalrymple, R. A., 2000, "Boussinesq modeling of wave transformation, breaking and runup. I: 1D", *J. Waterway, Port, Coastal and Ocean Engineering*, *126*, 39-47.
-
- *  Kennedy, A. B., Kirby, J. T., Chen, Q. and Dalrymple, R. A., 2001,  "Boussinesq-type equations with improved nonlinear performance", *Wave Motion*,  *33*, pp. 225-243.
-
- *  Kim D. H., Cho, Y. S., and Kim, H. J., 2008, "Well-balanced scheme between flux and source terms for computation of shallow-water equations over irregular bathymetry", *Journal of Engineering Mechanics*, *134*, 277-290.
-
- *  Kim, D. H., Lynett, P. J. and Socolofsky, S. A., 2009, "A depth-integrated model for weakly dispersive, turbulent, and rotational fluid flows", *Ocean Modeling*, *27*, 198-214.
-
- *  Kim, D. H., 2009, "Turbulent flow and transport modeling by long waves and currents", Ph.D. dissertation, Texas A\& M University.
-
- *  Kirby, J. T., Wei, G., Chen, Q., Kennedy, A. B. and Dalrymple, R. A., 1998,  "FUNWAVE 1.0, Fully nonlinear Boussinesq wave model. Documentation and userï¿œs manual". Report CACR-98-06, Center for Applied Coastal Research, Department of Civil and Environmental Engineering, University of Delaware.
-
- *  Kirby, J.T., Shi, F., Watts, P., Grilli, S.T., 2004,  "Propagation of short, dispersive tsunami waves in ocean basins". EOS Transactions of the AGU 85 (47) Abstract OS21E-02.
-
- *  Kirby, J. T., Shi, F., Harris, J. C., and Grilli, S. T., 2012, "Sensitivity analysis of trans-oceanic tsunami propagation to dispersive and Coriolis effects", *Ocean Modelling*, under revision.  
-
- *  Liang, Q. and Marche, F., 2009, "Numerical resolution of well-balanced shallow water equations with complex source terms", *Advances in Water Resources*, *32*, 873 - 884.
-
- *  Long, W. and Kirby, J. T., 2006,  "Boussinesq modeling of waves, currents and sediment transport", Research Report No. CACR-06-02, Center for Applied Coastal Research, Dept. of Civil and Environmental Engineering, Univ. of Delaware, Newark. 
-
- *  Lynett, P. J., Wu, T.-R. and Liu, P. L.-F., 2002,  "Modeling wave runup with depth-integrated equations",  *Coastal Engineering*,  *46*, 89-107.
-
- *  Madsen, P.A., Srensen, O.R., 1992,  "A new form of the Boussinesq equations with improved linear dispersion characteristics. Part 2. A slowly-varying bathymetry",  *Coastal Engineering*  *18* (3-4), 183-204.
-
-
- *  Mase, H., and Kirby, J. T., 1992,   "Hybrid frequency-domain KdV equation for random wave transformation", *Proc., 23rd Int. Conf. Coast. Eng.*, ASCE, New York, 474-487.
-
- *  Naik, N. H., Naik, V. K., and Nicoules, M., 1993, "Parallelization of a class of implicit finite difference schemes in computational fluid dynamics", * International Journal of High Speed Computing*,  *5*: 1-50.
-
-
- *  Ning, D. Z., Zang, J., Liang, Q., Taylor, P. H., and Borthwick, A. G. L., 2008, "Boussinesq cut-cell model for non-linear wave interaction with coastal structures", *International Journal for Numerical Methods in Fluids*, *57* (10), 1459-1483.
-
- *  Nwogu, O., 1993, "An alternative form of the Boussinesq equations for nearshore wave propagation", *Journal of Waterway, Port, Coastal, and Ocean Engineering*, *119* (6), pp. 618-638. 
-
- *  Nwogu, O. and Demirbilek, Z., 2001, "BOUSS-2D: A Boussinesq wave model for coastal regions and harbors",  ERDC/CHL TR-01-25, Coastal and Hydraulics Laboratory, USACOE Engineer Research and Development Center,  Vicksburg, MS.
-
- *  Roeber, V., Cheung, K. F., and Kobayashi, M. H., 2010, "Shock-capturing Boussinesq-type model for nearshore wave processes", *Coastal Engineering*, *57*, 407-423.
-
- *  Rogers, B. D., Borthwick, A. G. L., and Taylor, P. H., 2003, "Mathematical balancing of flux gradient and source terms prior to using Roe's approximate Riemann solver", *Journal of Computational Physics*, *192*, 422-451.
-
-
- *  Shi, F., Kirby, J. T., Harris, J. C., Geiman, J. D., and Grilli, S. T., 2012 a, "A high-order adaptive time-stepping TVD solver for Boussinesq modeling of breaking waves and coastal inundation", *Ocean Modelling*, 43-44, 36-51.
-
-
- *  Shi, F., Kirby, J. T., and Tehranirad, B. , 2012 b, Tsunami benchmark results for spherical coordinate, Center for Applied Coastal Research Report, CACR 2012-02, University of Delaware, Newark, Delaware. 
-
- *  Shi, F., Kirby, J. T., Tehranirad, B. and Harris, J. C., 2011, FUNWAVE-TVD, Version 1.0, users' manual and benchmark tests, Center for Applied Coastal Research Report, CACR 2011-04, University of Delaware, Newark, Delaware. 
-
-
- *  Shi, F., Dalrymple, R. A., Kirby, J. T., Chen, Q. and Kennedy, A., 2001, "A fully nonlinear Boussinesq model in generalized curvilinear coordinates". *Coastal Engineering*, *42*, pp. 337-358.
-
- *  Shiach, J. B. and Mingham, C. G., 2009, "A temporally second-order accurate Godunov-type scheme for solving the extended Boussinesq equations", *Coastal Engineering*, *56*, 32-45.
-
- *  Sitanggang, K. I. and Lynett, P., 2005, "Parallel computation of a highly nonlinear Boussinesq equation model through domain decomposition", *Int. J. Num. Meth. Fluids*, *49*, 57-74.
-
- *  Smagorinsky, J., 1963, "General circulation experiments with the primitive equations. I. The basic experiment",  *Mon. Weather Rev*, *91*, 99-165.
-
- *  Swigler, D. and Lynett, P. ,2011, "Laboratory study of the three-dimensional turbulence and kinematic properties associated with a solitary wave traveling over an alongshore-variable, shallow shelf".
-
- *  Synolakis, C. E., Bernard, E. N., Titov, V. V., Kanoglu, U. and Gonzalez, F. I., 2007, "Standards, criteria, and procedures for NOAA evaluation of tsunami numerical models", *NOAA Tech. Memo. OAR PMEL-135*, National Oceanic and Atmospheric Administration.
-
- *  Tehranirad, B., Shi, F., Kirby, J. T., Harris, J. C. and Grilli, S., 2011, "Tsunami benchmark results for fully nonlinear Boussinesq wave model FUNWAVE-TVD, Version 1.0", Research Report No. CACR-11-02, Center for Applied Coastal Research, University of Delaware.  
-
- *  Ting, F.C.K., Kirby, J.T., 1994, "Observation of undertow and turbulence in a laboratory surf zone". *Coast. Eng.*  *24*, 51.
-
-
- *  Tonelli, M. and Petti, M., 2009, "Hybrid finite volume - finite difference scheme for 2DH improved Boussinesq equations", *Coast. Engrng.*, *56*, 609-620.
-
- *  Tonelli, M. and Petti, M., 2010, "Finite volume scheme for the solution of 2D extended Boussinesq equations in the surf zone", *Ocean Engrng.*, *37*, 567-582.
-
- *  Toro, E. F., 2009, *Riemann solvers and numerical methods for fluid dynamics: a practical introduction*, Third edition, Springer, New York. 
-
- *  Wei, G., Kirby, J.T., Grilli, S.T., Subramanya, R., 1995,  "A fully nonlinear Boussinesq model for surface waves: Part I. Highly nonlinear unsteady waves", * Journal of Fluid Mechanics*  *294*, 71-92
-
- *  Wei, G. and Kirby, J. T., 1995, "A time-dependent numerical code for extended Boussinesq equations",  *Journal of Waterway, Port, Coastal and Ocean Engineering*,  *120*, pp. 251-261.
-
- * Yamamoto, S., Daiguji, H., 1993, "Higher-order-accurate upwind schemes for solving the compressible Euler and Navier-Stokes equations", *Computers and Fluids*, *22* (2/3), 259-270. 
-
-
- *  Yamamoto, S., Kano, S. and Daiguji, H, 1998, "An efficient CFD approach for simulating unsteady hypersonic shock-shock interference flows", *Computers and Fluids*,  *27* (5-6), pp. 571-580. 
-
- *  Zelt, J. A., 1991, "The runup of nonbreaking and breaking solitary waves",  *Coastal Engineering*,  *15*, pp. 205-246.
-
- *  Zhen, F., 2004, "On the numerical properties of staggered vs. non-staggered grid schemes for a Boussinesq equation model", MCE Thesis, Department of Civil and Environmental Engineering, University of Delaware.
-
- *  Zhou, J. G., Causon, D. M., Mingham C. G., and Ingram, D. M., 2001, "The surface gradient method for the treatment of source terms in the shallow-water equations", *Journal of Computational Physics*, *168*, 1-25.
-
-
+* Abadie, S. M., Harris, J. C., Grilli, S. T., & Fabre, R. (2012). Numerical modeling of tsunami waves generated by the flank collapse of the Cumbre Vieja volcano (La Palma, Canary Islands): Tsunami source and near field effects. Journal of Geophysical Research, 117(C05030). https://doi.org/10.1029/2011JC007646* Chakrabarti, A., Brandt, S. R., Chen, Q., & Shi, F. (2017). Boussinesq modeling of wave-induced hydrodynamics in coastal wetlands. Journal of Geophysical Research: Oceans, 122, 3861–3883. https://doi.org/10.1002/2016JC012093* Chawla, A., & Kirby, J. T. (2000). A source function method for generation of waves on currents in Boussinesq models. Applied Ocean Research, 22, 75–83.* Chen, Q. (2006). Fully nonlinear Boussinesq-type equations for waves and currents over porous beds. Journal of Engineering Mechanics, 132(2), 220–230. https://doi.org/10.1061/(ASCE)0733-9399(2006)1232:2(220)* Chen, Q., Dalrymple, R. A., Kirby, J. T., Kennedy, A. B., & Haller, M. C. (1999). Boussinesq modeling of a rip current system. Journal of Geophysical Research, 104(C9), 20617–20637.* Chen, Q., Kaihatu, J. M., & Hwang, P. A. (2004). Incorporation of wind effects into Boussinesq wave models. Journal of Waterway, Port, Coastal and Ocean Engineering, 130(6), 312–321. https://doi.org/10.1061/(ASCE)0733-950X(2004)130:6(312)* Chen, Q., Kirby, J. T., Dalrymple, R. A., Kennedy, A. B., & Chawla, A. (2000). Boussinesq modeling of wave transformation, breaking and runup. II: 2D. Journal of Waterway, Port, Coastal and Ocean Engineering, 126(1), 48–56.* Chen, Q., Kirby, J. T., Dalrymple, R. A., Shi, F., & Thornton, E. B. (2003). Boussinesq modeling of longshore currents. Journal of Geophysical Research, 108(C11), 3362. https://doi.org/10.1029/2002JC001308* Chen, Q., Madsen, P. A., & Basco, D. R. (1999). Current effects on nonlinear interactions of shallow-water waves. Journal of Waterway, Port, Coastal and Ocean Engineering, 125(4), 176–186.* Chen, Q., Madsen, P. A., Schäffer, H. A., & Basco, D. R. (1998). Wave-current interaction based on an enhanced Boussinesq approach. Coastal Engineering, 33, 11–39.* Choi, J., Kirby, J. T., & Yoon, S. B. (2015). Boussinesq modeling of longshore currents in the SandyDuck experiment under directional random wave conditions. Coastal Engineering, 101, 17–34. https://doi.org/10.1016/j.coastaleng.2015.04.005* Cruz, E. C., & Chen, Q. (2007). Numerical modeling of nonlinear water waves over heterogeneous porous beds. Ocean Engineering, 34(8–9), 1303–1321. https://doi.org/10.1016/j.oceaneng.2006.03.017* Cruz, E. C., & Chen, Q. (2006). Fundamental properties of Boussinesq-type equations for wave motion over a permeable bed. Coastal Engineering Journal, 48(3), 225–256. https://doi.org/10.1142/S0578563406001398* Day, S. J., Watts, P., Grilli, S. T., & Kirby, J. T. (2005). Mechanical models of the 1975 Kalapana, Hawaii earthquake and tsunami. Marine Geology, 215, 59–92. https://doi.org/10.1016/j.margeo.2004.11.008* Geiman, J. D., & Kirby, J. T. (2013). Unforced oscillation of rip-current vortex cells. Journal of Physical Oceanography, 43, 477–497. https://doi.org/10.1175/JPO-D-11-0164.1* Gobbi, M. F., & Kirby, J. T. (1999). Wave evolution over submerged sills: tests of a high-order Boussinesq model. Coastal Engineering, 37, 57–96.* Gobbi, M. F., Kirby, J. T., & Wei, G. (2000). A fully nonlinear Boussinesq model for surface waves. Part 2. Extension to O(kh)4. Journal of Fluid Mechanics, 405, 181–210.* Goncharenko, Y.V., Farquharson, G., Shi, F., Raubenheimer, B., Elgar, S.,2015,``Estimation of Shallow-water Breaking Wave Height from Synthetic Aperture Radar",Geosicence and Remote Sensing Letters , DOI: 10.1109/LGRS.2015.2445492* Grilli, S. T., Dubosq, S., Pophet, N., Pérignon, Y., Kirby, J. T., & Shi, F. (2010). Numerical simulation and first-order hazard analysis of large co-seismic tsunamis generated in the Puerto Rico trench: near-field impact on the North shore of Puerto Rico and far-field impact on the US East Coast. Natural Hazards and Earth Systems Science, 10, 2109–2125. https://doi.org/10.5194/nhess-10-2109-2010* Grilli, S. T., Grilli, A. R., David, E., & Coulet, C. (2016). Tsunami hazard assessment along the north shore of Hispaniola from far- and near-field Atlantic sources. Natural Hazards, 82, 777–810. https://doi.org/10.1007/s11069-016-2218-z* Grilli, S. T., Guérin, C.-A., Shelby, M., Grilli, A. R., Moran, P., Grosdidier, S., & Insua, T. L. (2017). Tsunami detection by High Frequency Radar beyond the continental shelf: II. Extension of algorithms and validation on realistic case studies. Pure and Applied Geophysics. https://doi.org/10.1007/s00024-017-1619-6* Grilli, S. T., Harris, J. C., Tajalli Bakhsh, T., Masterlark, T. L., Kyriakopoulos, C., * Kirby, J. T., & Shi, F. (2013). Numerical simulation of the 2011 Tohoku tsunami based on a new transient FEM co-seismic source: Comparison to far- and near-field observations. Pure and Applied Geophysics, 170, 1333–1359. https://doi.org/10.1007/s00024-012-0528-y* Grilli, S. T., Ioualalen, M., Asavanant, J., Shi, F., Kirby, J. T., & Watts, P. (2007). Source constraints and model simulation of the December 26, 2004, Indian Ocean tsunami. Journal of Waterway, Port, Coastal and Ocean Engineering, 133(6), 414–428. https://doi.org/10.1061/(ASCE)0733-950X(2007)133:6(414)* Grilli, S. T., O’Reilly, C., Harris, J. C., Tajalli Bakhsh, T., Tehranirad, B., Banihashemi, S., Kirby, J. T. & Shi, F. (2015). Modeling of SMF tsunami hazard along the upper US East Coast: detailed impact around Ocean City, MD. Natural Hazards, 76, 705–746. https://doi.org/10.1007/s11069-014-1522-8* Grilli, S. T., Shelby, M., Kimmoun, O., Dupont, G., Nicolsky, D., Ma, G., Kirby, J. T. & Shi, F. (2017). Modeling coastal tsunami hazard from submarine mass failures: effect of slide rheology, experimental validation, and case studies off the U S East Coast. Natural Hazards, 86, 353–391. https://doi.org/10.1007/s11069-016-2692-3* Ioualalen, M., Asavanant, J., Kaewbanjak, N., Grilli, S. T., Kirby, J. T., & Watts, P. (2007). Modeling the 26 December 2004 Indian Ocean tsunami: Case study of impact in Thailand. Journal of Geophysical Research, 112(C07024). https://doi.org/10.1029/2006JC003850* Kennedy, A. B., Dalrymple, R. A., Kirby, J. T., & Chen, Q. (2000). Determination of inverse depth using direct Boussinesq modeling. Journal of Waterway, Port, Coastal and Ocean Engineering, 126(4), 206–214.* Kennedy, A. B., Kirby, J. T., Chen, Q., & Dalrymple, R. A. (2001). Boussinesq-type equations with improved nonlinear performance. Wave Motion, 33, 225–243.* Kennedy, A. B., Kirby, J. T., & Gobbi, M. F. (2002). Simplified higher-order Boussinesq equations. I. Linear simplifications. Coastal Engineering, 44, 205–229.* Kirby, J. T. (2016). Boussinesq models and their application to coastal processes across a wide range of scales. Journal of Waterway, Port, Coastal and Ocean Engineering, (3116005). https://doi.org/10.1061/(ASCE)WW.1943-5460.0000350* Kirby, J. T. (2003). Boussinesq models and applications to nearshore wave propagation, surf zone processes and wave-induced currents. In C. Lakhan (Ed.), Advances in Coastal Modeling (pp. 1–41). Elsevier.* Kirby, J. T., & Derakhti, M. (2017). Short-crested wave breaking. European Journal of Mechanics B/Fluids, submitted.* Kirby, J. T., Shi, F., Nicolsky, D., & Misra, S. (2016). The 27 April 1975 Kitimat, British Columbia, submarine landslide tsunami: a comparison of modeling approaches. Landslides, 13, 1421–1434. https://doi.org/10.1007/s10346-016-0682-x* Kirby, J. T., Shi, F., Tehranirad, B., Harris, J. C., & Grilli, S. T. (2013). Dispersive tsunami waves in the ocean: Model equations and sensitivity to dispersion and Coriolis effects. Ocean Modelling, 62, 39–55. https://doi.org/10.1016/j.ocemod.2012.11.009* Long, W., Kirby, J. T., & Shao, Z. (2008). A numerical scheme for morphological bed level calculations. Coastal Engineering, 55, 167–180. https://doi.org/10.1016/j.coastaleng.2007.09.009* Lynett, P. J. et 37 alia. (2017). Inter-model analysis of tsunami-induced coastal currents. Ocean Modelling, 114, 14–32. https://doi.org/10.1016/j.ocemod.2017.04.003* Misra, S. K., Kennedy, A. B., & Kirby, J. T. (2003). An approach to determining nearshore bathymetry using remotely sensed ocean surface dynamics. Coastal Engineering, 47, 265–293.* Oler, A., Zhang, N., Brandt, S. R., & Chen, Q. (2016). Implementation of an infinite-height levee in CaFunwave using an Immersed-Boundary Method. Journal of Fluids Engineering, Transactions of the ASME, 138(11), 111103. https://doi.org/10.1115/1.4033490* Orzech, M. D., Shi, F., Veeramony, J., Bateman, S., Calantoni, J., & Kirby, J. T. (2016). Incorporating floating surface objects into a fully dispersive surface wave model. Ocean Modelling, 102, 14–26. https://doi.org/10.1016/j.ocemod.2016.04.007* Schnyder, J. S. D., Eberli, G. P., Kirby, J. T., Shi, F., Tehranirad, B., Mulder, T., Wintersteller, P. (2016). Tsunamis caused by submarine slope failures along western Great Bahama Bank. Scientific Reports, 6(35925). https://doi.org/10.1038/srep35925* Shelby, M., Grilli, S. T., & Grilli, A. R. (2016). Tsunami hazard assessment in the Hudson River Estuary based on dynamic tsunami-tide simulations. Pure and Applied Geophysics, 173, 3999–4037. https://doi.org/10.1007/s00024-016-1315-y* Shi, F., Dalrymple, R. A., Kirby, J. T., Chen, Q., & Kennedy, A. (2001). A fully nonlinear Boussinesq model in generalized curvilinear coordinates. Coastal Engineering, 42, 337–358.* Shi, F., Kirby, J. T., Dalrymple, R. A., & Chen, Q. (2003). Wave simulations in Ponce de Leon Inlet using Boussinesq model. Journal of Waterway, Port, Coastal and Ocean Engineering, 129(3), 124–135. https://doi.org/10.1061/(ASCE)0733-950X(2003)129:3(124)* Shi, F., Kirby, J. T., Harris, J. C., Geiman, J. D., & Grilli, S. T. (2012). A high-order adaptive time-stepping TVD solver for Boussinesq modeling of breaking waves and coastal inundation. Ocean Modelling, 43--44, 36–51. https://doi.org/10.1016/J.OCEMOD.2011.12.004* Su, S.-F., Ma, G., & Hsu, T.-W. (2015). Boussinesq modeling of spatial variability of infragravity waves on fringing reefs. Ocean Engineering, 101, 78–92. https://doi.org/10.1016/j.oceaneng.2015.04.022* Tappin, D. R., Grilli, S. T., Harris, J. C., Geller, R. J., Masterlark, T., Kirby, J. T., … Mai, P. M. (2014). Did a submarine landslide contribute to the 2011 Tohoku tsunami? Marine Geology, 357, 344–361. https://doi.org/10.1016/j.margeo.2014.09.043* Tappin, D. R., Watts, P., & Grilli, S. T. (2008). The Papua New Guinea tsunami of 17 July 1998: anatomy of a catastrophic event. Natural Hazards and Earth Systems Science, 8, 243–266.* Tehranirad, B., Harris, J. C., Grilli, A. R., Grilli, S. T., Abadie, S., Kirby, J. T., & Shi, F. (2015). Far-field tsunami impact in the North Atlantic basin from large scale flank collapses of the Cumbre Vieja volcano, La Palma. Pure and Applied Geophysics, 172, 3589–3616. https://doi.org/10.1007/s00024-015-1135-5* Watts, P., Grilli, S. T., Kirby, J. T., Fryer, G. J., & Tappin, D. R. (2003). Landslide tsunami case studies using a Boussinesq model and a fully nonlinear tsunami generation model. Natural Hazards and Earth Systems Sciences, 3, 391–402.* Waythomas, C. F., Watts, P., Shi, F., & Kirby, J. T. (2009). Pacific Basin tsunami hazards associated with mass flows in the Aleutian arc of Alaska. Quaternary Science Reviews, 28, 1006–1019. https://doi.org/10.1016/j.quascirev.2009.02.019* Wei, G., & Kirby, J. T. (1995). Time-dependent numerical code for extended Boussinesq equations. Journal of Waterway, Port, Coastal and Ocean Engineering, 121, 251–261.* Wei, G., Kirby, J. T., Grilli, S. T., & Subramanya, R. (1995). A fully nonlinear Boussinesq model for surface waves. part 1. Highly nonlinear unsteady waves. Journal of Fluid Mechanics, 294, 71–92.* Wei, G., Kirby, J. T., & Sinha, A. (1999). Generation of waves in Boussinesq models using a source function method. Coastal Engineering, 36, 271–299.
