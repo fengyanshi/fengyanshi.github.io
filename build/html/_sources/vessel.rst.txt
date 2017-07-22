@@ -14,6 +14,7 @@ Ship-wakes
    vessel_compile
    vessel_flat_bottom
    vessel_circular_basin
+   vessel_inlet
 
 
 
