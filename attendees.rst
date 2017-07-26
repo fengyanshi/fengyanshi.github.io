@@ -1,6 +1,8 @@
 ATTENDEES
 =============
 
+.. image:: images/workshop/group_photo_1.jpg
+
 * Mahsa Arabi (Stony Brook University)   
 * Katherine Labuhn (Army Corps of Eng - Detroit)
 * Qin J Chen (Louisiana State University)
