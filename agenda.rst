@@ -41,8 +41,8 @@ Day 3: Thursday July 27th
  * 9:20--10:00  Coupling between FUNWAVE--TVD and NHWAVE in Tsunami applications – cases of Tohoku 2011 and Landslide tsunamis on US east Coast  -- Stephan Grilli
  * 10:00--10:30 Sediment transport module in FUNWAVE-TVD -- Jim Kirby
  * 10:30--11:00 Break
- * 11:30--12:00 Boussinesq Model applied to Harbour agitation and Resonance, for laboratory and field data -- Gabriel Díaz-Hernández
- * 12:00--12:30 Earthquake-induced Tsunami Risk in the Cascadia Subduction Zone -- Rozita Jalali Farahani
+ * 11:00--11:30 Boussinesq Model applied to Harbour agitation and Resonance, for laboratory and field data -- Gabriel Díaz-Hernández
+ * 11:30--12:00 Earthquake-induced Tsunami Risk in the Cascadia Subduction Zone -- Rozita Jalali Farahani
  * 12:00--01:30 Lunch and Round Table Discussion on the Future Model Development Efforts and Enhancements (Lead: Malej, Shi, Kirby)
  * 1:45--3:00 Training session #5 -- Shi, Malej
  * 3:00--3:30 Break
