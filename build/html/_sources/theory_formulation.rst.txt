@@ -245,6 +245,21 @@ To calculate storm surges, wind stress is applied
 
 Note that :math:`\bf C` is not used, compared to the formula for 'Wind effect on waves'. 
 
+* Meteotsunami
+
+Meteotsunami is modeled using a pressure source of two-dimensional Gausian distribution:
+
+.. math:: P = dP exp \left(-(\frac{(x^\prime - x_0)^2}{2\sigma_x^2} + \frac{(y^\prime - y_0)^2}{2\sigma_y^2}) \right)
+
+where :math:`dP` is the pressure anomaly in mb,  :math:`(x^\prime,y^\prime)` are the coordinates rotated to the pressure moving direction (angle is :math:`\theta` as indicated in the figure). :math:`\sigma_x` and :math:`\sigma_y` are paramters representing the length of the width of the pressure source. 
+
+.. figure:: images/gausian.jpg
+    :width: 300px
+    :align: center
+    :height: 300px
+    :alt: alternate text
+    :figclass: align-center
+
 * Landslide-generated tsunami
 
 Landslide-generated tsunami can be calculated using the same approach as the meteotsunami. Details will be reported by Woodruff (2017). 

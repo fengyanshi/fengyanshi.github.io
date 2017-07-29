@@ -15,6 +15,7 @@ Simple tests (for workshop)
    inlet_shoal
    tohoku
    vessel
+   meteo
 
 ******************
 Benchmarks

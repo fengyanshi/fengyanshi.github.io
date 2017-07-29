@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>AUTHORS &#8212; funwave  documentation</title>
+    <title>Compile the code for meteotsunami case &#8212; funwave  documentation</title>
     
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -26,8 +26,8 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="GALLERY" href="gallery.html" />
-    <link rel="prev" title="BIBLIOGRAPHY" href="references.html" />
+    <link rel="next" title="Meteotsunami: Gausian pressure and flat bottom" href="meteo_flat_bottom.html" />
+    <link rel="prev" title="Meteotsunami" href="meteo.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -43,25 +43,43 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="authors">
-<h1><strong>AUTHORS</strong><a class="headerlink" href="#authors" title="Permalink to this headline">¶</a></h1>
-<ul>
-<li><p class="first">Fengyan Shi, James T. Kirby and Babak Tehranirad</p>
-<p>Center for Applied Coastal Research, Department of Civil and Environmental Engineering, University of Delaware</p>
-</li>
-<li><p class="first">Jeffrey C. Harris</p>
-<p>Department of Ocean Engineering, University of Rhode Island</p>
-</li>
-</ul>
-<p><strong>Guest authors</strong></p>
-<ul>
-<li><p class="first">Matt Malej</p>
-<p>U.S. Army Engineer Research and Development Center</p>
-</li>
-<li><p class="first">Young-Kwang Choi</p>
-<p>Korea Institute of Ocean Science and Technology</p>
-</li>
-</ul>
+  <div class="section" id="compile-the-code-for-meteotsunami-case">
+<h1>Compile the code for meteotsunami case<a class="headerlink" href="#compile-the-code-for-meteotsunami-case" title="Permalink to this headline">¶</a></h1>
+<div class="line-block">
+<div class="line"><strong>Makefile</strong></div>
+</div>
+<div class="line-block">
+<div class="line">EXEC FILE</div>
+<div class="line-block">
+<div class="line">EXEC          = <em>funwave_meteo</em> (for example)</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line">FLAGS</div>
+<div class="line-block">
+<div class="line-block">
+<div class="line">FLAG_1 = -DDOUBLE_PRECISION</div>
+<div class="line">FLAG_4 = -DCARTESIAN</div>
+<div class="line">FLAG_16 = -DMETEO</div>
+</div>
+<div class="line">if parallel add</div>
+<div class="line-block">
+<div class="line">FLAG_2 = -DPARALLEL</div>
+</div>
+<div class="line">if intel compiler add</div>
+<div class="line-block">
+<div class="line">FLAG_6 = -DINTEL</div>
+</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line">COMPILER</div>
+<div class="line-block">
+<div class="line">FC       = mpif90 (for example)</div>
+</div>
+</div>
+<blockquote>
+<div>The compiled exe file is <em>funwave_meteo</em></div></blockquote>
 </div>
 
 
@@ -73,15 +91,19 @@
 <h3>Related Topics</h3>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="references.html" title="previous chapter"><strong>BIBLIOGRAPHY</strong></a></li>
-      <li>Next: <a href="gallery.html" title="next chapter"><strong>GALLERY</strong></a></li>
+  <li><a href="examples.html"><strong>EXAMPLES</strong></a><ul>
+  <li><a href="meteo.html">Meteotsunami</a><ul>
+      <li>Previous: <a href="meteo.html" title="previous chapter">Meteotsunami</a></li>
+      <li>Next: <a href="meteo_flat_bottom.html" title="next chapter">Meteotsunami: Gausian pressure and flat bottom</a></li>
+  </ul></li>
+  </ul></li>
   </ul></li>
 </ul>
 </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/authors.rst.txt"
+      <li><a href="_sources/meteo_compile.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -107,7 +129,7 @@
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
       
       |
-      <a href="_sources/authors.rst.txt"
+      <a href="_sources/meteo_compile.rst.txt"
           rel="nofollow">Page source</a>
     </div>
 

@@ -232,6 +232,16 @@ spreading function. To avoid the computational underflow, <img class="math" src=
 <p><img src="_images/math/974eb958f3b7771cf298dcca1ec99c033b192a28.png" alt="{\bf R}_w = \frac{\rho_a}{\rho} C_{dw} |{\bf U}_{10}| ({\bf U}_{10})"/></p>
 </div><p>Note that <img class="math" src="_images/math/e8e91450186bb2d9cf75130efddff2f3301b676c.png" alt="\bf C"/> is not used, compared to the formula for &#8216;Wind effect on waves&#8217;.</p>
 <ul class="simple">
+<li>Meteotsunami</li>
+</ul>
+<p>Meteotsunami is modeled using a pressure source of two-dimensional Gausian distribution:</p>
+<div class="math">
+<p><img src="_images/math/af1adcec57f45334ad143af5f8b434cb788215d7.png" alt="P = dP exp \left(-(\frac{(x^\prime - x_0)^2}{2\sigma_x^2} + \frac{(y^\prime - y_0)^2}{2\sigma_y^2}) \right)"/></p>
+</div><p>where <img class="math" src="_images/math/c95991da333a1acad2d5e27ab3ee88cf8d3f6a2e.png" alt="dP"/> is the pressure anomaly in mb,  <img class="math" src="_images/math/c951f9a85df6d7597fee2f93b9e4aa3b2bb210bd.png" alt="(x^\prime,y^\prime)"/> are the coordinates rotated to the pressure moving direction (angle is <img class="math" src="_images/math/3be04d4207434584251f6921820c24ac9fa8c6f1.png" alt="\theta"/> as indicated in the figure). <img class="math" src="_images/math/2e5d48e1aeeaeb5798b847e2feef01ba35790ddc.png" alt="\sigma_x"/> and <img class="math" src="_images/math/0b30a2d48c2805095245dba3b4be2dfd2e2fba2e.png" alt="\sigma_y"/> are paramters representing the length of the width of the pressure source.</p>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="_images/gausian.jpg"><img alt="alternate text" src="_images/gausian.jpg" style="width: 300px; height: 300px;" /></a>
+</div>
+<ul class="simple">
 <li>Landslide-generated tsunami</li>
 </ul>
 <p>Landslide-generated tsunami can be calculated using the same approach as the meteotsunami. Details will be reported by Woodruff (2017).</p>

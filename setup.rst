@@ -31,6 +31,8 @@ The simple examples serve as baseline cases for testing your system. You can als
 
 * `ship-wakes <vessel.html>`_
 
+* `Meteotsunami <meteo.html>`_
+
 ***************************
 Download benchmark tests
 ***************************
