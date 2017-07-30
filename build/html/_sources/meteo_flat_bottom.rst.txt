@@ -10,7 +10,7 @@ Meteotsunami: Gausian pressure and flat bottom
     :alt: alternate text
     :figclass: align-center
 
-Model configuration: Model dimensions: 100 km x 600 km. Pressure source is an elliptical shape Gaussian distribution described in the section of METEO-MODULE in
+Model configuration: Model dimensions: 100 km x 600 km. Water depth is 40 m in the whole domain. Pressure source is an elliptical shape Gaussian distribution described in the section of METEO-MODULE in
 `INTRODUCTION <theory_formulation.html>`_. The moving speed of the source is specified as 20 m/s which is close to the critical speed to make Proudman Resonance. 
 
 * input.txt
