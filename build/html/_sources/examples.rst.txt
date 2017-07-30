@@ -1,9 +1,9 @@
 **EXAMPLES**
 ==============
 
-********************************
-Simple tests (for beginners)
-********************************
+******************************************************
+Simple tests **(beginners should start from here)**
+******************************************************
  .. note:: Simple examples are included in the package of Version 3.1 or higher (`click here to download from GitHub <https://github.com/fengyanshi/FUNWAVE-TVD>`_) .
 
 .. toctree::
