@@ -256,7 +256,7 @@ where :math:`dP` is the pressure anomaly in mb,  :math:`(x^\prime,y^\prime)` are
 .. figure:: images/gausian.jpg
     :width: 300px
     :align: center
-    :height: 300px
+    :height: 260px
     :alt: alternate text
     :figclass: align-center
 
