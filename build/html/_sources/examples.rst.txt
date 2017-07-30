@@ -1,9 +1,9 @@
 **EXAMPLES**
 ==============
 
-****************************
-Simple tests (for workshop)
-****************************
+********************************
+Simple tests (for beginners)
+********************************
  .. note:: Simple examples are included in the package of Version 3.1 or higher (`click here to download from GitHub <https://github.com/fengyanshi/FUNWAVE-TVD>`_) .
 
 .. toctree::
