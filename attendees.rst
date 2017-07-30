@@ -1,7 +1,7 @@
 ATTENDEES
 =============
 
-.. image:: images/workshop/group_photo_1.jpg
+.. image:: images/workshop/participants.jpg
 
 * Mahsa Arabi (Stony Brook University)   
 * Katherine Labuhn (Army Corps of Eng - Detroit)
