@@ -21,7 +21,7 @@ The three-day workshop included training sessions for new users, as well as tech
 * Optimization in FUNWAVE-TVD with parallel I/O -- Michael Lam, `pdf8 <https://drive.google.com/open?id=0B-GxGRemMHYCcVU2a0tQT09WVmM>`_
 * FUNWAVE-TVD Benchmarks in HR Wallingford -- Nigel Tozer, `pdf9 <https://drive.google.com/open?id=0B-GxGRemMHYCV3BWYVJvb2VBN3M>`_
 * Introduction to a nonhydrostatic wave model -- NHWAVE, Fengyan Shi, `pdf10 <https://drive.google.com/open?id=0B-GxGRemMHYCUFdDNnZYSVE0d2c>`_
-* Coupling between FUNWAVE--TVD and NHWAVE in Tsunami applications – cases of Tohoku 2011 and Landslide tsunamis on US east Coast  -- Stephan Grilli, pdf not ready yet
+* Coupling between FUNWAVE--TVD and NHWAVE in Tsunami applications – cases of Tohoku 2011 and Landslide tsunamis on US east Coast  -- Stephan Grilli, `pdf11 <https://drive.google.com/open?id=0B-GxGRemMHYCX0sxN3IzX0pyY1k>`_
 * Sediment transport module in FUNWAVE-TVD -- Jim Kirby, `pdf12 <https://drive.google.com/open?id=0B-GxGRemMHYCQUFqSEowd0Y1WTA>`_
 * Boussinesq Model applied to Harbour agitation and Resonance, for laboratory and field data -- Gabriel Díaz-Hernández, `pdf13 <https://drive.google.com/open?id=0B-GxGRemMHYCTmRMOHM2Q1d4LXc>`_
 * Earthquake-induced Tsunami Risk in the Cascadia Subduction Zone -- Rozita Jalali,Farahani, `pdf14 <https://drive.google.com/open?id=0B-GxGRemMHYCR2NCN0xjT2RTNHc>`_
