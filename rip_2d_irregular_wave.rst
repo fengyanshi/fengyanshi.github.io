@@ -1,4 +1,4 @@
-Irregular wave 30 deg oblique incidence
+Irregular wave 30 deg normal incidence
 ########################################
 
 .. figure:: images/simple_cases/rip_vort.jpg
