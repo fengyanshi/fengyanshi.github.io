@@ -71,5 +71,5 @@ You can download the tutorial - :download:`click here <images/workshop/funwave_t
 
 .. image:: images/workshop/all_combined.jpg
 
-`Download all photos <https://drive.google.com/open?id=0B-GxGRemMHYCWUlvZ0otc3FxNHc>`_
+`Download all photos (the previous link didn't work, try this) <https://drive.google.com/open?id=0B-GxGRemMHYCWUlvZ0otc3FxNHc>`_
 `Back to FUNWAVE-TVD Page <https://fengyanshi.github.io/build/html/index.html>`_
