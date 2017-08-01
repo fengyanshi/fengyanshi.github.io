@@ -1,4 +1,4 @@
-Irregular wave 30 deg normal incidence
+Irregular wave normal incidence
 ########################################
 
 .. figure:: images/simple_cases/rip_vort.jpg
