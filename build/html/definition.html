@@ -169,7 +169,7 @@
 </dl>
 </li>
 <li><dl class="first docutils">
-<dt>WAVEMAKER = WK_IRR:  Wei and Kirby 1999 TMA spectrum wavemaker</dt>
+<dt>WAVEMAKER = WK_IRR:  Wei and Kirby 1999 TMA spectrum wavemaker (internal)</dt>
 <dd><blockquote class="first">
 <div><p>need Xc_WK, Yc_WK, Ywidth_WK, DEP_WK, Time_ramp, Delta_WK,  FreqPeak, FreqMin,FreqMax, Hmo, GammaTMA(default: 3.3 ), ThetaPeak (default: 0.0), Nfreq(default: 45), Ntheta(default: 24)</p>
 </div></blockquote>
@@ -178,7 +178,7 @@
 </dl>
 </li>
 <li><dl class="first docutils">
-<dt>WAVEMAKER = JON_2D:  JONSWAP spectrum wavemaker</dt>
+<dt>WAVEMAKER = JON_2D:  JONSWAP spectrum wavemaker (internal)</dt>
 <dd><p class="first last">need Xc_WK, Yc_WK, Ywidth_WK,
 DEP_WK, Time_ramp, Delta_WK,  FreqPeak, FreqMin,FreqMax,
 Hmo, GammaTMA(default: 3.3 ), ThetaPeak (default: 0.0),Nfreq(default: 45), Ntheta(default: 24)</p>
@@ -186,7 +186,7 @@ Hmo, GammaTMA(default: 3.3 ), ThetaPeak (default: 0.0),Nfreq(default: 45), Nthet
 </dl>
 </li>
 <li><dl class="first docutils">
-<dt>WAVEMAKER = JON_1D:  JONSWAP 1D spectrum wavemaker</dt>
+<dt>WAVEMAKER = JON_1D:  JONSWAP 1D spectrum wavemaker (internal)</dt>
 <dd><p class="first last">need Xc_WK, Yc_WK, Ywidth_WK,
 DEP_WK, Time_ramp, Delta_WK,  FreqPeak, FreqMin,FreqMax,
 Hmo, GammaTMA(default: 3.3 ), Nfreq(default: 45)</p>
@@ -194,7 +194,7 @@ Hmo, GammaTMA(default: 3.3 ), Nfreq(default: 45)</p>
 </dl>
 </li>
 <li><dl class="first docutils">
-<dt>WAVEMAKER = TMA_1D:  TMA 1D spectrum wavemaker</dt>
+<dt>WAVEMAKER = TMA_1D:  TMA 1D spectrum wavemaker (internal)</dt>
 <dd><p class="first last">need Xc_WK, Yc_WK, Ywidth_WK,
 DEP_WK, Time_ramp, Delta_WK,  FreqPeak, FreqMin,FreqMax,
 Hmo, GammaTMA(Note, still use TMA Gamma, default: 3.3 ), Nfreq(default: 45)</p>
@@ -203,11 +203,11 @@ Hmo, GammaTMA(Note, still use TMA Gamma, default: 3.3 ), Nfreq(default: 45)</p>
 </li>
 <li><dl class="first docutils">
 <dt>WAVEMAKER = WK_TIME_SERIES:</dt>
-<dd><p class="first last">fft  a time series to get each wave component and then use Wei and Kirby&#8217;s ( 1999) wavemaker.  The wave angle is zero (x direction) for all wave components. Need input WaveCompFile (including 3 columns: per,amp,pha) and NumWaveComp,PeakPeriod,DEP_WK, Xc_WK,Ywidth_WK</p>
+<dd><p class="first last">fft  a time series to get each wave component and then use Wei and Kirby&#8217;s ( 1999) wavemaker. Internal wavemaker The wave angle is zero (x direction) for all wave components. Need input WaveCompFile (including 3 columns: per,amp,pha) and NumWaveComp,PeakPeriod,DEP_WK, Xc_WK,Ywidth_WK</p>
 </dd>
 </dl>
 </li>
-<li><p class="first">WAVEMAKER = WAVE_DATA:  2D directional spectrum data specified in WaveCompFile. Need Xc_WK, Yc_WK, DEP_WK, Delta_WK.</p>
+<li><p class="first">WAVEMAKER = WAVE_DATA:  2D directional spectrum data specified in WaveCompFile. Internal wavemaker. Need Xc_WK, Yc_WK, DEP_WK, Delta_WK.</p>
 <blockquote>
 <div><blockquote>
 <div><p>Format of WaveCompFile:</p>
@@ -255,10 +255,13 @@ Hmo, GammaTMA(Note, still use TMA Gamma, default: 3.3 ), Nfreq(default: 45)</p>
 </div></blockquote>
 </div></blockquote>
 </li>
+<li><p class="first">WAVEMAKER = LEFT_BC_IRR: Wavemaker at the left boundary (ghost cells). This type of wavemaker reflects waves at the left boundary. Need WAVE_DATA_TYPE (DATA,TMA2D,JON2D,JON1D) and other parameters as the same as in the internal wavemaker. Although it is an irregular wavemaker, it can generate regular waves using WAVE_DATA_TYPE = DATA by specifying a single wave component.</p>
+</li>
 <li><p class="first">WAVEMAKER = GAUSIAN: initial Gausian hump, need AMP, Xc, Yc, and WID.</p>
 </li>
 <li><p class="first">Definations</p>
 <ul class="simple">
+<li>WAVE_DATA_TYPE : Type of wave data needed for LEFT_BC_IRR WaveMaker.</li>
 <li>AMP : amplitude (m) of initial <img class="math" src="_images/math/5635a7c34414599c2452d72430811e816b460335.png" alt="\eta"/>, if  WAVEMAKER = INI_REC, WAVEMAKER = INI_SOL, WAVEMAKER = LEF_SOL.</li>
 <li>DEP: water depth at wavemaker location, if WAVEMAKER = INI_SOL, WAVEMAKER = LEF_SOL.</li>
 <li>LAGTIME, time lag (s) for the solitary wave generated on the left boundary, e.g., WAVEMAKER = LEF_SOL.</li>

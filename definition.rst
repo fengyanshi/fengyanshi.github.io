@@ -105,30 +105,30 @@ Following are descriptions of parameters in input.txt
  * WAVEMAKER = WK\_REG: Wei and Kirby 1999 internal wave maker
       need Xc\_WK, Yc\_WK, Ywidth\_WK, Tperiod, AMP\_WK, DEP\_WK, Theta\_WK, and Time\_ramp (factor of period)
 
- * WAVEMAKER = WK\_IRR:  Wei and Kirby 1999 TMA spectrum wavemaker
+ * WAVEMAKER = WK\_IRR:  Wei and Kirby 1999 TMA spectrum wavemaker (internal)
       need Xc\_WK, Yc\_WK, Ywidth\_WK, DEP\_WK, Time\_ramp, Delta\_WK,  FreqPeak, FreqMin,FreqMax, Hmo, GammaTMA(default: 3.3 ), ThetaPeak (default: 0.0), Nfreq(default: 45), Ntheta(default: 24)
  
      EqualEnergy (=T means the frequency splitting is based on Equal-Energy, otherwise, based on Equal-Frequency space
            
- * WAVEMAKER = JON\_2D:  JONSWAP spectrum wavemaker
+ * WAVEMAKER = JON\_2D:  JONSWAP spectrum wavemaker (internal)
       need Xc\_WK, Yc\_WK, Ywidth\_WK,
       DEP\_WK, Time\_ramp, Delta\_WK,  FreqPeak, FreqMin,FreqMax,
       Hmo, GammaTMA(default: 3.3 ), ThetaPeak (default: 0.0),Nfreq(default: 45), Ntheta(default: 24)
             
- * WAVEMAKER = JON\_1D:  JONSWAP 1D spectrum wavemaker
+ * WAVEMAKER = JON\_1D:  JONSWAP 1D spectrum wavemaker (internal)
       need Xc\_WK, Yc\_WK, Ywidth\_WK,
       DEP\_WK, Time\_ramp, Delta\_WK,  FreqPeak, FreqMin,FreqMax,
       Hmo, GammaTMA(default: 3.3 ), Nfreq(default: 45)  
             
- * WAVEMAKER = TMA\_1D:  TMA 1D spectrum wavemaker
+ * WAVEMAKER = TMA\_1D:  TMA 1D spectrum wavemaker (internal)
       need Xc\_WK, Yc\_WK, Ywidth\_WK,
       DEP\_WK, Time\_ramp, Delta\_WK,  FreqPeak, FreqMin,FreqMax,
       Hmo, GammaTMA(Note, still use TMA Gamma, default: 3.3 ), Nfreq(default: 45)                                   
 
- * WAVEMAKER = WK\_TIME\_SERIES: 
-      fft  a time series to get each wave component and then use Wei and Kirby's ( 1999) wavemaker.  The wave angle is zero (x direction) for all wave components. Need input WaveCompFile (including 3 columns: per,amp,pha) and NumWaveComp,PeakPeriod,DEP\_WK, Xc\_WK,Ywidth\_WK
+ * WAVEMAKER = WK\_TIME\_SERIES:
+      fft  a time series to get each wave component and then use Wei and Kirby's ( 1999) wavemaker. Internal wavemaker The wave angle is zero (x direction) for all wave components. Need input WaveCompFile (including 3 columns: per,amp,pha) and NumWaveComp,PeakPeriod,DEP\_WK, Xc\_WK,Ywidth\_WK
  
- * WAVEMAKER = WAVE\_DATA:  2D directional spectrum data specified in WaveCompFile. Need Xc\_WK, Yc\_WK, DEP\_WK, Delta\_WK. 
+ * WAVEMAKER = WAVE\_DATA:  2D directional spectrum data specified in WaveCompFile. Internal wavemaker. Need Xc\_WK, Yc\_WK, DEP\_WK, Delta\_WK. 
 
      Format of WaveCompFile:
 
@@ -182,10 +182,13 @@ Following are descriptions of parameters in input.txt
 
      CLOSE(1)
  
-            
+ * WAVEMAKER = LEFT\_BC\_IRR: Wavemaker at the left boundary (ghost cells). This type of wavemaker reflects waves at the left boundary. Need WAVE\_DATA\_TYPE (DATA,TMA2D,JON2D,JON1D) and other parameters as the same as in the internal wavemaker. Although it is an irregular wavemaker, it can generate regular waves using WAVE\_DATA\_TYPE = DATA by specifying a single wave component.        
+       
  * WAVEMAKER = GAUSIAN: initial Gausian hump, need AMP, Xc, Yc, and WID.          
 
  * Definations
+
+   * WAVE_DATA_TYPE : Type of wave data needed for LEFT_BC_IRR WaveMaker.
 
    * AMP : amplitude (m) of initial :math:`\eta`, if  WAVEMAKER = INI\_REC, WAVEMAKER = INI\_SOL, WAVEMAKER = LEF\_SOL.
 
