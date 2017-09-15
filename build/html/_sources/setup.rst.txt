@@ -5,12 +5,11 @@
 Download source code 
 **********************
 
-
-Version 3.0: Released Apr 2017 :download:`download here <versions/funwave_tvd_30.zip>`
+`Version 3.2 (beta version): click here to download from GitHub <https://github.com/fengyanshi/FUNWAVE-TVD>`_
 
 Version 3.1 Released Sep 2017: Used for FUNWAVE-TVD Workshop 2017 `click here to download <https://github.com/fengyanshi/FUNWAVE-TVD/releases>`_
 
-`Version 3.2 (beta version): click here to download from GitHub <https://github.com/fengyanshi/FUNWAVE-TVD>`_
+Version 3.0: Released Apr 2017 :download:`download here <versions/funwave_tvd_30.zip>`
 
 Versions 1.0, 1.1, 2.0, 2.1: Please contact fyshi@udel.edu
 
