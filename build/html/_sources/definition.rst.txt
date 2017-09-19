@@ -44,6 +44,8 @@ Following are descriptions of parameters in input.txt
 
  *  Xslp: starting x (m) of a slope, if DEPTH\_TYPE=SLOPE
 
+ *  WaterLevel: Specify a water level which will be added to the input bathymetry and wavemaker depth such as DEP_WK (internal wave generator) and DepthWaveMaker (left boundary generator).
+
 
 **SPECIFICATION OF RESULT FOLDER**   
   
