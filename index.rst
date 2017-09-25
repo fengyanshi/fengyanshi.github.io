@@ -21,9 +21,11 @@ FUNWAVE-TVD
    gallery
    news
 
+.. raw:: html
+   :file: google_group.html
+
 Indices and tables
 ==================
-
 
 * :ref:`genindex`
 * :ref:`modindex`
