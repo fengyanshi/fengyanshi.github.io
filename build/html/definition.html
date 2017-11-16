@@ -259,7 +259,7 @@ Hmo, GammaTMA(Note, still use TMA Gamma, default: 3.3 ), Nfreq(default: 45)</p>
 </li>
 <li><p class="first">WAVEMAKER = LEFT_BC_IRR: Wavemaker at the left boundary (ghost cells). This type of wavemaker reflects waves at the left boundary. Need WAVE_DATA_TYPE (DATA,TMA2D,JON2D,JON1D) and other parameters as the same as in the internal wavemaker. Although it is an irregular wavemaker, it can generate regular waves using WAVE_DATA_TYPE = DATA by specifying a single wave component.</p>
 </li>
-<li><p class="first">WAVEMAKER = GAUSIAN: initial Gausian hump, need AMP, Xc, Yc, and WID.</p>
+<li><p class="first">WAVEMAKER = INI_GAUSIAN or INI_GAU: initial Gausian hump, need AMP, Xc, Yc, and WID.</p>
 </li>
 <li><p class="first">Definations</p>
 <ul class="simple">
@@ -482,8 +482,29 @@ Hmo, GammaTMA(Note, still use TMA Gamma, default: 3.3 ), Nfreq(default: 45)</p>
 </div>
 <div class="section" id="output-files">
 <h2>Output files<a class="headerlink" href="#output-files" title="Permalink to this headline">¶</a></h2>
-<p>The output files are saved in the result directory defined by RESULT_FOLDER in input.txt. For outputs in ASCII,  a file name is a combination of variable name and an output series number such eta_00001, eta_00002, .... The format  and read/write algorithm are  consistent with a depth file.  Output for stations is a series of numbered files such as sta_00001, sta_00002 ....</p>
-<p>Other output formats are under development.</p>
+<p>The output files are saved in the result directory defined by RESULT_FOLDER in input.txt. A file name is a combination of variable name and an output series number such as eta_00001, eta_00002, .... The format  and read/write algorithm are  consistent with a depth file.  Output for stations is a series of numbered files such as sta_0001, sta_0002 .... (NOTE: four digit numbers here vs. five digit numbers for 2D output like eta_00001).</p>
+<blockquote>
+<div><ul class="simple">
+<li>ASCII format</li>
+</ul>
+</div></blockquote>
+<p>The default format is ASCII.  The format and read algorithm are  consistent with a depth file.</p>
+<blockquote>
+<div><ul class="simple">
+<li>BINARY format</li>
+</ul>
+</div></blockquote>
+<p>When FIELD_IO_TYPE = BINARY is specified in input.txt, the 2D output files such as eta_00001, ... are in the binary format. Here&#8217;s an example of reading in matlab:</p>
+<p>&gt;&gt;fileID=fopen(&#8216;eta_00001&#8217;);</p>
+<p>&gt;&gt;eta=fread(fileID,[Mglob Nglob],&#8217;*double&#8217;);</p>
+<p>&gt;&gt;fclose(fileID);</p>
+<p>&gt;&gt;pcolor(eta),shading flat</p>
+<blockquote>
+<div><ul class="simple">
+<li>Other format</li>
+</ul>
+</div></blockquote>
+<p>Other formats such as NetCDF and HDF5 are also provided but not distributed in the master Github repository.</p>
 </div>
 </div>
 

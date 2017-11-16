@@ -186,7 +186,7 @@ Following are descriptions of parameters in input.txt
  
  * WAVEMAKER = LEFT\_BC\_IRR: Wavemaker at the left boundary (ghost cells). This type of wavemaker reflects waves at the left boundary. Need WAVE\_DATA\_TYPE (DATA,TMA2D,JON2D,JON1D) and other parameters as the same as in the internal wavemaker. Although it is an irregular wavemaker, it can generate regular waves using WAVE\_DATA\_TYPE = DATA by specifying a single wave component.        
        
- * WAVEMAKER = GAUSIAN: initial Gausian hump, need AMP, Xc, Yc, and WID.          
+ * WAVEMAKER = INI_GAUSIAN or INI_GAU: initial Gausian hump, need AMP, Xc, Yc, and WID.          
 
  * Definations
 
@@ -469,9 +469,29 @@ However, use of a stretched grid is not recommended in terms of decrease in nume
 Output files
 *****************************
 
-The output files are saved in the result directory defined by RESULT\_FOLDER in input.txt. For outputs in ASCII,  a file name is a combination of variable name and an output series number such eta\_00001, eta\_00002, .... The format  and read/write algorithm are  consistent with a depth file.  Output for stations is a series of numbered files such as sta\_00001, sta\_00002 .... 
 
-Other output formats are under development. 
+The output files are saved in the result directory defined by RESULT\_FOLDER in input.txt. A file name is a combination of variable name and an output series number such as eta\_00001, eta\_00002, .... The format  and read/write algorithm are  consistent with a depth file.  Output for stations is a series of numbered files such as sta\_0001, sta\_0002 .... (NOTE: four digit numbers here vs. five digit numbers for 2D output like eta\_00001).
+
+ * ASCII format
+
+The default format is ASCII.  The format and read algorithm are  consistent with a depth file.
+
+ * BINARY format
+
+When FIELD\_IO\_TYPE = BINARY is specified in input.txt, the 2D output files such as eta\_00001, ... are in the binary format. Here's an example of reading in matlab:
+
+
+>>fileID=fopen('eta\_00001');
+
+>>eta=fread(fileID,[Mglob Nglob],'\*double');
+
+>>fclose(fileID);
+
+>>pcolor(eta),shading flat 
+
+ * Other format
+
+Other formats such as NetCDF and HDF5 are also provided but not distributed in the master Github repository. 
 
 
 
