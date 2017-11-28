@@ -130,7 +130,7 @@ Following are descriptions of parameters in input.txt
  * WAVEMAKER = WK\_TIME\_SERIES:
       fft  a time series to get each wave component and then use Wei and Kirby's ( 1999) wavemaker. Internal wavemaker The wave angle is zero (x direction) for all wave components. Need input WaveCompFile (including 3 columns: per,amp,pha) and NumWaveComp,PeakPeriod,DEP\_WK, Xc\_WK,Ywidth\_WK
  
- * WAVEMAKER = WAVE\_DATA:  2D directional spectrum data specified in WaveCompFile. Internal wavemaker. Need Xc\_WK, Yc\_WK, DEP\_WK, Delta\_WK. 
+ * WAVEMAKER = WK\_DATA2D:  2D directional spectrum data specified in WaveCompFile. Internal wavemaker. Need Xc\_WK, Yc\_WK, DEP\_WK, Delta\_WK. 
 
      Format of WaveCompFile:
 
@@ -190,7 +190,7 @@ Following are descriptions of parameters in input.txt
 
  * Definations
 
-   * WAVE_DATA_TYPE : Type of wave data needed for LEFT_BC_IRR WaveMaker.
+   * WAVE_DATA_TYPE : Type of wave data needed for LEFT_BC_IRR WaveMaker. It can be DATA or other types used for internal wavemakers
 
    * AMP : amplitude (m) of initial :math:`\eta`, if  WAVEMAKER = INI\_REC, WAVEMAKER = INI\_SOL, WAVEMAKER = LEF\_SOL.
 

@@ -209,7 +209,7 @@ Hmo, GammaTMA(Note, still use TMA Gamma, default: 3.3 ), Nfreq(default: 45)</p>
 </dd>
 </dl>
 </li>
-<li><p class="first">WAVEMAKER = WAVE_DATA:  2D directional spectrum data specified in WaveCompFile. Internal wavemaker. Need Xc_WK, Yc_WK, DEP_WK, Delta_WK.</p>
+<li><p class="first">WAVEMAKER = WK_DATA2D:  2D directional spectrum data specified in WaveCompFile. Internal wavemaker. Need Xc_WK, Yc_WK, DEP_WK, Delta_WK.</p>
 <blockquote>
 <div><blockquote>
 <div><p>Format of WaveCompFile:</p>
@@ -263,7 +263,7 @@ Hmo, GammaTMA(Note, still use TMA Gamma, default: 3.3 ), Nfreq(default: 45)</p>
 </li>
 <li><p class="first">Definations</p>
 <ul class="simple">
-<li>WAVE_DATA_TYPE : Type of wave data needed for LEFT_BC_IRR WaveMaker.</li>
+<li>WAVE_DATA_TYPE : Type of wave data needed for LEFT_BC_IRR WaveMaker. It can be DATA or other types used for internal wavemakers</li>
 <li>AMP : amplitude (m) of initial <img class="math" src="_images/math/5635a7c34414599c2452d72430811e816b460335.png" alt="\eta"/>, if  WAVEMAKER = INI_REC, WAVEMAKER = INI_SOL, WAVEMAKER = LEF_SOL.</li>
 <li>DEP: water depth at wavemaker location, if WAVEMAKER = INI_SOL, WAVEMAKER = LEF_SOL.</li>
 <li>LAGTIME, time lag (s) for the solitary wave generated on the left boundary, e.g., WAVEMAKER = LEF_SOL.</li>
