@@ -1,4 +1,4 @@
-Basics
+Project
 ********
 
 Most model parameters are specified in the file called input.txt, except some parameters extended from a specific module.
