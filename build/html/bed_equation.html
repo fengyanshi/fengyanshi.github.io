@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Morphological Evolution &#8212; funwave  documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Slope Limiting Methodology" href="slope_limiting.html" />
+    <link rel="prev" title="Sediment Transport Equation" href="sed_equation.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="morphological-evolution">
+<h1>Morphological Evolution<a class="headerlink" href="#morphological-evolution" title="Permalink to this headline">¶</a></h1>
+<p>Morphological evolution is computed using the sediment continuity equation, in which the time-averaged pickup and deposition rates are used. The sediment continuity equation is written as</p>
+<div class="math">
+<p><img src="_images/math/c32ab397051f00033e3e285370bb987d03f71367.png" alt="\frac{d \bar{Z}_b}{dt} = \frac{1}{1-n}(\bar{P} - \bar{D})"/></p>
+</div><p>where <img class="math" src="_images/math/5903f6fa457f015c3f4c7ea0f39dd45fb7646997.png" alt="\bar{Z}_b"/> are the time-averaged depth changes with positive values for erosion and negative values for deposition, <img class="math" src="_images/math/05333e4a6f233d1b0820707cddd3be8db075d3cf.png" alt="\bar{P}"/> and <img class="math" src="_images/math/eeb7d854d71ddcc1537e1ece9017ae60ac703fc2.png" alt="\bar{D}"/> are the time averaged pickup and deposition rates averaged over <img class="math" src="_images/math/be6875b0dd4109cc060872eaa9d1f64ce538e9bc.png" alt="dt_{\mbox{morph}}"/>. In Tehranirad et al. (2016),   <img class="math" src="_images/math/cebada01e4602e24aa146ccd95854a3af019f824.png" alt="dt_{\mbox{morph}} = 5 \sim 20"/> is recommended to be small enough to capture bed changes induced by tsunami waves. In ship-wake applications, <img class="math" src="_images/math/be6875b0dd4109cc060872eaa9d1f64ce538e9bc.png" alt="dt_{\mbox{morph}}"/> should be smaller than the long wave cases. A specific range of morphological time step (<img class="math" src="_images/math/be6875b0dd4109cc060872eaa9d1f64ce538e9bc.png" alt="dt_{\mbox{morph}}"/>) for ship-wake applications, however, needs a further investigation based on numerical simulations carried out against measured data.</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="basics.html"><strong>BASICS</strong></a><ul>
+  <li><a href="sediment.html">Sediment Transport Module</a><ul>
+      <li>Previous: <a href="sed_equation.html" title="previous chapter">Sediment Transport Equation</a></li>
+      <li>Next: <a href="slope_limiting.html" title="next chapter">Slope Limiting Methodology</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, Fengyan Shi.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

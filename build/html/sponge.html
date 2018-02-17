@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Sponge Layer &#8212; funwave  documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Breakwater and Obstacle" href="breakwater.html" />
+    <link rel="prev" title="Landslide" href="slide.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="sponge-layer">
+<h1>Sponge Layer<a class="headerlink" href="#sponge-layer" title="Permalink to this headline">¶</a></h1>
+<p><strong>SPECIFICATION OF SPONGE LAYER</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li>DIRECT_SPONGE: logical parameter for L-D type sponge, T - sponge layer, F - no sponge layer.</li>
+<li>FRICTION_SPONGE: logical parameter for friction type sponge, T - sponge layer, F - no sponge layer.</li>
+<li>DIFFUSION_SPONGE: logical parameter for diffusion type sponge, T - sponge layer, F - no sponge layer.</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Csp: The maximum diffusion coefficient for diffusion type sponge. Default: 1.0</li>
+<li>CDsponge: The maximum Cd for friction type sponge. Default: 10.0</li>
+<li>Sponge_west_width: width (m) of sponge layer at west boundary.</li>
+<li>Sponge_east_width:   width (m) of sponge layer at east boundary.</li>
+<li>Sponge_south_width: width (m) of sponge layer at south boundary.</li>
+<li>Sponge_north_width width (m) of sponge layer at north boundary</li>
+<li>R_sponge: decay rate in L-D type sponge layer. Its values are between 0.85 <img class="math" src="_images/math/5ecfb5efd13556512083272088a2baa0839e3c66.png" alt="\sim"/> 0.95. Default: 0.85.</li>
+<li>A_sponge: maximum damping magnitude in L-D type sponge. The value is <img class="math" src="_images/math/5ecfb5efd13556512083272088a2baa0839e3c66.png" alt="\sim"/> 5.0. Default: 5.0</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="definition.html"><strong>DEFINITIONS OF PARAMETERS</strong></a><ul>
+      <li>Previous: <a href="slide.html" title="previous chapter">Landslide</a></li>
+      <li>Next: <a href="breakwater.html" title="next chapter">Breakwater and Obstacle</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, Fengyan Shi.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

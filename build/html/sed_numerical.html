@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Numerical Scheme for Sediment Transport &#8212; funwave  documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Post Processing" href="post.html" />
+    <link rel="prev" title="Non-erodible Bed" href="non_erodible.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="numerical-scheme-for-sediment-transport">
+<h1>Numerical Scheme for Sediment Transport<a class="headerlink" href="#numerical-scheme-for-sediment-transport" title="Permalink to this headline">¶</a></h1>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="_images/grid.jpg"><img alt="alternate text" src="_images/grid.jpg" style="width: 300px; height: 300px;" /></a>
+</div>
+<p>Following Shi et al. (2012), the finite-volume approach is used for solving the advection-diffusion equation.  A modified interface construction method is proposed for the sediment concentration. For time-integration, the third-order Stability-Preserving (SSP) Runge-Kutta scheme. The bed evolution equation is solved directly using the forward differencing. The numerical schemes for solving the Boussinesq equations are kept unchanged. The grid arrangement of variables for solving advection-diffusion is shown in Figure above.</p>
+<ul class="simple">
+<li>Space-differencing</li>
+</ul>
+<p>The spacing scheme is based on the conservative form of the advection-diffusion equation  can be written as,</p>
+<div class="math">
+<p><img src="_images/math/ccaa2c6f3eb1cb777afbe71a8b20f86695b6f4c3.png" alt="\frac{\partial \Psi}{\partial t} + \nabla \cdot F (\Psi) = S"/></p>
+</div><p>where <img class="math" src="_images/math/334b0728f25dd84a28e483181038a307ea6e483e.png" alt="\Psi"/> and <img class="math" src="_images/math/a357e355be8c7526d3c2edff3dd4fa0a0852c4cb.png" alt="F(\Psi)"/> represent the conserved variable and the sediment flux function, given by</p>
+<div class="math">
+<p><img src="_images/math/c499af259f4e6f9bc46d3dc4e831e61bcf69c363.png" alt="\Psi = \bar{c} H"/></p>
+</div><p>and</p>
+<div class="math">
+<p><img src="_images/math/1787af73fcdb44a60c7d4b906e0837d7c8c56571.png" alt="F = \bar{c} ({\bf M} ) - k H \nabla_h \bar{c}"/></p>
+</div><p>The source term <img class="math" src="_images/math/c43fa0e40fa1f90c3dd9a97d5932fc5fa3b482d2.png" alt="S = P-D"/>. <img class="math" src="_images/math/334b0728f25dd84a28e483181038a307ea6e483e.png" alt="\Psi"/> and <img class="math" src="_images/math/1dbc400fcc213305415872f9f625cd2828f97a00.png" alt="S"/> are evaluated at the cell center as the major variables defined in FUNWAVE-TVD. <img class="math" src="_images/math/0b7c1e16a3a8a849bb8ffdcdbf86f65fd1f30438.png" alt="k"/> is calculated at the cell faces as</p>
+<div class="math">
+<p><img src="_images/math/596fce1027b6d8d3f317ef43dd4e34f275bb8304.png" alt="k_{i+1/2,j} = 5.93 \left( \frac{u_{*c i+1,j} + u_{*c i,j}}{2} \right)
+\left( \frac{H_{i+1,j} + H_{i,j}}{2} \right)"/></p>
+</div><div class="math">
+<p><img src="_images/math/ac943e049be8c1f5f7ec60da55812a2165eab950.png" alt="k_{i-1/2,j} = 5.93 \left( \frac{u_{*c i-1,j} + u_{*c i,j}}{2} \right)
+\left( \frac{H_{i-1,j} + H_{i,j}}{2} \right)"/></p>
+</div><p>The same algorithm is used for <img class="math" src="_images/math/0b7c1e16a3a8a849bb8ffdcdbf86f65fd1f30438.png" alt="k"/> at (<img class="math" src="_images/math/97278af55e21d60a4d4d13d1d4821771e543291d.png" alt="i,j+1/2"/>) and (<img class="math" src="_images/math/d7351e2a41c0eff5f2ae68b7284cd3fc01daa6f1.png" alt="i,j-1/2"/>) points. The shear velocity <img class="math" src="_images/math/b1c40b3cc98f4c79508ddf17bf52c3932b7e53ea.png" alt="u_{*c}"/> is evaluated as</p>
+<div class="math">
+<p><img src="_images/math/912938e1effac0df2cdf2925a9e0ae21937b3a6e.png" alt="u_{*c i,j} = \frac{k U_{c i,j}}{-1 + \ln (30H_{i,j}/k_s)}"/></p>
+</div><p><img class="math" src="_images/math/06ab7fea661c4f05cdf2818cae8537afbc35d32a.png" alt="U_{c i,j}"/> is the total velocity,</p>
+<div class="math">
+<p><img src="_images/math/7e48ede7ba5aaebc8f474fa0696ece7f4170ee83.png" alt="U_{c i,j}= \sqrt{U_{i,j}^2 + V_{i,j}^2}"/></p>
+</div><p>in which (<img class="math" src="_images/math/8f429a03b9bbaa6e43d5d34209c5d06eb47ca105.png" alt="U_{i,j}, V_{i,j}"/>) are directly from the Boussinesq solution,</p>
+<div class="math">
+<p><img src="_images/math/f5dc8fd41f78e8b542ec11afb376f839e636c73c.png" alt="U_{i,j} = U_{\alpha i,j} + U_{2 i,j}"/></p>
+</div><div class="math">
+<p><img src="_images/math/c123912431b7033962b832248b787fe97f6dccb6.png" alt="V_{i,j} = V_{\alpha i,j} + V_{2 i,j}"/></p>
+</div><p>corresponding to the reference velocity <img class="math" src="_images/math/66d39214748b99ae5a78cc4b9637269d14c713f9.png" alt="{\bf u}_\alpha"/> and depth averaged velocity correction <img class="math" src="_images/math/3d67d72cd783b3dafbb09f9edf415c20e2110462.png" alt="\bar{{\bf u}}_2"/> described in Shi et al. (2012).</p>
+<p><img class="math" src="_images/math/8fc817b37e57fe957355c88ffe6188957b0410f2.png" alt="\nabla_h \bar{c}"/> is also evaluated at the cell face as</p>
+<div class="math">
+<p><img src="_images/math/d96d333877fbd04f678cbf9d907be6812dd883e7.png" alt="\Delta_x \bar{c}_{i+1/2,j} = \frac{\bar{c}_{i+1,j} - \bar{c}_{i,j}}{\Delta x}"/></p>
+</div><div class="math">
+<p><img src="_images/math/87368c141bf260985346ea581474ec7016ff00b7.png" alt="\Delta_x \bar{c}_{i-1/2,j} = \frac{\bar{c}_{i,j} - \bar{c}_{i-1,j}}{\Delta x}"/></p>
+</div><p>The same scheme is used for the <img class="math" src="_images/math/276f7e256cbddeb81eee42e1efc348f3cb4ab5f8.png" alt="y"/> direction.</p>
+<dl class="docutils">
+<dt>The source term in (ref{psi}) includes the pickup rate <img class="math" src="_images/math/9dcbbef8e0f76051d388013b90a95bec3069e484.png" alt="P"/> and the deposition rate <img class="math" src="_images/math/3cf5aa5abe312e6fd4996975341a43aa566e8d8d.png" alt="D"/>. <img class="math" src="_images/math/9dcbbef8e0f76051d388013b90a95bec3069e484.png" alt="P"/> is</dt>
+<dd>calculated at the cell center using van Rijn&#8217;s (1984) formula as mentioned above. Similarly, the deposition rate, <img class="math" src="_images/math/3cf5aa5abe312e6fd4996975341a43aa566e8d8d.png" alt="D"/>, is calculated at the cell center based on Cao et al.&#8217;s  (1999) formula.</dd>
+</dl>
+<ul class="simple">
+<li>Time stepping</li>
+</ul>
+<p>Time stepping is the same as in FUNWAVE-TVD solver.
+The third-order Strong Stability-Preserving (SSP) Runge-Kutta scheme for nonlinear spatial discretization (Gottlieb et al., 2001) is adopted for time stepping. The scheme is given by</p>
+<div class="math">
+<p><img src="_images/math/37f8922ab99d81d61d1f89580fc03607e6e769b3.png" alt="{\Psi}^{(1)} = {\Psi}^{n}  + \Delta t (- \nabla \cdot F ({\Psi}^n) + {S}^{(1)} )  {\Psi}^{(2)} = \frac{3}{4}{\Psi}^{n}  + \frac{1}{4} \left[   {\Psi}^{(1)} +  \Delta t \left (- \nabla \cdot F ({\Psi}^{(1)} ) + {S}^{(2)} \right) \right]  {\Psi}^{n+1}"/></p>
+</div><div class="math">
+<p><img src="_images/math/7afeba1a65c1b084dace4c44ae10978e3550b4b6.png" alt="= \frac{1}{3}{\Psi}^{n}  + \frac{2}{3} \left[   {\Psi}^{(2)} +  \Delta t \left (- \nabla \cdot F ({\Psi}^{(2)} ) + { S}^{n+1} \right) \right]"/></p>
+</div><p>in which <img class="math" src="_images/math/2364e8105afab86b0e48a411657fd8c4a2d3ac92.png" alt="{\Psi}^{n}"/> denotes <img class="math" src="_images/math/c7a4ac50ad8ce5f109982b56f8f2eac5b05c62d4.png" alt="{\Psi}"/>  at time level <img class="math" src="_images/math/e11f2701c4a39c7fe543a6c4150b421d50f1c159.png" alt="n"/>.  <img class="math" src="_images/math/2954322b50ea1ecde5459a0d95b88a5cfb5cc8d2.png" alt="{\Psi}^{(1)}"/> and <img class="math" src="_images/math/079aefadaa54dfe07edf0b3ce8f003daa4bcd663.png" alt="{\Psi}^{(2)}"/> are values at intermediate stages in the Runge-Kutta integration. As <img class="math" src="_images/math/c7a4ac50ad8ce5f109982b56f8f2eac5b05c62d4.png" alt="{\Psi}"/> is obtained at each intermediate step,  the source term <img class="math" src="_images/math/1dbc400fcc213305415872f9f625cd2828f97a00.png" alt="S"/> needs to be updates using the intermediate value of concentration.</p>
+<p>Time steps are the same as the Boussinesq solver, which uses adaptive values based on the Courant-Friedrichs-Lewy (CFL) criterion to ensure model stability.</p>
+<ul class="simple">
+<li>Boundary conditions</li>
+</ul>
+<p>Boundary conditions used in the sediment module have two types. One is the closed boundary condition which is applied at the cell face, for example,</p>
+<div class="math">
+<p><img src="_images/math/f924414fca4444c4661e58a19d65595993b4b7cd.png" alt="F_{i+1/2,j} = 0 \hspace{1cm}"/></p>
+</div><p>The other is the open boundary condition with zero-gradient condition implemented at ghost cells.</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="basics.html"><strong>BASICS</strong></a><ul>
+  <li><a href="sediment.html">Sediment Transport Module</a><ul>
+      <li>Previous: <a href="non_erodible.html" title="previous chapter">Non-erodible Bed</a></li>
+      <li>Next: <a href="post.html" title="next chapter">Post Processing</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, Fengyan Shi.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

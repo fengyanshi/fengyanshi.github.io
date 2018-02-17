@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Ship-wake Module &#8212; funwave  documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Meteo Module" href="meteo_intro.html" />
+    <link rel="prev" title="Wave–maker" href="wavemaker.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="ship-wake-module">
+<h1>Ship-wake Module<a class="headerlink" href="#ship-wake-module" title="Permalink to this headline">¶</a></h1>
+<p>Following Ertekin et al. (1986), Wu (1987) and Torsvik et al. (2008), the pressure disturbance with a center point at <img class="math" src="_images/math/039a73d36bc0974f34b9957d27917d454ddac2c8.png" alt="(x^*, y^*"/>) is given by</p>
+<div class="math">
+<p><img src="_images/math/f83c936b27e387e15ea0631b3341d82ec58c02b0.png" alt="p_a(\tilde{x},\tilde{y},t) = P f(\tilde{x},t) q(\tilde{y},t),"/></p>
+</div><p>where</p>
+<div class="math">
+<p><img src="_images/math/072289df4601cf6ec4da895215a9db8f8cc077ba.png" alt="f(\tilde{x},t) = \left \{ \begin{array}{rl} \cos^2\left [\frac{\pi(|\tilde{x}-x^*(t)|-\frac{1}{2}\alpha L)}{(1-\alpha) L} \right ], &amp; \frac{1}{2}\alpha L &lt; |\tilde{x} - x^*(t)| \le \frac{1}{2}L \\ 1, &amp;  |\tilde{x} - x^*(t)| \le \frac{1}{2}\alpha L \end{array} \right."/></p>
+</div><div class="math">
+<p><img src="_images/math/5ad702e734af3651855cebe369a2732ac24cc99a.png" alt="q(\tilde{y},t) = \left \{ \begin{array}{rl} \cos^2 \left [\frac{\pi(|\tilde{y}-y^*(t)|-\frac{1}{2}\beta R)}{(1-\beta) R} \right ], &amp; \frac{1}{2}\beta R &lt; |\tilde{y} - y^*(t)| \le \frac{1}{2}R \\ 1, &amp;  |\tilde{y} - y^*(t)| \le \frac{1}{2}\beta R \end{array} \right."/></p>
+</div><p>on the rectangle <img class="math" src="_images/math/361915e13009d69a0f5be746b55f1ad370c00b33.png" alt="- L/2 \le \tilde{x} - x^*(t) \le L/2 $ and $ - R/2 \le \tilde{y} - y^*(t) \le R/2"/>, and zero outside this region, <img class="math" src="_images/math/ae2b750f71e1fc0daaa3de9a85d42794d7cd1326.png" alt="L"/> and <img class="math" src="_images/math/a00254b18ffa992f0ef19f6e6e095b83c8f85e94.png" alt="R"/> represent the length and width of the pressure source, respectively. <img class="math" src="_images/math/877d234f4cec6974ce218fc2e975a486a7972dfd.png" alt="\alpha"/> and <img class="math" src="_images/math/410a9d0df9c135dd73b269cba7ef04dcfd932b1f.png" alt="\beta"/> are parameters representing the shape of the draft region and <img class="math" src="_images/math/b969c3540bb9081e0883c98a2097077cb1022a3a.png" alt="0\le(\alpha,\beta)&lt;1"/>. They can be evaluated using the block coefficient of  a watercraft as described below.  (<img class="math" src="_images/math/501c5de743d6b3e0361103d7ee0a9e8faa238788.png" alt="\tilde{x}, \tilde{y}"/>) is the coordinate system for the pressure disturbance which may be rotated by an angle relative to the Boussinesq coordinate system (<img class="math" src="_images/math/4bfd55420cd336117437ed3ec2d5504a078962be.png" alt="x,y"/>). <img class="math" src="_images/math/9dcbbef8e0f76051d388013b90a95bec3069e484.png" alt="P"/> is a parameter controlling the surface displacement. In fact, <img class="math" src="_images/math/1355c6f25b2393c16d175979f69f56f90e87d4d4.png" alt="p_a"/> is the static depression around the vessel.</p>
+<p>In contrast to the formulation of the pressure distribution in the previous study such as Torsvik et al. (2008),  <img class="math" src="_images/math/9dcbbef8e0f76051d388013b90a95bec3069e484.png" alt="P"/> has a unit of meters and can be interpreted as the inverse barometer effect corresponding to the static surface depression for a stationary vessel.</p>
+<p>The values of <img class="math" src="_images/math/877d234f4cec6974ce218fc2e975a486a7972dfd.png" alt="\alpha"/> and <img class="math" src="_images/math/410a9d0df9c135dd73b269cba7ef04dcfd932b1f.png" alt="\beta"/> are shape parameters and can be obtained by adjusting <img class="math" src="_images/math/877d234f4cec6974ce218fc2e975a486a7972dfd.png" alt="\alpha"/> and <img class="math" src="_images/math/410a9d0df9c135dd73b269cba7ef04dcfd932b1f.png" alt="\beta"/> to get the displaced volume (static submerged volume of the vessel)</p>
+<div class="math">
+<p><img src="_images/math/a55fb0eba413ad28b7cc7ec37317b7759a550955.png" alt="V_{\mbox{sub}} = \iint p_a d\tilde{x} d\tilde{y}"/></p>
+</div><p>which should match a given block coefficient <img class="math" src="_images/math/f9ba75453c5e6d34d79bb85073e506f92f987001.png" alt="C_B"/> defined by</p>
+<div class="math">
+<p><img src="_images/math/e1c2a34e101de5bbaf099d2b86c4ed54596d8640.png" alt="C_B = \frac{V_{\mbox{sub}} }{L \cdot R \cdot D}"/></p>
+</div><p>in which <img class="math" src="_images/math/3cf5aa5abe312e6fd4996975341a43aa566e8d8d.png" alt="D"/> represents draft of a vessel.</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="basics.html"><strong>BASICS</strong></a><ul>
+      <li>Previous: <a href="wavemaker.html" title="previous chapter">Wave&#8211;maker</a></li>
+      <li>Next: <a href="meteo_intro.html" title="next chapter">Meteo Module</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, Fengyan Shi.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

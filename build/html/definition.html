@@ -26,7 +26,7 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="NESTING OR COUPLING" href="coupling.html" />
+    <link rel="next" title="Parameters for Central Module" href="central_para.html" />
     <link rel="prev" title="MODEL DOWNLOAD AND SETUP" href="setup.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
@@ -45,466 +45,37 @@
             
   <div class="section" id="definitions-of-parameters">
 <h1><strong>DEFINITIONS OF PARAMETERS</strong><a class="headerlink" href="#definitions-of-parameters" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="input-for-cartesian-mode">
-<h2>Input for Cartesian mode<a class="headerlink" href="#input-for-cartesian-mode" title="Permalink to this headline">¶</a></h2>
-<p>Following are descriptions of parameters in input.txt</p>
 <blockquote>
 <div><div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">all parameter names are capital sensitive.</p>
+<p class="last">Examples of model setup are provided in the downloaded package (simpe example folder). If you are a beginner, we strongly suggest trying those examples first and find an example similar to your case. Introduction to those examples can be found at <a class="reference external" href="examples.html">Simple tests</a></p>
 </div>
 </div></blockquote>
-<p><strong>TITLE</strong>:    title of your case, only used for log file.</p>
-<p><strong>SPECIFICATION OF MULTI-PROCESSORS</strong></p>
-<blockquote>
-<div><ul class="simple">
-<li>PX:  processor numbers in X</li>
-<li>PY :  processor numbers in Y</li>
-</ul>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">PX and PY must be consistency with number of processors defined in mpirun command, e.g., mpirun -np n (where n = px . py). For versions 3.0 or lower, PX (PY) should be a common factor of Mglob(Nglob).</p>
-</div>
-</div></blockquote>
-<p><strong>SPECIFICATION OF WATER DEPTH</strong></p>
-<blockquote>
-<div><ul class="simple">
-<li>DEPTH_TYPE: depth input type.</li>
-</ul>
-<blockquote>
-<div><p>DEPTH_TYPE=DATA: from a depth file.</p>
-<p>The program includes several simple bathymetry configurations such as</p>
-<blockquote>
-<div><p>DEPTH_TYPE=FLAT:  flat bottom, need DEPTH_FLAT</p>
-<p>DEPTH_TYPE=SLOPE:  plane beach along x direction. It needs three parameters: slope,SLP,  slope starting point, Xslp and flat part of depth, DEPTH_FLAT</p>
-</div></blockquote>
-</div></blockquote>
+<div class="toctree-wrapper compound">
 <ul>
-<li><p class="first">DEPTH_FILE: bathymetry file if  DEPTH_TYPE=DATA, file dimension should be Mglob x Nglob with the first point as the south-west corner.  The read format in the code is shown below.</p>
-<blockquote>
-<div><p>DO J=1,Nglob</p>
-<blockquote>
-<div><p>READ(1,*)(Depth(I,J),I=1,Mglob)</p>
-</div></blockquote>
-<p>ENDDO</p>
-</div></blockquote>
-</li>
-<li><p class="first">DEPTH_FLAT: water depth of flat bottom if DEPTH_TYPE=FLAT or DEPTH_TYPE=SLOPE (flat part of a plane beach).</p>
-</li>
-<li><p class="first">SLP: slope if DEPTH_TYPE=SLOPE</p>
-</li>
-<li><p class="first">Xslp: starting x (m) of a slope, if DEPTH_TYPE=SLOPE</p>
-</li>
-<li><p class="first">WaterLevel: Specify a water level which will be added to the input bathymetry and wavemaker depth such as DEP_WK (internal wave generator) and DepthWaveMaker (left boundary generator).</p>
-</li>
-</ul>
-</div></blockquote>
-<p><strong>SPECIFICATION OF RESULT FOLDER</strong></p>
-<blockquote>
-<div><ul class="simple">
-<li>RESULT_FOLDER: result folder name, e.g., RESULT_FOLDER = /Users/tmp/</li>
-</ul>
-</div></blockquote>
-<p><strong>SPECIFICATION OF DIMENSION</strong></p>
-<blockquote>
-<div><ul class="simple">
-<li>Mglob: global dimension in x direction.</li>
-<li>Nglob: global dimension in y direction.</li>
-</ul>
-</div></blockquote>
-<p><strong>SPECIFICATION OF TIME</strong></p>
-<blockquote>
-<div><ul class="simple">
-<li>TOTAL_TIME: simulation time in seconds</li>
-<li>PLOT_INTV: output interval in seconds (Note, output time is not exact because adaptive dt is used.)</li>
-<li>SCREEN_INTV: time interval (s) of screen print.</li>
-<li>PLOT_INTV_STATION: time interval (s) of gauge output</li>
-<li>DT_fixed: time step (s) if use fixed DT. But DT_fixed will be checked by CFL. IF not satisfy CLF, DT/2, DT/4 ... will be checked until it satisfy CFL. Default is using variable DT based on CFL.</li>
-</ul>
-</div></blockquote>
-<p><strong>SPECIFICATION OF GRID SIZE</strong></p>
-<blockquote>
-<div><ul class="simple">
-<li>DX: grid size(m) in x direction.</li>
-<li>DY:   grid size(m) in y direction.</li>
-</ul>
-</div></blockquote>
-<p><strong>HOT START OR INITIAL CONDITION</strong></p>
-<blockquote>
-<div><ul class="simple">
-<li>INT_UVZ : logical parameter for initial condition, default is FALSE</li>
-<li>ETA_FILE: name of file for initial <img class="math" src="_images/math/5635a7c34414599c2452d72430811e816b460335.png" alt="\eta"/>, e.g., ETA_FILE= /Users/results/eta_00100, data could be the last results from a previous run. Data format is the same as the output/depth files.</li>
-<li>U_FILE:  name of file for initial u, e.g.,U_FILE= /Users/results/u_00100. If no U_FILE specified, use zeros.</li>
-<li>V_FILE:  name of file for initial v, e.g., V_FILE= /Users/results/v_00100. If no V_FILE specified, use zeros.</li>
-<li>MASK_FILE:  name of file for initial MASK, e.g., MASK_FILE= /Users/results/mask_00100. A MASK_FILE could be from a model output and the format is REAL numbers. If there is no MASK_FILE, MASK values will be re-specified according to ETA and DEPTH.</li>
-</ul>
-</div></blockquote>
-<p><strong>SPECIFICATION OF WAVEMAKER</strong></p>
-<blockquote>
-<div><ul>
-<li><p class="first">WAVEMAKER: wavemaker type.</p>
-</li>
-<li><dl class="first docutils">
-<dt>WAVEMAKER = INI_REC: initial rectangular hump</dt>
-<dd><p class="first last">need Xc,Yc and WID</p>
-</dd>
-</dl>
-</li>
-<li><dl class="first docutils">
-<dt>WAVEMAKER = LEF_SOL: left boundary solitary</dt>
-<dd><p class="first last">need AMP,DEP, and LAGTIME</p>
-</dd>
-</dl>
-</li>
-<li><dl class="first docutils">
-<dt>WAVEMAKER = INI_SOL: initial solitary wave propagate in +y direction, WKN B solution</dt>
-<dd><p class="first last">need AMP, DEP, and XWAVEMAKER</p>
-</dd>
-</dl>
-</li>
-<li><p class="first">WAVEMAKER = INI_OTH:  other initial distribution specified in the code by users</p>
-</li>
-<li><dl class="first docutils">
-<dt>WAVEMAKER = WK_REG: Wei and Kirby 1999 internal wave maker</dt>
-<dd><p class="first last">need Xc_WK, Yc_WK, Ywidth_WK, Tperiod, AMP_WK, DEP_WK, Theta_WK, and Time_ramp (factor of period)</p>
-</dd>
-</dl>
-</li>
-<li><dl class="first docutils">
-<dt>WAVEMAKER = WK_IRR:  Wei and Kirby 1999 TMA spectrum wavemaker (internal)</dt>
-<dd><blockquote class="first">
-<div><p>need Xc_WK, Yc_WK, Ywidth_WK, DEP_WK, Time_ramp, Delta_WK,  FreqPeak, FreqMin,FreqMax, Hmo, GammaTMA(default: 3.3 ), ThetaPeak (default: 0.0), Nfreq(default: 45), Ntheta(default: 24)</p>
-</div></blockquote>
-<p class="last">EqualEnergy (=T means the frequency splitting is based on Equal-Energy, otherwise, based on Equal-Frequency space</p>
-</dd>
-</dl>
-</li>
-<li><dl class="first docutils">
-<dt>WAVEMAKER = JON_2D:  JONSWAP spectrum wavemaker (internal)</dt>
-<dd><p class="first last">need Xc_WK, Yc_WK, Ywidth_WK,
-DEP_WK, Time_ramp, Delta_WK,  FreqPeak, FreqMin,FreqMax,
-Hmo, GammaTMA(default: 3.3 ), ThetaPeak (default: 0.0),Nfreq(default: 45), Ntheta(default: 24)</p>
-</dd>
-</dl>
-</li>
-<li><dl class="first docutils">
-<dt>WAVEMAKER = JON_1D:  JONSWAP 1D spectrum wavemaker (internal)</dt>
-<dd><p class="first last">need Xc_WK, Yc_WK, Ywidth_WK,
-DEP_WK, Time_ramp, Delta_WK,  FreqPeak, FreqMin,FreqMax,
-Hmo, GammaTMA(default: 3.3 ), Nfreq(default: 45)</p>
-</dd>
-</dl>
-</li>
-<li><dl class="first docutils">
-<dt>WAVEMAKER = TMA_1D:  TMA 1D spectrum wavemaker (internal)</dt>
-<dd><p class="first last">need Xc_WK, Yc_WK, Ywidth_WK,
-DEP_WK, Time_ramp, Delta_WK,  FreqPeak, FreqMin,FreqMax,
-Hmo, GammaTMA(Note, still use TMA Gamma, default: 3.3 ), Nfreq(default: 45)</p>
-</dd>
-</dl>
-</li>
-<li><dl class="first docutils">
-<dt>WAVEMAKER = WK_TIME_SERIES:</dt>
-<dd><p class="first last">fft  a time series to get each wave component and then use Wei and Kirby&#8217;s ( 1999) wavemaker. Internal wavemaker The wave angle is zero (x direction) for all wave components. Need input WaveCompFile (including 3 columns: per,amp,pha) and NumWaveComp,PeakPeriod,DEP_WK, Xc_WK,Ywidth_WK</p>
-</dd>
-</dl>
-</li>
-<li><p class="first">WAVEMAKER = WK_DATA2D:  2D directional spectrum data specified in WaveCompFile. Internal wavemaker. Need Xc_WK, Yc_WK, DEP_WK, Delta_WK.</p>
-<blockquote>
-<div><blockquote>
-<div><p>Format of WaveCompFile:</p>
-<blockquote>
-<div><p>62  35   - NumFreq NumDir</p>
-<p>0.0925000011921 - PeakPeriod</p>
-<p>0.0400 - Freq</p>
-<p>0.0475 - Freq</p>
-<p>...</p>
-<p>-0.05  - Dir (rad)</p>
-<p>0.0    - Dir (rad)</p>
-<p>...</p>
-<p>0.01133044 0.00973217 ... (amplitude,m)</p>
-</div></blockquote>
-</div></blockquote>
-<p>The read format in fortran:</p>
-<blockquote>
-<div><blockquote>
-<div><p>OPEN(1,FILE=TRIM(WaveCompFile))</p>
-<blockquote>
-<div><p>READ(1,*)NumFreq,NumDir</p>
-<p>ALLOCATE (Amp_Ser(NumFreq,NumDir),  &amp;</p>
-<blockquote>
-<div><p>Per_Ser(NumFreq),Theta_Ser(NumDir))</p>
-</div></blockquote>
-<p>READ(1,*)PeakPeriod</p>
-<p>DO J=1,NumFreq</p>
-<blockquote>
-<div><p>READ(1,*)Per_Ser(J)</p>
-</div></blockquote>
-<p>ENDDO</p>
-<p>DO I=1,NumDir</p>
-<blockquote>
-<div><p>READ(1,*)Theta_Ser(I)</p>
-</div></blockquote>
-<p>ENDDO</p>
-<p>DO I=1,NumDir</p>
-<blockquote>
-<div><p>READ(1,*)(Amp_Ser(J,I),J=1,NumFreq)</p>
-</div></blockquote>
-<p>ENDDO</p>
-</div></blockquote>
-</div></blockquote>
-<p>CLOSE(1)</p>
-</div></blockquote>
-</div></blockquote>
-</li>
-<li><p class="first">WAVEMAKER = LEFT_BC_IRR: Wavemaker at the left boundary (ghost cells). This type of wavemaker reflects waves at the left boundary. Need WAVE_DATA_TYPE (DATA,TMA2D,JON2D,JON1D) and other parameters as the same as in the internal wavemaker. Although it is an irregular wavemaker, it can generate regular waves using WAVE_DATA_TYPE = DATA by specifying a single wave component.</p>
-</li>
-<li><p class="first">WAVEMAKER = INI_GAUSIAN or INI_GAU: initial Gausian hump, need AMP, Xc, Yc, and WID.</p>
-</li>
-<li><p class="first">Definations</p>
-<ul class="simple">
-<li>WAVE_DATA_TYPE : Type of wave data needed for LEFT_BC_IRR WaveMaker. It can be DATA or other types used for internal wavemakers</li>
-<li>AMP : amplitude (m) of initial <img class="math" src="_images/math/5635a7c34414599c2452d72430811e816b460335.png" alt="\eta"/>, if  WAVEMAKER = INI_REC, WAVEMAKER = INI_SOL, WAVEMAKER = LEF_SOL.</li>
-<li>DEP: water depth at wavemaker location, if WAVEMAKER = INI_SOL, WAVEMAKER = LEF_SOL.</li>
-<li>LAGTIME, time lag (s) for the solitary wave generated on the left boundary, e.g., WAVEMAKER = LEF_SOL.</li>
-<li>XWAVEMAKER: x  (m) coordinate for WAVEMAKER = INI_SOL.</li>
-<li>Xc: x (m) coordinate of the center of  a rectangular hump if WAVEMAKER = INI_REC.</li>
-<li>Yc: y (m) coordinate of the center of  a rectangular hump if WAVEMAKER = INI_REC.</li>
-<li>WID: width (m) of  a rectangular hump if WAVEMAKER = INI_REC, or INI_GAU.</li>
-<li>Time_ramp: time ramp (s) for Wei and Kirby (1999) wavemaker. Default: 0.0.</li>
-<li>Delta_WK:  width parameter <img class="math" src="_images/math/a702e781dfc76762a3a132c2031fba8898430925.png" alt="\delta"/>  for Wei and Kirby (1999) wavemaker.    Need trial and error, usually, <img class="math" src="_images/math/a702e781dfc76762a3a132c2031fba8898430925.png" alt="\delta"/> =  <img class="math" src="_images/math/06268d3974704ad4e83ddd5d309effb6084e373f.png" alt="0.3 \sim 0.6"/>. Default: 0.5.</li>
-<li>DEP_WK: water depth (m) for Wei and Kirby (1999) wavemaker.</li>
-<li>Xc_WK: x coordinate (m) for Wei and Kirby (1999) wavemaker.</li>
-<li>Ywidth_WK: width (m) in y direction for Wei and Kirby (1999) wavemaker. Default: LARGE (999999.0).</li>
-<li>Tperiod:  period (s) of regular wave for Wei and Kirby (1999) wavemaker.</li>
-<li>AMP_WK: amplitude (m) of regular wave for Wei and Kirby (1999) wavemaker.</li>
-<li>Theta_WK: direction (degrees) of regular wave for Wei and Kirby (1999) wavemaker. Note: it may be adjusted if a periodic boundary condition is used. A warning will be given if adjustment is made.</li>
-<li>Nfreq: number of frequency components. Default: 45.</li>
-<li>Ntheta: number of direction components. Default: 24.</li>
-<li>FreqPeak: peak frequency (1/s) for Wei and Kirby (1999) irregular wavemaker.</li>
-<li>FreqMin: low frequency cutoff (1/s) for Wei and Kirby (1999) irregular wavemaker.</li>
-<li>FreqMax: high frequency cutoff (1/s) for Wei and Kirby (1999) irregular wavemaker.</li>
-<li>Hmo: Hmo (m) for Wei and Kirby (1999) irregular wavemaker.</li>
-<li>GammaTMA, TMA parameter <img class="math" src="_images/math/3666981dc77862de77b6ecfcb64aad59b425cbaf.png" alt="\gamma"/> for Wei and Kirby (1999) irregular wavemaker. GammaTMA = 3.3 if JONSWAP is used.</li>
-<li>ThetaPeak: peak direction (degrees) for Wei and Kirby (1999) irregular wavemaker.</li>
-<li>Sigma_Theta: parameter of directional spectrum for Wei and Kirby (1999) irregular wavemaker.</li>
+<li class="toctree-l1"><a class="reference internal" href="central_para.html">Parameters for Central Module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="basic_para.html">Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grid.html">Grid and Computational Time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="physics.html">Physics (dispersion, breaking, friction)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numerics.html">Numerical Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wavemaker_para.html">Wave-maker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="periodic.html">Periodic Boundary Condition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="statistics.html">Wave Statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sponge.html">Sponge Layer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="breakwater.html">Breakwater and Obstacle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hotstart.html">Hot Start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="output.html">Output</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="spherical.html">Spherical Coordinates</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="spherical.html#input-for-spherical-mode">Input for Spherical mode</a></li>
 </ul>
-</div></blockquote>
-<p><strong>SPECIFICATION OF PERIODIC BOUNDARY CONDITION</strong></p>
-<blockquote>
-<div><ul class="simple">
-<li>PERIODIC: logical parameter for periodic boundary condition in the y direction, T - periodic, F - wall boundary condition.</li>
-</ul>
-</div></blockquote>
-<p><strong>SPECIFICATION OF SPONGE LAYER</strong></p>
-<blockquote>
-<div><ul class="simple">
-<li>DIRECT_SPONGE: logical parameter for L-D type sponge, T - sponge layer, F - no sponge layer.</li>
-<li>FRICTION_SPONGE: logical parameter for friction type sponge, T - sponge layer, F - no sponge layer.</li>
-<li>DIFFUSION_SPONGE: logical parameter for diffusion type sponge, T - sponge layer, F - no sponge layer.</li>
-</ul>
-<blockquote>
-<div><ul class="simple">
-<li>Csp: The maximum diffusion coefficient for diffusion type sponge. Default: 1.0</li>
-<li>CDsponge: The maximum Cd for friction type sponge. Default: 10.0</li>
-<li>Sponge_west_width: width (m) of sponge layer at west boundary.</li>
-<li>Sponge_east_width:   width (m) of sponge layer at east boundary.</li>
-<li>Sponge_south_width: width (m) of sponge layer at south boundary.</li>
-<li>Sponge_north_width width (m) of sponge layer at north boundary</li>
-<li>R_sponge: decay rate in L-D type sponge layer. Its values are between 0.85 <img class="math" src="_images/math/5ecfb5efd13556512083272088a2baa0839e3c66.png" alt="\sim"/> 0.95. Default: 0.85.</li>
-<li>A_sponge: maximum damping magnitude in L-D type sponge. The value is <img class="math" src="_images/math/5ecfb5efd13556512083272088a2baa0839e3c66.png" alt="\sim"/> 5.0. Default: 5.0</li>
-</ul>
-</div></blockquote>
-</div></blockquote>
-<p><strong>SPECIFICATION OF OBSTACLES or BREAKWATER</strong></p>
-<blockquote>
-<div><ul class="simple">
-<li>OBSTACLE_FILE: name of obstacle file. 1 - water point, 0 - permanent dry point. Data dimension is (Mglob . Nglob). Data format is the same as the depth data. Full reflection condition is used at OBSTACLE points.</li>
-<li>BREAKWATER_FILE: name of breakwater file. The file contains width (m) at the breakwater points with the same format as the depth file. Zero for non-breakwater poionts. The width is not the breakwater with but width of sponge layers placed at the breakwater points. For a field case, use 10m-30m for weak absorption and &gt;30m for strong absorption. Calibration may be needed case by case. Default: no breakwater.</li>
-</ul>
-</div></blockquote>
-<p><strong>SPECIFICATION OF PHYSICS</strong></p>
-<blockquote>
-<div><ul class="simple">
-<li>DISPERSION: logical parameter for inclusion of dispersion terms.  T - calculate dispersion, F - no dispersion terms. Default: T.</li>
-<li>Gamma1: parameter for linear dispersive terms. 1.0 - inclusion of linear dispersive terms, 0.0 - no linear dispersive terms. Default: 1.0.</li>
-<li>Gamma2: parameter for nonlinear dispersive terms. 1.0 - inclusion of nonlinear dispersive terms, 0.0 - no nonlinear dispersive terms. Default: 1.0.</li>
-</ul>
-<blockquote>
-<div><p>Gamma1=1.0, Gamma2=0.0 for  NG&#8217;s equations.</p>
-<p>Gamma1=1.0, Gamma2=1.0 for the fully nonlinear Boussinesq equations.</p>
-</div></blockquote>
-<ul class="simple">
-<li>Gamma3: parameter for linear shallow water equations (Gamma3 = 1.0). When Gamma3 = 0.0, Gamma1 and Gamma2 automatically become zero. Default: 1.0.</li>
-<li>Beta_ref:  parameter <img class="math" src="_images/math/410a9d0df9c135dd73b269cba7ef04dcfd932b1f.png" alt="\beta"/> defined for the reference level. <img class="math" src="_images/math/410a9d0df9c135dd73b269cba7ef04dcfd932b1f.png" alt="\beta"/> = -0.531 for NG&#8217;s and FUNWAVE equations. Default: -0.531.</li>
-<li>VISCOSITY_BREAKING : logical parameter for viscous breaking. When this option is selected, Cbrk1 and Cbrk2 needed. Default is shock-capturing type breaking</li>
-<li>SWE_ETA_DEP: ratio of height/depth for switching from Boussinesq to NSWE for shock-capturing breaking.  The value is <img class="math" src="_images/math/5ecfb5efd13556512083272088a2baa0839e3c66.png" alt="\sim"/> 0.80.</li>
-</ul>
-</div></blockquote>
-<p><strong>SPECIFICATION OF FRICTION</strong></p>
-<blockquote>
-<div><ul>
-<li><p class="first">FRICTION_MATRIX: logical parameter for homogeneous and inhomogeneous frction feild.  T - inhomogeneous, F - homogeneous. Default: F.</p>
 </li>
-<li><p class="first">FRICTION_FILE: file file if  FRICTION_MATRIX= T , file dimension should be Mglob x Nglob with the first point as the south-west corner.  The read format in the code is shown below.</p>
-<blockquote>
-<div><p>DO J=1,Nglob</p>
-<blockquote>
-<div><p>READ(1,*)(Cd(I,J),I=1,Mglob)</p>
-</div></blockquote>
-<p>ENDDO</p>
-</div></blockquote>
-</li>
-<li><p class="first">Cd_fixed: fixed bottom friction coefficient.</p>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="shipwakes_para.html">Ship-wakes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sediment_para.html">Sediment Transport and Morphological Change</a></li>
+<li class="toctree-l1"><a class="reference internal" href="meteo_tsu.html">Wind and Pressure Field</a></li>
+<li class="toctree-l1"><a class="reference internal" href="slide.html">Landslide</a></li>
 </ul>
-</div></blockquote>
-<p><strong>SPECIFICATION OF NUMERICS</strong></p>
-<blockquote>
-<div><ul class="simple">
-<li>Time_Scheme: stepping option,  Runge_Kutta or Predictor_Corrector (not suggested for this version). Default: Runge_Kutta.</li>
-<li>HIGH_ORDER: spatial scheme option,  FOURTH for the fourth-order, THIRD for the third-order, and SECOND for the second-order (not suggested for Boussinesq modeling).  Default: FOURTH.</li>
-<li>CONSTRUCTION: construction method,  HLL for HLL scheme, otherwise for averaging scheme. Default: HLL.</li>
-<li>CFL: CFL number, CFL <img class="math" src="_images/math/5ecfb5efd13556512083272088a2baa0839e3c66.png" alt="\sim"/> 0.5 (default).</li>
-<li>FroudeCap: cap for Froude number in velocity calculation for efficiency. The value could be 1.0 <img class="math" src="_images/math/5ecfb5efd13556512083272088a2baa0839e3c66.png" alt="\sim"/> 10.0. Default: 3.0</li>
-<li>MinDepth: minimum water depth (m) for wetting and drying scheme. Suggestion: MinDepth = 0.001 for lab scale and 0.01 for field scale. Defaut: 0.01.</li>
-<li>MinDepthFrc: merge to MinDepth for Version 3.1 or higher.</li>
-<li>SHOW_BREAKING: logical parameter to calculate breaking index. Note that, if VISCOSITY_BREAKING is not selected,  breaking is calculated using shock wave capturing scheme. The index calculated here is based on Kennedy et al. (2000).</li>
-<li>Cbrk1: parameter C1 in Kennedy et al. (2000). Default: 0.65</li>
-<li>Cbrk2:  parameter C2 in Kennedy et al. (2000). Default: 0.35</li>
-<li>WAVEMAKER_Cbrk: breaking parameter inside wavemaker. For some cases, wave breaks inside the wavemaker. This parameter provides Cbrk inside the wavemaker domain. For most of cases, set WAVEMAKER_Cbrk = Cbrk1 or higher. Default: LARGE.</li>
-<li>STEADY_TIME: starting time ( <img class="math" src="_images/math/6eb05aaedfa7921f64109ee5970f084e14087ed1.png" alt="t_1"/> for calculating mean values, significant/RMS wave height (when WaveHeight = T, output parameter below). Default: LARGE.</li>
-<li>T_INTV_mean: time interval ( <img class="math" src="_images/math/760298053e1d79c88f483a0fa5e39d589c6b5d5f.png" alt="t_2-t_1"/> for calculating mean values, significant/RMS wave height (when WaveHeight = T, output parameter below). Default: LARGE.</li>
-</ul>
-</div></blockquote>
-<p><strong>APPLICATION OF WIND AND PRESSURE FIELD</strong></p>
-<p><strong>SPECIFICATION OF WIND EFFECT</strong></p>
-<blockquote>
-<div><ul class="simple">
-<li>WindForce: logical parameter representing if wind effect is taken into account. T or F.</li>
-<li>AirPressure: logical parameter representing if pressure effect is taken into account. T or F.</li>
-<li>WindWaveInteraction: logical parameter representing if wave-wind interaction (Chen et al. 2003) based on the formula presented in &#8216;METEO module&#8217; in INTRODUCTION section. The parameter WindCrestPercent will be used.</li>
-<li>Cdw: wind stress coefficient for the quadratic formula if WindForce = T. Default: 0.002.</li>
-<li>WindCrestPercent: ratio of the forced wave crest height to the maximum surface elevation, if WindForce = T. Default: 100% (for storm surges).</li>
-<li>WindConstantField: logical parameter for constant wind field. T or F.</li>
-<li>WIND_FILE: file name for the constant wind field. The following is an example of data format.</li>
-</ul>
-<blockquote>
-<div><p>wind data</p>
-<p>100  - number of data</p>
-<p>0.0 ,    10.0 0.0   &#8212;  time(s), wu, wv (m/s)</p>
-<p>2000.0,   10.0,  0.0</p>
-<p>8000.0,  10.0,   0.0</p>
-<p>...</p>
-</div></blockquote>
-<ul class="simple">
-<li>WindHollandModel: logical parameter for Holland model. T or F.</li>
-<li>STORM_FILE: name of file contains paramters used for Holland hurricane model</li>
-</ul>
-<blockquote>
-<div><p>A sample:</p>
-<blockquote>
-<div><p>STORM FILE (model does not read)</p>
-<p>Sandy - storm name</p>
-<p>time(s),     x(m), y(m),    pn(mb),   pc(mb),   A,    B (model does not read)</p>
-<p>0.0,  800000.0, 400000.0,   1005.0, 950.0, 23.0, 1.50 - time, x,y, pn, pc, A, B</p>
-<p>120000.0,  800000.0, 1500000.0,  1005.0, 950.0, 23.0, 1.50</p>
-</div></blockquote>
-</div></blockquote>
-<ul class="simple">
-<li>SlideModel: logical parameter for landslide model. T or F.</li>
-<li>SLIDE_FILE: name of file contains landslide parameters</li>
-</ul>
-<blockquote>
-<div><p>A sample:</p>
-<blockquote>
-<div><p>slide_file (not read by model)</p>
-<p>Grilli - slide name</p>
-<p>Length(m), Width(m), Alpha(m), Beta(m), P(unit) (not read by model)</p>
-<p>0.395  0.68 1.0 1.0 0.082</p>
-<p>Time, X(m), Y(m)  (relative to the orgin of the coordinates) (not read by model)</p>
-<p>0.0000    2.0340    1.8500</p>
-<p>0.0100    2.0341    1.8500</p>
-<p>0.0200    2.0342    1.8500</p>
-<p>0.0300    2.0345    1.8500</p>
-<p>...</p>
-</div></blockquote>
-</div></blockquote>
-</div></blockquote>
-<p><strong>SPECIFICATION OF OUTPUT VARIABLES</strong></p>
-<blockquote>
-<div><ul class="simple">
-<li>NumberStations: number of station for output. If NumberStations <img class="math" src="_images/math/3cae51bfc1ef6f43ae5670fb670b5a682c8db749.png" alt="&gt; 0"/>, need input i,j in STATION_FILE</li>
-<li>DEPTH_OUT: logical parameter for output depth. T or F.</li>
-<li>U: logical parameter for output u. T or F.</li>
-<li>V: logical parameter for output v. T or F.</li>
-<li>ETA: logical parameter for output <img class="math" src="_images/math/5635a7c34414599c2452d72430811e816b460335.png" alt="\eta"/>. T or F.</li>
-<li>MASK: logical parameter for output wetting-drying MASK. T or F.</li>
-<li>MASK9: logical parameter for output MASK9 (switch for Boussinesq/NSWE). T or F.</li>
-<li>SourceX: logical parameter for output source terms in x direction. T or F.</li>
-<li>SourceY:  logical parameter for output source terms in y direction. T or F.</li>
-<li>P:   logical parameter for output of  momentum flux in x direction. T or F.</li>
-<li>Q:  logical parameter for output of  momentum flux in y direction. T or F.</li>
-<li>Fx: logical parameter for output of numerical flux F in x direction. T or F.</li>
-<li>Fy: logical parameter for output of numerical flux F in y direction. T or F.</li>
-<li>Gx: logical parameter for output of numerical flux G in x direction. T or F.</li>
-<li>Gy: logical parameter for output of numerical flux G in y direction. T or F.</li>
-<li>AGE: logical parameter for output of breaking age. T or F.</li>
-<li>HMAX: logical parameter for output of recorded maximum surface elevation . T or F.</li>
-<li>HMIN: logical parameter for output of recorded minimum surface elevation . T or F.</li>
-<li>UMAX: logical parameter for output of recorded maximum velocity . T or F.</li>
-<li>VORMAX: logical parameter for output of recorded maximum vorticity . T or F.</li>
-<li>MFMAX: logical parameter for output of recorded maximum momentum flux . T or F.</li>
-<li>WaveHeight: logical parameter for output of wave height, Hsig, Hrms, Havg. T or F.</li>
-<li>OUT_METEO: logical parameter for output of pressure field. T or F.</li>
-</ul>
-</div></blockquote>
-</div>
-<div class="section" id="input-for-spherical-mode">
-<h2>Input for Spherical mode<a class="headerlink" href="#input-for-spherical-mode" title="Permalink to this headline">¶</a></h2>
-<p>All input parameters, except the following grid information, are the same as for the Cartesian code.</p>
-<blockquote>
-<div><ul class="simple">
-<li>Lon_West: longitude (degrees) of west boundary.</li>
-<li>Lat_South: latitude (degrees) of south boundary.</li>
-<li>Dphi: <img class="math" src="_images/math/c09301c30672c03f2b9310199b49929b0245cab2.png" alt="d\phi"/> (degrees)</li>
-<li>Dtheta: <img class="math" src="_images/math/ee56995e9a15d86a689841f0950b1f4870f70fab.png" alt="d\theta"/> (degrees)</li>
-</ul>
-<p>In addition, it is not necessary to specify  Gamma2 (for nonlinear dispersive terms) in the spherical code.</p>
-<p>Another feature of the spherical code is that a computational grid can be a stretched grid. For a stretched grid, a user should set  StretchGrid = T and provide grid files for DX and DY and a file for Coriolis parameters at each grid point.  For example,</p>
-<p>DX_FILE = dx_str.txt</p>
-<p>DY_FILE = dy_str.txt</p>
-<p>CORIOLIS_FILE = cori_str.txt</p>
-</div></blockquote>
-<p>However, use of a stretched grid is not recommended in terms of decrease in numerical accuracy for  higher order numerical schemes.</p>
-</div>
-<div class="section" id="output-files">
-<h2>Output files<a class="headerlink" href="#output-files" title="Permalink to this headline">¶</a></h2>
-<p>The output files are saved in the result directory defined by RESULT_FOLDER in input.txt. A file name is a combination of variable name and an output series number such as eta_00001, eta_00002, .... The format  and read/write algorithm are  consistent with a depth file.  Output for stations is a series of numbered files such as sta_0001, sta_0002 .... (NOTE: four digit numbers here vs. five digit numbers for 2D output like eta_00001).</p>
-<blockquote>
-<div><ul class="simple">
-<li>ASCII format</li>
-</ul>
-</div></blockquote>
-<p>The default format is ASCII.  The format and read algorithm are  consistent with a depth file.</p>
-<blockquote>
-<div><ul class="simple">
-<li>BINARY format</li>
-</ul>
-</div></blockquote>
-<p>When FIELD_IO_TYPE = BINARY is specified in input.txt, the 2D output files such as eta_00001, ... are in the binary format. Here&#8217;s an example of reading in matlab:</p>
-<p>&gt;&gt;fileID=fopen(&#8216;eta_00001&#8217;);</p>
-<p>&gt;&gt;eta=fread(fileID,[Mglob Nglob],&#8217;*double&#8217;);</p>
-<p>&gt;&gt;fclose(fileID);</p>
-<p>&gt;&gt;pcolor(eta),shading flat</p>
-<blockquote>
-<div><ul class="simple">
-<li>Other format</li>
-</ul>
-</div></blockquote>
-<p>Other formats such as NetCDF and HDF5 are also provided but not distributed in the master Github repository.</p>
 </div>
 </div>
 
@@ -513,22 +84,12 @@ Hmo, GammaTMA(Note, still use TMA Gamma, default: 3.3 ), Nfreq(default: 45)</p>
         </div>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-  <h3><a href="index.html">Table Of Contents</a></h3>
-  <ul>
-<li><a class="reference internal" href="#"><strong>DEFINITIONS OF PARAMETERS</strong></a><ul>
-<li><a class="reference internal" href="#input-for-cartesian-mode">Input for Cartesian mode</a></li>
-<li><a class="reference internal" href="#input-for-spherical-mode">Input for Spherical mode</a></li>
-<li><a class="reference internal" href="#output-files">Output files</a></li>
-</ul>
-</li>
-</ul>
-<div class="relations">
+        <div class="sphinxsidebarwrapper"><div class="relations">
 <h3>Related Topics</h3>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
       <li>Previous: <a href="setup.html" title="previous chapter"><strong>MODEL DOWNLOAD AND SETUP</strong></a></li>
-      <li>Next: <a href="coupling.html" title="next chapter"><strong>NESTING OR COUPLING</strong></a></li>
+      <li>Next: <a href="central_para.html" title="next chapter">Parameters for Central Module</a></li>
   </ul></li>
 </ul>
 </div>

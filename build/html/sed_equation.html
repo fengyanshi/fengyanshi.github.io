@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Sediment Transport Equation &#8212; funwave  documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Morphological Evolution" href="bed_equation.html" />
+    <link rel="prev" title="Sediment Transport Module" href="sediment.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="sediment-transport-equation">
+<h1>Sediment Transport Equation<a class="headerlink" href="#sediment-transport-equation" title="Permalink to this headline">¶</a></h1>
+<p>The sediment transport module is based on the quasi-steady flow-based approach. The morphological module calculates the bed evolution based on sediment continuity equation.</p>
+<p>Sediment motion is governed by the depth-averaged sediment concentration equation as follows,</p>
+<div class="math">
+<p><img src="_images/math/2f687d93cbfec95f3dd9191caaf23c6b88574125.png" alt="(\bar{c} H)_t + \nabla_h \cdot (\bar{c} H ({\bf u}_\alpha + \bar{{\bf u} }_2)) =\nabla_h \cdot (k H (\nabla_h \bar{c})) + P - D \label{ad}"/></p>
+</div><p>where <img class="math" src="_images/math/6ec50b44d99d9a839e40fb4bfd509598b6ba1f40.png" alt="\bar{c}"/> is the non-dimensional depth-averaged sediment concentration normalized by sediment density. <img class="math" src="_images/math/07d2ca1e9a00fbd036c6a717477037b299f30f6c.png" alt="H(\bf{u}_\alpha + \bar{\bf{u}}_2) =M"/> represents the flow rate per unit width defined in Shi et al. (2012), in which <img class="math" src="_images/math/56ff8630e0455100a18ec211c8a1ca236893192c.png" alt="H=h+\eta"/> is the total water depth. <img class="math" src="_images/math/0b7c1e16a3a8a849bb8ffdcdbf86f65fd1f30438.png" alt="k"/> is the horizontal sediment diffusion coefficient calculated by the formula given by Elder (1959),</p>
+<div class="math">
+<p><img src="_images/math/1e7c1d13613c0857e57107f5d41af675f4b9df26.png" alt="k = 5.93 u_{*c} H"/></p>
+</div><p>where <img class="math" src="_images/math/b1c40b3cc98f4c79508ddf17bf52c3932b7e53ea.png" alt="u_{*c}"/> is the shear velocity and can be calculated by (van Rijn, 1984)</p>
+<div class="math">
+<p><img src="_images/math/f250c62d1f8e1aa206c3afd15de43411cbcfe0f6.png" alt="u_{*c} = \frac{\kappa}{-1 + \log (30 H / k_s)} U_c"/></p>
+</div><p>in which <img class="math" src="_images/math/6e5fb5d0603fca89f26ccf7f15e53aba10476117.png" alt="U_c"/> is the depth-averaged total velocity, <img class="math" src="_images/math/20db2415483f424f2eb7ca4fa2b2b181edcfc13a.png" alt="k_s = 2.5 d_{50}"/> is Nikuradse roughness coefficient, and <img class="math" src="_images/math/b20d5fe866fc4ad7ef0f49c91a4bb3e66ccda884.png" alt="d_{50}"/> is the median grain diameter.</p>
+<p>In the advection-diffusion equation, <img class="math" src="_images/math/9dcbbef8e0f76051d388013b90a95bec3069e484.png" alt="P"/> and <img class="math" src="_images/math/3cf5aa5abe312e6fd4996975341a43aa566e8d8d.png" alt="D"/> represent the erosion rate and deposition rate, respectively. The erosion rate can be calculated using van Rijn&#8217;s (1984) pickup function,</p>
+<div class="math">
+<p><img src="_images/math/6e38660cad9884e0febe00691da51534c39ade0b.png" alt="P = 0.015 \frac{d_{50}}{a} \left ( \frac{|\tau_b| - \tau_{cr}}{\tau_{cr}}\right ) d^{-0.3}_{*} w_f \label{p}"/></p>
+</div><p>where <img class="math" src="_images/math/bd9d9c7512c898e0a254a0882184197bc1bd9c9f.png" alt="a"/> is a reference elevation and is a function of total depth (<img class="math" src="_images/math/4b5b84c3716fab535b539cc2e52bb4794418aca8.png" alt="a = 0.01 H"/>), <img class="math" src="_images/math/ba37d97fd8cb527671352e73fc9159ea29d451cb.png" alt="\tau_b"/> is the bed shear stress, and <img class="math" src="_images/math/a9222ace3d16c24b135ba83857a81fb7b620058e.png" alt="\tau_{cr}"/> is the critical shear stress. <img class="math" src="_images/math/9dcbbef8e0f76051d388013b90a95bec3069e484.png" alt="P"/> has the dimension of velocity (m/s) considering the convection-diffusion equation for non-dimensional sediment concentration. <img class="math" src="_images/math/8f2b9bf184f29fe9503b19dc84a819bf1242450a.png" alt="d_{*}"/> is dimensionless grain size defined as</p>
+<div class="math">
+<p><img src="_images/math/8ccc5ec17008d8c26e6fc006c3caa7291b8396c5.png" alt="d_{*} = d_{50} \left( \frac{(s-1)g}{\nu^2} \right)^{1/3}"/></p>
+</div><p>where <img class="math" src="_images/math/63751cb2e98ba393b0f22e45ca127c3cebb61487.png" alt="s"/> is the specified gravity of the sediment, and <img class="math" src="_images/math/ca3b8fa4180eee2dfc3af9d13fae1da451cd2c31.png" alt="\nu"/> is the kinematic viscosity coefficient. The critical bed shear stress <img class="math" src="_images/math/a9222ace3d16c24b135ba83857a81fb7b620058e.png" alt="\tau_{cr}"/> used in (ref{p}) is defined as,</p>
+<div class="math">
+<p><img src="_images/math/ed74c96be5fdbc240c5300763ceed872ca44e2cd.png" alt="\tau_{cr} = \rho_w (s-1)gd_{50} \theta_{cr}"/></p>
+</div><p>where <img class="math" src="_images/math/5ef86a7efe2c91cb4296aa36d6020242a1567f63.png" alt="\theta_{cr}"/> is the critical Shields parameter, approximately equal to 0.05. Based on the roughness estimate, the shear stress is expressed as</p>
+<div class="math">
+<p><img src="_images/math/c281e43fee69c9beef8329416c9ed417abe4b5e5.png" alt="|\tau_b| = \frac{\rho_w k^2}{1+\ln (k_s/30 h)} U_c"/></p>
+</div><p>The deposition rate <img class="math" src="_images/math/3cf5aa5abe312e6fd4996975341a43aa566e8d8d.png" alt="D"/> can be calculated using the formula of Cao (1999),</p>
+<div class="math">
+<p><img src="_images/math/bef7725664bab6c7f4de81010e40cda2f6a6ca65.png" alt="D = \gamma c w_f (1-\gamma \bar{c})^{m_o}"/></p>
+</div><p>where <img class="math" src="_images/math/2aee15765aa40a4785bac842c3b719932bc65990.png" alt="\gamma = \min [2,(1-n/\bar{c})]"/>, <img class="math" src="_images/math/e11f2701c4a39c7fe543a6c4150b421d50f1c159.png" alt="n"/> is the sediment porosity, and <img class="math" src="_images/math/0a0d4e1462cb9df8a971118a41677b23cf719a59.png" alt="m_0"/> is a constant number given as 2.0.</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="basics.html"><strong>BASICS</strong></a><ul>
+  <li><a href="sediment.html">Sediment Transport Module</a><ul>
+      <li>Previous: <a href="sediment.html" title="previous chapter">Sediment Transport Module</a></li>
+      <li>Next: <a href="bed_equation.html" title="next chapter">Morphological Evolution</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, Fengyan Shi.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

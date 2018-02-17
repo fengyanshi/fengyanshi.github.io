@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Physics (dispersion, breaking, friction) &#8212; funwave  documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Numerical Parameters" href="numerics.html" />
+    <link rel="prev" title="Grid and Computational Time" href="grid.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="physics-dispersion-breaking-friction">
+<h1>Physics (dispersion, breaking, friction)<a class="headerlink" href="#physics-dispersion-breaking-friction" title="Permalink to this headline">¶</a></h1>
+<p><strong>SPECIFICATION OF PHYSICS</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li>DISPERSION: logical parameter for inclusion of dispersion terms.  T - calculate dispersion, F - no dispersion terms. Default: T.</li>
+<li>Gamma1: parameter for linear dispersive terms. 1.0 - inclusion of linear dispersive terms, 0.0 - no linear dispersive terms. Default: 1.0.</li>
+<li>Gamma2: parameter for nonlinear dispersive terms. 1.0 - inclusion of nonlinear dispersive terms, 0.0 - no nonlinear dispersive terms. Default: 1.0.</li>
+</ul>
+<blockquote>
+<div><p>Gamma1=1.0, Gamma2=0.0 for  NG&#8217;s equations.</p>
+<p>Gamma1=1.0, Gamma2=1.0 for the fully nonlinear Boussinesq equations.</p>
+</div></blockquote>
+<ul class="simple">
+<li>Gamma3: parameter for linear shallow water equations (Gamma3 = 1.0). When Gamma3 = 0.0, Gamma1 and Gamma2 automatically become zero. Default: 1.0.</li>
+<li>Beta_ref:  parameter <img class="math" src="_images/math/410a9d0df9c135dd73b269cba7ef04dcfd932b1f.png" alt="\beta"/> defined for the reference level. <img class="math" src="_images/math/410a9d0df9c135dd73b269cba7ef04dcfd932b1f.png" alt="\beta"/> = -0.531 for NG&#8217;s and FUNWAVE equations. Default: -0.531.</li>
+<li>VISCOSITY_BREAKING : logical parameter for viscous breaking. When this option is selected, Cbrk1 and Cbrk2 needed. Default is shock-capturing type breaking</li>
+<li>SWE_ETA_DEP: ratio of height/depth for switching from Boussinesq to NSWE for shock-capturing breaking.  The value is <img class="math" src="_images/math/5ecfb5efd13556512083272088a2baa0839e3c66.png" alt="\sim"/> 0.80.</li>
+</ul>
+</div></blockquote>
+<p><strong>SPECIFICATION OF FRICTION</strong></p>
+<blockquote>
+<div><ul>
+<li><p class="first">FRICTION_MATRIX: logical parameter for homogeneous and inhomogeneous frction feild.  T - inhomogeneous, F - homogeneous. Default: F.</p>
+</li>
+<li><p class="first">FRICTION_FILE: file file if  FRICTION_MATRIX= T , file dimension should be Mglob x Nglob with the first point as the south-west corner.  The read format in the code is shown below.</p>
+<blockquote>
+<div><p>DO J=1,Nglob</p>
+<blockquote>
+<div><p>READ(1,*)(Cd(I,J),I=1,Mglob)</p>
+</div></blockquote>
+<p>ENDDO</p>
+</div></blockquote>
+</li>
+<li><p class="first">Cd_fixed: fixed bottom friction coefficient.</p>
+</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>SHOW_BREAKING: logical parameter to calculate breaking index. Note that, if VISCOSITY_BREAKING is not selected,  breaking is calculated using shock wave capturing scheme. The index calculated here is based on Kennedy et al. (2000).</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Cbrk1: parameter C1 in Kennedy et al. (2000). Default: 0.65</li>
+<li>Cbrk2:  parameter C2 in Kennedy et al. (2000). Default: 0.35</li>
+<li>WAVEMAKER_Cbrk: breaking parameter inside wavemaker. For some cases, wave breaks inside the wavemaker. This parameter provides Cbrk inside the wavemaker domain. For most of cases, set WAVEMAKER_Cbrk = Cbrk1 or higher. Default: LARGE.</li>
+</ul>
+</div></blockquote>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="definition.html"><strong>DEFINITIONS OF PARAMETERS</strong></a><ul>
+      <li>Previous: <a href="grid.html" title="previous chapter">Grid and Computational Time</a></li>
+      <li>Next: <a href="numerics.html" title="next chapter">Numerical Parameters</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, Fengyan Shi.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Meteo Module &#8212; funwave  documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Sediment Transport Module" href="sediment.html" />
+    <link rel="prev" title="Ship-wake Module" href="shipwakes.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="meteo-module">
+<h1>Meteo Module<a class="headerlink" href="#meteo-module" title="Permalink to this headline">¶</a></h1>
+<p>The METEO module was initially developed for simulations of meteotsnamis. It now includes subroutines for simulating the wind effects on waves, storm surges, landslide-generated tsunamis and processes related to atmospheric pressure effects.</p>
+<ul class="simple">
+<li>Wind effect on waves</li>
+</ul>
+<p>Wind effects are modeled using the wind stress forcing proposed by Chen et al. (2004). The wind stress is expressed by</p>
+<div class="math">
+<p><img src="_images/math/eff26cb7357892588d2c2de13092de7ecbe23c6a.png" alt="{\bf R}_w = \frac{\rho_a}{\rho} C_{dw} |{\bf U}_{10} - {\bf C}| ({\bf U}_{10} - {\bf C})"/></p>
+</div><p>where <img class="math" src="_images/math/b5d177481e40e6e7e0fc9b1a5b7312e1cfb343dd.png" alt="\rho_a"/> and <img class="math" src="_images/math/9a51ab9a0b521705e1e8762fac6bdd6f11771758.png" alt="\rho"/> represent air density and  water density, respectively, <img class="math" src="_images/math/e8e91450186bb2d9cf75130efddff2f3301b676c.png" alt="\bf C"/> is wave celerity.  The wind stress is only applied on wave crests. A free parameter representing a ratio of the forced crest height to maximum surface elevation is implemented in the model.</p>
+<ul class="simple">
+<li>Holland model</li>
+</ul>
+<p>Holland model is an analytic model of wind and pressure profiles described based on Hurricanes. The pressure distribution can be expressed by</p>
+<div class="math">
+<p><img src="_images/math/70e4bd749a5a5bc0d273860f688bac825f6883f4.png" alt="p = p_c + (p_n-p_c) exp(-A/r^B)"/></p>
+</div><p>where <img class="math" src="_images/math/27d463da4622be5b3ef1d4176ced7d7a323c6425.png" alt="p"/> is the pressure at radius <img class="math" src="_images/math/eaa6ad49a7f78fe5a13b486690163bf2dc7e3e60.png" alt="r"/>, <img class="math" src="_images/math/d1371fb15b538285161239d783a977de32bb8e7f.png" alt="p_c"/> and <img class="math" src="_images/math/66b30555c6212f4bfbe96c9a9dfceb59d818aef6.png" alt="p_n"/> are the central pressure and the ambient pressure, respectively. <img class="math" src="_images/math/0043fe6507e9b1d112e07a2801e24927e267dd50.png" alt="A"/> and <img class="math" src="_images/math/9805f44feec6f81d376d09e88b8236635edbb3c8.png" alt="B"/> are scaling paramters from the model input. The velocity distribution can be described by</p>
+<div class="math">
+<p><img src="_images/math/93df018451ae84bc3af4e5da3feb95883d4791fd.png" alt="V_c = [AB(p_n-p_c)exp(-A/r^B)/\rho_a r^B]^{1/2}"/></p>
+</div><p>Based on the formulations above, it is easy to obtain the following storm parameters</p>
+<p>The radius of maximum winds (RMW) is</p>
+<div class="math">
+<p><img src="_images/math/624fc5d665f32d2a528798c79a26298dd0ae58b3.png" alt="R_w = A^{1/B}"/></p>
+</div><p>The maximum wind speed</p>
+<div class="math">
+<p><img src="_images/math/d41589af03422bf4f8762728b21a473f3697b731.png" alt="V_m = C(p_n-p_c)^{1/2}"/></p>
+</div><p>where</p>
+<div class="math">
+<p><img src="_images/math/c5ef2a7aaf34eb51f1d4ad3537bcb5f3d0e171a4.png" alt="C = (B/\rho_a e)^{1/2}"/></p>
+</div><ul class="simple">
+<li>Storm surge</li>
+</ul>
+<p>To calculate storm surges, wind stress is applied</p>
+<div class="math">
+<p><img src="_images/math/974eb958f3b7771cf298dcca1ec99c033b192a28.png" alt="{\bf R}_w = \frac{\rho_a}{\rho} C_{dw} |{\bf U}_{10}| ({\bf U}_{10})"/></p>
+</div><p>Note that <img class="math" src="_images/math/e8e91450186bb2d9cf75130efddff2f3301b676c.png" alt="\bf C"/> is not used, compared to the formula for &#8216;Wind effect on waves&#8217;.</p>
+<ul class="simple">
+<li>Meteotsunami</li>
+</ul>
+<p>Meteotsunami is modeled using a pressure source of two-dimensional Gausian distribution:</p>
+<div class="math">
+<p><img src="_images/math/af1adcec57f45334ad143af5f8b434cb788215d7.png" alt="P = dP exp \left(-(\frac{(x^\prime - x_0)^2}{2\sigma_x^2} + \frac{(y^\prime - y_0)^2}{2\sigma_y^2}) \right)"/></p>
+</div><p>where <img class="math" src="_images/math/c95991da333a1acad2d5e27ab3ee88cf8d3f6a2e.png" alt="dP"/> is the pressure anomaly in mb,  <img class="math" src="_images/math/c951f9a85df6d7597fee2f93b9e4aa3b2bb210bd.png" alt="(x^\prime,y^\prime)"/> are the coordinates rotated to the pressure moving direction (angle is <img class="math" src="_images/math/3be04d4207434584251f6921820c24ac9fa8c6f1.png" alt="\theta"/> as indicated in the figure). <img class="math" src="_images/math/2e5d48e1aeeaeb5798b847e2feef01ba35790ddc.png" alt="\sigma_x"/> and <img class="math" src="_images/math/0b30a2d48c2805095245dba3b4be2dfd2e2fba2e.png" alt="\sigma_y"/> are paramters representing the length of the width of the pressure source.</p>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="_images/gausian.jpg"><img alt="alternate text" src="_images/gausian.jpg" style="width: 300px; height: 260px;" /></a>
+</div>
+<ul class="simple">
+<li>Landslide-generated tsunami</li>
+</ul>
+<p>Landslide-generated tsunami can be calculated using the same approach as the meteotsunami. Details will be reported by Woodruff (2017).</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="basics.html"><strong>BASICS</strong></a><ul>
+      <li>Previous: <a href="shipwakes.html" title="previous chapter">Ship-wake Module</a></li>
+      <li>Next: <a href="sediment.html" title="next chapter">Sediment Transport Module</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, Fengyan Shi.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

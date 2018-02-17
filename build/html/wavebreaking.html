@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Wave Breaking &#8212; funwave  documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Sponge Layer" href="spongelayer.html" />
+    <link rel="prev" title="Formulations and Numerical Schemes" href="boussinesq.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="wave-breaking">
+<h1>Wave Breaking<a class="headerlink" href="#wave-breaking" title="Permalink to this headline">¶</a></h1>
+<p>There are two breaking algorithms implemented in the model. One takes the advantage of the shock&#8211;capturing scheme in TVD.
+It  follows the approach of Tonelli and Petti (2009),  who successfully used the ability of  NSWE  with a TVD scheme to model moving hydraulic jumps. Thus, the fully nonlinear Boussinesq equations are switched  to NSWE at cells where the Froude number exceeds  a certain threshold. Following Tonelli and Petti, the ratio of wave height to total water depth is chosen as  the criterion to switch from Boussinesq to NSWE, with  threshold value  set to 0.8,  as suggested by Tonelli and Petti.</p>
+<p>The other one is the original eddy&#8211;viscosity scheme used in the previous version of FUNWAVE (Kennedy et al., 2000). To fit the eddy&#8211;viscosity method in the TVD scheme, the artificial eddy viscosity terms.</p>
+<div class="math">
+<p><img src="_images/math/716b0389a8b924f39fce149776265a2b341bb2f3.png" alt="{\bf R}_{bx} = \frac{\partial }{\partial x} (\nu \frac{\partial P}{\partial x}) + \frac{\partial }{\partial y} (\nu \frac{\partial P}{\partial y} )"/></p>
+</div><div class="math">
+<p><img src="_images/math/1e16df4577c075f610f11f9757e27d8a3ee99a3b.png" alt="{\bf R}_{by} = \frac{\partial }{\partial y} (\nu \frac{\partial Q}{\partial y}) + \frac{\partial }{\partial x} (\nu \frac{\partial Q}{\partial x})"/></p>
+</div><p>Note that the form is slightly different from that in Kennedy et al. (2000). The present form was found to give a more stable numerical solution as the cross&#8211;derivatives removed. In the present form, <img class="math" src="_images/math/ca3b8fa4180eee2dfc3af9d13fae1da451cd2c31.png" alt="\nu"/> is the artificial eddy viscosity defined by</p>
+<div class="math">
+<p><img src="_images/math/e781fcafb64caf83b64eb8756d029db2d0c21967.png" alt="\nu = B \delta_b^2 (h+\eta) \eta_t"/></p>
+</div><p>where <img class="math" src="_images/math/f3d85a99c071169fad4f35bff7807e6c831004af.png" alt="\delta_b = 1.2"/>. In Kennedy et al. (2000), <img class="math" src="_images/math/9805f44feec6f81d376d09e88b8236635edbb3c8.png" alt="B"/> varies smoothly from 0 to 1 so as to avoid an impulsive start of breaking and the resulting instability. In the present TVD model, because there is no instability problem found, we adopt a constant value <img class="math" src="_images/math/cb9dae7066c21b15c0cc2911b7c11efaf6bbb22e.png" alt="B=1"/> as breaking is initiated</p>
+<div class="math">
+<p><img src="_images/math/ea3c8b347f7fafee90cf6be017a559e9a5d0c3d7.png" alt="B =  1 \ \ \  \eta_t \ge  \eta_t^*"/></p>
+</div><div class="math">
+<p><img src="_images/math/a4c18c0086eb3dbc454c1fc26b27caef2d235cdf.png" alt="B =  0 \ \ \  \eta_t &lt;  \eta_t^*"/></p>
+</div><p>The parameter <img class="math" src="_images/math/f10433454094a1a2a90434679731b1f6a60786dc.png" alt="\eta_t^*"/> determines the onset and cessation of breaking. Following Kennedy et al., a breaking event begins when <img class="math" src="_images/math/6068226ddfa5d3e1f1bffc31e450fbcab5cea71a.png" alt="\eta_t"/> exceeds some initial threshold value <img class="math" src="_images/math/711a88a96391d3149c7d913b66b9fdf38d1b9063.png" alt="\eta_t^{(I)}"/>, as breaking develops, the wave will continue to break until <img class="math" src="_images/math/6068226ddfa5d3e1f1bffc31e450fbcab5cea71a.png" alt="\eta_t"/> drops below <img class="math" src="_images/math/e762d28280be64b4a9a2fefce72ebd678dfd13e7.png" alt="\eta_t^{(F)}"/>. However, we do not use the smooth transition as in Kennedy et al. because the present TVD scheme did not encounter any instability problem.  The default values of <img class="math" src="_images/math/711a88a96391d3149c7d913b66b9fdf38d1b9063.png" alt="\eta_t^{(I)}"/> and <img class="math" src="_images/math/e762d28280be64b4a9a2fefce72ebd678dfd13e7.png" alt="\eta_t^{(F)}"/> are <img class="math" src="_images/math/34466b51ba16fb18b41f78a4db4ae0a019d7b632.png" alt="0.65\times 2  \sqrt{gh}"/> and  <img class="math" src="_images/math/2e81c577bde26c739c15945338baf8158c5b2af8.png" alt="0.15 \sqrt{gh}"/> as in the previous FUNWAVE version (i.e., Cbrk1 = 0.65 and Cbrk2=0.15 in the present version, see the example in the next section). However, the recent tests showed <img class="math" src="_images/math/711a88a96391d3149c7d913b66b9fdf38d1b9063.png" alt="\eta_t^{(I)}"/> should be slightly larger to match the laboratory data.</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="basics.html"><strong>BASICS</strong></a><ul>
+      <li>Previous: <a href="boussinesq.html" title="previous chapter">Formulations and Numerical Schemes</a></li>
+      <li>Next: <a href="spongelayer.html" title="next chapter">Sponge Layer</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, Fengyan Shi.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

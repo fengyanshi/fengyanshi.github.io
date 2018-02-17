@@ -10,7 +10,7 @@ FUNWAVE-TVD
 .. toctree::
    :maxdepth: 2
 
-   theory_formulation
+   basics
    flowchart
    setup
    definition

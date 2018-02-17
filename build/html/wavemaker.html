@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Wave–maker &#8212; funwave  documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Ship-wake Module" href="shipwakes.html" />
+    <link rel="prev" title="Boundary Conditions" href="boundary.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="wave-maker">
+<h1>Wave&#8211;maker<a class="headerlink" href="#wave-maker" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>Internal wavemaker theory</li>
+</ul>
+<p>Internal wavemaker was implemented based on Wei and Kirby&#8217;s (1999) two&#8211;way internal wavemaker and Chawla and Kirby&#8217;s (2000) one&#8211;way internal wavemaker (under development). Here, we briefly summarize the formulations used in the wavemakers. Detailed theory can be found in Wei and Kirby (1999) and Chawla and Kirby (2000).</p>
+<p>Wei and Kirby (1999) followed the approach of Larsen and Dancy (1983) who used an ad&#8211;hoc source mechanism where water mass is added and subtracted along a straight source/sink line inside the computing domain. This approach works well in a staggered&#8211;grid differencing scheme, where water is essentially being added to or drained from a single grid block. In applying this technique to the Boussinesq model on an unstaggered grid, however, Wei and Kirby found that use of a single source line accused high frequency noise, leading to blowup of the model. They then used a partially distributed mass source <img class="math" src="_images/math/235ddbc02353c50cb291781a37a056db6d24b760.png" alt="f(x,y,t)"/></p>
+<div class="math">
+<p><img src="_images/math/41f44ca343a6c5631a3f0fcc08a979b781b59496.png" alt="f(x,y,t) = g(x) s(y,t)"/></p>
+</div><p>where <img class="math" src="_images/math/f7d450172ff247e375a81d22940fc8b488d13343.png" alt="g(x)"/> is a Gaussian shape function and <img class="math" src="_images/math/92f46b75417b5f198918f47a56f96b014d68ab51.png" alt="s(y,t)"/> the input time series of the magnitude of source function with an assumption that the center of the source region is parallel to the y&#8211;axis. The functions <img class="math" src="_images/math/f7d450172ff247e375a81d22940fc8b488d13343.png" alt="g(x)"/> and <img class="math" src="_images/math/92f46b75417b5f198918f47a56f96b014d68ab51.png" alt="s(y,t)"/> are defined as</p>
+<div class="math">
+<p><img src="_images/math/ba6c5580a7581369b08a5aec76e566acd14d0483.png" alt="g(x) = \mbox{exp}[-\beta(x-x_s)^2]"/></p>
+</div><div class="math">
+<p><img src="_images/math/88a923052b02758896670780772160fdab577e90.png" alt="s(y,t) = D \mbox{sin} (\lambda y -\omega t)"/></p>
+</div><p>where <img class="math" src="_images/math/410a9d0df9c135dd73b269cba7ef04dcfd932b1f.png" alt="\beta"/> is the shape coefficient for the source function, and <img class="math" src="_images/math/1514c939d86b56b1d47cfef99412c57bfbcf70ca.png" alt="x_s"/> is the central location of the source in the <img class="math" src="_images/math/a59f68a4202623bb859a7093f0316bf466e6f75d.png" alt="x"/> direction, for a source oriented parallel to the <img class="math" src="_images/math/276f7e256cbddeb81eee42e1efc348f3cb4ab5f8.png" alt="y"/> axis, as shown in Figure.  <img class="math" src="_images/math/3cf5aa5abe312e6fd4996975341a43aa566e8d8d.png" alt="D"/> is the magnitude of the source function, <img class="math" src="_images/math/fe63fee123759767733e67c0c9a43bee4e2c3876.png" alt="\lambda = k \mbox{sin} (\theta)"/> the wavenumber in the <img class="math" src="_images/math/276f7e256cbddeb81eee42e1efc348f3cb4ab5f8.png" alt="y"/> direction, and <img class="math" src="_images/math/0b7c1e16a3a8a849bb8ffdcdbf86f65fd1f30438.png" alt="k"/> is the linear wavenumber.</p>
+<p>For a monochromatic wave or a single wave component of a random wave train, the magnitude <img class="math" src="_images/math/3cf5aa5abe312e6fd4996975341a43aa566e8d8d.png" alt="D"/> of source function can be determined by</p>
+<div class="math">
+<p><img src="_images/math/2c3a6394752040f81f3bcbeb73b85ff49a484edf.png" alt="D = \frac{2 a_0 \cos (\theta) (\omega^2 - \alpha_1 g k^4 h^3) }{\omega k I [1-\alpha(kh)^2]}"/></p>
+</div><p>where <img class="math" src="_images/math/2d347364f22f0dad20dd6c5eadd9de39edf84887.png" alt="\alpha = -0.390, \alpha_1 = \alpha + 1/3"/>, and <img class="math" src="_images/math/d2ed2630e579be280a30b6646f4d706103c337ce.png" alt="I"/> is the integral given by</p>
+<div class="math">
+<p><img src="_images/math/78e187c7b55a7a00656b102cc425693b62226b11.png" alt="I = \int^\infty_{-\infty} \exp (-\beta x^2) \exp (-ilx) dx = \sqrt{\frac{\pi}{\beta}} \exp(- l^2/4\beta)"/></p>
+</div><p>where <img class="math" src="_images/math/d1e71c110691041917e6a354efdff66943da774c.png" alt="l=k\cos (\theta)"/> is the wavenumber in <img class="math" src="_images/math/a59f68a4202623bb859a7093f0316bf466e6f75d.png" alt="x"/> direction. In theory, the shape coefficient <img class="math" src="_images/math/410a9d0df9c135dd73b269cba7ef04dcfd932b1f.png" alt="\beta"/> can be any number. The larger the value <img class="math" src="_images/math/410a9d0df9c135dd73b269cba7ef04dcfd932b1f.png" alt="\beta"/> is, the narrower the source function becomes. The definition of the source function width <img class="math" src="_images/math/953bde2ab2fca30897f66185e5b37b73747b8b46.png" alt="W"/> is not unique, and here we define <img class="math" src="_images/math/953bde2ab2fca30897f66185e5b37b73747b8b46.png" alt="W"/> to be the distance between two coordinates <img class="math" src="_images/math/fdf6501bec5987984965f15d09235c645fe06ccb.png" alt="x_1"/> and <img class="math" src="_images/math/1f1a225cd22b81817fc48b3a84dcf8f1a9e145d8.png" alt="x_2"/> where the corresponding source function heights are equal to <img class="math" src="_images/math/bf160d5867b546bb9757cf0b92325a06b3d2e07f.png" alt="\exp (-5) = 0.0067"/> times the maximum height <img class="math" src="_images/math/3cf5aa5abe312e6fd4996975341a43aa566e8d8d.png" alt="D"/>. Then <img class="math" src="_images/math/fdf6501bec5987984965f15d09235c645fe06ccb.png" alt="x_1"/> and <img class="math" src="_images/math/1f1a225cd22b81817fc48b3a84dcf8f1a9e145d8.png" alt="x_2"/> must satisfy the quadratic equation</p>
+<div class="math">
+<p><img src="_images/math/4e5f0dce4c3f4bcb09bb07e50572aaa1170ef0c5.png" alt="\beta (x-x_s)^2 = 5"/></p>
+</div><p>from which the width of source function is given by</p>
+<div class="math">
+<p><img src="_images/math/d5e889a290ebcafc8fad133a64d64aa86addc843.png" alt="W = |x_2 - x_1| = 2\sqrt{\frac{5}{\beta}}"/></p>
+</div><p>In the previous version of FUNWAVE (Kirby et al., 1998), it is suggested that <img class="math" src="_images/math/953bde2ab2fca30897f66185e5b37b73747b8b46.png" alt="W"/> equals about half of the wavelength for monochromatic wave. If <img class="math" src="_images/math/ae2b750f71e1fc0daaa3de9a85d42794d7cd1326.png" alt="L"/> is the wavelength, the requirement of <img class="math" src="_images/math/001f581a691652585ce81c71666d5b6b0fc367e8.png" alt="W=\delta L/2"/> (where <img class="math" src="_images/math/a702e781dfc76762a3a132c2031fba8898430925.png" alt="\delta"/> is of order 1) results in</p>
+<div class="math">
+<p><img src="_images/math/542b76f68fedf5e24b928cd552c7630574fd267b.png" alt="\beta = \frac{5}{(\delta L/4)^2} = \frac{80}{\delta^2 L^2}"/></p>
+</div><p>For random waves, the value of $beta$ is determined according to the peak frequency component and then used for all components in the wave train. FUNWAVE&#8211;TVD follows the criteria for determining <img class="math" src="_images/math/410a9d0df9c135dd73b269cba7ef04dcfd932b1f.png" alt="\beta"/> though a narrow <img class="math" src="_images/math/953bde2ab2fca30897f66185e5b37b73747b8b46.png" alt="W"/> does not seem to cause any problem.</p>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="_images/wavemaker.jpg"><img alt="alternate text" src="_images/wavemaker.jpg" style="width: 300px; height: 250px;" /></a>
+</div>
+<p>For the irregular wavemaker, an extension was made to incorporate an  alongshore periodicity into wave generation,  in order to eliminate a boundary effect on wave simulations. The technique exactly follows the strategy in Chen et al. (2003), who adjusted the distribution of wave directions in each frequency bin to obtain alongshore periodicity. This approach is effective in modeling of  breaking wave&#8211;induced nearshore circulation such as alongshore currents and rip currents.</p>
+<ul class="simple">
+<li>Regular wave generation</li>
+</ul>
+<p>The generation of monochromatic wave using the internal wavemaker is straightforward. Following the formulations given in 3.7.1, the magnitude of source function <img class="math" src="_images/math/3cf5aa5abe312e6fd4996975341a43aa566e8d8d.png" alt="D"/> is calculated by D equation shown above for given wave amplitude <img class="math" src="_images/math/d1a15392374eb2875fc3efa1ae555846991e0553.png" alt="a_0"/>, wave angle <img class="math" src="_images/math/3be04d4207434584251f6921820c24ac9fa8c6f1.png" alt="\theta"/>, water depth <img class="math" src="_images/math/293fb39e1b93282c804a86186e721b32f829f1b2.png" alt="h"/> and wave period. The source function can be obtained using the Source function above.</p>
+<ul class="simple">
+<li>Irregular wave generation using directional spectral data</li>
+</ul>
+<p>Irregular waves can be generated by integrating wave components split by frequency and direction and with random phases Each wave component contains wave amplitude <img class="math" src="_images/math/d1a15392374eb2875fc3efa1ae555846991e0553.png" alt="a_0"/> converted from wave energy, wave angle <img class="math" src="_images/math/3be04d4207434584251f6921820c24ac9fa8c6f1.png" alt="\theta"/> and wave period. The source function for each component can be obtained using the source function.</p>
+<ul class="simple">
+<li>Irregular wave generation using analytical spectrum function</li>
+</ul>
+<p>The input for the wavemaker can be wave bulk parameters or directional spectral data. TMA shallow&#8211;water spectrum, JONSWAP spectrum and a wrapped&#8211;normal directional&#8211;spreading function are used to simulate a directional sea state. The combined spectrum function can be expressed as</p>
+<div class="math">
+<p><img src="_images/math/866c740e7b15b71f2c02e17630ec4dff4c9f7021.png" alt="S(f,h,\theta) = E(f,h) G(\theta)"/></p>
+</div><p><img class="math" src="_images/math/4b6222b865b812d2a59368cd1629eed6b54454d5.png" alt="E"/> is the energy density distribution as follows</p>
+<div class="math">
+<p><img src="_images/math/3e6b20dd0f97e6f3cd5104ceb784583e68c12bb3.png" alt="E (f,h) = \alpha g^2 f^{-5} (2 \pi)^{-4} \Phi (2\pi f, h) e^{-5/4(f/f_p)^{-4}} \gamma^{e^{[-(f/f_p -1)^2 /2\sigma^2]}}"/></p>
+</div><p>in which <img class="math" src="_images/math/deba8bb5afe0b990a5f560e6653fd24f43985c1a.png" alt="f_p"/> is the peak frequency.  <img class="math" src="_images/math/3666981dc77862de77b6ecfcb64aad59b425cbaf.png" alt="\gamma"/> presents a frequency spreading parameter, and <img class="math" src="_images/math/877d234f4cec6974ce218fc2e975a486a7972dfd.png" alt="\alpha"/> and <img class="math" src="_images/math/011e5790a6c33043ceadca81d9657dde6c61d769.png" alt="\sigma"/> are coefficients which may be found in Bouws et al. (1985).  $alpha$ is obtained using the input <img class="math" src="_images/math/e98fe6e860d2ecfdc05d1b7111d9ce1856086cc6.png" alt="H_{mo}/H_{sig}"/>,</p>
+<div class="math">
+<p><img src="_images/math/df7f249970655f06a3aa045cdd14674fc7c988f6.png" alt="\sigma = 0.07  \ \ \ \  f \leq f_p"/></p>
+</div><div class="math">
+<p><img src="_images/math/7f3486462b0af9987d3e7ed3dc2a5ccc50b259d2.png" alt="\sigma = 0.09  \ \ \ \  f &gt; f_p"/></p>
+</div><p><img class="math" src="_images/math/e486de19dbb61c9a63584f6e4ddd6e92ef03d665.png" alt="\Phi"/> = 1.0 for the JONSWAP spectrum. For TMA,  <img class="math" src="_images/math/e486de19dbb61c9a63584f6e4ddd6e92ef03d665.png" alt="\Phi"/> may be expressed as</p>
+<div class="math">
+<p><img src="_images/math/16cd3caf852f99947504d91cf04a59a856226afc.png" alt="\Phi (2 \pi f, h) =\frac{1}{2} \omega_h^2 \ \ \ \  \omega_h \leq 1"/></p>
+</div><div class="math">
+<p><img src="_images/math/ee77dfab72e2a8ab57f9626484ba37a932408872.png" alt="\Phi (2 \pi f, h) = 1-\frac{1}{2}(2-\omega_h)^2 \ \ \ \ 2 &gt; \omega_h &gt;1"/></p>
+</div><div class="math">
+<p><img src="_images/math/381b70cfb62288ed18bc44466caf100c79aa4a66.png" alt="\Phi (2 \pi f, h) = 1    \ \ \ \  \omega_h \geq 2"/></p>
+</div><p>where</p>
+<div class="math">
+<p><img src="_images/math/c637f30a05fec2bd7c2cfac1858cc852e2657aca.png" alt="\omega_h = 2 \pi f (\frac{h}{g})^{1/2}"/></p>
+</div><p>here <img class="math" src="_images/math/1a9ed0718e1d9040cf7605ad016bec01dbf8bb15.png" alt="G(\theta)"/> is the wrapped normal directional spreading function written as</p>
+<div class="math">
+<p><img src="_images/math/9ab0ee9f1fc92a4c1a3d3bf4e4a3731ae7b4adaf.png" alt="G(\theta) = \frac{1}{2\pi} +\frac{1}{\pi} \sum^N_{n=1} e^{[-\frac{( \sigma_{\theta})^2}{2}]} \cos n\theta"/></p>
+</div><p>where <img class="math" src="_images/math/40f9129d55234c2414e891b374950c59342a4c19.png" alt="\sigma_{\theta}"/> denotes circular deviation of the wrapped normal
+spreading function. To avoid the computational underflow, <img class="math" src="_images/math/98e5bf115a9110959d2aadedf950ce14a6aaf01b.png" alt="N = 20"/> in the model.</p>
+<p>In the spectral wavemaker, the directional spectrum is first divided into <img class="math" src="_images/math/f758e9564e014f06b93cdd9c48b82702d4da7193.png" alt="1000"/> frequency components and then reconstructed into a user&#8211;specified number of components with the equal energy. The directional components s evenly split in each frequency. The source function technique (Wei, et al., 1999) is then used for each component and the final surface elevation function can be written as</p>
+<div class="math">
+<p><img src="_images/math/3f801115a4d447907858e57bf273ff03ed1a2b04.png" alt="\eta = \sum^M_{m=1} C_m \cos \omega _m t + \sum^M_{m=1} S_m \sin \omega _m t"/></p>
+</div><p>where</p>
+<div class="math">
+<p><img src="_images/math/7808d98da9e3dfd66acaf6891dc57294ded7e878.png" alt="C_m  = \sum^k_{n=1} D_{mn} \cos (k_{mn}y + \varepsilon_{mn})"/></p>
+</div><div class="math">
+<p><img src="_images/math/2a4e70f3745b60a3b14d5a3fb8a86434b1728888.png" alt="S_m =  \sum^k_{n=1} D_{mn} \sin (k_{mn}y + \varepsilon_{mn})"/></p>
+</div><p>in which y&#8211;axis is oriented along the main axis of the wave maker. <img class="math" src="_images/math/c9b51953ba86dda4c713e3a06c692bebf6678f64.png" alt="D_{mn}, k _{mn}"/> and <img class="math" src="_images/math/e3b5c2ba8338c20e3e4aa856a53719c692eb62fc.png" alt="\varepsilon_{mn}"/> are respectively the amplitude, wave number in the y direction and phase of a component. The phase can be random.</p>
+<p>The model also provides an option for 1&#8211;D spectral wave generation (uni&#8211;directional).</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="basics.html"><strong>BASICS</strong></a><ul>
+      <li>Previous: <a href="boundary.html" title="previous chapter">Boundary Conditions</a></li>
+      <li>Next: <a href="shipwakes.html" title="next chapter">Ship-wake Module</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, Fengyan Shi.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>
