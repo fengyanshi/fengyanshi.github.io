@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Parameters for Central Module &#8212; funwave  documentation</title>
+    <title>Parallelization &#8212; funwave  documentation</title>
     
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -26,8 +26,8 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Project" href="title.html" />
-    <link rel="prev" title="DEFINITIONS OF PARAMETERS" href="definition.html" />
+    <link rel="next" title="Grid and Computational Time" href="grid.html" />
+    <link rel="prev" title="Project" href="title.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -43,24 +43,19 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="parameters-for-central-module">
-<h1>Parameters for Central Module<a class="headerlink" href="#parameters-for-central-module" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="title.html">Project</a></li>
-<li class="toctree-l1"><a class="reference internal" href="parallelization.html">Parallelization</a></li>
-<li class="toctree-l1"><a class="reference internal" href="grid.html">Grid and Computational Time</a></li>
-<li class="toctree-l1"><a class="reference internal" href="physics.html">Physics (dispersion, breaking, friction)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="numerics.html">Numerical Parameters</a></li>
-<li class="toctree-l1"><a class="reference internal" href="wavemaker_para.html">Wave-maker</a></li>
-<li class="toctree-l1"><a class="reference internal" href="periodic.html">Periodic Boundary Condition</a></li>
-<li class="toctree-l1"><a class="reference internal" href="statistics.html">Wave Statistics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sponge.html">Sponge Layer</a></li>
-<li class="toctree-l1"><a class="reference internal" href="breakwater.html">Breakwater and Obstacle</a></li>
-<li class="toctree-l1"><a class="reference internal" href="hotstart.html">Hot Start</a></li>
-<li class="toctree-l1"><a class="reference internal" href="output.html">Output</a></li>
+  <div class="section" id="parallelization">
+<h1>Parallelization<a class="headerlink" href="#parallelization" title="Permalink to this headline">¶</a></h1>
+<p><strong>SPECIFICATION OF MULTI-PROCESSORS</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li>PX:  processor numbers in X</li>
+<li>PY :  processor numbers in Y</li>
 </ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">PX and PY must be consistency with number of processors defined in mpirun command, e.g., mpirun -np n (where n = px . py). For versions 3.0 or lower, PX (PY) should be a common factor of Mglob(Nglob).</p>
 </div>
+</div></blockquote>
 </div>
 
 
@@ -73,8 +68,10 @@
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
   <li><a href="definition.html"><strong>DEFINITIONS OF PARAMETERS</strong></a><ul>
-      <li>Previous: <a href="definition.html" title="previous chapter"><strong>DEFINITIONS OF PARAMETERS</strong></a></li>
-      <li>Next: <a href="title.html" title="next chapter">Project</a></li>
+  <li><a href="central_para.html">Parameters for Central Module</a><ul>
+      <li>Previous: <a href="title.html" title="previous chapter">Project</a></li>
+      <li>Next: <a href="grid.html" title="next chapter">Grid and Computational Time</a></li>
+  </ul></li>
   </ul></li>
   </ul></li>
 </ul>

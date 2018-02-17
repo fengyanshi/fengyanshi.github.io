@@ -4,7 +4,8 @@ Parameters for Central Module
 .. toctree::
    :maxdepth: 2
 
-   basic_para
+   title
+   parallelization
    grid
    physics
    numerics
