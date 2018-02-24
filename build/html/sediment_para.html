@@ -45,6 +45,35 @@
             
   <div class="section" id="sediment-transport-and-morphological-change">
 <h1>Sediment Transport and Morphological Change<a class="headerlink" href="#sediment-transport-and-morphological-change" title="Permalink to this headline">¶</a></h1>
+<p><strong>NUMERICAL SCHEME</strong></p>
+<ul class="simple">
+<li>Sed_Scheme: numerical scheme for solving the advection-diffusion equation</li>
+<li>Sed_Scheme = TVD: TVD scheme</li>
+<li>Sed_Scheme = Upwinding: Upwinding scheme (defalt)</li>
+</ul>
+<p><strong>SEDIMENT PARAMETERS</strong></p>
+<ul class="simple">
+<li>D50: median grain diameter <img class="math" src="_images/math/1abb1f0576f727289b305235f32a19bdc65bd9e0.png" alt="D_{50}"/>, defalt <img class="math" src="_images/math/1abf27571056fb31f594d68e52460ea67c4a02c7.png" alt="D_{50} = 0.5mm"/></li>
+<li>Sdensity: gravity of sediment <img class="math" src="_images/math/63751cb2e98ba393b0f22e45ca127c3cebb61487.png" alt="s"/>, defalt <img class="math" src="_images/math/92a998370eb2b755ab1a38e739b63aee8a43a5e4.png" alt="s = 2.68"/></li>
+<li>n_porosity: porosity of sediment <img class="math" src="_images/math/e11f2701c4a39c7fe543a6c4150b421d50f1c159.png" alt="n"/>, defalt <img class="math" src="_images/math/bed0c52a14e4ad1e5795965acd6bc69752b4d523.png" alt="n=0.47"/></li>
+<li>WS: settling velocity <img class="math" src="_images/math/df1c6f760425670f24bd0265d35d51342f2a22ea.png" alt="w_f"/>, defalt <img class="math" src="_images/math/defbd4374892bd64ab39b5da2d276ebf5a84a89a.png" alt="w_f = 0.125"/> m/s</li>
+<li>Shields_cr: critical Shields parameter <img class="math" src="_images/math/5ef86a7efe2c91cb4296aa36d6020242a1567f63.png" alt="\theta_{cr}"/>, defalt <img class="math" src="_images/math/72d3368938da6f61aabda0dc92aab980c3a73c9b.png" alt="\theta_{cr} = 0.05"/></li>
+<li>Kappa1: Runge-Kutta parameter <img class="math" src="_images/math/bcb6bc0901f57264c4c5dfc97e5f007acf28c871.png" alt="\kappa_1"/>, defalt <img class="math" src="_images/math/75582c07507de7fb0439b2c90be0ac7cf5618fc0.png" alt="\kappa_1 = 0.3333"/>, 4th-order</li>
+<li>Kappa2: Runge-Kutta parameter <img class="math" src="_images/math/7d6ba1020406178f343589d14193200551e58741.png" alt="\kappa_2"/>, defalt <img class="math" src="_images/math/971cebcf9ed0d0e6f695752c367e3233de994321.png" alt="\kappa_1 = 1.0"/>, 4th-order</li>
+<li>PLOT_INTV_SEDIMENT: time interval for plotting sediment transport variables, defalt is the same as the Boussinesq model</li>
+</ul>
+<p><strong>MORPHOLOGICAL CHANGE</strong></p>
+<ul class="simple">
+<li>Bed_Change: logical parameter,  T: update depth, F: no bed change.</li>
+<li>Hard_bottom: logical parameter,  T: hard bed, no erosion allowed, F: sediment bed</li>
+<li>Hard_bottom_file: the file contains the distribution of hard bed points (0:hard bed, 1: sediment bed). The format is the same as the depth file</li>
+<li>Morph_step: ratio of Boussinesq model time step to the morphological updating step, <img class="math" src="_images/math/17f9b55d375567c8db4ae7cd118ee0a52cde8003.png" alt="dt_{morph}"/>, defalt: <img class="math" src="_images/math/17f9b55d375567c8db4ae7cd118ee0a52cde8003.png" alt="dt_{morph}"/> = 25</li>
+</ul>
+<p><strong>AVALANCHE</strong></p>
+<ul class="simple">
+<li>Avalanche: logical parameter,  T: consider avalanche, F: not consider avalanche</li>
+<li>Tan_phi: tangent of the repose angle <img class="math" src="_images/math/75fb18ab68e45eefd0b484d669a90707873ed134.png" alt="\tan \phi"/>, defalt <img class="math" src="_images/math/eebd7babebd9f56f5d46a312da10438612ab20a0.png" alt="\tan \phi = 0.7"/>, or 35 deg</li>
+</ul>
 </div>
 
 
