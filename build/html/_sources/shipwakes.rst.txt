@@ -24,3 +24,5 @@ which should match a given block coefficient :math:`C_B` defined by
 .. math:: C_B = \frac{V_{\mbox{sub}} }{L \cdot R \cdot D}
 
 in which :math:`D` represents draft of a vessel. 
+
+To set up vessels in the model, see :ref:`section-shipwakes-setup`  

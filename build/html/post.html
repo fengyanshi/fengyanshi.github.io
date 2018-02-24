@@ -24,10 +24,11 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="ARCHITECTURE" href="flowchart.html" />
-    <link rel="prev" title="Sediment Transport Module" href="sediment.html" />
+    <link rel="prev" title="Numerical Scheme for Sediment Transport" href="sed_numerical.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -49,12 +50,12 @@
 <li>Wave height calculation</li>
 </ul>
 <p>For spectral wave simulations, both average wave height and root-mean-square wave height are calculated using zero-crossing at each grid point. Significant wave height is evaluated using Goda&#8217;s (2000) formula</p>
-<div class="math">
-<p><img src="_images/math/b5cbb544f287e5b05e1b2b3e71ebf08ebf4f14f1.png" alt="H_{1/3} = 4.004\sqrt{m_0}"/></p>
-</div><p>where</p>
-<div class="math">
-<p><img src="_images/math/5fd44e24ee40d6c2b39d81c1faaade382b35358b.png" alt="m_0 = \frac{1}{t_2-t_1} \int^{t_2}_{t_1} \eta^2 dt"/></p>
-</div></div>
+<div class="math" id="equation-post:0">
+<span class="eqno">(1)<a class="headerlink" href="#equation-post:0" title="Permalink to this equation">¶</a></span>\[H_{1/3} = 4.004\sqrt{m_0}\]</div>
+<p>where</p>
+<div class="math" id="equation-post:1">
+<span class="eqno">(2)<a class="headerlink" href="#equation-post:1" title="Permalink to this equation">¶</a></span>\[m_0 = \frac{1}{t_2-t_1} \int^{t_2}_{t_1} \eta^2 dt\]</div>
+</div>
 
 
           </div>
@@ -66,7 +67,7 @@
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
   <li><a href="basics.html"><strong>BASICS</strong></a><ul>
-      <li>Previous: <a href="sediment.html" title="previous chapter">Sediment Transport Module</a></li>
+      <li>Previous: <a href="sed_numerical.html" title="previous chapter">Numerical Scheme for Sediment Transport</a></li>
       <li>Next: <a href="flowchart.html" title="next chapter"><strong>ARCHITECTURE</strong></a></li>
   </ul></li>
   </ul></li>

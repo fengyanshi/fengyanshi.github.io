@@ -24,6 +24,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Wave-maker" href="wavemaker_para.html" />
@@ -51,8 +52,8 @@
 <li>Time_Scheme: stepping option,  Runge_Kutta or Predictor_Corrector (not suggested for this version). Default: Runge_Kutta.</li>
 <li>HIGH_ORDER: spatial scheme option,  FOURTH for the fourth-order, THIRD for the third-order, and SECOND for the second-order (not suggested for Boussinesq modeling).  Default: FOURTH.</li>
 <li>CONSTRUCTION: construction method,  HLL for HLL scheme, otherwise for averaging scheme. Default: HLL.</li>
-<li>CFL: CFL number, CFL <img class="math" src="_images/math/5ecfb5efd13556512083272088a2baa0839e3c66.png" alt="\sim"/> 0.5 (default).</li>
-<li>FroudeCap: cap for Froude number in velocity calculation for efficiency. The value could be 1.0 <img class="math" src="_images/math/5ecfb5efd13556512083272088a2baa0839e3c66.png" alt="\sim"/> 10.0. Default: 3.0</li>
+<li>CFL: CFL number, CFL <span class="math">\(\sim\)</span> 0.5 (default).</li>
+<li>FroudeCap: cap for Froude number in velocity calculation for efficiency. The value could be 1.0 <span class="math">\(\sim\)</span> 10.0. Default: 3.0</li>
 <li>MinDepth: minimum water depth (m) for wetting and drying scheme. Suggestion: MinDepth = 0.001 for lab scale and 0.01 for field scale. Defaut: 0.01.</li>
 <li>MinDepthFrc: merge to MinDepth for Version 3.1 or higher.</li>
 </ul>
@@ -69,8 +70,10 @@
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
   <li><a href="definition.html"><strong>DEFINITIONS OF PARAMETERS</strong></a><ul>
+  <li><a href="central_para.html">Parameters for Central Module</a><ul>
       <li>Previous: <a href="physics.html" title="previous chapter">Physics (dispersion, breaking, friction)</a></li>
       <li>Next: <a href="wavemaker_para.html" title="next chapter">Wave-maker</a></li>
+  </ul></li>
   </ul></li>
   </ul></li>
 </ul>

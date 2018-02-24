@@ -24,6 +24,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Periodic Boundary Condition" href="periodic.html" />
@@ -170,7 +171,7 @@ Hmo, GammaTMA(Note, still use TMA Gamma, default: 3.3 ), Nfreq(default: 45)</p>
 <li><p class="first">Definations</p>
 <ul class="simple">
 <li>WAVE_DATA_TYPE : Type of wave data needed for LEFT_BC_IRR WaveMaker. It can be DATA or other types used for internal wavemakers</li>
-<li>AMP : amplitude (m) of initial <img class="math" src="_images/math/5635a7c34414599c2452d72430811e816b460335.png" alt="\eta"/>, if  WAVEMAKER = INI_REC, WAVEMAKER = INI_SOL, WAVEMAKER = LEF_SOL.</li>
+<li>AMP : amplitude (m) of initial <span class="math">\(\eta\)</span>, if  WAVEMAKER = INI_REC, WAVEMAKER = INI_SOL, WAVEMAKER = LEF_SOL.</li>
 <li>DEP: water depth at wavemaker location, if WAVEMAKER = INI_SOL, WAVEMAKER = LEF_SOL.</li>
 <li>LAGTIME, time lag (s) for the solitary wave generated on the left boundary, e.g., WAVEMAKER = LEF_SOL.</li>
 <li>XWAVEMAKER: x  (m) coordinate for WAVEMAKER = INI_SOL.</li>
@@ -178,7 +179,7 @@ Hmo, GammaTMA(Note, still use TMA Gamma, default: 3.3 ), Nfreq(default: 45)</p>
 <li>Yc: y (m) coordinate of the center of  a rectangular hump if WAVEMAKER = INI_REC.</li>
 <li>WID: width (m) of  a rectangular hump if WAVEMAKER = INI_REC, or INI_GAU.</li>
 <li>Time_ramp: time ramp (s) for Wei and Kirby (1999) wavemaker. Default: 0.0.</li>
-<li>Delta_WK:  width parameter <img class="math" src="_images/math/a702e781dfc76762a3a132c2031fba8898430925.png" alt="\delta"/>  for Wei and Kirby (1999) wavemaker.    Need trial and error, usually, <img class="math" src="_images/math/a702e781dfc76762a3a132c2031fba8898430925.png" alt="\delta"/> =  <img class="math" src="_images/math/06268d3974704ad4e83ddd5d309effb6084e373f.png" alt="0.3 \sim 0.6"/>. Default: 0.5.</li>
+<li>Delta_WK:  width parameter <span class="math">\(\delta\)</span>  for Wei and Kirby (1999) wavemaker.    Need trial and error, usually, <span class="math">\(\delta\)</span> =  <span class="math">\(0.3 \sim 0.6\)</span>. Default: 0.5.</li>
 <li>DEP_WK: water depth (m) for Wei and Kirby (1999) wavemaker.</li>
 <li>Xc_WK: x coordinate (m) for Wei and Kirby (1999) wavemaker.</li>
 <li>Ywidth_WK: width (m) in y direction for Wei and Kirby (1999) wavemaker. Default: LARGE (999999.0).</li>
@@ -191,7 +192,7 @@ Hmo, GammaTMA(Note, still use TMA Gamma, default: 3.3 ), Nfreq(default: 45)</p>
 <li>FreqMin: low frequency cutoff (1/s) for Wei and Kirby (1999) irregular wavemaker.</li>
 <li>FreqMax: high frequency cutoff (1/s) for Wei and Kirby (1999) irregular wavemaker.</li>
 <li>Hmo: Hmo (m) for Wei and Kirby (1999) irregular wavemaker.</li>
-<li>GammaTMA, TMA parameter <img class="math" src="_images/math/3666981dc77862de77b6ecfcb64aad59b425cbaf.png" alt="\gamma"/> for Wei and Kirby (1999) irregular wavemaker. GammaTMA = 3.3 if JONSWAP is used.</li>
+<li>GammaTMA, TMA parameter <span class="math">\(\gamma\)</span> for Wei and Kirby (1999) irregular wavemaker. GammaTMA = 3.3 if JONSWAP is used.</li>
 <li>ThetaPeak: peak direction (degrees) for Wei and Kirby (1999) irregular wavemaker.</li>
 <li>Sigma_Theta: parameter of directional spectrum for Wei and Kirby (1999) irregular wavemaker.</li>
 </ul>
@@ -210,8 +211,10 @@ Hmo, GammaTMA(Note, still use TMA Gamma, default: 3.3 ), Nfreq(default: 45)</p>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
   <li><a href="definition.html"><strong>DEFINITIONS OF PARAMETERS</strong></a><ul>
+  <li><a href="central_para.html">Parameters for Central Module</a><ul>
       <li>Previous: <a href="numerics.html" title="previous chapter">Numerical Parameters</a></li>
       <li>Next: <a href="periodic.html" title="next chapter">Periodic Boundary Condition</a></li>
+  </ul></li>
   </ul></li>
   </ul></li>
 </ul>

@@ -24,6 +24,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Boundary Conditions" href="boundary.html" />
@@ -48,24 +49,24 @@
 <ul class="simple">
 <li>Larsen and Dancy (L&#8211;D type, 1983)</li>
 </ul>
-<p>The sponge layer technique introduced by Larsen and Dancy (L&#8211;D type, 1983) is implemented in the code. In this method, the variables <img class="math" src="_images/math/e0b813ab20e5e6ccc010f8a52ecb3ff2beb08b62.png" alt="\phi`( i.e., :math:"/>eta, u, v`) are directly attenuated at every time step:</p>
-<div class="math">
-<p><img src="_images/math/ceb224947bda2dad2152a6a0739c8722b81900ca.png" alt="\phi = \phi /C_s"/></p>
-</div><p>where <img class="math" src="_images/math/ad8b876457c8cc5548d741bf94ba98d093c5b5d5.png" alt="C_s"/> is a damping coefficient function defined by</p>
-<div class="math">
-<p><img src="_images/math/f72f8a6168a96b2eb64b6de881be4b9eea48bf46.png" alt="C_s = \alpha_s^{\gamma_x^{i-1}}, \ \ \ \ \ i=1,2, ..., n"/></p>
-</div><p>where <img class="math" src="_images/math/d9671966c2133cb6897405630dd7dab2216c8042.png" alt="\alpha_s"/> and <img class="math" src="_images/math/d6f3d70f05e0228f634b826030c6313dbdf673d3.png" alt="\gamma_s"/> are two free parameters. <img class="math" src="_images/math/df0deb143e5ac127f00bd248ee8001ecae572adc.png" alt="i"/> represents grid numbers. Chen et al. (1999) suggested that <img class="math" src="_images/math/833e584320cc115bb7dd7eceba1bddb5faed101b.png" alt="\alpha_s =2"/>, gamma_s = 0.88 - 0.92`, and <img class="math" src="_images/math/b1e93792764cf2a600d98fab0e489ff61563cb99.png" alt="n=50 - 100"/>. The length of the sponge layer is usually taken to be one or two times the typical wavelength. Chen et al also pointed out that the damping coefficients for optimal absorption are somewhat case&#8211;sensitive.</p>
-<p>Recently, some problem was found in application of L&#8211;D type sponge layer for long&#8211;term simulations. The direct damping method combined with the TVD scheme  generates sawtooth noises with a <img class="math" src="_images/math/88c8eb6502a190bb2692ba5ca0524d612f6a599e.png" alt="2 dx"/> wave length. The sawtooth noises are usually not noticeable due to small magnitudes. However, they grow gradually with time and may become significant in a long term simulation. If this problem occurs, we suggest using the following friction&#8211;type or viscous type sponge layers. Using the combination of L&#8211;D and friction/viscous sponge layers may remove the sawtooth noises and also make the wave damping more efficient.</p>
+<p>The sponge layer technique introduced by Larsen and Dancy (L&#8211;D type, 1983) is implemented in the code. In this method, the variables <span class="math">\(\phi`( i.e., :math:\)</span>eta, u, v`) are directly attenuated at every time step:</p>
+<div class="math" id="equation-spongelayer:0">
+<span class="eqno">(1)<a class="headerlink" href="#equation-spongelayer:0" title="Permalink to this equation">¶</a></span>\[\phi = \phi /C_s\]</div>
+<p>where <span class="math">\(C_s\)</span> is a damping coefficient function defined by</p>
+<div class="math" id="equation-spongelayer:1">
+<span class="eqno">(2)<a class="headerlink" href="#equation-spongelayer:1" title="Permalink to this equation">¶</a></span>\[C_s = \alpha_s^{\gamma_x^{i-1}}, \ \ \ \ \ i=1,2, ..., n\]</div>
+<p>where <span class="math">\(\alpha_s\)</span> and <span class="math">\(\gamma_s\)</span> are two free parameters. <span class="math">\(i\)</span> represents grid numbers. Chen et al. (1999) suggested that <span class="math">\(\alpha_s =2\)</span>, gamma_s = 0.88 - 0.92`, and <span class="math">\(n=50 - 100\)</span>. The length of the sponge layer is usually taken to be one or two times the typical wavelength. Chen et al also pointed out that the damping coefficients for optimal absorption are somewhat case&#8211;sensitive.</p>
+<p>Recently, some problem was found in application of L&#8211;D type sponge layer for long&#8211;term simulations. The direct damping method combined with the TVD scheme  generates sawtooth noises with a <span class="math">\(2 dx\)</span> wave length. The sawtooth noises are usually not noticeable due to small magnitudes. However, they grow gradually with time and may become significant in a long term simulation. If this problem occurs, we suggest using the following friction&#8211;type or viscous type sponge layers. Using the combination of L&#8211;D and friction/viscous sponge layers may remove the sawtooth noises and also make the wave damping more efficient.</p>
 <ul class="simple">
 <li>Friction type and Diffusion type</li>
 </ul>
 <p>The friction&#8211;type and viscous type sponge layers directly use the friction terms and diffusion terms existing in the model. The source term for the friction&#8211;type sponge can be described as</p>
-<div class="math">
-<p><img src="_images/math/305c1e136d7873b49e7d72fefadb5e96feadca9d.png" alt="F_{frc} = - C_{sponge} |{\bf u_\alpha}|  (u_\alpha, v_\alpha) h"/></p>
-</div><p>Note that depth <img class="math" src="_images/math/293fb39e1b93282c804a86186e721b32f829f1b2.png" alt="h"/> is added in the formula above to make the source term depth&#8211;independent in terms of the flux&#8211;type momentum equations. For the diffusion&#8211;type sponge, the description of diffusion term follows exactly the eddy&#8211;viscosity breaking formulation with spatial varying viscosity coefficients <img class="math" src="_images/math/05d734643e2eaed2ab66a02979021820f7f490fc.png" alt="\nu_{sponge}"/>.  Both coefficients are smoothly ramped in space at the sponge layer boundaries. For example, for a sponge layer on the left end of the domain,  <img class="math" src="_images/math/8d6c4e18e6aa1c62bc4418f4f2211ba3f2e9a465.png" alt="C_{sponge}"/> can be written as</p>
-<div class="math">
-<p><img src="_images/math/11148dee5e143aff68c757b8902730f5cc954c71.png" alt="C_{sponge} = C_{max} \left (1-  \mbox{tanh} \frac{10 (i-1)}{I_{\mbox{width}}-1} \right)"/></p>
-</div><p>where <img class="math" src="_images/math/4d50eb2e10761fa1fbe2e722db8dc86073ef4618.png" alt="C_{max}"/> is the maximum value of <img class="math" src="_images/math/8d6c4e18e6aa1c62bc4418f4f2211ba3f2e9a465.png" alt="C_{sponge}"/> used in the sponger layer. <img class="math" src="_images/math/df0deb143e5ac127f00bd248ee8001ecae572adc.png" alt="i"/> and <img class="math" src="_images/math/726ee3834b1a11a54a48baff093642f17e1be436.png" alt="I_{\mbox{width}}"/> represent point number and the layer width in points. Similar expressions can be obtained for sponge layers on three other ends of the domain as well as  the viscous sponge layer.</p>
+<div class="math" id="equation-spongelayer:2">
+<span class="eqno">(3)<a class="headerlink" href="#equation-spongelayer:2" title="Permalink to this equation">¶</a></span>\[F_{frc} = - C_{sponge} |{\bf u_\alpha}|  (u_\alpha, v_\alpha) h\]</div>
+<p>Note that depth <span class="math">\(h\)</span> is added in the formula above to make the source term depth&#8211;independent in terms of the flux&#8211;type momentum equations. For the diffusion&#8211;type sponge, the description of diffusion term follows exactly the eddy&#8211;viscosity breaking formulation with spatial varying viscosity coefficients <span class="math">\(\nu_{sponge}\)</span>.  Both coefficients are smoothly ramped in space at the sponge layer boundaries. For example, for a sponge layer on the left end of the domain,  <span class="math">\(C_{sponge}\)</span> can be written as</p>
+<div class="math" id="equation-spongelayer:3">
+<span class="eqno">(4)<a class="headerlink" href="#equation-spongelayer:3" title="Permalink to this equation">¶</a></span>\[C_{sponge} = C_{max} \left (1-  \mbox{tanh} \frac{10 (i-1)}{I_{\mbox{width}}-1} \right)\]</div>
+<p>where <span class="math">\(C_{max}\)</span> is the maximum value of <span class="math">\(C_{sponge}\)</span> used in the sponger layer. <span class="math">\(i\)</span> and <span class="math">\(I_{\mbox{width}}\)</span> represent point number and the layer width in points. Similar expressions can be obtained for sponge layers on three other ends of the domain as well as  the viscous sponge layer.</p>
 <p>The width of the sponge layer is usually taken to be two or three wave lengths for the friction&#8211;type and viscous sponge layers. Narrow sponge layers can be used for L&#8211;D type sponge layer with a good efficiency but sawtooth noises generated by the method is a concern for long&#8211;term simulation.</p>
 </div>
 
@@ -79,8 +80,10 @@
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
   <li><a href="basics.html"><strong>BASICS</strong></a><ul>
+  <li><a href="central.html">Central Module</a><ul>
       <li>Previous: <a href="wavebreaking.html" title="previous chapter">Wave Breaking</a></li>
       <li>Next: <a href="boundary.html" title="next chapter">Boundary Conditions</a></li>
+  </ul></li>
   </ul></li>
   </ul></li>
 </ul>

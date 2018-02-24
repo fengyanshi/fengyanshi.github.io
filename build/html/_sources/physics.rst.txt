@@ -1,5 +1,5 @@
 Physics (dispersion, breaking, friction)
-*********
+*******************************************
 
 **SPECIFICATION OF PHYSICS**
   

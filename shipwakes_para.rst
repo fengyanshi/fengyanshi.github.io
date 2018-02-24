@@ -1,5 +1,7 @@
-Ship-wakes
-*************
+.. _section-shipwakes-setup:
+
+Shipwakes Setup
+************************
 
 |  Specify a folder which contains a number of vessel files, vessel_00001, vessel_00002, ...
 |   VESSEL_FOLDER = ./
