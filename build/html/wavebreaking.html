@@ -45,7 +45,7 @@
           <div class="body" role="main">
             
   <div class="section" id="wave-breaking">
-<h1>Wave Breaking<a class="headerlink" href="#wave-breaking" title="Permalink to this headline">¶</a></h1>
+<span id="section-wavebreaking"></span><h1>Wave Breaking<a class="headerlink" href="#wave-breaking" title="Permalink to this headline">¶</a></h1>
 <p>There are two breaking algorithms implemented in the model. One takes the advantage of the shock&#8211;capturing scheme in TVD.
 It  follows the approach of Tonelli and Petti (2009),  who successfully used the ability of  NSWE  with a TVD scheme to model moving hydraulic jumps. Thus, the fully nonlinear Boussinesq equations are switched  to NSWE at cells where the Froude number exceeds  a certain threshold. Following Tonelli and Petti, the ratio of wave height to total water depth is chosen as  the criterion to switch from Boussinesq to NSWE, with  threshold value  set to 0.8,  as suggested by Tonelli and Petti.</p>
 <p>The other one is the original eddy&#8211;viscosity scheme used in the previous version of FUNWAVE (Kennedy et al., 2000). To fit the eddy&#8211;viscosity method in the TVD scheme, the artificial eddy viscosity terms.</p>

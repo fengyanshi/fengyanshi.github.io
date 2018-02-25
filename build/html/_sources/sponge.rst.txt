@@ -1,6 +1,8 @@
 Sponge Layer
 ***************
 
+For theory of sponge layers, see :ref:`section_sponge_layer`
+
 **SPECIFICATION OF SPONGE LAYER**
  
  *  DIRECT\_SPONGE: logical parameter for L-D type sponge, T - sponge layer, F - no sponge layer.

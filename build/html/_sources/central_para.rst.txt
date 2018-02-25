@@ -1,3 +1,5 @@
+.. _section_central_para:
+
 Parameters for Central Module
 *********************************
 

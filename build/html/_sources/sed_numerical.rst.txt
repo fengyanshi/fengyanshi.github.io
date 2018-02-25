@@ -1,3 +1,5 @@
+.. _section_sed_numerical:
+
 Numerical Scheme for Sediment Transport
 ****************************************
 

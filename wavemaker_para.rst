@@ -3,6 +3,8 @@ Wave-maker
 
 **SPECIFICATION OF WAVEMAKER**
 
+For theory about wavemaker, see :ref:`section_wavemaker`
+
  *  WAVEMAKER: wavemaker type. 
 
  * WAVEMAKER = INI\_REC: initial rectangular hump 

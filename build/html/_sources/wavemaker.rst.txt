@@ -1,3 +1,5 @@
+.. _section_wavemaker:
+
 Wave--maker
 ***************
 

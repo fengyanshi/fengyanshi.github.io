@@ -1,3 +1,5 @@
+.. _section_meteo_module:
+
 Meteo Module
 ***************
 

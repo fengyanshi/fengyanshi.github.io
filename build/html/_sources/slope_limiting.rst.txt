@@ -1,3 +1,5 @@
+.. _section_slope_limit:
+
 Slope Limiting Methodology
 ****************************
 

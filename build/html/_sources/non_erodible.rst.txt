@@ -1,3 +1,5 @@
+.. _section_non_erodible:
+
 Non-erodible Bed
 ********************
 

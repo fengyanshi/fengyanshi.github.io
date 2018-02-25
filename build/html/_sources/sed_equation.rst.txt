@@ -1,3 +1,5 @@
+.. _section_sed_equation:
+
 Sediment Transport Equation
 ******************************
 

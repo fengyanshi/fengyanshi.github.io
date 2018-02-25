@@ -1,3 +1,5 @@
+.. _section_wavebreaking:
+
 Wave Breaking
 ***************
 

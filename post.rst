@@ -1,3 +1,5 @@
+.. _section_post:
+
 Post Processing
 *****************
 * Wave height calculation

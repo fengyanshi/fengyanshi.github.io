@@ -1,3 +1,5 @@
+.. _section_sponge_layer:
+
 Sponge Layer
 **************
 
