@@ -1,5 +1,5 @@
 *********************************************
-FUNWAVE-TVD WORKSHOP 2017
+FUNWAVE-TVD Workshop 2017
 *********************************************
 
 .. image:: images/workshop/participants.jpg
