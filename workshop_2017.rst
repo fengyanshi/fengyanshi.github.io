@@ -1,6 +1,8 @@
 *********************************************
-**2017 FUNWAVE-TVD WORKSHOP**
+**FUNWAVE-TVD WORKSHOP 2017**
 *********************************************
+
+.. image:: images/workshop/participants.jpg
 
 FUNWAVE-TVD Training Workshop was held at the University of Delaware, Newark, DE from **25-27 July 2017**. This workshop was organized by the Center for Applied Coastal Research (CACR), University of Delaware and the US Army Engineer Research and Development Center (ERDC).
 
