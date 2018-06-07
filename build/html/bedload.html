@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>BASICS &#8212; funwave  documentation</title>
+    <title>Bedload Sediment Transport &#8212; funwave  documentation</title>
     
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -27,8 +27,8 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="What is FUNWAVE–TVD" href="whatsfunwavetvd.html" />
-    <link rel="prev" title="FUNWAVE-TVD" href="index.html" />
+    <link rel="next" title="Morphological Evolution" href="bed_equation.html" />
+    <link rel="prev" title="Suspended Sediment Transport Equation" href="sed_equation.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -44,33 +44,20 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="basics">
-<h1><strong>BASICS</strong><a class="headerlink" href="#basics" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="whatsfunwavetvd.html">What is FUNWAVE&#8211;TVD</a></li>
-<li class="toctree-l1"><a class="reference internal" href="boussinesq.html">Formulations and Numerical Schemes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="central.html">Central Module</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="wavebreaking.html">Wave Breaking</a></li>
-<li class="toctree-l2"><a class="reference internal" href="spongelayer.html">Sponge Layer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="boundary.html">Boundary Conditions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="wavemaker.html">Wave&#8211;maker</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="shipwakes.html">Ship-wake Module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="meteo_intro.html">Meteo Module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sediment.html">Sediment Transport Module</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="sed_equation.html">Suspended Sediment Transport Equation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="bedload.html">Bedload Sediment Transport</a></li>
-<li class="toctree-l2"><a class="reference internal" href="bed_equation.html">Morphological Evolution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="slope_limiting.html">Slope Limiting Methodology</a></li>
-<li class="toctree-l2"><a class="reference internal" href="non_erodible.html">Non-erodible Bed</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sed_numerical.html">Numerical Scheme for Sediment Transport</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="post.html">Post Processing</a></li>
-</ul>
-</div>
+  <div class="section" id="bedload-sediment-transport">
+<h1>Bedload Sediment Transport<a class="headerlink" href="#bedload-sediment-transport" title="Permalink to this headline">¶</a></h1>
+<dl class="docutils">
+<dt>Bedload sediment transport</dt>
+<dd>can be calculated using several bedload sediment transport formulas developed for steady flows. As stated in Soulsby (1997), those formulas can be used on an instantaneous basis in tidal flows, and under waves or combined waves and currents, because the response time of a sand grain in bedload motion is very short compared to a tidal period or a wave period. In test examples provided in the wiki, we used Meyer-Peter and M&#8221;uller&#8217;s (1948) bedload transport formula to estimate the bedload sediment transport rate and its effect on bed evolution.  The unit-width volume transport rate can be expressed as</dd>
+</dl>
+<div class="math" id="equation-bedload:0">
+<span class="eqno">(1)<a class="headerlink" href="#equation-bedload:0" title="Permalink to this equation">¶</a></span>\[q_b = 8 [g(s-1)d^3]^{1/2}(\theta-\theta^b_{cr})^{3/2}\]</div>
+<dl class="docutils">
+<dt>where <span class="math">\(\theta\)</span> is the Shields parameter and <span class="math">\(\theta^b_{cr}\)</span> is the critical Shields parameter for bedload motion. In Meyer-Peter and M&#8221;uller (1984),  <span class="math">\(\theta^b_{cr} = 0.047\)</span>.</dt>
+<dd>After reorganizing the formula using the bed shear stress form, the formula can be rewritten as</dd>
+</dl>
+<div class="math" id="equation-bedload:1">
+<span class="eqno">(2)<a class="headerlink" href="#equation-bedload:1" title="Permalink to this equation">¶</a></span>\[ \begin{align}\begin{aligned}q_b = \frac{8 [(\tau_b-\tau^b_{cr})/\rho_w]^{3/2}}{g(s-1)}\\where ::math:`\tau^b_{cr}` is the critical shear stress for bedload motion which can be calculated using :math:`\theta^b_{cr}`.\end{aligned}\end{align} \]</div>
 </div>
 
 
@@ -82,8 +69,12 @@
 <h3>Related Topics</h3>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="index.html" title="previous chapter">FUNWAVE-TVD</a></li>
-      <li>Next: <a href="whatsfunwavetvd.html" title="next chapter">What is FUNWAVE&#8211;TVD</a></li>
+  <li><a href="basics.html"><strong>BASICS</strong></a><ul>
+  <li><a href="sediment.html">Sediment Transport Module</a><ul>
+      <li>Previous: <a href="sed_equation.html" title="previous chapter">Suspended Sediment Transport Equation</a></li>
+      <li>Next: <a href="bed_equation.html" title="next chapter">Morphological Evolution</a></li>
+  </ul></li>
+  </ul></li>
   </ul></li>
 </ul>
 </div>

@@ -7,6 +7,7 @@ Sediment Transport Module
    :maxdepth: 2
 
    sed_equation
+   bedload
    bed_equation
    slope_limiting
    non_erodible

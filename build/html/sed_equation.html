@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Sediment Transport Equation &#8212; funwave  documentation</title>
+    <title>Suspended Sediment Transport Equation &#8212; funwave  documentation</title>
     
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -27,7 +27,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Morphological Evolution" href="bed_equation.html" />
+    <link rel="next" title="Bedload Sediment Transport" href="bedload.html" />
     <link rel="prev" title="Sediment Transport Module" href="sediment.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
@@ -44,10 +44,10 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="sediment-transport-equation">
-<span id="section-sed-equation"></span><h1>Sediment Transport Equation<a class="headerlink" href="#sediment-transport-equation" title="Permalink to this headline">¶</a></h1>
-<p>The sediment transport module is based on the quasi-steady flow-based approach. The morphological module calculates the bed evolution based on sediment continuity equation.</p>
-<p>Sediment motion is governed by the depth-averaged sediment concentration equation as follows,</p>
+  <div class="section" id="suspended-sediment-transport-equation">
+<span id="section-sed-equation"></span><h1>Suspended Sediment Transport Equation<a class="headerlink" href="#suspended-sediment-transport-equation" title="Permalink to this headline">¶</a></h1>
+<p>The sediment transport module calculates sediment transport induced by both suspended load and bedload.  The morphological module calculates the bed evolution based on sediment continuity equation.</p>
+<p>Suspended sediment motion is governed by the depth-averaged sediment concentration equation as follows,</p>
 <div class="math" id="equation-sed_equation:0">
 <span class="eqno">(1)<a class="headerlink" href="#equation-sed_equation:0" title="Permalink to this equation">¶</a></span>\[(\bar{c} H)_t + \nabla_h \cdot (\bar{c} H ({\bf u}_\alpha + \bar{{\bf u} }_2)) =\nabla_h \cdot (k H (\nabla_h \bar{c})) + P - D \label{ad}\]</div>
 <p>where <span class="math">\(\bar{c}\)</span> is the non-dimensional depth-averaged sediment concentration normalized by sediment density. <span class="math">\(H(\bf{u}_\alpha + \bar{\bf{u}}_2) =M\)</span> represents the flow rate per unit width defined in Shi et al. (2012), in which <span class="math">\(H=h+\eta\)</span> is the total water depth. <span class="math">\(k\)</span> is the horizontal sediment diffusion coefficient calculated by the formula given by Elder (1959),</p>
@@ -87,7 +87,7 @@
   <li><a href="basics.html"><strong>BASICS</strong></a><ul>
   <li><a href="sediment.html">Sediment Transport Module</a><ul>
       <li>Previous: <a href="sediment.html" title="previous chapter">Sediment Transport Module</a></li>
-      <li>Next: <a href="bed_equation.html" title="next chapter">Morphological Evolution</a></li>
+      <li>Next: <a href="bedload.html" title="next chapter">Bedload Sediment Transport</a></li>
   </ul></li>
   </ul></li>
   </ul></li>

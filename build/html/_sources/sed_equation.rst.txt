@@ -1,11 +1,11 @@
 .. _section_sed_equation:
 
-Sediment Transport Equation
-******************************
+Suspended Sediment Transport Equation
+**************************************
 
-The sediment transport module is based on the quasi-steady flow-based approach. The morphological module calculates the bed evolution based on sediment continuity equation. 
+The sediment transport module calculates sediment transport induced by both suspended load and bedload.  The morphological module calculates the bed evolution based on sediment continuity equation.
 
-Sediment motion is governed by the depth-averaged sediment concentration equation as follows,
+Suspended sediment motion is governed by the depth-averaged sediment concentration equation as follows,
 
 .. math:: (\bar{c} H)_t + \nabla_h \cdot (\bar{c} H ({\bf u}_\alpha + \bar{{\bf u} }_2)) =\nabla_h \cdot (k H (\nabla_h \bar{c})) + P - D \label{ad}
 
