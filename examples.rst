@@ -15,6 +15,7 @@ Simple tests **(beginners should start from here)**
    inlet_shoal
    tohoku
    vessel
+   vessel_morpho
    meteo
 
 ******************

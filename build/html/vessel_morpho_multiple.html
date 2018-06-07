@@ -1,0 +1,187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Multiple vessels-induced morphology changes &#8212; funwave  documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Meteotsunami" href="meteo.html" />
+    <link rel="prev" title="Single vessel + sediment" href="vessel_morpho_single.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="multiple-vessels-induced-morphology-changes">
+<h1>Multiple vessels-induced morphology changes<a class="headerlink" href="#multiple-vessels-induced-morphology-changes" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>Model setup</li>
+</ul>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="_images/multi_wave_morpho.jpg"><img alt="alternate text" src="_images/multi_wave_morpho.jpg" style="width: 400px; height: 500px;" /></a>
+</div>
+<ul class="simple">
+<li>input.txt
+is in the folder /simple_cases/multi_vessel_morphology/</li>
+</ul>
+<p><strong>In input.txt:</strong></p>
+<div class="line-block">
+<div class="line"><strong>Parallel Info (if use parallel)</strong></div>
+<div class="line-block">
+<div class="line">PX = 4</div>
+<div class="line">PY = 1</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Depth</strong></div>
+<div class="line-block">
+<div class="line">DEPTH_TYPE = DATA</div>
+</div>
+</div>
+<blockquote>
+<div>DEPTH_FILE = depth.txt</div></blockquote>
+<div class="line-block">
+<div class="line"><strong>Dimensions</strong></div>
+<div class="line-block">
+<div class="line">Mglob = 2400</div>
+<div class="line">Nglob = 60</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Grid sizes</strong></div>
+<div class="line-block">
+<div class="line">DX = 1.0</div>
+<div class="line">DY = 1.0</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Set up time</strong></div>
+<div class="line-block">
+<div class="line">TOTAL_TIME = 2000.0</div>
+<div class="line">PLOT_INTV = 5.0</div>
+<div class="line">PLOT_INTV_STATION = 50000.0</div>
+<div class="line">SCREEN_INTV = 5.0</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Add vessels</strong></div>
+<div class="line-block">
+<div class="line">VESSEL_FOLDER = ./</div>
+<div class="line">NumVessel = 6</div>
+<div class="line"><br /></div>
+<div class="line">You need 6 vessel files: vessel_00001, vessel_00002 ... in the current folder.</div>
+<div class="line">In vessel_00001, specify:</div>
+<div class="line">Title: Vessel # 1</div>
+<div class="line">Blue_Star_I</div>
+<div class="line">Length(m), Width(m), Alpha(0.5), Beta(0.5), P(draft,m)</div>
+<div class="line">10.0  5.0, 0.5, 0.5, 1.5</div>
+<div class="line">Time, X(m), Y(m)  (relative to the orgin of the coordinates)</div>
+<div class="line">0.0   40.0   60.0</div>
+<div class="line">25523.0  180040.0  60.0</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line">In vessel_00002, specify:</div>
+<div class="line">Title: Vessel # 2</div>
+<div class="line">Blue_Star_I</div>
+<div class="line">Length(m), Width(m), Alpha(0.5), Beta(0.5), P(draft,m)</div>
+<div class="line">10.0  5.0, 0.5, 0.5, 1.5</div>
+<div class="line">Time, X(m), Y(m)  (relative to the orgin of the coordinates)</div>
+<div class="line">0.0   50.0   60.0</div>
+<div class="line">100.0   50.0   60.0 (release at 100.0 sec from x=50.0 m</div>
+<div class="line">25623.0  180040.0  60.0</div>
+</div>
+<p>vessel_00003 - vessel_00006 can be made in the same way.</p>
+<div class="line-block">
+<div class="line"><strong>Output</strong></div>
+<div class="line-block">
+<div class="line">RESULT_FOLDER = output</div>
+<div class="line">ETA = T</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>post-processing</strong></div>
+<div class="line-block">
+<div class="line">matlab scripts in /simple_cases/multi_vessel_morphology/</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="examples.html"><strong>EXAMPLES</strong></a><ul>
+  <li><a href="vessel_morpho.html">Ship-wakes + Sediment Transport</a><ul>
+      <li>Previous: <a href="vessel_morpho_single.html" title="previous chapter">Single vessel + sediment</a></li>
+      <li>Next: <a href="meteo.html" title="next chapter">Meteotsunami</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, Fengyan Shi.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

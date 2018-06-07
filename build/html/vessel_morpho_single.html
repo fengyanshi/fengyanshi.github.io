@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Interaction between wind waves and ship-wakes in an inlet system &#8212; funwave  documentation</title>
+    <title>Single vessel + sediment &#8212; funwave  documentation</title>
     
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -27,8 +27,8 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Ship-wakes + Sediment Transport" href="vessel_morpho.html" />
-    <link rel="prev" title="Single Vessel in a Circular Basin" href="vessel_circular_basin.html" />
+    <link rel="next" title="Multiple vessels-induced morphology changes" href="vessel_morpho_multiple.html" />
+    <link rel="prev" title="Compile the code for shipwake + sediment case" href="vessel_morpho_compile.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -44,49 +44,86 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="interaction-between-wind-waves-and-ship-wakes-in-an-inlet-system">
-<h1>Interaction between wind waves and ship-wakes in an inlet system<a class="headerlink" href="#interaction-between-wind-waves-and-ship-wakes-in-an-inlet-system" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="single-vessel-sediment">
+<h1>Single vessel + sediment<a class="headerlink" href="#single-vessel-sediment" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li>computational domain</li>
+<li>Model setup</li>
 </ul>
 <div class="align-center figure">
-<a class="reference internal image-reference" href="_images/ship_inlet_path.jpg"><img alt="alternate text" src="_images/ship_inlet_path.jpg" style="width: 250px; height: 300px;" /></a>
+<a class="reference internal image-reference" href="_images/single_wave_conc.jpg"><img alt="alternate text" src="_images/single_wave_conc.jpg" style="width: 400px; height: 600px;" /></a>
 </div>
-<ul>
-<li><p class="first">input_irr_30deg_ship.txt (rename it to input.txt when running the case)
-is in the folder /simple_cases/inlet_shoal/input_files/</p>
-</li>
-<li><p class="first">Bathymetry file</p>
-<p>in the folder /simple_cases/simple_cases/inlet_shoal/bathy/dep_shoal_inlet.txt</p>
-</li>
+<ul class="simple">
+<li>input.txt
+is in the folder /simple_cases/single_vessel_morphology/</li>
 </ul>
-<p><strong>model setup is the same as the irregular wave case except:</strong></p>
+<p><strong>In input.txt:</strong></p>
 <div class="line-block">
-<div class="line"><strong>add a vessel</strong></div>
+<div class="line"><strong>Parallel Info (if use parallel)</strong></div>
+<div class="line-block">
+<div class="line">PX = 4</div>
+<div class="line">PY = 1</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Depth</strong></div>
+<div class="line-block">
+<div class="line">DEPTH_TYPE = DATA</div>
+</div>
+</div>
+<blockquote>
+<div>DEPTH_FILE = depth.txt</div></blockquote>
+<div class="line-block">
+<div class="line"><strong>Dimensions</strong></div>
+<div class="line-block">
+<div class="line">Mglob = 2400</div>
+<div class="line">Nglob = 60</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Grid sizes</strong></div>
+<div class="line-block">
+<div class="line">DX = 1.0</div>
+<div class="line">DY = 1.0</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Set up time</strong></div>
+<div class="line-block">
+<div class="line">TOTAL_TIME = 2000.0</div>
+<div class="line">PLOT_INTV = 5.0</div>
+<div class="line">PLOT_INTV_STATION = 50000.0</div>
+<div class="line">SCREEN_INTV = 5.0</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Add vessels</strong></div>
 <div class="line-block">
 <div class="line">VESSEL_FOLDER = ./</div>
 <div class="line">NumVessel = 1</div>
 <div class="line"><br /></div>
+<div class="line">You need a vessel file: vessel_00001 in the current folder.</div>
 <div class="line">In vessel_00001, specify:</div>
 <div class="line">Title: Vessel # 1</div>
 <div class="line">Blue_Star_I</div>
-<div class="line">Length(m), Width(m), Alpha(m), Beta(m), P(unit)</div>
-<div class="line">10.0  5.0, 0.5, 0.5, 2.0</div>
-<div class="line">Time, X(m), Y(m)  (relative to the origin of the coordinates)</div>
-<div class="line">0.0   900.0   0.0</div>
-<div class="line">150.0 900.0   0.0</div>
-<div class="line">250.0 900.0   1000.0</div>
-<div class="line">1000.0 -6600  1000.0</div>
+<div class="line">Length(m), Width(m), Alpha(0.5), Beta(0.5), P(draft,m)</div>
+<div class="line">10.0  5.0, 0.5, 0.5, 1.5</div>
+<div class="line">Time, X(m), Y(m)  (relative to the orgin of the coordinates)</div>
+<div class="line">0.0   40.0   60.0</div>
+<div class="line">25523.0  180040.0  60.0</div>
 </div>
 </div>
 <div class="line-block">
-<div class="line"><strong>postprocessing</strong></div>
+<div class="line"><strong>Output</strong></div>
 <div class="line-block">
-<div class="line">matlab examples of postprocessing are located in /simple_cases/inlet_shoal/postprocessing/</div>
+<div class="line">RESULT_FOLDER = output</div>
+<div class="line">ETA = T</div>
 </div>
 </div>
-<div class="align-center figure">
-<a class="reference internal image-reference" href="_images/ship_inlet_waves.jpg"><img alt="alternate text" src="_images/ship_inlet_waves.jpg" style="width: 400px; height: 300px;" /></a>
+<div class="line-block">
+<div class="line"><strong>post-processing</strong></div>
+<div class="line-block">
+<div class="line">matlab scripts in /simple_cases/single_vessel_morphology/</div>
+</div>
 </div>
 </div>
 
@@ -100,9 +137,9 @@ is in the folder /simple_cases/inlet_shoal/input_files/</p>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
   <li><a href="examples.html"><strong>EXAMPLES</strong></a><ul>
-  <li><a href="vessel.html">Ship-wakes</a><ul>
-      <li>Previous: <a href="vessel_circular_basin.html" title="previous chapter">Single Vessel in a Circular Basin</a></li>
-      <li>Next: <a href="vessel_morpho.html" title="next chapter">Ship-wakes + Sediment Transport</a></li>
+  <li><a href="vessel_morpho.html">Ship-wakes + Sediment Transport</a><ul>
+      <li>Previous: <a href="vessel_morpho_compile.html" title="previous chapter">Compile the code for shipwake + sediment case</a></li>
+      <li>Next: <a href="vessel_morpho_multiple.html" title="next chapter">Multiple vessels-induced morphology changes</a></li>
   </ul></li>
   </ul></li>
   </ul></li>
