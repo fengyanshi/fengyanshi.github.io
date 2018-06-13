@@ -58,9 +58,9 @@ For theory about wavemaker, see :ref:`section_wavemaker`
  
        ...
  
-       -0.05  - Dir (rad)
+       -0.05  - Dir (degree)
 
-       0.0    - Dir (rad)
+       0.0    - Dir (degree)
 
        ...
 
