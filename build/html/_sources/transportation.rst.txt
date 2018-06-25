@@ -3,7 +3,7 @@ TRANSPORTATION
 
 * `Directions if you drive <http://embassysuites3.hilton.com/en/hotels/delaware/embassy-suites-by-hilton-newark-wilmington-south-NEWDEES/maps-directions/index.html>`_
 
-* Airport shuttle: You can reserve airport pickup/drop-off service from `Delaware Express Shuttle <https://delexpress.com/airport-shuttle-service/>`_
+* Airport shuttle: you can reserve airport pickup/drop-off service from `Delaware Express Shuttle <https://delexpress.com/airport-shuttle-service/>`_
 
  To get UD discount
 
