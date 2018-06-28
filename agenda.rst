@@ -29,8 +29,7 @@ Day 2: Thursday July 26th
  * 10:30--11:00 Break/Group photo
  * 11:00--11:30 Coastal Model Test Bed: High resolution, extended validation -- Spicer Bak
  * 11:30--12:00 Numerical study on the harbor oscillations -- Xiaozhou Ma
- * 12:00--12:30  Wave properties distribution surrounding a specific coastal area in North Java Indonesia -- Achiari, Hendra
- * 12:30--1:30 Lunch
+ * 12:00--1:30 Lunch
  * 1:45--3:00 Training session #3 -- Shi
  * 3:00--3:30 Break
  * 3:30--5:00 Training session #4 -- Shi
