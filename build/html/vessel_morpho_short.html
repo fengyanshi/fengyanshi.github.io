@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Single vessel + sediment &#8212; funwave  documentation</title>
+    <title>Single vessel + sediment (small domain for training session) &#8212; funwave  documentation</title>
     
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -27,8 +27,8 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Multiple vessels-induced morphology changes" href="vessel_morpho_multiple.html" />
-    <link rel="prev" title="Single vessel + sediment (small domain for training session)" href="vessel_morpho_short.html" />
+    <link rel="next" title="Single vessel + sediment" href="vessel_morpho_single.html" />
+    <link rel="prev" title="Compile the code for shipwake + sediment case" href="vessel_morpho_compile.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -44,23 +44,24 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="single-vessel-sediment">
-<h1>Single vessel + sediment<a class="headerlink" href="#single-vessel-sediment" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="single-vessel-sediment-small-domain-for-training-session">
+<h1>Single vessel + sediment (small domain for training session)<a class="headerlink" href="#single-vessel-sediment-small-domain-for-training-session" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
 <li>Model setup</li>
 </ul>
 <div class="align-center figure">
 <a class="reference internal image-reference" href="_images/layout_single_vessel.jpg"><img alt="alternate text" src="_images/layout_single_vessel.jpg" style="width: 500px; height: 120px;" /></a>
 </div>
+<p>NOTE: simulation is performed in a half domain: y = 0 &#8211; 60 m</p>
 <ul class="simple">
 <li>input.txt
-is in the folder /simple_cases/single_vessel_morphology/</li>
+is in the folder /simple_cases/single_vessel_short_channel/</li>
 </ul>
 <p><strong>In input.txt:</strong></p>
 <div class="line-block">
 <div class="line"><strong>Parallel Info (if use parallel)</strong></div>
 <div class="line-block">
-<div class="line">PX = 4</div>
+<div class="line">PX = 2</div>
 <div class="line">PY = 1</div>
 </div>
 </div>
@@ -75,7 +76,7 @@ is in the folder /simple_cases/single_vessel_morphology/</li>
 <div class="line-block">
 <div class="line"><strong>Dimensions</strong></div>
 <div class="line-block">
-<div class="line">Mglob = 2400</div>
+<div class="line">Mglob = 400</div>
 <div class="line">Nglob = 60</div>
 </div>
 </div>
@@ -89,10 +90,10 @@ is in the folder /simple_cases/single_vessel_morphology/</li>
 <div class="line-block">
 <div class="line"><strong>Set up time</strong></div>
 <div class="line-block">
-<div class="line">TOTAL_TIME = 2000.0</div>
-<div class="line">PLOT_INTV = 5.0</div>
-<div class="line">PLOT_INTV_STATION = 50000.0</div>
-<div class="line">SCREEN_INTV = 5.0</div>
+<div class="line">TOTAL_TIME = 60.0</div>
+<div class="line">PLOT_INTV = 2.0</div>
+<div class="line">PLOT_INTV_STATION = 10000.0</div>
+<div class="line">SCREEN_INTV = 2.0</div>
 </div>
 </div>
 <div class="line-block">
@@ -139,12 +140,12 @@ is in the folder /simple_cases/single_vessel_morphology/</li>
 <div class="line-block">
 <div class="line"><strong>post-processing</strong></div>
 <div class="line-block">
-<div class="line">matlab scripts in /simple_cases/single_vessel_morphology/</div>
+<div class="line">matlab scripts in /simple_cases/single_vessel_short_channel/postprocessing/</div>
 </div>
 </div>
 <div class="align-center figure" id="id1">
-<a class="reference internal image-reference" href="_images/single_wave_conc.jpg"><img alt="alternate text" src="_images/single_wave_conc.jpg" style="width: 400px; height: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Shipwakes and sediment concentration at different times.</span></p>
+<a class="reference internal image-reference" href="_images/vessel_eta_sed_bed.jpg"><img alt="alternate text" src="_images/vessel_eta_sed_bed.jpg" style="width: 400px; height: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">(Top) surface elevation, (middle) sediment concentration, (bottom) bed change</span></p>
 </div>
 </div>
 
@@ -159,8 +160,8 @@ is in the folder /simple_cases/single_vessel_morphology/</li>
   <li><a href="index.html">Documentation overview</a><ul>
   <li><a href="examples.html"><strong>EXAMPLES</strong></a><ul>
   <li><a href="vessel_morpho.html">Ship-wakes + Sediment Transport</a><ul>
-      <li>Previous: <a href="vessel_morpho_short.html" title="previous chapter">Single vessel + sediment (small domain for training session)</a></li>
-      <li>Next: <a href="vessel_morpho_multiple.html" title="next chapter">Multiple vessels-induced morphology changes</a></li>
+      <li>Previous: <a href="vessel_morpho_compile.html" title="previous chapter">Compile the code for shipwake + sediment case</a></li>
+      <li>Next: <a href="vessel_morpho_single.html" title="next chapter">Single vessel + sediment</a></li>
   </ul></li>
   </ul></li>
   </ul></li>

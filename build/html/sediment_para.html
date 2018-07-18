@@ -58,10 +58,11 @@
 <li>Sdensity: gravity of sediment <span class="math">\(s\)</span>, defalt <span class="math">\(s = 2.68\)</span></li>
 <li>n_porosity: porosity of sediment <span class="math">\(n\)</span>, defalt <span class="math">\(n=0.47\)</span></li>
 <li>WS: settling velocity <span class="math">\(w_f\)</span>, defalt <span class="math">\(w_f = 0.125\)</span> m/s</li>
-<li>Shields_cr: critical Shields parameter <span class="math">\(\theta_{cr}\)</span>, defalt <span class="math">\(\theta_{cr} = 0.05\)</span></li>
+<li>Shields_cr: critical Shields parameter for suspended load <span class="math">\(\theta_{cr}\)</span>, defalt <span class="math">\(\theta_{cr} = 0.05\)</span></li>
+<li>Shields_cr_bedload: Shields parameter for bedload <span class="math">\(\theta_{cr}^{b}\)</span>, defalt <span class="math">\(\theta_{cr}^{b} = 0.047\)</span> based on Meyer-Peter and Muller (1984)</li>
 <li>Kappa1: Runge-Kutta parameter <span class="math">\(\kappa_1\)</span>, defalt <span class="math">\(\kappa_1 = 0.3333\)</span>, 4th-order</li>
 <li>Kappa2: Runge-Kutta parameter <span class="math">\(\kappa_2\)</span>, defalt <span class="math">\(\kappa_1 = 1.0\)</span>, 4th-order</li>
-<li>PLOT_INTV_SEDIMENT: time interval for plotting sediment transport variables, defalt is the same as the Boussinesq model</li>
+<li>MinDepthPickup: the minimum depth for sediment pickup action. The purpose of this parameter is to avoid over-shooting at a very small depth. Default: MinDepthPickup = 0.1m.</li>
 </ul>
 <p><strong>MORPHOLOGICAL CHANGE</strong></p>
 <ul class="simple">
@@ -74,6 +75,18 @@
 <ul class="simple">
 <li>Avalanche: logical parameter,  T: consider avalanche, F: not consider avalanche</li>
 <li>Tan_phi: tangent of the repose angle <span class="math">\(\tan \phi\)</span>, defalt <span class="math">\(\tan \phi = 0.7\)</span>, or 35 deg</li>
+</ul>
+<p><strong>OUTPUT</strong></p>
+<ul class="simple">
+<li>PLOT_INTV_SEDIMENT: time interval for plotting sediment transport variables, defalt is the same as the Boussinesq model</li>
+<li>C_xxxxx: Sediment concentration (g/l) at xxxxx output step</li>
+<li>Pick_xxxxx: sediment pickup value at xxxxx output step</li>
+<li>Depo_xxxxx: sediment deposition value at xxxxx output step</li>
+<li>DchgS_xxxxx: depth change (without considering porosity ) due to suspended load UPTO xxxxx output step</li>
+<li>DchgB_xxxxx: depth change (without considering porosity ) due to  bedload UPTO xxxxx output step</li>
+<li>BedFx_xxxxx: bedload flux in x</li>
+<li>BedFy_xxxxx: bedload flux in y</li>
+<li>dep_xxxxx: depth (with considering porosity) UPTO xxxxx output step</li>
 </ul>
 </div>
 

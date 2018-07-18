@@ -12,5 +12,6 @@ Ship-wakes + Sediment Transport
    :maxdepth: 2
 
    vessel_morpho_compile
+   vessel_morpho_short
    vessel_morpho_single
    vessel_morpho_multiple

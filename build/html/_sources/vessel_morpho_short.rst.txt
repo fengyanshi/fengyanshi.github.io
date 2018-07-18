@@ -1,5 +1,5 @@
-Single vessel + sediment 
-###################################
+Single vessel + sediment (small domain for training session)
+##############################################################
 
 * Model setup
 
@@ -10,14 +10,15 @@ Single vessel + sediment
     :alt: alternate text
     :figclass: align-center
 
+NOTE: simulation is performed in a half domain: y = 0 -- 60 m
 
 * input.txt
-  is in the folder /simple_cases/single_vessel_morphology/
+  is in the folder /simple_cases/single_vessel_short_channel/
 
 **In input.txt:**
 
 |  **Parallel Info (if use parallel)**  
-|   PX = 4 
+|   PX = 2 
 |   PY = 1
 
 |  **Depth**
@@ -26,7 +27,7 @@ Single vessel + sediment
   DEPTH_FILE = depth.txt
 
 |  **Dimensions**
-|   Mglob = 2400
+|   Mglob = 400
 |   Nglob = 60
 
 |  **Grid sizes**
@@ -34,10 +35,10 @@ Single vessel + sediment
 |   DY = 1.0
 
 |  **Set up time**
-|   TOTAL_TIME = 2000.0
-|   PLOT_INTV = 5.0
-|   PLOT_INTV_STATION = 50000.0
-|   SCREEN_INTV = 5.0
+|   TOTAL_TIME = 60.0
+|   PLOT_INTV = 2.0
+|   PLOT_INTV_STATION = 10000.0
+|   SCREEN_INTV = 2.0
 
 |  **Sediment**
 |   Bed_Change = T
@@ -72,15 +73,13 @@ Single vessel + sediment
 |   ETA = T
 
 |  **post-processing**
-|   matlab scripts in /simple_cases/single_vessel_morphology/
+|   matlab scripts in /simple_cases/single_vessel_short_channel/postprocessing/
 
-.. figure:: images/simple_cases/single_wave_conc.jpg
+.. figure:: images/simple_cases/vessel_eta_sed_bed.jpg
     :width: 400px
     :align: center
-    :height: 600px
+    :height: 500px
     :alt: alternate text
     :figclass: align-center
 
-    Shipwakes and sediment concentration at different times.
-
-
+    (Top) surface elevation, (middle) sediment concentration, (bottom) bed change

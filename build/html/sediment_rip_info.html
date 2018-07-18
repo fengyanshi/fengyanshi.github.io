@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Ship-wakes + Sediment Transport &#8212; funwave  documentation</title>
+    <title>Basics for model setup &#8212; funwave  documentation</title>
     
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -27,8 +27,8 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Compile the code for shipwake + sediment case" href="vessel_morpho_compile.html" />
-    <link rel="prev" title="Interaction between wind waves and ship-wakes in an inlet system" href="vessel_inlet.html" />
+    <link rel="next" title="BIBLIOGRAPHY" href="references.html" />
+    <link rel="prev" title="Compile the code for 2D beach case" href="sediment_rip_compile.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -44,19 +44,30 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="ship-wakes-sediment-transport">
-<h1>Ship-wakes + Sediment Transport<a class="headerlink" href="#ship-wakes-sediment-transport" title="Permalink to this headline">¶</a></h1>
-<div class="align-center figure">
-<a class="reference internal image-reference" href="_images/single_morpho.jpg"><img alt="alternate text" src="_images/single_morpho.jpg" style="width: 300px; height: 200px;" /></a>
-</div>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="vessel_morpho_compile.html">Compile the code for shipwake + sediment case</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vessel_morpho_short.html">Single vessel + sediment (small domain for training session)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vessel_morpho_single.html">Single vessel + sediment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vessel_morpho_multiple.html">Multiple vessels-induced morphology changes</a></li>
+  <div class="section" id="basics-for-model-setup">
+<h1>Basics for model setup<a class="headerlink" href="#basics-for-model-setup" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>computational domain</li>
 </ul>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="_images/depth_2rip.jpg"><img alt="alternate text" src="_images/depth_2rip.jpg" style="width: 300px; height: 350px;" /></a>
 </div>
+<p>Basic info</p>
+<blockquote>
+<div><p>Dimensions 312 X 100</p>
+<p>DX = 1.0 m
+DY = 2.0 m</p>
+<p>Wavemaker located at x = 280.0 m</p>
+<p>Sponge layer: x = 252.0 &#8211; 312.0 m  (width = 60.0 m)</p>
+</div></blockquote>
+<ul>
+<li><p class="first">input.txt
+the input file is in the folder /simple_cases/sediment_rip/work/</p>
+</li>
+<li><p class="first">postprocessing</p>
+<p>matlab examples of postprocessing are located in /simple_cases/sediment_rip/postprocessing/</p>
+</li>
+</ul>
 </div>
 
 
@@ -69,8 +80,10 @@
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
   <li><a href="examples.html"><strong>EXAMPLES</strong></a><ul>
-      <li>Previous: <a href="vessel_inlet.html" title="previous chapter">Interaction between wind waves and ship-wakes in an inlet system</a></li>
-      <li>Next: <a href="vessel_morpho_compile.html" title="next chapter">Compile the code for shipwake + sediment case</a></li>
+  <li><a href="sediment_rip.html">Sediment Transport in 2D rip channels</a><ul>
+      <li>Previous: <a href="sediment_rip_compile.html" title="previous chapter">Compile the code for 2D beach case</a></li>
+      <li>Next: <a href="references.html" title="next chapter"><strong>BIBLIOGRAPHY</strong></a></li>
+  </ul></li>
   </ul></li>
   </ul></li>
 </ul>

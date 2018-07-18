@@ -3,13 +3,13 @@ Multiple vessels-induced morphology changes
 
 * Model setup
 
-.. figure:: images/simple_cases/multi_wave_morpho.jpg
-    :width: 400px
+.. figure:: images/simple_cases/layout_multi_vessel.jpg
+    :width: 500px
     :align: center
-    :height: 500px
+    :height: 120px
     :alt: alternate text
     :figclass: align-center
-
+   
 * input.txt
   is in the folder /simple_cases/multi_vessel_morphology/
 
@@ -37,6 +37,20 @@ Multiple vessels-induced morphology changes
 |   PLOT_INTV = 5.0
 |   PLOT_INTV_STATION = 50000.0
 |   SCREEN_INTV = 5.0
+
+|  **Sediment**
+|   Bed_Change = T
+|   BedLoad = T
+|   D50 = 0.0005
+|   Sdensity = 2.68
+|   n_porosity = 0.47
+|   WS = 0.0125
+|   Shields_cr = 0.055
+|   Shields_cr_bedload = 0.047
+|   Tan_phi = 0.7
+|   Kappa1 = 0.3333
+|   Kappa2 = 1.0
+|   MinDepthPickup = 0.1 
 
 |  **Add vessels**
 |   VESSEL_FOLDER = ./
@@ -71,6 +85,13 @@ vessel_00003 - vessel_00006 can be made in the same way.
 |  **post-processing**
 |   matlab scripts in /simple_cases/multi_vessel_morphology/
 
+.. figure:: images/simple_cases/multi_wave_morpho.jpg
+    :width: 400px
+    :align: center
+    :height: 500px
+    :alt: alternate text
+    :figclass: align-center
 
+    From top to bottom: 1) sediment concentration induced by six vessels; 2) morphological change due to suspended load (not consider porosity); 3) morphological change due to bedload (not consider porosity); and morphological change due to total load.
 
 

@@ -8,7 +8,7 @@ Irregular wave normal incidence
     :alt: alternate text
     :figclass: align-center
 
-Figure: (left) snapshot of surfave elevation, (middle) vorticity field, (right) mean current field 
+Figure: (left) snapshot of surface elevation, (middle) vorticity field, (right) mean current field 
 
 **input.txt:**
 

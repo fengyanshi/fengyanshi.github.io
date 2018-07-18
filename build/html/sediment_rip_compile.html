@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Ship-wakes + Sediment Transport &#8212; funwave  documentation</title>
+    <title>Compile the code for 2D beach case &#8212; funwave  documentation</title>
     
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -27,8 +27,8 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Compile the code for shipwake + sediment case" href="vessel_morpho_compile.html" />
-    <link rel="prev" title="Interaction between wind waves and ship-wakes in an inlet system" href="vessel_inlet.html" />
+    <link rel="next" title="Basics for model setup" href="sediment_rip_info.html" />
+    <link rel="prev" title="Sediment Transport in 2D rip channels" href="sediment_rip.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -44,19 +44,43 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="ship-wakes-sediment-transport">
-<h1>Ship-wakes + Sediment Transport<a class="headerlink" href="#ship-wakes-sediment-transport" title="Permalink to this headline">¶</a></h1>
-<div class="align-center figure">
-<a class="reference internal image-reference" href="_images/single_morpho.jpg"><img alt="alternate text" src="_images/single_morpho.jpg" style="width: 300px; height: 200px;" /></a>
+  <div class="section" id="compile-the-code-for-2d-beach-case">
+<h1>Compile the code for 2D beach case<a class="headerlink" href="#compile-the-code-for-2d-beach-case" title="Permalink to this headline">¶</a></h1>
+<div class="line-block">
+<div class="line"><strong>Makefile</strong></div>
 </div>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="vessel_morpho_compile.html">Compile the code for shipwake + sediment case</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vessel_morpho_short.html">Single vessel + sediment (small domain for training session)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vessel_morpho_single.html">Single vessel + sediment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vessel_morpho_multiple.html">Multiple vessels-induced morphology changes</a></li>
-</ul>
+<div class="line-block">
+<div class="line">EXEC FILE</div>
+<div class="line-block">
+<div class="line">EXEC          = <em>funwave_sediment</em> (for example)</div>
 </div>
+</div>
+<div class="line-block">
+<div class="line">FLAGS</div>
+<div class="line-block">
+<div class="line-block">
+<div class="line">FLAG_1 = -DDOUBLE_PRECISION</div>
+<div class="line">FLAG_4 = -DCARTESIAN</div>
+</div>
+<div class="line">if parallel add</div>
+<div class="line-block">
+<div class="line">FLAG_2 = -DPARALLEL</div>
+</div>
+<div class="line">if intel compiler add</div>
+<div class="line-block">
+<div class="line">FLAG_6 = -DINTEL</div>
+</div>
+</div>
+</div>
+<p>!            FLAG_18 = -DSEDIMENT</p>
+<div class="line-block">
+<div class="line">COMPILER</div>
+<div class="line-block">
+<div class="line">FC       = mpif90 (for example)</div>
+</div>
+</div>
+<blockquote>
+<div>The compiled exe file is <em>funwave_sediment</em></div></blockquote>
 </div>
 
 
@@ -69,8 +93,10 @@
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
   <li><a href="examples.html"><strong>EXAMPLES</strong></a><ul>
-      <li>Previous: <a href="vessel_inlet.html" title="previous chapter">Interaction between wind waves and ship-wakes in an inlet system</a></li>
-      <li>Next: <a href="vessel_morpho_compile.html" title="next chapter">Compile the code for shipwake + sediment case</a></li>
+  <li><a href="sediment_rip.html">Sediment Transport in 2D rip channels</a><ul>
+      <li>Previous: <a href="sediment_rip.html" title="previous chapter">Sediment Transport in 2D rip channels</a></li>
+      <li>Next: <a href="sediment_rip_info.html" title="next chapter">Basics for model setup</a></li>
+  </ul></li>
   </ul></li>
   </ul></li>
 </ul>

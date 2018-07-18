@@ -1,14 +1,14 @@
-Irregular wave normal incidence
+Regular waves with normal incidence
 ########################################
 
-.. figure:: images/simple_cases/rip_vort.jpg
+.. figure:: images/simple_cases/eta_c_dep_5.jpg
     :width: 500px
     :align: center
-    :height: 300px
+    :height: 250px
     :alt: alternate text
     :figclass: align-center
 
-Figure: (left) snapshot of surface elevation, (middle) vorticity field, (right) mean current field 
+Figure: (left) snapshot of surface elevation (5th output), (middle) sediemnt concentration and current field, (right) bathymetry change (5th output) 
 
 **input.txt:**
 
@@ -24,14 +24,14 @@ Figure: (left) snapshot of surface elevation, (middle) vorticity field, (right) 
 |   RESULT_FOLDER = output/ 
  
 |  **Dimensions**
-|   Mglob = 512
-|   Nglob = 250 
+|   Mglob = 312
+|   Nglob = 100 
 
 |  **Time**
-|   TOTAL_TIME = 1200.0 
-|   PLOT_INTV = 50.0 
+|   TOTAL_TIME = 500.0 
+|   PLOT_INTV = 100.0 
 |   PLOT_INTV_STATION = 0.5 
-|   SCREEN_INTV = 50.0 
+|   SCREEN_INTV = 100.0 
 
 |  **Wave averaging property** 
 |   T_INTV_mean = 50.0 
@@ -43,17 +43,13 @@ Figure: (left) snapshot of surface elevation, (middle) vorticity field, (right) 
 |   DY = 2.0 
 
 |  **Wavemaker** 
-|   WAVEMAKER = WK_IRR
-|   DEP_WK = 13.0 
-|   Xc_WK = 425.0 
-|   Yc_WK = 0.0 
-|   FreqPeak = 0.1 
-|   FreqMin = 0.03
-|   FreqMax = 0.5 
-|   Hmo = 1.0 
-|   GammaTMA = 5.0 
-|   ThetaPeak = 0.0 
-|   Sigma_Theta = 10.0 
+|   WAVEMAKER = WK_REG
+|   DEP_WK = 8.0 
+|   Xc_WK = 280.0 
+|   Tperiod = 8.0 
+|   AMP_WK = 0.5 
+|   Theta_WK = 0.0 
+|   Delta_WK = 3.0 
 
 |  **Sponge layer** 
 |   FRICTION_SPONGE = T 
@@ -77,7 +73,23 @@ Figure: (left) snapshot of surface elevation, (middle) vorticity field, (right) 
 |  **Breaking scheme**
 |   VISCOSITY_BREAKING = F  
 
+|  **Sediment**
+|   Bed_Change = T
+|   BedLoad = T
+|   D50 = 0.0005
+|   Sdensity = 2.68
+|   n_porosity = 0.47
+|   WS = 0.0125
+|   Shields_cr = 0.055
+|   Shields_cr_bedload = 0.047
+|   Tan_phi = 0.7
+|   Kappa1 = 0.3333
+|   Kappa2 = 1.0
+|   MinDepthPickup = 0.1 
+
+
 |  **Output** 
+|   DEPTH_OUT = T 
 |   ETA = T 
 |   U = T
 |   V = T

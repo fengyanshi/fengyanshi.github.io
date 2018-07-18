@@ -14,7 +14,7 @@ Day 1: Wednesday July 25th
  * 10:30--11:00 Break
  * 11:00--11:30  Modeling waves at FRF -- Gabriela
  * 11:30--12:00 Modeling Ship Wakes in the Intracoastal Waterway with FUNWAVE -- Deidre Herbert
- * 12:00--12:30 Potential Submarine Landslide Tsunamis in the South China Sea (NHWAVE+FUNWAVE) -- Linlin Li
+ * 12:00--12:30 Introduction of an user interface of FUNWAVE-TVD using Jupyter notebook -- Ling Zhu
  * 12:30--1:30 Lunch
  * 1:45--3:00 Training session #1 -- Malej
  * 3:00--3:30 Break
@@ -24,8 +24,8 @@ Day 1: Wednesday July 25th
 Day 2: Thursday July 26th
 
  * 9:00--9:30 Modeling the impact of constructed oyster reefs on nearshore circulation in Gandy's Beach, New Jersey -- Jim Chen
- * 9:30--10:00  Modeling of living shoreline in Delaware Bay and introduction of an user interface of FUNWAVE-TVD using Jupyter notebook -- Ling Zhu
- * 10:00--10:30  title TBD -- Julia Hopkins
+ * 9:30--10:00  Modeling Wave Transformation Over Submerged Bedforms Using FUNWAVE -- Julia Hopkins
+ * 10:00--10:30  TBD
  * 10:30--11:00 Break/Group photo
  * 11:00--11:30 Coastal Model Test Bed: High resolution, extended validation -- Spicer Bak
  * 11:30--12:00 Numerical study on the harbor oscillations -- Xiaozhou Ma

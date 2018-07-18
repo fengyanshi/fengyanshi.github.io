@@ -17,6 +17,7 @@ Simple tests **(beginners should start from here)**
    vessel
    vessel_morpho
    meteo
+   sediment_rip
 
 ******************
 Benchmarks
