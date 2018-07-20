@@ -87,5 +87,6 @@ FRIDAY: Training Session #5 [Lead: Matt Malej]
  * PROGRESSION (for those participants needed additional challenge) - Try the case of the circular island and set up a different path.
 
 FRIDAY: Training Session #6 [Lead: Fengyan Shi] 
- * Tsunami simulation using the sperical coordinates
  * Tsunami sources
+ * Tsunami simulation using the sperical coordinates
+
