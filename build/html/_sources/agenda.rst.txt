@@ -60,15 +60,15 @@ WEDNESDAY: Training Session #1 (Hands-on afternoon sessions) [Lead: Matt Malej]
 WEDNESDAY: Training Session #2 [Lead: Matt Malej]
  * How to run FUNWAVE-TVD? Navigating the basic sections within the INPUT file for different simulations (numerics, physics, input, output, etc.).
  * Setting up (Linux/Mac OS X and HPC machines with PBS scheduler), running, and post-processing your first FUNWAVE-TVD simulation (1D beach runup or levee overtopping with shoaling and wetting/drying).
+ * 2D case: Waves on 2D plane beach
  * PROGRESSION (for those participants needed additional challenge) - use the levee bathymetry to simulate a regular monochromatic wave overtopping the levee
 
 THURSDAY: Training Session #3 [Lead: Fengyan Shi]
- * 2D plane beach case with various wave conditions (different wavemakers)  
+ * Waves and wave-induced circulation and sediment transport  
  
-   * monochromatic waves  
-   * Irregular waves
- * PROGRESSION (for those participants needed additional challenge) - Analysis of wave-averaged properties.
-
+   * Rip channels  
+   * PROGRESSION (for those participants needed additional challenge) - Analysis of wave-averaged properties.
+ 
 THURSDAY: Training Session #4 [Lead: Fengyan Shi]
  * Wave simulation on 2D random bathymetry with complex shoreline geometries
 
@@ -81,10 +81,11 @@ FRIDAY: Training Session #5 [Lead: Matt Malej]
  * Ship-wakes
 
    * Setup with multiple vessels (paths, size, velocities)
+   * Shipwake-induced sediment transport
    * A vessel moving on random bathymetry
 
  * PROGRESSION (for those participants needed additional challenge) - Try the case of the circular island and set up a different path.
 
 FRIDAY: Training Session #6 [Lead: Fengyan Shi] 
- * Modeling sediment transport using FUNWAVE
- * Tsunami simulation using the spherical coordinates
+ * Tsunami simulation using the sperical coordinates
+ * Tsunami sources

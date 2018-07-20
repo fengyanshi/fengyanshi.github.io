@@ -13,7 +13,7 @@ Compile the code for 2D beach case
 |            FLAG_2 = -DPARALLEL
 |   if intel compiler add
 |            FLAG_6 = -DINTEL
-!            FLAG_18 = -DSEDIMENT
+|            FLAG_18 = -DSEDIMENT
 
 |  COMPILER
 |            FC       = mpif90 (for example)
