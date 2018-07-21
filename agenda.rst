@@ -25,7 +25,7 @@ Day 2: Thursday July 26th
 
  * 9:00--9:30 Modeling the impact of constructed oyster reefs on nearshore circulation in Gandy's Beach, New Jersey -- Jim Chen
  * 9:30--10:00  Modeling Wave Transformation Over Submerged Bedforms Using FUNWAVE -- Julia Hopkins
- * 10:00--10:30  TBD
+ * 10:00--10:30  Ship-wake, Sediment Transport, and Multi-grid Nesting Modules in FUNWAVE-TVD -- Fengyan Shi
  * 10:30--11:00 Break/Group photo
  * 11:00--11:30 Coastal Model Test Bed: High resolution, extended validation -- Spicer Bak
  * 11:30--12:00 Numerical study on the harbor oscillations -- Xiaozhou Ma
