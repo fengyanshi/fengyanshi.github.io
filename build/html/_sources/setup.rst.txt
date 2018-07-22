@@ -5,7 +5,11 @@
 Download source code 
 **********************
 
-`Version 3.2 (beta version): click here to download from GitHub <https://github.com/fengyanshi/FUNWAVE-TVD>`_
+`Version beta: not fully tested. click here to download/clone from GitHub <https://github.com/fengyanshi/FUNWAVE-TVD>`_
+
+`Version 3.3 Released July 19 2018: click here to download from GitHub <https://github.com/fengyanshi/FUNWAVE-TVD/releases>`_
+
+`Version 3.2 Released Jan 27 2018: click here to download from GitHub <https://github.com/fengyanshi/FUNWAVE-TVD/releases>`_
 
 Version 3.1 Released Sep 2017: Used for FUNWAVE-TVD Workshop 2017 `click here to download <https://github.com/fengyanshi/FUNWAVE-TVD/releases>`_
 
