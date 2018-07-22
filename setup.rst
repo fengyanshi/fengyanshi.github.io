@@ -30,13 +30,18 @@ The simple examples serve as baseline cases for testing your system. You can als
 
 * `Waves and rip currents on 2D beach <rip_2d.html>`_
 
+* `Sediment transport in 2D rip channels <sediment_rip.html>`_
+
 * `Surface waves at an inlet-beach-shoal system <inlet_shoal.html>`_
 
 * `Japanese Tohoku tsunami (Ocean-basin scale) <tohoku.html>`_
 
 * `ship-wakes <vessel.html>`_
 
+* `ship-wakes + sediment transport <vessel_morpho.html>`_
+
 * `Meteotsunami <meteo.html>`_
+
 
 ***************************
 Download benchmark tests
