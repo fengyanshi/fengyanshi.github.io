@@ -1,7 +1,7 @@
 AGENDA
 ==================
 
-This is not final version. Please visit later
+Tutorial :download:`download PDF <download/2018_FUNWAVE_WORKSHOP_TUTORIAL.pdf>`
 
 Tuesday July 24th: Ice-breaker:  5:30pm-7:30pm, Embassy Suites Atrium
  
@@ -87,6 +87,6 @@ FRIDAY: Training Session #5 [Lead: Matt Malej]
  * PROGRESSION (for those participants needed additional challenge) - Try the case of the circular island and set up a different path.
 
 FRIDAY: Training Session #6 [Lead: Fengyan Shi] 
- * Tsunami sources
+ * Tsunami sources (introduction to NHWAVE)
  * Tsunami simulation using the sperical coordinates
 
