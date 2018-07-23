@@ -1,5 +1,5 @@
-AGENDA
-==================
+FUNWAVE-TVD WORKSHOP 2018 AGENDA
+=================================
 
 Tutorial :download:`download PDF <download/2018_FUNWAVE_WORKSHOP_TUTORIAL.pdf>`
 
