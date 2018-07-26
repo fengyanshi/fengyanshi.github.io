@@ -1,7 +1,7 @@
 *********************************************
 FUNWAVE-TVD Workshop 2018
 *********************************************
-.. image:: images/workshop/wkshop_cover.png
+.. image:: images/workshop/group.png
 
 .. toctree::
    :maxdepth: 1
