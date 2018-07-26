@@ -13,7 +13,7 @@ For theory about wavemaker, see :ref:`section_wavemaker`
  * WAVEMAKER = LEF\_SOL: left boundary solitary
      need AMP,DEP, and LAGTIME
 
- * WAVEMAKER = INI\_SOL: initial solitary wave propagate in +y direction, WKN B solution
+ * WAVEMAKER = INI\_SOL: initial solitary wave propagate in +x direction, WKN B solution
      need AMP, DEP, and XWAVEMAKER 
 
  * WAVEMAKER = INI\_OTH:  other initial distribution specified in the code by users
