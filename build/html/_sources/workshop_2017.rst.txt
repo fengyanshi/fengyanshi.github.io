@@ -8,6 +8,8 @@ FUNWAVE-TVD Training Workshop was held at the University of Delaware, Newark, DE
 
 The three-day workshop included training sessions for new users, as well as technical talks from community of practicing and experienced users. Topics cover the modeling of nearshore surface waves and processes such as harbor resonance, nearshore wave transformation, refraction and diffraction with complex geometries, nearshore circulation, wave interaction with reefs and vegetation, and tsunami propagation and inundation from ocean basin-to nearshore scales. New features, such as modeling of ship wave generation and the corresponding effects on adjacent shorelines, meteotsunami simulation, as well as ongoing coupling work with NHWAVE were also introduced during the workshop. 
 
+The workshop was hosted on `Mills Cluster <https://sites.udel.edu/research-computing/2017/09/funwave-tvd-workshop-hosted-on-mills-cluster>`_
+
 **Presentations**
 
  .. note:: Click **pdf** to download presentations
