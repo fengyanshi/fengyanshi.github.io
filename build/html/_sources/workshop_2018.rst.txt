@@ -47,6 +47,7 @@ You can download the tutorial - :download:`click here <download/2018_FUNWAVE_WOR
 * Gonzalez-Lopez, Juan -- WOODPLC
 * Gralher, Christine -- STANTEC
 * Grilli, Annette -- Univ. of Rhode Island
+* Grilli, Stephan -- Univ. of Rhode Island
 * Han, Sunghoon -- Texas A&M
 * Herbert, Deidre -- Univ. of Florida
 * Hopkins, Julia -- Delft Tech. Univ. 
