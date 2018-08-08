@@ -42,6 +42,7 @@ You can download the tutorial - :download:`click here <download/2018_FUNWAVE_WOR
 * Chen, Aaron -- STANTEC
 * Chen, Jim -- Northestern Univ. 
 * Chen, Yujie -- University of Delaware
+* Deb, Mithun -- University of Delaware
 * Ding, Haoyu -- Univ. of Bath
 * Gonzalez-Lopez, Juan -- WOODPLC
 * Gralher, Christine -- STANTEC
