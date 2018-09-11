@@ -23,7 +23,7 @@ Physics (dispersion, breaking, friction)
 
  *  Cbrk2:  parameter C2 in Kennedy et al. (2000). Default: 0.35
 
- .. note::  Cbrk1 and Cbrk2 are re-calibrated in Choi et al. (2018). C1 is around 0.45 in FUNWAVE-TVD, instead of C1=0.65 used in Kennedy et al. 
+ .. note::  Cbrk1 and Cbrk2 were re-calibrated in Choi et al. (2018). C1 is around 0.45 in FUNWAVE-TVD, instead of C1=0.65 used in Kennedy et al. 
 
 
  *  SWE\_ETA\_DEP: ratio of height/depth for switching from Boussinesq to NSWE for shock-capturing breaking.  The value is :math:`\sim` 0.80. 
