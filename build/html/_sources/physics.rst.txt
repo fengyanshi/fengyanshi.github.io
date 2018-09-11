@@ -17,7 +17,14 @@ Physics (dispersion, breaking, friction)
 
  *  Beta\_ref:  parameter :math:`\beta` defined for the reference level. :math:`\beta` = -0.531 for NG's and FUNWAVE equations. Default: -0.531.
 
- *  VISCOSITY\_BREAKING : logical parameter for viscous breaking. When this option is selected, Cbrk1 and Cbrk2 needed. Default is shock-capturing type breaking
+ *  VISCOSITY\_BREAKING : logical parameter for viscous breaking. When this option is selected, Cbrk1 and Cbrk2 needed. Default is shock-capturing type breaking.
+
+ *  Cbrk1: parameter C1 in Kennedy et al. (2000). Default: 0.45
+
+ *  Cbrk2:  parameter C2 in Kennedy et al. (2000). Default: 0.35
+
+ .. note::  Cbrk1 and Cbrk2 are re-calibrated in Choi et al. (2018). C1 is around 0.45 in FUNWAVE-TVD, instead of C1=0.65 used in Kennedy et al. 
+
 
  *  SWE\_ETA\_DEP: ratio of height/depth for switching from Boussinesq to NSWE for shock-capturing breaking.  The value is :math:`\sim` 0.80. 
 
@@ -37,9 +44,6 @@ Physics (dispersion, breaking, friction)
 
 *  SHOW\_BREAKING: logical parameter to calculate breaking index. Note that, if VISCOSITY\_BREAKING is not selected,  breaking is calculated using shock wave capturing scheme. The index calculated here is based on Kennedy et al. (2000). 
 
- *  Cbrk1: parameter C1 in Kennedy et al. (2000). Default: 0.65
-
- *  Cbrk2:  parameter C2 in Kennedy et al. (2000). Default: 0.35
 
  *  WAVEMAKER\_Cbrk: breaking parameter inside wavemaker. For some cases, wave breaks inside the wavemaker. This parameter provides Cbrk inside the wavemaker domain. For most of cases, set WAVEMAKER\_Cbrk = Cbrk1 or higher. Default: LARGE.
 

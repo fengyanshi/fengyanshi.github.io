@@ -39,7 +39,9 @@ Grid and Computational Time
 
  *  Xslp: starting x (m) of a slope, if DEPTH\_TYPE=SLOPE
 
- *  WaterLevel: Specify a water level which will be added to the input bathymetry and wavemaker depth such as DEP_WK (internal wave generator) and DepthWaveMaker (left boundary generator).
+ *  WaterLevel: Specify a water level which will be added to the input bathymetry and wavemaker depth such as DEP_WK (internal wave generator) and DepthWaveMaker (left boundary generator). 
+
+ .. note::   IF you add surge or tide level using 'WaterLevel',  please keep DEP\_WK the same as the original depth in the depth file because the water level will be automatically added to the model bathymetry. 
 
 **SPECIFICATION OF TIME**
  

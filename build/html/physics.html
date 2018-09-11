@@ -60,7 +60,15 @@
 <ul class="simple">
 <li>Gamma3: parameter for linear shallow water equations (Gamma3 = 1.0). When Gamma3 = 0.0, Gamma1 and Gamma2 automatically become zero. Default: 1.0.</li>
 <li>Beta_ref:  parameter <span class="math">\(\beta\)</span> defined for the reference level. <span class="math">\(\beta\)</span> = -0.531 for NG&#8217;s and FUNWAVE equations. Default: -0.531.</li>
-<li>VISCOSITY_BREAKING : logical parameter for viscous breaking. When this option is selected, Cbrk1 and Cbrk2 needed. Default is shock-capturing type breaking</li>
+<li>VISCOSITY_BREAKING : logical parameter for viscous breaking. When this option is selected, Cbrk1 and Cbrk2 needed. Default is shock-capturing type breaking.</li>
+<li>Cbrk1: parameter C1 in Kennedy et al. (2000). Default: 0.45</li>
+<li>Cbrk2:  parameter C2 in Kennedy et al. (2000). Default: 0.35</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Cbrk1 and Cbrk2 are re-calibrated in Choi et al. (2018). C1 is around 0.45 in FUNWAVE-TVD, instead of C1=0.65 used in Kennedy et al.</p>
+</div>
+<ul class="simple">
 <li>SWE_ETA_DEP: ratio of height/depth for switching from Boussinesq to NSWE for shock-capturing breaking.  The value is <span class="math">\(\sim\)</span> 0.80.</li>
 </ul>
 </div></blockquote>
@@ -87,8 +95,6 @@
 </ul>
 <blockquote>
 <div><ul class="simple">
-<li>Cbrk1: parameter C1 in Kennedy et al. (2000). Default: 0.65</li>
-<li>Cbrk2:  parameter C2 in Kennedy et al. (2000). Default: 0.35</li>
 <li>WAVEMAKER_Cbrk: breaking parameter inside wavemaker. For some cases, wave breaks inside the wavemaker. This parameter provides Cbrk inside the wavemaker domain. For most of cases, set WAVEMAKER_Cbrk = Cbrk1 or higher. Default: LARGE.</li>
 </ul>
 </div></blockquote>
