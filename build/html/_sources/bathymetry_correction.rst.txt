@@ -1,7 +1,7 @@
 Bathymetry Correction
 ***********************
 
-Large bathymetric slopes may induce computational errors in Boussinesq models. They can even  cause numerical instabilities for cases with a bathymetry containing a large amount of big slope points (slope>1.0). In that case, you should smoothen the bathymetry or use the following option in input.txt
+Large bathymetric slopes may induce computational errors in Boussinesq models. They can even  cause numerical instabilities for a case with bathymetry containing a large amount of big slope points (slope>1.0). In that case, you should smoothen the bathymetry or use the following option in input.txt
 
  BATHY\_CORRECTION = T
 
