@@ -16,5 +16,6 @@ Parameters for Central Module
    statistics
    sponge
    breakwater
+   bathymetry_correction
    hotstart
    output

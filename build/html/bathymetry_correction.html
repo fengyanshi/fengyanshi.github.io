@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Parameters for Central Module &#8212; funwave  documentation</title>
+    <title>Bathymetry Correction &#8212; funwave  documentation</title>
     
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -27,8 +27,8 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Project" href="title.html" />
-    <link rel="prev" title="DEFINITIONS OF PARAMETERS" href="definition.html" />
+    <link rel="next" title="Hot Start" href="hotstart.html" />
+    <link rel="prev" title="Breakwater and Obstacle" href="breakwater.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -44,24 +44,18 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="parameters-for-central-module">
-<span id="section-central-para"></span><h1>Parameters for Central Module<a class="headerlink" href="#parameters-for-central-module" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="title.html">Project</a></li>
-<li class="toctree-l1"><a class="reference internal" href="parallelization.html">Parallelization</a></li>
-<li class="toctree-l1"><a class="reference internal" href="grid.html">Grid and Computational Time</a></li>
-<li class="toctree-l1"><a class="reference internal" href="physics.html">Physics (dispersion, breaking, friction)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="numerics.html">Numerical Parameters</a></li>
-<li class="toctree-l1"><a class="reference internal" href="wavemaker_para.html">Wave-maker</a></li>
-<li class="toctree-l1"><a class="reference internal" href="periodic.html">Periodic Boundary Condition</a></li>
-<li class="toctree-l1"><a class="reference internal" href="statistics.html">Wave Statistics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sponge.html">Sponge Layer</a></li>
-<li class="toctree-l1"><a class="reference internal" href="breakwater.html">Breakwater and Obstacle</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bathymetry_correction.html">Bathymetry Correction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="hotstart.html">Hot Start</a></li>
-<li class="toctree-l1"><a class="reference internal" href="output.html">Output</a></li>
-</ul>
+  <div class="section" id="bathymetry-correction">
+<h1>Bathymetry Correction<a class="headerlink" href="#bathymetry-correction" title="Permalink to this headline">¶</a></h1>
+<p>Large bathymetric slopes may induce computational errors in Boussinesq models. It can even  cause numerical instabilities for cases with a bathymetry containing a large amount of big slope points (slope&gt;1.0). In that case, you should smoothen the bathymetry or use the following option in input.txt</p>
+<blockquote>
+<div><p>BATHY_CORRECTION = T</p>
+<p>SmoothBelowDepth = &#8211;1.0 (for example)</p>
+<p>SlopeCap = 1.0  (for example)</p>
+</div></blockquote>
+<p>SmoothBelowDepth = &#8211;1.0 means that the smoothening process will perform from &#8211;1.0 m (1.0 m above the still water level) to the sea bed (figure below).</p>
+<p>SlopeCape = 1.0 means that the smoothening process will perform around the points where slope &gt; 1.0.</p>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="_images/smoothen.jpg"><img alt="alternate text" src="_images/smoothen.jpg" style="width: 500px; height: 300px;" /></a>
 </div>
 </div>
 
@@ -75,8 +69,10 @@
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
   <li><a href="definition.html"><strong>DEFINITIONS OF PARAMETERS</strong></a><ul>
-      <li>Previous: <a href="definition.html" title="previous chapter"><strong>DEFINITIONS OF PARAMETERS</strong></a></li>
-      <li>Next: <a href="title.html" title="next chapter">Project</a></li>
+  <li><a href="central_para.html">Parameters for Central Module</a><ul>
+      <li>Previous: <a href="breakwater.html" title="previous chapter">Breakwater and Obstacle</a></li>
+      <li>Next: <a href="hotstart.html" title="next chapter">Hot Start</a></li>
+  </ul></li>
   </ul></li>
   </ul></li>
 </ul>
