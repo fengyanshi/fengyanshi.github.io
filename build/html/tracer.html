@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Lagrangian Tracking Module &#8212; funwave  documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Post Processing" href="post.html" />
+    <link rel="prev" title="Numerical Scheme for Sediment Transport" href="sed_numerical.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="lagrangian-tracking-module">
+<span id="section-tracer-formula"></span><h1>Lagrangian Tracking Module<a class="headerlink" href="#lagrangian-tracking-module" title="Permalink to this headline">¶</a></h1>
+<p>Lagrangian tracking module is implemented using the individual-based particle-tracking method which treats  particles as if they exactly follow the fluid dynamics. In the current version, the Lagrangian evolution of the position of a particle is expressed as</p>
+<div class="math" id="equation-tracer:0">
+<span class="eqno">(1)<a class="headerlink" href="#equation-tracer:0" title="Permalink to this equation">¶</a></span>\[d {\bf x}/dt = {\bf u}_\alpha ({\bf x})\]</div>
+<p>where <span class="math">\({\bf x}\)</span> is the particle&#8217;s position and <span class="math">\({\bf u}_\alpha\)</span> is the fluid velocity at the reference level. The accuracy of the calculated particle trajectory depends on both the magnitude of the time-step and the order-accuracy of the velocity field. The time step used to update the particle position is the same as the time step used in solving the Boussinesq equation, which is assumed to be small. The first order discrete form of the above equation is used in the model.</p>
+<p>The particle position <span class="math">\((x,y)\)</span> is specified at the central point of a cell, the same as other model variables such as :math: <cite>u,v,eta</cite> etc. The orgin (0,0) is at the central point of the bottom-left (south-west) corner cell. A linear interpolation is used to get the instantaneous velocity at the particle position. In particular, an interpolation value is obtained from the values at three nearest points. The areas of four triangles constructed by the four points (3 nearest points and the particle point itself) can be calculated using</p>
+<div class="math" id="equation-tracer:1">
+<span class="eqno">(2)<a class="headerlink" href="#equation-tracer:1" title="Permalink to this equation">¶</a></span>\[\begin{split}S_{\alpha \beta \gamma} = \left | \begin{array}{ccc} x_\alpha &amp; y_\alpha &amp; 1 \\  x_\beta &amp; y_\beta &amp; 1 \\ x_\gamma &amp; y_\gamma &amp; 1 \end{array} \right|\end{split}\]</div>
+<p>where <span class="math">\(S_{\alpha \beta \gamma}\)</span> represents the area of the triangle <span class="math">\((\alpha \beta \gamma)\)</span>, counter-clockwise. The interpolation value is evaluated using</p>
+<div class="math" id="equation-tracer:2">
+<span class="eqno">(3)<a class="headerlink" href="#equation-tracer:2" title="Permalink to this equation">¶</a></span>\[F_A = (F_1 S_{23A} + F_2S_{31A} + F_3S_{12A})/S_{123}\]</div>
+<p>where :math: <cite>F_1, F_2, F_3</cite> and :math: <cite>F_A</cite> represent values at points (1,2,3) and the partical point A, respectively.</p>
+<p>To set up particle tracking in the model, see <a class="reference internal" href="tracer_setup.html#section-tracer-setup"><span class="std std-ref">Lagrangian Tracer Setup</span></a></p>
+<ul class="simple">
+<li>Animation: Tsunami waves  debris tracking (path)</li>
+</ul>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/rJXbP-IZaXU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="basics.html"><strong>BASICS</strong></a><ul>
+      <li>Previous: <a href="sed_numerical.html" title="previous chapter">Numerical Scheme for Sediment Transport</a></li>
+      <li>Next: <a href="post.html" title="next chapter">Post Processing</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, Fengyan Shi.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>
