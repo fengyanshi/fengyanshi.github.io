@@ -64,6 +64,12 @@ Compile and setup
 * --DCRAY: for CRAY RAND() and system commands
 * --DCOUPLING: nesting mode.
 * --DVESSLE: include shipwake module
+* --DSEDIMENT: include sediment and morphological module
+* --DWIND: include wind effect
+* --DMETEO: include meteo tsunami module
+* --DMANNING: use Manning formula for bottom friction
+* --DCHECK_MASS_CONSERVATION: correct mass conservation problem caused by wetting/drying
+* --DTRACKING: include Lagrangian tracking module
 * CPP: path to CPP directory.
 * FC: Fortran compiler. 
 
