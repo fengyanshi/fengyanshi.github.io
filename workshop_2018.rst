@@ -20,7 +20,7 @@ The workshop was hosted on `Mills Cluster <https://sites.udel.edu/research-compu
 * Introduction of an user interface of FUNWAVE-TVD using Jupyter notebook -- Ling Zhu,  `pdf5 <https://drive.google.com/open?id=1l1RGnwQJCkIcAGWjQNLYrtrK_V7KqdWj>`_
 * Modeling the impact of constructed oyster reefs on nearshore circulation in Gandy's Beach, New Jersey -- Jim Chen,  `pdf6 <https://drive.google.com/open?id=1Rt1THKHZukvoDdTCx_gRUAP5VnfpNh3F>`_
 * MOrphological Diffusivity EXperiment MODEX -- Julia Hopkins,  `pdf7 <https://drive.google.com/open?id=1l8V-LvTTBjx0CYd7skq3bB0zMSYTfHhb>`_
-* Ship-wake, Sediment Transport, and Multi-grid Nesting Modules in FUNWAVE-TVD -- Fengyan Shi,  `pdf8 <https://drive.google.com/open?id=1o9pwaU7Xn1o2FafLfuD4JP19o8O1WPaE>`_
+* Ship-wake, Sediment Transport, and Multi-grid Nesting Modules in FUNWAVE-TVD -- Fengyan Shi,  `pdf8 <https://drive.google.com/file/d/14PiYjsL35pax-JuSSPvwTkht_uK5YXo4/view?usp=sharing>`_
 * Coastal Model Test Bed: High resolution, extended validation -- Spicer Bak, , `pdf9 <https://drive.google.com/open?id=1BzQrQfxUNps5WH95QuAIErAGhX5FAdFy>`_
 * Numerical study on the harbor oscillations -- Xiaozhou Ma,  `pdf10 <https://drive.google.com/open?id=1CbXnI7Cpqw-Y1dmWk48aysaXRXnoM14g>`_
 * Interaction of Tsunamis with Local Effects -- James Kaihatu, `pdf11 <https://drive.google.com/open?id=13YkeCv7dNMy0iXcg7bilC36CWG8xtqDJ>`_
