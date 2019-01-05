@@ -1,5 +1,5 @@
 **********************************************************
-How to run the FUNWAVE-TVD on Windows
+How to run FUNWAVE-TVD on Windows
 **********************************************************
 
 This document is provided by
