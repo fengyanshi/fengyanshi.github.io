@@ -20,6 +20,7 @@ FUNWAVE-TVD
    authors
    gallery
    news
+   addition
 
 .. raw:: html
    :file: google_group.html
