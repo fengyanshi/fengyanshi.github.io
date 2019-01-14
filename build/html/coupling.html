@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>NESTING OR COUPLING &#8212; funwave  documentation</title>
+    <title>Coupling (Manually) &#8212; funwave  documentation</title>
     
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -27,8 +27,8 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="EXAMPLES" href="examples.html" />
-    <link rel="prev" title="Landslide" href="slide.html" />
+    <link rel="next" title="Mult-Grid Nesting (Automatically)" href="nesting.html" />
+    <link rel="prev" title="NESTING AND COUPLING" href="coupling_nesting.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -44,9 +44,9 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="nesting-or-coupling">
-<h1><strong>NESTING OR COUPLING</strong><a class="headerlink" href="#nesting-or-coupling" title="Permalink to this headline">¶</a></h1>
-<p>The present version has a capability for one-way nesting with other models such as NHWAVE or FUNWAVE-TVD itself. The nesting scheme passes surface elevation and velocity components calculated from other models or FUNWAVE-TVD in a large domain to a nested small domain through ghost cells at nesting boundaries. To run a nested model, the following procedures should be performed.</p>
+  <div class="section" id="coupling-manually">
+<h1>Coupling (Manually)<a class="headerlink" href="#coupling-manually" title="Permalink to this headline">¶</a></h1>
+<p>The present version has a capability for one-way coupling with other models such as NHWAVE or FUNWAVE-TVD itself. The nesting scheme passes surface elevation and velocity components calculated from other models or FUNWAVE-TVD in a large domain to a nested small domain through ghost cells at nesting boundaries. To run a nested model, the following procedures should be performed.</p>
 <ol class="arabic simple">
 <li>The coupling option in Makefile should be defined as &#8216;-Dcoupling&#8217;&#8216;. The program should be re&#8211;compiled.</li>
 <li>Prepare nesting data using the output of a large-domain model. The following is an example of the data format.</li>
@@ -117,8 +117,10 @@
 <h3>Related Topics</h3>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="slide.html" title="previous chapter">Landslide</a></li>
-      <li>Next: <a href="examples.html" title="next chapter"><strong>EXAMPLES</strong></a></li>
+  <li><a href="coupling_nesting.html"><strong>NESTING AND COUPLING</strong></a><ul>
+      <li>Previous: <a href="coupling_nesting.html" title="previous chapter"><strong>NESTING AND COUPLING</strong></a></li>
+      <li>Next: <a href="nesting.html" title="next chapter">Mult-Grid Nesting (Automatically)</a></li>
+  </ul></li>
   </ul></li>
 </ul>
 </div>

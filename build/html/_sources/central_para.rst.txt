@@ -18,4 +18,5 @@ Parameters for Central Module
    breakwater
    bathymetry_correction
    hotstart
+   post
    output

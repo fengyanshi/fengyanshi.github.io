@@ -1,7 +1,7 @@
-**NESTING OR COUPLING**
-=======================
+Coupling (Manually)
+**********************************
 
-The present version has a capability for one-way nesting with other models such as NHWAVE or FUNWAVE-TVD itself. The nesting scheme passes surface elevation and velocity components calculated from other models or FUNWAVE-TVD in a large domain to a nested small domain through ghost cells at nesting boundaries. To run a nested model, the following procedures should be performed.
+The present version has a capability for one-way coupling with other models such as NHWAVE or FUNWAVE-TVD itself. The nesting scheme passes surface elevation and velocity components calculated from other models or FUNWAVE-TVD in a large domain to a nested small domain through ghost cells at nesting boundaries. To run a nested model, the following procedures should be performed.
 
 1. The coupling option in Makefile should be defined as '-Dcoupling''. The program should be re--compiled.
 

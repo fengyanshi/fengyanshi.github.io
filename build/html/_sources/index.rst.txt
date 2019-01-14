@@ -14,12 +14,12 @@ FUNWAVE-TVD
    flowchart
    setup
    definition
-   coupling
+   coupling_nesting
    examples
-   references
-   authors
    gallery
    news
+   references
+   authors
    addition
 
 .. raw:: html

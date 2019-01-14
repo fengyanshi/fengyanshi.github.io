@@ -1,11 +1,9 @@
 **FUNWAVE-TVD WORKSHOP**
 ==========================
-.. image:: images/workshop/participants.jpg
+.. image:: images/workshop/group.png
 
-.. toctree::
-   :maxdepth: 1
+`WORKSHOP 2017 <workshop_2017.html>`_
 
-   workshop_2018
-   workshop_2017
+`WORKSHOP 2018 <workshop_2018.html>`_
 
 
