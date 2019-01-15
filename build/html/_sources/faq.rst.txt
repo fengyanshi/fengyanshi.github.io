@@ -16,5 +16,12 @@ FAQ
 
   Yes, the tutorial provides an example using Amazon AWS Cloud Computing - :download:`click here <download/2018_FUNWAVE_WORKSHOP_TUTORIAL.pdf>` (In Appendix)
 
+* Which version should I download from the Github repository?
+
+  We suggest downloading the latest release version on Github. You could use the beta version but be aware that it is not fully tested through all test cases. Download page: :ref:`section_download`.
+
+* When I encounter a problem or have a question, can I contact the authors directly?
+
+  Yes, you can. However, we suggest putting up your question in the FUNWAVE-TVD `forum <../../google_group.html>`_ first.    
 
 `Back to FUNWAVE-TVD Page <https://fengyanshi.github.io/build/html/index.html>`_

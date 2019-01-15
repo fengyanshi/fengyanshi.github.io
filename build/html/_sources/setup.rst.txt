@@ -1,3 +1,5 @@
+.. _section_download:
+
 **MODEL DOWNLOAD AND SETUP**
 =============================
 
