@@ -16,3 +16,20 @@ Flow chart
     :height: 550px
     :alt: alternate text
     :figclass: align-center
+
+.. figure:: images/modules/sediment_chart_dark.png
+    :width: 325px
+    :align: center
+    :height: 225px
+    :alt: alternate text
+    :figclass: align-center
+
+******************
+Nesting structure
+******************
+.. figure:: images/modules/nesting_grid.png
+    :width: 400px
+    :align: center
+    :height: 225px
+    :alt: alternate text
+    :figclass: align-center

@@ -44,7 +44,6 @@ The simple examples serve as baseline cases for testing your system. You can als
 
 * `Meteotsunami <meteo.html>`_
 
-
 ***************************
 Download benchmark tests
 ***************************

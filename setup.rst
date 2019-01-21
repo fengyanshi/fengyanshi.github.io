@@ -23,7 +23,7 @@ Versions 1.0, 1.1, 2.0, 2.1: Please contact fyshi@udel.edu
 Download simple examples
 *************************
 
-Simple examples are included in the package of Version 3.1 or higher (`click here to download from GitHub <https://github.com/fengyanshi/FUNWAVE-TVD>`_) . They are located in the directory /simple_cases/. 
+Simple examples are included in the package of Version 3.1 and higher (`click here to download from GitHub <https://github.com/fengyanshi/FUNWAVE-TVD>`_) . They are located in the directory /simple_cases/. 
 The simple examples serve as baseline cases for testing your system. You can also choose a simple case similar to your modeling scenario to set up your case. The following simple cases available. The simple examples are also used during the FUNWAVE training workshop. 
 
 * `Waves on 1D slope <slope.html>`_
@@ -43,7 +43,6 @@ The simple examples serve as baseline cases for testing your system. You can als
 * `ship-wakes + sediment transport <vessel_morpho.html>`_
 
 * `Meteotsunami <meteo.html>`_
-
 
 ***************************
 Download benchmark tests
