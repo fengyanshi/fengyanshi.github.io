@@ -64,6 +64,7 @@ Compile and setup
 * --DINTEL: if INTEL compiler is used, this option can make use of FPORT for the RAND() function
 * --DCRAY: for CRAY RAND() and system commands
 * --DCOUPLING: nesting mode.
+* --DSPHERICAL_IJ_STATION: in spherical mode, if you want your station locations defined by grid point (I,J). Otherwise, station locations should be defined by (lat lon).  
 * --DVESSLE: include shipwake module
 * --DSEDIMENT: include sediment and morphological module
 * --DWIND: include wind effect
