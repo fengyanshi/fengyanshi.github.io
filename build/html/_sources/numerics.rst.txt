@@ -16,5 +16,5 @@ Numerical Parameters
 
  *  MinDepth: minimum water depth (m) for wetting and drying scheme. Suggestion: MinDepth = 0.001 for lab scale and 0.01 for field scale. Defaut: 0.01.
 
- *  MinDepthFrc: merge to MinDepth for Version 3.1 or higher. 
+ *  MinDepthFrc: merge to MinDepth for Version 3.1 or higher. If both MinDepth and MinDepthFrc are specified, the model takes the Maximum value of MinDepth and MinDepthFrc.  
 
