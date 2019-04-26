@@ -88,6 +88,7 @@
 </ul>
 </div></blockquote>
 <p>The default format is ASCII.  The format and read algorithm are  consistent with a depth file.</p>
+<p>A station file contains four columns, which are values of time (s), eta (m), u (m/s) and v (m/s), respectively.</p>
 <blockquote>
 <div><ul class="simple">
 <li>BINARY format</li>
@@ -98,6 +99,7 @@
 <p>&gt;&gt;eta=fread(fileID,[Mglob Nglob],&#8217;*double&#8217;);</p>
 <p>&gt;&gt;fclose(fileID);</p>
 <p>&gt;&gt;pcolor(eta),shading flat</p>
+<p>Station files do not have Binary format.</p>
 <blockquote>
 <div><ul class="simple">
 <li>Other format</li>

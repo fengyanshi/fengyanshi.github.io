@@ -39,6 +39,8 @@ The output files are saved in the result directory defined by RESULT\_FOLDER in 
 
 The default format is ASCII.  The format and read algorithm are  consistent with a depth file.
 
+A station file contains four columns, which are values of time (s), eta (m), u (m/s) and v (m/s), respectively. 
+
 
  * BINARY format
 
@@ -53,7 +55,11 @@ When FIELD\_IO\_TYPE = BINARY is specified in input.txt, the 2D output files suc
 
 >>pcolor(eta),shading flat 
 
+Station files do not have Binary format. 
+
+
  * Other format
 
 Other formats such as NetCDF and HDF5 are also provided but not distributed in the master Github repository. 
+
 
