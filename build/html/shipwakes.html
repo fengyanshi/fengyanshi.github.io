@@ -46,6 +46,10 @@
             
   <div class="section" id="ship-wake-module">
 <h1>Ship-wake Module<a class="headerlink" href="#ship-wake-module" title="Permalink to this headline">¶</a></h1>
+<p>We have implemented various types of source functions for ship-wave generation.</p>
+<ol class="arabic simple">
+<li><strong>PRESSURE SOURCE TYPE I</strong></li>
+</ol>
 <p>Following Ertekin et al. (1986), Wu (1987) and Torsvik et al. (2008), the pressure disturbance with a center point at <span class="math">\((x^*, y^*\)</span>) is given by</p>
 <div class="math" id="equation-shipwakes:0">
 <span class="eqno">(1)<a class="headerlink" href="#equation-shipwakes:0" title="Permalink to this equation">¶</a></span>\[p_a(\tilde{x},\tilde{y},t) = P f(\tilde{x},t) q(\tilde{y},t),\]</div>
@@ -63,6 +67,26 @@
 <div class="math" id="equation-shipwakes:4">
 <span class="eqno">(5)<a class="headerlink" href="#equation-shipwakes:4" title="Permalink to this equation">¶</a></span>\[C_B = \frac{V_{\mbox{sub}} }{L \cdot R \cdot D}\]</div>
 <p>in which <span class="math">\(D\)</span> represents draft of a vessel.</p>
+<ol class="arabic simple" start="2">
+<li><strong>PRESSURE SOURCE TYPE II</strong></li>
+</ol>
+<p>Type II of the pressure-type source is formulated following Bayrakter and Beji (2013). David et al. (2017) used this formulation in their tests. The pressure source can be written as</p>
+<div class="math" id="equation-shipwakes:5">
+<span class="eqno">(6)<a class="headerlink" href="#equation-shipwakes:5" title="Permalink to this equation">¶</a></span>\[p_a(\tilde{x},\tilde{y},t) = P \left[1-C_L(\tilde{x}/L)^4  \right] \left[1-C_B(\tilde{y}/W)^2  \right] e^{-a(\tilde{y}/W)^2}\]</div>
+<p>where <span class="math">\(a\)</span>, <span class="math">\(C_L\)</span> and <span class="math">\(C_B\)</span> are form parameters. For a slender body, <span class="math">\(a=16.0\)</span>, <span class="math">\(C_L=2.0\)</span> and <span class="math">\(C_B=16.0\)</span>.</p>
+<ol class="arabic simple" start="3">
+<li><strong>SLENDER SOURCE TYPE I</strong></li>
+</ol>
+<p>For the slender-type source, the aditional volume flux induced by ship motion is applied in the mass conservation equation.</p>
+<div class="math" id="equation-shipwakes:6">
+<span class="eqno">(7)<a class="headerlink" href="#equation-shipwakes:6" title="Permalink to this equation">¶</a></span>\[dQ = P * \sin (\pi (\tilde{x}-x^*(t)/L) * \cos (\pi (\tilde{y}-y^*(t))/W)\]</div>
+<p>where <span class="math">\(dQ\)</span> represents the flux gradient.</p>
+<ol class="arabic simple" start="4">
+<li><strong>SLENDER SOURCE TYPE II</strong></li>
+</ol>
+<p>The Type II of the slender source is similar to the Type I but with two additional parameters representing sizes of bow and stern.</p>
+<div class="math" id="equation-shipwakes:7">
+<span class="eqno">(8)<a class="headerlink" href="#equation-shipwakes:7" title="Permalink to this equation">¶</a></span>\[\begin{split}dQ = \left \{ \begin{array}{rl} P * \sin (\pi ((\tilde{x}-x^*(t)+\frac{1}{2}\alpha L)/(1-\alpha)L) * \cos (\pi \tilde{y}/W), &amp;  \tilde{x}-x^*(t) \lt -\frac{1}{2}\alpha L \\ P * \sin (\pi ((\tilde{x}-x^*(t)-\frac{1}{2}\alpha L)/(1-\alpha)L) * \cos (\pi \tilde{y}/W), &amp;  \tilde{x}-x^*(t) \gt \frac{1}{2}\alpha L \\ 0, &amp; else \end{array} \right.\end{split}\]</div>
 <p>To set up vessels in the model, see <a class="reference internal" href="shipwakes_para.html#section-shipwakes-setup"><span class="std std-ref">Shipwakes Setup</span></a></p>
 </div>
 

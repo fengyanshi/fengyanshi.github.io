@@ -47,26 +47,83 @@
   <div class="section" id="shipwakes-setup">
 <span id="section-shipwakes-setup"></span><h1>Shipwakes Setup<a class="headerlink" href="#shipwakes-setup" title="Permalink to this headline">¶</a></h1>
 <div class="line-block">
-<div class="line">Specify a folder which contains a number of vessel files, vessel_00001, vessel_00002, ...</div>
+<div class="line">1) Specify a folder which contains a number of vessel files, vessel_00001, vessel_00002, ...</div>
 <div class="line-block">
 <div class="line">VESSEL_FOLDER = ./</div>
 </div>
 </div>
 <div class="line-block">
-<div class="line">Specify the number of vessels (e.g., 5)</div>
+<div class="line">2)Specify the number of vessels (e.g., 5)</div>
 <div class="line-block">
 <div class="line">NumVessel = 5</div>
 <div class="line"><br /></div>
-<div class="line">In vessel_00001, for example, provide vessel name, vessel length, width, shape parameters, draft and time series of vessel path:</div>
-<div class="line">Title: Vessel # 1</div>
-<div class="line">Blue_Star_I</div>
-<div class="line">Length(m), Width(m), Alpha(m), Beta(m), P(unit)</div>
-<div class="line">20.0  10.0, 0.5, 0.5, 1.0</div>
-<div class="line">0.0000000e+00,   5.6000000e+02,   5.0000000e+02</div>
-<div class="line">1.0000000e+00,   5.6374897e+02,   5.0255132e+02</div>
+</div>
+<div class="line">3)In vessel_00001, for example, provide vessel name, vessel type, vessel length, width, shape parameters, draft and time series of vessel path:</div>
+<div class="line-block">
+<div class="line">Title: Vessel # 1  - (name)</div>
+<div class="line">PRESSURE, 1  (pressure type, type I)</div>
+<div class="line">Length(m), Width(m), Alpha1, Alpha2, Beta, P(unit) (comment, vessel parameters)</div>
+<div class="line">20.0  10.0, 0.5, 0.5, 1.0    (vessel parameters)</div>
+<div class="line">0.0000000e+00,   5.6000000e+02,   5.0000000e+02  (time, x, y)</div>
+<div class="line">1.0000000e+00,   5.6374897e+02,   5.0255132e+02  (...)</div>
 <div class="line">...</div>
 </div>
 <div class="line">In the time series, the first column is time in seconds, the second and the third are x and y in meters, respectively.</div>
+</div>
+<p><strong>The following is an example which includes 5 vessels with different types</strong></p>
+<p>Figure: Vessel types (from bottom to top): 1) Pressure Type I, 2) Pressure Type I with large <span class="math">\(\alpha\)</span>, 3) Pressure Type II, 4) Slender Type I, 5) Slender Type II.</p>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="_images/5_vessels.jpg"><img alt="alternate text" src="_images/5_vessels.jpg" style="width: 300px; height: 500px;" /></a>
+</div>
+<p><em>vessel_00001:</em></p>
+<div class="line-block">
+<div class="line">Title: Vessel # 1</div>
+<div class="line">PRESSURE, 1</div>
+<div class="line">Length(m), Width(m), Alpha1, Alpha2 Beta, P(m)</div>
+<div class="line">20.0  8.0, 0.0, 0.0, 0.5, 3.0</div>
+<div class="line">Time, X(m), Y(m)  (relative to the origin of the coordinates)</div>
+<div class="line">0.0    50.0  60.0</div>
+<div class="line">100.0 1050.0 60.0</div>
+</div>
+<p><em>vessel_00002:</em></p>
+<div class="line-block">
+<div class="line">Title: Vessel # 2</div>
+<div class="line">PRESSURE, 1</div>
+<div class="line">Length(m), Width(m), Alpha1, Alpha2, Beta, P(m)</div>
+<div class="line">20.0  8.0, 0.9, 0.9, 0.5, 3.0</div>
+<div class="line">Time, X(m), Y(m)  (relative to the origin of the coordinates)</div>
+<div class="line">0.0    50.0  120.0</div>
+<div class="line">100.0 1050.0 120.0</div>
+</div>
+<p><em>vessel_00003:</em></p>
+<div class="line-block">
+<div class="line">Title: Vessel # 3</div>
+<div class="line">PRESSURE, 2</div>
+<div class="line">Length(m), Width(m), Cl, Cb, a, P(m)</div>
+<div class="line">10.0  5.0, 16.0, 2.0, 16.0, 2.0</div>
+<div class="line">Time, X(m), Y(m)  (relative to the origin of the coordinates)</div>
+<div class="line">0.0   50.0   180.0</div>
+<div class="line">100.0 1050.0 180.0</div>
+</div>
+<p><em>vessel_00004:</em></p>
+<div class="line-block">
+<div class="line">Title: Vessel # 4</div>
+<div class="line">SLENDER, 1</div>
+<div class="line">Length(m), Width(m), Alpha1, Alpha2, Beta, P(unit)</div>
+<div class="line">10.0  5.0, 0.0, 0.0, 0.9, 12.0</div>
+<div class="line">Time, X(m), Y(m)  (relative to the origin of the coordinates)</div>
+<div class="line">0.0   50.0   240.0</div>
+<div class="line">100.0 1050.0 240.0</div>
+</div>
+<p><em>vessel_00005:</em></p>
+<div class="line-block">
+<div class="line">Title: Vessel # 5</div>
+<div class="line">SLENDER, 2</div>
+<div class="line">Length(m), Width(m), Alpha1, Alpha2, Beta, P(unit)</div>
+<div class="line">10.0  5.0, 0.8, 0.8, 0.9, 40.0</div>
+<div class="line">Time, X(m), Y(m)  (relative to the origin of the coordinates)</div>
+<div class="line">0.0   50.0   300.0</div>
+<div class="line">100.0 1050.0 300.0</div>
 </div>
 </div>
 
