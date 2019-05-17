@@ -20,7 +20,7 @@ Shipwakes Setup
 | In the time series, the first column is time in seconds, the second and the third are x and y in meters, respectively. 
 
 
-**The following is an example which includes 5 vessels with different types**
+**The following is an example which includes 5 vessels with different types (the example is in /simple_cases/vessel_types_compare/)**
 
 Figure: Vessel types (from bottom to top): 1) Pressure Type I, 2) Pressure Type I with large :math:`\alpha`, 3) Pressure Type II, 4) Slender Type I, 5) Slender Type II. 
 
