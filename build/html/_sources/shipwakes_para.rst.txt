@@ -55,7 +55,7 @@ Figure: Vessel types (from bottom to top): 1) Pressure Type I, 2) Pressure Type 
 
 | Title: Vessel # 3
 | PRESSURE, 2
-| Length(m), Width(m), Cl, Cb, a, P(m)
+| Length(m), Width(m), a, b, c, P(m)
 | 10.0  5.0, 16.0, 2.0, 16.0, 2.0
 | Time, X(m), Y(m)  (relative to the origin of the coordinates)
 | 0.0   50.0   180.0
@@ -65,7 +65,7 @@ Figure: Vessel types (from bottom to top): 1) Pressure Type I, 2) Pressure Type 
 
 | Title: Vessel # 4
 | SLENDER, 1
-| Length(m), Width(m), Alpha1, Alpha2, Beta, P(unit)
+| Length(m), Width(m), Alpha1, Alpha2, Beta, F(unit)
 | 10.0  5.0, 0.0, 0.0, 0.9, 12.0
 | Time, X(m), Y(m)  (relative to the origin of the coordinates)
 | 0.0   50.0   240.0
@@ -75,7 +75,7 @@ Figure: Vessel types (from bottom to top): 1) Pressure Type I, 2) Pressure Type 
 
 | Title: Vessel # 5
 | SLENDER, 2
-| Length(m), Width(m), Alpha1, Alpha2, Beta, P(unit)
+| Length(m), Width(m), Alpha1, Alpha2, Beta, F(unit)
 | 10.0  5.0, 0.8, 0.8, 0.9, 40.0
 | Time, X(m), Y(m)  (relative to the origin of the coordinates)
 | 0.0   50.0   300.0
