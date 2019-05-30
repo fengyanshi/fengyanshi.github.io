@@ -71,6 +71,7 @@ You can download the tutorial - :download:`click here <download/2018_FUNWAVE_WOR
 * Salgado-Dominguez, Gabriela -- USACE - ERDC - CHL
 * Sandanbata, Qsamu -- Tokyo Univ.  
 * Shi, Fengyan -- University of Delaware
+* Torres, Marissa -- USACE - Cold Regions Research and Engineering Laboratory (CRREL) 
 * Wesley, Matthew -- USACE - Los Angeles District
 * Yue, Liangyi -- University of Delaware
 * Zhang, Xiang -- Dalian Univ. of Tech. 
