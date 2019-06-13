@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Wave Breaking &#8212; funwave  documentation</title>
+    <title>Wave Breaking, roller and undertow &#8212; funwave  documentation</title>
     
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -44,10 +44,11 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="wave-breaking">
-<span id="section-wavebreaking"></span><h1>Wave Breaking<a class="headerlink" href="#wave-breaking" title="Permalink to this headline">¶</a></h1>
-<p>There are two breaking algorithms implemented in the model. One takes the advantage of the shock&#8211;capturing scheme in TVD.
-It  follows the approach of Tonelli and Petti (2009),  who successfully used the ability of  NSWE  with a TVD scheme to model moving hydraulic jumps. Thus, the fully nonlinear Boussinesq equations are switched  to NSWE at cells where the Froude number exceeds  a certain threshold. Following Tonelli and Petti, the ratio of wave height to total water depth is chosen as  the criterion to switch from Boussinesq to NSWE, with  threshold value  set to 0.8,  as suggested by Tonelli and Petti.</p>
+  <div class="section" id="wave-breaking-roller-and-undertow">
+<span id="section-wavebreaking"></span><h1>Wave Breaking, roller and undertow<a class="headerlink" href="#wave-breaking-roller-and-undertow" title="Permalink to this headline">¶</a></h1>
+<p><strong>Breaking schemes</strong></p>
+<p>There are two breaking algorithms implemented in the model. One takes advantage of the shock&#8211;capturing scheme in TVD.
+It  follows the approach of Tonelli and Petti (2009),  who successfully used the ability of  NSWE  with a TVD scheme to model moving hydraulic jumps. Thus, the fully nonlinear Boussinesq equations are switched  to NSWE at cells where the Froude number exceeds  a certain threshold. Following Tonelli and Petti, the ratio of wave height to total water depth is chosen as  the criterion to switch from Boussinesq to NSWE, with a threshold value  set to 0.8,  as suggested by Tonelli and Petti.</p>
 <p>The other one is the original eddy&#8211;viscosity scheme used in the previous version of FUNWAVE (Kennedy et al., 2000). To fit the eddy&#8211;viscosity method in the TVD scheme, the artificial eddy viscosity terms.</p>
 <div class="math" id="equation-wavebreaking:0">
 <span class="eqno">(1)<a class="headerlink" href="#equation-wavebreaking:0" title="Permalink to this equation">¶</a></span>\[{\bf R}_{bx} = \frac{\partial }{\partial x} (\nu \frac{\partial P}{\partial x}) + \frac{\partial }{\partial y} (\nu \frac{\partial P}{\partial y} )\]</div>
@@ -61,13 +62,44 @@ It  follows the approach of Tonelli and Petti (2009),  who successfully used the
 <span class="eqno">(4)<a class="headerlink" href="#equation-wavebreaking:3" title="Permalink to this equation">¶</a></span>\[B =  1 \ \ \  \eta_t \ge  \eta_t^*\]</div>
 <div class="math" id="equation-wavebreaking:4">
 <span class="eqno">(5)<a class="headerlink" href="#equation-wavebreaking:4" title="Permalink to this equation">¶</a></span>\[B =  0 \ \ \  \eta_t &lt;  \eta_t^*\]</div>
-<p>The parameter <span class="math">\(\eta_t^*\)</span> determines the onset and cessation of breaking. Following Kennedy et al., a breaking event begins when <span class="math">\(\eta_t\)</span> exceeds some initial threshold value <span class="math">\(\eta_t^{(I)}\)</span>, as breaking develops, the wave will continue to break until <span class="math">\(\eta_t\)</span> drops below <span class="math">\(\eta_t^{(F)}\)</span>. However, we do not use the smooth transition as in Kennedy et al. because the present TVD scheme did not encounter any instability problem associated with breaking. The values of <span class="math">\(\eta_t^{(I)}\)</span> and <span class="math">\(\eta_t^{(F)}\)</span> can be described by  <span class="math">\(C_{brk1}  \sqrt{gh}\)</span> and  <span class="math">\(C_{brk2} \sqrt{gh}\)</span>, respectively, where <span class="math">\(C_{brk1}\)</span> and  <span class="math">\(C_{brk2}\)</span> are empirical parameters. In Kennedy et al., <span class="math">\(C_{brk1} = 0.65\)</span> and  <span class="math">\(C_{brk2}=0.15\)</span>. Choi et al. (2018) showed that <span class="math">\(C_{brk1}\)</span> should be smaller and <span class="math">\(C_{brk2}\)</span> be larger than those in Kennedy et al. to match the laboratory experimnent data. For the benchmark test of Vincent and Briggs (1989), for instance, <span class="math">\(C_{brk1} = 0.45\)</span> and <span class="math">\(C_{brk2} = 0.35\)</span> were adopted.</p>
-<p>References</p>
+<p>The parameter <span class="math">\(\eta_t^*\)</span> determines the onset and cessation of breaking. Following Kennedy et al., a breaking event begins when <span class="math">\(\eta_t\)</span> exceeds some initial threshold value <span class="math">\(\eta_t^{(I)}\)</span>, as breaking develops, the wave will continue to break until <span class="math">\(\eta_t\)</span> drops below <span class="math">\(\eta_t^{(F)}\)</span>. However, we do not use the smooth transition as in Kennedy et al. because the present TVD scheme did not encounter any instability problem associated with breaking. The values of <span class="math">\(\eta_t^{(I)}\)</span> and <span class="math">\(\eta_t^{(F)}\)</span> can be described by  <span class="math">\(C_{brk1}  \sqrt{gh}\)</span> and  <span class="math">\(C_{brk2} \sqrt{gh}\)</span>, respectively, where <span class="math">\(C_{brk1}\)</span> and  <span class="math">\(C_{brk2}\)</span> are empirical parameters. In Kennedy et al., <span class="math">\(C_{brk1} = 0.65\)</span> and  <span class="math">\(C_{brk2}=0.15\)</span>. Choi et al. (2018) showed that <span class="math">\(C_{brk1}\)</span> should be smaller and <span class="math">\(C_{brk2}\)</span> be larger than those in Kennedy et al. to match the laboratory experimental data. For the benchmark test of Vincent and Briggs (1989), for instance, <span class="math">\(C_{brk1} = 0.45\)</span> and <span class="math">\(C_{brk2} = 0.35\)</span> were adopted.</p>
+<p><strong>Roller and undertow</strong></p>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="_images/roller.jpg"><img alt="alternate text" src="_images/roller.jpg" style="width: 400px; height: 150px;" /></a>
+</div>
+<p><em>Figure 1. Concept of roller (from Schäffer et al., 1993). Cross-section and assumed velocity profile of a breaking wave with a surface roller.</em></p>
+<p>The general expression of a breaking roller in a Boussinesq-type model was introduced by several authors such as Madsen (1981), Svendsen (1984), and Schäffer et al. (1993):</p>
+<div class="math" id="equation-wavebreaking:5">
+<span class="eqno">(6)<a class="headerlink" href="#equation-wavebreaking:5" title="Permalink to this equation">¶</a></span>\[M=u_0d + (c-u_0) \delta,  \ \ \ \ when \ \ breaking\]</div>
+<div class="math" id="equation-wavebreaking:6">
+<span class="eqno">(7)<a class="headerlink" href="#equation-wavebreaking:6" title="Permalink to this equation">¶</a></span>\[M=u_0d, \ \ \ \ \ \ \ \ \ \ else\]</div>
+<p>where <span class="math">\(M\)</span> is the total momentum flux including the contribution of roller. <span class="math">\(u_0\)</span> is the velocity defined in the figure, <span class="math">\(c\)</span> is the wave celerity, and <span class="math">\(\delta\)</span> is the roller thickness. In FUNWAVE-TVD, we use <span class="math">\(u_\alpha\)</span> to represent the velocity <span class="math">\(u_0\)</span>. <span class="math">\(c\)</span> is calculated using</p>
+<div class="math" id="equation-wavebreaking:7">
+<span class="eqno">(8)<a class="headerlink" href="#equation-wavebreaking:7" title="Permalink to this equation">¶</a></span>\[c = \sqrt{gd}\]</div>
+<p>which is different from Schäffer et al. (1993) who used the local still water depth: <span class="math">\(c=1.3sqrt(gh)\)</span>.</p>
+<p>The thickness of roller <span class="math">\(\delta\)</span> can be estimated using the roller geometry shown in figure 1. However, in the parallelized program, locating the roller region involves cross-core-boundary tracking, that is nontrivial and time-consuming. In FUNWAVE-TVD, we used a rough estimate of the roller thickness based on the correlation between the roller area and the wave height proposed by Svendsen (1984), i.e.,</p>
+<div class="math" id="equation-wavebreaking:8">
+<span class="eqno">(9)<a class="headerlink" href="#equation-wavebreaking:8" title="Permalink to this equation">¶</a></span>\[A = 0.9 H^2\]</div>
+<p>where <span class="math">\(A\)</span> represents the roller area and <span class="math">\(H\)</span> is the wave height. Based on the roller geometry, the roller area can be estimated as</p>
+<div class="math" id="equation-wavebreaking:9">
+<span class="eqno">(10)<a class="headerlink" href="#equation-wavebreaking:9" title="Permalink to this equation">¶</a></span>\[A = \frac{LH}{2\pi} (1-r)\]</div>
+<p>where <span class="math">\(L\)</span> is the wave length and <span class="math">\(r\)</span> is a ratio representing the thickness and <span class="math">\(\delta = rH\)</span>. Assuming the wave length can be estimated by <span class="math">\(L = 4 H /\tan \theta\)</span>, where <span class="math">\(\tan \theta\)</span> is estimated by <span class="math">\(\tan \theta = \eta_t/c\)</span>. According to the two formulas above, the ratio <span class="math">\(r\)</span> can be calculated by</p>
+<div class="math" id="equation-wavebreaking:10">
+<span class="eqno">(11)<a class="headerlink" href="#equation-wavebreaking:10" title="Permalink to this equation">¶</a></span>\[r = 1-0.45 \pi \tan \theta\]</div>
+<p>We further assume the local thickness of the roller at the breaking point is <span class="math">\(\delta = r (\eta^*-\bar{\eta}\)</span>, where <span class="math">\(\eta^{*}\)</span> and <span class="math">\(\bar{\eta}\)</span> are the surface elevation at a breaking point and the mean surface elevation, respectively.  The final formula for the roller calculation can be expressed as</p>
+<div class="math" id="equation-wavebreaking:11">
+<span class="eqno">(12)<a class="headerlink" href="#equation-wavebreaking:11" title="Permalink to this equation">¶</a></span>\[M=u_0d + (c-u_0) (1-0.45 \pi \tan \theta) (\eta^{*}-\bar{\eta}),  \ \ \ \ when \ \ breaking\]</div>
+<p>The mean surface elevation is calculated using the time series of surface elevation before the roller estimation.</p>
+<p>The calculation of the undertow uses the local balance of the roller induced momentum flux and the undertow flux.</p>
+<p><strong>References</strong></p>
 <p>Choi, Y.-K., Shi, F., Malej, M., and Smith, J. M., 2018, &#8220;Performance of various shock-capturing-type reconstruction schemes in the Boussinesq wave model, FUNWAVE-TVD&#8221;, Ocean Modelling, 131, 86-100. <a class="reference external" href="https://doi.org/10.1016/j.ocemod.2018.09.004">DOI:10.1016/j.ocemod.2018.09.004</a>.</p>
 <p>Kennedy, A.B., Chen, Q., Kirby, J.T., Dalrymple, R.A., 2000. &#8220;Boussinesq modeling of wave
 transformation, breaking and runup. I: 1D&#8221;. J. Waterway Port Coastal Ocean Eng. 126
 (1), 39–47.</p>
 <p>Vincent, C.L., Briggs, M.J., 1989. &#8220;Refraction-diffraction of irregular waves over a mound&#8221;. J. Waterway Port Coastal Ocean Eng. 115 (2), 269–284.</p>
+<p>Schäffer H. A., Madsen, P.A., Deigaard, R., 1993, A Boussinesq model for waves breaking in shallow water, Coastal Engineering, <a class="reference external" href="https://doi.org/10.1016/0378-3839(93)90001-O">https://doi.org/10.1016/0378-3839(93)90001-O</a></p>
+<p>Svendsen, LA., Wave Heights and Set-Up in a Surf Zone, 1984, Coastal Engineering, Vol.
+8</p>
 </div>
 
 
