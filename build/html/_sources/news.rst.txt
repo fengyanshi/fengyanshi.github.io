@@ -4,8 +4,7 @@
 
 `ANNONCEMENT FOR WORKSHOP 2019 <workshop_2019.html>`_
 
-Previous Workshops
--------------------
+**Previous Workshops:**
 
 `WORKSHOP 2017 <workshop_2017.html>`_
 

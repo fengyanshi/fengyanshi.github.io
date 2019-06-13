@@ -1,6 +1,4 @@
-*********************************************
-.. rubric:: FUNWAVE-TVD WORKSHOP 2019
-*********************************************
+
 .. image:: images/workshop/hohai_workshop.png
 
 We are pleased to announce that FUNWAVE-TVD Workshop 2019 will be held at Hohai University, Nanjing, China, from **18--20 Oct 2019**. This workshop will be a joint effort of the Hohai University and the University of Delaware.
@@ -13,6 +11,5 @@ Any questions can be directed to Fengyan Shi at fyshi@udel.edu, (302) 831 2449, 
 
 NOTE: the registration will be capped at 50 participants.
 
-`Back to FUNWAVE-TVD Page <https://fengyanshi.github.io/build/html/index.html>`_
-
-
+`Back to funwave-tvd page <https://fengyanshi.github.io/build/html/index.html>`_
+----------------------------------------------------------------------------------
