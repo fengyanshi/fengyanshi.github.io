@@ -53,7 +53,7 @@ The thickness of roller :math:`\delta` can be estimated using the roller geometr
 
 where :math:`A` represents the roller area and :math:`H` is the wave height. Based on the roller geometry, the roller area can be estimated as 
 
-.. math:: A = \frac{LH}{2} (1-r)    
+.. math:: A = \frac{LH}{2} r   
 
 where :math:`L` is the wave length and :math:`r` is a ratio representing the thickness and :math:`\delta = rH`. Assuming the wave length can be estimated by :math:`L = 4 H /\tan \theta`, where :math:`\tan \theta` is estimated by :math:`\tan \theta = \eta_t/c`. According to the two formulas above, the ratio :math:`r` can be calculated by
 
