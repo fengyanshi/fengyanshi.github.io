@@ -53,17 +53,17 @@ The thickness of roller :math:`\delta` can be estimated using the roller geometr
 
 where :math:`A` represents the roller area and :math:`H` is the wave height. Based on the roller geometry, the roller area can be estimated as 
 
-.. math:: A = \frac{LH}{4\pi} (1-r)    
+.. math:: A = \frac{LH}{2} (1-r)    
 
 where :math:`L` is the wave length and :math:`r` is a ratio representing the thickness and :math:`\delta = rH`. Assuming the wave length can be estimated by :math:`L = 4 H /\tan \theta`, where :math:`\tan \theta` is estimated by :math:`\tan \theta = \eta_t/c`. According to the two formulas above, the ratio :math:`r` can be calculated by
 
-.. math:: r = 1-0.9 \pi \tan \theta 
+.. math:: r = 0.45 \tan \theta 
 
-The ratio :math:`r` is limited by the breaking angle (:math:`10^{\circ}`, Deigaard, 1989), resulting in the maxumim value of :math:`r = 0.5014`.
+The ratio :math:`r` is limited by the maximum breaking angle (:math:`20^{\circ}`, Schaffer et al. 1993), resulting in the maxumim value of :math:`r = 0.1638`.
  
 We further assume the local thickness of the roller at the breaking point is :math:`\delta = r (\eta^*-\bar{\eta}`, where :math:`\eta^{*}` and :math:`\bar{\eta}` are the surface elevation at a breaking point and the mean surface elevation, respectively.  The final formula for the roller calculation can be expressed as
 
-.. math:: M=u_0d + (c-u_0) (1-0.9 \pi \tan \theta) (\eta^{*}-\bar{\eta}),  \ \ \ \ when \ \ breaking 
+.. math:: M=u_0d + 0.45 (c-u_0) \tan \theta (\eta^{*}-\bar{\eta}),  \ \ \ \ when \ \ breaking 
 
 The mean surface elevation is calculated using the time series of surface elevation before the roller estimation. 
 
