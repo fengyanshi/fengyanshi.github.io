@@ -63,7 +63,7 @@ The ratio :math:`r` is limited by the breaking angle (:math:`10^{\circ}`, Deigaa
  
 We further assume the local thickness of the roller at the breaking point is :math:`\delta = r (\eta^*-\bar{\eta}`, where :math:`\eta^{*}` and :math:`\bar{\eta}` are the surface elevation at a breaking point and the mean surface elevation, respectively.  The final formula for the roller calculation can be expressed as
 
-.. math:: M=u_0d + (c-u_0) (1-0.45 \pi \tan \theta) (\eta^{*}-\bar{\eta}),  \ \ \ \ when \ \ breaking 
+.. math:: M=u_0d + (c-u_0) (1-0.9 \pi \tan \theta) (\eta^{*}-\bar{\eta}),  \ \ \ \ when \ \ breaking 
 
 The mean surface elevation is calculated using the time series of surface elevation before the roller estimation. 
 
