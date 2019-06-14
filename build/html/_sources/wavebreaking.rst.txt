@@ -58,6 +58,8 @@ where :math:`A` represents the roller area and :math:`H` is the wave height. Bas
 where :math:`L` is the wave length and :math:`r` is a ratio representing the thickness and :math:`\delta = rH`. Assuming the wave length can be estimated by :math:`L = 4 H /\tan \theta`, where :math:`\tan \theta` is estimated by :math:`\tan \theta = \eta_t/c`. According to the two formulas above, the ratio :math:`r` can be calculated by
 
 .. math:: r = 1-0.45 \pi \tan \theta 
+
+The ratio :math:`r` is limited by the maximum breaking angle (:math:`20^{\circ}`, Schäffer et al., 1993), which gives the maxumim value of :math:`r` is 0.4854.
  
 We further assume the local thickness of the roller at the breaking point is :math:`\delta = r (\eta^*-\bar{\eta}`, where :math:`\eta^{*}` and :math:`\bar{\eta}` are the surface elevation at a breaking point and the mean surface elevation, respectively.  The final formula for the roller calculation can be expressed as
 
