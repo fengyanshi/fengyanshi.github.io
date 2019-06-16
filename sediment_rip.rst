@@ -1,3 +1,5 @@
+.. _section-rip-sediment:
+
 Sediment Transport in 2D rip channels
 #######################################
 .. figure:: images/simple_cases/eta_c_dep_5.jpg

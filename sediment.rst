@@ -1,4 +1,4 @@
-.. _section_sedi_module:
+.. _section-sedi-module:
 
 Sediment Transport Module
 ****************************

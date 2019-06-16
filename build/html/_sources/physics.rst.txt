@@ -1,3 +1,5 @@
+.. _section-physics:
+
 Physics (dispersion, breaking, friction)
 *******************************************
 
@@ -27,6 +29,10 @@ Physics (dispersion, breaking, friction)
 
 
  *  SWE\_ETA\_DEP: ratio of height/depth for switching from Boussinesq to NSWE for shock-capturing breaking.  The value is :math:`\sim` 0.80. 
+
+**SPECIFICATION OF ROLLER EFFECTS**
+
+ * ROLLER_EFFECT: logical parameter for roller effects. If it is set .TRUE., the roller and undertow effects will be taken into account into the sediment (suspended load) transport processes. 
 
 **SPECIFICATION OF FRICTION**
   

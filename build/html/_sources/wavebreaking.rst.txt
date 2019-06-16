@@ -1,4 +1,4 @@
-.. _section_wavebreaking:
+.. _section-wavebreaking:
 
 Wave Breaking, roller and undertow
 **************************************
@@ -36,12 +36,14 @@ The parameter :math:`\eta_t^*` determines the onset and cessation of breaking. F
 
 *Figure 1. Concept of roller (from Schäffer et al., 1993). Cross-section and assumed velocity profile of a breaking wave with a surface roller.*
 
-The general expression of a breaking roller in a Boussinesq-type model was introduced by several authors such as Madsen (1981), Svendsen (1984), and Schäffer et al. (1993):
+*Roller-induced flux* 
 
-.. math:: M=u_0d + (c-u_0) \delta,  \ \ \ \ when \ \ breaking
-.. math:: M=u_0d, \ \ \ \ \ \ \ \ \ \ else
+The general expression of a breaking roller in a Boussinesq-type model was introduced by several authors such as Madsen (1981), Svendsen (1984), and Schäffer et al. (1993). For a one-dimensional case, the roller induced mass flux can be expressed by:
 
-where :math:`M` is the total momentum flux including the contribution of roller. :math:`u_0` is the velocity defined in the figure, :math:`c` is the wave celerity, and :math:`\delta` is the roller thickness. In FUNWAVE-TVD, we use :math:`u_\alpha` to represent the velocity :math:`u_0`. :math:`c` is calculated using 
+.. math:: P=u_0d + (c-u_0) \delta,  \ \ \ \ when \ \ breaking
+.. math:: P=u_0d, \ \ \ \ \ \ \ \ \ \ else
+
+where :math:`P` is the total mass flux including the contribution of roller. :math:`u_0` is the velocity defined in the figure, :math:`c` is the wave celerity, and :math:`\delta` is the roller thickness. In FUNWAVE-TVD, we use :math:`u_\alpha` to represent the velocity :math:`u_0`. :math:`c` is calculated using 
 
 .. math:: c = \sqrt{gd}   
 
@@ -49,25 +51,47 @@ which is different from Schäffer et al. (1993) who used the local still water d
 
 The thickness of roller :math:`\delta` can be estimated using the roller geometry shown in figure 1. However, in the parallelized program, locating the roller region involves cross-core-boundary tracking, that is nontrivial and time-consuming. In FUNWAVE-TVD, we used a rough estimate of the roller thickness based on the correlation between the roller area and the wave height proposed by Svendsen (1984), i.e., 
 
-.. math:: A = 0.9 H^2
+.. math:: A = 0.9 H^2 
+   :label: svendsen
 
 where :math:`A` represents the roller area and :math:`H` is the wave height. Based on the roller geometry, the roller area can be estimated as 
 
 .. math:: A = \frac{LH}{2} r   
+   :label: geometry
 
-where :math:`L` is the wave length and :math:`r` is a ratio representing the thickness and :math:`\delta = rH`. Assuming the wave length can be estimated by :math:`L = 4 H /\tan \theta`, where :math:`\tan \theta` is estimated by :math:`\tan \theta = \eta_t/c`. According to the two formulas above, the ratio :math:`r` can be calculated by
+where :math:`L` is the wave length and :math:`r` is a ratio representing the thickness and :math:`\delta = rH`. Assuming the wave length can be estimated by :math:`L = 4 H /\tan \theta`, where :math:`\tan \theta` is estimated by :math:`\tan \theta = \eta_t/c`. According to :eq:`svendsen` and :eq:`geometry`, the ratio :math:`r` can be calculated by
 
-.. math:: r = 0.45 \tan \theta 
+.. math:: r = 0.45 \tan \theta  
 
 The ratio :math:`r` is limited by the maximum breaking angle (:math:`20^{\circ}`, Schaffer et al. 1993), resulting in the maxumim value of :math:`r = 0.1638`.
  
-We further assume the local thickness of the roller at the breaking point is :math:`\delta = r (\eta^*-\bar{\eta}`, where :math:`\eta^{*}` and :math:`\bar{\eta}` are the surface elevation at a breaking point and the mean surface elevation, respectively.  The final formula for the roller calculation can be expressed as
+We further assume the local thickness of the roller at the breaking point is :math:`\delta = r (\eta^*-\bar{\eta}`, where :math:`\eta^{*}` and :math:`\bar{\eta}` are the surface elevation at a breaking point and the mean surface elevation, respectively.  The final formula for the roller-induced mass flux can be expressed as
 
-.. math:: M=u_0d + 0.45 (c-u_0) \tan \theta (\eta^{*}-\bar{\eta}),  \ \ \ \ when \ \ breaking 
+.. math:: P=u_0d + 0.45 (c-u_0) \tan \theta (\eta^{*}-\bar{\eta}),  \ \ \ \ when \ \ breaking 
+   :label: flux
 
 The mean surface elevation is calculated using the time series of surface elevation before the roller estimation. 
 
-The calculation of the undertow uses the local balance of the roller induced momentum flux and the undertow flux. 
+*Roller effect on hydrodynamics*
+
+Following Schaffer et al. (1993), the total momentum flux, including the roller contribution, can be expressed as
+
+.. math:: M = \int^\eta_{-h} u^2 dz = u_0^2 d +(c^2-u^2_0) \delta
+   :label: momentum
+
+The excess momentum effect due to the non-uniform velocity distribution can be calculated using :eq:`flux` and :eq:`momentum`:
+
+.. math:: R = M-P^2/d
+
+or 
+
+.. math:: R = (c-u_0)^2 \delta (1-\frac{\delta}{d})
+
+The roller effect on hydrodynamics can be calculated by adding extra terms, :math:`R_x` and :math:`R_y`, in the momentum equations in the x and y directions, respectively.  
+
+The calculation of the undertow uses the local balance of the roller induced momentum flux and the undertow flux. The roller/undertow effect is taken into account in the sediment transport processes. 
+
+To set up the roller and its effects, see :ref:`section-physics`. An example presenting the roller effect can be found in :ref:`section-rip-sediment`. To set up output of roller-induced mass flux and undertow flux, see :ref:`section-output`.
 
 **References**
 

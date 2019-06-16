@@ -9,7 +9,7 @@ Suspended sediment motion is governed by the depth-averaged sediment concentrati
 
 .. math:: (\bar{c} H)_t + \nabla_h \cdot (\bar{c} H ({\bf u}_\alpha + \bar{{\bf u} }_2)) =\nabla_h \cdot (k H (\nabla_h \bar{c})) + P - D \label{ad}
 
-where :math:`\bar{c}` is the non-dimensional depth-averaged sediment concentration normalized by sediment density. :math:`H(\bf{u}_\alpha + \bar{\bf{u}}_2) =M` represents the flow rate per unit width defined in Shi et al. (2012), in which :math:`H=h+\eta` is the total water depth. :math:`k` is the horizontal sediment diffusion coefficient calculated by the formula given by Elder (1959),
+where :math:`\bar{c}` is the non-dimensional depth-averaged sediment concentration normalized by sediment density. :math:`H(\bf{u}_\alpha + \bar{\bf{u}}_2) =M` represents the flow rate per unit width defined in Shi et al. (2012), in which :math:`H=h+\eta` is the total water depth. The roller-induced extra undertow can be taken into account as an option (see :ref:`section-wavebreaking`, and :ref:`section-physics`). :math:`k` is the horizontal sediment diffusion coefficient calculated by the formula given by Elder (1959),
 
 .. math:: k = 5.93 u_{*c} H
 

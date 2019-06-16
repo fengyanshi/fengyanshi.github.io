@@ -68,30 +68,43 @@ It  follows the approach of Tonelli and Petti (2009),  who successfully used the
 <a class="reference internal image-reference" href="_images/roller.jpg"><img alt="alternate text" src="_images/roller.jpg" style="width: 400px; height: 150px;" /></a>
 </div>
 <p><em>Figure 1. Concept of roller (from Schäffer et al., 1993). Cross-section and assumed velocity profile of a breaking wave with a surface roller.</em></p>
-<p>The general expression of a breaking roller in a Boussinesq-type model was introduced by several authors such as Madsen (1981), Svendsen (1984), and Schäffer et al. (1993):</p>
+<p><em>Roller-induced flux</em></p>
+<p>The general expression of a breaking roller in a Boussinesq-type model was introduced by several authors such as Madsen (1981), Svendsen (1984), and Schäffer et al. (1993). For a one-dimensional case, the roller induced mass flux can be expressed by:</p>
 <div class="math" id="equation-wavebreaking:5">
-<span class="eqno">(6)<a class="headerlink" href="#equation-wavebreaking:5" title="Permalink to this equation">¶</a></span>\[M=u_0d + (c-u_0) \delta,  \ \ \ \ when \ \ breaking\]</div>
+<span class="eqno">(6)<a class="headerlink" href="#equation-wavebreaking:5" title="Permalink to this equation">¶</a></span>\[P=u_0d + (c-u_0) \delta,  \ \ \ \ when \ \ breaking\]</div>
 <div class="math" id="equation-wavebreaking:6">
-<span class="eqno">(7)<a class="headerlink" href="#equation-wavebreaking:6" title="Permalink to this equation">¶</a></span>\[M=u_0d, \ \ \ \ \ \ \ \ \ \ else\]</div>
-<p>where <span class="math">\(M\)</span> is the total momentum flux including the contribution of roller. <span class="math">\(u_0\)</span> is the velocity defined in the figure, <span class="math">\(c\)</span> is the wave celerity, and <span class="math">\(\delta\)</span> is the roller thickness. In FUNWAVE-TVD, we use <span class="math">\(u_\alpha\)</span> to represent the velocity <span class="math">\(u_0\)</span>. <span class="math">\(c\)</span> is calculated using</p>
+<span class="eqno">(7)<a class="headerlink" href="#equation-wavebreaking:6" title="Permalink to this equation">¶</a></span>\[P=u_0d, \ \ \ \ \ \ \ \ \ \ else\]</div>
+<p>where <span class="math">\(P\)</span> is the total mass flux including the contribution of roller. <span class="math">\(u_0\)</span> is the velocity defined in the figure, <span class="math">\(c\)</span> is the wave celerity, and <span class="math">\(\delta\)</span> is the roller thickness. In FUNWAVE-TVD, we use <span class="math">\(u_\alpha\)</span> to represent the velocity <span class="math">\(u_0\)</span>. <span class="math">\(c\)</span> is calculated using</p>
 <div class="math" id="equation-wavebreaking:7">
 <span class="eqno">(8)<a class="headerlink" href="#equation-wavebreaking:7" title="Permalink to this equation">¶</a></span>\[c = \sqrt{gd}\]</div>
 <p>which is different from Schäffer et al. (1993) who used the local still water depth: <span class="math">\(c=1.3sqrt(gh)\)</span>.</p>
 <p>The thickness of roller <span class="math">\(\delta\)</span> can be estimated using the roller geometry shown in figure 1. However, in the parallelized program, locating the roller region involves cross-core-boundary tracking, that is nontrivial and time-consuming. In FUNWAVE-TVD, we used a rough estimate of the roller thickness based on the correlation between the roller area and the wave height proposed by Svendsen (1984), i.e.,</p>
-<div class="math" id="equation-wavebreaking:8">
-<span class="eqno">(9)<a class="headerlink" href="#equation-wavebreaking:8" title="Permalink to this equation">¶</a></span>\[A = 0.9 H^2\]</div>
+<div class="math" id="equation-svendsen">
+<span class="eqno">(9)<a class="headerlink" href="#equation-svendsen" title="Permalink to this equation">¶</a></span>\[A = 0.9 H^2\]</div>
 <p>where <span class="math">\(A\)</span> represents the roller area and <span class="math">\(H\)</span> is the wave height. Based on the roller geometry, the roller area can be estimated as</p>
-<div class="math" id="equation-wavebreaking:9">
-<span class="eqno">(10)<a class="headerlink" href="#equation-wavebreaking:9" title="Permalink to this equation">¶</a></span>\[A = \frac{LH}{2} r\]</div>
-<p>where <span class="math">\(L\)</span> is the wave length and <span class="math">\(r\)</span> is a ratio representing the thickness and <span class="math">\(\delta = rH\)</span>. Assuming the wave length can be estimated by <span class="math">\(L = 4 H /\tan \theta\)</span>, where <span class="math">\(\tan \theta\)</span> is estimated by <span class="math">\(\tan \theta = \eta_t/c\)</span>. According to the two formulas above, the ratio <span class="math">\(r\)</span> can be calculated by</p>
-<div class="math" id="equation-wavebreaking:10">
-<span class="eqno">(11)<a class="headerlink" href="#equation-wavebreaking:10" title="Permalink to this equation">¶</a></span>\[r = 0.45 \tan \theta\]</div>
+<div class="math" id="equation-geometry">
+<span class="eqno">(10)<a class="headerlink" href="#equation-geometry" title="Permalink to this equation">¶</a></span>\[A = \frac{LH}{2} r\]</div>
+<p>where <span class="math">\(L\)</span> is the wave length and <span class="math">\(r\)</span> is a ratio representing the thickness and <span class="math">\(\delta = rH\)</span>. Assuming the wave length can be estimated by <span class="math">\(L = 4 H /\tan \theta\)</span>, where <span class="math">\(\tan \theta\)</span> is estimated by <span class="math">\(\tan \theta = \eta_t/c\)</span>. According to <a class="reference internal" href="#equation-svendsen">(9)</a> and <a class="reference internal" href="#equation-geometry">(10)</a>, the ratio <span class="math">\(r\)</span> can be calculated by</p>
+<div class="math" id="equation-wavebreaking:8">
+<span class="eqno">(11)<a class="headerlink" href="#equation-wavebreaking:8" title="Permalink to this equation">¶</a></span>\[r = 0.45 \tan \theta\]</div>
 <p>The ratio <span class="math">\(r\)</span> is limited by the maximum breaking angle (<span class="math">\(20^{\circ}\)</span>, Schaffer et al. 1993), resulting in the maxumim value of <span class="math">\(r = 0.1638\)</span>.</p>
-<p>We further assume the local thickness of the roller at the breaking point is <span class="math">\(\delta = r (\eta^*-\bar{\eta}\)</span>, where <span class="math">\(\eta^{*}\)</span> and <span class="math">\(\bar{\eta}\)</span> are the surface elevation at a breaking point and the mean surface elevation, respectively.  The final formula for the roller calculation can be expressed as</p>
-<div class="math" id="equation-wavebreaking:11">
-<span class="eqno">(12)<a class="headerlink" href="#equation-wavebreaking:11" title="Permalink to this equation">¶</a></span>\[M=u_0d + 0.45 (c-u_0) \tan \theta (\eta^{*}-\bar{\eta}),  \ \ \ \ when \ \ breaking\]</div>
+<p>We further assume the local thickness of the roller at the breaking point is <span class="math">\(\delta = r (\eta^*-\bar{\eta}\)</span>, where <span class="math">\(\eta^{*}\)</span> and <span class="math">\(\bar{\eta}\)</span> are the surface elevation at a breaking point and the mean surface elevation, respectively.  The final formula for the roller-induced mass flux can be expressed as</p>
+<div class="math" id="equation-flux">
+<span class="eqno">(12)<a class="headerlink" href="#equation-flux" title="Permalink to this equation">¶</a></span>\[P=u_0d + 0.45 (c-u_0) \tan \theta (\eta^{*}-\bar{\eta}),  \ \ \ \ when \ \ breaking\]</div>
 <p>The mean surface elevation is calculated using the time series of surface elevation before the roller estimation.</p>
-<p>The calculation of the undertow uses the local balance of the roller induced momentum flux and the undertow flux.</p>
+<p><em>Roller effect on hydrodynamics</em></p>
+<p>Following Schaffer et al. (1993), the total momentum flux, including the roller contribution, can be expressed as</p>
+<div class="math" id="equation-momentum">
+<span class="eqno">(13)<a class="headerlink" href="#equation-momentum" title="Permalink to this equation">¶</a></span>\[M = \int^\eta_{-h} u^2 dz = u_0^2 d +(c^2-u^2_0) \delta\]</div>
+<p>The excess momentum effect due to the non-uniform velocity distribution can be calculated using <a class="reference internal" href="#equation-flux">(12)</a> and <a class="reference internal" href="#equation-momentum">(13)</a>:</p>
+<div class="math" id="equation-wavebreaking:9">
+<span class="eqno">(14)<a class="headerlink" href="#equation-wavebreaking:9" title="Permalink to this equation">¶</a></span>\[R = M-P^2/d\]</div>
+<p>or</p>
+<div class="math" id="equation-wavebreaking:10">
+<span class="eqno">(15)<a class="headerlink" href="#equation-wavebreaking:10" title="Permalink to this equation">¶</a></span>\[R = (c-u_0)^2 \delta (1-\frac{\delta}{d})\]</div>
+<p>The roller effect on hydrodynamics can be calculated by adding extra terms, <span class="math">\(R_x\)</span> and <span class="math">\(R_y\)</span>, in the momentum equations in the x and y directions, respectively.</p>
+<p>The calculation of the undertow uses the local balance of the roller induced momentum flux and the undertow flux. The roller/undertow effect is taken into account in the sediment transport processes.</p>
+<p>To set up the roller and its effects, see <a class="reference internal" href="physics.html#section-physics"><span class="std std-ref">Physics (dispersion, breaking, friction)</span></a>. An example presenting the roller effect can be found in <a class="reference internal" href="sediment_rip.html#section-rip-sediment"><span class="std std-ref">Sediment Transport in 2D rip channels</span></a>. To set up output of roller-induced mass flux and undertow flux, see <a class="reference internal" href="output.html#section-output"><span class="std std-ref">Output</span></a>.</p>
 <p><strong>References</strong></p>
 <p>Choi, Y.-K., Shi, F., Malej, M., and Smith, J. M., 2018, &#8220;Performance of various shock-capturing-type reconstruction schemes in the Boussinesq wave model, FUNWAVE-TVD&#8221;, Ocean Modelling, 131, 86-100. <a class="reference external" href="https://doi.org/10.1016/j.ocemod.2018.09.004">DOI:10.1016/j.ocemod.2018.09.004</a>.</p>
 <p>Kennedy, A.B., Chen, Q., Kirby, J.T., Dalrymple, R.A., 2000. &#8220;Boussinesq modeling of wave

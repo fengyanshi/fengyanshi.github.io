@@ -1,3 +1,5 @@
+.. _section-output:
+
 Output
 **********
 
@@ -30,6 +32,8 @@ Output
  *  MFMAX: logical parameter for output of recorded maximum momentum flux . T or F. 
  *  WaveHeight: logical parameter for output of wave height, Hsig, Hrms, Havg. T or F.
  *  OUT_METEO: logical parameter for output of pressure field. T or F.
+ *  ROLLER: logical parameter for output of roller-induced flux. T or F.
+ *  UNDERTOW: logical parameter for output of undertow. T or F.
 
 **Output Format**
 
