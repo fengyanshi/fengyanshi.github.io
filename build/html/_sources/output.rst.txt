@@ -35,9 +35,60 @@ Output
  *  ROLLER: logical parameter for output of roller-induced flux. T or F.
  *  UNDERTOW: logical parameter for output of undertow. T or F.
 
-**Output Format**
+**OUTPUT FILES**
 
-The output files are saved in the result directory defined by RESULT\_FOLDER in input.txt. A file name is a combination of variable name and an output series number such as eta\_00001, eta\_00002, .... The format  and read/write algorithm are  consistent with a depth file.  Output for stations is a series of numbered files such as sta\_0001, sta\_0002 .... (NOTE: four digit numbers here vs. five digit numbers for 2D output like eta\_00001).
+The output files are saved in the result directory defined by RESULT\_FOLDER in input.txt.  
+
+ *Output file names*
+
+A file name is a combination of variable name and an output series number such as eta\_00001, eta\_00002, .... The format  and read/write algorithm are  consistent with a depth file. 
+
+  **CENTRAL module**
+
+ * eta\_xxxxx : surface elevation
+ * u\_xxxxx : velocity in the x direction
+ * v\_xxxxx : velocity in the y direction
+ * mask\_xxxxx:  masks for wetting (1) and drying (0)
+ * mask9\_xxxxx:  masks for wetting (1) and drying (0) defined in 9 points
+ * hmax\_xxxxx: maximum surface elevation
+ * hmin\_xxxxx: minimum surface elevation
+ * umax\_xxxxx: maximum velocity
+ * MFmax\_xxxxx: maximum momentum flux
+ * VORmax\_xxxxx: maximum vertical vorticiy
+ * p\_xxxxx: volume flux in the x direction
+ * q\_xxxxx: volume flux in the y direction
+ * nubrk\_xxxxx: breaking induced eddy vviscosity (when viscosity breaker is on)
+ * etat\_xxxxx: :math:`\eta_t`
+ * age\_xxxxx: breaking age (in seconds) 
+ * roller\_xxxxx: roller-induced mass flux
+ * U\_undertow\_xxxxx: roller-induced extra undertow flux in the x direction
+ * V\_undertow\_xxxxx: roller-induced extra undertow flux in the y direction
+
+  **METEO module**
+
+ * Pstorm\_xxxxx: air pressure 
+ * Ustorm\_xxxxx: wind velocity in the x direction
+ * Vstorm\_xxxxx: wind velocity in the y direction
+
+  **VESSEL module**
+
+ * Fves\_xxxxx: gradient of mass flux induced by vessel (panel source) 
+ * Pves\_xxxxx: pressure specified for the pressure source
+
+  **SEDIMENT module**
+
+ * C\_xxxxx: sediment concentration (g/l)
+ * Pick\_xxxxx: pickup rate
+ * Depo\_xxxxx: deposition rate
+ * DchgS\_xxxxx: depth change in suspended load
+ * DchgB\_xxxxx: depth change in bed load
+ * BedFx\_xxxxx: bedload flux in the x direction
+ * BedFy\_xxxxx: bedload flux in the y direction 
+ * dep\_xxxxx:  depth
+
+ *Station files*
+
+Output for stations is a series of numbered files such as sta\_0001, sta\_0002 .... (NOTE: four digit numbers here vs. five digit numbers for 2D output like eta\_00001).
 
  * ASCII format
 

@@ -82,8 +82,62 @@
 <li>UNDERTOW: logical parameter for output of undertow. T or F.</li>
 </ul>
 </div></blockquote>
-<p><strong>Output Format</strong></p>
-<p>The output files are saved in the result directory defined by RESULT_FOLDER in input.txt. A file name is a combination of variable name and an output series number such as eta_00001, eta_00002, .... The format  and read/write algorithm are  consistent with a depth file.  Output for stations is a series of numbered files such as sta_0001, sta_0002 .... (NOTE: four digit numbers here vs. five digit numbers for 2D output like eta_00001).</p>
+<p><strong>OUTPUT FILES</strong></p>
+<p>The output files are saved in the result directory defined by RESULT_FOLDER in input.txt.</p>
+<blockquote>
+<div><em>Output file names</em></div></blockquote>
+<p>A file name is a combination of variable name and an output series number such as eta_00001, eta_00002, .... The format  and read/write algorithm are  consistent with a depth file.</p>
+<blockquote>
+<div><blockquote>
+<div><strong>CENTRAL module</strong></div></blockquote>
+<ul class="simple">
+<li>eta_xxxxx : surface elevation</li>
+<li>u_xxxxx : velocity in the x direction</li>
+<li>v_xxxxx : velocity in the y direction</li>
+<li>mask_xxxxx:  masks for wetting (1) and drying (0)</li>
+<li>mask9_xxxxx:  masks for wetting (1) and drying (0) defined in 9 points</li>
+<li>hmax_xxxxx: maximum surface elevation</li>
+<li>hmin_xxxxx: minimum surface elevation</li>
+<li>umax_xxxxx: maximum velocity</li>
+<li>MFmax_xxxxx: maximum momentum flux</li>
+<li>VORmax_xxxxx: maximum vertical vorticiy</li>
+<li>p_xxxxx: volume flux in the x direction</li>
+<li>q_xxxxx: volume flux in the y direction</li>
+<li>nubrk_xxxxx: breaking induced eddy vviscosity (when viscosity breaker is on)</li>
+<li>etat_xxxxx: <span class="math">\(\eta_t\)</span></li>
+<li>age_xxxxx: breaking age (in seconds)</li>
+<li>roller_xxxxx: roller-induced mass flux</li>
+<li>U_undertow_xxxxx: roller-induced extra undertow flux in the x direction</li>
+<li>V_undertow_xxxxx: roller-induced extra undertow flux in the y direction</li>
+</ul>
+<blockquote>
+<div><strong>METEO module</strong></div></blockquote>
+<ul class="simple">
+<li>Pstorm_xxxxx: air pressure</li>
+<li>Ustorm_xxxxx: wind velocity in the x direction</li>
+<li>Vstorm_xxxxx: wind velocity in the y direction</li>
+</ul>
+<blockquote>
+<div><strong>VESSEL module</strong></div></blockquote>
+<ul class="simple">
+<li>Fves_xxxxx: gradient of mass flux induced by vessel (panel source)</li>
+<li>Pves_xxxxx: pressure specified for the pressure source</li>
+</ul>
+<blockquote>
+<div><strong>SEDIMENT module</strong></div></blockquote>
+<ul class="simple">
+<li>C_xxxxx: sediment concentration (g/l)</li>
+<li>Pick_xxxxx: pickup rate</li>
+<li>Depo_xxxxx: deposition rate</li>
+<li>DchgS_xxxxx: depth change in suspended load</li>
+<li>DchgB_xxxxx: depth change in bed load</li>
+<li>BedFx_xxxxx: bedload flux in the x direction</li>
+<li>BedFy_xxxxx: bedload flux in the y direction</li>
+<li>dep_xxxxx:  depth</li>
+</ul>
+<p><em>Station files</em></p>
+</div></blockquote>
+<p>Output for stations is a series of numbered files such as sta_0001, sta_0002 .... (NOTE: four digit numbers here vs. five digit numbers for 2D output like eta_00001).</p>
 <blockquote>
 <div><ul class="simple">
 <li>ASCII format</li>
