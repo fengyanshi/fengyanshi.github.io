@@ -47,7 +47,7 @@ where :math:`P` is the total mass flux including the contribution of roller. :ma
 
 .. math:: c = \sqrt{gd}   
 
-which is different from Schäffer et al. (1993) who used the local still water depth: :math:`c=1.3sqrt(gh)`. 
+which is different from Schäffer et al. (1993) who used the local still water depth: :math:`c=1.3\sqrt{gh}`. 
 
 The thickness of roller :math:`\delta` can be estimated using the roller geometry shown in figure 1. However, in the parallelized program, locating the roller region involves cross-core-boundary tracking, that is nontrivial and time-consuming. In FUNWAVE-TVD, we used a rough estimate of the roller thickness based on the correlation between the roller area and the wave height proposed by Svendsen (1984), i.e., 
 
@@ -65,9 +65,9 @@ where :math:`L` is the wave length and :math:`r` is a ratio representing the thi
 
 The ratio :math:`r` is limited by the maximum breaking angle (:math:`20^{\circ}`, Schaffer et al. 1993), resulting in the maxumim value of :math:`r = 0.1638`.
  
-We further assume the local thickness of the roller at the breaking point is :math:`\delta = r (\eta^*-\bar{\eta}`, where :math:`\eta^{*}` and :math:`\bar{\eta}` are the surface elevation at a breaking point and the mean surface elevation, respectively.  The final formula for the roller-induced mass flux can be expressed as
+We further assume the local thickness of the roller at the breaking point is :math:`\delta = r (\eta^*-\bar{\eta})`, where :math:`\eta^{*}` and :math:`\bar{\eta}` are the surface elevation at a breaking point and the mean surface elevation, respectively.  The final formula for the roller-induced mass flux can be expressed as
 
-.. math:: P=u_0d + 0.45 (c-u_0) \tan \theta (\eta^{*}-\bar{\eta}),  \ \ \ \ when \ \ breaking 
+.. math:: P=u_0d + 0.45 (c-u_0) \tan \theta (\eta^{*}-\bar{\eta}),  \mbox{ at  breaking  point}
    :label: flux
 
 The mean surface elevation is calculated using the time series of surface elevation before the roller estimation. 
