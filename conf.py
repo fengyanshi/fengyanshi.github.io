@@ -57,7 +57,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'funwave'
-copyright = '2017, Fengyan Shi'
+copyright = '2019, Fengyan Shi'
 author = 'Fengyan'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -96,7 +96,8 @@ html_show_sourcelink = False
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'alabaster'
+html_theme = 'agogo'
+#html_theme = 'alabaster'
 #html_theme = 'basic'
 #html_theme = 'graphite'
 
@@ -106,7 +107,7 @@ html_theme = 'alabaster'
 #
 # html_theme_options = {}
 
-# html_theme_path = ['.']
+html_theme_path = ['./build/html/_static']
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
