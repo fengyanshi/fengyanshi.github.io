@@ -31,12 +31,33 @@ The most recent developments include ship-wake generation (`Shi et al., 2018 <ht
 This Wiki page provides general introductions to all model components and theory behind the numerical formulations, simple examples and tutorials for beginners, and download and installation instructions to begin using FUNWAVE--TVD locally. The detailed model equations and numerical schemes can be found in `Shi et al. (2012) <http://www.sciencedirect.com/science/article/pii/S1463500311002010>`_.
 
 For quick keyword searches, use the search bar to the right.
+
 ********************
 
 =============
 Capabilities
 =============
 
+As a nearshore shallow-to-intermediate water phase-resolving Boussinesq-type numerical wave model, FUNWAVE can resolve many coastal processes such as:
+
+.. sidebar:: **Exclusive to phase-resolving**
+
+   Coastal processes highlighted in bold indicate process-based capabilities that are *not* naturally resolved in *phase-averaging* wave models. These features are exclusive to *phase-resolving* wave models.
+
+* Nearshore wave propagation & transformation
+* Refraction, **diffraction** & nonlinear shoaling
+* Bottom friction & wave-induced currents
+* Nonlinear wave--wave & wave--current interactions
+* Wave breaking with **runup** & **overtopping**
+* **Partially absorbing/reflecting** inner boundaries
+* **Harbor resonance** & **Infragravity (IG) waves**
+* **Vessel--generated waves** & related sediment transport with morphology change
+* Adaptive mesh refinement (AMR) module for refined moving and two--wave coupled grids
+
+.. image:: images/wavecombined.jpg
+   :width: 700px
+   :align: center
+   :height: 200px
 
 Applications
 ************
