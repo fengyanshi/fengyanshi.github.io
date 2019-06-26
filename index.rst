@@ -62,10 +62,21 @@ As a nearshore shallow-to-intermediate water phase-resolving Boussinesq-type num
 Applications
 ************
 
+* Nearshore shallow water to finite depth coastal environments
+* Navigation channels
+* Intra-coastal waters
+* Ship-generated waves and related sediment transport
+* Harbors and Austere Ports of Entry
 
 Transition to HPC-Portal
 ************************
 
+In 2019, USACE and the greater DoD will be capable of running FUNWAVE remotely on hundreds and/or thousands of cores/processors in a Graphical User Interface (GUI) environment using a web browser! Learn more about the :ref:`benefits <benefits>` of transitioning.
+
+.. image:: images/hpcportal.jpg
+   :width: 700px
+   :height: 400px
+   :align: center
 
 ************************
 
