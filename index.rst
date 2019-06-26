@@ -26,13 +26,12 @@ This version  features  several theoretical and numerical improvements, includin
 4. Wetting--drying moving boundary condition with incorporation of Harten-Lax-van Leer (HLL) construction method into the scheme; 
 5. Option for parallel computation. 
 
-The most recent developments include ship-wake generation (`Shi et al., 2018 <https://www.sciencedirect.com/science/article/pii/S0378383917304246>`_), meteo-tsunami generation (`Woodruff et al., 2018 <https://icce-ojs-tamu.tdl.org/icce/index.php/icce/article/view/8470>`_), and sediment transport and morphological changes (Malej et al., 2019).
+The most recent developments include ship-wake generation (`Shi et al., 2018 <https://www.sciencedirect.com/science/article/pii/S0378383917304246>`_), meteo-tsunami generation (`Woodruff et al., 2018 <https://icce-ojs-tamu.tdl.org/icce/index.php/icce/article/view/8470>`_), and sediment transport and morphological changes (`Malej et al., 2019 <https://apps.dtic.mil/dtic/tr/fulltext/u2/1074624.pdf>`_).
 
 This Wiki page provides general introductions to all model components and theory behind the numerical formulations, simple examples and tutorials for beginners, and download and installation instructions to begin using FUNWAVE--TVD locally. The detailed model equations and numerical schemes can be found in `Shi et al. (2012) <http://www.sciencedirect.com/science/article/pii/S1463500311002010>`_.
 
 For quick keyword searches, use the search bar to the right.
-
-*******************
+********************
 
 =============
 Capabilities
