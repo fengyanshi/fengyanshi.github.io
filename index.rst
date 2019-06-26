@@ -84,6 +84,10 @@ In 2019, USACE and the greater DoD will be capable of running FUNWAVE remotely o
 Subscribe
 ==========
 
+Stay connected to the global FUNWAVE community by subscribing to the mailing group. Submit general or specific questions to new and experienced users alike to solve problems and enhance solutions.
+
+.. raw:: html
+   :file: google_group.html
 
 ************************
 
@@ -93,6 +97,7 @@ Contents
 .. toctree::
    :maxdepth: 2
 
+   integration
    basics
    flowchart
    setup
@@ -105,8 +110,6 @@ Contents
    authors
    addition
 
-.. raw:: html
-   :file: google_group.html
 
 Indices and tables
 ******************
