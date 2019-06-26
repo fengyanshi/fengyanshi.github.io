@@ -114,6 +114,9 @@ html_theme_path = ['./build/html/_static']
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
+# custom options - mjt
+html_compact_lists = True
+html_title = 'FUNWAVE Documentation'
 
 # -- Options for HTMLHelp output ------------------------------------------
 
