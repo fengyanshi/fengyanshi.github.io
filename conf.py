@@ -35,7 +35,9 @@ extensions = ['sphinx.ext.autodoc',
     'sphinx.ext.mathjax',
     'sphinx.ext.ifconfig',
     'sphinx.ext.githubpages',
-    'sphinx.ext.doctest']
+    'sphinx.ext.doctest',
+    'sphinx.ext.todo',
+    'logilab_sphinx_themes']
 
 # extensions = ['sphinx.ext.autodoc','sphinx.ext.imgmath','rst2pdf.pdfbuilder']
 # extensions = ['sphinx.ext.autodoc','sphinx.ext.imgmath']
@@ -93,10 +95,18 @@ html_show_sourcelink = False
 
 # -- Options for HTML output ----------------------------------------------
 
+# import theme
+import logilab_sphinx_themes
+
+# set theme path
+html_theme_path = [logilab_sphinx_themes.get_path()]
+
+
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'agogo'
+html_theme = 'logilab'
+#html_theme = 'agogo'
 #html_theme = 'alabaster'
 #html_theme = 'basic'
 #html_theme = 'graphite'
@@ -106,10 +116,9 @@ html_theme = 'agogo'
 # documentation.
 #
 html_theme_options = {
-        'logo':'Funwave_logo_only.png'
+        'logo':'../../../images/Funwave.svg'
+        #'logo_url':'' #https://fengyanshi.github.io/build/html/index.html
         }
-
-html_theme_path = ['./build/html/_static']
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -119,6 +128,9 @@ html_static_path = ['_static']
 # custom options - mjt
 html_compact_lists = True
 html_title = 'FUNWAVE Documentation'
+
+# math display option -- mjt
+html_math_renderer = 'mathjax'
 
 # -- Options for HTMLHelp output ------------------------------------------
 
