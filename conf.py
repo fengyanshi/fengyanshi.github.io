@@ -106,7 +106,7 @@ html_theme = 'agogo'
 # documentation.
 #
 html_theme_options = {
-        logo:'Funwave_logo_only.png'
+        'logo':'Funwave_logo_only.png'
         }
 
 html_theme_path = ['./build/html/_static']
