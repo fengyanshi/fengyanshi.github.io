@@ -14,6 +14,11 @@ FUNWAVE-TVD
    :height: 300px
    :align: left
 
+.. DANGER:: Latest Announcement
+   There will be a FUNWAVE Workshop from 18-20 October 2019 held at Hohai University, Nanjing, China. 
+   For more info, visit ...
+   
+
 What is FUNWAVE?
 *******************
 FUNWAVE--TVD is the Total Variation Diminishing (TVD) version of the fully nonlinear Boussinesq wave model (FUNWAVE) initially developed by `Kirby et al. (1998) <http://resolver.tudelft.nl/uuid:d79bba08-8d35-47e2-b901-881c86985ce4>`_. The development of the present version was motivated by recent needs for modeling of surfzone--scale optical properties in a Boussinesq model framework, and  modeling of Tsunami waves in both a regional/coastal scale for prediction of coastal inundation and a basin scale for wave propagation.
@@ -69,7 +74,7 @@ Applications
 * Harbors and Austere Ports of Entry
 
 Transition to HPC-Portal
-************************
+************************<F12>
 
 In 2019, USACE and the greater DoD will be capable of running FUNWAVE remotely on hundreds and/or thousands of cores/processors in a Graphical User Interface (GUI) environment using a web browser! Learn more about the :ref:`benefits <benefits>` of transitioning.
 
