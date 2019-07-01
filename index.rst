@@ -36,9 +36,8 @@ The most recent developments include ship-wake generation (`Shi et al., 2018 <ht
 
 This Wiki page provides general introductions to all model components and theory behind the numerical formulations, simple examples and tutorials for beginners, and download and installation instructions to begin using FUNWAVE--TVD locally. The detailed model equations and numerical schemes can be found in `Shi et al. (2012) <http://www.sciencedirect.com/science/article/pii/S1463500311002010>`_.
 
-For quick keyword searches, use the search bar to the right.
+For quick keyword searches, use the search bar to the left.
 
-********************
 
 =============
 Capabilities
@@ -84,7 +83,6 @@ In 2019, USACE and the greater DoD will be capable of running FUNWAVE remotely o
    :height: 400px
    :align: center
 
-************************
 
 ==========
 Subscribe
@@ -94,8 +92,6 @@ Stay connected to the global FUNWAVE community by subscribing to the mailing gro
 
 .. raw:: html
    :file: google_group.html
-
-************************
 
 =========
 Contents
