@@ -66,14 +66,14 @@ div.bodywrapper a, div.footer a {
 .line-block .line-block {
     margin-top: 0;
     margin-bottom: 0;
-    margin-left: 1em;
+    margin-left: 1.5em;
 }
 
 h1, h2, h3, h4 {
   font-family: "Georgia", "Times New Roman", serif;
   font-weight: normal;
   color: #3465a4;
-  margin-bottom: .1em;
+  margin-bottom: .8em;
 }
 
 h1 {
@@ -81,7 +81,7 @@ h1 {
 }
 
 h2 {
-  padding-bottom: .1em;
+  padding-bottom: .5em;
   border-bottom: 1px solid #3465a4;
 }
 
@@ -180,7 +180,7 @@ div.body {
 }
 
 div.document h1 {
-  line-height: 100%;
+  line-height: 120%;
 }
 
 div.document ul {
@@ -269,9 +269,6 @@ div.document ol {
 /* Sidebar */
 
 div.sidebar {
-  border: 1px solid #ddb;
-  padding: 7px 7px 0 7px;
-  background-color: #ffe;
   width: 20em;
   float: right;
   font-size: .9em;
@@ -370,21 +367,18 @@ img.align-left, .figure.align-left, object.align-left {
     clear: left;
     float: left;
     margin-right: 1em;
-    margin-bottom: 1em;
 }
 
 img.align-right, .figure.align-right, object.align-right {
     clear: right;
     float: right;
     margin-left: 1em;
-    margin-bottom: 1em;
 }
 
 img.align-center, .figure.align-center, object.align-center {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 1em;
 }
 
 .align-left {
