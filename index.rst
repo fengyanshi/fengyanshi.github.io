@@ -12,7 +12,7 @@ FUNWAVE-TVD
 
 .. attention::
    There will be a FUNWAVE Workshop from 18-20 October 2019 held at Hohai University, Nanjing, China.
-   For more info, visit :ref:`Workshop 2019 <workshop_2019>`_
+   For more info, visit :ref:`workshop_2019-label`.
  
 
 What is FUNWAVE?
