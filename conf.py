@@ -129,6 +129,7 @@ html_static_path = ['_static']
 # custom options - mjt
 html_compact_lists = True
 html_title = 'FUNWAVE Documentation'
+html_sidebars = { '**': ['globaltoc.html', 'searchbox.html'] }
 
 # math display option -- mjt
 html_math_renderer = 'mathjax'
