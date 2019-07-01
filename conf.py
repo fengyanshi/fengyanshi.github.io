@@ -36,8 +36,8 @@ extensions = ['sphinx.ext.autodoc',
     'sphinx.ext.ifconfig',
     'sphinx.ext.githubpages',
     'sphinx.ext.doctest',
-    'sphinx.ext.todo',
-    'logilab_sphinx_themes']
+    'sphinx.ext.todo']
+    #'logilab_sphinx_themes']
 
 # extensions = ['sphinx.ext.autodoc','sphinx.ext.imgmath','rst2pdf.pdfbuilder']
 # extensions = ['sphinx.ext.autodoc','sphinx.ext.imgmath']
@@ -96,10 +96,10 @@ html_show_sourcelink = False
 # -- Options for HTML output ----------------------------------------------
 
 # import theme
-import logilab_sphinx_themes
+#import logilab_sphinx_themes
 
 # set theme path
-html_theme_path = [logilab_sphinx_themes.get_path()]
+html_theme_path = ['_static'] #[logilab_sphinx_themes.get_path()]
 
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
@@ -116,7 +116,7 @@ html_theme = 'logilab'
 # documentation.
 #
 html_theme_options = {
-        'logo':'../../../images/Funwave.svg'
+        'logo':'../../../images/Funwave.svg',
         'logo_url':'https://fengyanshi.github.io/build/html/index.html'
         }
 
