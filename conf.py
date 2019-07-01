@@ -117,7 +117,7 @@ html_theme = 'logilab'
 #
 html_theme_options = {
         'logo':'../../../images/Funwave.svg'
-        #'logo_url':'' #https://fengyanshi.github.io/build/html/index.html
+        'logo_url':'https://fengyanshi.github.io/build/html/index.html'
         }
 
 # Add any paths that contain custom static files (such as style sheets) here,
