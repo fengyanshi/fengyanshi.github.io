@@ -36,8 +36,9 @@ extensions = ['sphinx.ext.autodoc',
     'sphinx.ext.ifconfig',
     'sphinx.ext.githubpages',
     'sphinx.ext.doctest',
-    'sphinx.ext.todo']
-    #'logilab_sphinx_themes']
+    'sphinx.ext.todo',
+    'sphinx.ext.intersphinx',
+    'logilab_sphinx_themes']
 
 # extensions = ['sphinx.ext.autodoc','sphinx.ext.imgmath','rst2pdf.pdfbuilder']
 # extensions = ['sphinx.ext.autodoc','sphinx.ext.imgmath']
