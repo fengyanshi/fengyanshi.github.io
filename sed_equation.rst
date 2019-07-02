@@ -47,4 +47,4 @@ Cao, Z. (1999) "Equilibrium near-bed concentration of suspended sediment". *J. o
 
 Shi, F., J.T. Kirby, J.C. Harris, J.D. Geiman, and S.T. Grilli, (2012). "A high-order adaptive time-stepping TVD solver for Boussinesq modeling of breaking waves and coastal inundation". *Ocean Modelling*, 43-44: 36-51. DOI: 10.1016/j.ocemod.2011.12.004.
 
-van Rijn, L.C., (1984). "Sediment Pick-Up Functions". *J. of Hydraulic Eng.*, 110 (10). DOI: 10.1061/(ASCE)0733-9429(1984)110:10(1494).
+Elder, J.W. (1959). "The dispersion of marked fluid in turbulent shear flow". *J. of Fluid Mech.*, 5(4): 544-560. DOI: 10.1017/S0022112059000374.
