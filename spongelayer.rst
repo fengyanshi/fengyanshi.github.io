@@ -1,34 +1,40 @@
 .. _section_sponge_layer:
 
 Sponge Layer
-**************
+************
 
-* Larsen and Dancy (L--D type, 1983)
-
-The sponge layer technique introduced by Larsen and Dancy (L--D type, 1983) is implemented in the code. In this method, the variables :math:`\phi`( i.e., :math:`\eta, u, v`) are directly attenuated at every time step:
+The sponge layer technique introduced by `Larsen and Dancy (L--D type, 1983) <https://www.sciencedirect.com/science/article/pii/0378383983900224>`_ is implemented in the code. In this method, the variables :math:`\phi` (i.e., :math:`\eta, u, v`) are directly attenuated at every time step:
 
 .. math:: \phi = \phi /C_s
 
-where :math:`C_s` is a damping coefficient function defined by
+where :math:`C_s` is a damping coefficient function defined by:
 
 .. math:: C_s = \alpha_s^{\gamma_x^{i-1}}, \ \ \ \ \ i=1,2, ..., n
 
-where :math:`\alpha_s` and :math:`\gamma_s` are two free parameters. :math:`i` represents grid numbers. Chen et al. (1999) suggested that :math:`\alpha_s =2`, \gamma_s = 0.88 - 0.92`, and :math:`n=50 - 100`. The length of the sponge layer is usually taken to be one or two times the typical wavelength. Chen et al also pointed out that the damping coefficients for optimal absorption are somewhat case--sensitive. 
+in which :math:`\alpha_s` and :math:`\gamma_s` are two free parameters. :math:`i` represents grid numbers. `Chen et al. (1999) <https://ascelibrary.org/doi/abs/10.1061/(ASCE)0733-950X(1999)125:4(176)>`_ suggested that :math:`\alpha_s =2`, :math:`\gamma_s = 0.88 - 0.92`, and :math:`n=50 - 100`. **The length of the sponge layer is usually taken to be one or two times the typical wavelength.** Chen et al. also pointed out that the damping coefficients for optimal absorption are somewhat case--sensitive. 
 
-Recently, some problem was found in application of L--D type sponge layer for long--term simulations. The direct damping method combined with the TVD scheme  generates sawtooth noises with a :math:`2 dx` wave length. The sawtooth noises are usually not noticeable due to small magnitudes. However, they grow gradually with time and may become significant in a long term simulation. If this problem occurs, we suggest using the following friction--type or viscous type sponge layers. Using the combination of L--D and friction/viscous sponge layers may remove the sawtooth noises and also make the wave damping more efficient. 
+Recently, some problem was found in application of L--D type sponge layer for long--term simulations. The direct damping method combined with the TVD scheme generates sawtooth noises with a :math:`2 dx` wave length. The sawtooth noises are usually not noticeable due to small magnitudes. However, they grow gradually with time and may become significant in a long term simulation. If this problem occurs, we suggest using the following friction--type or viscous--type sponge layers. Using the combination of L--D and friction/viscous sponge layers may remove the sawtooth noises and also make the wave damping more efficient. 
 
 
-* Friction type and Diffusion type
+Friction type and Diffusion type
+--------------------------------
 
-The friction--type and viscous type sponge layers directly use the friction terms and diffusion terms existing in the model. The source term for the friction--type sponge can be described as
+The friction--type and viscous type sponge layers directly use the friction terms and diffusion terms existing in the model. The source term for the friction--type sponge can be described as:
 
 .. math:: 
   F_{frc} = - C_{sponge} |{\bf u_\alpha}|  (u_\alpha, v_\alpha) h
 
-Note that depth :math:`h` is added in the formula above to make the source term depth--independent in terms of the flux--type momentum equations. For the diffusion--type sponge, the description of diffusion term follows exactly the eddy--viscosity breaking formulation with spatial varying viscosity coefficients :math:`\nu_{sponge}`.  Both coefficients are smoothly ramped in space at the sponge layer boundaries. For example, for a sponge layer on the left end of the domain,  :math:`C_{sponge}` can be written as
+Note that depth :math:`h` is added in the formula above to make the source term depth--independent in terms of the flux--type momentum equations. For the diffusion--type sponge, the description of diffusion term follows exactly the eddy--viscosity breaking formulation with spatial varying viscosity coefficients :math:`\nu_{sponge}`.  Both coefficients are smoothly ramped in space at the sponge layer boundaries. For example, for a sponge layer on the left end of the domain, :math:`C_{sponge}` can be written as:
 
 .. math:: C_{sponge} = C_{max} \left (1-  \mbox{tanh} \frac{10 (i-1)}{I_{\mbox{width}}-1} \right)
 
-where :math:`C_{max}` is the maximum value of :math:`C_{sponge}` used in the sponger layer. :math:`i` and :math:`I_{\mbox{width}}` represent point number and the layer width in points. Similar expressions can be obtained for sponge layers on three other ends of the domain as well as  the viscous sponge layer. 
+where :math:`C_{max}` is the maximum value of :math:`C_{sponge}` used in the sponger layer. :math:`i` and :math:`I_{\mbox{width}}` represent the point number and the layer width in points, respectively. Similar expressions can be obtained for sponge layers on three other ends of the domain as well as the viscous sponge layer. 
 
-The width of the sponge layer is usually taken to be two or three wave lengths for the friction--type and viscous sponge layers. Narrow sponge layers can be used for L--D type sponge layer with a good efficiency but sawtooth noises generated by the method is a concern for long--term simulation. 
+The width of the sponge layer is usually taken to be two or three wave lengths for the friction--type and viscous sponge layers. Narrow sponge layers can be used for L--D type sponge layer with a good efficiency but sawtooth noise generated by the method is a concern for long--term simulation. 
+
+References
+==========
+Chen, Q., Madsen, P.A., Basco, D.R., 1999. "Current Effects on Nonlinear Interactions of Shallow--Water Waves". J. of Waterway, Port, Coastal, and Ocean Eng. 125 (4).
+
+Larsen, J. and Dancy, H., 1983. "Open boundaries in short wave simulations -- A new approach". Coastal Eng. 7 (3), 285-297.
+
