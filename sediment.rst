@@ -35,9 +35,9 @@ Deposition rate (`Cao 1999 <https://doi.org/10.1061/(ASCE)0733-9429(1999)125:12(
 
 **Bed evolution equation**
 
-.. math:: \frac{dZ_{b}}{dt} = \frac{1}{1-n} (D-P-\nabla \cdot \overrightarrow{q}_b ).. image:: images/modules/sediment_equ.png
+.. math:: \frac{dZ_{b}}{dt} = \frac{1}{1-n} (D-P-\nabla \cdot \overrightarrow{q}_b )
 
-.. image:: images/modules/sediment.png
+.. image:: ../../images/modules/sediment.png
    :width: 600px
    :height: 300px
    :align: center
