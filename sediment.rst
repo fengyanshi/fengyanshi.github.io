@@ -37,9 +37,9 @@ Deposition rate (`Cao 1999 <https://doi.org/10.1061/(ASCE)0733-9429(1999)125:12(
 
 .. math:: \frac{dZ_{b}}{dt} = \frac{1}{1-n} (D-P-\nabla \cdot \overrightarrow{q}_b )
 
-.. image:: ../../images/modules/sediment.png
-   :width: 600px
-   :height: 300px
+.. image:: images/modules/sediment.png
+   :width: 500px
+   :height: 250px
    :align: center
 
 DETAILS
