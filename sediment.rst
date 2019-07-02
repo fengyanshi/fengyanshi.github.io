@@ -64,14 +64,13 @@ APPLICATIONS
 
    `more results of Crescent City Case <https://drive.google.com/open?id=1qwTSWZZaQjQWZAj6mt4JzBqaPrYHyJGH>`_
 
+**References**
 
-References
-==========
-Cao, Z., 1999. "Equilibrium Near-Bed Concentration of Suspended Sediment". J. of Hydraulic Eng., 125 (12). DOI: 10.1061/(ASCE)0733-9429(1999)125:12(1270).
+Cao, Z., (1999). "Equilibrium Near-Bed Concentration of Suspended Sediment". J. of Hydraulic Eng., 125 (12). DOI: 10.1061/(ASCE)0733-9429(1999)125:12(1270).
 
-Meyer-Peter, E., and Muller, R., 1948. "Formulas for Bed-Load transport". Hydraulic Eng. Reports: IAHSR 2nd meeting, Stockholm, Appendix 2. IAHSR.
+Meyer-Peter, E., and Muller, R., (1948). "Formulas for Bed-Load transport". Hydraulic Eng. Reports: IAHSR 2nd meeting, Stockholm, Appendix 2. IAHSR.
 
-van Rijn, L.C., 1984. "Sediment Pick-Up Functions". J. of Hydraulic Eng., 110 (10). DOI: 10.1061/(ASCE)0733-9429(1984)110:10(1494).
+van Rijn, L.C., (1984). "Sediment Pick-Up Functions". J. of Hydraulic Eng., 110 (10). DOI: 10.1061/(ASCE)0733-9429(1984)110:10(1494).
 
 
 `Back to FUNWAVE-TVD Page <https://fengyanshi.github.io/build/html/index.html>`_
