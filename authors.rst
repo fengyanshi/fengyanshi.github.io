@@ -18,12 +18,12 @@
   U.S. Army Engineer Research and Development Center
 
 
-  * Young-Kwang Choi 
+* Young-Kwang Choi 
 
   Korea Institute of Ocean Science and Technology
 
 
-  * Marissa J. Torres
+* Marissa J. Torres
 
   U.S. Army Engineer Research and Development Center
 
