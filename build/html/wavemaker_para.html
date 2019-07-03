@@ -1,16 +1,13 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>Wave-maker &#8212; funwave  documentation</title>
-    
-    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <title>Wave-maker &#8212; FUNWAVE Documentation</title>
+    <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -24,20 +21,74 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Periodic Boundary Condition" href="periodic.html" />
-    <link rel="prev" title="Numerical Parameters" href="numerics.html" />
-   
-  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
-
+    <link rel="prev" title="Numerical Parameters" href="numerics.html" /> 
   </head>
-  <body role="document">
-  
+  <body>
+<div class="header">
+ <p class="logo"><a href="https://fengyanshi.github.io/build/html/index.html">
+  <img class="logo" src="_static/../../../images/Funwave.svg" alt="Logo"/>
+ </a></p>
+</div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="periodic.html" title="Periodic Boundary Condition"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="numerics.html" title="Numerical Parameters"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="definition.html" ><strong>DEFINITIONS OF PARAMETERS</strong></a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="central_para.html" accesskey="U">Parameters for Central Module</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">Table Of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="basics.html"><strong>BASICS</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="flowchart.html"><strong>ARCHITECTURE</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup.html"><strong>MODEL DOWNLOAD AND SETUP</strong></a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="definition.html"><strong>DEFINITIONS OF PARAMETERS</strong></a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="central_para.html">Parameters for Central Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spherical.html">Spherical Coordinates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shipwakes_para.html">Shipwakes Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sediment_para.html">Sediment Transport and Morphological Change</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meteo_tsu.html">Wind and Pressure Field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tracer_setup.html">Lagrangian Tracer Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="slide.html">Landslide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="coupling_nesting.html"><strong>NESTING AND COUPLING</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html"><strong>EXAMPLES</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="gallery.html"><strong>GALLERY</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="news.html"><strong>FUNWAVE-TVD WORKSHOP</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html"><strong>BIBLIOGRAPHY</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="authors.html"><strong>AUTHORS</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="addition.html"><strong>ADDITIONAL INFORMATION</strong></a></li>
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
 
     <div class="document">
       <div class="documentwrapper">
@@ -47,7 +98,7 @@
   <div class="section" id="wave-maker">
 <h1>Wave-maker<a class="headerlink" href="#wave-maker" title="Permalink to this headline">¶</a></h1>
 <p><strong>SPECIFICATION OF WAVEMAKER</strong></p>
-<p>For theory about wavemaker, see <a class="reference internal" href="wavemaker.html#section-wavemaker"><span class="std std-ref">Wave&#8211;maker</span></a></p>
+<p>For theory about wavemaker, see <a class="reference internal" href="wavemaker.html#section-wavemaker"><span class="std std-ref">Wave–maker</span></a></p>
 <blockquote>
 <div><ul>
 <li><p class="first">WAVEMAKER: wavemaker type.</p>
@@ -113,7 +164,7 @@ Hmo, GammaTMA(Note, still use TMA Gamma, default: 3.3 ), Nfreq(default: 45)</p>
 </li>
 <li><dl class="first docutils">
 <dt>WAVEMAKER = WK_TIME_SERIES:</dt>
-<dd><p class="first last">fft  a time series to get each wave component and then use Wei and Kirby&#8217;s ( 1999) wavemaker. Internal wavemaker The wave angle is zero (x direction) for all wave components. Need input WaveCompFile (including 3 columns: per,amp,pha) and NumWaveComp,PeakPeriod,DEP_WK, Xc_WK,Ywidth_WK</p>
+<dd><p class="first last">fft  a time series to get each wave component and then use Wei and Kirby’s ( 1999) wavemaker. Internal wavemaker The wave angle is zero (x direction) for all wave components. Need input WaveCompFile (including 3 columns: per,amp,pha) and NumWaveComp,PeakPeriod,DEP_WK, Xc_WK,Ywidth_WK</p>
 </dd>
 </dl>
 </li>
@@ -126,11 +177,11 @@ Hmo, GammaTMA(Note, still use TMA Gamma, default: 3.3 ), Nfreq(default: 45)</p>
 <p>0.0925000011921 - PeakPeriod</p>
 <p>0.0400 - Freq</p>
 <p>0.0475 - Freq</p>
-<p>...</p>
+<p>…</p>
 <p>-0.05  - Dir (degree)</p>
 <p>0.0    - Dir (degree)</p>
-<p>...</p>
-<p>0.01133044 0.00973217 ... (amplitude,m)</p>
+<p>…</p>
+<p>0.01133044 0.00973217 … (amplitude,m)</p>
 </div></blockquote>
 </div></blockquote>
 <p>The read format in fortran:</p>
@@ -206,45 +257,28 @@ Hmo, GammaTMA(Note, still use TMA Gamma, default: 3.3 ), Nfreq(default: 45)</p>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper"><div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="index.html">Documentation overview</a><ul>
-  <li><a href="definition.html"><strong>DEFINITIONS OF PARAMETERS</strong></a><ul>
-  <li><a href="central_para.html">Parameters for Central Module</a><ul>
-      <li>Previous: <a href="numerics.html" title="previous chapter">Numerical Parameters</a></li>
-      <li>Next: <a href="periodic.html" title="next chapter">Periodic Boundary Condition</a></li>
-  </ul></li>
-  </ul></li>
-  </ul></li>
-</ul>
-</div>
-<div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
-    <form class="search" action="search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
-        </div>
-      </div>
       <div class="clearer"></div>
     </div>
-    <div class="footer">
-      &copy;2017, Fengyan Shi.
-      
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.6</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
-      
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="periodic.html" title="Periodic Boundary Condition"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="numerics.html" title="Numerical Parameters"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="definition.html" ><strong>DEFINITIONS OF PARAMETERS</strong></a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="central_para.html" >Parameters for Central Module</a> &#187;</li> 
+      </ul>
     </div>
-
-    
-
-    
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, Fengyan Shi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+    </div>
   </body>
 </html>

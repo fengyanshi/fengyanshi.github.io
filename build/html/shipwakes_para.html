@@ -1,16 +1,13 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>Shipwakes Setup &#8212; funwave  documentation</title>
-    
-    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <title>Shipwakes Setup &#8212; FUNWAVE Documentation</title>
+    <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -24,20 +21,73 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Sediment Transport and Morphological Change" href="sediment_para.html" />
-    <link rel="prev" title="Spherical Coordinates" href="spherical.html" />
-   
-  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
-
+    <link rel="prev" title="Spherical Coordinates" href="spherical.html" /> 
   </head>
-  <body role="document">
-  
+  <body>
+<div class="header">
+ <p class="logo"><a href="https://fengyanshi.github.io/build/html/index.html">
+  <img class="logo" src="_static/../../../images/Funwave.svg" alt="Logo"/>
+ </a></p>
+</div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="sediment_para.html" title="Sediment Transport and Morphological Change"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="spherical.html" title="Spherical Coordinates"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="definition.html" accesskey="U"><strong>DEFINITIONS OF PARAMETERS</strong></a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">Table Of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="basics.html"><strong>BASICS</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="flowchart.html"><strong>ARCHITECTURE</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup.html"><strong>MODEL DOWNLOAD AND SETUP</strong></a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="definition.html"><strong>DEFINITIONS OF PARAMETERS</strong></a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="central_para.html">Parameters for Central Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spherical.html">Spherical Coordinates</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Shipwakes Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sediment_para.html">Sediment Transport and Morphological Change</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meteo_tsu.html">Wind and Pressure Field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tracer_setup.html">Lagrangian Tracer Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="slide.html">Landslide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="coupling_nesting.html"><strong>NESTING AND COUPLING</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html"><strong>EXAMPLES</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="gallery.html"><strong>GALLERY</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="news.html"><strong>FUNWAVE-TVD WORKSHOP</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html"><strong>BIBLIOGRAPHY</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="authors.html"><strong>AUTHORS</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="addition.html"><strong>ADDITIONAL INFORMATION</strong></a></li>
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
 
     <div class="document">
       <div class="documentwrapper">
@@ -47,7 +97,7 @@
   <div class="section" id="shipwakes-setup">
 <span id="section-shipwakes-setup"></span><h1>Shipwakes Setup<a class="headerlink" href="#shipwakes-setup" title="Permalink to this headline">¶</a></h1>
 <div class="line-block">
-<div class="line">1) Specify a folder which contains a number of vessel files, vessel_00001, vessel_00002, ...</div>
+<div class="line">1) Specify a folder which contains a number of vessel files, vessel_00001, vessel_00002, …</div>
 <div class="line-block">
 <div class="line">VESSEL_FOLDER = ./</div>
 </div>
@@ -65,8 +115,8 @@
 <div class="line">Length(m), Width(m), Alpha1, Alpha2, Beta, P(unit) (comment, vessel parameters)</div>
 <div class="line">20.0  10.0, 0.5, 0.5, 1.0    (vessel parameters)</div>
 <div class="line">0.0000000e+00,   5.6000000e+02,   5.0000000e+02  (time, x, y)</div>
-<div class="line">1.0000000e+00,   5.6374897e+02,   5.0255132e+02  (...)</div>
-<div class="line">...</div>
+<div class="line">1.0000000e+00,   5.6374897e+02,   5.0255132e+02  (…)</div>
+<div class="line">…</div>
 </div>
 <div class="line">In the time series, the first column is time in seconds, the second and the third are x and y in meters, respectively.</div>
 </div>
@@ -131,43 +181,27 @@
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper"><div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="index.html">Documentation overview</a><ul>
-  <li><a href="definition.html"><strong>DEFINITIONS OF PARAMETERS</strong></a><ul>
-      <li>Previous: <a href="spherical.html" title="previous chapter">Spherical Coordinates</a></li>
-      <li>Next: <a href="sediment_para.html" title="next chapter">Sediment Transport and Morphological Change</a></li>
-  </ul></li>
-  </ul></li>
-</ul>
-</div>
-<div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
-    <form class="search" action="search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
-        </div>
-      </div>
       <div class="clearer"></div>
     </div>
-    <div class="footer">
-      &copy;2017, Fengyan Shi.
-      
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.6</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
-      
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="sediment_para.html" title="Sediment Transport and Morphological Change"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="spherical.html" title="Spherical Coordinates"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="definition.html" ><strong>DEFINITIONS OF PARAMETERS</strong></a> &#187;</li> 
+      </ul>
     </div>
-
-    
-
-    
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, Fengyan Shi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+    </div>
   </body>
 </html>
