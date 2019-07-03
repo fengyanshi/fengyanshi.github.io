@@ -39,7 +39,15 @@ This Wiki page provides general introductions to all model components and theory
 
 For quick keyword searches, use the search bar to the left.
 
+==========
+Subscribe
+==========
 
+Stay connected to the global FUNWAVE community by subscribing to the mailing group. Submit general or specific questions to new and experienced users alike to solve problems and enhance solutions.
+
+.. raw:: html
+   :file: google_group.html
+   
 =============
 Capabilities
 =============
@@ -74,10 +82,11 @@ Applications
 * Ship-generated waves and related sediment transport
 * Harbors and Austere Ports of Entry
 
-Transition to HPC-Portal
-************************
+=====================================
+Transitioning to HPC-Portal for USACE
+=====================================
 
-In 2019, USACE and the greater DoD will be capable of running FUNWAVE remotely on hundreds and/or thousands of cores/processors in a Graphical User Interface (GUI) environment using a web browser! Learn more about the :ref:`benefits` of transitioning.
+In 2019, USACE and the greater DoD will be capable of running FUNWAVE remotely on hundreds and/or thousands of cores/processors in a Graphical User Interface (GUI) environment using a web browser!
 
 .. image:: images/hpcportal.jpg
    :width: 700px
@@ -85,14 +94,25 @@ In 2019, USACE and the greater DoD will be capable of running FUNWAVE remotely o
    :align: center
 
 
-==========
-Subscribe
-==========
+Benefits of transitioning
+*************************
 
-Stay connected to the global FUNWAVE community by subscribing to the mailing group. Submit general or specific questions to new and experienced users alike to solve problems and enhance solutions.
+* Represents a completely new model delivery approach! **Paradigm shift** – from *local* to *“cloud”*
+* *Centralized* ERDC Hydro Toolkit with *guidance on what to use and when* (model wise)
+* DoD enterprise security credentials/login verifying (CAC) managed externally 
+* No concern over versioning or software-system compatibility issues (SMS & Windows)
+* Common branding and in-line with Numerical Model Modernization Strategy
+* Access *via a browser without ANY local software installation* (ACE-IT network) issues
+* **ALL** computations done on the back end! Nothing on your desktop/laptop
+* Simulations on *100’s and 1000’s of processors* – fully parallelized on HPC machines
+* Most of the *result postprocessing and visualization done on the back end* without the need to move Gigs of data to and from the HPC (no CorpsNet bandwidth restriction)
+* *Collaborative* user-friendly GUI computational environment with access to experts
+* Direct and fast link to more information (basic + extensive Wiki) without searching any printed of electronic manual/publication
+* Parameter bound and input safety checking – reduces number of initial failures
+* Larger USACE/DoD user base because of a *reduced* learning curve
 
-.. raw:: html
-   :file: google_group.html
+.. note::
+   The HPC Portal is accessible only to employees of USACE and the greater DoD.
 
 =========
 Contents
@@ -100,7 +120,6 @@ Contents
 .. toctree::
    :maxdepth: 2
 
-   integration
    basics
    flowchart
    setup
