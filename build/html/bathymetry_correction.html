@@ -1,16 +1,13 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>Bathymetry Correction &#8212; funwave  documentation</title>
-    
-    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <title>Bathymetry Correction &#8212; FUNWAVE Documentation</title>
+    <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -24,59 +21,63 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Hot Start" href="hotstart.html" />
-    <link rel="prev" title="Breakwater and Obstacle" href="breakwater.html" />
-   
-  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
-
+    <link rel="prev" title="Breakwater and Obstacle" href="breakwater.html" /> 
   </head>
-  <body role="document">
-  
-
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
-            
-  <div class="section" id="bathymetry-correction">
-<h1>Bathymetry Correction<a class="headerlink" href="#bathymetry-correction" title="Permalink to this headline">¶</a></h1>
-<p>Large bathymetric slopes may induce computational errors in Boussinesq models. They can even  cause numerical instabilities for a case with bathymetry containing a large amount of big slope points (slope&gt;1.0). In that case, you should smoothen the bathymetry or use the following option in input.txt</p>
-<blockquote>
-<div><p>BATHY_CORRECTION = T</p>
-<p>SmoothBelowDepth = &#8211;1.0 (for example)</p>
-<p>SlopeCap = 1.0  (for example)</p>
-</div></blockquote>
-<p>SmoothBelowDepth = &#8211;1.0 means that the smoothening process will perform from &#8211;1.0 m (1.0 m above the still water level) to the sea bed (figure below).</p>
-<p>SlopeCape = 1.0 means that the smoothening process will perform around the points where slope &gt; 1.0.</p>
-<div class="align-center figure">
-<a class="reference internal image-reference" href="_images/smoothen.jpg"><img alt="alternate text" src="_images/smoothen.jpg" style="width: 500px; height: 300px;" /></a>
-</div>
+  <body>
+<div class="header">
+ <p class="logo"><a href="https://fengyanshi.github.io/build/html/index.html">
+  <img class="logo" src="_static/../../../images/Funwave.svg" alt="Logo"/>
+ </a></p>
 </div>
 
-
-          </div>
-        </div>
-      </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="hotstart.html" title="Hot Start"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="breakwater.html" title="Breakwater and Obstacle"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="definition.html" ><strong>DEFINITIONS OF PARAMETERS</strong></a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="central_para.html" accesskey="U">Parameters for Central Module</a> &#187;</li> 
+      </ul>
+    </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper"><div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="index.html">Documentation overview</a><ul>
-  <li><a href="definition.html"><strong>DEFINITIONS OF PARAMETERS</strong></a><ul>
-  <li><a href="central_para.html">Parameters for Central Module</a><ul>
-      <li>Previous: <a href="breakwater.html" title="previous chapter">Breakwater and Obstacle</a></li>
-      <li>Next: <a href="hotstart.html" title="next chapter">Hot Start</a></li>
-  </ul></li>
-  </ul></li>
-  </ul></li>
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">Table Of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="integration.html"><strong>INTEGRATION</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="basics.html"><strong>BASICS</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="flowchart.html"><strong>ARCHITECTURE</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup.html"><strong>MODEL DOWNLOAD AND SETUP</strong></a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="definition.html"><strong>DEFINITIONS OF PARAMETERS</strong></a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="central_para.html">Parameters for Central Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spherical.html">Spherical Coordinates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shipwakes_para.html">Shipwakes Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sediment_para.html">Sediment Transport and Morphological Change</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meteo_tsu.html">Wind and Pressure Field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tracer_setup.html">Lagrangian Tracer Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="slide.html">Landslide</a></li>
 </ul>
-</div>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="coupling_nesting.html"><strong>NESTING AND COUPLING</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html"><strong>EXAMPLES</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="gallery.html"><strong>GALLERY</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="news.html"><strong>FUNWAVE-TVD WORKSHOP</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html"><strong>BIBLIOGRAPHY</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="authors.html"><strong>AUTHORS</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="addition.html"><strong>ADDITIONAL INFORMATION</strong></a></li>
+</ul>
+
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -89,19 +90,53 @@
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="bathymetry-correction">
+<h1>Bathymetry Correction<a class="headerlink" href="#bathymetry-correction" title="Permalink to this headline">¶</a></h1>
+<p>Large bathymetric slopes may induce computational errors in Boussinesq models. They can even  cause numerical instabilities for a case with bathymetry containing a large amount of big slope points (slope&gt;1.0). In that case, you should smoothen the bathymetry or use the following option in input.txt</p>
+<blockquote>
+<div><p>BATHY_CORRECTION = T</p>
+<p>SmoothBelowDepth = –1.0 (for example)</p>
+<p>SlopeCap = 1.0  (for example)</p>
+</div></blockquote>
+<p>SmoothBelowDepth = –1.0 means that the smoothening process will perform from –1.0 m (1.0 m above the still water level) to the sea bed (figure below).</p>
+<p>SlopeCape = 1.0 means that the smoothening process will perform around the points where slope &gt; 1.0.</p>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="_images/smoothen.jpg"><img alt="alternate text" src="_images/smoothen.jpg" style="width: 500px; height: 300px;" /></a>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
       <div class="clearer"></div>
     </div>
-    <div class="footer">
-      &copy;2017, Fengyan Shi.
-      
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.6</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
-      
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="hotstart.html" title="Hot Start"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="breakwater.html" title="Breakwater and Obstacle"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="definition.html" ><strong>DEFINITIONS OF PARAMETERS</strong></a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="central_para.html" >Parameters for Central Module</a> &#187;</li> 
+      </ul>
     </div>
-
-    
-
-    
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, Fengyan Shi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+    </div>
   </body>
 </html>
