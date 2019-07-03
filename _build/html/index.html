@@ -28,7 +28,7 @@
   </head>
   <body>
 <div class="header">
- <p class="logo"><a href="https://www.logilab.fr">
+ <p class="logo"><a href="https://fengyanshi.github.io/build/html/index.html">
   <img class="logo" src="_static/../../../images/Funwave.svg" alt="Logo"/>
  </a></p>
 </div>
@@ -47,27 +47,21 @@
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="#">Table Of Contents</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">FUNWAVE-TVD</a><ul>
-<li><a class="reference internal" href="#what-is-funwave">What is FUNWAVE?</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#capabilities">Capabilities</a><ul>
-<li><a class="reference internal" href="#applications">Applications</a></li>
-<li><a class="reference internal" href="#transition-to-hpc-portal">Transition to HPC-Portal</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#subscribe">Subscribe</a></li>
-<li><a class="reference internal" href="#contents">Contents</a><ul>
-<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
-</ul>
-</li>
+<h3><a href="#">Table Of Contents</a></h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="basics.html"><strong>BASICS</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="flowchart.html"><strong>ARCHITECTURE</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup.html"><strong>MODEL DOWNLOAD AND SETUP</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="definition.html"><strong>DEFINITIONS OF PARAMETERS</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="coupling_nesting.html"><strong>NESTING AND COUPLING</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html"><strong>EXAMPLES</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="gallery.html"><strong>GALLERY</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="news.html"><strong>FUNWAVE-TVD WORKSHOP</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html"><strong>BIBLIOGRAPHY</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="authors.html"><strong>AUTHORS</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="addition.html"><strong>ADDITIONAL INFORMATION</strong></a></li>
 </ul>
 
-  <h4>Next topic</h4>
-  <p class="topless"><a href="basics.html"
-                        title="next chapter"><strong>BASICS</strong></a></p>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -88,16 +82,17 @@
             
   <div class="section" id="funwave-tvd">
 <h1>FUNWAVE-TVD<a class="headerlink" href="#funwave-tvd" title="Permalink to this headline">¶</a></h1>
-<a class="reference internal image-reference" href="_images/coverimage.jpg"><img alt="_images/coverimage.jpg" class="align-left" src="_images/coverimage.jpg" style="width: 800px; height: 300px;" /></a>
-<div class="admonition attention">
-<p class="first admonition-title">Attention</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
 <p class="last">There will be a FUNWAVE Workshop from 18-20 October 2019 held at Hohai University, Nanjing, China.
-For more info, visit <span class="xref std std-ref">Workshop 2019</span></p>
+For more info, visit <a class="reference internal" href="workshop_2019.html#workshop-2019-label"><span class="std std-ref">Workshop 2019</span></a>.</p>
 </div>
+<hr class="docutils" />
 <div class="section" id="what-is-funwave">
 <h2>What is FUNWAVE?<a class="headerlink" href="#what-is-funwave" title="Permalink to this headline">¶</a></h2>
 <p>FUNWAVE–TVD is the Total Variation Diminishing (TVD) version of the fully nonlinear Boussinesq wave model (FUNWAVE) initially developed by <a class="reference external" href="http://resolver.tudelft.nl/uuid:d79bba08-8d35-47e2-b901-881c86985ce4">Kirby et al. (1998)</a>. The development of the present version was motivated by recent needs for modeling of surfzone–scale optical properties in a Boussinesq model framework, and  modeling of Tsunami waves in both a regional/coastal scale for prediction of coastal inundation and a basin scale for wave propagation.</p>
 <p>This version  features  several theoretical and numerical improvements, including:</p>
+<a class="reference internal image-reference" href="_images/coverimage.jpg"><img alt="_images/coverimage.jpg" class="align-right" src="_images/coverimage.jpg" style="width: 500px; height: 200px;" /></a>
 <ol class="arabic simple">
 <li>A more complete set of fully nonlinear Boussinesq equations;</li>
 <li>Monotonic Upwind Scheme for Conservation Laws (MUSCL)–TVD solver with adaptive Runge–Kutta time stepping;</li>
@@ -107,10 +102,9 @@ For more info, visit <span class="xref std std-ref">Workshop 2019</span></p>
 </ol>
 <p>The most recent developments include ship-wake generation (<a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S0378383917304246">Shi et al., 2018</a>), meteo-tsunami generation (<a class="reference external" href="https://icce-ojs-tamu.tdl.org/icce/index.php/icce/article/view/8470">Woodruff et al., 2018</a>), and sediment transport and morphological changes (<a class="reference external" href="https://apps.dtic.mil/dtic/tr/fulltext/u2/1074624.pdf">Malej et al., 2019</a>).</p>
 <p>This Wiki page provides general introductions to all model components and theory behind the numerical formulations, simple examples and tutorials for beginners, and download and installation instructions to begin using FUNWAVE–TVD locally. The detailed model equations and numerical schemes can be found in <a class="reference external" href="http://www.sciencedirect.com/science/article/pii/S1463500311002010">Shi et al. (2012)</a>.</p>
-<p>For quick keyword searches, use the search bar to the right.</p>
+<p>For quick keyword searches, use the search bar to the left.</p>
 </div>
 </div>
-<hr class="docutils" />
 <div class="section" id="capabilities">
 <h1>Capabilities<a class="headerlink" href="#capabilities" title="Permalink to this headline">¶</a></h1>
 <p>As a nearshore shallow-to-intermediate water phase-resolving Boussinesq-type numerical wave model, FUNWAVE can resolve many coastal processes such as:</p>
@@ -146,7 +140,6 @@ For more info, visit <span class="xref std std-ref">Workshop 2019</span></p>
 <a class="reference internal image-reference" href="_images/hpcportal.jpg"><img alt="_images/hpcportal.jpg" class="align-center" src="_images/hpcportal.jpg" style="width: 700px; height: 400px;" /></a>
 </div>
 </div>
-<hr class="docutils" />
 <div class="section" id="subscribe">
 <h1>Subscribe<a class="headerlink" href="#subscribe" title="Permalink to this headline">¶</a></h1>
 <p>Stay connected to the global FUNWAVE community by subscribing to the mailing group. Submit general or specific questions to new and experienced users alike to solve problems and enhance solutions.</p>
@@ -168,7 +161,6 @@ For more info, visit <span class="xref std std-ref">Workshop 2019</span></p>
 </table>
   </BR>
 </div>
-<hr class="docutils" />
 <div class="section" id="contents">
 <h1>Contents<a class="headerlink" href="#contents" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
