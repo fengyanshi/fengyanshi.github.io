@@ -1,16 +1,13 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>Wave Breaking, roller and undertow &#8212; funwave  documentation</title>
-    
-    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <title>Wave Breaking, roller and undertow &#8212; FUNWAVE Documentation</title>
+    <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -24,20 +21,74 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Sponge Layer" href="spongelayer.html" />
-    <link rel="prev" title="Central Module" href="central.html" />
-   
-  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
-
+    <link rel="prev" title="Central Module" href="central.html" /> 
   </head>
-  <body role="document">
-  
+  <body>
+<div class="header">
+ <p class="logo"><a href="https://fengyanshi.github.io/build/html/index.html">
+  <img class="logo" src="_static/../../../images/Funwave.svg" alt="Logo"/>
+ </a></p>
+</div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="spongelayer.html" title="Sponge Layer"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="central.html" title="Central Module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="basics.html" ><strong>BASICS</strong></a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="central.html" accesskey="U">Central Module</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">Table Of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="basics.html"><strong>BASICS</strong></a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="whatsfunwavetvd.html">What is FUNWAVE–TVD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boussinesq.html">Formulations and Numerical Schemes</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="central.html">Central Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shipwakes.html">Ship-wake Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sediment.html">Sediment Transport Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meteo_intro.html">Meteo Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tracer.html">Lagrangian Tracking Module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="flowchart.html"><strong>ARCHITECTURE</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup.html"><strong>MODEL DOWNLOAD AND SETUP</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="definition.html"><strong>DEFINITIONS OF PARAMETERS</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="coupling_nesting.html"><strong>NESTING AND COUPLING</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html"><strong>EXAMPLES</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="gallery.html"><strong>GALLERY</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="news.html"><strong>FUNWAVE-TVD WORKSHOP</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html"><strong>BIBLIOGRAPHY</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="authors.html"><strong>AUTHORS</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="addition.html"><strong>ADDITIONAL INFORMATION</strong></a></li>
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
 
     <div class="document">
       <div class="documentwrapper">
@@ -47,14 +98,14 @@
   <div class="section" id="wave-breaking-roller-and-undertow">
 <span id="section-wavebreaking"></span><h1>Wave Breaking, roller and undertow<a class="headerlink" href="#wave-breaking-roller-and-undertow" title="Permalink to this headline">¶</a></h1>
 <p><strong>Breaking schemes</strong></p>
-<p>There are two breaking algorithms implemented in the model. One takes advantage of the shock&#8211;capturing scheme in TVD.
+<p>There are two breaking algorithms implemented in the model. One takes advantage of the shock–capturing scheme in TVD.
 It  follows the approach of Tonelli and Petti (2009),  who successfully used the ability of  NSWE  with a TVD scheme to model moving hydraulic jumps. Thus, the fully nonlinear Boussinesq equations are switched  to NSWE at cells where the Froude number exceeds  a certain threshold. Following Tonelli and Petti, the ratio of wave height to total water depth is chosen as  the criterion to switch from Boussinesq to NSWE, with a threshold value  set to 0.8,  as suggested by Tonelli and Petti.</p>
-<p>The other one is the original eddy&#8211;viscosity scheme used in the previous version of FUNWAVE (Kennedy et al., 2000). To fit the eddy&#8211;viscosity method in the TVD scheme, the artificial eddy viscosity terms.</p>
+<p>The other one is the original eddy–viscosity scheme used in the previous version of FUNWAVE (Kennedy et al., 2000). To fit the eddy–viscosity method in the TVD scheme, the artificial eddy viscosity terms.</p>
 <div class="math" id="equation-wavebreaking:0">
 <span class="eqno">(1)<a class="headerlink" href="#equation-wavebreaking:0" title="Permalink to this equation">¶</a></span>\[{\bf R}_{bx} = \frac{\partial }{\partial x} (\nu \frac{\partial P}{\partial x}) + \frac{\partial }{\partial y} (\nu \frac{\partial P}{\partial y} )\]</div>
 <div class="math" id="equation-wavebreaking:1">
 <span class="eqno">(2)<a class="headerlink" href="#equation-wavebreaking:1" title="Permalink to this equation">¶</a></span>\[{\bf R}_{by} = \frac{\partial }{\partial y} (\nu \frac{\partial Q}{\partial y}) + \frac{\partial }{\partial x} (\nu \frac{\partial Q}{\partial x})\]</div>
-<p>Note that the form is slightly different from that in Kennedy et al. (2000). The present form was found to give a more stable numerical solution as the cross&#8211;derivatives removed. In the present form, <span class="math">\(\nu\)</span> is the artificial eddy viscosity defined by</p>
+<p>Note that the form is slightly different from that in Kennedy et al. (2000). The present form was found to give a more stable numerical solution as the cross–derivatives removed. In the present form, <span class="math">\(\nu\)</span> is the artificial eddy viscosity defined by</p>
 <div class="math" id="equation-wavebreaking:2">
 <span class="eqno">(3)<a class="headerlink" href="#equation-wavebreaking:2" title="Permalink to this equation">¶</a></span>\[\nu = B \delta_b^2 (h+\eta) \eta_t\]</div>
 <p>where <span class="math">\(\delta_b = 1.2\)</span>. In Kennedy et al. (2000), <span class="math">\(B\)</span> varies smoothly from 0 to 1 so as to avoid an impulsive start of breaking and the resulting instability. In the present TVD model, because there is no instability problem found, we adopt a constant value <span class="math">\(B=1\)</span> as breaking is initiated</p>
@@ -106,11 +157,11 @@ It  follows the approach of Tonelli and Petti (2009),  who successfully used the
 <p>The calculation of the undertow uses the local balance of the roller induced momentum flux and the undertow flux. The roller/undertow effect is taken into account in the sediment transport processes.</p>
 <p>To set up the roller and its effects, see <a class="reference internal" href="physics.html#section-physics"><span class="std std-ref">Physics (dispersion, breaking, friction)</span></a>. An example presenting the roller effect can be found in <a class="reference internal" href="sediment_rip.html#section-rip-sediment"><span class="std std-ref">Sediment Transport in 2D rip channels</span></a>. To set up output of roller-induced mass flux and undertow flux, see <a class="reference internal" href="output.html#section-output"><span class="std std-ref">Output</span></a>.</p>
 <p><strong>References</strong></p>
-<p>Choi, Y.-K., Shi, F., Malej, M., and Smith, J. M., 2018, &#8220;Performance of various shock-capturing-type reconstruction schemes in the Boussinesq wave model, FUNWAVE-TVD&#8221;, Ocean Modelling, 131, 86-100. <a class="reference external" href="https://doi.org/10.1016/j.ocemod.2018.09.004">DOI:10.1016/j.ocemod.2018.09.004</a>.</p>
-<p>Kennedy, A.B., Chen, Q., Kirby, J.T., Dalrymple, R.A., 2000. &#8220;Boussinesq modeling of wave
-transformation, breaking and runup. I: 1D&#8221;. J. Waterway Port Coastal Ocean Eng. 126
+<p>Choi, Y.-K., Shi, F., Malej, M., and Smith, J. M., 2018, “Performance of various shock-capturing-type reconstruction schemes in the Boussinesq wave model, FUNWAVE-TVD”, Ocean Modelling, 131, 86-100. <a class="reference external" href="https://doi.org/10.1016/j.ocemod.2018.09.004">DOI:10.1016/j.ocemod.2018.09.004</a>.</p>
+<p>Kennedy, A.B., Chen, Q., Kirby, J.T., Dalrymple, R.A., 2000. “Boussinesq modeling of wave
+transformation, breaking and runup. I: 1D”. J. Waterway Port Coastal Ocean Eng. 126
 (1), 39–47.</p>
-<p>Vincent, C.L., Briggs, M.J., 1989. &#8220;Refraction-diffraction of irregular waves over a mound&#8221;. J. Waterway Port Coastal Ocean Eng. 115 (2), 269–284.</p>
+<p>Vincent, C.L., Briggs, M.J., 1989. “Refraction-diffraction of irregular waves over a mound”. J. Waterway Port Coastal Ocean Eng. 115 (2), 269–284.</p>
 <p>Schäffer H. A., Madsen, P.A., Deigaard, R., 1993, A Boussinesq model for waves breaking in shallow water, Coastal Engineering, <a class="reference external" href="https://doi.org/10.1016/0378-3839(93)90001-O">https://doi.org/10.1016/0378-3839(93)90001-O</a></p>
 <p>Svendsen, LA., Wave Heights and Set-Up in a Surf Zone, 1984, Coastal Engineering, Vol.
 8</p>
@@ -120,45 +171,28 @@ transformation, breaking and runup. I: 1D&#8221;. J. Waterway Port Coastal Ocean
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper"><div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="index.html">Documentation overview</a><ul>
-  <li><a href="basics.html"><strong>BASICS</strong></a><ul>
-  <li><a href="central.html">Central Module</a><ul>
-      <li>Previous: <a href="central.html" title="previous chapter">Central Module</a></li>
-      <li>Next: <a href="spongelayer.html" title="next chapter">Sponge Layer</a></li>
-  </ul></li>
-  </ul></li>
-  </ul></li>
-</ul>
-</div>
-<div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
-    <form class="search" action="search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
-        </div>
-      </div>
       <div class="clearer"></div>
     </div>
-    <div class="footer">
-      &copy;2017, Fengyan Shi.
-      
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.6</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
-      
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="spongelayer.html" title="Sponge Layer"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="central.html" title="Central Module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="basics.html" ><strong>BASICS</strong></a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="central.html" >Central Module</a> &#187;</li> 
+      </ul>
     </div>
-
-    
-
-    
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, Fengyan Shi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+    </div>
   </body>
 </html>
