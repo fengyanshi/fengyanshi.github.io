@@ -15,3 +15,4 @@
    beach_2d_info
    beach_2d_regular_wave_30deg
    beach_2d_irregular_wave_30deg
+   beach_2d_more_info
