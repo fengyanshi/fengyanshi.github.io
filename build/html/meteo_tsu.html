@@ -1,33 +1,23 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     <title>Wind and Pressure Field &#8212; FUNWAVE Documentation</title>
     <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Lagrangian Tracer Setup" href="tracer_setup.html" />
     <link rel="prev" title="Sediment Transport and Morphological Change" href="sediment_para.html" /> 
-  </head>
-  <body>
+  </head><body>
 <div class="header">
  <p class="logo"><a href="https://fengyanshi.github.io/build/html/index.html">
   <img class="logo" src="_static/../../../images/Funwave.svg" alt="Logo"/>
@@ -52,7 +42,7 @@
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-<h3><a href="index.html">Table Of Contents</a></h3>
+<h3><a href="index.html">Table of Contents</a></h3>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="basics.html"><strong>BASICS</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="flowchart.html"><strong>ARCHITECTURE</strong></a></li>
@@ -77,13 +67,13 @@
 </ul>
 
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -99,13 +89,13 @@
 <p><strong>SPECIFICATION OF WIND EFFECT</strong></p>
 <blockquote>
 <div><ul class="simple">
-<li>WindForce: logical parameter representing if wind effect is taken into account. T or F.</li>
-<li>AirPressure: logical parameter representing if pressure effect is taken into account. T or F.</li>
-<li>WindWaveInteraction: logical parameter representing if wave-wind interaction (Chen et al. 2003) based on the formula presented in ‘METEO module’ in INTRODUCTION section. The parameter WindCrestPercent will be used.</li>
-<li>Cdw: wind stress coefficient for the quadratic formula if WindForce = T. Default: 0.002.</li>
-<li>WindCrestPercent: ratio of the forced wave crest height to the maximum surface elevation, if WindForce = T. Default: 100% (for storm surges).</li>
-<li>WindConstantField: logical parameter for constant wind field. T or F.</li>
-<li>WIND_FILE: file name for the constant wind field. The following is an example of data format.</li>
+<li><p>WindForce: logical parameter representing if wind effect is taken into account. T or F.</p></li>
+<li><p>AirPressure: logical parameter representing if pressure effect is taken into account. T or F.</p></li>
+<li><p>WindWaveInteraction: logical parameter representing if wave-wind interaction (Chen et al. 2003) based on the formula presented in ‘METEO module’ in INTRODUCTION section. The parameter WindCrestPercent will be used.</p></li>
+<li><p>Cdw: wind stress coefficient for the quadratic formula if WindForce = T. Default: 0.002.</p></li>
+<li><p>WindCrestPercent: ratio of the forced wave crest height to the maximum surface elevation, if WindForce = T. Default: 100% (for storm surges).</p></li>
+<li><p>WindConstantField: logical parameter for constant wind field. T or F.</p></li>
+<li><p>WIND_FILE: file name for the constant wind field. The following is an example of data format.</p></li>
 </ul>
 <blockquote>
 <div><p>wind data</p>
@@ -116,8 +106,8 @@
 <p>…</p>
 </div></blockquote>
 <ul class="simple">
-<li>WindHollandModel: logical parameter for Holland model. T or F.</li>
-<li>STORM_FILE: name of file contains paramters used for Holland hurricane model</li>
+<li><p>WindHollandModel: logical parameter for Holland model. T or F.</p></li>
+<li><p>STORM_FILE: name of file contains paramters used for Holland hurricane model</p></li>
 </ul>
 <blockquote>
 <div><p>A sample:</p>
@@ -156,7 +146,7 @@
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2019, Fengyan Shi.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
     </div>
   </body>
 </html>

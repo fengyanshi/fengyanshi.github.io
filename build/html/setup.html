@@ -1,33 +1,23 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     <title>MODEL DOWNLOAD AND SETUP &#8212; FUNWAVE Documentation</title>
     <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="DEFINITIONS OF PARAMETERS" href="definition.html" />
     <link rel="prev" title="ARCHITECTURE" href="flowchart.html" /> 
-  </head>
-  <body>
+  </head><body>
 <div class="header">
  <p class="logo"><a href="https://fengyanshi.github.io/build/html/index.html">
   <img class="logo" src="_static/../../../images/Funwave.svg" alt="Logo"/>
@@ -51,7 +41,7 @@
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-<h3><a href="index.html">Table Of Contents</a></h3>
+<h3><a href="index.html">Table of Contents</a></h3>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="basics.html"><strong>BASICS</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="flowchart.html"><strong>ARCHITECTURE</strong></a></li>
@@ -73,13 +63,13 @@
 </ul>
 
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -98,7 +88,7 @@
 <p><a class="reference external" href="https://github.com/fengyanshi/FUNWAVE-TVD/releases">Version 3.3 Released July 19 2018: click here to download from GitHub</a></p>
 <p><a class="reference external" href="https://github.com/fengyanshi/FUNWAVE-TVD/releases">Version 3.2 Released Jan 27 2018: click here to download from GitHub</a></p>
 <p>Version 3.1 Released Sep 2017: Used for FUNWAVE-TVD Workshop 2017 <a class="reference external" href="https://github.com/fengyanshi/FUNWAVE-TVD/releases">click here to download</a></p>
-<p>Version 3.0: Released Apr 2017 <a class="reference download internal" href="_downloads/funwave_tvd_30.zip" download=""><code class="xref download docutils literal"><span class="pre">download</span> <span class="pre">here</span></code></a></p>
+<p>Version 3.0: Released Apr 2017 <a class="reference download internal" download="" href="_downloads/571b78d7d434ccc4395c00d5772a63ba/funwave_tvd_30.zip"><code class="xref download docutils literal notranslate"><span class="pre">download</span> <span class="pre">here</span></code></a></p>
 <p>Versions 1.0, 1.1, 2.0, 2.1: Please contact <a class="reference external" href="mailto:fyshi&#37;&#52;&#48;udel&#46;edu">fyshi<span>&#64;</span>udel<span>&#46;</span>edu</a></p>
 </div>
 <div class="section" id="download-simple-examples">
@@ -106,15 +96,15 @@
 <p>Simple examples are included in the package of Version 3.1 and higher (<a class="reference external" href="https://github.com/fengyanshi/FUNWAVE-TVD">click here to download from GitHub</a>) . They are located in the directory /simple_cases/.
 The simple examples serve as baseline cases for testing your system. You can also choose a simple case similar to your modeling scenario to set up your case. The following simple cases available. The simple examples are also used during the FUNWAVE training workshop.</p>
 <ul class="simple">
-<li><a class="reference external" href="slope.html">Waves on 1D slope</a></li>
-<li><a class="reference external" href="beach_2d.html">Waves on 2D beach</a></li>
-<li><a class="reference external" href="rip_2d.html">Waves and rip currents on 2D beach</a></li>
-<li><a class="reference external" href="sediment_rip.html">Sediment transport in 2D rip channels</a></li>
-<li><a class="reference external" href="inlet_shoal.html">Surface waves at an inlet-beach-shoal system</a></li>
-<li><a class="reference external" href="tohoku.html">Japanese Tohoku tsunami (Ocean-basin scale)</a></li>
-<li><a class="reference external" href="vessel.html">ship-wakes</a></li>
-<li><a class="reference external" href="vessel_morpho.html">ship-wakes + sediment transport</a></li>
-<li><a class="reference external" href="meteo.html">Meteotsunami</a></li>
+<li><p><a class="reference external" href="slope.html">Waves on 1D slope</a></p></li>
+<li><p><a class="reference external" href="beach_2d.html">Waves on 2D beach</a></p></li>
+<li><p><a class="reference external" href="rip_2d.html">Waves and rip currents on 2D beach</a></p></li>
+<li><p><a class="reference external" href="sediment_rip.html">Sediment transport in 2D rip channels</a></p></li>
+<li><p><a class="reference external" href="inlet_shoal.html">Surface waves at an inlet-beach-shoal system</a></p></li>
+<li><p><a class="reference external" href="tohoku.html">Japanese Tohoku tsunami (Ocean-basin scale)</a></p></li>
+<li><p><a class="reference external" href="vessel.html">ship-wakes</a></p></li>
+<li><p><a class="reference external" href="vessel_morpho.html">ship-wakes + sediment transport</a></p></li>
+<li><p><a class="reference external" href="meteo.html">Meteotsunami</a></p></li>
 </ul>
 </div>
 <div class="section" id="download-benchmark-tests">
@@ -124,36 +114,36 @@ The simple examples serve as baseline cases for testing your system. You can als
 <div class="section" id="compile-and-setup">
 <h2>Compile and setup<a class="headerlink" href="#compile-and-setup" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li>uncompress the code from the package downloaded</li>
-<li>modify <em>Makefile</em> if needed. There are several necessary flags in Makefile needed to specify below.</li>
+<li><p>uncompress the code from the package downloaded</p></li>
+<li><p>modify <em>Makefile</em> if needed. There are several necessary flags in Makefile needed to specify below.</p></li>
 </ol>
 <ul class="simple">
-<li>–DDOUBLE_PRECISION: use double precision, default is single precision.</li>
-<li>–DPARALLEL: use parallel mode, default is serial mode.</li>
-<li>–DCARTESIAN: Cartesian version, otherwise Spherical version</li>
-<li>–DINTEL: if INTEL compiler is used, this option can make use of FPORT for the RAND() function</li>
-<li>–DCRAY: for CRAY RAND() and system commands</li>
-<li>–DCOUPLING: nesting mode.</li>
-<li>–DSPHERICAL_IJ_STATION: in spherical mode, if you want your station locations defined by grid point (I,J). Otherwise, station locations should be defined by (lat lon).</li>
-<li>–DVESSLE: include shipwake module</li>
-<li>–DSEDIMENT: include sediment and morphological module</li>
-<li>–DWIND: include wind effect</li>
-<li>–DMETEO: include meteo tsunami module</li>
-<li>–DMANNING: use Manning formula for bottom friction</li>
-<li>–DCHECK_MASS_CONSERVATION: correct mass conservation problem caused by wetting/drying</li>
-<li>–DTRACKING: include Lagrangian tracking module</li>
-<li>CPP: path to CPP directory.</li>
-<li>FC: Fortran compiler.</li>
+<li><p>–DDOUBLE_PRECISION: use double precision, default is single precision.</p></li>
+<li><p>–DPARALLEL: use parallel mode, default is serial mode.</p></li>
+<li><p>–DCARTESIAN: Cartesian version, otherwise Spherical version</p></li>
+<li><p>–DINTEL: if INTEL compiler is used, this option can make use of FPORT for the RAND() function</p></li>
+<li><p>–DCRAY: for CRAY RAND() and system commands</p></li>
+<li><p>–DCOUPLING: nesting mode.</p></li>
+<li><p>–DSPHERICAL_IJ_STATION: in spherical mode, if you want your station locations defined by grid point (I,J). Otherwise, station locations should be defined by (lat lon).</p></li>
+<li><p>–DVESSLE: include shipwake module</p></li>
+<li><p>–DSEDIMENT: include sediment and morphological module</p></li>
+<li><p>–DWIND: include wind effect</p></li>
+<li><p>–DMETEO: include meteo tsunami module</p></li>
+<li><p>–DMANNING: use Manning formula for bottom friction</p></li>
+<li><p>–DCHECK_MASS_CONSERVATION: correct mass conservation problem caused by wetting/drying</p></li>
+<li><p>–DTRACKING: include Lagrangian tracking module</p></li>
+<li><p>CPP: path to CPP directory.</p></li>
+<li><p>FC: Fortran compiler.</p></li>
 </ul>
 <ol class="arabic simple" start="3">
-<li>compile the code</li>
+<li><p>compile the code</p></li>
 </ol>
 <p>in command line type</p>
 <p>&gt; make clean</p>
 <p>&gt; make</p>
 <p>The executable file such as ‘funwave’ or ‘mytvd’ (specified in <em>Makefile</em>) will be generated.   <strong>Note: always use ‘make clean’ after modifying Makefile</strong>.</p>
 <ol class="arabic simple" start="4">
-<li>run the model</li>
+<li><p>run the model</p></li>
 </ol>
 <p>Modify input.txt if needed and run.</p>
 </div>
@@ -182,7 +172,7 @@ The simple examples serve as baseline cases for testing your system. You can als
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2019, Fengyan Shi.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
     </div>
   </body>
 </html>

@@ -1,33 +1,23 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     <title>Output &#8212; FUNWAVE Documentation</title>
     <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Spherical Coordinates" href="spherical.html" />
     <link rel="prev" title="Post Processing" href="post.html" /> 
-  </head>
-  <body>
+  </head><body>
 <div class="header">
  <p class="logo"><a href="https://fengyanshi.github.io/build/html/index.html">
   <img class="logo" src="_static/../../../images/Funwave.svg" alt="Logo"/>
@@ -53,7 +43,7 @@
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-<h3><a href="index.html">Table Of Contents</a></h3>
+<h3><a href="index.html">Table of Contents</a></h3>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="basics.html"><strong>BASICS</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="flowchart.html"><strong>ARCHITECTURE</strong></a></li>
@@ -78,13 +68,13 @@
 </ul>
 
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -100,105 +90,110 @@
 <p><strong>SPECIFICATION OF RESULT FOLDER</strong></p>
 <blockquote>
 <div><ul class="simple">
-<li>RESULT_FOLDER: result folder name, e.g., RESULT_FOLDER = /Users/tmp/</li>
+<li><p>RESULT_FOLDER: result folder name, e.g., RESULT_FOLDER = /Users/tmp/</p></li>
 </ul>
 </div></blockquote>
 <p><strong>SPECIFICATION OF OUTPUT VARIABLES</strong></p>
 <blockquote>
 <div><ul class="simple">
-<li>NumberStations: number of station for output. If NumberStations <span class="math">\(&gt; 0\)</span>, need input i,j in STATION_FILE</li>
-<li>DEPTH_OUT: logical parameter for output depth. T or F.</li>
-<li>U: logical parameter for output u. T or F.</li>
-<li>V: logical parameter for output v. T or F.</li>
-<li>ETA: logical parameter for output <span class="math">\(\eta\)</span>. T or F.</li>
-<li>MASK: logical parameter for output wetting-drying MASK. T or F.</li>
-<li>MASK9: logical parameter for output MASK9 (switch for Boussinesq/NSWE). T or F.</li>
-<li>SourceX: logical parameter for output source terms in x direction. T or F.</li>
-<li>SourceY:  logical parameter for output source terms in y direction. T or F.</li>
-<li>P:   logical parameter for output of  momentum flux in x direction. T or F.</li>
-<li>Q:  logical parameter for output of  momentum flux in y direction. T or F.</li>
-<li>Fx: logical parameter for output of numerical flux F in x direction. T or F.</li>
-<li>Fy: logical parameter for output of numerical flux F in y direction. T or F.</li>
-<li>Gx: logical parameter for output of numerical flux G in x direction. T or F.</li>
-<li>Gy: logical parameter for output of numerical flux G in y direction. T or F.</li>
-<li>AGE: logical parameter for output of breaking age. T or F.</li>
-<li>HMAX: logical parameter for output of recorded maximum surface elevation . T or F.</li>
-<li>HMIN: logical parameter for output of recorded minimum surface elevation . T or F.</li>
-<li>UMAX: logical parameter for output of recorded maximum velocity . T or F.</li>
-<li>VORMAX: logical parameter for output of recorded maximum vorticity . T or F.</li>
-<li>MFMAX: logical parameter for output of recorded maximum momentum flux . T or F.</li>
-<li>WaveHeight: logical parameter for output of wave height, Hsig, Hrms, Havg. T or F.</li>
-<li>OUT_METEO: logical parameter for output of pressure field. T or F.</li>
-<li>ROLLER: logical parameter for output of roller-induced flux. T or F.</li>
-<li>UNDERTOW: logical parameter for output of undertow. T or F.</li>
+<li><p>NumberStations: number of station for output. If NumberStations <span class="math notranslate nohighlight">\(&gt; 0\)</span>, need input i,j in STATION_FILE</p></li>
+<li><p>DEPTH_OUT: logical parameter for output depth. T or F.</p></li>
+<li><p>U: logical parameter for output u. T or F.</p></li>
+<li><p>V: logical parameter for output v. T or F.</p></li>
+<li><p>ETA: logical parameter for output <span class="math notranslate nohighlight">\(\eta\)</span>. T or F.</p></li>
+<li><p>MASK: logical parameter for output wetting-drying MASK. T or F.</p></li>
+<li><p>MASK9: logical parameter for output MASK9 (switch for Boussinesq/NSWE). T or F.</p></li>
+<li><p>SourceX: logical parameter for output source terms in x direction. T or F.</p></li>
+<li><p>SourceY:  logical parameter for output source terms in y direction. T or F.</p></li>
+<li><p>P:   logical parameter for output of  momentum flux in x direction. T or F.</p></li>
+<li><p>Q:  logical parameter for output of  momentum flux in y direction. T or F.</p></li>
+<li><p>Fx: logical parameter for output of numerical flux F in x direction. T or F.</p></li>
+<li><p>Fy: logical parameter for output of numerical flux F in y direction. T or F.</p></li>
+<li><p>Gx: logical parameter for output of numerical flux G in x direction. T or F.</p></li>
+<li><p>Gy: logical parameter for output of numerical flux G in y direction. T or F.</p></li>
+<li><p>AGE: logical parameter for output of breaking age. T or F.</p></li>
+<li><p>HMAX: logical parameter for output of recorded maximum surface elevation . T or F.</p></li>
+<li><p>HMIN: logical parameter for output of recorded minimum surface elevation . T or F.</p></li>
+<li><p>UMAX: logical parameter for output of recorded maximum velocity . T or F.</p></li>
+<li><p>VORMAX: logical parameter for output of recorded maximum vorticity . T or F.</p></li>
+<li><p>MFMAX: logical parameter for output of recorded maximum momentum flux . T or F.</p></li>
+<li><p>WaveHeight: logical parameter for output of wave height, Hsig, Hrms, Havg. T or F.</p></li>
+<li><p>OUT_METEO: logical parameter for output of pressure field. T or F.</p></li>
+<li><p>ROLLER: logical parameter for output of roller-induced flux. T or F.</p></li>
+<li><p>UNDERTOW: logical parameter for output of undertow. T or F.</p></li>
 </ul>
 </div></blockquote>
 <p><strong>OUTPUT FILES</strong></p>
 <p>The output files are saved in the result directory defined by RESULT_FOLDER in input.txt.</p>
 <blockquote>
-<div><em>Output file names</em></div></blockquote>
+<div><p><em>Output file names</em></p>
+</div></blockquote>
 <p>A file name is a combination of variable name and an output series number such as eta_00001, eta_00002, …. The format  and read/write algorithm are  consistent with a depth file.</p>
 <blockquote>
 <div><blockquote>
-<div><strong>CENTRAL module</strong></div></blockquote>
+<div><p><strong>CENTRAL module</strong></p>
+</div></blockquote>
 <ul class="simple">
-<li>eta_xxxxx : surface elevation</li>
-<li>u_xxxxx : velocity in the x direction</li>
-<li>v_xxxxx : velocity in the y direction</li>
-<li>mask_xxxxx:  masks for wetting (1) and drying (0)</li>
-<li>mask9_xxxxx:  masks for wetting (1) and drying (0) defined in 9 points</li>
-<li>hmax_xxxxx: maximum surface elevation</li>
-<li>hmin_xxxxx: minimum surface elevation</li>
-<li>umax_xxxxx: maximum velocity</li>
-<li>MFmax_xxxxx: maximum momentum flux</li>
-<li>VORmax_xxxxx: maximum vertical vorticiy</li>
-<li>p_xxxxx: volume flux in the x direction</li>
-<li>q_xxxxx: volume flux in the y direction</li>
-<li>nubrk_xxxxx: breaking induced eddy vviscosity (when viscosity breaker is on)</li>
-<li>etat_xxxxx: <span class="math">\(\eta_t\)</span></li>
-<li>age_xxxxx: breaking age (in seconds)</li>
-<li>roller_xxxxx: roller-induced mass flux</li>
-<li>U_undertow_xxxxx: roller-induced extra undertow flux in the x direction</li>
-<li>V_undertow_xxxxx: roller-induced extra undertow flux in the y direction</li>
+<li><p>eta_xxxxx : surface elevation</p></li>
+<li><p>u_xxxxx : velocity in the x direction</p></li>
+<li><p>v_xxxxx : velocity in the y direction</p></li>
+<li><p>mask_xxxxx:  masks for wetting (1) and drying (0)</p></li>
+<li><p>mask9_xxxxx:  masks for wetting (1) and drying (0) defined in 9 points</p></li>
+<li><p>hmax_xxxxx: maximum surface elevation</p></li>
+<li><p>hmin_xxxxx: minimum surface elevation</p></li>
+<li><p>umax_xxxxx: maximum velocity</p></li>
+<li><p>MFmax_xxxxx: maximum momentum flux</p></li>
+<li><p>VORmax_xxxxx: maximum vertical vorticiy</p></li>
+<li><p>p_xxxxx: volume flux in the x direction</p></li>
+<li><p>q_xxxxx: volume flux in the y direction</p></li>
+<li><p>nubrk_xxxxx: breaking induced eddy vviscosity (when viscosity breaker is on)</p></li>
+<li><p>etat_xxxxx: <span class="math notranslate nohighlight">\(\eta_t\)</span></p></li>
+<li><p>age_xxxxx: breaking age (in seconds)</p></li>
+<li><p>roller_xxxxx: roller-induced mass flux</p></li>
+<li><p>U_undertow_xxxxx: roller-induced extra undertow flux in the x direction</p></li>
+<li><p>V_undertow_xxxxx: roller-induced extra undertow flux in the y direction</p></li>
 </ul>
 <blockquote>
-<div><strong>METEO module</strong></div></blockquote>
+<div><p><strong>METEO module</strong></p>
+</div></blockquote>
 <ul class="simple">
-<li>Pstorm_xxxxx: air pressure</li>
-<li>Ustorm_xxxxx: wind velocity in the x direction</li>
-<li>Vstorm_xxxxx: wind velocity in the y direction</li>
+<li><p>Pstorm_xxxxx: air pressure</p></li>
+<li><p>Ustorm_xxxxx: wind velocity in the x direction</p></li>
+<li><p>Vstorm_xxxxx: wind velocity in the y direction</p></li>
 </ul>
 <blockquote>
-<div><strong>VESSEL module</strong></div></blockquote>
+<div><p><strong>VESSEL module</strong></p>
+</div></blockquote>
 <ul class="simple">
-<li>Fves_xxxxx: gradient of mass flux induced by vessel (panel source)</li>
-<li>Pves_xxxxx: pressure specified for the pressure source</li>
+<li><p>Fves_xxxxx: gradient of mass flux induced by vessel (panel source)</p></li>
+<li><p>Pves_xxxxx: pressure specified for the pressure source</p></li>
 </ul>
 <blockquote>
-<div><strong>SEDIMENT module</strong></div></blockquote>
+<div><p><strong>SEDIMENT module</strong></p>
+</div></blockquote>
 <ul class="simple">
-<li>C_xxxxx: sediment concentration (g/l)</li>
-<li>Pick_xxxxx: pickup rate</li>
-<li>Depo_xxxxx: deposition rate</li>
-<li>DchgS_xxxxx: depth change in suspended load</li>
-<li>DchgB_xxxxx: depth change in bed load</li>
-<li>BedFx_xxxxx: bedload flux in the x direction</li>
-<li>BedFy_xxxxx: bedload flux in the y direction</li>
-<li>dep_xxxxx:  depth</li>
+<li><p>C_xxxxx: sediment concentration (g/l)</p></li>
+<li><p>Pick_xxxxx: pickup rate</p></li>
+<li><p>Depo_xxxxx: deposition rate</p></li>
+<li><p>DchgS_xxxxx: depth change in suspended load</p></li>
+<li><p>DchgB_xxxxx: depth change in bed load</p></li>
+<li><p>BedFx_xxxxx: bedload flux in the x direction</p></li>
+<li><p>BedFy_xxxxx: bedload flux in the y direction</p></li>
+<li><p>dep_xxxxx:  depth</p></li>
 </ul>
 <p><em>Station files</em></p>
 </div></blockquote>
 <p>Output for stations is a series of numbered files such as sta_0001, sta_0002 …. (NOTE: four digit numbers here vs. five digit numbers for 2D output like eta_00001).</p>
 <blockquote>
 <div><ul class="simple">
-<li>ASCII format</li>
+<li><p>ASCII format</p></li>
 </ul>
 </div></blockquote>
 <p>The default format is ASCII.  The format and read algorithm are  consistent with a depth file.</p>
 <p>A station file contains four columns, which are values of time (s), eta (m), u (m/s) and v (m/s), respectively.</p>
 <blockquote>
 <div><ul class="simple">
-<li>BINARY format</li>
+<li><p>BINARY format</p></li>
 </ul>
 </div></blockquote>
 <p>When FIELD_IO_TYPE = BINARY is specified in input.txt, the 2D output files such as eta_00001, … are in the binary format. Here’s an example of reading in matlab:</p>
@@ -209,7 +204,7 @@
 <p>Station files do not have Binary format.</p>
 <blockquote>
 <div><ul class="simple">
-<li>Other format</li>
+<li><p>Other format</p></li>
 </ul>
 </div></blockquote>
 <p>Other formats such as NetCDF and HDF5 are also provided but not distributed in the master Github repository.</p>
@@ -240,7 +235,7 @@
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2019, Fengyan Shi.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
     </div>
   </body>
 </html>

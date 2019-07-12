@@ -1,33 +1,23 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     <title>Meteo Module &#8212; FUNWAVE Documentation</title>
     <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Lagrangian Tracking Module" href="tracer.html" />
     <link rel="prev" title="Numerical Scheme for Sediment Transport" href="sed_numerical.html" /> 
-  </head>
-  <body>
+  </head><body>
 <div class="header">
  <p class="logo"><a href="https://fengyanshi.github.io/build/html/index.html">
   <img class="logo" src="_static/../../../images/Funwave.svg" alt="Logo"/>
@@ -52,10 +42,9 @@
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-<h3><a href="index.html">Table Of Contents</a></h3>
+<h3><a href="index.html">Table of Contents</a></h3>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="basics.html"><strong>BASICS</strong></a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="whatsfunwavetvd.html">What is FUNWAVE–TVD</a></li>
 <li class="toctree-l2"><a class="reference internal" href="boussinesq.html">Formulations and Numerical Schemes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="central.html">Central Module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="shipwakes.html">Ship-wake Module</a></li>
@@ -77,13 +66,13 @@
 </ul>
 
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -98,50 +87,50 @@
 <span id="section-meteo-module"></span><h1>Meteo Module<a class="headerlink" href="#meteo-module" title="Permalink to this headline">¶</a></h1>
 <p>The METEO module was initially developed for simulations of meteotsnamis. It now includes subroutines for simulating the wind effects on waves, storm surges, landslide-generated tsunamis and processes related to atmospheric pressure effects.</p>
 <ul class="simple">
-<li>Wind effect on waves</li>
+<li><p>Wind effect on waves</p></li>
 </ul>
 <p>Wind effects are modeled using the wind stress forcing proposed by Chen et al. (2004). The wind stress is expressed by</p>
-<div class="math" id="equation-meteo_intro:0">
-<span class="eqno">(1)<a class="headerlink" href="#equation-meteo_intro:0" title="Permalink to this equation">¶</a></span>\[{\bf R}_w = \frac{\rho_a}{\rho} C_{dw} |{\bf U}_{10} - {\bf C}| ({\bf U}_{10} - {\bf C})\]</div>
-<p>where <span class="math">\(\rho_a\)</span> and <span class="math">\(\rho\)</span> represent air density and  water density, respectively, <span class="math">\(\bf C\)</span> is wave celerity.  The wind stress is only applied on wave crests. A free parameter representing a ratio of the forced crest height to maximum surface elevation is implemented in the model.</p>
+<div class="math notranslate nohighlight" id="equation-meteo-intro-0">
+<span class="eqno">(74)<a class="headerlink" href="#equation-meteo-intro-0" title="Permalink to this equation">¶</a></span>\[{\bf R}_w = \frac{\rho_a}{\rho} C_{dw} |{\bf U}_{10} - {\bf C}| ({\bf U}_{10} - {\bf C})\]</div>
+<p>where <span class="math notranslate nohighlight">\(\rho_a\)</span> and <span class="math notranslate nohighlight">\(\rho\)</span> represent air density and  water density, respectively, <span class="math notranslate nohighlight">\(\bf C\)</span> is wave celerity.  The wind stress is only applied on wave crests. A free parameter representing a ratio of the forced crest height to maximum surface elevation is implemented in the model.</p>
 <ul class="simple">
-<li>Holland model</li>
+<li><p>Holland model</p></li>
 </ul>
 <p>Holland model is an analytic model of wind and pressure profiles described based on Hurricanes. The pressure distribution can be expressed by</p>
-<div class="math" id="equation-meteo_intro:1">
-<span class="eqno">(2)<a class="headerlink" href="#equation-meteo_intro:1" title="Permalink to this equation">¶</a></span>\[p = p_c + (p_n-p_c) exp(-A/r^B)\]</div>
-<p>where <span class="math">\(p\)</span> is the pressure at radius <span class="math">\(r\)</span>, <span class="math">\(p_c\)</span> and <span class="math">\(p_n\)</span> are the central pressure and the ambient pressure, respectively. <span class="math">\(A\)</span> and <span class="math">\(B\)</span> are scaling paramters from the model input. The velocity distribution can be described by</p>
-<div class="math" id="equation-meteo_intro:2">
-<span class="eqno">(3)<a class="headerlink" href="#equation-meteo_intro:2" title="Permalink to this equation">¶</a></span>\[V_c = [AB(p_n-p_c)exp(-A/r^B)/\rho_a r^B]^{1/2}\]</div>
+<div class="math notranslate nohighlight" id="equation-meteo-intro-1">
+<span class="eqno">(75)<a class="headerlink" href="#equation-meteo-intro-1" title="Permalink to this equation">¶</a></span>\[p = p_c + (p_n-p_c) exp(-A/r^B)\]</div>
+<p>where <span class="math notranslate nohighlight">\(p\)</span> is the pressure at radius <span class="math notranslate nohighlight">\(r\)</span>, <span class="math notranslate nohighlight">\(p_c\)</span> and <span class="math notranslate nohighlight">\(p_n\)</span> are the central pressure and the ambient pressure, respectively. <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> are scaling paramters from the model input. The velocity distribution can be described by</p>
+<div class="math notranslate nohighlight" id="equation-meteo-intro-2">
+<span class="eqno">(76)<a class="headerlink" href="#equation-meteo-intro-2" title="Permalink to this equation">¶</a></span>\[V_c = [AB(p_n-p_c)exp(-A/r^B)/\rho_a r^B]^{1/2}\]</div>
 <p>Based on the formulations above, it is easy to obtain the following storm parameters</p>
 <p>The radius of maximum winds (RMW) is</p>
-<div class="math" id="equation-meteo_intro:3">
-<span class="eqno">(4)<a class="headerlink" href="#equation-meteo_intro:3" title="Permalink to this equation">¶</a></span>\[R_w = A^{1/B}\]</div>
+<div class="math notranslate nohighlight" id="equation-meteo-intro-3">
+<span class="eqno">(77)<a class="headerlink" href="#equation-meteo-intro-3" title="Permalink to this equation">¶</a></span>\[R_w = A^{1/B}\]</div>
 <p>The maximum wind speed</p>
-<div class="math" id="equation-meteo_intro:4">
-<span class="eqno">(5)<a class="headerlink" href="#equation-meteo_intro:4" title="Permalink to this equation">¶</a></span>\[V_m = C(p_n-p_c)^{1/2}\]</div>
+<div class="math notranslate nohighlight" id="equation-meteo-intro-4">
+<span class="eqno">(78)<a class="headerlink" href="#equation-meteo-intro-4" title="Permalink to this equation">¶</a></span>\[V_m = C(p_n-p_c)^{1/2}\]</div>
 <p>where</p>
-<div class="math" id="equation-meteo_intro:5">
-<span class="eqno">(6)<a class="headerlink" href="#equation-meteo_intro:5" title="Permalink to this equation">¶</a></span>\[C = (B/\rho_a e)^{1/2}\]</div>
+<div class="math notranslate nohighlight" id="equation-meteo-intro-5">
+<span class="eqno">(79)<a class="headerlink" href="#equation-meteo-intro-5" title="Permalink to this equation">¶</a></span>\[C = (B/\rho_a e)^{1/2}\]</div>
 <ul class="simple">
-<li>Storm surge</li>
+<li><p>Storm surge</p></li>
 </ul>
 <p>To calculate storm surges, wind stress is applied</p>
-<div class="math" id="equation-meteo_intro:6">
-<span class="eqno">(7)<a class="headerlink" href="#equation-meteo_intro:6" title="Permalink to this equation">¶</a></span>\[{\bf R}_w = \frac{\rho_a}{\rho} C_{dw} |{\bf U}_{10}| ({\bf U}_{10})\]</div>
-<p>Note that <span class="math">\(\bf C\)</span> is not used, compared to the formula for ‘Wind effect on waves’.</p>
+<div class="math notranslate nohighlight" id="equation-meteo-intro-6">
+<span class="eqno">(80)<a class="headerlink" href="#equation-meteo-intro-6" title="Permalink to this equation">¶</a></span>\[{\bf R}_w = \frac{\rho_a}{\rho} C_{dw} |{\bf U}_{10}| ({\bf U}_{10})\]</div>
+<p>Note that <span class="math notranslate nohighlight">\(\bf C\)</span> is not used, compared to the formula for ‘Wind effect on waves’.</p>
 <ul class="simple">
-<li>Meteotsunami</li>
+<li><p>Meteotsunami</p></li>
 </ul>
 <p>Meteotsunami is modeled using a pressure source of two-dimensional Gausian distribution:</p>
-<div class="math" id="equation-meteo_intro:7">
-<span class="eqno">(8)<a class="headerlink" href="#equation-meteo_intro:7" title="Permalink to this equation">¶</a></span>\[P = dP exp \left(-(\frac{(x^\prime - x_0)^2}{2\sigma_x^2} + \frac{(y^\prime - y_0)^2}{2\sigma_y^2}) \right)\]</div>
-<p>where <span class="math">\(dP\)</span> is the pressure anomaly in mb,  <span class="math">\((x^\prime,y^\prime)\)</span> are the coordinates rotated to the pressure moving direction (angle is <span class="math">\(\theta\)</span> as indicated in the figure). <span class="math">\(\sigma_x\)</span> and <span class="math">\(\sigma_y\)</span> are paramters representing the length of the width of the pressure source.</p>
+<div class="math notranslate nohighlight" id="equation-meteo-intro-7">
+<span class="eqno">(81)<a class="headerlink" href="#equation-meteo-intro-7" title="Permalink to this equation">¶</a></span>\[P = dP exp \left(-(\frac{(x^\prime - x_0)^2}{2\sigma_x^2} + \frac{(y^\prime - y_0)^2}{2\sigma_y^2}) \right)\]</div>
+<p>where <span class="math notranslate nohighlight">\(dP\)</span> is the pressure anomaly in mb,  <span class="math notranslate nohighlight">\((x^\prime,y^\prime)\)</span> are the coordinates rotated to the pressure moving direction (angle is <span class="math notranslate nohighlight">\(\theta\)</span> as indicated in the figure). <span class="math notranslate nohighlight">\(\sigma_x\)</span> and <span class="math notranslate nohighlight">\(\sigma_y\)</span> are paramters representing the length of the width of the pressure source.</p>
 <div class="align-center figure">
 <a class="reference internal image-reference" href="_images/gausian.jpg"><img alt="alternate text" src="_images/gausian.jpg" style="width: 300px; height: 260px;" /></a>
 </div>
 <ul class="simple">
-<li>Landslide-generated tsunami</li>
+<li><p>Landslide-generated tsunami</p></li>
 </ul>
 <p>Landslide-generated tsunami can be calculated using the same approach as the meteotsunami. Details will be reported by Woodruff (2017).</p>
 </div>
@@ -170,7 +159,7 @@
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2019, Fengyan Shi.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
     </div>
   </body>
 </html>
