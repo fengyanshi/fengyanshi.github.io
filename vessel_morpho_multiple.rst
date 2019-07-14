@@ -24,6 +24,8 @@ Multiple vessels-induced morphology changes
 
   DEPTH_FILE = depth.txt
 
+  (refer to :ref:`definition_grid`)
+
 |  **Dimensions**
 |   Mglob = 2400
 |   Nglob = 60
@@ -52,6 +54,8 @@ Multiple vessels-induced morphology changes
 |   Kappa2 = 1.0
 |   MinDepthPickup = 0.1 
 
+  (refer to :ref:`definition_sediment`)
+
 |  **Add vessels**
 |   VESSEL_FOLDER = ./
 |   NumVessel = 6
@@ -59,24 +63,26 @@ Multiple vessels-induced morphology changes
 |   You need 6 vessel files: vessel_00001, vessel_00002 ... in the current folder. 
 |   In vessel_00001, specify:
 |   Title: Vessel # 1
-|   Blue_Star_I
-|   Length(m), Width(m), Alpha(0.5), Beta(0.5), P(draft,m)
-|   10.0  5.0, 0.5, 0.5, 1.5
+|   Pressure, 1
+|   Length(m), Width(m), Alpha1(0.5),Alpha2(0.5), Beta(0.5), P(draft,m)
+|   10.0  5.0, 0.5, 0.5,0.5, 1.5
 |   Time, X(m), Y(m)  (relative to the orgin of the coordinates)
 |   0.0   40.0   60.0
 |   25523.0  180040.0  60.0
 
 |   In vessel_00002, specify:
 |   Title: Vessel # 2
-|   Blue_Star_I
-|   Length(m), Width(m), Alpha(0.5), Beta(0.5), P(draft,m)
-|   10.0  5.0, 0.5, 0.5, 1.5
+|   Pressure, 1
+|   Length(m), Width(m), Alpha1(0.5),Alpha2(0.5), Beta(0.5), P(draft,m)
+|   10.0  5.0, 0.5, 0.5, 0.5, 1.5
 |   Time, X(m), Y(m)  (relative to the orgin of the coordinates)
 |   0.0   50.0   60.0
 |   100.0   50.0   60.0 (release at 100.0 sec from x=50.0 m
 |   25623.0  180040.0  60.0
 
 vessel_00003 - vessel_00006 can be made in the same way. 
+
+  (refer to :ref:`section-shipwakes-setup`)
 
 |  **Output**
 |   RESULT_FOLDER = output

@@ -18,6 +18,8 @@ Simple tests **(beginners should start from here)**
    vessel_morpho
    meteo
    sediment_rip
+   tracking_rip
+   
 
 **********
 Benchmarks

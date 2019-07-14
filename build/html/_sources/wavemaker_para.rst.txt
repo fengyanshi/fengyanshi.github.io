@@ -1,3 +1,5 @@
+.. _definition_wavemaker:
+
 Wave-maker
 *****************
 

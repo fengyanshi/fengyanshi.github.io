@@ -1,0 +1,260 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Regular waves with normal incidence &#8212; FUNWAVE Documentation</title>
+    <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="GALLERY" href="gallery.html" />
+    <link rel="prev" title="Basics for model setup" href="tracking_rip_info.html" /> 
+  </head><body>
+<div class="header">
+ <p class="logo"><a href="https://fengyanshi.github.io/build/html/index.html">
+  <img class="logo" src="_static/../../../images/Funwave.svg" alt="Logo"/>
+ </a></p>
+</div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="gallery.html" title="GALLERY"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="tracking_rip_info.html" title="Basics for model setup"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="examples.html" ><strong>EXAMPLES</strong></a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="tracking_rip.html" accesskey="U">Lagrangian tracking in 2D rip channels</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="basics.html"><strong>BASICS</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="flowchart.html"><strong>ARCHITECTURE</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup.html"><strong>MODEL DOWNLOAD AND SETUP</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="definition.html"><strong>DEFINITIONS OF PARAMETERS</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="coupling_nesting.html"><strong>NESTING AND COUPLING</strong></a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="examples.html"><strong>EXAMPLES</strong></a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="examples.html#simple-tests-beginners-should-start-from-here">Simple tests <strong>(beginners should start from here)</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#benchmarks">Benchmarks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#recent-usace-applications">Recent USACE Applications</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gallery.html"><strong>GALLERY</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="news.html"><strong>FUNWAVE-TVD WORKSHOP</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html"><strong>BIBLIOGRAPHY</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="authors.html"><strong>AUTHORS</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="addition.html"><strong>ADDITIONAL INFORMATION</strong></a></li>
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="regular-waves-with-normal-incidence">
+<h1>Regular waves with normal incidence<a class="headerlink" href="#regular-waves-with-normal-incidence" title="Permalink to this headline">¶</a></h1>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="_images/rip_tracking.jpg"><img alt="alternate text" src="_images/rip_tracking.jpg" style="width: 500px; height: 300px;" /></a>
+</div>
+<p>Figure: (left) snapshot of surface elevation, (middle) vorticity field and (right) current field. The white dashed line represents trajectory.</p>
+<blockquote>
+<div><p>The baseline case of rip current: <a class="reference internal" href="rip_2d.html#example-rip-current"><span class="std std-ref">Rip Current on 2D Beach</span></a></p>
+</div></blockquote>
+<p><strong>input.txt:</strong></p>
+<div class="line-block">
+<div class="line"><strong>Parallel(if applicable)</strong></div>
+<div class="line-block">
+<div class="line">PX = 4</div>
+<div class="line">PY = 4</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Depth</strong></div>
+<div class="line-block">
+<div class="line">DEPTH_TYPE = DATA</div>
+<div class="line">DEPTH_FILE = ../bathy/depth_a15.txt</div>
+</div>
+</div>
+<blockquote>
+<div><p>(refer to <a class="reference internal" href="grid.html#definition-grid"><span class="std std-ref">Grid and Computational Time</span></a>)</p>
+</div></blockquote>
+<div class="line-block">
+<div class="line"><strong>Output folder</strong></div>
+<div class="line-block">
+<div class="line">RESULT_FOLDER = output/</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Dimensions</strong></div>
+<div class="line-block">
+<div class="line">Mglob = 312</div>
+<div class="line">Nglob = 100</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Time</strong></div>
+<div class="line-block">
+<div class="line">TOTAL_TIME = 500.0</div>
+<div class="line">PLOT_INTV = 100.0</div>
+<div class="line">PLOT_INTV_STATION = 0.5</div>
+<div class="line">SCREEN_INTV = 100.0</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Wave averaging property</strong></div>
+<div class="line-block">
+<div class="line">T_INTV_mean = 50.0</div>
+<div class="line">STEADY_TIME= 100.0</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Grid sizes</strong></div>
+<div class="line-block">
+<div class="line">DX = 1.0</div>
+<div class="line">DY = 2.0</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Wavemaker</strong></div>
+<div class="line-block">
+<div class="line">WAVEMAKER = WK_REG</div>
+<div class="line">DEP_WK = 8.0</div>
+<div class="line">Xc_WK = 280.0</div>
+<div class="line">Tperiod = 8.0</div>
+<div class="line">AMP_WK = 0.5</div>
+<div class="line">Theta_WK = 0.0</div>
+<div class="line">Delta_WK = 3.0</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Sponge layer</strong></div>
+<div class="line-block">
+<div class="line">FRICTION_SPONGE = T</div>
+<div class="line">DIRECT_SPONGE = T</div>
+<div class="line">Csp = 0.0</div>
+<div class="line">CDsponge = 1.0</div>
+<div class="line">Sponge_west_width =  0.0</div>
+<div class="line">Sponge_east_width =  60.0</div>
+<div class="line">Sponge_south_width = 0.0</div>
+<div class="line">Sponge_north_width = 0.0</div>
+</div>
+</div>
+<blockquote>
+<div><p>(refer to <a class="reference internal" href="info_sponge.html#info-sponge"><span class="std std-ref">Sponge Layers</span></a>)</p>
+</div></blockquote>
+<div class="line-block">
+<div class="line"><strong>Lateral boundary condition</strong></div>
+<div class="line-block">
+<div class="line">PERIODIC = T</div>
+</div>
+</div>
+<blockquote>
+<div><p>(refer to <a class="reference internal" href="info_periodic.html#info-periodic"><span class="std std-ref">Periodic Boundary Condition</span></a>)</p>
+</div></blockquote>
+<div class="line-block">
+<div class="line"><strong>Wetting and drying</strong></div>
+<div class="line-block">
+<div class="line">MinDepth=0.01</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Physics</strong></div>
+<div class="line-block">
+<div class="line">Cd = 0.002</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Breaking scheme</strong></div>
+<div class="line-block">
+<div class="line">VISCOSITY_BREAKING = F</div>
+</div>
+</div>
+<blockquote>
+<div><p>(refer to <a class="reference internal" href="info_breaking.html#example-breaking"><span class="std std-ref">Example: Breaking</span></a>)</p>
+</div></blockquote>
+<div class="line-block">
+<div class="line"><strong>TRACKING</strong></div>
+<div class="line-block">
+<div class="line">TRACER_FILE = tracers.txt</div>
+</div>
+</div>
+<blockquote>
+<div><p>(refer to <a class="reference internal" href="tracer_setup.html#section-tracer-setup"><span class="std std-ref">Lagrangian Tracer Setup</span></a>)</p>
+</div></blockquote>
+<div class="line-block">
+<div class="line"><strong>Output</strong></div>
+<div class="line-block">
+<div class="line">DEPTH_OUT = T</div>
+<div class="line">ETA = T</div>
+<div class="line">U = T</div>
+<div class="line">V = T</div>
+<div class="line">Umean = T</div>
+<div class="line">Vmean = T</div>
+<div class="line">MASK = T</div>
+<div class="line">WaveHeight = T</div>
+</div>
+</div>
+<blockquote>
+<div><p>(refer to <a class="reference internal" href="output.html#definition-output"><span class="std std-ref">Output</span></a>)</p>
+</div></blockquote>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="gallery.html" title="GALLERY"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="tracking_rip_info.html" title="Basics for model setup"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="examples.html" ><strong>EXAMPLES</strong></a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="tracking_rip.html" >Lagrangian tracking in 2D rip channels</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, Fengyan Shi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
+    </div>
+  </body>
+</html>

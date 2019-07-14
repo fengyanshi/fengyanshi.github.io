@@ -1,3 +1,5 @@
+.. _definition_meteo:
+
 Wind and Pressure Field
 ************************
 
@@ -47,4 +49,25 @@ Wind and Pressure Field
 
     120000.0,  800000.0, 1500000.0,  1005.0, 950.0, 23.0, 1.50 
 
+**SPECIFICATION OF METEOTSUNAMI**
+
+Pressure Source (Gausian distribution (elipse))
+
+|  **Add**
+|   MeteoGausian = T
+|   METEO_GAUSIAN_FILE = meteo_data.txt (for example)
+
+|   You need specify your pressure source in the file: meteo_data.txt (for example) 
+|   Meteo data file
+|   NJ
+|   time, x, y, dP(mb), SigmaX, SigmaY, Angle(0 = +x direction)
+|   0.0       0.0 25000.0   5.0 10000.0 100000.0 0.0
+|   36000.0  720000.0 25000.0  5.0 10000.0 10000.0 0.0     
+
+|  **Output**
+|   RESULT_FOLDER = output/
+|   ETA = T
+|   Hmax = T
+|   Hmin = T
+|   OUT_METEO = T (T will have output of pressure distribution)
 

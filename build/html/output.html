@@ -86,7 +86,7 @@
           <div class="body" role="main">
             
   <div class="section" id="output">
-<span id="section-output"></span><h1>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h1>
+<span id="definition-output"></span><h1>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h1>
 <p><strong>SPECIFICATION OF RESULT FOLDER</strong></p>
 <blockquote>
 <div><ul class="simple">
@@ -182,6 +182,15 @@
 <li><p>dep_xxxxx:  depth</p></li>
 </ul>
 <p><em>Station files</em></p>
+</div></blockquote>
+<p>To get time series of surface elevation, u and v at interested locations, you can specify a station file which includes the locations for output.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>in input.txt, add NumberStations = &lt;integer number of stations&gt;</p></li>
+<li><p>in input.txt, STATION_FILE = &lt;file name, e.g., gauges.txt&gt;</p></li>
+<li><p>format of STATION_FILE: two integers for grid points in x and y, respectively.</p></li>
+</ul>
+<p>Example: refer to <a class="reference internal" href="info_station_file.html#example-station-file"><span class="std std-ref">Example: station file</span></a></p>
 </div></blockquote>
 <p>Output for stations is a series of numbered files such as sta_0001, sta_0002 …. (NOTE: four digit numbers here vs. five digit numbers for 2D output like eta_00001).</p>
 <blockquote>

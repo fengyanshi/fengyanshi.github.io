@@ -22,5 +22,5 @@ Regular wave 30 deg oblique incidence
 |   *Theta_WK = 30.0*
 
 |  **Add periodic boundary condition**
-|   PERIODIC = T
+|   PERIODIC = T   (refer to :ref:`info_periodic`)
 

@@ -1,3 +1,5 @@
+.. _definition_grid:
+
 Grid and Computational Time
 *****************************
 

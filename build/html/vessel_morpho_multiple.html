@@ -109,6 +109,7 @@ is in the folder /simple_cases/multi_vessel_morphology/</p></li>
 </div>
 <blockquote>
 <div><p>DEPTH_FILE = depth.txt</p>
+<p>(refer to <a class="reference internal" href="grid.html#definition-grid"><span class="std std-ref">Grid and Computational Time</span></a>)</p>
 </div></blockquote>
 <div class="line-block">
 <div class="line"><strong>Dimensions</strong></div>
@@ -150,6 +151,9 @@ is in the folder /simple_cases/multi_vessel_morphology/</p></li>
 <div class="line">MinDepthPickup = 0.1</div>
 </div>
 </div>
+<blockquote>
+<div><p>(refer to <a class="reference internal" href="sediment_para.html#definition-sediment"><span class="std std-ref">Sediment Transport and Morphological Change</span></a>)</p>
+</div></blockquote>
 <div class="line-block">
 <div class="line"><strong>Add vessels</strong></div>
 <div class="line-block">
@@ -159,9 +163,9 @@ is in the folder /simple_cases/multi_vessel_morphology/</p></li>
 <div class="line">You need 6 vessel files: vessel_00001, vessel_00002 … in the current folder.</div>
 <div class="line">In vessel_00001, specify:</div>
 <div class="line">Title: Vessel # 1</div>
-<div class="line">Blue_Star_I</div>
-<div class="line">Length(m), Width(m), Alpha(0.5), Beta(0.5), P(draft,m)</div>
-<div class="line">10.0  5.0, 0.5, 0.5, 1.5</div>
+<div class="line">Pressure, 1</div>
+<div class="line">Length(m), Width(m), Alpha1(0.5),Alpha2(0.5), Beta(0.5), P(draft,m)</div>
+<div class="line">10.0  5.0, 0.5, 0.5,0.5, 1.5</div>
 <div class="line">Time, X(m), Y(m)  (relative to the orgin of the coordinates)</div>
 <div class="line">0.0   40.0   60.0</div>
 <div class="line">25523.0  180040.0  60.0</div>
@@ -170,15 +174,18 @@ is in the folder /simple_cases/multi_vessel_morphology/</p></li>
 <div class="line-block">
 <div class="line">In vessel_00002, specify:</div>
 <div class="line">Title: Vessel # 2</div>
-<div class="line">Blue_Star_I</div>
-<div class="line">Length(m), Width(m), Alpha(0.5), Beta(0.5), P(draft,m)</div>
-<div class="line">10.0  5.0, 0.5, 0.5, 1.5</div>
+<div class="line">Pressure, 1</div>
+<div class="line">Length(m), Width(m), Alpha1(0.5),Alpha2(0.5), Beta(0.5), P(draft,m)</div>
+<div class="line">10.0  5.0, 0.5, 0.5, 0.5, 1.5</div>
 <div class="line">Time, X(m), Y(m)  (relative to the orgin of the coordinates)</div>
 <div class="line">0.0   50.0   60.0</div>
 <div class="line">100.0   50.0   60.0 (release at 100.0 sec from x=50.0 m</div>
 <div class="line">25623.0  180040.0  60.0</div>
 </div>
 <p>vessel_00003 - vessel_00006 can be made in the same way.</p>
+<blockquote>
+<div><p>(refer to <a class="reference internal" href="shipwakes_para.html#section-shipwakes-setup"><span class="std std-ref">Shipwakes Setup</span></a>)</p>
+</div></blockquote>
 <div class="line-block">
 <div class="line"><strong>Output</strong></div>
 <div class="line-block">

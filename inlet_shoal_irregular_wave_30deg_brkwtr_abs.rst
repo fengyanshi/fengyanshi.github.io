@@ -26,14 +26,20 @@
 |   ThetaPeak = 30.0
 |   Sigma_Theta = 10.0
 
+   Default option: EqualEnergy (refer to :ref:`info_equal_energy`)
+
 |  **Add periodic boundary condition**
-|   PERIODIC = T
+|   PERIODIC = T (refer to :ref:`info_periodic`)
+
+|  **Replace dep_shoal_inlet.txt with dep_shoal_inlet_brk.txt**
+|   DEPTH_FILE = dep_shoal_inlet_brk.txt
 
 |  **Add BREAKWATER FILE for partial reflection**
 |   BREAKWATER_FILE = brk_shoal_inlet.txt
 |   *brk_shoal_inlet.txt* has the same format as depth file, the numbers represent damping width (like sponge layer).
 
-|  **Replace dep_shoal_inlet.txt with dep_shoal_inlet_brk.txt**
-|   DEPTH_FILE = dep_shoal_inlet_brk.txt
+  (refer to :ref:`example_partial_breakwater`)
+
+  
 
 

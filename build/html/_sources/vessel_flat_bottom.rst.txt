@@ -1,6 +1,10 @@
 Two vessels with different speeds 
 ###################################
 
+* Vessel types
+
+  Theory refer to :ref:`theory_shipwakes`
+
 * Model setup
 
 .. figure:: images/simple_cases/layout_two_vessels.jpg
@@ -24,6 +28,8 @@ Two vessels with different speeds
 
   DEPTH_FLAT = 10.0
 
+  (refer to :ref:`definition_grid`)
+
 |  **Dimensions**
 |   Mglob = 500
 |   Nglob = 100
@@ -45,21 +51,23 @@ Two vessels with different speeds
 |   You need two vessel files: vessel_00001 and vessel_00002 in the current folder. 
 |   In vessel_00001, specify:
 |   Title: Vessel # 1
-|   Blue_Star_I
-|   Length(m), Width(m), Alpha(0.5), Beta(0.5), P(draft,m)
-|   10.0  5.0, 0.5, 0.5, 2.0
+|   Pressure, 1
+|   Length(m), Width(m), Alpha1(0.5),Alpha2(0.5), Beta(0.5), P(draft,m)
+|   10.0  5.0, 0.5, 0.5, 0.5, 2.0
 |   Time, X(m), Y(m)  (relative to the orgin of the coordinates)
 |   0.0   50.0   40.0
 |   100.0 1050.0 40.0
 |
 |   In vessel_00001, specify:
 |   Title: Vessel # 2
-|   Blue_Star_II
-|   Length(m), Width(m), Alpha(0.5), Beta(0.5), P(draft,m)
-|   20.0  8.0, 0.5, 0.5, 3.0
+|   Pressure, 1
+|   Length(m), Width(m), Alpha1(0.5),Alpha2(0.5), Beta(0.5), P(draft,m)
+|   20.0  8.0, 0.5, 0.5, 0.5, 3.0
 |   Time, X(m), Y(m)  (relative to the orgin of the coordinates)
 |   0.0   450.0   60.0
 |   100.0 -50.0   60.0
+
+  (refer to :ref:`section-shipwakes-setup`)
 
 |  **Output**
 |   RESULT_FOLDER = output/

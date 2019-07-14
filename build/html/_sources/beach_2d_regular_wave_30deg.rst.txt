@@ -16,6 +16,8 @@ Regular wave 30 deg oblique incidence
 |   SLP = 0.05
 |   Xslp = 300.0
 
+  (refer to :ref:`definition_grid`)
+
 |  **Output folder**
 |   RESULT_FOLDER = output/ 
 
@@ -38,7 +40,7 @@ Regular wave 30 deg oblique incidence
 |   Delta_WK = 3.0
 
 |  **Add periodic boundary condition**
-|   PERIODIC = T
+|   PERIODIC = T  (refer to :ref:`info_periodic`)
 
 |  **Sponge layer**
 |   DIFFUSION_SPONGE = F 
@@ -50,6 +52,8 @@ Regular wave 30 deg oblique incidence
 |   Sponge_east_width =  0.0 
 |   Sponge_south_width = 0.0 
 |   Sponge_north_width = 0.0 
+
+   (refer to :ref:`info_sponge`)
 
 |  **Wave breaking**
 |   VISCOSITY_BREAKING = T  
@@ -68,7 +72,7 @@ Regular wave 30 deg oblique incidence
 |   MASK = T
 |   WaveHeight = T
 
- 
+  (refer to :ref:`definition_output`)
 
 
 

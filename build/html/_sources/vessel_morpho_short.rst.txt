@@ -26,6 +26,8 @@ NOTE: simulation is performed in a half domain: y = 0 -- 60 m
 
   DEPTH_FILE = depth.txt
 
+  (refer to :ref:`definition_grid`)
+
 |  **Dimensions**
 |   Mglob = 400
 |   Nglob = 60
@@ -54,6 +56,8 @@ NOTE: simulation is performed in a half domain: y = 0 -- 60 m
 |   Kappa2 = 1.0
 |   MinDepthPickup = 0.1 
 
+  (refer to :ref:`definition_sediment`)
+
 |  **Add vessels**
 |   VESSEL_FOLDER = ./
 |   NumVessel = 1
@@ -67,6 +71,8 @@ NOTE: simulation is performed in a half domain: y = 0 -- 60 m
 |   Time, X(m), Y(m)  (relative to the orgin of the coordinates)
 |   0.0   40.0   60.0
 |   25523.0  180040.0  60.0
+
+  (refer to :ref:`section-shipwakes-setup`)
 
 |  **Output**
 |   RESULT_FOLDER = output

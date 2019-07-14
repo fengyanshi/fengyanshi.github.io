@@ -1,3 +1,5 @@
+.. _sponge_definition:
+
 Sponge Layer
 ***************
 

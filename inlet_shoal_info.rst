@@ -43,6 +43,10 @@ Basic info
   dep_shoal_inlet.txt  -- basic bathymetry
 
   dep_shoal_inlet_brk.txt  -- bathymetry with a breakwater geometry
+
+.. NOTE::
+   Option: Bathymetry Correction. 
+   visit :ref:`bathymetry_correction`.
   
 * breakwater file
 

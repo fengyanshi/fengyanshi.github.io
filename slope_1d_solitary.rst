@@ -18,6 +18,8 @@ Solitary wave
 |   SLP = 0.05
 |   Xslp = 800.0
 
+(refer to :ref:`definition_grid`)
+
 |  **Dimensions**
 |   Mglob = 1024
 |   Nglob = 3
@@ -45,10 +47,15 @@ Solitary wave
 |   Sponge_south_width = 0.0 
 |   Sponge_north_width = 0.0 
 
+  (refer to 2D case :ref:`info_sponge`)
+
+
 |  **Breaking scheme (default: SWE breaker)**
 |   VISCOSITY_BREAKING = T  
 |   Cbrk1 = 0.65 
 |   Cbrk2 = 0.35 
+
+  (refer to options for breaking scheme :ref:`example_breaking`)
 
 |  **Wetting and Drying**
 |   MinDepth=0.01 
@@ -57,3 +64,5 @@ Solitary wave
 |   RESULT_FOLDER = output/
 |   ETA = T 
 |   MASK = T 
+
+  (refer to :ref:`definition_output`)

@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>30 deg irregular waves, a submerged breakwater with full reflection &#8212; FUNWAVE Documentation</title>
+    <title>30 deg irregular waves, a submerged/emerged breakwater &#8212; FUNWAVE Documentation</title>
     <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -81,8 +81,8 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="deg-irregular-waves-a-submerged-breakwater-with-full-reflection">
-<h1>30 deg irregular waves, a submerged breakwater with full reflection<a class="headerlink" href="#deg-irregular-waves-a-submerged-breakwater-with-full-reflection" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="deg-irregular-waves-a-submerged-emerged-breakwater">
+<h1>30 deg irregular waves, a submerged/emerged breakwater<a class="headerlink" href="#deg-irregular-waves-a-submerged-emerged-breakwater" title="Permalink to this headline">¶</a></h1>
 <div class="align-center figure">
 <a class="reference internal image-reference" href="_images/eta_inlet_shoal_irr_30deg_brk.jpg"><img alt="alternate text" src="_images/eta_inlet_shoal_irr_30deg_brk.jpg" style="width: 500px; height: 300px;" /></a>
 </div>
@@ -107,10 +107,13 @@
 <div class="line">Sigma_Theta = 10.0</div>
 </div>
 </div>
+<blockquote>
+<div><p>Default option: EqualEnergy (refer to <a class="reference internal" href="info_equal_energy.html#info-equal-energy"><span class="std std-ref">Spectrum: Equal Energy Splitting</span></a>)</p>
+</div></blockquote>
 <div class="line-block">
 <div class="line"><strong>Add periodic boundary condition</strong></div>
 <div class="line-block">
-<div class="line">PERIODIC = T</div>
+<div class="line">PERIODIC = T (refer to <a class="reference internal" href="info_periodic.html#info-periodic"><span class="std std-ref">Periodic Boundary Condition</span></a>)</div>
 </div>
 </div>
 <div class="line-block">
@@ -119,6 +122,9 @@
 <div class="line">DEPTH_FILE = ../bathy/dep_shoal_inlet_brk.txt</div>
 </div>
 </div>
+<blockquote>
+<div><p>(refer to <a class="reference internal" href="info_bathy_breakwater.html#example-bathy-breakwater"><span class="std std-ref">Example: add breakwater using bathymetry file</span></a>)</p>
+</div></blockquote>
 </div>
 
 

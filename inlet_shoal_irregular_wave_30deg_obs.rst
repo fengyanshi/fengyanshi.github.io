@@ -26,11 +26,15 @@
 |   ThetaPeak = 30.0
 |   Sigma_Theta = 10.0
 
+   Default option: EqualEnergy (refer to :ref:`info_equal_energy`)
+
 |  **Add periodic boundary condition**
-|   PERIODIC = T
+|   PERIODIC = T (refer to :ref:`info_periodic`)
 
 |  **Add OBSTACLE FILE**
 |   OBSTACLE_FILE = ../bathy/obs_shoal_inlet.txt
 |   *obs_shoal_inlet.txt* has the same format as the depth file with 1 for water and 0 for obstacle points
+
+  (refer to :ref:`example_obstacle`)
 
 

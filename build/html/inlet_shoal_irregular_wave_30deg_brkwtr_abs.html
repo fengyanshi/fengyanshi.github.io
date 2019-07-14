@@ -16,7 +16,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Tohoku Tsunami" href="tohoku.html" />
-    <link rel="prev" title="30 deg irregular waves, a submerged breakwater with full reflection" href="inlet_shoal_irregular_wave_30deg_brkwtr.html" /> 
+    <link rel="prev" title="30 deg irregular waves, a submerged/emerged breakwater" href="inlet_shoal_irregular_wave_30deg_brkwtr.html" /> 
   </head><body>
 <div class="header">
  <p class="logo"><a href="https://fengyanshi.github.io/build/html/index.html">
@@ -34,7 +34,7 @@
           <a href="tohoku.html" title="Tohoku Tsunami"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="inlet_shoal_irregular_wave_30deg_brkwtr.html" title="30 deg irregular waves, a submerged breakwater with full reflection"
+          <a href="inlet_shoal_irregular_wave_30deg_brkwtr.html" title="30 deg irregular waves, a submerged/emerged breakwater"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="examples.html" ><strong>EXAMPLES</strong></a> &#187;</li>
@@ -107,10 +107,19 @@
 <div class="line">Sigma_Theta = 10.0</div>
 </div>
 </div>
+<blockquote>
+<div><p>Default option: EqualEnergy (refer to <a class="reference internal" href="info_equal_energy.html#info-equal-energy"><span class="std std-ref">Spectrum: Equal Energy Splitting</span></a>)</p>
+</div></blockquote>
 <div class="line-block">
 <div class="line"><strong>Add periodic boundary condition</strong></div>
 <div class="line-block">
-<div class="line">PERIODIC = T</div>
+<div class="line">PERIODIC = T (refer to <a class="reference internal" href="info_periodic.html#info-periodic"><span class="std std-ref">Periodic Boundary Condition</span></a>)</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Replace dep_shoal_inlet.txt with dep_shoal_inlet_brk.txt</strong></div>
+<div class="line-block">
+<div class="line">DEPTH_FILE = dep_shoal_inlet_brk.txt</div>
 </div>
 </div>
 <div class="line-block">
@@ -120,12 +129,9 @@
 <div class="line"><em>brk_shoal_inlet.txt</em> has the same format as depth file, the numbers represent damping width (like sponge layer).</div>
 </div>
 </div>
-<div class="line-block">
-<div class="line"><strong>Replace dep_shoal_inlet.txt with dep_shoal_inlet_brk.txt</strong></div>
-<div class="line-block">
-<div class="line">DEPTH_FILE = dep_shoal_inlet_brk.txt</div>
-</div>
-</div>
+<blockquote>
+<div><p>(refer to <a class="reference internal" href="info_partial_breakwater.html#example-partial-breakwater"><span class="std std-ref">Example: add partially reflecting/obsorbing breakwater</span></a>)</p>
+</div></blockquote>
 </div>
 
 
@@ -144,7 +150,7 @@
           <a href="tohoku.html" title="Tohoku Tsunami"
              >next</a> |</li>
         <li class="right" >
-          <a href="inlet_shoal_irregular_wave_30deg_brkwtr.html" title="30 deg irregular waves, a submerged breakwater with full reflection"
+          <a href="inlet_shoal_irregular_wave_30deg_brkwtr.html" title="30 deg irregular waves, a submerged/emerged breakwater"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="examples.html" ><strong>EXAMPLES</strong></a> &#187;</li>
