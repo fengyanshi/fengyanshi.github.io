@@ -47,6 +47,7 @@ Default option: EqualEnergy (refer to :ref:`info_equal_energy`)
 
 (refer to :ref:`section-tracer-setup`)
 
+(refer to :ref:`definition_coupling`)
 
 
 

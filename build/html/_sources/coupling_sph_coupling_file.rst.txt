@@ -1,13 +1,8 @@
-.. _definition_coupling:
-
-Coupling (Manually)
+Make a coupling file
 **********************************
 
-The present version has a capability for one-way coupling with other models such as NHWAVE or FUNWAVE-TVD itself. The nesting scheme passes surface elevation and velocity components calculated from other models or FUNWAVE-TVD in a large domain to a nested small domain through ghost cells at nesting boundaries. To run a nested model, the following procedures should be performed.
+Prepare nesting data using the output of Grid A. In /make_nest_file/, use conver.f to generate coupling.txt. The format of the coupling file is described below
 
-1. The coupling option in Makefile should be defined as '-Dcoupling''. The program should be re--compiled.
-
-2. Prepare nesting data using the output of a large-domain model. The following is an example of the data format.
 
  coupling data
 
@@ -67,14 +62,3 @@ The present version has a capability for one-way coupling with other models such
            
 where N\_COUPLING\_EAST is Num of points at the EAST boundary.
        
- 
-3.Specify the file of coupling data in input.txt
-
-  ! ----------------- COUPLING -------------------------
-
-  ! if do coupling, have to set -DCOUPLING in Makefile 
-
- COUPLING\_FILE = coupling.txt 
-
- where 'coupling.txt' is the file saved in procedure 2. 
-

@@ -19,6 +19,7 @@ Simple tests **(beginners should start from here)**
    meteo
    sediment_rip
    tracking_rip
+   coupling_sph
    
 
 **********
