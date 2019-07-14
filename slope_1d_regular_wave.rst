@@ -42,6 +42,8 @@ Regular wave
 |   AMP_WK = 0.5 
 |   Delta_WK = 3.0  ! the default is 0.5, set a larger number for nonlinear waves
 
+  (refer to :ref:`definition_wavemaker`)
+
 |  **Add sponge layer**
 |   FRICTION_SPONGE = T 
 |   DIRECT_SPONGE = T 

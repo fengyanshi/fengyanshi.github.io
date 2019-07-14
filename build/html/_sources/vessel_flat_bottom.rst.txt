@@ -67,7 +67,7 @@ Two vessels with different speeds
 |   0.0   450.0   60.0
 |   100.0 -50.0   60.0
 
-  (refer to :ref:`section-shipwakes-setup`)
+  (refer to :ref:`theory_shipwakes` and :ref:`section-shipwakes-setup` )
 
 |  **Output**
 |   RESULT_FOLDER = output/

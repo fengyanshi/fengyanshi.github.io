@@ -82,7 +82,7 @@ Multiple vessels-induced morphology changes
 
 vessel_00003 - vessel_00006 can be made in the same way. 
 
-  (refer to :ref:`section-shipwakes-setup`)
+  (refer to :ref:`theory_shipwakes` and :ref:`section-shipwakes-setup`)
 
 |  **Output**
 |   RESULT_FOLDER = output

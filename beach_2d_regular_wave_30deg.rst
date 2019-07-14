@@ -39,6 +39,8 @@ Regular wave 30 deg oblique incidence
 |   Theta_WK = 30.0 
 |   Delta_WK = 3.0
 
+  (refer to :ref:`definition_wavemaker`)
+
 |  **Add periodic boundary condition**
 |   PERIODIC = T  (refer to :ref:`info_periodic`)
 
@@ -59,6 +61,8 @@ Regular wave 30 deg oblique incidence
 |   VISCOSITY_BREAKING = T  
 |   Cbrk1 = 0.65 
 |   Cbrk2 = 0.35 
+
+  (refer to :ref:`example_breaking`)
 
 |  **Wave average property**
 |   T_INTV_mean = 100.0 

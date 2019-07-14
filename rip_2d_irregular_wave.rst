@@ -20,6 +20,8 @@ Figure: (left) snapshot of surface elevation, (middle) vorticity field, (right) 
 |   DEPTH_TYPE = DATA 
 |   DEPTH_FILE = ../bathy/depth_a15.txt 
 
+  (refer to :ref:`definition_grid`)
+
 |  **Output folder** 
 |   RESULT_FOLDER = output/ 
  
@@ -55,6 +57,8 @@ Figure: (left) snapshot of surface elevation, (middle) vorticity field, (right) 
 |   ThetaPeak = 0.0 
 |   Sigma_Theta = 10.0 
 
+  (refer to :ref:`definition_wavemaker`)
+
 |  **Sponge layer** 
 |   FRICTION_SPONGE = T 
 |   DIRECT_SPONGE = T 
@@ -64,6 +68,8 @@ Figure: (left) snapshot of surface elevation, (middle) vorticity field, (right) 
 |   Sponge_east_width =  60.0 
 |   Sponge_south_width = 0.0 
 |   Sponge_north_width = 0.0 
+
+  (refer to :ref:`info_sponge`)
 
 |  **Lateral boundary condition** 
 |   PERIODIC = T 
@@ -77,6 +83,8 @@ Figure: (left) snapshot of surface elevation, (middle) vorticity field, (right) 
 |  **Breaking scheme**
 |   VISCOSITY_BREAKING = F  
 
+  (refer to :ref:`example_breaking`)
+
 |  **Output** 
 |   ETA = T 
 |   U = T
@@ -85,3 +93,6 @@ Figure: (left) snapshot of surface elevation, (middle) vorticity field, (right) 
 |   Vmean = T   
 |   MASK = T 
 |   WaveHeight = T 
+
+  (refer to :ref:`definition_output`)
+

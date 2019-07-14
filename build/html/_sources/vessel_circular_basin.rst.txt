@@ -55,7 +55,7 @@ Single Vessel in a Circular Basin
 |   1.0000000e+00,   5.6374897e+02,   5.0255132e+02
 |   ...  
 
-  (refer to :ref:`section-shipwakes-setup`)
+  (refer to :ref:`theory_shipwakes` and :ref:`section-shipwakes-setup`)
 
 |  **Output**
 |   RESULT_FOLDER = output/

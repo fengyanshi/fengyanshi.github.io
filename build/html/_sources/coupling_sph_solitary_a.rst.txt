@@ -48,6 +48,8 @@ GRID A (solitary wave case)
 |  LAGTIME = 0.0
 |  XWAVEMAKER = 1000.0
 
+  (refer to :ref:`definition_wavemaker`)
+
 |  **Physics** 
 |   Cd = 0.0
 

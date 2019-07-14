@@ -48,6 +48,8 @@ Regular wave (baseline case)
 |   AMP_WK = 1.0 
 |   Theta_WK = 0.0 
 
+  (refer to :ref:`definition_wavemaker`)
+
 |  **Sponge layer** 
 |   FRICTION_SPONGE = T 
 |   DIRECT_SPONGE = T 

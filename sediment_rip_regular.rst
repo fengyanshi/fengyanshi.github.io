@@ -55,6 +55,8 @@ Figure: (left) snapshot of surface elevation (5th output), (middle) sediemnt con
 |   Theta_WK = 0.0 
 |   Delta_WK = 3.0 
 
+  (refer to :ref:`definition_wavemaker`)
+
 |  **Sponge layer** 
 |   FRICTION_SPONGE = T 
 |   DIRECT_SPONGE = T 

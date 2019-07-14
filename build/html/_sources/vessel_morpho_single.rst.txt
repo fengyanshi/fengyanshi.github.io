@@ -69,7 +69,7 @@ Single vessel + sediment
 |   0.0   40.0   60.0
 |   25523.0  180040.0  60.0
 
-  (refer to :ref:`section-shipwakes-setup`)
+  (refer to :ref:`theory_shipwakes` and :ref:`section-shipwakes-setup`)
 
 |  **Output**
 |   RESULT_FOLDER = output

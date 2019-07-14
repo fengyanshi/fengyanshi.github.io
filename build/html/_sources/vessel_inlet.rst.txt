@@ -34,7 +34,7 @@ Interaction between wind waves and ship-wakes in an inlet system
 |   250.0 900.0   1000.0
 |   1000.0 -6600  1000.0
 
-  (refer to :ref:`section-shipwakes-setup`)
+  (refer to :ref:`theory_shipwakes` and :ref:`section-shipwakes-setup`)
 
 |  **postprocessing**
 |   matlab examples of postprocessing are located in /simple_cases/inlet_shoal/postprocessing/

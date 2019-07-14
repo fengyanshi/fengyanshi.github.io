@@ -12,7 +12,7 @@ Basics for model setup
 
 Basic info
 
- Dimensions 312 X 100
+ Dimensions 312 X 100 (note: we only read 100 rows from the depth file shown in the figure)
 
  DX = 1.0 m
  DY = 2.0 m
