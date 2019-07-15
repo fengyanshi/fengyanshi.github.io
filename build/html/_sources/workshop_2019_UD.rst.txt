@@ -31,7 +31,7 @@ MINI-FUNWAVE-TVD Workshop 2019 will be held at the University of Delaware, Newar
 * Ye, Zhouteng, UD (**MODEL SETUP ON MS WINDOWS ASSISTANT**)
 * Yuan, Ye, UD (**MODEL RUN ASSISTANT**)
 * Zhang, Jinghua, UD
-* Zhang, Yu, UD (**SECRETARY**)
+* Zhang, Yu, UD
 * Zhu, Jun, Third Institute of Oceanography, Xiamen
 
 
