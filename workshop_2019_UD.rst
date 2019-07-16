@@ -1,7 +1,7 @@
 *********************************************
 MINI-FUNWAVE-TVD Workshop 2019
 *********************************************
-.. image:: images/workshop/UD2019.png
+.. image:: images/workshop/group_2019UD.jpg
 
 MINI-FUNWAVE-TVD Workshop 2019 will be held at the University of Delaware, Newark, DE on **15--16 July 2019**. This workshop is informal, and it will focus on training and discussions about general FUNWAVE model applications.
 
@@ -12,24 +12,24 @@ MINI-FUNWAVE-TVD Workshop 2019 will be held at the University of Delaware, Newar
 **Attendees**
 
 * Aiken, Rebecca, Stantec 
-* Chen, Yujie, UD (**MODEL RUN TECHNICAL ASSISTANT**)
+* Chen, Yujie, UD 
 * Chambers, Rachel, Stantec 
 * Forlini, Carola, UFL
 * Haas, Kevin, GATECH 
 * Jefferson, Joe, UFL
 * Kerr, Corbitt, Stantec
-* Kirby, Jim, UD (**PRESENTER**)
+* Kirby, Jim, UD 
 * Li, Mengyu, UD 
-* Malej, Matt, USACE  (**PRESENTER & INSTRUCTOR**)
+* Malej, Matt, USACE  
 * Muller, Mark, Salisbury Univ. 
 * Salatin, Reza, Northeastern University 
-* Shi, Fengyan, UD (**PRESENTER & INSTRUCTOR**)
+* Shi, Fengyan, UD 
 * Wei, Zhangping, Michael Baker International
 * Marsooli, Reza, Stevens Inst. of Tech.
 * Muscalus, Alex, GATECH
 * Qayyum, Rizwan, UFL
-* Ye, Zhouteng, UD (**MODEL SETUP ON MS WINDOWS ASSISTANT**)
-* Yuan, Ye, UD (**MODEL RUN ASSISTANT**)
+* Ye, Zhouteng, UD 
+* Yuan, Ye, UD 
 * Zhang, Jinghua, UD
 * Zhang, Yu, UD
 * Zhu, Jun, Third Institute of Oceanography, Xiamen
