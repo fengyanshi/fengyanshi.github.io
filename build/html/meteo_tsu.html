@@ -88,14 +88,18 @@
 <span id="definition-meteo"></span><h1>Wind and Pressure Field<a class="headerlink" href="#wind-and-pressure-field" title="Permalink to this headline">¶</a></h1>
 <p><strong>SPECIFICATION OF WIND EFFECT</strong></p>
 <blockquote>
-<div><ul class="simple">
-<li><p>WindForce: logical parameter representing if wind effect is taken into account. T or F.</p></li>
-<li><p>AirPressure: logical parameter representing if pressure effect is taken into account. T or F.</p></li>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Use FLAG_xx = -DMETEO in Makefile when compiling</p>
+</div>
+<ul class="simple">
+<li><p>WindForce: logical parameter representing if wind effect is taken into account. T or F. If WindConstantField = T, WindForce = T automatically</p></li>
+<li><p>AirPressure: logical parameter representing if pressure effect is taken into account. T or F. If MeteoGausian = T, AirPressure = T automatically.</p></li>
 <li><p>WindWaveInteraction: logical parameter representing if wave-wind interaction (Chen et al. 2003) based on the formula presented in ‘METEO module’ in INTRODUCTION section. The parameter WindCrestPercent will be used.</p></li>
 <li><p>Cdw: wind stress coefficient for the quadratic formula if WindForce = T. Default: 0.002.</p></li>
-<li><p>WindCrestPercent: ratio of the forced wave crest height to the maximum surface elevation, if WindForce = T. Default: 100% (for storm surges).</p></li>
+<li><p>WindCrestPercent: ratio of the forced wave crest height to the maximum surface elevation, if WindForce = T. Default: 1.0 (100%) (for storm surges).</p></li>
 <li><p>WindConstantField: logical parameter for constant wind field. T or F.</p></li>
-<li><p>WIND_FILE: file name for the constant wind field. The following is an example of data format.</p></li>
+<li><p>CONSTANT_WIND_FILE: file name for the constant wind field. The following is an example of data format.</p></li>
 </ul>
 <blockquote>
 <div><p>wind data</p>
@@ -104,6 +108,12 @@
 <p>2000.0,   10.0,  0.0</p>
 <p>8000.0,  10.0,   0.0</p>
 <p>…</p>
+<p>For example, for constant wind field, input.txt:</p>
+<p>Cdw = 0.002</p>
+<p>WindConstantField = T</p>
+<p>WindWaveInteraction = T</p>
+<p>WindCrestPercent = 0.5</p>
+<p>CONSTANT_WIND_FILE = wind.txt</p>
 </div></blockquote>
 <ul class="simple">
 <li><p>WindHollandModel: logical parameter for Holland model. T or F.</p></li>
