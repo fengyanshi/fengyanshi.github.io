@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -22,12 +23,33 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+=======
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Meteotsunami: Gausian pressure and flat bottom &#8212; FUNWAVE Documentation</title>
+    <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+>>>>>>> origin/master
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Sediment Transport in 2D rip channels" href="sediment_rip.html" />
     <link rel="prev" title="Compile the code for meteotsunami case" href="meteo_compile.html" /> 
+<<<<<<< HEAD
   </head>
   <body>
+=======
+  </head><body>
+>>>>>>> origin/master
 <div class="header">
  <p class="logo"><a href="https://fengyanshi.github.io/build/html/index.html">
   <img class="logo" src="_static/../../../images/Funwave.svg" alt="Logo"/>
@@ -53,9 +75,14 @@
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
+<<<<<<< HEAD
 <h3><a href="index.html">Table Of Contents</a></h3>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="integration.html"><strong>INTEGRATION</strong></a></li>
+=======
+<h3><a href="index.html">Table of Contents</a></h3>
+<ul class="current">
+>>>>>>> origin/master
 <li class="toctree-l1"><a class="reference internal" href="basics.html"><strong>BASICS</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="flowchart.html"><strong>ARCHITECTURE</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="setup.html"><strong>MODEL DOWNLOAD AND SETUP</strong></a></li>
@@ -64,6 +91,10 @@
 <li class="toctree-l1 current"><a class="reference internal" href="examples.html"><strong>EXAMPLES</strong></a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="examples.html#simple-tests-beginners-should-start-from-here">Simple tests <strong>(beginners should start from here)</strong></a></li>
 <li class="toctree-l2"><a class="reference internal" href="examples.html#benchmarks">Benchmarks</a></li>
+<<<<<<< HEAD
+=======
+<li class="toctree-l2"><a class="reference internal" href="examples.html#recent-usace-applications">Recent USACE Applications</a></li>
+>>>>>>> origin/master
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="gallery.html"><strong>GALLERY</strong></a></li>
@@ -74,6 +105,7 @@
 </ul>
 
 <div id="searchbox" style="display: none" role="search">
+<<<<<<< HEAD
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
       <div><input type="text" name="q" /></div>
@@ -81,6 +113,15 @@
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+=======
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+>>>>>>> origin/master
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -93,8 +134,14 @@
             
   <div class="section" id="meteotsunami-gausian-pressure-and-flat-bottom">
 <h1>Meteotsunami: Gausian pressure and flat bottom<a class="headerlink" href="#meteotsunami-gausian-pressure-and-flat-bottom" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li>Model setup</li>
+<ul>
+<li><p>Theory</p>
+<p><a class="reference internal" href="meteo_intro.html#section-meteo-module"><span class="std std-ref">Meteo Module</span></a></p>
+</li>
+<li><p>Parameter definition</p>
+<p><a class="reference internal" href="meteo_tsu.html#definition-meteo"><span class="std std-ref">Wind and Pressure Field</span></a></p>
+</li>
+<li><p>Model setup</p></li>
 </ul>
 <div class="align-center figure">
 <a class="reference internal image-reference" href="_images/meteo_layout.jpg"><img alt="alternate text" src="_images/meteo_layout.jpg" style="width: 500px; height: 300px;" /></a>
@@ -102,8 +149,8 @@
 <p>Model configuration: Model dimensions: 100 km x 600 km. Water depth is 40 m in the whole domain. Pressure source is an elliptical shape Gaussian distribution described in the section of METEO-MODULE in
 <a class="reference external" href="theory_formulation.html">INTRODUCTION</a>. The moving speed of the source is specified as 20 m/s which is close to the critical speed to make Proudman Resonance.</p>
 <ul class="simple">
-<li>input.txt
-is in the folder /simple_cases/meteo_tsunami/</li>
+<li><p>input.txt
+is in the folder /simple_cases/meteo_tsunami/</p></li>
 </ul>
 <p><strong>In input.txt:</strong></p>
 <div class="line-block">
@@ -120,7 +167,8 @@ is in the folder /simple_cases/meteo_tsunami/</li>
 </div>
 </div>
 <blockquote>
-<div>DEPTH_FLAT = 40.0</div></blockquote>
+<div><p>DEPTH_FLAT = 40.0</p>
+</div></blockquote>
 <div class="line-block">
 <div class="line"><strong>Dimensions</strong></div>
 <div class="line-block">
@@ -145,7 +193,7 @@ is in the folder /simple_cases/meteo_tsunami/</li>
 </div>
 </div>
 <div class="line-block">
-<div class="line"><strong>Add pressure source (Gausian distribution (elipse))</strong></div>
+<div class="line"><strong>Add</strong></div>
 <div class="line-block">
 <div class="line">MeteoGausian = T</div>
 <div class="line">METEO_GAUSIAN_FILE = meteo_data.txt</div>
@@ -207,7 +255,11 @@ is in the folder /simple_cases/meteo_tsunami/</li>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2019, Fengyan Shi.
+<<<<<<< HEAD
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+=======
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
+>>>>>>> origin/master
     </div>
   </body>
 </html>

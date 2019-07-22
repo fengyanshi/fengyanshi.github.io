@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -28,6 +29,28 @@
     <link rel="prev" title="NESTING AND COUPLING" href="coupling_nesting.html" /> 
   </head>
   <body>
+=======
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Coupling (Manually) &#8212; FUNWAVE Documentation</title>
+    <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Mult-Grid Nesting (Automatically)" href="nesting.html" />
+    <link rel="prev" title="NESTING AND COUPLING" href="coupling_nesting.html" /> 
+  </head><body>
+>>>>>>> origin/master
 <div class="header">
  <p class="logo"><a href="https://fengyanshi.github.io/build/html/index.html">
   <img class="logo" src="_static/../../../images/Funwave.svg" alt="Logo"/>
@@ -41,7 +64,11 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
+<<<<<<< HEAD
           <a href="nesting.html" title="Multi-Grid Nesting (Automatically)"
+=======
+          <a href="nesting.html" title="Mult-Grid Nesting (Automatically)"
+>>>>>>> origin/master
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="coupling_nesting.html" title="NESTING AND COUPLING"
@@ -52,16 +79,25 @@
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
+<<<<<<< HEAD
 <h3><a href="index.html">Table Of Contents</a></h3>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="integration.html"><strong>INTEGRATION</strong></a></li>
+=======
+<h3><a href="index.html">Table of Contents</a></h3>
+<ul class="current">
+>>>>>>> origin/master
 <li class="toctree-l1"><a class="reference internal" href="basics.html"><strong>BASICS</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="flowchart.html"><strong>ARCHITECTURE</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="setup.html"><strong>MODEL DOWNLOAD AND SETUP</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="definition.html"><strong>DEFINITIONS OF PARAMETERS</strong></a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="coupling_nesting.html"><strong>NESTING AND COUPLING</strong></a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Coupling (Manually)</a></li>
+<<<<<<< HEAD
 <li class="toctree-l2"><a class="reference internal" href="nesting.html">Multi-Grid Nesting (Automatically)</a></li>
+=======
+<li class="toctree-l2"><a class="reference internal" href="nesting.html">Mult-Grid Nesting (Automatically)</a></li>
+>>>>>>> origin/master
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="examples.html"><strong>EXAMPLES</strong></a></li>
@@ -73,6 +109,7 @@
 </ul>
 
 <div id="searchbox" style="display: none" role="search">
+<<<<<<< HEAD
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
       <div><input type="text" name="q" /></div>
@@ -80,6 +117,15 @@
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+=======
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+>>>>>>> origin/master
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -91,6 +137,7 @@
           <div class="body" role="main">
             
   <div class="section" id="coupling-manually">
+<<<<<<< HEAD
 <span id="section-coupling-manually"></span><h1>Coupling (Manually)<a class="headerlink" href="#coupling-manually" title="Permalink to this headline">¶</a></h1>
 <p>The present version has a capability for one-way coupling with other models such as NHWAVE or FUNWAVE-TVD itself. The nesting scheme passes surface elevation and velocity components calculated from other models or FUNWAVE-TVD in a large domain to a nested small domain through ghost cells at nesting boundaries. To run a nested model, the following procedures should be performed.</p>
 <ol class="arabic">
@@ -156,6 +203,66 @@
 <span class="mi">119</span>      <span class="n">FORMAT</span><span class="p">(</span><span class="mf">5E16</span><span class="o">.</span><span class="mi">6</span><span class="p">)</span>
 </pre></div>
 </div>
+=======
+<span id="definition-coupling"></span><h1>Coupling (Manually)<a class="headerlink" href="#coupling-manually" title="Permalink to this headline">¶</a></h1>
+<p>The present version has a capability for one-way coupling with other models such as NHWAVE or FUNWAVE-TVD itself. The nesting scheme passes surface elevation and velocity components calculated from other models or FUNWAVE-TVD in a large domain to a nested small domain through ghost cells at nesting boundaries. To run a nested model, the following procedures should be performed.</p>
+<ol class="arabic simple">
+<li><p>The coupling option in Makefile should be defined as ‘-Dcoupling’‘. The program should be re–compiled.</p></li>
+<li><p>Prepare nesting data using the output of a large-domain model. The following is an example of the data format.</p></li>
+</ol>
+<blockquote>
+<div><p>coupling data</p>
+<p>boundary info: num of points (negative means no point), start point</p>
+<p>EAST</p>
+<blockquote>
+<div><p>-1,           1   (no data on east side)</p>
+</div></blockquote>
+<p>WEST</p>
+<blockquote>
+<div><p>5,           1   (5 points at west boundary, start from  1)</p>
+</div></blockquote>
+<p>SOUTH</p>
+<blockquote>
+<div><p>-1,         0   ( no data on south side)</p>
+</div></blockquote>
+<p>NORTH</p>
+<blockquote>
+<div><p>-1,        0   (no data on north side)</p>
+</div></blockquote>
+<p>TIME SERIES</p>
+<blockquote>
+<div><p>68.443001    (<em>first step, NOTE: model clock will be initialized as this time</em>)</p>
+</div></blockquote>
+<p>EAST SIDE  (<em>no nesting on east side</em>)</p>
+<p>WEST SIDE</p>
+<blockquote>
+<div><blockquote>
+<div><p>0.141220E-02    0.141220E-02    0.141220E-02   0.141220E-02    0.141220E-02 (<em>u</em>)</p>
+</div></blockquote>
+<p>-0.119260E-10    -0.119260E-10   -0.667390E-10  -0.667390E-10   -0.219240E-10 (<em>v</em>)</p>
+<blockquote>
+<div><p>0.141890E-02    0.141890E-02   0.141890E-02  0.141890E-02   0.141890E-02   (<em>z</em>)</p>
+</div></blockquote>
+</div></blockquote>
+<p>SOUTH SIDE (<em>no nesting on south side</em>)</p>
+<p>NORTH SIDE (<em>no nesting on north side</em>)</p>
+<blockquote>
+<div><p>68.641998    (<em>next time step</em>)</p>
+<p>…</p>
+</div></blockquote>
+<p>The example above is a case that a model nesting  takes place at the WEST (left) boundary of a small domain.   Boundaries are defined with the order: EAST, WEST, SOUTH, and NORTH. If the num of points of a boundary is larger than zero, the program will read a time series of (u, v, eta) below ‘XXXX SIDE’. The read format is</p>
+<blockquote>
+<div><blockquote>
+<div><p>READ(11,*) TIME_COUPLING_2</p>
+<p>READ(11,119)(U_COUPLING_EAST(I,2),I=1,N_COUPLING_EAST)</p>
+<p>READ(11,119)(V_COUPLING_EAST(I,2),I=1,N_COUPLING_EAST)</p>
+<p>READ(11,119)(Z_COUPLING_EAST(I,2),I=1,N_COUPLING_EAST)</p>
+</div></blockquote>
+<p>ENDDO</p>
+</div></blockquote>
+<p>119      FORMAT(5E16.6)</p>
+</div></blockquote>
+>>>>>>> origin/master
 <p>where N_COUPLING_EAST is Num of points at the EAST boundary.</p>
 <ol class="arabic" start="3">
 <li><p class="first">Specify the file of coupling data in input.txt:</p>
@@ -169,7 +276,17 @@ COUPLING\_FILE = coupling.txt
 </li>
 </ol>
 <blockquote>
+<<<<<<< HEAD
 <div>where ‘coupling.txt’ is the file saved in procedure 2.</div></blockquote>
+=======
+<div><blockquote>
+<div><p>! —————– COUPLING ————————-</p>
+<p>! if do coupling, have to set -DCOUPLING in Makefile</p>
+</div></blockquote>
+<p>COUPLING_FILE = coupling.txt</p>
+<p>where ‘coupling.txt’ is the file saved in procedure 2.</p>
+</div></blockquote>
+>>>>>>> origin/master
 </div>
 
 
@@ -185,7 +302,11 @@ COUPLING\_FILE = coupling.txt
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
+<<<<<<< HEAD
           <a href="nesting.html" title="Multi-Grid Nesting (Automatically)"
+=======
+          <a href="nesting.html" title="Mult-Grid Nesting (Automatically)"
+>>>>>>> origin/master
              >next</a> |</li>
         <li class="right" >
           <a href="coupling_nesting.html" title="NESTING AND COUPLING"
@@ -196,7 +317,11 @@ COUPLING\_FILE = coupling.txt
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2019, Fengyan Shi.
+<<<<<<< HEAD
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+=======
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
+>>>>>>> origin/master
     </div>
   </body>
 </html>

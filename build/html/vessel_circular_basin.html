@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -22,12 +23,33 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+=======
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Single Vessel in a Circular Basin &#8212; FUNWAVE Documentation</title>
+    <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+>>>>>>> origin/master
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Interaction between wind waves and ship-wakes in an inlet system" href="vessel_inlet.html" />
     <link rel="prev" title="Two vessels with different speeds" href="vessel_flat_bottom.html" /> 
+<<<<<<< HEAD
   </head>
   <body>
+=======
+  </head><body>
+>>>>>>> origin/master
 <div class="header">
  <p class="logo"><a href="https://fengyanshi.github.io/build/html/index.html">
   <img class="logo" src="_static/../../../images/Funwave.svg" alt="Logo"/>
@@ -53,9 +75,14 @@
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
+<<<<<<< HEAD
 <h3><a href="index.html">Table Of Contents</a></h3>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="integration.html"><strong>INTEGRATION</strong></a></li>
+=======
+<h3><a href="index.html">Table of Contents</a></h3>
+<ul class="current">
+>>>>>>> origin/master
 <li class="toctree-l1"><a class="reference internal" href="basics.html"><strong>BASICS</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="flowchart.html"><strong>ARCHITECTURE</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="setup.html"><strong>MODEL DOWNLOAD AND SETUP</strong></a></li>
@@ -64,6 +91,10 @@
 <li class="toctree-l1 current"><a class="reference internal" href="examples.html"><strong>EXAMPLES</strong></a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="examples.html#simple-tests-beginners-should-start-from-here">Simple tests <strong>(beginners should start from here)</strong></a></li>
 <li class="toctree-l2"><a class="reference internal" href="examples.html#benchmarks">Benchmarks</a></li>
+<<<<<<< HEAD
+=======
+<li class="toctree-l2"><a class="reference internal" href="examples.html#recent-usace-applications">Recent USACE Applications</a></li>
+>>>>>>> origin/master
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="gallery.html"><strong>GALLERY</strong></a></li>
@@ -74,6 +105,7 @@
 </ul>
 
 <div id="searchbox" style="display: none" role="search">
+<<<<<<< HEAD
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
       <div><input type="text" name="q" /></div>
@@ -81,6 +113,15 @@
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+=======
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+>>>>>>> origin/master
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -94,16 +135,15 @@
   <div class="section" id="single-vessel-in-a-circular-basin">
 <h1>Single Vessel in a Circular Basin<a class="headerlink" href="#single-vessel-in-a-circular-basin" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li>computational domain</li>
+<li><p>computational domain</p></li>
 </ul>
 <div class="align-center figure">
 <a class="reference internal image-reference" href="_images/depth_vessel.jpg"><img alt="alternate text" src="_images/depth_vessel.jpg" style="width: 400px; height: 350px;" /></a>
 </div>
 <ul>
-<li><p class="first">input.txt
-is in the folder /simple_cases/vessel_island_beach/</p>
-</li>
-<li><p class="first">Bathymetry file</p>
+<li><p>input.txt
+is in the folder /simple_cases/vessel_island_beach/</p></li>
+<li><p>Bathymetry file</p>
 <p>in the folder /simple_cases/simple_cases/vessel_island_beach/depth.txt</p>
 </li>
 </ul>
@@ -122,6 +162,9 @@ is in the folder /simple_cases/vessel_island_beach/</p>
 <div class="line">DEPTH_FILE = depth.txt</div>
 </div>
 </div>
+<blockquote>
+<div><p>(refer to <a class="reference internal" href="grid.html#definition-grid"><span class="std std-ref">Grid and Computational Time</span></a>)</p>
+</div></blockquote>
 <div class="line-block">
 <div class="line"><strong>Set up dimensions</strong></div>
 <div class="line-block">
@@ -152,14 +195,17 @@ is in the folder /simple_cases/vessel_island_beach/</p>
 <div class="line"><br /></div>
 <div class="line">In vessel_00001, specify:</div>
 <div class="line">Title: Vessel # 1</div>
-<div class="line">Blue_Star_I</div>
-<div class="line">Length(m), Width(m), Alpha(m), Beta(m), P(unit)</div>
-<div class="line">20.0  10.0, 0.5, 0.5, 1.0</div>
+<div class="line">Pressure, 1</div>
+<div class="line">Length(m), Width(m), Alpha1(m), Alpha2(m), Beta(m), P(unit)</div>
+<div class="line">20.0  10.0, 0.5, 0.5, 0.5, 1.0</div>
 <div class="line">0.0000000e+00,   5.6000000e+02,   5.0000000e+02</div>
 <div class="line">1.0000000e+00,   5.6374897e+02,   5.0255132e+02</div>
 <div class="line">…</div>
 </div>
 </div>
+<blockquote>
+<div><p>(refer to <a class="reference internal" href="shipwakes.html#theory-shipwakes"><span class="std std-ref">Ship-wake Module</span></a> and <a class="reference internal" href="shipwakes_para.html#section-shipwakes-setup"><span class="std std-ref">Shipwakes Setup</span></a>)</p>
+</div></blockquote>
 <div class="line-block">
 <div class="line"><strong>Output</strong></div>
 <div class="line-block">
@@ -203,7 +249,11 @@ is in the folder /simple_cases/vessel_island_beach/</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2019, Fengyan Shi.
+<<<<<<< HEAD
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+=======
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
+>>>>>>> origin/master
     </div>
   </body>
 </html>

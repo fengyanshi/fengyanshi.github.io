@@ -1,0 +1,206 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>GRID A (solitary wave case) &#8212; FUNWAVE Documentation</title>
+    <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Make a coupling file" href="coupling_sph_coupling_file.html" />
+    <link rel="prev" title="Coupling procedure" href="coupling_sph_procedure.html" /> 
+  </head><body>
+<div class="header">
+ <p class="logo"><a href="https://fengyanshi.github.io/build/html/index.html">
+  <img class="logo" src="_static/../../../images/Funwave.svg" alt="Logo"/>
+ </a></p>
+</div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="coupling_sph_coupling_file.html" title="Make a coupling file"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="coupling_sph_procedure.html" title="Coupling procedure"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="examples.html" ><strong>EXAMPLES</strong></a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="coupling_sph.html" accesskey="U">Coupling grid A and B</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="basics.html"><strong>BASICS</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="flowchart.html"><strong>ARCHITECTURE</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup.html"><strong>MODEL DOWNLOAD AND SETUP</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="definition.html"><strong>DEFINITIONS OF PARAMETERS</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="coupling_nesting.html"><strong>NESTING AND COUPLING</strong></a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="examples.html"><strong>EXAMPLES</strong></a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="examples.html#simple-tests-beginners-should-start-from-here">Simple tests <strong>(beginners should start from here)</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#benchmarks">Benchmarks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#recent-usace-applications">Recent USACE Applications</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gallery.html"><strong>GALLERY</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="news.html"><strong>FUNWAVE-TVD WORKSHOP</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html"><strong>BIBLIOGRAPHY</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="authors.html"><strong>AUTHORS</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="addition.html"><strong>ADDITIONAL INFORMATION</strong></a></li>
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="grid-a-solitary-wave-case">
+<h1>GRID A (solitary wave case)<a class="headerlink" href="#grid-a-solitary-wave-case" title="Permalink to this headline">¶</a></h1>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="_images/solitary_nesting.jpg"><img alt="alternate text" src="_images/solitary_nesting.jpg" style="width: 400px; height: 350px;" /></a>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>RUN funwave_nocoupling</p>
+</div>
+<p><strong>input.txt:</strong></p>
+<div class="line-block">
+<div class="line"><strong>Parallel(if applicable)</strong></div>
+<div class="line-block">
+<div class="line">PX = 2</div>
+<div class="line">PY = 2</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Depth</strong></div>
+<div class="line-block">
+<div class="line">DEPTH_TYPE = FLAT</div>
+<div class="line">DEPTH_FILE = ../bathy/depth_a15.txt</div>
+</div>
+</div>
+<blockquote>
+<div><p>(refer to <a class="reference internal" href="grid.html#definition-grid"><span class="std std-ref">Grid and Computational Time</span></a>)</p>
+</div></blockquote>
+<div class="line-block">
+<div class="line"><strong>Output folder</strong></div>
+<div class="line-block">
+<div class="line">RESULT_FOLDER = output_1/</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Dimensions</strong></div>
+<div class="line-block">
+<div class="line">Mglob = 1500</div>
+<div class="line">Nglob = 3</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Time</strong></div>
+<div class="line-block">
+<div class="line">TOTAL_TIME = 400.0</div>
+<div class="line">PLOT_INTV = 1.0</div>
+<div class="line">PLOT_INTV_STATION = 0.0</div>
+<div class="line">SCREEN_INTV = 1.0</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Grid</strong></div>
+<div class="line-block">
+<div class="line">Lon_West = 120.0</div>
+<div class="line">Lat_South = 0.0</div>
+<div class="line">Dphi = 0.000035972</div>
+<div class="line">Dtheta = 0.0001</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Wavemaker</strong></div>
+<div class="line">WAVEMAKER = INI_SOL</div>
+<div class="line">AMP = 0.1</div>
+<div class="line">DEP = 10.0</div>
+<div class="line">LAGTIME = 0.0</div>
+<div class="line">XWAVEMAKER = 1000.0</div>
+</div>
+<blockquote>
+<div><p>(refer to <a class="reference internal" href="wavemaker_para.html#definition-wavemaker"><span class="std std-ref">Wave-maker</span></a>)</p>
+</div></blockquote>
+<div class="line-block">
+<div class="line"><strong>Physics</strong></div>
+<div class="line-block">
+<div class="line">Cd = 0.0</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Stations</strong></div>
+<div class="line">NumberStations = 3</div>
+<div class="line">STATIONS_FILE = <strong>station.txt</strong></div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Output</strong></div>
+<div class="line-block">
+<div class="line">DEPTH_OUT = T</div>
+<div class="line">ETA = T</div>
+<div class="line">U = T</div>
+<div class="line">V = T</div>
+</div>
+</div>
+<blockquote>
+<div><p>(refer to <a class="reference internal" href="output.html#definition-output"><span class="std std-ref">Output</span></a>)</p>
+</div></blockquote>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="coupling_sph_coupling_file.html" title="Make a coupling file"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="coupling_sph_procedure.html" title="Coupling procedure"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="examples.html" ><strong>EXAMPLES</strong></a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="coupling_sph.html" >Coupling grid A and B</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, Fengyan Shi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
+    </div>
+  </body>
+</html>

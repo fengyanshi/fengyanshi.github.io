@@ -10,4 +10,6 @@
 
 `WORKSHOP 2018 <workshop_2018.html>`_
 
+`MINI-WORKSHOP 2019 at UD <workshop_2019_UD.html>`_
+
 

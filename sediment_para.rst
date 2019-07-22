@@ -1,5 +1,11 @@
+.. _definition_sediment:
+
 Sediment Transport and Morphological Change
 ********************************************
+
+  Theory: :ref:`section_sed_equation`
+  
+  Numerical scheme: :ref:`section_sed_numerical`
 
 **NUMERICAL SCHEME**
 

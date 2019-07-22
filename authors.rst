@@ -22,6 +22,9 @@
 
   Korea Institute of Ocean Science and Technology
 
+* Ye Yuan
+
+  Tsunami Warning Division, National Marine Environmental Forecasting Center of China 
 
 * Marissa J. Torres
 

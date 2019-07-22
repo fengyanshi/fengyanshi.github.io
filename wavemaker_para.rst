@@ -1,3 +1,5 @@
+.. _definition_wavemaker:
+
 Wave-maker
 *****************
 
@@ -124,7 +126,7 @@ For theory about wavemaker, see :ref:`section_wavemaker`
 
    *  Time\_ramp: time ramp (s) for Wei and Kirby (1999) wavemaker. Default: 0.0.
  
-   *  Delta\_WK:  width parameter :math:`\delta`  for Wei and Kirby (1999) wavemaker.    Need trial and error, usually, :math:`\delta` =  :math:`0.3 \sim 0.6`. Default: 0.5. 
+   *  Delta\_WK:  width parameter :math:`\delta`  for Wei and Kirby (1999) wavemaker.    Need trial and error, usually, :math:`\delta` =  :math:`1.0 \sim 3.0`.  
 
    *  DEP\_WK: water depth (m) for Wei and Kirby (1999) wavemaker.
 

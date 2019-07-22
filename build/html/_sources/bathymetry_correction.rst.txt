@@ -1,3 +1,5 @@
+.. _bathymetry_correction:
+
 Bathymetry Correction
 ***********************
 

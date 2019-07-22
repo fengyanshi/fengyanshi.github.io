@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -22,12 +23,33 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+=======
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Wind and Pressure Field &#8212; FUNWAVE Documentation</title>
+    <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+>>>>>>> origin/master
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Lagrangian Tracer Setup" href="tracer_setup.html" />
     <link rel="prev" title="Sediment Transport and Morphological Change" href="sediment_para.html" /> 
+<<<<<<< HEAD
   </head>
   <body>
+=======
+  </head><body>
+>>>>>>> origin/master
 <div class="header">
  <p class="logo"><a href="https://fengyanshi.github.io/build/html/index.html">
   <img class="logo" src="_static/../../../images/Funwave.svg" alt="Logo"/>
@@ -52,9 +74,14 @@
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
+<<<<<<< HEAD
 <h3><a href="index.html">Table Of Contents</a></h3>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="integration.html"><strong>INTEGRATION</strong></a></li>
+=======
+<h3><a href="index.html">Table of Contents</a></h3>
+<ul class="current">
+>>>>>>> origin/master
 <li class="toctree-l1"><a class="reference internal" href="basics.html"><strong>BASICS</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="flowchart.html"><strong>ARCHITECTURE</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="setup.html"><strong>MODEL DOWNLOAD AND SETUP</strong></a></li>
@@ -78,6 +105,7 @@
 </ul>
 
 <div id="searchbox" style="display: none" role="search">
+<<<<<<< HEAD
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
       <div><input type="text" name="q" /></div>
@@ -85,6 +113,15 @@
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+=======
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+>>>>>>> origin/master
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -96,9 +133,10 @@
           <div class="body" role="main">
             
   <div class="section" id="wind-and-pressure-field">
-<h1>Wind and Pressure Field<a class="headerlink" href="#wind-and-pressure-field" title="Permalink to this headline">¶</a></h1>
+<span id="definition-meteo"></span><h1>Wind and Pressure Field<a class="headerlink" href="#wind-and-pressure-field" title="Permalink to this headline">¶</a></h1>
 <p><strong>SPECIFICATION OF WIND EFFECT</strong></p>
 <blockquote>
+<<<<<<< HEAD
 <div><ul class="simple">
 <li>WindForce: logical parameter representing if wind effect is taken into account. T or F.</li>
 <li>AirPressure: logical parameter representing if pressure effect is taken into account. T or F.</li>
@@ -107,6 +145,20 @@
 <li>WindCrestPercent: ratio of the forced wave crest height to the maximum surface elevation, if WindForce = T. Default: 100% (for storm surges).</li>
 <li>WindConstantField: logical parameter for constant wind field. T or F.</li>
 <li>WIND_FILE: file name for the constant wind field. The following is an example of data format.</li>
+=======
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Use FLAG_xx = -DMETEO in Makefile when compiling</p>
+</div>
+<ul class="simple">
+<li><p>WindForce: logical parameter representing if wind effect is taken into account. T or F. If WindConstantField = T, WindForce = T automatically</p></li>
+<li><p>AirPressure: logical parameter representing if pressure effect is taken into account. T or F. If MeteoGausian = T, AirPressure = T automatically.</p></li>
+<li><p>WindWaveInteraction: logical parameter representing if wave-wind interaction (Chen et al. 2003) based on the formula presented in ‘METEO module’ in INTRODUCTION section. The parameter WindCrestPercent will be used.</p></li>
+<li><p>Cdw: wind stress coefficient for the quadratic formula if WindForce = T. Default: 0.002.</p></li>
+<li><p>WindCrestPercent: ratio of the forced wave crest height to the maximum surface elevation, if WindForce = T. Default: 1.0 (100%) (for storm surges).</p></li>
+<li><p>WindConstantField: logical parameter for constant wind field. T or F.</p></li>
+<li><p>CONSTANT_WIND_FILE: file name for the constant wind field. The following is an example of data format.</p></li>
+>>>>>>> origin/master
 </ul>
 <blockquote>
 <div><p>wind data</p>
@@ -115,10 +167,19 @@
 <p>2000.0,   10.0,  0.0</p>
 <p>8000.0,  10.0,   0.0</p>
 <p>…</p>
+<<<<<<< HEAD
+=======
+<p>For example, for constant wind field, input.txt:</p>
+<p>Cdw = 0.002</p>
+<p>WindConstantField = T</p>
+<p>WindWaveInteraction = T</p>
+<p>WindCrestPercent = 0.5</p>
+<p>CONSTANT_WIND_FILE = wind.txt</p>
+>>>>>>> origin/master
 </div></blockquote>
 <ul class="simple">
-<li>WindHollandModel: logical parameter for Holland model. T or F.</li>
-<li>STORM_FILE: name of file contains paramters used for Holland hurricane model</li>
+<li><p>WindHollandModel: logical parameter for Holland model. T or F.</p></li>
+<li><p>STORM_FILE: name of file contains paramters used for Holland hurricane model</p></li>
 </ul>
 <blockquote>
 <div><p>A sample:</p>
@@ -131,6 +192,33 @@
 </div></blockquote>
 </div></blockquote>
 </div></blockquote>
+<p><strong>SPECIFICATION OF METEOTSUNAMI</strong></p>
+<p>Pressure Source (Gausian distribution (elipse))</p>
+<div class="line-block">
+<div class="line"><strong>Add</strong></div>
+<div class="line-block">
+<div class="line">MeteoGausian = T</div>
+<div class="line">METEO_GAUSIAN_FILE = meteo_data.txt (for example)</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line">You need specify your pressure source in the file: meteo_data.txt (for example)</div>
+<div class="line">Meteo data file</div>
+<div class="line">NJ</div>
+<div class="line">time, x, y, dP(mb), SigmaX, SigmaY, Angle(0 = +x direction)</div>
+<div class="line">0.0       0.0 25000.0   5.0 10000.0 100000.0 0.0</div>
+<div class="line">36000.0  720000.0 25000.0  5.0 10000.0 10000.0 0.0</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Output</strong></div>
+<div class="line-block">
+<div class="line">RESULT_FOLDER = output/</div>
+<div class="line">ETA = T</div>
+<div class="line">Hmax = T</div>
+<div class="line">Hmin = T</div>
+<div class="line">OUT_METEO = T (T will have output of pressure distribution)</div>
+</div>
+</div>
 </div>
 
 
@@ -157,7 +245,11 @@
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2019, Fengyan Shi.
+<<<<<<< HEAD
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+=======
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
+>>>>>>> origin/master
     </div>
   </body>
 </html>

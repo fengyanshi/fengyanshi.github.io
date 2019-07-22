@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 .. _section-shipwake-mod:
+=======
+.. _theory_shipwakes:
+>>>>>>> origin/master
 
 Ship-wake Module 
 ****************

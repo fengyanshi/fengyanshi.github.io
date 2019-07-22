@@ -25,14 +25,16 @@ Interaction between wind waves and ship-wakes in an inlet system
 |
 |   In vessel_00001, specify:  
 |   Title: Vessel # 1
-|   Blue_Star_I
-|   Length(m), Width(m), Alpha(m), Beta(m), P(unit)
-|   10.0  5.0, 0.5, 0.5, 2.0
+|   Pressure, 1
+|   Length(m), Width(m), Alpha1(m),Alpha2(m), Beta(m), P(unit)
+|   10.0  5.0, 0.5, 0.5, 0.5, 2.0
 |   Time, X(m), Y(m)  (relative to the origin of the coordinates)
 |   0.0   900.0   0.0
 |   150.0 900.0   0.0
 |   250.0 900.0   1000.0
 |   1000.0 -6600  1000.0
+
+  (refer to :ref:`theory_shipwakes` and :ref:`section-shipwakes-setup`)
 
 |  **postprocessing**
 |   matlab examples of postprocessing are located in /simple_cases/inlet_shoal/postprocessing/

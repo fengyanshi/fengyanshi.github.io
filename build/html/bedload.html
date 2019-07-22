@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -22,12 +23,33 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+=======
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Bedload Sediment Transport &#8212; FUNWAVE Documentation</title>
+    <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+>>>>>>> origin/master
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Morphological Evolution" href="bed_equation.html" />
     <link rel="prev" title="Suspended Sediment Transport Equation" href="sed_equation.html" /> 
+<<<<<<< HEAD
   </head>
   <body>
+=======
+  </head><body>
+>>>>>>> origin/master
 <div class="header">
  <p class="logo"><a href="https://fengyanshi.github.io/build/html/index.html">
   <img class="logo" src="_static/../../../images/Funwave.svg" alt="Logo"/>
@@ -53,9 +75,14 @@
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
+<<<<<<< HEAD
 <h3><a href="index.html">Table Of Contents</a></h3>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="integration.html"><strong>INTEGRATION</strong></a></li>
+=======
+<h3><a href="index.html">Table of Contents</a></h3>
+<ul class="current">
+>>>>>>> origin/master
 <li class="toctree-l1 current"><a class="reference internal" href="basics.html"><strong>BASICS</strong></a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="boussinesq.html">Formulations and Numerical Schemes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="central.html">Central Module</a></li>
@@ -78,6 +105,7 @@
 </ul>
 
 <div id="searchbox" style="display: none" role="search">
+<<<<<<< HEAD
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
       <div><input type="text" name="q" /></div>
@@ -85,6 +113,15 @@
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+=======
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+>>>>>>> origin/master
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -96,6 +133,7 @@
           <div class="body" role="main">
             
   <div class="section" id="bedload-sediment-transport">
+<<<<<<< HEAD
 <span id="section-bedload"></span><h1>Bedload Sediment Transport<a class="headerlink" href="#bedload-sediment-transport" title="Permalink to this headline">¶</a></h1>
 <p>Bedload sediment transport can be calculated using several bedload sediment transport formulas developed for steady flows. As stated in Soulsby (1997), those formulas can be used on an instantaneous basis in tidal flows, and under waves or combined waves and currents, because the response time of a sand grain in bedload motion is very short compared to a tidal period or a wave period. In test examples provided in the wiki, we used Meyer-Peter and Muller’s (1948) bedload transport formula to estimate the bedload sediment transport rate and its effect on bed evolution.  The unit-width volume transport rate can be expressed as</p>
 <div class="math" id="equation-bedload:0">
@@ -108,6 +146,17 @@
 <p><strong>References</strong></p>
 <p>Meyer-Peter, E., and Muller, R., (1948). “Formulas for Bed-Load transport”. Hydraulic Eng. Reports: IAHSR 2nd meeting, Stockholm, Appendix 2. IAHSR.</p>
 <p>Soulsby, R. (1997). <em>Dynamics of Marine Sands</em>. London: Thomas Telford.</p>
+=======
+<h1>Bedload Sediment Transport<a class="headerlink" href="#bedload-sediment-transport" title="Permalink to this headline">¶</a></h1>
+<p>Bedload sediment transport can be calculated using several bedload sediment transport formulas developed for steady flows. As stated in Soulsby (1997), those formulas can be used on an instantaneous basis in tidal flows, and under waves or combined waves and currents, because the response time of a sand grain in bedload motion is very short compared to a tidal period or a wave period. In test examples provided in the wiki, we used Meyer-Peter and Muller’s (1948) bedload transport formula to estimate the bedload sediment transport rate and its effect on bed evolution.  The unit-width volume transport rate can be expressed as</p>
+<div class="math notranslate nohighlight" id="equation-bedload-0">
+<span class="eqno">(56)<a class="headerlink" href="#equation-bedload-0" title="Permalink to this equation">¶</a></span>\[q_b = 8 [g(s-1)d^3]^{1/2}(\theta-\theta^b_{cr})^{3/2}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\theta\)</span> is the Shields parameter and <span class="math notranslate nohighlight">\(\theta^b_{cr}\)</span> is the critical Shields parameter for bedload motion. In Meyer-Peter and Muller (1984),  <span class="math notranslate nohighlight">\(\theta^b_{cr} = 0.047\)</span>.</p>
+<p>After reorganizing the formula using the bed shear stress form, the formula can be rewritten as</p>
+<div class="math notranslate nohighlight" id="equation-bedload-1">
+<span class="eqno">(57)<a class="headerlink" href="#equation-bedload-1" title="Permalink to this equation">¶</a></span>\[q_b = \frac{8 [(\tau_b-\tau^b_{cr})/\rho_w]^{3/2}}{g(s-1)}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\tau^b_{cr}\)</span> is the critical shear stress for bedload motion which can be calculated using <span class="math notranslate nohighlight">\(\theta^b_{cr}\)</span>.</p>
+>>>>>>> origin/master
 </div>
 
 
@@ -135,7 +184,11 @@
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2019, Fengyan Shi.
+<<<<<<< HEAD
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+=======
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
+>>>>>>> origin/master
     </div>
   </body>
 </html>

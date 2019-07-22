@@ -1,3 +1,5 @@
+.. _definition_breakwater:
+
 Breakwater and Obstacle
 **************************
 

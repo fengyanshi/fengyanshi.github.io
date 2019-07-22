@@ -39,6 +39,8 @@ Basic info
   SLP = 0.05
 
   Xslp = 800.0  (for solitary wave case Xslp = 750.0 because of large runup)
+
+  (refer to :ref:`definition_grid`)
   
 * postprocessing
 
