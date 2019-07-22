@@ -1,7 +1,7 @@
 Basics for model setup
-##########################
+######################
 
-* computational domain
+**Computational domain**
 
 .. figure:: images/simple_cases/layout_2dbeach.jpg
     :width: 500px
@@ -10,27 +10,38 @@ Basics for model setup
     :alt: alternate text
     :figclass: align-center
 
-Basic info
+**Basic info**
 
- Dimensions 500 X 250 (x and y directions)
+* Dimensions: 500 x 250 (x and y directions):
+   .. code-block:: rest
 
- DX = DY = 2.0 m
+        Mglob = 250 ! y-dir
+        Nglob = 500 ! x-dir
 
- Wavemaker located at x = 150.0 m
+        DX = 2.0
+        DY = 2.0
 
- Sponge layer: x = 0.0 -- 100.0 m
 
-* input.txt
-  several input files in the folder /simple_cases/beach_2d/input_files/ for different cases. When run a case, copy one of them to "input.txt"
+* Wavemaker: located at x = 150.0 m:
+   .. code-block:: rest
 
-  input_reg.txt -- monochromatic wave, normal incidence
+        Xc_WK = 150.0
 
-  input_reg_30deg.txt -- monochromatic wave, 30-degree incidence
+  with Sponge layer: x = 0.0 -- 100.0 m on the west boundary:
+     .. code-block:: rest
 
-  input_irr.txt -- irregular waves, peak direction - 0.0 
+          Sponge_west_width = 100.0
 
-  input_irr_30deg.txt -- irregular waves, peak direction - 30.0 
+  Several "input.txt" files are located in the folder :code:`/simple_cases/beach_2d/input_files/` listing wavemaker parameters for different cases. When running one of the cases listed below, copy the wavemaker parameters from the respective file to the primary *input.txt* file:
 
-* postprocessing
+  * Case 1: monochromatic wave with normal incidence -- "input_reg.txt"
 
-  matlab examples of postprocessing are located in /simple_cases/beach_2d/postprocessing/
+  * Case 2: monochromatic wave with 30-degree incidence -- "input_reg_30deg.txt"
+
+  * Case 3: irregular waves with peak direction = 0.0 -- "input_irr.txt"
+
+  * Case 4: irregular waves with peak direction = 30.0 -- "input_irr_30deg.txt"
+
+* Postprocessing
+
+  Example MATLAB postprocessing scripts are located in :code:`/simple_cases/beach_2d/postprocessing/`
