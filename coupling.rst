@@ -1,5 +1,3 @@
-.. _section-coupling-manually:
-=======
 .. _definition_coupling:
 
 
