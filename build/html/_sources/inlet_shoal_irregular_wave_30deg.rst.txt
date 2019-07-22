@@ -26,5 +26,7 @@ Irregular waves with 30 deg oblique incidence
 |   ThetaPeak = 30.0
 |   Sigma_Theta = 10.0
 
+   Default option: EqualEnergy (refer to :ref:`info_equal_energy`)
+
 |  **Add periodic boundary condition**
-|   PERIODIC = T
+|   PERIODIC = T (refer to :ref:`info_periodic`)

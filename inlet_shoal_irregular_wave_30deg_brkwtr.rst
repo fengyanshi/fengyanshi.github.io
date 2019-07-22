@@ -1,4 +1,4 @@
-30 deg irregular waves, a submerged breakwater with full reflection
+30 deg irregular waves, a submerged/emerged breakwater
 ######################################################################
 
 .. figure:: images/simple_cases/eta_inlet_shoal_irr_30deg_brk.jpg
@@ -26,11 +26,15 @@
 |   ThetaPeak = 30.0
 |   Sigma_Theta = 10.0
 
+   Default option: EqualEnergy (refer to :ref:`info_equal_energy`)
+
 |  **Add periodic boundary condition**
-|   PERIODIC = T
+|   PERIODIC = T (refer to :ref:`info_periodic`)
 
 
 |  **Replace dep_shoal_inlet.txt with dep_shoal_inlet_brk.txt**
 |   DEPTH_FILE = ../bathy/dep_shoal_inlet_brk.txt
+
+  (refer to :ref:`example_bathy_breakwater`)
 
 

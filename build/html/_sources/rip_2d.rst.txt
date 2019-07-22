@@ -1,3 +1,5 @@
+.. _example_rip_current:
+
 Rip Current on 2D Beach
 ########################
 .. figure:: images/simple_cases/rip_vort.jpg

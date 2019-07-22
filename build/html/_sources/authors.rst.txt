@@ -11,11 +11,22 @@
   Department of Ocean Engineering, University of Rhode Island
 
 **Guest authors**
-* Matt Malej 
+
+
+* Matt Malej 
 
   U.S. Army Engineer Research and Development Center
+
 
 * Young-Kwang Choi 
 
   Korea Institute of Ocean Science and Technology
+
+* Ye Yuan
+
+  Tsunami Warning Division, National Marine Environmental Forecasting Center of China 
+
+* Marissa J. Torres
+
+  U.S. Army Engineer Research and Development Center
 

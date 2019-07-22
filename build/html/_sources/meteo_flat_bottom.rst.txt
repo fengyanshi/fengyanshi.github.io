@@ -1,6 +1,14 @@
 Meteotsunami: Gausian pressure and flat bottom  
 ################################################
 
+* Theory 
+
+  :ref:`section_meteo_module`
+
+* Parameter definition
+
+  :ref:`definition_meteo`
+
 * Model setup
 
 .. figure:: images/simple_cases/meteo_layout.jpg
@@ -41,7 +49,7 @@ Model configuration: Model dimensions: 100 km x 600 km. Water depth is 40 m in t
 |   PLOT_INTV_STATION = 50000.0
 |   SCREEN_INTV = 360.0
 
-|  **Add pressure source (Gausian distribution (elipse))**
+|  **Add**
 |   MeteoGausian = T
 |   METEO_GAUSIAN_FILE = meteo_data.txt
    

@@ -1,43 +1,80 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>Multiple vessels-induced morphology changes &#8212; funwave  documentation</title>
-    
-    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <meta charset="utf-8" />
+    <title>Multiple vessels-induced morphology changes &#8212; FUNWAVE Documentation</title>
+    <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Meteotsunami" href="meteo.html" />
-    <link rel="prev" title="Single vessel + sediment" href="vessel_morpho_single.html" />
-   
-  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+    <link rel="prev" title="Single vessel + sediment" href="vessel_morpho_single.html" /> 
+  </head><body>
+<div class="header">
+ <p class="logo"><a href="https://fengyanshi.github.io/build/html/index.html">
+  <img class="logo" src="_static/../../../images/Funwave.svg" alt="Logo"/>
+ </a></p>
+</div>
 
-  </head>
-  <body role="document">
-  
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="meteo.html" title="Meteotsunami"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="vessel_morpho_single.html" title="Single vessel + sediment"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="examples.html" ><strong>EXAMPLES</strong></a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="vessel_morpho.html" accesskey="U">Ship-wakes + Sediment Transport</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="basics.html"><strong>BASICS</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="flowchart.html"><strong>ARCHITECTURE</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup.html"><strong>MODEL DOWNLOAD AND SETUP</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="definition.html"><strong>DEFINITIONS OF PARAMETERS</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="coupling_nesting.html"><strong>NESTING AND COUPLING</strong></a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="examples.html"><strong>EXAMPLES</strong></a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="examples.html#simple-tests-beginners-should-start-from-here">Simple tests <strong>(beginners should start from here)</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#benchmarks">Benchmarks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#recent-usace-applications">Recent USACE Applications</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gallery.html"><strong>GALLERY</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="news.html"><strong>FUNWAVE-TVD WORKSHOP</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html"><strong>BIBLIOGRAPHY</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="authors.html"><strong>AUTHORS</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="addition.html"><strong>ADDITIONAL INFORMATION</strong></a></li>
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
 
     <div class="document">
       <div class="documentwrapper">
@@ -47,14 +84,14 @@
   <div class="section" id="multiple-vessels-induced-morphology-changes">
 <h1>Multiple vessels-induced morphology changes<a class="headerlink" href="#multiple-vessels-induced-morphology-changes" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li>Model setup</li>
+<li><p>Model setup</p></li>
 </ul>
 <div class="align-center figure">
 <a class="reference internal image-reference" href="_images/layout_multi_vessel.jpg"><img alt="alternate text" src="_images/layout_multi_vessel.jpg" style="width: 500px; height: 120px;" /></a>
 </div>
 <ul class="simple">
-<li>input.txt
-is in the folder /simple_cases/multi_vessel_morphology/</li>
+<li><p>input.txt
+is in the folder /simple_cases/multi_vessel_morphology/</p></li>
 </ul>
 <p><strong>In input.txt:</strong></p>
 <div class="line-block">
@@ -71,7 +108,9 @@ is in the folder /simple_cases/multi_vessel_morphology/</li>
 </div>
 </div>
 <blockquote>
-<div>DEPTH_FILE = depth.txt</div></blockquote>
+<div><p>DEPTH_FILE = depth.txt</p>
+<p>(refer to <a class="reference internal" href="grid.html#definition-grid"><span class="std std-ref">Grid and Computational Time</span></a>)</p>
+</div></blockquote>
 <div class="line-block">
 <div class="line"><strong>Dimensions</strong></div>
 <div class="line-block">
@@ -112,18 +151,21 @@ is in the folder /simple_cases/multi_vessel_morphology/</li>
 <div class="line">MinDepthPickup = 0.1</div>
 </div>
 </div>
+<blockquote>
+<div><p>(refer to <a class="reference internal" href="sediment_para.html#definition-sediment"><span class="std std-ref">Sediment Transport and Morphological Change</span></a>)</p>
+</div></blockquote>
 <div class="line-block">
 <div class="line"><strong>Add vessels</strong></div>
 <div class="line-block">
 <div class="line">VESSEL_FOLDER = ./</div>
 <div class="line">NumVessel = 6</div>
 <div class="line"><br /></div>
-<div class="line">You need 6 vessel files: vessel_00001, vessel_00002 ... in the current folder.</div>
+<div class="line">You need 6 vessel files: vessel_00001, vessel_00002 … in the current folder.</div>
 <div class="line">In vessel_00001, specify:</div>
 <div class="line">Title: Vessel # 1</div>
-<div class="line">Blue_Star_I</div>
-<div class="line">Length(m), Width(m), Alpha(0.5), Beta(0.5), P(draft,m)</div>
-<div class="line">10.0  5.0, 0.5, 0.5, 1.5</div>
+<div class="line">Pressure, 1</div>
+<div class="line">Length(m), Width(m), Alpha1(0.5),Alpha2(0.5), Beta(0.5), P(draft,m)</div>
+<div class="line">10.0  5.0, 0.5, 0.5,0.5, 1.5</div>
 <div class="line">Time, X(m), Y(m)  (relative to the orgin of the coordinates)</div>
 <div class="line">0.0   40.0   60.0</div>
 <div class="line">25523.0  180040.0  60.0</div>
@@ -132,15 +174,18 @@ is in the folder /simple_cases/multi_vessel_morphology/</li>
 <div class="line-block">
 <div class="line">In vessel_00002, specify:</div>
 <div class="line">Title: Vessel # 2</div>
-<div class="line">Blue_Star_I</div>
-<div class="line">Length(m), Width(m), Alpha(0.5), Beta(0.5), P(draft,m)</div>
-<div class="line">10.0  5.0, 0.5, 0.5, 1.5</div>
+<div class="line">Pressure, 1</div>
+<div class="line">Length(m), Width(m), Alpha1(0.5),Alpha2(0.5), Beta(0.5), P(draft,m)</div>
+<div class="line">10.0  5.0, 0.5, 0.5, 0.5, 1.5</div>
 <div class="line">Time, X(m), Y(m)  (relative to the orgin of the coordinates)</div>
 <div class="line">0.0   50.0   60.0</div>
 <div class="line">100.0   50.0   60.0 (release at 100.0 sec from x=50.0 m</div>
 <div class="line">25623.0  180040.0  60.0</div>
 </div>
 <p>vessel_00003 - vessel_00006 can be made in the same way.</p>
+<blockquote>
+<div><p>(refer to <a class="reference internal" href="shipwakes.html#theory-shipwakes"><span class="std std-ref">Ship-wake Module</span></a> and <a class="reference internal" href="shipwakes_para.html#section-shipwakes-setup"><span class="std std-ref">Shipwakes Setup</span></a>)</p>
+</div></blockquote>
 <div class="line-block">
 <div class="line"><strong>Output</strong></div>
 <div class="line-block">
@@ -156,7 +201,7 @@ is in the folder /simple_cases/multi_vessel_morphology/</li>
 </div>
 <div class="align-center figure" id="id1">
 <a class="reference internal image-reference" href="_images/multi_wave_morpho.jpg"><img alt="alternate text" src="_images/multi_wave_morpho.jpg" style="width: 400px; height: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">From top to bottom: 1) sediment concentration induced by six vessels; 2) morphological change due to suspended load (not consider porosity); 3) morphological change due to bedload (not consider porosity); and morphological change due to total load.</span></p>
+<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">From top to bottom: 1) sediment concentration induced by six vessels; 2) morphological change due to suspended load (not consider porosity); 3) morphological change due to bedload (not consider porosity); and morphological change due to total load.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 
@@ -164,45 +209,28 @@ is in the folder /simple_cases/multi_vessel_morphology/</li>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper"><div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="index.html">Documentation overview</a><ul>
-  <li><a href="examples.html"><strong>EXAMPLES</strong></a><ul>
-  <li><a href="vessel_morpho.html">Ship-wakes + Sediment Transport</a><ul>
-      <li>Previous: <a href="vessel_morpho_single.html" title="previous chapter">Single vessel + sediment</a></li>
-      <li>Next: <a href="meteo.html" title="next chapter">Meteotsunami</a></li>
-  </ul></li>
-  </ul></li>
-  </ul></li>
-</ul>
-</div>
-<div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
-    <form class="search" action="search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
-        </div>
-      </div>
       <div class="clearer"></div>
     </div>
-    <div class="footer">
-      &copy;2017, Fengyan Shi.
-      
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.6</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
-      
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="meteo.html" title="Meteotsunami"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="vessel_morpho_single.html" title="Single vessel + sediment"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="examples.html" ><strong>EXAMPLES</strong></a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="vessel_morpho.html" >Ship-wakes + Sediment Transport</a> &#187;</li> 
+      </ul>
     </div>
-
-    
-
-    
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, Fengyan Shi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
+    </div>
   </body>
 </html>

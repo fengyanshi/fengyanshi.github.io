@@ -1,4 +1,4 @@
-.. _section-output:
+.. _definition_output:
 
 Output
 **********
@@ -87,6 +87,14 @@ A file name is a combination of variable name and an output series number such a
  * dep\_xxxxx:  depth
 
  *Station files*
+
+To get time series of surface elevation, u and v at interested locations, you can specify a station file which includes the locations for output. 
+
+  * in input.txt, add NumberStations = <integer number of stations>
+  * in input.txt, STATION\_FILE = <file name, e.g., gauges.txt>
+  * format of STATION\_FILE: two integers for grid points in x and y, respectively.
+
+  Example: refer to :ref:`example_station_file`
 
 Output for stations is a series of numbered files such as sta\_0001, sta\_0002 .... (NOTE: four digit numbers here vs. five digit numbers for 2D output like eta\_00001).
 

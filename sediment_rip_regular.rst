@@ -10,6 +10,8 @@ Regular waves with normal incidence
 
 Figure: (left) snapshot of surface elevation (5th output), (middle) sediemnt concentration and current field, (right) bathymetry change (5th output) 
 
+ The baseline case of rip current: :ref:`example_rip_current`
+
 **input.txt:**
 
 |  **Parallel(if applicable)**
@@ -19,6 +21,8 @@ Figure: (left) snapshot of surface elevation (5th output), (middle) sediemnt con
 |  **Depth**  
 |   DEPTH_TYPE = DATA 
 |   DEPTH_FILE = ../bathy/depth_a15.txt 
+
+  (refer to :ref:`definition_grid`)
 
 |  **Output folder** 
 |   RESULT_FOLDER = output/ 
@@ -51,6 +55,8 @@ Figure: (left) snapshot of surface elevation (5th output), (middle) sediemnt con
 |   Theta_WK = 0.0 
 |   Delta_WK = 3.0 
 
+  (refer to :ref:`definition_wavemaker`)
+
 |  **Sponge layer** 
 |   FRICTION_SPONGE = T 
 |   DIRECT_SPONGE = T 
@@ -61,8 +67,12 @@ Figure: (left) snapshot of surface elevation (5th output), (middle) sediemnt con
 |   Sponge_south_width = 0.0 
 |   Sponge_north_width = 0.0 
 
+  (refer to :ref:`info_sponge`)
+
 |  **Lateral boundary condition** 
 |   PERIODIC = T 
+
+  (refer to :ref:`info_periodic`)
 
 |  **Wetting and drying** 
 |   MinDepth=0.01 
@@ -72,6 +82,8 @@ Figure: (left) snapshot of surface elevation (5th output), (middle) sediemnt con
 
 |  **Breaking scheme**
 |   VISCOSITY_BREAKING = F  
+
+  (refer to :ref:`example_breaking`)
 
 |  **Sediment**
 |   Bed_Change = T
@@ -87,6 +99,7 @@ Figure: (left) snapshot of surface elevation (5th output), (middle) sediemnt con
 |   Kappa2 = 1.0
 |   MinDepthPickup = 0.1 
 
+  (refer to :ref:`definition_sediment`)
 
 |  **Output** 
 |   DEPTH_OUT = T 
@@ -97,3 +110,5 @@ Figure: (left) snapshot of surface elevation (5th output), (middle) sediemnt con
 |   Vmean = T   
 |   MASK = T 
 |   WaveHeight = T 
+
+  (refer to :ref:`definition_output`)

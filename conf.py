@@ -35,7 +35,10 @@ extensions = ['sphinx.ext.autodoc',
     'sphinx.ext.mathjax',
     'sphinx.ext.ifconfig',
     'sphinx.ext.githubpages',
-    'sphinx.ext.doctest']
+    'sphinx.ext.doctest',
+    'sphinx.ext.todo',
+    'sphinx.ext.intersphinx',
+    'logilab_sphinx_themes']
 
 # extensions = ['sphinx.ext.autodoc','sphinx.ext.imgmath','rst2pdf.pdfbuilder']
 # extensions = ['sphinx.ext.autodoc','sphinx.ext.imgmath']
@@ -57,7 +60,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'funwave'
-copyright = '2017, Fengyan Shi'
+copyright = '2019, Fengyan Shi'
 author = 'Fengyan'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -93,10 +96,19 @@ html_show_sourcelink = False
 
 # -- Options for HTML output ----------------------------------------------
 
+# import theme
+#import logilab_sphinx_themes
+
+# set theme path
+html_theme_path = ['_static'] #[logilab_sphinx_themes.get_path()]
+
+
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'alabaster'
+html_theme = 'logilab'
+#html_theme = 'agogo'
+#html_theme = 'alabaster'
 #html_theme = 'basic'
 #html_theme = 'graphite'
 
@@ -104,15 +116,23 @@ html_theme = 'alabaster'
 # further.  For a list of options available for each theme, see the
 # documentation.
 #
-# html_theme_options = {}
-
-# html_theme_path = ['.']
+html_theme_options = {
+        'logo':'../../../images/Funwave.svg',
+        'logo_url':'https://fengyanshi.github.io/build/html/index.html'
+        }
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
+# custom options - mjt
+html_compact_lists = True
+html_title = 'FUNWAVE Documentation'
+html_sidebars = { '**': ['globaltoc.html', 'searchbox.html'] }
+
+# math display option -- mjt
+html_math_renderer = 'mathjax'
 
 # -- Options for HTMLHelp output ------------------------------------------
 

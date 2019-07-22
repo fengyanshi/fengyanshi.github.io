@@ -18,6 +18,10 @@ Regular wave (baseline case)
 |   DEPTH_TYPE = DATA 
 |   DEPTH_FILE = ../bathy/dep_shoal_inlet.txt 
 
+ * Definition: :ref:`definition_grid`
+ * Option: Bathymetry Correction. 
+   visit :ref:`bathymetry_correction`.
+
 |  **Output folder** 
 |   RESULT_FOLDER = output/ 
  
@@ -44,6 +48,8 @@ Regular wave (baseline case)
 |   AMP_WK = 1.0 
 |   Theta_WK = 0.0 
 
+  (refer to :ref:`definition_wavemaker`)
+
 |  **Sponge layer** 
 |   FRICTION_SPONGE = T 
 |   DIRECT_SPONGE = T 
@@ -54,6 +60,8 @@ Regular wave (baseline case)
 |   Sponge_south_width = 0.0 
 |   Sponge_north_width = 0.0 
 
+   (refer to :ref:`info_sponge`)
+
 |  **Wetting and drying** 
 |   MinDepth=0.01 
 
@@ -61,6 +69,8 @@ Regular wave (baseline case)
 |   VISCOSITY_BREAKING = T  
 |   Cbrk1 = 0.65 
 |   Cbrk2 = 0.35 
+
+  (refer to :ref:`example_breaking`)
 
 |  **Wave averaging property** 
 |   T_INTV_mean = 240.0 
@@ -70,5 +80,7 @@ Regular wave (baseline case)
 |   ETA = T 
 |   MASK = T 
 |   WaveHeight = T 
+
+  (refer to :ref:`definition_output`)
 
 

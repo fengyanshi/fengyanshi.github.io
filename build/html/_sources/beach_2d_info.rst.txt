@@ -12,7 +12,7 @@ Basics for model setup
 
 Basic info
 
- Dimensions 250 X 500
+ Dimensions 500 X 250 (x and y directions)
 
  DX = DY = 2.0 m
 

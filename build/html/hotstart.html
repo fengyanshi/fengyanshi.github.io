@@ -1,43 +1,84 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>Hot Start &#8212; funwave  documentation</title>
-    
-    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <meta charset="utf-8" />
+    <title>Hot Start &#8212; FUNWAVE Documentation</title>
+    <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Post Processing" href="post.html" />
-    <link rel="prev" title="Bathymetry Correction" href="bathymetry_correction.html" />
-   
-  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+    <link rel="prev" title="Bathymetry Correction" href="bathymetry_correction.html" /> 
+  </head><body>
+<div class="header">
+ <p class="logo"><a href="https://fengyanshi.github.io/build/html/index.html">
+  <img class="logo" src="_static/../../../images/Funwave.svg" alt="Logo"/>
+ </a></p>
+</div>
 
-  </head>
-  <body role="document">
-  
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="post.html" title="Post Processing"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="bathymetry_correction.html" title="Bathymetry Correction"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="definition.html" ><strong>DEFINITIONS OF PARAMETERS</strong></a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="central_para.html" accesskey="U">Parameters for Central Module</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="basics.html"><strong>BASICS</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="flowchart.html"><strong>ARCHITECTURE</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup.html"><strong>MODEL DOWNLOAD AND SETUP</strong></a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="definition.html"><strong>DEFINITIONS OF PARAMETERS</strong></a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="central_para.html">Parameters for Central Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spherical.html">Spherical Coordinates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shipwakes_para.html">Shipwakes Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sediment_para.html">Sediment Transport and Morphological Change</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meteo_tsu.html">Wind and Pressure Field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tracer_setup.html">Lagrangian Tracer Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="slide.html">Landslide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="coupling_nesting.html"><strong>NESTING AND COUPLING</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html"><strong>EXAMPLES</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="gallery.html"><strong>GALLERY</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="news.html"><strong>FUNWAVE-TVD WORKSHOP</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html"><strong>BIBLIOGRAPHY</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="authors.html"><strong>AUTHORS</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="addition.html"><strong>ADDITIONAL INFORMATION</strong></a></li>
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
 
     <div class="document">
       <div class="documentwrapper">
@@ -49,11 +90,11 @@
 <p><strong>HOT START OR INITIAL CONDITION</strong></p>
 <blockquote>
 <div><ul class="simple">
-<li>INT_UVZ : logical parameter for initial condition, default is FALSE</li>
-<li>ETA_FILE: name of file for initial <span class="math">\(\eta\)</span>, e.g., ETA_FILE= /Users/results/eta_00100, data could be the last results from a previous run. Data format is the same as the output/depth files.</li>
-<li>U_FILE:  name of file for initial u, e.g.,U_FILE= /Users/results/u_00100. If no U_FILE specified, use zeros.</li>
-<li>V_FILE:  name of file for initial v, e.g., V_FILE= /Users/results/v_00100. If no V_FILE specified, use zeros.</li>
-<li>MASK_FILE:  name of file for initial MASK, e.g., MASK_FILE= /Users/results/mask_00100. A MASK_FILE could be from a model output and the format is REAL numbers. If there is no MASK_FILE, MASK values will be re-specified according to ETA and DEPTH.</li>
+<li><p>INT_UVZ : logical parameter for initial condition, default is FALSE</p></li>
+<li><p>ETA_FILE: name of file for initial <span class="math notranslate nohighlight">\(\eta\)</span>, e.g., ETA_FILE= /Users/results/eta_00100, data could be the last results from a previous run. Data format is the same as the output/depth files.</p></li>
+<li><p>U_FILE:  name of file for initial u, e.g.,U_FILE= /Users/results/u_00100. If no U_FILE specified, use zeros.</p></li>
+<li><p>V_FILE:  name of file for initial v, e.g., V_FILE= /Users/results/v_00100. If no V_FILE specified, use zeros.</p></li>
+<li><p>MASK_FILE:  name of file for initial MASK, e.g., MASK_FILE= /Users/results/mask_00100. A MASK_FILE could be from a model output and the format is REAL numbers. If there is no MASK_FILE, MASK values will be re-specified according to ETA and DEPTH.</p></li>
 </ul>
 </div></blockquote>
 </div>
@@ -62,45 +103,28 @@
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper"><div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="index.html">Documentation overview</a><ul>
-  <li><a href="definition.html"><strong>DEFINITIONS OF PARAMETERS</strong></a><ul>
-  <li><a href="central_para.html">Parameters for Central Module</a><ul>
-      <li>Previous: <a href="bathymetry_correction.html" title="previous chapter">Bathymetry Correction</a></li>
-      <li>Next: <a href="post.html" title="next chapter">Post Processing</a></li>
-  </ul></li>
-  </ul></li>
-  </ul></li>
-</ul>
-</div>
-<div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
-    <form class="search" action="search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
-        </div>
-      </div>
       <div class="clearer"></div>
     </div>
-    <div class="footer">
-      &copy;2017, Fengyan Shi.
-      
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.6</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
-      
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="post.html" title="Post Processing"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="bathymetry_correction.html" title="Bathymetry Correction"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="definition.html" ><strong>DEFINITIONS OF PARAMETERS</strong></a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="central_para.html" >Parameters for Central Module</a> &#187;</li> 
+      </ul>
     </div>
-
-    
-
-    
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, Fengyan Shi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
+    </div>
   </body>
 </html>
