@@ -1,8 +1,7 @@
-<<<<<<< HEAD
 .. _section-coupling-manually:
 =======
 .. _definition_coupling:
->>>>>>> origin/master
+
 
 Coupling (Manually)
 ********************
