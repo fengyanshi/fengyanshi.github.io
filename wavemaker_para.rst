@@ -68,9 +68,9 @@ For theory about the wavemaker, see :ref:`section_wavemaker`
 
        0.01133044 0.00973217 ... (amplitude,m)
 
-    The read format in fortran:
+  The read format in fortran:
 
-    .. code-block:: rest
+  .. code-block:: rest
 
       OPEN(1,FILE=TRIM(WaveCompFile))
 
