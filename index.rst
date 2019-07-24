@@ -17,7 +17,7 @@ FUNWAVE-TVD
 ************************** 
 
 What is FUNWAVE?
-*******************
+****************
 FUNWAVE--TVD is the Total Variation Diminishing (TVD) version of the fully nonlinear Boussinesq wave model (FUNWAVE) initially developed by `Kirby et al. (1998) <http://resolver.tudelft.nl/uuid:d79bba08-8d35-47e2-b901-881c86985ce4>`_. The development of the present version was motivated by recent needs for modeling of surfzone--scale optical properties in a Boussinesq model framework, and  modeling of Tsunami waves in both a regional/coastal scale for prediction of coastal inundation and a basin scale for wave propagation.
 
 This version  features  several theoretical and numerical improvements, including:
@@ -35,7 +35,14 @@ This version  features  several theoretical and numerical improvements, includin
 
 The most recent developments include ship-wake generation (`Shi et al., 2018 <https://www.sciencedirect.com/science/article/pii/S0378383917304246>`_), meteo-tsunami generation (`Woodruff et al., 2018 <https://icce-ojs-tamu.tdl.org/icce/index.php/icce/article/view/8470>`_), and sediment transport and morphological changes (`Malej et al., 2019 <https://apps.dtic.mil/dtic/tr/fulltext/u2/1074624.pdf>`_).
 
-This Wiki page provides general introductions to all model components and theory behind the numerical formulations, simple examples and tutorials for beginners, and download and installation instructions to begin using FUNWAVE--TVD locally. The detailed model equations and numerical schemes can be found in `Shi et al. (2012) <http://www.sciencedirect.com/science/article/pii/S1463500311002010>`_.
+**Where to start**
+
+This comprehensive Wiki provides general introductions to all model components and theory behind the numerical formulations in FUNWAVE-TVD. Simple examples and tutorials are presented for beginners, as well as download and installation instructions to begin using FUNWAVE--TVD locally. The detailed model equations and numerical schemes can be found in `Shi et al. (2012) <http://www.sciencedirect.com/science/article/pii/S1463500311002010>`_.
+
+If you are new to FUNWAVE, we recommend first reviewing the coastal processes the model is capable of resolving (below), and the physics of how these processes are solved in the model. The theory behind each module can be found on the :ref:`Basics <section-basics>` page. Next, download and setup instructions can be found on the :ref:`Model Download and Setup <section-download>` page, where we list the prerequisites needed to begin running FUNWAVE locally and describe how to build your "Makefile". In addition, take the time to review the input parameters for each module on the :ref:`Definitions of Parameters <section-definitions>` page. To begin running simple cases, review the example scenarios listed on the :ref:`Examples <section-examples>` page. If you run into any issues with model setup and execution, submit your questions to the FUNWAVE community by subscribing to the mailing group.
+
+
+Interested in attending a FUNWAVE workshop? Visit the :ref:`FUNWAVE-TVD Workshop <section-workshop>` page to learn more.
 
 For quick keyword searches, use the search bar to the left.
 
