@@ -5,83 +5,96 @@ Wind and Pressure Field
 
 **SPECIFICATION OF WIND EFFECT**
 
- .. NOTE:: Use FLAG_xx = -DMETEO in Makefile when compiling
+ .. NOTE:: Use :code:`FLAG_xx = -DMETEO` in "Makefile" when compiling. Review compiling instructions :ref:`here <section-download>`.
 
 
- *  WindForce: logical parameter representing if wind effect is taken into account. T or F. If WindConstantField = T, WindForce = T automatically
+* :code:`WindForce`: logical parameter representing if wind effect is taken into account. T or F. If :code:`WindConstantField = T, WindForce = T` automatically.
 
- * AirPressure: logical parameter representing if pressure effect is taken into account. T or F. If MeteoGausian = T, AirPressure = T automatically.
+* :code:`AirPressure`: logical parameter representing if pressure effect is taken into account. T or F. If :code:`MeteoGausian = T, AirPressure = T` automatically.
 
- * WindWaveInteraction: logical parameter representing if wave-wind interaction (Chen et al. 2003) based on the formula presented in 'METEO module' in INTRODUCTION section. The parameter WindCrestPercent will be used.  
+* :code:`WindWaveInteraction`: logical parameter representing if wave-wind interaction (Chen et al. 2003) based on the formula presented in the :ref:`METEO module <section_meteo_module>` page. The parameter :code:`WindCrestPercent` will be used.  
+* :code:`Cdw`: wind stress coefficient for the quadratic formula if :code:`WindForce = T`. Default: 0.002.
 
- *  Cdw: wind stress coefficient for the quadratic formula if WindForce = T. Default: 0.002.
+* :code:`WindCrestPercent`: ratio of the forced wave crest height to the maximum surface elevation, if :code:`WindForce = T`. Default: 1.0 (100\%) (for storm surges). 
 
- *  WindCrestPercent: ratio of the forced wave crest height to the maximum surface elevation, if WindForce = T. Default: 1.0 (100\%) (for storm surges). 
-
-
- * WindConstantField: logical parameter for constant wind field. T or F.
+* :code:`WindConstantField`: logical parameter for constant wind field. T or F.
     
- *  CONSTANT_WIND\_FILE: file name for the constant wind field. The following is an example of data format.
+* :code:`CONSTANT_WIND_FILE`: file name for the constant wind field. The following is an example of data format:
 
-  wind data
+  Wind data:
 
-  100  - number of data
+  .. code-block:: rest
 
-  0.0 ,    10.0 0.0   ---  time(s), wu, wv (m/s)
+        100  ! number of data
 
-  2000.0,   10.0,  0.0
+        0.0 ,    10.0 0.0   !  time(s), wu, wv (m/s)
 
-  8000.0,  10.0,   0.0
- 
-  ... 
+        2000.0,   10.0,  0.0
 
-  For example, for constant wind field, input.txt:
+        8000.0,  10.0,   0.0
 
-  Cdw = 0.002
+        ... 
 
-  WindConstantField = T
+  For example, for constant wind field, "input.txt" will look like:
 
-  WindWaveInteraction = T
+  .. code-block:: rest
 
-  WindCrestPercent = 0.5
+        Cdw = 0.002
 
-  CONSTANT_WIND_FILE = wind.txt 
+        WindConstantField = T
 
- * WindHollandModel: logical parameter for Holland model. T or F. 
+        WindWaveInteraction = T
 
- * STORM\_FILE: name of file contains paramters used for Holland hurricane model
+        WindCrestPercent = 0.5
+
+        CONSTANT_WIND_FILE = wind.txt 
+
+* :code:`WindHollandModel`: logical parameter for Holland model. T or F. 
+
+* :code:`STORM_FILE`: name of file contains paramters used for Holland hurricane model.
 
   A sample: 
 
-    STORM FILE (model does not read)
+  .. code-block:: rest
 
-    Sandy - storm name
+    STORM FILE ! (model does not read)
 
-    time(s),     x(m), y(m),    pn(mb),   pc(mb),   A,    B (model does not read)
+    Sandy      ! storm name
 
-    0.0,  800000.0, 400000.0,   1005.0, 950.0, 23.0, 1.50 - time, x,y, pn, pc, A, B
+    time(s),     x(m), y(m),    pn(mb),   pc(mb),   A,    B  ! (model does not read)
+
+    0.0,  800000.0, 400000.0,   1005.0, 950.0, 23.0, 1.50    ! time, x,y, pn, pc, A, B
 
     120000.0,  800000.0, 1500000.0,  1005.0, 950.0, 23.0, 1.50 
 
 **SPECIFICATION OF METEOTSUNAMI**
 
-Pressure Source (Gausian distribution (elipse))
+Pressure Source (Gaussian distribution -- elipse)
 
-|  **Add**
-|   MeteoGausian = T
-|   METEO_GAUSIAN_FILE = meteo_data.txt (for example)
+ **Add to "input.txt"**
 
-|   You need specify your pressure source in the file: meteo_data.txt (for example) 
-|   Meteo data file
-|   NJ
-|   time, x, y, dP(mb), SigmaX, SigmaY, Angle(0 = +x direction)
-|   0.0       0.0 25000.0   5.0 10000.0 100000.0 0.0
-|   36000.0  720000.0 25000.0  5.0 10000.0 10000.0 0.0     
+ .. code-block:: rest
 
-|  **Output**
-|   RESULT_FOLDER = output/
-|   ETA = T
-|   Hmax = T
-|   Hmin = T
-|   OUT_METEO = T (T will have output of pressure distribution)
+        MeteoGaussian = T
+        METEO_GAUSSIAN_FILE = meteo_data.txt    ! (for example)
+
+ You will need specify your pressure source in the file: "meteo_data.txt" (for example):
+
+ .. code-block:: rest
+
+        Meteo data file
+        NJ
+        time, x, y, dP(mb), SigmaX, SigmaY, Angle(0 = +x direction)
+        0.0       0.0 25000.0   5.0 10000.0 100000.0 0.0
+        36000.0  720000.0 25000.0  5.0 10000.0 10000.0 0.0     
+
+ **Output section of "input.txt"**
+
+ .. code-block:: rest
+
+        RESULT_FOLDER = output/   ! this parameter is located in the PRINT section of "input.txt"
+        ETA = T
+        Hmax = T
+        Hmin = T
+        OUT_METEO = T    ! (T will have output of pressure distribution)
 
