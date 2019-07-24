@@ -15,7 +15,7 @@ In addition, you will need to create the unique executable needed to run the spe
 INPUT.TXT
 =========
 
-An example "input.txt" file is presented below. This file is from the Waves on 1D Slope example, located in :code:`/simple_cases/surface_wave_1d/input_files`. The input file is divided into sections with dashes, where lines with "!" are comments. Brief descriptions of the parameters are listed in each section. Most model parameters are specified in "input.txt", except the parameters specific to a particular module. There parameters will be added to "input.txt". Take a moment to familiarize yourself with the basic structure of the FUNWAVE input file. A comprehensive description of all parameters is located at the bottom of this page.
+An example "input.txt" file is presented below. This file is from the Waves on 1D Slope example, located in :code:`/simple_cases/surface_wave_1d/input_files`. The input file is divided into sections with dashes, where lines with "!" are comments. Brief descriptions of the parameters are listed in each section. Most model parameters are specified in "input.txt", except the parameters specific to a particular module. There parameters will be added to "input.txt". Take a moment to familiarize yourself with the basic structure of the FUNWAVE input file. A comprehensive description of all parameters is located at the :ref:`bottom <subsection-defs>` of this page.
 
 .. code-block:: rest
 
@@ -159,6 +159,8 @@ An example "input.txt" file is presented below. This file is from the Waves on 1
          WaveHeight = T 
 
 *************************************
+
+.. _subsection-defs:
 
 ===========
 Definitions
