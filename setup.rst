@@ -1,4 +1,4 @@
-.. _section_download:
+.. _section-download:
 
 MODEL DOWNLOAD AND SETUP
 ************************
