@@ -1,54 +1,54 @@
 .. _definition_wavemaker:
 
 Wave-maker
-*****************
+**********
 
 **SPECIFICATION OF WAVEMAKER**
 
-For theory about wavemaker, see :ref:`section_wavemaker`
+For theory about the wavemaker, see :ref:`section_wavemaker`
 
- *  WAVEMAKER: wavemaker type. 
+* :code:`WAVEMAKER`: wavemaker type. 
 
- * WAVEMAKER = INI\_REC: initial rectangular hump 
-     need Xc,Yc and WID
+* :code:`WAVEMAKER = INI_REC`: initial rectangular hump 
+     need :code:`Xc,Yc` and :code:`WID`
 
- * WAVEMAKER = LEF\_SOL: left boundary solitary
-     need AMP,DEP, and LAGTIME
+* :code:`WAVEMAKER = LEF_SOL`: left boundary solitary
+     need :code:`AMP, DEP`, and :code:`LAGTIME`
 
- * WAVEMAKER = INI\_SOL: initial solitary wave propagate in +x direction, WKN B solution
-     need AMP, DEP, and XWAVEMAKER 
+* :code:`WAVEMAKER = INI_SOL`: initial solitary wave propagate in +x direction, WKN B solution
+     need :code:`AMP, DEP`, and :code:`XWAVEMAKER`
 
- * WAVEMAKER = INI\_OTH:  other initial distribution specified in the code by users
+* :code:`WAVEMAKER = INI_OTH`:  other initial distribution specified in the code by users
 
- * WAVEMAKER = WK\_REG: Wei and Kirby 1999 internal wave maker
-      need Xc\_WK, Yc\_WK, Ywidth\_WK, Tperiod, AMP\_WK, DEP\_WK, Theta\_WK, and Time\_ramp (factor of period)
+* :code:`WAVEMAKER = WK_REG`: Wei and Kirby 1999 internal wave maker
+      need :code:`Xc_WK, Yc_WK, Ywidth_WK, Tperiod, AMP_WK, DEP_WK, Theta_WK, and Time_ramp` (factor of period)
 
- * WAVEMAKER = WK\_IRR:  Wei and Kirby 1999 TMA spectrum wavemaker (internal)
-      need Xc\_WK, Yc\_WK, Ywidth\_WK, DEP\_WK, Time\_ramp, Delta\_WK,  FreqPeak, FreqMin,FreqMax, Hmo, GammaTMA(default: 3.3 ), ThetaPeak (default: 0.0), Nfreq(default: 45), Ntheta(default: 24)
- 
-     EqualEnergy (=T means the frequency splitting is based on Equal-Energy, otherwise, based on Equal-Frequency space
+* :code:`WAVEMAKER = WK_IRR`:  Wei and Kirby 1999 TMA spectrum wavemaker (internal)
+      need :code:`Xc_WK, Yc_WK, Ywidth_WK, DEP_WK, Time_ramp, Delta_WK,  FreqPeak, FreqMin,FreqMax, Hmo, GammaTMA` (default: 3.3 ), :code:`ThetaPeak` (default: 0.0), :code:`Nfreq` (default: 45), :code:`Ntheta` (default: 24), :code:`EqualEnergy` (if :code:`TRUE`, this means that the frequency splitting is based on Equal-Energy, otherwise, based on Equal-Frequency space)
            
- * WAVEMAKER = JON\_2D:  JONSWAP spectrum wavemaker (internal)
-      need Xc\_WK, Yc\_WK, Ywidth\_WK,
-      DEP\_WK, Time\_ramp, Delta\_WK,  FreqPeak, FreqMin,FreqMax,
-      Hmo, GammaTMA(default: 3.3 ), ThetaPeak (default: 0.0),Nfreq(default: 45), Ntheta(default: 24)
+* :code:`WAVEMAKER = JON_2D`:  JONSWAP spectrum wavemaker (internal)
+      need :code:`Xc_WK, Yc_WK, Ywidth_WK,
+      DEP_WK, Time_ramp, Delta_WK,  FreqPeak, FreqMin,FreqMax,
+      Hmo, GammaTMA` (default: 3.3 ), :code:`ThetaPeak` (default: 0.0), :code:`Nfreq` (default: 45), :code:`Ntheta` (default: 24)
             
- * WAVEMAKER = JON\_1D:  JONSWAP 1D spectrum wavemaker (internal)
-      need Xc\_WK, Yc\_WK, Ywidth\_WK,
-      DEP\_WK, Time\_ramp, Delta\_WK,  FreqPeak, FreqMin,FreqMax,
-      Hmo, GammaTMA(default: 3.3 ), Nfreq(default: 45)  
+* :code:`WAVEMAKER = JON_1D`:  JONSWAP 1D spectrum wavemaker (internal)
+      need :code:`Xc_WK, Yc_WK, Ywidth_WK,
+      DEP_WK, Time_ramp, Delta_WK,  FreqPeak, FreqMin, FreqMax,
+      Hmo, GammaTMA` (default: 3.3 ), :code:`Nfreq` (default: 45)  
             
- * WAVEMAKER = TMA\_1D:  TMA 1D spectrum wavemaker (internal)
-      need Xc\_WK, Yc\_WK, Ywidth\_WK,
-      DEP\_WK, Time\_ramp, Delta\_WK,  FreqPeak, FreqMin,FreqMax,
-      Hmo, GammaTMA(Note, still use TMA Gamma, default: 3.3 ), Nfreq(default: 45)                                   
+* :code:`WAVEMAKER = TMA_1D`:  TMA 1D spectrum wavemaker (internal)
+      need :code:`Xc_WK, Yc_WK, Ywidth_WK,
+      DEP_WK, Time_ramp, Delta_WK,  FreqPeak, FreqMin, FreqMax,
+      Hmo, GammaTMA` (Note, still use TMA Gamma, default: 3.3 ), :code:`Nfreq` (default: 45)                                   
 
- * WAVEMAKER = WK\_TIME\_SERIES:
-      fft  a time series to get each wave component and then use Wei and Kirby's ( 1999) wavemaker. Internal wavemaker The wave angle is zero (x direction) for all wave components. Need input WaveCompFile (including 3 columns: per,amp,pha) and NumWaveComp,PeakPeriod,DEP\_WK, Xc\_WK,Ywidth\_WK
+* :code:`WAVEMAKER = WK_TIME_SERIES`:
+      provide an fft of a time series to get each wave component, and then use Wei and Kirby's (1999) wavemaker. For this internal wavemaker, the wave angle is zero (x direction) for all wave components. Need input :code:`WaveCompFile` (including 3 columns: :code:`per, amp, pha`) and :code:`NumWaveComp, PeakPeriod, DEP_WK, Xc_WK, Ywidth_WK`
  
- * WAVEMAKER = WK\_DATA2D:  2D directional spectrum data specified in WaveCompFile. Internal wavemaker. Need Xc\_WK, Yc\_WK, DEP\_WK, Delta\_WK. 
+* :code:`WAVEMAKER = WK_DATA2D`: 2D directional spectrum data specified in :code:`WaveCompFile`. Internal wavemaker. Need :code:`Xc_WK, Yc_WK, DEP_WK, Delta_WK`. 
 
-     Format of WaveCompFile:
+  Format of :code:`WaveCompFile`:
+
+  .. code-block:: rest
 
        62  35   - NumFreq NumDir 
 
@@ -57,9 +57,9 @@ For theory about wavemaker, see :ref:`section_wavemaker`
        0.0400 - Freq 
 
        0.0475 - Freq
- 
+
        ...
- 
+
        -0.05  - Dir (degree)
 
        0.0    - Dir (degree)
@@ -69,6 +69,8 @@ For theory about wavemaker, see :ref:`section_wavemaker`
        0.01133044 0.00973217 ... (amplitude,m)
 
     The read format in fortran:
+
+    .. code-block:: rest
 
       OPEN(1,FILE=TRIM(WaveCompFile))
 
@@ -97,63 +99,61 @@ For theory about wavemaker, see :ref:`section_wavemaker`
          READ(1,*)(Amp_Ser(J,I),J=1,NumFreq)
 
        ENDDO
-
-     CLOSE(1)
- 
- * WAVEMAKER = LEFT\_BC\_IRR: Wavemaker at the left boundary (ghost cells). This type of wavemaker reflects waves at the left boundary. Need WAVE\_DATA\_TYPE (DATA,TMA2D,JON2D,JON1D) and other parameters as the same as in the internal wavemaker. Although it is an irregular wavemaker, it can generate regular waves using WAVE\_DATA\_TYPE = DATA by specifying a single wave component.        
        
- * WAVEMAKER = INI_GAUSIAN or INI_GAU: initial Gausian hump, need AMP, Xc, Yc, and WID.          
-
- * Definations
-
-   * WAVE_DATA_TYPE : Type of wave data needed for LEFT_BC_IRR WaveMaker. It can be DATA or other types used for internal wavemakers
-
-   * AMP : amplitude (m) of initial :math:`\eta`, if  WAVEMAKER = INI\_REC, WAVEMAKER = INI\_SOL, WAVEMAKER = LEF\_SOL.
-
-   *  DEP: water depth at wavemaker location, if WAVEMAKER = INI\_SOL, WAVEMAKER = LEF\_SOL.
-
-   *  LAGTIME, time lag (s) for the solitary wave generated on the left boundary, e.g., WAVEMAKER = LEF\_SOL. 
+      CLOSE(1)
  
-   *  XWAVEMAKER: x  (m) coordinate for WAVEMAKER = INI\_SOL.
+* :code:`WAVEMAKER = LEFT_BC_IRR`: Wavemaker at the left boundary (ghost cells). This type of wavemaker reflects waves at the left boundary. Need :code:`WAVE_DATA_TYPE (DATA, TMA2D, JON2D, JON1D)` and other parameters as the same as in the internal wavemaker. Although it is an irregular wavemaker, it can generate regular waves using :code:`WAVE_DATA_TYPE = DATA` by specifying a single wave component.        
+       
+* :code:`WAVEMAKER = INI_GAUSSIAN or INI_GAU`: initial Gaussian hump. Need :code:`AMP, Xc, Yc, and WID`.          
 
+**Definitions:**
 
-   *  Xc: x (m) coordinate of the center of  a rectangular hump if WAVEMAKER = INI\_REC.
+ * :code:`WAVE_DATA_TYPE`: Type of wave data needed for :code:`LEFT_BC_IRR` WaveMaker. It can be DATA or other types used for internal wavemakers
 
-   *  Yc: y (m) coordinate of the center of  a rectangular hump if WAVEMAKER = INI\_REC.
+ * :code:`AMP`: amplitude (m) of initial :math:`\eta`, if :code:`WAVEMAKER = INI_REC, WAVEMAKER = INI_SOL, WAVEMAKER = LEF_SOL`.
 
-   *  WID: width (m) of  a rectangular hump if WAVEMAKER = INI\_REC, or INI\_GAU.
+ * :code:`DEP`: water depth at wavemaker location, if :code:`WAVEMAKER = INI_SOL, WAVEMAKER = LEF_SOL`.
 
-
-   *  Time\_ramp: time ramp (s) for Wei and Kirby (1999) wavemaker. Default: 0.0.
+ * :code:`LAGTIME`, time lag (s) for the solitary wave generated on the left boundary, e.g., :code:`WAVEMAKER = LEF_SOL`. 
  
-   *  Delta\_WK:  width parameter :math:`\delta`  for Wei and Kirby (1999) wavemaker.    Need trial and error, usually, :math:`\delta` =  :math:`1.0 \sim 3.0`.  
+ * :code:`XWAVEMAKER`: x (m) coordinate for :code:`WAVEMAKER = INI\_SOL`.
 
-   *  DEP\_WK: water depth (m) for Wei and Kirby (1999) wavemaker.
+ * :code:`Xc`: x (m) coordinate of the center of  a rectangular hump if :code:`WAVEMAKER = INI_REC`.
 
-   *  Xc\_WK: x coordinate (m) for Wei and Kirby (1999) wavemaker.
+ * :code:`Yc`: y (m) coordinate of the center of  a rectangular hump if :code:`WAVEMAKER = INI_REC`.
 
-   *  Ywidth\_WK: width (m) in y direction for Wei and Kirby (1999) wavemaker. Default: LARGE (999999.0).
+ * :code:`WID`: width (m) of  a rectangular hump if :code:`WAVEMAKER = INI\_REC, or INI\_GAU`.
 
-   *  Tperiod:  period (s) of regular wave for Wei and Kirby (1999) wavemaker.
-
-   *  AMP\_WK: amplitude (m) of regular wave for Wei and Kirby (1999) wavemaker.
-
-   *  Theta\_WK: direction (degrees) of regular wave for Wei and Kirby (1999) wavemaker. Note: it may be adjusted if a periodic boundary condition is used. A warning will be given if adjustment is made. 
+ * :code:`Time_ramp`: time ramp (s) for Wei and Kirby (1999) wavemaker. Default: 0.0.
  
-   *  Nfreq: number of frequency components. Default: 45.
+ * :code:`Delta_WK`: width parameter :math:`\delta`  for Wei and Kirby (1999) wavemaker.    Need trial and error, usually, :math:`\delta` =  :math:`1.0 \sim 3.0`.  
 
-   *  Ntheta: number of direction components. Default: 24.
+ * :code:`DEP_WK`: water depth (m) for Wei and Kirby (1999) wavemaker.
 
-   *  FreqPeak: peak frequency (1/s) for Wei and Kirby (1999) irregular wavemaker.
+ * :code:`Xc_WK`: x coordinate (m) for Wei and Kirby (1999) wavemaker.
 
-   *  FreqMin: low frequency cutoff (1/s) for Wei and Kirby (1999) irregular wavemaker.
+ * :code:`Ywidth_WK`: width (m) in y direction for Wei and Kirby (1999) wavemaker. Default: LARGE (999999.0).
+
+ * :code:`Tperiod`: period (s) of regular wave for Wei and Kirby (1999) wavemaker.
+
+ * :code:`AMP_WK`: amplitude (m) of regular wave for Wei and Kirby (1999) wavemaker.
+
+ * :code:`Theta_WK`: direction (degrees) of regular wave for Wei and Kirby (1999) wavemaker. Note: it may be adjusted if a periodic boundary condition is used. A warning will be given if adjustment is made. 
  
-   *  FreqMax: high frequency cutoff (1/s) for Wei and Kirby (1999) irregular wavemaker.
+ * :code:`Nfreq`: number of frequency components. Default: 45.
 
-   *  Hmo: Hmo (m) for Wei and Kirby (1999) irregular wavemaker.
+ * :code:`Ntheta`: number of direction components. Default: 24.
 
-   *  GammaTMA, TMA parameter :math:`\gamma` for Wei and Kirby (1999) irregular wavemaker. GammaTMA = 3.3 if JONSWAP is used. 
+ * :code:`FreqPeak`: peak frequency (1/s) for Wei and Kirby (1999) irregular wavemaker.
 
-   *  ThetaPeak: peak direction (degrees) for Wei and Kirby (1999) irregular wavemaker. 
+ * :code:`FreqMin`: low frequency cutoff (1/s) for Wei and Kirby (1999) irregular wavemaker.
+ 
+ * :code:`FreqMax`: high frequency cutoff (1/s) for Wei and Kirby (1999) irregular wavemaker.
 
-   *  Sigma\_Theta: parameter of directional spectrum for Wei and Kirby (1999) irregular wavemaker.
+ * :code:`Hmo`: Hmo (m) for Wei and Kirby (1999) irregular wavemaker.
+
+ * :code:`GammaTMA`: TMA parameter :math:`\gamma` for Wei and Kirby (1999) irregular wavemaker. :code:`GammaTMA = 3.3` if JONSWAP is used. 
+
+ * :code:`ThetaPeak`: peak direction (degrees) for Wei and Kirby (1999) irregular wavemaker. 
+
+ * :code:`Sigma_Theta`: parameter of directional spectrum for Wei and Kirby (1999) irregular wavemaker.
