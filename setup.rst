@@ -120,15 +120,17 @@ Compile and setup
 =================
 
 1. Uncompress the code from the package downloaded
-2. Modify :code:`Makefile` if needed. There are several necessary flags in Makefile needed to specify below. 
+2. Modify "Makefile" as needed. An example "Makefile" is shown below. The primary variables you will need to change/check are the :code:`EXEC` in the :code:`BEGIN MAKEFILE` section, and the flags in the following section. The :code:`EXEC` variable defines the name of the executable that will be generated. This should be descriptive of which flags (i.e., modules) are active in the "Makefile" for good book-keeping when you have multiple executables.
+
+ There are several flags in "Makefile" that specify different compiling structures and turn on/off modules depending on your simulation. To turn on/off a flag, simply comment the line by adding "\#" before the command (e.g., :code:`# FLAG_8 = -DVESSEL` turns the shipwake module "off" in the new executable). 
  
- * :code:`-DDOUBLE_PRECISION`: use double precision, default is single precision.
- * :code:`-DPARALLEL`: use parallel mode, default is serial mode.
+ * :code:`-DDOUBLE_PRECISION`: use double precision, default is single precision
+ * :code:`-DPARALLEL`: use parallel mode, default is serial mode
  * :code:`-DCARTESIAN`: Cartesian version, otherwise Spherical version
  * :code:`-DINTEL`: if INTEL compiler is used, this option can make use of FPORT for the RAND() function
  * :code:`-DCRAY`: for CRAY RAND() and system commands
- * :code:`-DCOUPLING`: nesting mode.
- * :code:`-DSPHERICAL_IJ_STATION`: in spherical mode, if you want your station locations defined by grid point (I,J). Otherwise, station locations should be defined by (lat lon).  
+ * :code:`-DCOUPLING`: nesting mode
+ * :code:`-DSPHERICAL_IJ_STATION`: in spherical mode, if you want your station locations defined by grid point (I,J). Otherwise, station locations should be defined by (lat lon)  
  * :code:`-DVESSEL`: include shipwake module
  * :code:`-DSEDIMENT`: include sediment and morphological module
  * :code:`-DWIND`: include wind effect
@@ -136,15 +138,128 @@ Compile and setup
  * :code:`-DMANNING`: use Manning formula for bottom friction
  * :code:`-DCHECK_MASS_CONSERVATION`: correct mass conservation problem caused by wetting/drying
  * :code:`-DTRACKING`: include Lagrangian tracking module
- * :code:`CPP`: path to CPP directory.
- * :code:`FC`: Fortran compiler. 
+ * :code:`CPP`: path to CPP directory
+ * :code:`FC`: Fortran compiler 
+
+ This sample "Makefile" shows a case where the shipwakes module (e.g., :code:`-DVESSEL`) is active, and the model will be executed in parallel (:code:`-DPARALLEL`) with a Cartesian coordinate system (:code:`-DCARTESIAN`) using an MPI F90 Compiler (:code:`FC = mpif90`).
+
+ .. code-block:: rest
+
+        #-----------BEGIN MAKEFILE-------------------------------------------------
+            SHELL         = /bin/sh
+            DEF_FLAGS     = -P -traditional 
+            EXEC          = funwave_vessel
+        #==========================================================================
+        #--------------------------------------------------------------------------
+        #        PRECISION          DEFAULT PRECISION: SINGLE                     
+        #                           UNCOMMENT TO SELECT DOUBLE PRECISION
+        #--------------------------------------------------------------------------
+
+            FLAG_1 = -DDOUBLE_PRECISION 
+            FLAG_2 = -DPARALLEL
+        #             FLAG_3 = -DSAMPLES
+            FLAG_4 = -DCARTESIAN
+        #             FLAG_6 = -DINTEL
+        #             FLAG_7 = -DMIXING
+        #             FLAG_8 = -DCOUPLING
+        #             FLAG_9 = -DZALPHA
+        #             FLAG_10 = -DMANNING
+        #             FLAG_11 = -DSPHERICAL_IJ_STATION
+            FLAG_12 = -DVESSEL
+        #             FLAG_13 = -DVIS_KENNEDY
+        #             FLAG_14 = -DVESSEL_PANEL_SOURCE
+        #             FLAG_15 = -DREALISTIC_VESSEL_BODY
+        #             FLAG_16 = -DMETEO
+        #             FLAG_17 = -DWIND
+        #--------------------------------------------------------------------------
+        #  mpi defs 
+        #--------------------------------------------------------------------------
+         CPP      = /usr/bin/cpp 
+         CPPFLAGS = $(DEF_FLAGS)
+         FC       = mpif90
+         DEBFLGS  = 
+         OPT      = 
+         CLIB     = 
+        #==========================================================================
+
+         FFLAGS = $(DEBFLGS) $(OPT) 
+         MDEPFLAGS = --cpp --fext=f90 --file=-
+         RANLIB = ranlib
+        #--------------------------------------------------------------------------
+        #  CAT Preprocessing Flags
+        #--------------------------------------------------------------------------
+           CPPARGS = $(CPPFLAGS) $(DEF_FLAGS) $(FLAG_1) $(FLAG_2) \
+	  	     $(FLAG_3) $(FLAG_4) $(FLAG_5) $(FLAG_6) \
+		     $(FLAG_7) $(FLAG_8) $(FLAG_9) $(FLAG_10)  \
+		     $(FLAG_11) $(FLAG_12) $(FLAG_13) $(FLAG_14) \
+		     $(FLAG_15) $(FLAG_16) $(FLAG_17) $(FLAG_18) \
+		     $(FLAG_19) $(FLAG_20) $(FLAG_21) $(FLAG_22) \
+		     $(FLAG_23) $(FLAG_24)
+        #--------------------------------------------------------------------------
+        #  Libraries           
+        #--------------------------------------------------------------------------
+
+        #            LIBS  = $(PV3LIB) $(CLIB)  $(PARLIB) $(IOLIBS) $(MPILIB) $(GOTMLIB)
+        #            INCS  = $(IOINCS) $(GOTMINCS)
+
+
+        #--------------------------------------------------------------------------
+        #  Preprocessing and Compilation Directives
+        #--------------------------------------------------------------------------
+        .SUFFIXES: .o .f90 .F .F90 
+
+        .F.o:
+	        $(CPP) $(CPPARGS) $*.F > $*.f90
+        	$(FC)  -c $(FFLAGS) $(INCS) $*.f90
+        	/bin/rm $*.f90
+        #--------------------------------------------------------------------------
+        #  FUNWAVE-TVD Source Code.
+        #--------------------------------------------------------------------------
+
+        MODS  = mod_param.F mod_global.F mod_input.F mod_vessel.F mod_bathy_correction.F \
+                mod_meteo.F mod_parallel_field_io.F
+
+        MAIN  = main.F bc.F fluxes.F init.F io.F tridiagnal.F       \
+                breaker.F derivatives.F dispersion.F etauv_solver.F \
+                sponge.F sources.F masks.F parallel.F statistics.F \
+                wavemaker.F mixing.F nesting.F misc.F samples.F\
+
+        SRCS = $(MODS)  $(MAIN)
+
+        OBJS = $(SRCS:.F=.o)
+
+        #--------------------------------------------------------------------------
+        #  Linking Directives               
+        #--------------------------------------------------------------------------
+
+        $(EXEC):	$(OBJS)
+	        	$(FC) $(FFLAGS) $(LDFLAGS) -o $(EXEC) $(OBJS) $(LIBS)
+        #		mv $(EXEC) ../bin/
+        #--------------------------------------------------------------------------
+
+        #--------------------------------------------------------------------------
+        #  Tar Up Code                           
+        #--------------------------------------------------------------------------
+
+        tarfile:
+	        tar cvf funwave_tvd.tar *.F  Makefile
+
+        #--------------------------------------------------------------------------
+        #  Cleaning targets.
+        #--------------------------------------------------------------------------
+
+        clean:
+	        	/bin/rm -f *.o *.mod
+
+        clobber:	clean
+	        	/bin/rm -f *.f90 *.o $(EXEC)
 
 
 3. Compile the code
 
    The command :code:`make`, by default, will look for a file named "Makefile" in the current directory. It will read the contents of the file to find the target program or project that needs to be built (i.e., compiled). Generally, once a program is compiled, an executable file is generated. Any changes made to the source file (e.g., "Makefile") will need to be re-compiled, and a new executable will need to be generated. To clean, or remove, the files generated by the makefile and create new ones, the :code:`make clean` command is used prior to compiling with :code:`make`.
    
-   In your terminal, navigate to the directory :code:`/src/` containing the file :code:`Makefile`, and type the following:
+   In your terminal, navigate to the directory :code:`/src/` containing the file "Makefile", and type the following:
    
    .. code-block:: rest
         
@@ -152,14 +267,23 @@ Compile and setup
 
         make
 
-   The executable file such as :code:`funwave` or :code:`mytvd` (specified in :code:`Makefile`) will be generated.   **Note**: always use :code:`make clean` after modifying the makefile.  
+   The executable file such as :code:`funwave_vessel` or :code:`mytvd` (specified in "Makefile", :code:`EXEC = executable_name`) will be generated in the :code:`/src/` folder.  **Note**: always use :code:`make clean` after modifying the "Makefile".  
 
    If you want to use a specific "Makefile" under a different name (e.g., "makefile-svg"), the command :code:`make -f "makefile-svg"` is used.
 
 4. Run the model
 
-   Modify :code:`input.txt` if needed and run.
+   Modify "input.txt" as needed. An example "input.txt" file is presented on the :ref:`Definitions of Parameters <section-definitions>` page where you can review the available input options. Review the required variables for specific modules (e.g., shipwakes) on the :ref:`Examples <section-examples>` page.
 
+   To run FUNWAVE locally, navigate to the directory containing the input files needed for your simulation and type the following command in your terminal: 
+
+   .. code-block:: rest
+       
+        mpirun -np 4 /src/funwave_vessel
+
+   Here, the parallel processing MPI is established and the number of processors, :code:`-np` is set to 4. This number will change depending on the capacity of your local machine. Next, the path to the FUNWAVE exectuable :code:`funwave_vessel` is called upon, and the model begins the simulation.
+
+   If you are running FUNWAVE on a HPC machine . . .
 
 ************************************************************
 
