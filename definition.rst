@@ -23,7 +23,7 @@ An example "input.txt" file is presented below. This file is from the :ref:`Wave
         ! NOTE: all input parameter are capital sensitive 
         ! --------------------TITLE------------------------------------- 
         ! title only for log file 
-         TITLE = irregular_1D
+         TITLE = regular_1D
         
         ! -------------------PARALLEL INFO----------------------------- 
         !  
@@ -49,7 +49,7 @@ An example "input.txt" file is presented below. This file is from the :ref:`Wave
         ! -------------------PRINT--------------------------------- 
         ! PRINT*, 
         ! result folder 
-         RESULT_FOLDER = ../output/irregular/
+         RESULT_FOLDER = output/
 
         ! ------------------DIMENSION----------------------------- 
         ! global grid dimension 
@@ -84,14 +84,14 @@ An example "input.txt" file is presented below. This file is from the :ref:`Wave
         !                 and then use Wei and Kirby 1999  
         !          need input WaveCompFile (including 3 columns: per,amp,pha) 
         !          NumWaveComp,PeakPeriod,DEP_WK,Xc_WK,Ywidth_WK 
-         WAVEMAKER = JON_1D
+         WAVEMAKER = WK_REG 
          DEP_WK = 10.0 
          Xc_WK = 250.0 
          Yc_WK = 0.0 
-         FreqPeak = 0.0667
-         FreqMin = 0.03 
-         FreqMax = 0.3 
-         Hmo = 1.0 
+         Tperiod = 8.0
+         AMP_WK = 0.5
+         Theta_WK = 0.0
+         Delta_WK = 3.0   ! the default is 0.5, set a large number for nonlinear waves
         
         ! ---------------- PERIODIC BOUNDARY CONDITION --------- 
         ! South-North periodic boundary condition 
