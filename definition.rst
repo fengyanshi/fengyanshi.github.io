@@ -166,6 +166,8 @@ An example "input.txt" file is presented below. This file is from the Waves on 1
 Definitions
 ===========
 
+.. note:: All parameter names are case sensitive.
+
 .. toctree::
    :maxdepth: 2
    
