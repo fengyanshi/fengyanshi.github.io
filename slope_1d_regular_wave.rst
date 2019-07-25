@@ -10,11 +10,18 @@ Regular wave
     :alt: alternate text
     :figclass: align-center
 
-The following section will be modified in "input.txt" for this case. All other sections are defined in :ref:`section-1d-basics` for this example.
+The following sections will be modified in "input.txt" for this case. All other sections are defined in :ref:`section-1d-basics` for this example.
  
+ Set a descriptive title for your simulation:
+
+ .. code-block:: rest
+        
+        !-----TITLE-----
+         TITLE = regular_1D
+
  Add a monochromatic wavemaker in a water depth of 10.0 m located 250.0 m from the left boundary that produces regular waves with amplitude 0.5 m and period 12.0 s:
 
-  .. code-block:: rest
+ .. code-block:: rest
 
         !-----WAVEMAKER-----
           WAVEMAKER = WK_REG

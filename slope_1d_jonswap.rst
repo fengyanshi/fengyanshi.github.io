@@ -10,7 +10,14 @@ JONSWAP spectral waves
     :alt: alternate text
     :figclass: align-center
 
-The following section will be modified in "input.txt" for this case. All other sections are defined in :ref:`section-1d-basics` for this example.
+The following sections will be modified in "input.txt" for this case. All other sections are defined in :ref:`section-1d-basics` for this example.
+
+ Set a descriptive title for your simulation:
+
+ .. code-block:: rest
+
+        !-----TITLE-----
+         TITLE = irregular_1D
 
  Add an irregular wavemaker in a water depth of 10 m located 250.0 m from the left boundary that produces a JONSWAP spectrum with minimum, maximum, and peak frequencies of 0.03, 0.3, and 0.0667 Hz, respectively, and significant wave height of 1.0 m:
 
