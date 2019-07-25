@@ -95,7 +95,7 @@ The roller effect on hydrodynamics can be calculated by adding extra terms, :mat
 
 The calculation of the undertow uses the local balance of the roller induced momentum flux and the undertow flux. The roller/undertow effect is taken into account in the sediment transport processes. 
 
-To set up the roller and its effects, see :ref:`section-physics`. An example presenting the roller effect can be found in :ref:`section-rip-sediment`. To set up output of roller-induced mass flux and undertow flux, see :ref:`section-output`.
+To set up the roller and its effects, see :ref:`section-physics`. An example presenting the roller effect can be found in :ref:`section-rip-sediment`. To set up output of roller-induced mass flux and undertow flux, see :ref:`section_output`.
 
 **References**
 
