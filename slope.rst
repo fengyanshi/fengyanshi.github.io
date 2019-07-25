@@ -1,6 +1,7 @@
+.. _section-1d-slope:
 
 Waves on 1D Slope
-########################
+#################
 .. figure:: images/simple_cases/eta_1d_reg.jpg
     :width: 500px
     :align: center
