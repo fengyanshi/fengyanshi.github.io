@@ -1,6 +1,8 @@
-*********************************************
+.. _section-faq:
+
+***
 FAQ
-*********************************************
+***
 
 * Can I run FUNWAVE-TVD on a Windows machine?
 
@@ -10,7 +12,7 @@ FAQ
 
   If you have either forked over your repo instead of cloning directly from the FUNWAVE-TVD repo, or have cloned from the repo and have branched out to fix this bug, please do a PULL REQUEST on Github. This way we can automatically check the validity of the update and do our own internal testing to avoid conflicts before merging into the master branch.
 
-  You can also report bugs in the FUNWAVE-TVD `forum <../../google_group.html>`_ or send email directly to fyshi AT udel.edu, matt.malej AT gmail.com. (AT is @ if you are human). 
+  You can also report bugs in the FUNWAVE-TVD `forum <../../google_group.html>`_ or send email directly to fyshi AT udel.edu, matt.malej AT gmail.com. (AT is @ if you are human).
 
 * Can I run the model using Cloud Computating Service?
 
@@ -18,7 +20,7 @@ FAQ
 
 * Which version should I download from the Github repository?
 
-  We suggest downloading the latest release version on Github. You could use the beta version but be aware that it is not fully tested through all test cases. Download page: :ref:`section_download`.
+  We suggest downloading the latest release version on Github. You could use the beta version but be aware that it is not fully tested through all test cases. Download page: :ref:`section-download`.
 
 * When I encounter a problem or have a question, can I contact the authors directly?
 
