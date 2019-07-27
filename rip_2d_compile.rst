@@ -5,7 +5,7 @@ Compile the code for 2D rip current case
 
 **Makefile**
 
-See an example of a complete "Makefile" :ref:`here <subsection-compile>
+See an example of a complete "Makefile" :ref:`here <subsection-compile>`.
 
 For this example, you will need to update the :code:`EXEC` variable, and make sure the appropriate :code:`FLAGS` are active in the "Makefile":
 
