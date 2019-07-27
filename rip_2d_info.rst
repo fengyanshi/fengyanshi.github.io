@@ -26,7 +26,7 @@ You will find the complete "input.txt" file in the directory :code:`/simple_case
          PX = 4
          PY = 4
          
- Set the bathymetry to the depth file:
+Set the bathymetry to the depth file:
  
  .. code-block:: rest
  
