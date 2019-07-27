@@ -1,7 +1,11 @@
-Basics for model setup
-##########################
+.. _section-rip-basics:
 
-* computational domain
+Basics for model setup
+######################
+
+In this example, you will use a separate file to define the bathymetry of the computational domain that matches the figure below. In the directory :code:`/simple_cases/rip_2d/bathy/` is a file named "depth_a15.txt" that will be called in "input.txt".
+
+** Computational domain**
 
 .. figure:: images/simple_cases/rip_bathy.jpg
     :width: 300px
@@ -10,20 +14,61 @@ Basics for model setup
     :alt: alternate text
     :figclass: align-center
 
-Basic info
+**Setup in "input.txt"**
 
- Dimensions 512 X 250
+You will find the complete "input.txt" file in the directory :code:`/simple_cases/rip_2d/work/` for this example. On this page, we will focus on setting up the model domain. Wavemaker and physics parameters will be defined on the :ref:`section-rip-irregular` page. **Remember that all parameters are case sensitive**.
 
- DX = 1.0 m
- DY = 2.0 m
+ If running in parallel, set the number of processors in X and Y:
+ 
+ .. code-block:: rest
+        
+        !-----PARALLEL INFO-----
+         PX = 4
+         PY = 4
+         
+ Set the bathymetry to the depth file:
+ 
+ .. code-block:: rest
+ 
+        !-----DEPTH-----
+         DEPTH_TYPE = DATA
+         DEPTH_FILE = ../bathy/depth_a15.txt
 
- Wavemaker located at x = 425.0 m
+(refer to :ref:`definition_grid` for parameter descriptions)
 
- Sponge layer: x = 452.0 -- 512.0 m  (width = 60.0 m)
+Send the results to a folder named "output":
 
-* input.txt
-  the input file is in the folder /simple_cases/rip_2d/work/ 
+.. code-block:: rest
 
-* postprocessing
+        !-----PRINT-----
+         RESULT_FOLDER = output/
+         
+Set the dimensions of the domain to 512 x 250 in x and y directions, respectively:
 
-  matlab examples of postprocessing are located in /simple_cases/rip_2d/postprocessing/
+.. code-block:: rest
+
+        !-----DIMENSION-----
+         Mglob = 512
+         Nglob = 250
+         
+Set the total computational time, plot time, and screen intervals to  1000.0 s, 100.0 s, and 100.0 s, respectively. If printing results to a station file, use 0.5 s:
+
+.. code-block:: rest
+
+        !-----TIME-----
+         TOTAL_TIME = 1000.0
+         PLOT_INTV = 100.0
+         SCREEN_INTV = 100.0
+         PLOT_INTV_STATION = 0.5
+         
+Set the grid spacing in x and y to 1.0 m and 2.0 m, respectively:
+
+.. code-block:: rest
+
+        !-----GRID-----
+         DX = 1.0 m
+         DY = 2.0 m
+
+**Postprocessing**
+
+For postprocessing examples, MATLAB scripts are located in :code:`/simple_cases/rip_2d/postprocessing/`.
