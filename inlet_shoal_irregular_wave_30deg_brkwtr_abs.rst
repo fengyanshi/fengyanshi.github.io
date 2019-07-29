@@ -1,3 +1,5 @@
+.. _section-inlet-irr30-brk-ref:
+
 30 deg irregular waves, a submerged breakwater with partial reflection
 #######################################################################
 
@@ -8,37 +10,28 @@
     :alt: alternate text
     :figclass: align-center
 
-**input.txt is the same as the baseline case (regular wave) except:**
+Continue to build on :ref:`section-inlet-irr30-brk` by adding a partially reflecting breakwater to the simulation. Refer to :ref:`section-inlet-basics` for domain setup.
 
-  `(Baseline case) <inlet_shoal_regular_wave.html>`_
+ Set descriptive title for your simulation:
 
-|  **Add wavemaker**
-|   WAVEMAKER = WK_IRR
-|   DEP_WK = 10.0
-|   Xc_WK = 250.0
-|   Yc_WK = 0.0
-|   Ywidth_WK = 20000.0
-|   FreqPeak = 0.0893
-|   FreqMin = 0.03
-|   FreqMax = 0.3
-|   Hmo = 1.00
-|   GammaTMA = 3.3
-|   ThetaPeak = 30.0
-|   Sigma_Theta = 10.0
+ .. code-block:: rest
 
-   Default option: EqualEnergy (refer to :ref:`info_equal_energy`)
+        !-----TITLE-----
+         TITLE = inlet_irr_30deg_brk_ref
 
-|  **Add periodic boundary condition**
-|   PERIODIC = T (refer to :ref:`info_periodic`)
+ Keep the :code:`DEPTH_FILE` the same as in :ref:`section-inlet-irr30-brk`, and add a :code:`BREAKWATER_FILE` to define the partially reflecting breakwater:
 
-|  **Replace dep_shoal_inlet.txt with dep_shoal_inlet_brk.txt**
-|   DEPTH_FILE = dep_shoal_inlet_brk.txt
+ .. code-block:: rest
 
-|  **Add BREAKWATER FILE for partial reflection**
-|   BREAKWATER_FILE = brk_shoal_inlet.txt
-|   *brk_shoal_inlet.txt* has the same format as depth file, the numbers represent damping width (like sponge layer).
+        !-----DEPTH-----
+         DEPTH_TYPE = DATA
+         DEPTH_FILE = DEPTH_FILE = dep_shoal_inlet_brk.txt
 
-  (refer to :ref:`example_partial_breakwater`)
+         BREAKWATER_FILE = brk_shoal_inlet.txt
+
+ "brk_shoal_inlet.txt" has the same format as the depth file, and the values represent the damping width (like a sponge layer).
+
+ Refer to :ref:`example_partial_breakwater` for more information.
 
   
 
