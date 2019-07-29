@@ -20,7 +20,7 @@ You will find the complete "input.txt" file in the directory :code:`/simple_case
 
  If running in parallel, set the number of processors in X and Y:
  
-  .. code-block:: rest
+ .. code-block:: rest
         
         !-----PARALLEL INFO-----
          PX = 4
@@ -28,7 +28,7 @@ You will find the complete "input.txt" file in the directory :code:`/simple_case
          
  Set the bathymetry to the depth file:
  
-  .. code-block:: rest
+ .. code-block:: rest
  
         !-----DEPTH-----
          DEPTH_TYPE = DATA

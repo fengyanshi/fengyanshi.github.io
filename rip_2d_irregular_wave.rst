@@ -16,14 +16,14 @@ The following sections wil be modified in "input.txt" for this example. The doma
 
  Set a descriptive title for your simulation:
  
-  .. code-block:: rest
+ .. code-block:: rest
     
         !-----TITLE-----
          TITLE = rip_2D
          
  Add an irregular wavemaker in a water depth of 13.0 m located 425.0 m from the left boundary with the following characteristics:
  
-  .. code-block:: rest
+ .. code-block:: rest
   
         !-----WAVEMAKER-----
          WAVEMAKER = WK_IRR
@@ -42,14 +42,14 @@ The following sections wil be modified in "input.txt" for this example. The doma
 
  Set the periodic boundary condition to TRUE:
  
-  .. code-block:: rest
+ .. code-block:: rest
   
         !-----PERIODIC BOUNDARY CONDITION-----
          PERIODIC = T
          
  Set the sponge layer width to 60 m:
  
-  .. code-block:: rest
+ .. code-block:: rest
   
         !-----SPONGE LAYER-----
          DIFFUSION_SPONGE = F 
@@ -62,11 +62,11 @@ The following sections wil be modified in "input.txt" for this example. The doma
          Sponge_south_width = 0.0 
          Sponge_north_width = 0.0 
 
-  (refer to :ref:`info_sponge` for parameter definitions)
+ (refer to :ref:`info_sponge` for parameter definitions)
 
  Set the friction coefficient to 0.002:
  
-  .. code-block:: rest
+ .. code-block:: rest
   
         !-----PHYSICS-----
          Cd = 0.002
@@ -75,14 +75,14 @@ The following sections wil be modified in "input.txt" for this example. The doma
  
  Set the minimum depth for wetting and drying to 0.01:
  
-  .. code-block:: rest
+ .. code-block:: rest
   
         !-----WET-DRY-----
          MinDepth = 0.01
 
  Set the viscosity breaking scheme to FALSE:
  
-  .. code-block:: rest
+ .. code-block:: rest
   
         !-----BREAKING-----
          VISCOSITY_BREAKING = F
