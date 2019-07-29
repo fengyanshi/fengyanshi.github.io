@@ -106,7 +106,7 @@ For this example, you will set the following in "input.txt". **Remember that all
 
   (refer to :ref:`info_sponge` for example of 2D sponge case)
 
-  **Keep the default values** for the :code:`PHYSICS, NUMERICS, WET-DRY, BREAKING,` and :code:`WAVE AVERAGE` sections. Refer to :ref:`example_breaking` for a sample wave breaking scheme.
+  **Keep the default values** for the :code:`PHYSICS, NUMERICS, WET-DRY, BREAKING,` and :code:`WAVE AVERAGE` sections. Refer to :ref:`section-definitions` for a description of all parameters.
 
   Set the :code:`ETA` and :code:`MASK` output files to TRUE:
 
