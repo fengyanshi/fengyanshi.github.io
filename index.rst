@@ -42,9 +42,11 @@ This comprehensive Wiki provides general introductions to all model components a
 If you are new to FUNWAVE, we recommend first reviewing the coastal processes the model is capable of resolving (below), and the physics of how these processes are solved in the model. The theory behind each module can be found on the :ref:`Basics <section-basics>` page. Next, download and setup instructions can be found on the :ref:`Model Download and Setup <section-download>` page, where we list the prerequisites needed to begin running FUNWAVE locally and describe how to build your "Makefile". In addition, take the time to review the input parameters for each module on the :ref:`Definitions of Parameters <section-definitions>` page. To begin running simple cases, review the example scenarios listed on the :ref:`Examples <section-examples>` page. If you run into any issues with model setup and execution, submit your questions to the FUNWAVE community by subscribing to the mailing group.
 
 
-Interested in attending a FUNWAVE workshop? Visit the :ref:`FUNWAVE-TVD Workshop <section-workshop>` page to learn more.
+Interested in attending a FUNWAVE workshop or learning from previous workshop materials? Visit the :ref:`FUNWAVE-TVD Workshop <section-workshop>` page to learn more.
 
 For quick keyword searches, use the search bar to the left.
+
+|
 
 ==========
 Subscribe
@@ -55,6 +57,8 @@ Stay connected to the global FUNWAVE community by subscribing to the mailing gro
 .. raw:: html
    :file: google_group.html
    
+|
+
 =============
 Capabilities
 =============
@@ -89,6 +93,8 @@ Applications
 * Ship-generated waves and related sediment transport
 * Harbors and Austere Ports of Entry
 
+|
+
 =====================================
 Transitioning to HPC-Portal for USACE
 =====================================
@@ -121,11 +127,11 @@ Benefits of transitioning
 * Larger USACE/DoD user base because of a *reduced* learning curve
 
 .. note::
-   The HPC Portal is accessible only to employees of USACE and the greater DoD.
+   The HPC Portal is accessible only to employees of USACE and the greater DoD. For more information on the HPC Portal, visit `<https://portal.hpc.mil>`_. If you currently have access to ERDC HPC systems, you can log into the ERDC HPC Portal on this webpage. Questions about getting access to the ERDC HPC Portal can be directed to Dr. Matt Malej (matt.malej@usace.army.mil, 603-646-4455).
 
-=========
-Contents
-=========
+============
+Wiki Content
+============
 .. toctree::
    :maxdepth: 2
 
