@@ -79,7 +79,7 @@ You will need:
 
   * **If you are using a Windows OS lower than Windows 10**
    
-    We recommend that you download the latest version of Cygwin (`<https://www.cygwin.com>`_). Cygwin is a bash shell/unix emulation program, and contains many of the tools such as :code:`tar, gzip/gunzip, and cpp`, which will be useful for installation and compilation of FUNWAVE-TVD. In addtion, if you don't have access to a High Performance Computing (HPC) machine at your home location, it is recommended you use the :ref:`Amazon AWS Cloud Computing <section-aws-computing>`.
+    We recommend that you download the latest version of Cygwin (`<https://www.cygwin.com>`_). Cygwin is a bash shell/unix emulation program, and contains many of the tools such as :code:`tar, gzip/gunzip, and cpp`, which will be useful for installation and compilation of FUNWAVE-TVD. In addtion, if you don't have access to a High Performance Computing (HPC) machine at your home location, you can use the Amazon AWS Cloud Computing service. For instructions on how to use AWS with FUNWAVE, visit :ref:`section-workshop-ud2019` and review pages 35-41 of the tutorial document (pdf1).
 
 * A post-processing toolbox (e.g., MATLAB and Python)
 
@@ -102,6 +102,8 @@ Download source code
 ====================
 
 `Version beta: not fully tested. click here to download/clone from GitHub <https://github.com/fengyanshi/FUNWAVE-TVD>`_
+
+`Version 3.4 Released July 12 2019: click here to download from GitHub <https://github.com/fengyanshi/FUNWAVE-TVD/releases>`_
 
 `Version 3.3 Released July 19 2018: click here to download from GitHub <https://github.com/fengyanshi/FUNWAVE-TVD/releases>`_
 

@@ -127,7 +127,7 @@ Benefits of transitioning
 * Larger USACE/DoD user base because of a *reduced* learning curve
 
 .. note::
-   The HPC Portal is accessible only to employees of USACE and the greater DoD. For more information on the HPC Portal, visit `<https://portal.hpc.mil>`_. If you currently have access to ERDC HPC systems, you can log into the ERDC HPC Portal on this webpage. Questions about getting access to the ERDC HPC Portal can be directed to Dr. Matt Malej (matt.malej@usace.army.mil, 603-646-4455).
+   The HPC Portal is accessible only to employees of USACE and the greater DoD. For more information on the HPC Portal, visit `<https://portal.hpc.mil>`_. If you currently have access to ERDC HPC systems, you can log into the ERDC HPC Portal on this webpage. Questions about getting access to the ERDC HPC Portal can be directed to Dr. Matt Malej (matt.malej@usace.army.mil).
 
 ============
 Wiki Content
