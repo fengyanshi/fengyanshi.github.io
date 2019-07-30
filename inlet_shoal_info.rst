@@ -65,7 +65,7 @@ For this example, you will set the following in "input.txt". **Remember that all
          SCREEN_INTV = 30.0
          PLOT_INTV_STATION = 0.5
 
- Set the grid spactin in x and y to 2.0 m:
+ Set the grid spacing in x and y to 2.0 m:
 
  .. code-block:: rest
 
