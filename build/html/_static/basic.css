@@ -466,6 +466,8 @@ table.field-list td, table.field-list th {
     hyphens: manual;
 }
 
+<<<<<<< HEAD
+=======
 /* -- hlist styles ---------------------------------------------------------- */
 
 table.hlist td {
@@ -473,6 +475,7 @@ table.hlist td {
 }
 
 
+>>>>>>> origin/master
 /* -- other body styles ----------------------------------------------------- */
 
 ol.arabic {

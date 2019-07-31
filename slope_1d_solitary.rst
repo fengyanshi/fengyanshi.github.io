@@ -1,5 +1,7 @@
+.. _section-1d-solitary:
+
 Solitary wave 
-###############
+#############
 
 .. figure:: images/simple_cases/eta_1d_solitary.jpg
     :width: 400px
@@ -8,61 +10,23 @@ Solitary wave
     :alt: alternate text
     :figclass: align-center
 
-|  **Parallel (if applicable)**
-|   PX = 2
-|   PY = 1
+The following sections will be modified in "input.txt" for this case. All other sections are defined in :ref:`section-1d-basics` for this example.
 
-|  **Depth**
-|   DEPTH_TYPE = SLOPE
-|   DEPTH_FLAT = 10.0
-|   SLP = 0.05
-|   Xslp = 800.0
+ Set a descriptive title for your simulation:
 
-(refer to :ref:`definition_grid`)
+ .. code-block:: rest
 
-|  **Dimensions**
-|   Mglob = 1024
-|   Nglob = 3
+        !-----TITLE-----
+         TITLE = solitary_1D
 
-|  **Time**
-|   TOTAL_TIME = 200.0 
-|   PLOT_INTV = 10.0 
-|   SCREEN_INTV = 10.0 
+ Add a wavemaker at a water depth of 10 m located 300.0 from the left boundary that produces a solitary wave with initial amplitude 1.0 m:
 
-|  **Grid sizes**
-|   DX = 1.0 
-|   DY = 1.0 
+ .. code-block:: rest
 
-|  **Add wavemaker**
-|   WAVEMAKER = INI_SOLITARY
-|   AMP = 1.0
-|   DEP = 10.0 
-|   XWAVEMAKER = 300.0 
-
-|  **Add sponge layer**
-|   FRICTION_SPONGE = T 
-|   DIRECT_SPONGE = T 
-|   Sponge_west_width =  180.0 
-|   Sponge_east_width =  0.0 
-|   Sponge_south_width = 0.0 
-|   Sponge_north_width = 0.0 
-
-  (refer to 2D case :ref:`info_sponge`)
-
-
-|  **Breaking scheme (default: SWE breaker)**
-|   VISCOSITY_BREAKING = T  
-|   Cbrk1 = 0.65 
-|   Cbrk2 = 0.35 
-
-  (refer to options for breaking scheme :ref:`example_breaking`)
-
-|  **Wetting and Drying**
-|   MinDepth=0.01 
-
-|  **Output**
-|   RESULT_FOLDER = output/
-|   ETA = T 
-|   MASK = T 
-
-  (refer to :ref:`definition_output`)
+        !-----WAVEMAKER-----
+         WAVEMAKER = INI_SOL
+         AMP = 1.0
+         DEP = 10.0 
+         XWAVEMAKER = 300.0 
+ 
+ Note the differences in parameter names for the solitary wave example compared to the Regular and Irregular wave examples. Refer to :ref:`definition_wavemaker` for parameter definitions.

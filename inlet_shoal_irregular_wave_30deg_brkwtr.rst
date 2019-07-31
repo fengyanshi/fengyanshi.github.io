@@ -1,5 +1,7 @@
+.. _section-inlet-irr30-brk:
+
 30 deg irregular waves, a submerged/emerged breakwater
-######################################################################
+######################################################
 
 .. figure:: images/simple_cases/eta_inlet_shoal_irr_30deg_brk.jpg
     :width: 500px
@@ -8,33 +10,25 @@
     :alt: alternate text
     :figclass: align-center
 
-**input.txt is the same as the baseline case (regular wave) except:**
+Replace the obstacle from :ref:`section-inlet-irr30-obs` with a submerged breakwater in "input.txt". Refer to :ref:`section-inlet-basics` for domain setup.
 
-  `(Baseline case) <inlet_shoal_regular_wave.html>`_
+ Set descriptive title for your simulation:
 
-|  **Add wavemaker**
-|   WAVEMAKER = WK_IRR
-|   DEP_WK = 10.0
-|   Xc_WK = 250.0
-|   Yc_WK = 0.0
-|   Ywidth_WK = 20000.0
-|   FreqPeak = 0.0893
-|   FreqMin = 0.03
-|   FreqMax = 0.3
-|   Hmo = 1.00
-|   GammaTMA = 3.3
-|   ThetaPeak = 30.0
-|   Sigma_Theta = 10.0
+ .. code-block:: rest
 
-   Default option: EqualEnergy (refer to :ref:`info_equal_energy`)
+        !-----TITLE-----
+         TITLE = inlet_irr_30deg_brk
+ 
+ Comment out the :code:`OBSTACLE_FILE` and replace the :code:`DEPTH_FILE` with a bathymetry file representative of a submerged breakwater:
 
-|  **Add periodic boundary condition**
-|   PERIODIC = T (refer to :ref:`info_periodic`)
+ .. code-block:: rest
 
+        !-----DEPTH-----
+         DEPTH_TYPE = DATA
+         DEPTH_FILE = ../bathy/dep_shoal_inlet_brk.txt
 
-|  **Replace dep_shoal_inlet.txt with dep_shoal_inlet_brk.txt**
-|   DEPTH_FILE = ../bathy/dep_shoal_inlet_brk.txt
+         ! OBSTACLE_FILE = ../bathy/obs_shoal_inlet.txt
 
-  (refer to :ref:`example_bathy_breakwater`)
+ Refer to :ref:`example_bathy_breakwater` for more information.
 
 

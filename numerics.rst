@@ -1,20 +1,22 @@
+.. _section-numerics:
+
 Numerical Parameters
-**********************
+********************
 
 **SPECIFICATION OF NUMERICS**  
 
 
- *  Time\_Scheme: stepping option,  Runge\_Kutta or Predictor\_Corrector (not suggested for this version). Default: Runge\_Kutta.
+* :code:`Time_Scheme`: stepping option, :code:`Runge_Kutta` or :code:`Predictor_Corrector` (not suggested for this version). Default: :code:`Runge_Kutta`.
 
- *  HIGH\_ORDER: spatial scheme option,  FOURTH for the fourth-order, THIRD for the third-order, and SECOND for the second-order (not suggested for Boussinesq modeling).  Default: FOURTH. 
+* :code:`HIGH_ORDER`: spatial scheme option, :code:`FOURTH` for the fourth-order, :code:`THIRD` for the third-order, and :code:`SECOND` for the second-order (not suggested for Boussinesq modeling).  Default: :code:`FOURTH`. 
 
- *  CONSTRUCTION: construction method,  HLL for HLL scheme, otherwise for averaging scheme. Default: HLL.
+* :code:`CONSTRUCTION`: construction method, :code:`HLL` for HLL scheme, otherwise for averaging scheme. Default: HLL.
 
- *  CFL: CFL number, CFL :math:`\sim` 0.5 (default).
+* :code:`CFL`: CFL number, CFL :math:`\sim` 0.5 (default).
 
- *  FroudeCap: cap for Froude number in velocity calculation for efficiency. The value could be 1.0 :math:`\sim` 10.0. Default: 3.0
+* :code:`FroudeCap`: cap for Froude number in velocity calculation for efficiency. The value could be 1.0 :math:`\sim` 10.0. Default: 3.0
 
- *  MinDepth: minimum water depth (m) for wetting and drying scheme. Suggestion: MinDepth = 0.001 for lab scale and 0.01 for field scale. Defaut: 0.01.
+* :code:`MinDepth`: minimum water depth (m) for wetting and drying scheme. Suggestion: :code:`MinDepth = 0.001` for lab scale and 0.01 for field scale. Defaut: 0.01.
 
- *  MinDepthFrc: merge to MinDepth for Version 3.1 or higher. If both MinDepth and MinDepthFrc are specified, the model takes the Maximum value of MinDepth and MinDepthFrc.  
+* :code:`MinDepthFrc`: merge to :code:`MinDepth` for Version 3.1 or higher. If both :code:`MinDepth` and :code:`MinDepthFrc` are specified, the model takes the Maximum value of :code:`MinDepth` and :code:`MinDepthFrc`.  
 

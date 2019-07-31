@@ -1,5 +1,7 @@
+.. _section-1d-reg:
+
 Regular wave 
-#############
+############
 
 .. figure:: images/simple_cases/eta_1d_reg.jpg
     :width: 600px
@@ -8,65 +10,28 @@ Regular wave
     :alt: alternate text
     :figclass: align-center
 
-|  **Parallel (if applicable)**
-|   PX = 2
-|   PY = 1
+The following sections will be modified in "input.txt" for this case. All other sections are defined in :ref:`section-1d-basics` for this example.
+ 
+ Set a descriptive title for your simulation:
 
-|  **Depth**
-|   DEPTH_TYPE = SLOPE
-|   DEPTH_FLAT = 10.0
-|   SLP = 0.05
-|   Xslp = 800.0
+ .. code-block:: rest
+        
+        !-----TITLE-----
+         TITLE = regular_1D
 
-  (refer to :ref:`definition_grid`)
+ Add a monochromatic wavemaker in a water depth of 10.0 m located 250.0 m from the left boundary that produces regular waves with amplitude 0.5 m and period 12.0 s:
 
-|  **Dimensions**
-|   Mglob = 1024
-|   Nglob = 3
+ .. code-block:: rest
 
-|  **Time**
-|   TOTAL_TIME = 200.0 
-|   PLOT_INTV = 10.0 
-|   SCREEN_INTV = 10.0 
+        !-----WAVEMAKER-----
+          WAVEMAKER = WK_REG
+          DEP_WK = 10.0 
+          Xc_WK = 250.0 
+          Yc_WK = 0.0 
+          Tperiod = 12.0 
+          AMP_WK = 0.5 
+          Delta_WK = 3.0  ! the default is 0.5, set a larger number for nonlinear waves
 
-|  **Grid sizes**
-|   DX = 1.0 
-|   DY = 1.0 
+ (refer to :ref:`definition_wavemaker` for parameter definitions)
 
-|  **Add wavemaker**
-|   WAVEMAKER = WK_REG
-|   DEP_WK = 10.0 
-|   Xc_WK = 250.0 
-|   Yc_WK = 0.0 
-|   Tperiod = 12.0 
-|   AMP_WK = 0.5 
-|   Delta_WK = 3.0  ! the default is 0.5, set a larger number for nonlinear waves
 
-  (refer to :ref:`definition_wavemaker`)
-
-|  **Add sponge layer**
-|   FRICTION_SPONGE = T 
-|   DIRECT_SPONGE = T 
-|   Sponge_west_width =  180.0 
-|   Sponge_east_width =  0.0 
-|   Sponge_south_width = 0.0 
-|   Sponge_north_width = 0.0 
-
-   (example of 2D case :ref:`info_sponge`)
-
-|  **Breaking scheme (default: SWE breaker)**
-|   VISCOSITY_BREAKING = T  
-|   Cbrk1 = 0.65 
-|   Cbrk2 = 0.35 
-
-  (refer to :ref:`example_breaking`)
-
-|  **Wetting and Drying**
-|   MinDepth=0.01 
-
-|  **Output**
-|   RESULT_FOLDER = output/
-|   ETA = T 
-|   MASK = T 
-
-  (refer to :ref:`definition_output`)

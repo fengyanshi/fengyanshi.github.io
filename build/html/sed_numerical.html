@@ -1,3 +1,29 @@
+<<<<<<< HEAD
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Numerical Scheme for Sediment Transport &#8212; FUNWAVE Documentation</title>
+    <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+=======
 
 <!DOCTYPE html>
 
@@ -13,11 +39,17 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="_static/language_data.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+>>>>>>> origin/master
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Meteo Module" href="meteo_intro.html" />
     <link rel="prev" title="Non-erodible Bed" href="non_erodible.html" /> 
+<<<<<<< HEAD
+  </head>
+  <body>
+=======
   </head><body>
+>>>>>>> origin/master
 <div class="header">
  <p class="logo"><a href="https://fengyanshi.github.io/build/html/index.html">
   <img class="logo" src="_static/../../../images/Funwave.svg" alt="Logo"/>
@@ -43,8 +75,14 @@
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
+<<<<<<< HEAD
+<h3><a href="index.html">Table Of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="integration.html"><strong>INTEGRATION</strong></a></li>
+=======
 <h3><a href="index.html">Table of Contents</a></h3>
 <ul class="current">
+>>>>>>> origin/master
 <li class="toctree-l1 current"><a class="reference internal" href="basics.html"><strong>BASICS</strong></a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="boussinesq.html">Formulations and Numerical Schemes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="central.html">Central Module</a></li>
@@ -67,6 +105,15 @@
 </ul>
 
 <div id="searchbox" style="display: none" role="search">
+<<<<<<< HEAD
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+=======
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
@@ -74,6 +121,7 @@
       <input type="submit" value="Go" />
     </form>
     </div>
+>>>>>>> origin/master
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -89,6 +137,23 @@
 <div class="align-center figure">
 <a class="reference internal image-reference" href="_images/grid.jpg"><img alt="alternate text" src="_images/grid.jpg" style="width: 300px; height: 300px;" /></a>
 </div>
+<<<<<<< HEAD
+<p>Following <a class="reference external" href="http://www.sciencedirect.com/science/article/pii/S1463500311002010">Shi et al. (2012)</a>, the finite-volume approach is used for solving the advection-diffusion equation. A modified interface construction method is proposed for the sediment concentration. For time-integration, the third-order Stability-Preserving (SSP) Runge-Kutta scheme is used. The bed evolution equation is solved directly using forward differencing. The numerical schemes for solving the Boussinesq equations are kept unchanged. The grid arrangement of variables for solving advection-diffusion is shown in the figure above.</p>
+<div class="section" id="space-differencing">
+<h2>Space-differencing<a class="headerlink" href="#space-differencing" title="Permalink to this headline">¶</a></h2>
+<p>The spacing scheme is based on the conservative form of the advection-diffusion equation, which can be written as:</p>
+<div class="math" id="equation-sed_numerical:0">
+<span class="eqno">(1)<a class="headerlink" href="#equation-sed_numerical:0" title="Permalink to this equation">¶</a></span>\[\frac{\partial \Psi}{\partial t} + \nabla \cdot F (\Psi) = S\]</div>
+<p>where <span class="math">\(\Psi\)</span> and <span class="math">\(F(\Psi)\)</span> represent the conserved variable and the sediment flux function, respectively, given by:</p>
+<div class="math" id="equation-sed_numerical:1">
+<span class="eqno">(2)<a class="headerlink" href="#equation-sed_numerical:1" title="Permalink to this equation">¶</a></span>\[\Psi = \bar{c} H\]</div>
+<p>and</p>
+<div class="math" id="equation-sed_numerical:2">
+<span class="eqno">(3)<a class="headerlink" href="#equation-sed_numerical:2" title="Permalink to this equation">¶</a></span>\[F = \bar{c} ({\bf M} ) - k H \nabla_h \bar{c}\]</div>
+<p>The source term <span class="math">\(S = P-D\)</span>. <span class="math">\(\Psi\)</span> and <span class="math">\(S\)</span> are evaluated at the cell center as the major variables defined in FUNWAVE-TVD. <span class="math">\(k\)</span> is calculated at the cell faces as:</p>
+<div class="math" id="equation-sed_numerical:3">
+<span class="eqno">(4)<a class="headerlink" href="#equation-sed_numerical:3" title="Permalink to this equation">¶</a></span>\[k_{i+1/2,j} = 5.93 \left( \frac{u_{*c i+1,j} + u_{*c i,j}}{2} \right)
+=======
 <p>Following Shi et al. (2012), the finite-volume approach is used for solving the advection-diffusion equation.  A modified interface construction method is proposed for the sediment concentration. For time-integration, the third-order Stability-Preserving (SSP) Runge-Kutta scheme. The bed evolution equation is solved directly using the forward differencing. The numerical schemes for solving the Boussinesq equations are kept unchanged. The grid arrangement of variables for solving advection-diffusion is shown in Figure above.</p>
 <ul class="simple">
 <li><p>Space-differencing</p></li>
@@ -105,10 +170,48 @@
 <p>The source term <span class="math notranslate nohighlight">\(S = P-D\)</span>. <span class="math notranslate nohighlight">\(\Psi\)</span> and <span class="math notranslate nohighlight">\(S\)</span> are evaluated at the cell center as the major variables defined in FUNWAVE-TVD. <span class="math notranslate nohighlight">\(k\)</span> is calculated at the cell faces as</p>
 <div class="math notranslate nohighlight" id="equation-sed-numerical-3">
 <span class="eqno">(63)<a class="headerlink" href="#equation-sed-numerical-3" title="Permalink to this equation">¶</a></span>\[k_{i+1/2,j} = 5.93 \left( \frac{u_{*c i+1,j} + u_{*c i,j}}{2} \right)
+>>>>>>> origin/master
 \left( \frac{H_{i+1,j} + H_{i,j}}{2} \right)\]</div>
 <div class="math notranslate nohighlight" id="equation-sed-numerical-4">
 <span class="eqno">(64)<a class="headerlink" href="#equation-sed-numerical-4" title="Permalink to this equation">¶</a></span>\[k_{i-1/2,j} = 5.93 \left( \frac{u_{*c i-1,j} + u_{*c i,j}}{2} \right)
 \left( \frac{H_{i-1,j} + H_{i,j}}{2} \right)\]</div>
+<<<<<<< HEAD
+<p>The same algorithm is used for <span class="math">\(k\)</span> at (<span class="math">\(i,j+1/2\)</span>) and (<span class="math">\(i,j-1/2\)</span>) points. The shear velocity <span class="math">\(u_{*c}\)</span> is evaluated as:</p>
+<div class="math" id="equation-sed_numerical:5">
+<span class="eqno">(6)<a class="headerlink" href="#equation-sed_numerical:5" title="Permalink to this equation">¶</a></span>\[u_{*c i,j} = \frac{k U_{c i,j}}{-1 + \ln (30H_{i,j}/k_s)}\]</div>
+<p>where <span class="math">\(U_{c i,j}\)</span> is the total velocity:</p>
+<div class="math" id="equation-sed_numerical:6">
+<span class="eqno">(7)<a class="headerlink" href="#equation-sed_numerical:6" title="Permalink to this equation">¶</a></span>\[U_{c i,j}= \sqrt{U_{i,j}^2 + V_{i,j}^2}\]</div>
+<p>in which (<span class="math">\(U_{i,j}, V_{i,j}\)</span>) are directly from the Boussinesq solution:</p>
+<div class="math" id="equation-sed_numerical:7">
+<span class="eqno">(8)<a class="headerlink" href="#equation-sed_numerical:7" title="Permalink to this equation">¶</a></span>\[U_{i,j} = U_{\alpha i,j} + U_{2 i,j}\]</div>
+<div class="math" id="equation-sed_numerical:8">
+<span class="eqno">(9)<a class="headerlink" href="#equation-sed_numerical:8" title="Permalink to this equation">¶</a></span>\[V_{i,j} = V_{\alpha i,j} + V_{2 i,j}\]</div>
+<p>corresponding to the reference velocity <span class="math">\({\bf u}_\alpha\)</span> and depth averaged velocity correction <span class="math">\(\bar{{\bf u}}_2\)</span> described in Shi et al. (2012).</p>
+<p><span class="math">\(\nabla_h \bar{c}\)</span> is also evaluated at the cell face as:</p>
+<div class="math" id="equation-sed_numerical:9">
+<span class="eqno">(10)<a class="headerlink" href="#equation-sed_numerical:9" title="Permalink to this equation">¶</a></span>\[\Delta_x \bar{c}_{i+1/2,j} = \frac{\bar{c}_{i+1,j} - \bar{c}_{i,j}}{\Delta x}\]</div>
+<div class="math" id="equation-sed_numerical:10">
+<span class="eqno">(11)<a class="headerlink" href="#equation-sed_numerical:10" title="Permalink to this equation">¶</a></span>\[\Delta_x \bar{c}_{i-1/2,j} = \frac{\bar{c}_{i,j} - \bar{c}_{i-1,j}}{\Delta x}\]</div>
+<p>The same scheme is used for the <span class="math">\(y\)</span> direction.</p>
+<p>The source term in :math:Psi includes the pickup rate <span class="math">\(P\)</span> and the deposition rate <span class="math">\(D\)</span>. <span class="math">\(P\)</span> is calculated at the cell center using <a class="reference external" href="https://doi.org/10.1061/(ASCE)0733-9429(1984)110:10(1494)">van Rijn 1984</a> formula as mentioned above. Similarly, the deposition rate, <span class="math">\(D\)</span>, is calculated at the cell center based on <a class="reference external" href="https://doi.org/10.1061/(ASCE)0733-9429(1999)125:12(1270)">Cao 1999</a> formula.</p>
+</div>
+<div class="section" id="time-stepping">
+<h2>Time stepping<a class="headerlink" href="#time-stepping" title="Permalink to this headline">¶</a></h2>
+<p>Time stepping is the same as in FUNWAVE-TVD solver. The third-order Strong Stability-Preserving (SSP) Runge-Kutta scheme for nonlinear spatial discretization (<a class="reference external" href="https://drum.lib.umd.edu/handle/1903/8648">Gottlieb et al., 2001</a>) is adopted for time stepping. The scheme is given by:</p>
+<div class="math" id="equation-sed_numerical:11">
+<span class="eqno">(12)<a class="headerlink" href="#equation-sed_numerical:11" title="Permalink to this equation">¶</a></span>\[{\Psi}^{(1)} = {\Psi}^{n}  + \Delta t (- \nabla \cdot F ({\Psi}^n) + {S}^{(1)} )  {\Psi}^{(2)} = \frac{3}{4}{\Psi}^{n}  + \frac{1}{4} \left[   {\Psi}^{(1)} +  \Delta t \left (- \nabla \cdot F ({\Psi}^{(1)} ) + {S}^{(2)} \right) \right]  {\Psi}^{n+1}\]</div>
+<div class="math" id="equation-sed_numerical:12">
+<span class="eqno">(13)<a class="headerlink" href="#equation-sed_numerical:12" title="Permalink to this equation">¶</a></span>\[= \frac{1}{3}{\Psi}^{n}  + \frac{2}{3} \left[   {\Psi}^{(2)} +  \Delta t \left (- \nabla \cdot F ({\Psi}^{(2)} ) + { S}^{n+1} \right) \right]\]</div>
+<p>in which <span class="math">\({\Psi}^{n}\)</span> denotes <span class="math">\({\Psi}\)</span>  at time level <span class="math">\(n\)</span>.  <span class="math">\({\Psi}^{(1)}\)</span> and <span class="math">\({\Psi}^{(2)}\)</span> are values at intermediate stages in the Runge-Kutta integration. As <span class="math">\({\Psi}\)</span> is obtained at each intermediate step,  the source term <span class="math">\(S\)</span> needs to be updates using the intermediate value of concentration.</p>
+<p>Time steps are the same as the Boussinesq solver, which uses adaptive values based on the Courant-Friedrichs-Lewy (CFL) criterion to ensure model stability.</p>
+</div>
+<div class="section" id="boundary-conditions">
+<h2>Boundary conditions<a class="headerlink" href="#boundary-conditions" title="Permalink to this headline">¶</a></h2>
+<p>Boundary conditions used in the sediment module have two types. One is the closed boundary condition which is applied at the cell face, for example:</p>
+<div class="math" id="equation-sed_numerical:13">
+<span class="eqno">(14)<a class="headerlink" href="#equation-sed_numerical:13" title="Permalink to this equation">¶</a></span>\[F_{i+1/2,j} = 0 \hspace{1cm}\]</div>
+=======
 <p>The same algorithm is used for <span class="math notranslate nohighlight">\(k\)</span> at (<span class="math notranslate nohighlight">\(i,j+1/2\)</span>) and (<span class="math notranslate nohighlight">\(i,j-1/2\)</span>) points. The shear velocity <span class="math notranslate nohighlight">\(u_{*c}\)</span> is evaluated as</p>
 <div class="math notranslate nohighlight" id="equation-sed-numerical-5">
 <span class="eqno">(65)<a class="headerlink" href="#equation-sed-numerical-5" title="Permalink to this equation">¶</a></span>\[u_{*c i,j} = \frac{k U_{c i,j}}{-1 + \ln (30H_{i,j}/k_s)}\]</div>
@@ -148,7 +251,14 @@ The third-order Strong Stability-Preserving (SSP) Runge-Kutta scheme for nonline
 <p>Boundary conditions used in the sediment module have two types. One is the closed boundary condition which is applied at the cell face, for example,</p>
 <div class="math notranslate nohighlight" id="equation-sed-numerical-13">
 <span class="eqno">(73)<a class="headerlink" href="#equation-sed-numerical-13" title="Permalink to this equation">¶</a></span>\[F_{i+1/2,j} = 0 \hspace{1cm}\]</div>
+>>>>>>> origin/master
 <p>The other is the open boundary condition with zero-gradient condition implemented at ghost cells.</p>
+<p><strong>References</strong></p>
+<p>Cao, Z. (1999) “Equilibrium near-bed concentration of suspended sediment”. <em>J. of Hydraulic Eng.</em>, 125(12): 1270-1278. DOI: 10.1061/(ASCE)0733-9429(1999)125:12(1270).</p>
+<p>Gottlieb, S., C.-W. Shu, and E. Tadmor, (2001). “High order time discretization methods with the strong stability property”. SIAM Review, 43: 89-112.</p>
+<p>Shi, F., J.T. Kirby, J.C. Harris, J.D. Geiman, and S.T. Grilli, (2012). “A high-order adaptive time-stepping TVD solver for Boussinesq modeling of breaking waves and coastal inundation”. <em>Ocean Modelling</em>, 43-44: 36-51. DOI: 10.1016/j.ocemod.2011.12.004.</p>
+<p>van Rijn, L.C., 1984. “Sediment Pick-Up Functions”. J. of Hydraulic Eng., 110 (10). DOI: 10.1061/(ASCE)0733-9429(1984)110:10(1494).</p>
+</div>
 </div>
 
 
@@ -176,7 +286,11 @@ The third-order Strong Stability-Preserving (SSP) Runge-Kutta scheme for nonline
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2019, Fengyan Shi.
+<<<<<<< HEAD
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+=======
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
+>>>>>>> origin/master
     </div>
   </body>
 </html>

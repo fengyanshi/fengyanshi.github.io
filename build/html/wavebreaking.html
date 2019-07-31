@@ -1,3 +1,29 @@
+<<<<<<< HEAD
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Wave Breaking, roller and undertow &#8212; FUNWAVE Documentation</title>
+    <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+=======
 
 <!DOCTYPE html>
 
@@ -13,11 +39,17 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="_static/language_data.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+>>>>>>> origin/master
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Sponge Layer" href="spongelayer.html" />
     <link rel="prev" title="Central Module" href="central.html" /> 
+<<<<<<< HEAD
+  </head>
+  <body>
+=======
   </head><body>
+>>>>>>> origin/master
 <div class="header">
  <p class="logo"><a href="https://fengyanshi.github.io/build/html/index.html">
   <img class="logo" src="_static/../../../images/Funwave.svg" alt="Logo"/>
@@ -43,8 +75,14 @@
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
+<<<<<<< HEAD
+<h3><a href="index.html">Table Of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="integration.html"><strong>INTEGRATION</strong></a></li>
+=======
 <h3><a href="index.html">Table of Contents</a></h3>
 <ul class="current">
+>>>>>>> origin/master
 <li class="toctree-l1 current"><a class="reference internal" href="basics.html"><strong>BASICS</strong></a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="boussinesq.html">Formulations and Numerical Schemes</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="central.html">Central Module</a></li>
@@ -67,6 +105,15 @@
 </ul>
 
 <div id="searchbox" style="display: none" role="search">
+<<<<<<< HEAD
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+=======
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
@@ -74,6 +121,7 @@
       <input type="submit" value="Go" />
     </form>
     </div>
+>>>>>>> origin/master
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -90,6 +138,21 @@
 <p>There are two breaking algorithms implemented in the model. One takes advantage of the shock–capturing scheme in TVD.
 It  follows the approach of Tonelli and Petti (2009),  who successfully used the ability of  NSWE  with a TVD scheme to model moving hydraulic jumps. Thus, the fully nonlinear Boussinesq equations are switched  to NSWE at cells where the Froude number exceeds  a certain threshold. Following Tonelli and Petti, the ratio of wave height to total water depth is chosen as  the criterion to switch from Boussinesq to NSWE, with a threshold value  set to 0.8,  as suggested by Tonelli and Petti.</p>
 <p>The other one is the original eddy–viscosity scheme used in the previous version of FUNWAVE (Kennedy et al., 2000). To fit the eddy–viscosity method in the TVD scheme, the artificial eddy viscosity terms.</p>
+<<<<<<< HEAD
+<div class="math" id="equation-wavebreaking:0">
+<span class="eqno">(1)<a class="headerlink" href="#equation-wavebreaking:0" title="Permalink to this equation">¶</a></span>\[{\bf R}_{bx} = \frac{\partial }{\partial x} (\nu \frac{\partial P}{\partial x}) + \frac{\partial }{\partial y} (\nu \frac{\partial P}{\partial y} )\]</div>
+<div class="math" id="equation-wavebreaking:1">
+<span class="eqno">(2)<a class="headerlink" href="#equation-wavebreaking:1" title="Permalink to this equation">¶</a></span>\[{\bf R}_{by} = \frac{\partial }{\partial y} (\nu \frac{\partial Q}{\partial y}) + \frac{\partial }{\partial x} (\nu \frac{\partial Q}{\partial x})\]</div>
+<p>Note that the form is slightly different from that in Kennedy et al. (2000). The present form was found to give a more stable numerical solution as the cross–derivatives removed. In the present form, <span class="math">\(\nu\)</span> is the artificial eddy viscosity defined by</p>
+<div class="math" id="equation-wavebreaking:2">
+<span class="eqno">(3)<a class="headerlink" href="#equation-wavebreaking:2" title="Permalink to this equation">¶</a></span>\[\nu = B \delta_b^2 (h+\eta) \eta_t\]</div>
+<p>where <span class="math">\(\delta_b = 1.2\)</span>. In Kennedy et al. (2000), <span class="math">\(B\)</span> varies smoothly from 0 to 1 so as to avoid an impulsive start of breaking and the resulting instability. In the present TVD model, because there is no instability problem found, we adopt a constant value <span class="math">\(B=1\)</span> as breaking is initiated</p>
+<div class="math" id="equation-wavebreaking:3">
+<span class="eqno">(4)<a class="headerlink" href="#equation-wavebreaking:3" title="Permalink to this equation">¶</a></span>\[B =  1 \ \ \  \eta_t \ge  \eta_t^*\]</div>
+<div class="math" id="equation-wavebreaking:4">
+<span class="eqno">(5)<a class="headerlink" href="#equation-wavebreaking:4" title="Permalink to this equation">¶</a></span>\[B =  0 \ \ \  \eta_t &lt;  \eta_t^*\]</div>
+<p>The parameter <span class="math">\(\eta_t^*\)</span> determines the onset and cessation of breaking. Following Kennedy et al., a breaking event begins when <span class="math">\(\eta_t\)</span> exceeds some initial threshold value <span class="math">\(\eta_t^{(I)}\)</span>, as breaking develops, the wave will continue to break until <span class="math">\(\eta_t\)</span> drops below <span class="math">\(\eta_t^{(F)}\)</span>. However, we do not use the smooth transition as in Kennedy et al. because the present TVD scheme did not encounter any instability problem associated with breaking. The values of <span class="math">\(\eta_t^{(I)}\)</span> and <span class="math">\(\eta_t^{(F)}\)</span> can be described by  <span class="math">\(C_{brk1}  \sqrt{gh}\)</span> and  <span class="math">\(C_{brk2} \sqrt{gh}\)</span>, respectively, where <span class="math">\(C_{brk1}\)</span> and  <span class="math">\(C_{brk2}\)</span> are empirical parameters. In Kennedy et al., <span class="math">\(C_{brk1} = 0.65\)</span> and  <span class="math">\(C_{brk2}=0.15\)</span>. Choi et al. (2018) showed that <span class="math">\(C_{brk1}\)</span> should be smaller and <span class="math">\(C_{brk2}\)</span> be larger than those in Kennedy et al. to match the laboratory experimental data. For the benchmark test of Vincent and Briggs (1989), for instance, <span class="math">\(C_{brk1} = 0.45\)</span> and <span class="math">\(C_{brk2} = 0.35\)</span> were adopted.</p>
+=======
 <div class="math notranslate nohighlight" id="equation-wavebreaking-0">
 <span class="eqno">(1)<a class="headerlink" href="#equation-wavebreaking-0" title="Permalink to this equation">¶</a></span>\[{\bf R}_{bx} = \frac{\partial }{\partial x} (\nu \frac{\partial P}{\partial x}) + \frac{\partial }{\partial y} (\nu \frac{\partial P}{\partial y} )\]</div>
 <div class="math notranslate nohighlight" id="equation-wavebreaking-1">
@@ -103,6 +166,7 @@ It  follows the approach of Tonelli and Petti (2009),  who successfully used the
 <div class="math notranslate nohighlight" id="equation-wavebreaking-4">
 <span class="eqno">(5)<a class="headerlink" href="#equation-wavebreaking-4" title="Permalink to this equation">¶</a></span>\[B =  0 \ \ \  \eta_t &lt;  \eta_t^*\]</div>
 <p>The parameter <span class="math notranslate nohighlight">\(\eta_t^*\)</span> determines the onset and cessation of breaking. Following Kennedy et al., a breaking event begins when <span class="math notranslate nohighlight">\(\eta_t\)</span> exceeds some initial threshold value <span class="math notranslate nohighlight">\(\eta_t^{(I)}\)</span>, as breaking develops, the wave will continue to break until <span class="math notranslate nohighlight">\(\eta_t\)</span> drops below <span class="math notranslate nohighlight">\(\eta_t^{(F)}\)</span>. However, we do not use the smooth transition as in Kennedy et al. because the present TVD scheme did not encounter any instability problem associated with breaking. The values of <span class="math notranslate nohighlight">\(\eta_t^{(I)}\)</span> and <span class="math notranslate nohighlight">\(\eta_t^{(F)}\)</span> can be described by  <span class="math notranslate nohighlight">\(C_{brk1}  \sqrt{gh}\)</span> and  <span class="math notranslate nohighlight">\(C_{brk2} \sqrt{gh}\)</span>, respectively, where <span class="math notranslate nohighlight">\(C_{brk1}\)</span> and  <span class="math notranslate nohighlight">\(C_{brk2}\)</span> are empirical parameters. In Kennedy et al., <span class="math notranslate nohighlight">\(C_{brk1} = 0.65\)</span> and  <span class="math notranslate nohighlight">\(C_{brk2}=0.15\)</span>. Choi et al. (2018) showed that <span class="math notranslate nohighlight">\(C_{brk1}\)</span> should be smaller and <span class="math notranslate nohighlight">\(C_{brk2}\)</span> be larger than those in Kennedy et al. to match the laboratory experimental data. For the benchmark test of Vincent and Briggs (1989), for instance, <span class="math notranslate nohighlight">\(C_{brk1} = 0.45\)</span> and <span class="math notranslate nohighlight">\(C_{brk2} = 0.35\)</span> were adopted.</p>
+>>>>>>> origin/master
 <p><strong>Roller and undertow</strong></p>
 <div class="align-center figure">
 <a class="reference internal image-reference" href="_images/roller.jpg"><img alt="alternate text" src="_images/roller.jpg" style="width: 400px; height: 150px;" /></a>
@@ -181,7 +245,11 @@ transformation, breaking and runup. I: 1D”. J. Waterway Port Coastal Ocean Eng
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2019, Fengyan Shi.
+<<<<<<< HEAD
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+=======
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
+>>>>>>> origin/master
     </div>
   </body>
 </html>

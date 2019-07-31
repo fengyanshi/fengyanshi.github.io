@@ -1,3 +1,29 @@
+<<<<<<< HEAD
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Lagrangian Tracking Module &#8212; FUNWAVE Documentation</title>
+    <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+=======
 
 <!DOCTYPE html>
 
@@ -13,11 +39,17 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="_static/language_data.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+>>>>>>> origin/master
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="ARCHITECTURE" href="flowchart.html" />
     <link rel="prev" title="Meteo Module" href="meteo_intro.html" /> 
+<<<<<<< HEAD
+  </head>
+  <body>
+=======
   </head><body>
+>>>>>>> origin/master
 <div class="header">
  <p class="logo"><a href="https://fengyanshi.github.io/build/html/index.html">
   <img class="logo" src="_static/../../../images/Funwave.svg" alt="Logo"/>
@@ -42,8 +74,14 @@
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
+<<<<<<< HEAD
+<h3><a href="index.html">Table Of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="integration.html"><strong>INTEGRATION</strong></a></li>
+=======
 <h3><a href="index.html">Table of Contents</a></h3>
 <ul class="current">
+>>>>>>> origin/master
 <li class="toctree-l1 current"><a class="reference internal" href="basics.html"><strong>BASICS</strong></a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="boussinesq.html">Formulations and Numerical Schemes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="central.html">Central Module</a></li>
@@ -66,6 +104,15 @@
 </ul>
 
 <div id="searchbox" style="display: none" role="search">
+<<<<<<< HEAD
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+=======
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
@@ -73,6 +120,7 @@
       <input type="submit" value="Go" />
     </form>
     </div>
+>>>>>>> origin/master
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -86,6 +134,17 @@
   <div class="section" id="lagrangian-tracking-module">
 <span id="section-tracer-formula"></span><h1>Lagrangian Tracking Module<a class="headerlink" href="#lagrangian-tracking-module" title="Permalink to this headline">¶</a></h1>
 <p>Lagrangian tracking module is implemented using the individual-based particle-tracking method which treats  particles as if they exactly follow the fluid dynamics. In the current version, the Lagrangian evolution of the position of a particle is expressed as</p>
+<<<<<<< HEAD
+<div class="math" id="equation-tracer:0">
+<span class="eqno">(1)<a class="headerlink" href="#equation-tracer:0" title="Permalink to this equation">¶</a></span>\[d {\bf x}/dt = {\bf u}_\alpha ({\bf x})\]</div>
+<p>where <span class="math">\({\bf x}\)</span> is the particle’s position and <span class="math">\({\bf u}_\alpha\)</span> is the fluid velocity at the reference level. The accuracy of the calculated particle trajectory depends on both the magnitude of the time-step and the order-accuracy of the velocity field. The time step used to update the particle position is the same as the time step used in solving the Boussinesq equation, which is assumed to be small. The first order discrete form of the above equation is used in the model.</p>
+<p>The particle position <span class="math">\((x,y)\)</span> is specified at the central point of a cell, the same as other model variables such as :math: <cite>u,v,eta</cite> etc. The orgin (0,0) is at the central point of the bottom-left (south-west) corner cell. A linear interpolation is used to get the instantaneous velocity at the particle position. In particular, an interpolation value is obtained from the values at three nearest points. The areas of four triangles constructed by the four points (3 nearest points and the particle point itself) can be calculated using</p>
+<div class="math" id="equation-tracer:1">
+<span class="eqno">(2)<a class="headerlink" href="#equation-tracer:1" title="Permalink to this equation">¶</a></span>\[\begin{split}S_{\alpha \beta \gamma} = \left | \begin{array}{ccc} x_\alpha &amp; y_\alpha &amp; 1 \\  x_\beta &amp; y_\beta &amp; 1 \\ x_\gamma &amp; y_\gamma &amp; 1 \end{array} \right|\end{split}\]</div>
+<p>where <span class="math">\(S_{\alpha \beta \gamma}\)</span> represents the area of the triangle <span class="math">\((\alpha \beta \gamma)\)</span>, counter-clockwise. The interpolation value is evaluated using</p>
+<div class="math" id="equation-tracer:2">
+<span class="eqno">(3)<a class="headerlink" href="#equation-tracer:2" title="Permalink to this equation">¶</a></span>\[F_A = (F_1 S_{23A} + F_2S_{31A} + F_3S_{12A})/S_{123}\]</div>
+=======
 <div class="math notranslate nohighlight" id="equation-tracer-0">
 <span class="eqno">(82)<a class="headerlink" href="#equation-tracer-0" title="Permalink to this equation">¶</a></span>\[d {\bf x}/dt = {\bf u}_\alpha ({\bf x})\]</div>
 <p>where <span class="math notranslate nohighlight">\({\bf x}\)</span> is the particle’s position and <span class="math notranslate nohighlight">\({\bf u}_\alpha\)</span> is the fluid velocity at the reference level. The accuracy of the calculated particle trajectory depends on both the magnitude of the time-step and the order-accuracy of the velocity field. The time step used to update the particle position is the same as the time step used in solving the Boussinesq equation, which is assumed to be small. The first order discrete form of the above equation is used in the model.</p>
@@ -95,6 +154,7 @@
 <p>where <span class="math notranslate nohighlight">\(S_{\alpha \beta \gamma}\)</span> represents the area of the triangle <span class="math notranslate nohighlight">\((\alpha \beta \gamma)\)</span>, counter-clockwise. The interpolation value is evaluated using</p>
 <div class="math notranslate nohighlight" id="equation-tracer-2">
 <span class="eqno">(84)<a class="headerlink" href="#equation-tracer-2" title="Permalink to this equation">¶</a></span>\[F_A = (F_1 S_{23A} + F_2S_{31A} + F_3S_{12A})/S_{123}\]</div>
+>>>>>>> origin/master
 <p>where :math: <cite>F_1, F_2, F_3</cite> and :math: <cite>F_A</cite> represent values at points (1,2,3) and the partical point A, respectively.</p>
 <p>To set up particle tracking in the model, see <a class="reference internal" href="tracer_setup.html#section-tracer-setup"><span class="std std-ref">Lagrangian Tracer Setup</span></a></p>
 <ul class="simple">
@@ -126,7 +186,11 @@
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2019, Fengyan Shi.
+<<<<<<< HEAD
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+=======
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
+>>>>>>> origin/master
     </div>
   </body>
 </html>

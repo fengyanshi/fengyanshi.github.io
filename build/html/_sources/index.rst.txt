@@ -39,6 +39,9 @@ This Wiki page provides general introductions to all model components and theory
 
 For quick keyword searches, use the search bar to the left.
 
+<<<<<<< HEAD
+
+=======
 ==========
 Subscribe
 ==========
@@ -48,16 +51,25 @@ Stay connected to the global FUNWAVE community by subscribing to the mailing gro
 .. raw:: html
    :file: google_group.html
    
+>>>>>>> origin/master
 =============
 Capabilities
 =============
 
 As a nearshore shallow-to-intermediate water phase-resolving Boussinesq-type numerical wave model, FUNWAVE can resolve many coastal processes such as:
+<<<<<<< HEAD
 
 .. sidebar:: **Exclusive to phase-resolving**
 
    Coastal processes highlighted in bold indicate process-based capabilities that are *not* naturally resolved in *phase-averaging* wave models. These features are exclusive to *phase-resolving* wave models.
 
+=======
+
+.. sidebar:: **Exclusive to phase-resolving**
+
+   Coastal processes highlighted in bold indicate process-based capabilities that are *not* naturally resolved in *phase-averaging* wave models. These features are exclusive to *phase-resolving* wave models.
+
+>>>>>>> origin/master
 * Nearshore wave propagation & transformation
 * Refraction, **diffraction** & nonlinear shoaling
 * Bottom friction & wave-induced currents
@@ -82,11 +94,18 @@ Applications
 * Ship-generated waves and related sediment transport
 * Harbors and Austere Ports of Entry
 
+<<<<<<< HEAD
+Transition to HPC-Portal
+************************
+
+In 2019, USACE and the greater DoD will be capable of running FUNWAVE remotely on hundreds and/or thousands of cores/processors in a Graphical User Interface (GUI) environment using a web browser! Learn more about the :ref:`benefits <section-benefits>` of transitioning.
+=======
 =====================================
 Transitioning to HPC-Portal for USACE
 =====================================
 
 In 2019, USACE and the greater DoD will be capable of running FUNWAVE remotely on hundreds and/or thousands of cores/processors in a Graphical User Interface (GUI) environment using a web browser!
+>>>>>>> origin/master
 
 .. image:: images/hpcportal.jpg
    :width: 700px
@@ -94,6 +113,16 @@ In 2019, USACE and the greater DoD will be capable of running FUNWAVE remotely o
    :align: center
 
 
+<<<<<<< HEAD
+==========
+Subscribe
+==========
+
+Stay connected to the global FUNWAVE community by subscribing to the mailing group. Submit general or specific questions to new and experienced users alike to solve problems and enhance solutions.
+
+.. raw:: html
+   :file: google_group.html
+=======
 Benefits of transitioning
 *************************
 
@@ -113,6 +142,7 @@ Benefits of transitioning
 
 .. note::
    The HPC Portal is accessible only to employees of USACE and the greater DoD.
+>>>>>>> origin/master
 
 =========
 Contents
@@ -120,6 +150,7 @@ Contents
 .. toctree::
    :maxdepth: 2
 
+   integration
    basics
    flowchart
    setup

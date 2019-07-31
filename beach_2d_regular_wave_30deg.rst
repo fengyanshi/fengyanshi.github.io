@@ -1,82 +1,36 @@
+.. _section-beach-2d-reg:
+
 Regular wave 30 deg oblique incidence
-######################################
+#####################################
 
 .. figure:: images/simple_cases/wave_reg_30deg.jpg
-    :width: 500px
+    :width: 600px
     :align: center
-    :height: 300px
+    :height: 400px
     :alt: alternate text
     :figclass: align-center
 
-**input.txt:**
+The following sections will be modified in "input.txt" for this case. All other sections are defined in :ref:`section-beach-2d-basics` for this example.
 
-|  **Slope bed**
-|   DEPTH_TYPE = SLOPE 
-|   DEPTH_FLAT = 8.0
-|   SLP = 0.05
-|   Xslp = 300.0
+  Set a descriptive title for your simulation:
 
-  (refer to :ref:`definition_grid`)
+  .. code-block:: rest
 
-|  **Output folder**
-|   RESULT_FOLDER = output/ 
+        !-----TITLE-----
+         TITLE = 2D_beach_30deg
+  
+  Modify the initial wavemaker section on :ref:`section-beach-2d-basics` to generate monochromatic waves with incidence of 30.0:
+  
+  .. code-block:: rest
+       
+       WAVEMAKER = WK_REG
+       DEP_WK = 8.0 
+       Xc_WK = 150.0 
+       Yc_WK = 0.0 
+       Tperiod = 8.0 
+       AMP_WK = 0.5 
+       Theta_WK = 30.0    ! this line
+       Delta_WK = 3.0
 
-|  **Dimensions**
-|   Mglob = 250
-|   Nglob = 500 
-
-|  **Grid sizes**
-|   DX = 2.0 
-|   DY = 2.0 
-
-|  **Add wavemaker**
-|   WAVEMAKER = WK_REG
-|   DEP_WK = 8.0 
-|   Xc_WK = 150.0 
-|   Yc_WK = 0.0 
-|   Tperiod = 8.0 
-|   AMP_WK = 0.5 
-|   Theta_WK = 30.0 
-|   Delta_WK = 3.0
-
-  (refer to :ref:`definition_wavemaker`)
-
-|  **Add periodic boundary condition**
-|   PERIODIC = T  (refer to :ref:`info_periodic`)
-
-|  **Sponge layer**
-|   DIFFUSION_SPONGE = F 
-|   FRICTION_SPONGE = T 
-|   DIRECT_SPONGE = T 
-|   Csp = 0.0 
-|   CDsponge = 1.0 
-|   Sponge_west_width =  100.0 
-|   Sponge_east_width =  0.0 
-|   Sponge_south_width = 0.0 
-|   Sponge_north_width = 0.0 
-
-   (refer to :ref:`info_sponge`)
-
-|  **Wave breaking**
-|   VISCOSITY_BREAKING = T  
-|   Cbrk1 = 0.65 
-|   Cbrk2 = 0.35 
-
-  (refer to :ref:`example_breaking`)
-
-|  **Wave average property**
-|   T_INTV_mean = 100.0 
-|   STEADY_TIME=100.0 
-
-|  **Output**
-|   ETA = T 
-|   Umean = T 
-|   Vmean = T 
-|   ETAmean = T 
-|   MASK = T
-|   WaveHeight = T
-
-  (refer to :ref:`definition_output`)
-
-
-
+  (refer to :ref:`definition_wavemaker` for description of parameters)
+ 
