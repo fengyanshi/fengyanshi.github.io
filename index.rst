@@ -99,7 +99,7 @@ Applications
 Transitioning to HPC-Portal for USACE
 =====================================
 
-FUNWAVE--TVD is an approved and recommended U.S. Army Corps of Engineers (USACE) numerical Boussinesq wave model. Funded by both Civil Works Navigation Systems Research and Development (R\&D) Programs. In addition, it is supported by the Coastal Working Group (CWG) and the Hydrology, Hydraulics, and Coastal (HH\&C) USACE communities of practice (CoP).
+FUNWAVE--TVD is both the **approved** and **recommended** U.S. Army Corps of Engineers (USACE) numerical Boussinesq wave model, funded by both Civil Works (CW) research programs (Navigation Systems and Flood and Coastal Systems). In addition, it is supported by the Coastal Working Group (CWG) and the Hydrology, Hydraulics, and Coastal (HH\&C) USACE communities of practice (CoP).
 
 In 2019, USACE and the greater DoD will be capable of running FUNWAVE remotely on hundreds and/or thousands of cores/processors in a Graphical User Interface (GUI) environment using a web browser!
 
