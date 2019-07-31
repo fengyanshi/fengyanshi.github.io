@@ -34,8 +34,7 @@ which should match a given block coefficient :math:`C_B` defined by:
 in which :math:`D` represents draft of a vessel. An example of how the pressure source is implemented in FUNWAVE is shown in the figure below for :math:`\alpha_1, \alpha_2,` and :math:`\beta = 0.25, 0.5,` and :math:`0.5`, respectively. Click on the image to enlarge it.
 
 .. figure:: images/modules/pressure_source_001.png
-        :width: 500px
-        :height: 350px
+        :width: 800px
         :align: center
         :alt: alternate text
     
@@ -65,8 +64,7 @@ The Type II of the slender source is similar to the Type I but with two addition
 The formula is calculated in the rectangle :math:`- L/2 \le \tilde{x} - x^*(t) \le L/2`  and  :math:`- W/2 \le \tilde{y} - y^*(t) \le R/2`, and zero outside this region. An example of lengthening the pressure source by increasing :math:`\alpha_1` to 0.75.
 
 .. figure:: images/modules/pressure_source_004.png
-      :width: 500px
-      :height: 350px
+      :width: 800px
       :align: center
       :alt: alternate text 
 
