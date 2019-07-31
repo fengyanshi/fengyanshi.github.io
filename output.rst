@@ -122,30 +122,29 @@ Output for stations is a series of numbered files such as :code:`sta_0001, sta_0
    .. code-block:: python
 
           def readBathyData(outputDir, args):
-          """Function that reads in FUNWAVE's bathy data from: dep.out in output directory."""
+             """Function that reads in FUNWAVE's bathy data from: dep.out in output directory."""
           
-          bathyFileName = os.path.join(outputDir, 'dep.out')
+             bathyFileName = os.path.join(outputDir, 'dep.out')
 
-          # read in and convert into 2D numpy array if binary fieldiotype                                                                                                    
-          fieldIOType = args.fieldiotype # 'ascii' or 'binary'                                                                                                               
+             # read in and convert into 2D numpy array if binary fieldiotype                                                                                                    
+             fieldIOType = args.fieldiotype # 'ascii' or 'binary'                                                                                                               
 
-          if fieldIOType == 'ascii':
-             bathy = np.loadtxt(bathyFileName)
-             (Ny, Nx) = bathy.shape # [Nglob,Mglob]                                                                                                                         
+             if fieldIOType == 'ascii':
+                bathy = np.loadtxt(bathyFileName)
+                (Ny, Nx) = bathy.shape # [Nglob,Mglob]                                                                                                                         
 
-          else:
-             Ny = args.nglob    # if not included in args, manually set Nx, Ny
-             Nx = args.mglob
-             fin = open(bathyFileName, mode='rb')
-             dataType = np.dtype(['elev', '<f8', Ny*Nx])
-             bathyNotParsed = np.fromfile(fin, dtype=dataType)
-             bathy = np.zeros([Ny,Nx])
-             for j in range(Nx):
-              for i in range(Ny):
-                  bathy[i,j] = bathyNotParsed[0][0][(j*Ny)+i]
-                  return bathyta = np.loadtext('eta_00001')
-
-          plt.plot()
+             else:
+                Ny = args.nglob    # if not included in args, manually set Nx, Ny
+                Nx = args.mglob
+                fin = open(bathyFileName, mode='rb')
+                dataType = np.dtype(['elev', '<f8', Ny*Nx])
+                bathyNotParsed = np.fromfile(fin, dtype=dataType)
+                bathy = np.zeros([Ny,Nx])
+                for j in range(Nx):
+                  for i in range(Ny):
+                    bathy[i,j] = bathyNotParsed[0][0][(j*Ny)+i]
+                
+             return bathy
 
   Station files do not have Binary format. 
 
