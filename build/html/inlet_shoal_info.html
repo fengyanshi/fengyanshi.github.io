@@ -1,29 +1,3 @@
-<<<<<<< HEAD
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Basics for model setup &#8212; FUNWAVE Documentation</title>
-    <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-=======
 
 <!DOCTYPE html>
 
@@ -39,17 +13,11 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="_static/language_data.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
->>>>>>> origin/master
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Regular wave (baseline case)" href="inlet_shoal_regular_wave.html" />
     <link rel="prev" title="Compile the code for inlet shoal case" href="inlet_shoal_compile.html" /> 
-<<<<<<< HEAD
-  </head>
-  <body>
-=======
   </head><body>
->>>>>>> origin/master
 <div class="header">
  <p class="logo"><a href="https://fengyanshi.github.io/build/html/index.html">
   <img class="logo" src="_static/../../../images/Funwave.svg" alt="Logo"/>
@@ -75,26 +43,17 @@
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-<<<<<<< HEAD
-<h3><a href="index.html">Table Of Contents</a></h3>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="integration.html"><strong>INTEGRATION</strong></a></li>
-=======
 <h3><a href="index.html">Table of Contents</a></h3>
 <ul class="current">
->>>>>>> origin/master
 <li class="toctree-l1"><a class="reference internal" href="basics.html"><strong>BASICS</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="flowchart.html"><strong>ARCHITECTURE</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="setup.html"><strong>MODEL DOWNLOAD AND SETUP</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup.html">MODEL DOWNLOAD AND SETUP</a></li>
 <li class="toctree-l1"><a class="reference internal" href="definition.html"><strong>DEFINITIONS OF PARAMETERS</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="coupling_nesting.html"><strong>NESTING AND COUPLING</strong></a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="examples.html"><strong>EXAMPLES</strong></a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="examples.html#simple-tests-beginners-should-start-from-here">Simple tests <strong>(beginners should start from here)</strong></a></li>
 <li class="toctree-l2"><a class="reference internal" href="examples.html#benchmarks">Benchmarks</a></li>
-<<<<<<< HEAD
-=======
 <li class="toctree-l2"><a class="reference internal" href="examples.html#recent-usace-applications">Recent USACE Applications</a></li>
->>>>>>> origin/master
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="gallery.html"><strong>GALLERY</strong></a></li>
@@ -105,15 +64,6 @@
 </ul>
 
 <div id="searchbox" style="display: none" role="search">
-<<<<<<< HEAD
-  <h3>Quick search</h3>
-    <form class="search" action="search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-=======
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
@@ -121,7 +71,6 @@
       <input type="submit" value="Go" />
     </form>
     </div>
->>>>>>> origin/master
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -133,63 +82,116 @@
           <div class="body" role="main">
             
   <div class="section" id="basics-for-model-setup">
-<h1>Basics for model setup<a class="headerlink" href="#basics-for-model-setup" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li><p>computational domain</p></li>
-</ul>
+<span id="section-inlet-basics"></span><h1>Basics for model setup<a class="headerlink" href="#basics-for-model-setup" title="Permalink to this headline">¶</a></h1>
+<p>In the directory <code class="code docutils literal notranslate"><span class="pre">/simple_cases/inlet_shoal/input_files/</span></code>, you will find multiple instances of input files that are specific to different variations of this example, e.g., regular (“input_reg.txt) versus irregular (“input_irr.txt”) wavemaker configuration. It should be noted that the model will accept only the file named “input.txt”. Therefore, if you want to switch wavemaker cases, you will need to modify the primary “input.txt” file.</p>
+<p><strong>Computational domain</strong></p>
 <div class="align-center figure">
 <a class="reference internal image-reference" href="_images/inlet_shoal.jpg"><img alt="alternate text" src="_images/inlet_shoal.jpg" style="width: 400px; height: 500px;" /></a>
 </div>
-<p>Basic info</p>
+<p><strong>Setup in “intput.txt”</strong></p>
+<p>See an example of a complete “input.txt” <a class="reference internal" href="definition.html#section-definitions"><span class="std std-ref">here</span></a>.</p>
+<p>For this example, you will set the following in “input.txt”. <strong>Remember that all parameters are case sensitive</strong>.</p>
 <blockquote>
-<div><p>Dimensions 512 X 1024</p>
-<p>DX = DY = 2.0 m</p>
-<p>Wavemaker located at x = 250.0 m</p>
-<p>Sponge layer: x = 0.0 – 180.0 m</p>
-</div></blockquote>
-<ul>
-<<<<<<< HEAD
-<li><p class="first">input.txt
-=======
-<li><p>input.txt
->>>>>>> origin/master
-several input files in the folder /simple_cases/inlet_shoal/input_files/ for different cases. When run a case, copy one of them to “input.txt”</p>
-<p>input_reg.txt – monochromatic wave, normal incidence</p>
-<p>input_reg_30deg.txt – monochromatic wave, 30-degree incidence</p>
-<p>input_irr.txt – irregular waves, peak direction - 0.0</p>
-<p>input_irr_30deg.txt – irregular waves, peak direction - 30.0</p>
-<p>input_irr_30deg_obs.txt – irregular waves, peak direction - 30.0, plus an obstacle (breakwater)</p>
-<p>input_irr_30deg_brkwtr.txt – irregular waves, peak direction - 30.0, plus submerged breakwater with partial reflection (full reflection if removing breakwater file (brk_shoal_inlet.txt) in the input file)</p>
-</li>
-<li><p>Bathymetry files</p>
-<p>in the folder /simple_cases/bathy/</p>
-<p>dep_shoal_inlet.txt  – basic bathymetry</p>
-<p>dep_shoal_inlet_brk.txt  – bathymetry with a breakwater geometry</p>
-</li>
-<<<<<<< HEAD
-<li><p class="first">breakwater file</p>
-<p>brk_shoal_inlet.txt – same i/o format as bathymetry file but only contains breakwater width info</p>
-</li>
-<li><p class="first">obstacle file</p>
-=======
-</ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Option: Bathymetry Correction.
-visit <a class="reference internal" href="bathymetry_correction.html#bathymetry-correction"><span class="std std-ref">Bathymetry Correction</span></a>.</p>
+<div><p>If running in parallel, set the number of processors in X and Y:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>!-----PARALLEL INFO-----
+ PX = 8
+ PY = 16
+</pre></div>
 </div>
-<ul>
-<li><p>breakwater file</p>
-<p>brk_shoal_inlet.txt – same i/o format as bathymetry file but only contains breakwater width info</p>
-</li>
-<li><p>obstacle file</p>
->>>>>>> origin/master
-<p>obs_shoal_inlet.txt – same i/o format as bathymetry file but only contains 0/1 with 0 indicating an obstacle point</p>
-</li>
-<li><p>postprocessing</p>
-<p>matlab examples of postprocessing are located in /simple_cases/inlet_shoal/postprocessing/</p>
-</li>
+<p>Set the bathymetry to match the figure above using the depth file provided in <code class="code docutils literal notranslate"><span class="pre">/simple_cases/inlet_shoal/bathy</span></code>:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>!-----DEPTH-----
+ DEPTH_TYPE = DATA
+ DEPTH_FILE = ../bathy/dep_shoal_inlet.txt
+</pre></div>
+</div>
+<p>Refer to <a class="reference internal" href="grid.html#definition-grid"><span class="std std-ref">Grid and Computational Time</span></a> for parameter definitions. For optional bathymetry correction, review <a class="reference internal" href="bathymetry_correction.html#bathymetry-correction"><span class="std std-ref">Bathymetry Correction</span></a>.</p>
+<p>Send the results to a folder named “output”:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>!-----PRINT-----
+ RESULT_FOLDER = output/
+</pre></div>
+</div>
+<p>Set the dimensions of the domain to 512 X 1024 (x and y directions, respectively):</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>!-----DIMENSION-----
+ Mglob = 512
+ Nglob = 1024
+</pre></div>
+</div>
+<p>Set the total computational time, plot time, and screen interval to 1200.0 s, 30.0 s, and 30.0 s, respectively. If printing to a station file, set the print time to 0.5 s:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>!-----TIME-----
+ TOTAL_TIME = 1200.0
+ PLOT_INTV = 30.0
+ SCREEN_INTV = 30.0
+ PLOT_INTV_STATION = 0.5
+</pre></div>
+</div>
+<p>Set the grid spacing in x and y to 2.0 m:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>!-----GRID-----
+ DX = 2.0 m
+ DY = 2.0 m
+</pre></div>
+</div>
+<p><strong>Wavemaker</strong></p>
+<p>Wavemaker parameters will be defined on the respective case pages: <a class="reference internal" href="inlet_shoal_regular_wave.html#section-inlet-reg"><span class="std std-ref">Regular wave (baseline case)</span></a>, <a class="reference internal" href="inlet_shoal_regular_wave_30deg.html#section-inlet-reg30"><span class="std std-ref">Regular wave 30 deg oblique incidence</span></a>, <a class="reference internal" href="inlet_shoal_irregular_wave.html#section-inlet-irr"><span class="std std-ref">Irregular wave</span></a>, <a class="reference internal" href="inlet_shoal_irregular_wave_30deg.html#section-inlet-irr30"><span class="std std-ref">Irregular waves with 30 deg oblique incidence</span></a>, <a class="reference internal" href="inlet_shoal_irregular_wave_30deg_obs.html#section-inlet-irr30-obs"><span class="std std-ref">30 deg irregular waves and an obstacle</span></a>, <a class="reference internal" href="inlet_shoal_irregular_wave_30deg_brkwtr.html#section-inlet-irr30-brk"><span class="std std-ref">30 deg irregular waves, a submerged/emerged breakwater</span></a>, and <a class="reference internal" href="inlet_shoal_irregular_wave_30deg_brkwtr_abs.html#section-inlet-irr30-brk-ref"><span class="std std-ref">30 deg irregular waves, a submerged breakwater with partial reflection</span></a>.</p>
+<p>Set the periodic boundary condition to TRUE:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>!-----PERIODIC BOUNDARY CONDITION-----
+ PERIODIC = T
+</pre></div>
+</div>
+<p>(refer to <a class="reference internal" href="info_periodic.html#info-periodic"><span class="std std-ref">Periodic Boundary Condition</span></a> for an example)</p>
+<p>Set the sponge layer width to 180 m on the left boundary:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>!-----SPONGE LAYER-----
+ DIFFUSION_SPONGE = F
+ FRICTION_SPONGE = T
+ DIRECT_SPONGE = T
+ Csp = 0.0
+ CDsponge = 1.0
+ Sponge_west_width = 180.0
+ Sponge_east_width = 0.0
+ Sponge_south_width = 0.0
+ Sponge_north_width = 0.0
+</pre></div>
+</div>
+<p>(refer to <a class="reference internal" href="info_sponge.html#info-sponge"><span class="std std-ref">Sponge Layers</span></a> for example of 2D sponge case)</p>
+<p><strong>Keep the default values</strong> for the <code class="code docutils literal notranslate"><span class="pre">PHYSICS,</span> <span class="pre">NUMERICS,</span> <span class="pre">WET-DRY,</span></code> and <code class="code docutils literal notranslate"><span class="pre">BREAKING</span></code> sections. Refer to <a class="reference internal" href="definition.html#section-definitions"><span class="std std-ref">DEFINITIONS OF PARAMETERS</span></a> for a description of all parameters.</p>
+<p>Set the wave average properties as follows:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>!-----WAVE AVERAGE-----
+ T_INTV_mean = 240.0
+ STEADY_TIME = 480.0
+</pre></div>
+</div>
+<p>Set the following output files to TRUE:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>!-----OUTPUT-----
+ ETA = T
+ MASK = T
+ WaveHeight = T
+</pre></div>
+</div>
+<p>(refer to <a class="reference internal" href="output.html#definition-output"><span class="std std-ref">Output</span></a> for parameter definitions)</p>
+</div></blockquote>
+<p>Several “input.txt” files are located in the folder <code class="code docutils literal notranslate"><span class="pre">/simple_cases/inlet_shoal/input_files/</span></code> for different cases. When running on of the cases listed below, copy the wavemaker parameters from the respective file to the primary “input.txt” file:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Case 1: monochromatic wave, normal incidence – “input_reg.txt”</p></li>
+<li><p>Case 2: monochromatic wave, 30-degree incidence – “input_reg_30deg.txt”</p></li>
+<li><p>Case 3: irregular waves, peak direction - 0.0  – “input_irr.txt”</p></li>
+<li><p>Case 4: irregular waves, peak direction - 30.0 – “input_irr_30deg.txt”</p></li>
+<li><p>Case 5: irregular waves, peak direction - 30.0, plus an obstacle (breakwater) – “input_irr_30deg_obs.txt”</p></li>
+<li><p>Case 6: irregular waves, peak direction - 30.0, plus submerged breakwater with partial reflection (full reflection if removing breakwater file (brk_shoal_inlet.txt) in the input file) – “input_irr_30deg_brkwtr.txt”</p></li>
 </ul>
+</div></blockquote>
+<p>Similarly, additional bathymetry files are provided in the folder <code class="code docutils literal notranslate"><span class="pre">/simple_cases/inlet_shoal/bathy/</span></code> to represent each case above.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>dep_shoal_inlet.txt  – basic bathymetry</p></li>
+<li><p>dep_shoal_inlet_brk.txt  – bathymetry with a breakwater geometry</p></li>
+<li><p>brk_shoal_inlet.txt – same format as bathymetry file but only contains breakwater width info</p></li>
+<li><p>obs_shoal_inlet.txt – same format as bathymetry file but only contains 0 or 1, with 0 indicating an obstacle point</p></li>
+</ul>
+</div></blockquote>
+<p><strong>Postprocessing</strong></p>
+<blockquote>
+<div><p>For postprocessing examples, MATLAB and Python scripts are located in <code class="code docutils literal notranslate"><span class="pre">/simple_cases/inlet_shoal/postprocessing/</span></code>.</p>
+</div></blockquote>
 </div>
 
 
@@ -217,11 +219,7 @@ visit <a class="reference internal" href="bathymetry_correction.html#bathymetry-
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2019, Fengyan Shi.
-<<<<<<< HEAD
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
-=======
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
->>>>>>> origin/master
     </div>
   </body>
 </html>

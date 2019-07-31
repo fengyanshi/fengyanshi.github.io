@@ -1,7 +1,11 @@
-Interaction between wind waves and ship-wakes in an inlet system 
-#################################################################
+.. _section-vessel-inlet:
 
-* computational domain
+Interaction between wind waves and ship-wakes in an inlet system 
+################################################################
+
+In this example, you will add a vessel to the :ref:`section-inlet-irr30` example. You will use the :code:`input_irr_30deg_ship.txt` input file located in :code:`/simple_cases/inlet_shoal/input_files/` -- remember to rename this file, or copy the file contents, into a file named "input.txt". The bathymetry to use is :code:`/simple_cases/inlet_shoal/bathy/dep_shoal_inlet.txt`.
+
+**Computational domain**
 
 .. figure:: images/simple_cases/ship_inlet_path.jpg
     :width: 250px
@@ -10,34 +14,44 @@ Interaction between wind waves and ship-wakes in an inlet system
     :alt: alternate text
     :figclass: align-center
 
-* input_irr_30deg_ship.txt (rename it to input.txt when running the case)
-  is in the folder /simple_cases/inlet_shoal/input_files/
+**Setup "input.txt"**
 
-* Bathymetry file
+Refer to :ref:`section-inlet-basics` for the domain setup, and :ref:`section-inlet-irr30` for wavemaker setup.
 
-  in the folder /simple_cases/simple_cases/inlet_shoal/bathy/dep_shoal_inlet.txt
+ Set descriptive title for this simulation:
 
-**model setup is the same as the irregular wave case except:**
+ .. code-block:: rest
 
-|  **add a vessel**
-|   VESSEL_FOLDER = ./
-|   NumVessel = 1
-|
-|   In vessel_00001, specify:  
-|   Title: Vessel # 1
-|   Pressure, 1
-|   Length(m), Width(m), Alpha1(m),Alpha2(m), Beta(m), P(unit)
-|   10.0  5.0, 0.5, 0.5, 0.5, 2.0
-|   Time, X(m), Y(m)  (relative to the origin of the coordinates)
-|   0.0   900.0   0.0
-|   150.0 900.0   0.0
-|   250.0 900.0   1000.0
-|   1000.0 -6600  1000.0
+        !-----TITLE-----
+         TITLE = vessel_inlet
 
-  (refer to :ref:`theory_shipwakes` and :ref:`section-shipwakes-setup`)
+ Add a vessel with the following characteristics:
 
-|  **postprocessing**
-|   matlab examples of postprocessing are located in /simple_cases/inlet_shoal/postprocessing/
+ .. code-block:: rest
+
+        !-----SHIP WAKES-----
+         VESSEL_FOLDER = ./
+         NumVessel = 1
+         
+ In :code:`vessel_00001`, specify:
+
+  .. code-block:: rest
+
+        Title: Vessel # 1
+        Pressure, 1
+        Length(m), Width(m), Alpha1(m),Alpha2(m), Beta(m), P(unit)
+        10.0  5.0, 0.5, 0.5, 0.5, 2.0
+        Time, X(m), Y(m)  (relative to the origin of the coordinates)
+        0.0   900.0   0.0
+        150.0 900.0   0.0
+        250.0 900.0   1000.0
+        1000.0 -6600  1000.0
+
+ (refer to :ref:`theory_shipwakes` and :ref:`section-shipwakes-setup` for more information)
+
+**Postprocessing**
+
+For postprocessing examples, MATLAB and Python scripts are located in :code:`/simple_cases/inlet_shoal/postprocessing/`.
 
 .. figure:: images/simple_cases/ship_inlet_waves.jpg
     :width: 400px

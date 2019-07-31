@@ -1,5 +1,7 @@
+.. _section-tohoku-lowres:
+
 Tohoku Low Resolution 
-########################
+#####################
 
 .. figure:: images/simple_cases/tohoku_surface.jpg
     :width: 400px
@@ -8,57 +10,62 @@ Tohoku Low Resolution
     :alt: alternate text
     :figclass: align-center
 
-**input.txt:**
+Here you will add the initial conditions to describe the Tohoku tsunami. The tsunami source is constructed in Grilli et al. (2012), which is based on the 3D FEM model of Masterlark (2003), denoted UA source. The non-hydrostatic model NHWAVE (Ma et al., 2012) is used to simulate the first 5 min of tsunami generation, as in Grilli et al. (2012), using a smaller and finer local 1 km resolution Cartesian grid, based on the UA source. The NHWAVE results of u, v eta are used as the initial conditions for FUNWAVE-TVD.
 
-|  **Parallel(if applicable)**
-|   PX = 2
-|   PY = 2
+ Set the initial deformation in UVZ:
 
-|  **Specify bathymetry**
-|   DEPTH_TYPE = DATA
-|   DEPTH_FILE = ../external_files/depth_30min.txt
+ .. code-block:: rest
 
-|  **Dimensions**
-|   Mglob = 320
-|   Nglob = 240
+        !-----INITIAL UVZ-----
+         INI_UVZ = T
+         
+         ! if true, input eta, u, v files names
+         ETA_FILE = ../external_files/ETA_30min.txt
+         U_FILE = ../external_files/U_30min.txt
+         V_FILE = ../external_files/V_30min.txt
 
-|  **Grid**
-|   Lon_West = 132.0
-|   Lat_South = -60.0
-|   Dphi = 0.5
-|   Dtheta = 0.5
+ Set the sponge layer width to 100,000 m on all boundaries, the shock-capturing breaking ratio to 0.6, and the bottom friction coefficient to 0.001:
 
-|  **Time**
-|   TOTAL_TIME = 86400.0
-|   PLOT_INTV = 3600.0
-|   PLOT_INTV_STATION = 1.0
-|   SCREEN_INTV = 3600.0
+ .. code-block:: rest
 
-|  **Add initial conditions**
-|   INI_UVZ = T
-|   ETA_FILE = ../external_files/ETA_30min.txt
-|   U_FILE = ../external_files/U_30min.txt
-|   V_FILE = ../external_files/V_30min.txt
+        !-----SPONGE LAYER-----
+         DIRECT_SPONGE = T
+         FRICTION_SPONGE = T
+         Sponge_west_width =  100000.0    ! in meters
+         Sponge_east_width =  100000.0
+         Sponge_south_width = 100000.0
+         Sponge_north_width = 100000.0
+         
+         SWE_ETA_DEP = 0.6
+         Cd = 0.001
 
-|  **Add Sponge layers**
-|   DIRECT_SPONGE = T
-|   FRICTION_SPONGE = T
-|   Sponge_west_width =  100000.0 
-|   Sponge_east_width =  100000.0
-|   Sponge_south_width = 100000.0
-|   Sponge_north_width = 100000.0
+ Refer to :ref:`section-physics` and :ref:`sponge_definition` for parameter definitions.
 
-|  **Add friction**
-|   Cd = 0.001
+ Set the CLF condition to 0.5 and maximum Froude number to 2.0:
 
-|  **Avoid inundation in the basin scale**
-|   MinDepth= 10.0
+ .. code-block:: rest
 
-|  **Output**
-|   NumberStations = 78
-|   STATIONS_FILE = stations-pacific.txt
-|   ETA = T
-|   Hmax = T
+        !-----NUMERICS-----
+         CFL = 0.5
+         FroudeCap = 2.0
+
+ Set the minimum depth of wetting-drying to 10.0, and the minimum depth for friction to 10.0:
+
+ .. code-block:: rest
+
+        !-----WET-DRY-----
+         MinDepth = 10.0
+         MinDepthFrc = 10.0
+
+ Add a station file to write the output:
+
+ .. code-block:: rest
+
+        !-----OUTPUT-----
+         NumberStations = 78
+         STATIONS_FILE = stations-pacific.txt
+         ETA = T
+         Hmax = T
 
 
 

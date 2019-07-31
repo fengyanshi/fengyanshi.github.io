@@ -1,29 +1,3 @@
-<<<<<<< HEAD
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Numerical Parameters &#8212; FUNWAVE Documentation</title>
-    <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-=======
 
 <!DOCTYPE html>
 
@@ -39,17 +13,11 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="_static/language_data.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
->>>>>>> origin/master
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Wave-maker" href="wavemaker_para.html" />
     <link rel="prev" title="Physics (dispersion, breaking, friction)" href="physics.html" /> 
-<<<<<<< HEAD
-  </head>
-  <body>
-=======
   </head><body>
->>>>>>> origin/master
 <div class="header">
  <p class="logo"><a href="https://fengyanshi.github.io/build/html/index.html">
   <img class="logo" src="_static/../../../images/Funwave.svg" alt="Logo"/>
@@ -75,25 +43,14 @@
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-<<<<<<< HEAD
-<h3><a href="index.html">Table Of Contents</a></h3>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="integration.html"><strong>INTEGRATION</strong></a></li>
-=======
 <h3><a href="index.html">Table of Contents</a></h3>
 <ul class="current">
->>>>>>> origin/master
 <li class="toctree-l1"><a class="reference internal" href="basics.html"><strong>BASICS</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="flowchart.html"><strong>ARCHITECTURE</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="setup.html"><strong>MODEL DOWNLOAD AND SETUP</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup.html">MODEL DOWNLOAD AND SETUP</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="definition.html"><strong>DEFINITIONS OF PARAMETERS</strong></a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="central_para.html">Parameters for Central Module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="spherical.html">Spherical Coordinates</a></li>
-<li class="toctree-l2"><a class="reference internal" href="shipwakes_para.html">Shipwakes Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sediment_para.html">Sediment Transport and Morphological Change</a></li>
-<li class="toctree-l2"><a class="reference internal" href="meteo_tsu.html">Wind and Pressure Field</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracer_setup.html">Lagrangian Tracer Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="slide.html">Landslide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="definition.html#input-txt">INPUT.TXT</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="definition.html#definitions">Definitions</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="coupling_nesting.html"><strong>NESTING AND COUPLING</strong></a></li>
@@ -106,15 +63,6 @@
 </ul>
 
 <div id="searchbox" style="display: none" role="search">
-<<<<<<< HEAD
-  <h3>Quick search</h3>
-    <form class="search" action="search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-=======
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
@@ -122,7 +70,6 @@
       <input type="submit" value="Go" />
     </form>
     </div>
->>>>>>> origin/master
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -134,19 +81,17 @@
           <div class="body" role="main">
             
   <div class="section" id="numerical-parameters">
-<h1>Numerical Parameters<a class="headerlink" href="#numerical-parameters" title="Permalink to this headline">¶</a></h1>
+<span id="section-numerics"></span><h1>Numerical Parameters<a class="headerlink" href="#numerical-parameters" title="Permalink to this headline">¶</a></h1>
 <p><strong>SPECIFICATION OF NUMERICS</strong></p>
-<blockquote>
-<div><ul class="simple">
-<li><p>Time_Scheme: stepping option,  Runge_Kutta or Predictor_Corrector (not suggested for this version). Default: Runge_Kutta.</p></li>
-<li><p>HIGH_ORDER: spatial scheme option,  FOURTH for the fourth-order, THIRD for the third-order, and SECOND for the second-order (not suggested for Boussinesq modeling).  Default: FOURTH.</p></li>
-<li><p>CONSTRUCTION: construction method,  HLL for HLL scheme, otherwise for averaging scheme. Default: HLL.</p></li>
-<li><p>CFL: CFL number, CFL <span class="math notranslate nohighlight">\(\sim\)</span> 0.5 (default).</p></li>
-<li><p>FroudeCap: cap for Froude number in velocity calculation for efficiency. The value could be 1.0 <span class="math notranslate nohighlight">\(\sim\)</span> 10.0. Default: 3.0</p></li>
-<li><p>MinDepth: minimum water depth (m) for wetting and drying scheme. Suggestion: MinDepth = 0.001 for lab scale and 0.01 for field scale. Defaut: 0.01.</p></li>
-<li><p>MinDepthFrc: merge to MinDepth for Version 3.1 or higher. If both MinDepth and MinDepthFrc are specified, the model takes the Maximum value of MinDepth and MinDepthFrc.</p></li>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">Time_Scheme</span></code>: stepping option, <code class="code docutils literal notranslate"><span class="pre">Runge_Kutta</span></code> or <code class="code docutils literal notranslate"><span class="pre">Predictor_Corrector</span></code> (not suggested for this version). Default: <code class="code docutils literal notranslate"><span class="pre">Runge_Kutta</span></code>.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">HIGH_ORDER</span></code>: spatial scheme option, <code class="code docutils literal notranslate"><span class="pre">FOURTH</span></code> for the fourth-order, <code class="code docutils literal notranslate"><span class="pre">THIRD</span></code> for the third-order, and <code class="code docutils literal notranslate"><span class="pre">SECOND</span></code> for the second-order (not suggested for Boussinesq modeling).  Default: <code class="code docutils literal notranslate"><span class="pre">FOURTH</span></code>.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">CONSTRUCTION</span></code>: construction method, <code class="code docutils literal notranslate"><span class="pre">HLL</span></code> for HLL scheme, otherwise for averaging scheme. Default: HLL.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">CFL</span></code>: CFL number, CFL <span class="math notranslate nohighlight">\(\sim\)</span> 0.5 (default).</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">FroudeCap</span></code>: cap for Froude number in velocity calculation for efficiency. The value could be 1.0 <span class="math notranslate nohighlight">\(\sim\)</span> 10.0. Default: 3.0</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">MinDepth</span></code>: minimum water depth (m) for wetting and drying scheme. Suggestion: <code class="code docutils literal notranslate"><span class="pre">MinDepth</span> <span class="pre">=</span> <span class="pre">0.001</span></code> for lab scale and 0.01 for field scale. Defaut: 0.01.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">MinDepthFrc</span></code>: merge to <code class="code docutils literal notranslate"><span class="pre">MinDepth</span></code> for Version 3.1 or higher. If both <code class="code docutils literal notranslate"><span class="pre">MinDepth</span></code> and <code class="code docutils literal notranslate"><span class="pre">MinDepthFrc</span></code> are specified, the model takes the Maximum value of <code class="code docutils literal notranslate"><span class="pre">MinDepth</span></code> and <code class="code docutils literal notranslate"><span class="pre">MinDepthFrc</span></code>.</p></li>
 </ul>
-</div></blockquote>
 </div>
 
 
@@ -174,11 +119,7 @@
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2019, Fengyan Shi.
-<<<<<<< HEAD
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
-=======
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
->>>>>>> origin/master
     </div>
   </body>
 </html>

@@ -1,29 +1,3 @@
-<<<<<<< HEAD
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>MODEL DOWNLOAD AND SETUP &#8212; FUNWAVE Documentation</title>
-    <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-=======
 
 <!DOCTYPE html>
 
@@ -39,17 +13,11 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="_static/language_data.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
->>>>>>> origin/master
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="DEFINITIONS OF PARAMETERS" href="definition.html" />
     <link rel="prev" title="ARCHITECTURE" href="flowchart.html" /> 
-<<<<<<< HEAD
-  </head>
-  <body>
-=======
   </head><body>
->>>>>>> origin/master
 <div class="header">
  <p class="logo"><a href="https://fengyanshi.github.io/build/html/index.html">
   <img class="logo" src="_static/../../../images/Funwave.svg" alt="Logo"/>
@@ -73,21 +41,16 @@
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-<<<<<<< HEAD
-<h3><a href="index.html">Table Of Contents</a></h3>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="integration.html"><strong>INTEGRATION</strong></a></li>
-=======
 <h3><a href="index.html">Table of Contents</a></h3>
 <ul class="current">
->>>>>>> origin/master
 <li class="toctree-l1"><a class="reference internal" href="basics.html"><strong>BASICS</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="flowchart.html"><strong>ARCHITECTURE</strong></a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#"><strong>MODEL DOWNLOAD AND SETUP</strong></a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">MODEL DOWNLOAD AND SETUP</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#download-source-code">Download source code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#compile-and-setup">Compile and setup</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#download-simple-examples">Download simple examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#download-benchmark-tests">Download benchmark tests</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#compile-and-setup">Compile and setup</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="definition.html"><strong>DEFINITIONS OF PARAMETERS</strong></a></li>
@@ -101,15 +64,6 @@
 </ul>
 
 <div id="searchbox" style="display: none" role="search">
-<<<<<<< HEAD
-  <h3>Quick search</h3>
-    <form class="search" action="search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-=======
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
@@ -117,7 +71,6 @@
       <input type="submit" value="Go" />
     </form>
     </div>
->>>>>>> origin/master
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -129,20 +82,258 @@
           <div class="body" role="main">
             
   <div class="section" id="model-download-and-setup">
-<span id="section-download"></span><h1><strong>MODEL DOWNLOAD AND SETUP</strong><a class="headerlink" href="#model-download-and-setup" title="Permalink to this headline">¶</a></h1>
+<span id="section-download"></span><h1>MODEL DOWNLOAD AND SETUP<a class="headerlink" href="#model-download-and-setup" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+<p>There are a few software requirements your computer needs in order to execute FUNWAVE–TVD and to visualize the results. Please ensure you have installed the necessary software prior to downloading the source code.</p>
+<p>You will need:</p>
+<ul>
+<li><p>Access to the Internet (Ethernet or WiFi)</p></li>
+<li><p>SSH Secure Shell Client (e.g., Putty or Cygwin on Windows)</p></li>
+<li><p>Working suite of compilers and Message Passing Interface (MPI) wrappers to build a parallel version of FUNWAVE-TVD</p>
+<ul>
+<li><p><strong>If you are using a Mac OS X machine</strong></p>
+<p>We recommend you install GNU compilers (e.g., <code class="code docutils literal notranslate"><span class="pre">gcc,</span> <span class="pre">g++,</span> <span class="pre">gfortran</span></code>) via Homebrew. If you don’t have Homebrew installed, type the following in your terminal:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>cd ~
+mkdir homebrew
+curl -L https://github.com/Homebrew/brew/tarball/master
+tar xz --strip 1 -C homebrew
+</pre></div>
+</div>
+<p>If you didn’t previously have these compilers on your system (say via Xcode), then the <code class="code docutils literal notranslate"><span class="pre">gcc,</span> <span class="pre">g++,</span> <span class="pre">gfortran</span></code> compilers would be placed under <code class="code docutils literal notranslate"><span class="pre">/usr/local/bin/</span></code> directory; otherwise they could be placed under <code class="code docutils literal notranslate"><span class="pre">/usr/local/Cellar/gcc/9.1.0/bin/</span></code>. You will then need to install the GNU suite of compilers using <code class="code docutils literal notranslate"><span class="pre">brew</span></code>, where the current versions are 9.1.0.</p>
+<p><strong>Important</strong>: you want to use all suite components [<code class="code docutils literal notranslate"><span class="pre">gcc,</span> <span class="pre">g++,</span> <span class="pre">gfortran</span></code>] of the same version to avoid possible issues/compiler conflicts later on:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>cd ~
+brew install gcc
+brew install gfortran
+</pre></div>
+</div>
+<p>Lastly, you will need to install MPI compiler wrappers:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>cd ~
+brew install mpich
+</pre></div>
+</div>
+<p><strong>Note</strong>: if you had a trace of previous compilers, you may need to explicitly tell Homebrew during installation to point to/use the newly installed compiler via FULL PATH in your terminal prior to executing the MPI installation command described above. You can do this by:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>export HOMEBREW_FC = /usr/local/Cellar/gcc/9.1.0/bin/gfortran
+export HOMEBREW_CC = /usr/local/Cellar/gcc/9.1.0/bin/gcc
+export HOMEBREW_CCX = /usr/local/Cellar/gcc/9.1.0/bin/g++
+</pre></div>
+</div>
+</li>
+<li><p><strong>If you are using a Linux machine</strong></p>
+<p>You can use either your system-wide installation commands in your terminal/command line (<em>if you have admin/sudo privileges</em>). In your Ubuntu, Debian, Mint, or other Debian-based distribution, you can check if you have a working suite of compilers via:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>which gcc
+which g++
+which gfortran
+</pre></div>
+</div>
+<p>Otherwise, if you don’t have the suite of compilers already, type the following in your terminal to download and install:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>sudo apt install gcc
+sudo apt install gfortran
+sudo apt install mpich
+</pre></div>
+</div>
+<p>For Red Hat, Fedora, or CentOS Linux kernels, you would replace <code class="code docutils literal notranslate"><span class="pre">apt</span></code> in the three commands above with <code class="code docutils literal notranslate"><span class="pre">yum</span></code>.</p>
+<p>Alternatively, you can also use Homebrew to install the required packages. See here for more details: <a class="reference external" href="https://docs.brew.sh/Homebrew-on-Linux">https://docs.brew.sh/Homebrew-on-Linux</a>. It should be noted that Homebrew only does local installation (i.e., no system-wide <code class="code docutils literal notranslate"><span class="pre">sudo</span></code> commands for installation are allowed).</p>
+</li>
+<li><p><strong>If you are using a Windows 10 machine</strong></p>
+<p>Instructions on how to install FUNWAVE-TVD on Windows 10 can be found <a class="reference internal" href="windows.html#section-win10-install"><span class="std std-ref">here</span></a>.</p>
+</li>
+<li><p><strong>If you are using a Windows OS lower than Windows 10</strong></p>
+<p>We recommend that you download the latest version of Cygwin (<a class="reference external" href="https://www.cygwin.com">https://www.cygwin.com</a>). Cygwin is a bash shell/unix emulation program, and contains many of the tools such as <code class="code docutils literal notranslate"><span class="pre">tar,</span> <span class="pre">gzip/gunzip,</span> <span class="pre">and</span> <span class="pre">cpp</span></code>, which will be useful for installation and compilation of FUNWAVE-TVD. In addtion, if you don’t have access to a High Performance Computing (HPC) machine at your home location, you can use the Amazon AWS Cloud Computing service. For instructions on how to use AWS with FUNWAVE, visit <a class="reference internal" href="workshop_2019_UD.html#section-workshop-ud2019"><span class="std std-ref">MINI-FUNWAVE-TVD Workshop 2019</span></a> and review pages 35-41 of the tutorial document (pdf1).</p>
+</li>
+</ul>
+</li>
+<li><p>A post-processing toolbox (e.g., MATLAB and Python)</p>
+<p>Both MATLAB and Python post-processing scripts are provided with most practice examples. If you do not have access to a MATLAB license, we recommend that you install an Anaconda Python package, usable on any platform.</p>
+<ul>
+<li><p><strong>Downloading and installing a Python Package (Anaconda)</strong></p>
+<p>Arguably one of the best and most comprehensive FREE packages for the Python language, along with most tools and modules (e.g., <code class="code docutils literal notranslate"><span class="pre">NumPy,</span> <span class="pre">Matplotlib</span></code>, etc.) is distributed by the Continuum Analytics under the Anaconda package. It is available for Linux, Mac OS X, and Windows machines. You do NOT need administrator privileges to install the Anaconda package; you can do so as a standard user on all three platforms.</p>
+<p>For the Anaconda package, go to: <a class="reference external" href="https://www.anaconda.com/distribution/">https://www.anaconda.com/distribution/</a>.</p>
+<p>Choose the appropriate platform (Linux, Mac OS X, Windows) by selecting the correct tab and getting the Anaconda distribution that comes with <strong>Python 3.7</strong> (not 2.7). You can either download the Graphical Installer (recommended), or if you are comfortable with the terminal in the Linux/Mac OS X environment, you can also download it through the command line.</p>
+<p>For the complete list of packages/modules included in the Anaconda Python distribution, see: <a class="reference external" href="https://docs.continuum.io/anaconda/packages/pkg-docs">https://docs.continuum.io/anaconda/packages/pkg-docs</a>.</p>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<hr class="docutils" />
 <div class="section" id="download-source-code">
 <h2>Download source code<a class="headerlink" href="#download-source-code" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://github.com/fengyanshi/FUNWAVE-TVD">Version beta: not fully tested. click here to download/clone from GitHub</a></p>
+<p><a class="reference external" href="https://github.com/fengyanshi/FUNWAVE-TVD/releases">Version 3.4 Released July 12 2019: click here to download from GitHub</a></p>
 <p><a class="reference external" href="https://github.com/fengyanshi/FUNWAVE-TVD/releases">Version 3.3 Released July 19 2018: click here to download from GitHub</a></p>
 <p><a class="reference external" href="https://github.com/fengyanshi/FUNWAVE-TVD/releases">Version 3.2 Released Jan 27 2018: click here to download from GitHub</a></p>
 <p>Version 3.1 Released Sep 2017: Used for FUNWAVE-TVD Workshop 2017 <a class="reference external" href="https://github.com/fengyanshi/FUNWAVE-TVD/releases">click here to download</a></p>
 <p>Version 3.0: Released Apr 2017 <a class="reference download internal" download="" href="_downloads/571b78d7d434ccc4395c00d5772a63ba/funwave_tvd_30.zip"><code class="xref download docutils literal notranslate"><span class="pre">download</span> <span class="pre">here</span></code></a></p>
 <p>Versions 1.0, 1.1, 2.0, 2.1: Please contact <a class="reference external" href="mailto:fyshi&#37;&#52;&#48;udel&#46;edu">fyshi<span>&#64;</span>udel<span>&#46;</span>edu</a></p>
+<hr class="docutils" />
 </div>
+<div class="section" id="compile-and-setup">
+<span id="subsection-compile"></span><h2>Compile and setup<a class="headerlink" href="#compile-and-setup" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Uncompress the code from the package downloaded</p></li>
+<li><p>Modify “Makefile” as needed. An example “Makefile” is shown below. The primary variables you will need to change/check are the <code class="code docutils literal notranslate"><span class="pre">EXEC</span></code> in the <code class="code docutils literal notranslate"><span class="pre">BEGIN</span> <span class="pre">MAKEFILE</span></code> section, and the flags in the following section. The <code class="code docutils literal notranslate"><span class="pre">EXEC</span></code> variable defines the name of the executable that will be generated. This should be descriptive of which flags (i.e., modules) are active in the “Makefile” for good book-keeping when you have multiple executables.</p></li>
+</ol>
+<blockquote>
+<div><p>There are several flags in “Makefile” that specify different compiling structures and turn on/off modules depending on your simulation. To turn on/off a flag, simply comment the line by adding “#” before the command (e.g., <code class="code docutils literal notranslate"><span class="pre">#</span> <span class="pre">FLAG_8</span> <span class="pre">=</span> <span class="pre">-DVESSEL</span></code> turns the shipwake module “off” in the new executable).</p>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">-DDOUBLE_PRECISION</span></code>: use double precision, default is single precision</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">-DPARALLEL</span></code>: use parallel mode, default is serial mode</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">-DCARTESIAN</span></code>: Cartesian version, otherwise Spherical version</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">-DINTEL</span></code>: if INTEL compiler is used, this option can make use of FPORT for the RAND() function</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">-DCRAY</span></code>: for CRAY RAND() and system commands</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">-DCOUPLING</span></code>: nesting mode</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">-DSPHERICAL_IJ_STATION</span></code>: in spherical mode, if you want your station locations defined by grid point (I,J). Otherwise, station locations should be defined by (lat lon)</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">-DVESSEL</span></code>: include shipwake module</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">-DSEDIMENT</span></code>: include sediment and morphological module</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">-DWIND</span></code>: include wind effect</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">-DMETEO</span></code>: include meteo tsunami module</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">-DMANNING</span></code>: use Manning formula for bottom friction</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">-DCHECK_MASS_CONSERVATION</span></code>: correct mass conservation problem caused by wetting/drying</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">-DTRACKING</span></code>: include Lagrangian tracking module</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">CPP</span></code>: path to CPP directory</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">FC</span></code>: Fortran compiler</p></li>
+</ul>
+<p>This sample “Makefile” shows a case where the shipwakes module (e.g., <code class="code docutils literal notranslate"><span class="pre">-DVESSEL</span></code>) is active, and the model will be executed in parallel (<code class="code docutils literal notranslate"><span class="pre">-DPARALLEL</span></code>) with a Cartesian coordinate system (<code class="code docutils literal notranslate"><span class="pre">-DCARTESIAN</span></code>) using an MPI F90 Compiler (<code class="code docutils literal notranslate"><span class="pre">FC</span> <span class="pre">=</span> <span class="pre">mpif90</span></code>).</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>#-----------BEGIN MAKEFILE-------------------------------------------------
+    SHELL         = /bin/sh
+    DEF_FLAGS     = -P -traditional
+    EXEC          = funwave_vessel
+#==========================================================================
+#--------------------------------------------------------------------------
+#        PRECISION          DEFAULT PRECISION: SINGLE
+#                           UNCOMMENT TO SELECT DOUBLE PRECISION
+#--------------------------------------------------------------------------
+
+    FLAG_1 = -DDOUBLE_PRECISION
+    FLAG_2 = -DPARALLEL
+#             FLAG_3 = -DSAMPLES
+    FLAG_4 = -DCARTESIAN
+#             FLAG_6 = -DINTEL
+#             FLAG_7 = -DMIXING
+#             FLAG_8 = -DCOUPLING
+#             FLAG_9 = -DZALPHA
+#             FLAG_10 = -DMANNING
+#             FLAG_11 = -DSPHERICAL_IJ_STATION
+    FLAG_12 = -DVESSEL
+#             FLAG_13 = -DVIS_KENNEDY
+#             FLAG_14 = -DVESSEL_PANEL_SOURCE
+#             FLAG_15 = -DREALISTIC_VESSEL_BODY
+#             FLAG_16 = -DMETEO
+#             FLAG_17 = -DWIND
+#--------------------------------------------------------------------------
+#  mpi defs
+#--------------------------------------------------------------------------
+ CPP      = /usr/bin/cpp
+ CPPFLAGS = $(DEF_FLAGS)
+ FC       = mpif90
+ DEBFLGS  =
+ OPT      =
+ CLIB     =
+#==========================================================================
+
+ FFLAGS = $(DEBFLGS) $(OPT)
+ MDEPFLAGS = --cpp --fext=f90 --file=-
+ RANLIB = ranlib
+#--------------------------------------------------------------------------
+#  CAT Preprocessing Flags
+#--------------------------------------------------------------------------
+   CPPARGS = $(CPPFLAGS) $(DEF_FLAGS) $(FLAG_1) $(FLAG_2) \
+             $(FLAG_3) $(FLAG_4) $(FLAG_5) $(FLAG_6) \
+             $(FLAG_7) $(FLAG_8) $(FLAG_9) $(FLAG_10)  \
+             $(FLAG_11) $(FLAG_12) $(FLAG_13) $(FLAG_14) \
+             $(FLAG_15) $(FLAG_16) $(FLAG_17) $(FLAG_18) \
+             $(FLAG_19) $(FLAG_20) $(FLAG_21) $(FLAG_22) \
+             $(FLAG_23) $(FLAG_24)
+#--------------------------------------------------------------------------
+#  Libraries
+#--------------------------------------------------------------------------
+
+#            LIBS  = $(PV3LIB) $(CLIB)  $(PARLIB) $(IOLIBS) $(MPILIB) $(GOTMLIB)
+#            INCS  = $(IOINCS) $(GOTMINCS)
+
+
+#--------------------------------------------------------------------------
+#  Preprocessing and Compilation Directives
+#--------------------------------------------------------------------------
+.SUFFIXES: .o .f90 .F .F90
+
+.F.o:
+        $(CPP) $(CPPARGS) $<span class="ge">*.F &gt; $*</span>.f90
+        $(FC)  -c $(FFLAGS) $(INCS) $*.f90
+        /bin/rm $*.f90
+#--------------------------------------------------------------------------
+#  FUNWAVE-TVD Source Code.
+#--------------------------------------------------------------------------
+
+MODS  = mod_param.F mod_global.F mod_input.F mod_vessel.F mod_bathy_correction.F \
+        mod_meteo.F mod_parallel_field_io.F
+
+MAIN  = main.F bc.F fluxes.F init.F io.F tridiagnal.F       \
+        breaker.F derivatives.F dispersion.F etauv_solver.F \
+        sponge.F sources.F masks.F parallel.F statistics.F \
+        wavemaker.F mixing.F nesting.F misc.F samples.F\
+
+SRCS = $(MODS)  $(MAIN)
+
+OBJS = $(SRCS:.F=.o)
+
+#--------------------------------------------------------------------------
+#  Linking Directives
+#--------------------------------------------------------------------------
+
+$(EXEC):        $(OBJS)
+                $(FC) $(FFLAGS) $(LDFLAGS) -o $(EXEC) $(OBJS) $(LIBS)
+#               mv $(EXEC) ../bin/
+#--------------------------------------------------------------------------
+
+#--------------------------------------------------------------------------
+#  Tar Up Code
+#--------------------------------------------------------------------------
+
+tarfile:
+        tar cvf funwave_tvd.tar *.F  Makefile
+
+#--------------------------------------------------------------------------
+#  Cleaning targets.
+#--------------------------------------------------------------------------
+
+clean:
+                /bin/rm -f <span class="ge">*.o *</span>.mod
+
+clobber:        clean
+                /bin/rm -f <span class="ge">*.f90 *</span>.o $(EXEC)
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic" start="3">
+<li><p>Compile the code</p>
+<p>The command <code class="code docutils literal notranslate"><span class="pre">make</span></code>, by default, will look for a file named “Makefile” in the current directory. It will read the contents of the file to find the target program or project that needs to be built (i.e., compiled). Generally, once a program is compiled, an executable file is generated. Any changes made to the source file (e.g., “Makefile”) will need to be re-compiled, and a new executable will need to be generated. To clean, or remove, the files generated by the makefile and create new ones, the <code class="code docutils literal notranslate"><span class="pre">make</span> <span class="pre">clean</span></code> command is used prior to compiling with <code class="code docutils literal notranslate"><span class="pre">make</span></code>.</p>
+<p>In your terminal, navigate to the directory <code class="code docutils literal notranslate"><span class="pre">/src/</span></code> containing the file “Makefile”, and type the following:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>make clean
+
+make
+</pre></div>
+</div>
+<p>The executable file such as <code class="code docutils literal notranslate"><span class="pre">funwave_vessel</span></code> or <code class="code docutils literal notranslate"><span class="pre">mytvd</span></code> (specified in “Makefile”, <code class="code docutils literal notranslate"><span class="pre">EXEC</span> <span class="pre">=</span> <span class="pre">executable_name</span></code>) will be generated in the <code class="code docutils literal notranslate"><span class="pre">/src/</span></code> folder.  <strong>Note</strong>: always use <code class="code docutils literal notranslate"><span class="pre">make</span> <span class="pre">clean</span></code> after modifying the “Makefile”.</p>
+<p>If you want to use a specific “Makefile” under a different name (e.g., “makefile-svg”), the command <code class="code docutils literal notranslate"><span class="pre">make</span> <span class="pre">-f</span> <span class="pre">&quot;makefile-svg&quot;</span></code> is used.</p>
+</li>
+<li><p>Run the model</p>
+<p>Modify “input.txt” as needed. An example “input.txt” file is presented on the <a class="reference internal" href="definition.html#section-definitions"><span class="std std-ref">Definitions of Parameters</span></a> page where you can review the available input options. Review the required variables for specific modules (e.g., shipwakes) on the <a class="reference internal" href="examples.html#section-examples"><span class="std std-ref">Examples</span></a> page.</p>
+<p>To run FUNWAVE locally, navigate to the directory containing the input files needed for your simulation and type the following command in your terminal:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>mpirun -np 4 /src/funwave_vessel
+</pre></div>
+</div>
+<p>Here, the parallel processing MPI is established and the number of processors, <code class="code docutils literal notranslate"><span class="pre">-np</span></code> is set to 4. This number will change depending on the capacity of your local machine. Next, the path to the FUNWAVE exectuable <code class="code docutils literal notranslate"><span class="pre">funwave_vessel</span></code> is called upon, and the model begins the simulation.</p>
+<p>If you are running FUNWAVE on a HPC machine …</p>
+</li>
+</ol>
+</div>
+<hr class="docutils" />
 <div class="section" id="download-simple-examples">
 <h2>Download simple examples<a class="headerlink" href="#download-simple-examples" title="Permalink to this headline">¶</a></h2>
-<p>Simple examples are included in the package of Version 3.1 and higher (<a class="reference external" href="https://github.com/fengyanshi/FUNWAVE-TVD">click here to download from GitHub</a>) . They are located in the directory /simple_cases/.
-The simple examples serve as baseline cases for testing your system. You can also choose a simple case similar to your modeling scenario to set up your case. The following simple cases available. The simple examples are also used during the FUNWAVE training workshop.</p>
+<p>Simple examples are included in the package of Version 3.1 and higher (<a class="reference external" href="https://github.com/fengyanshi/FUNWAVE-TVD">click here to download from GitHub</a>) . They are located in the directory <code class="code docutils literal notranslate"><span class="pre">/simple_cases/</span></code>.
+The simple examples serve as baseline cases for testing your system. You can also choose a simple case similar to your modeling scenario to set up your case. A brief list of examples are listed below; the full list of simple cases can be found <a class="reference internal" href="examples.html#section-examples"><span class="std std-ref">here</span></a>. These simple examples are also used during the FUNWAVE training workshop.</p>
 <ul class="simple">
 <li><p><a class="reference external" href="slope.html">Waves on 1D slope</a></p></li>
 <li><p><a class="reference external" href="beach_2d.html">Waves on 2D beach</a></p></li>
@@ -150,69 +341,14 @@ The simple examples serve as baseline cases for testing your system. You can als
 <li><p><a class="reference external" href="sediment_rip.html">Sediment transport in 2D rip channels</a></p></li>
 <li><p><a class="reference external" href="inlet_shoal.html">Surface waves at an inlet-beach-shoal system</a></p></li>
 <li><p><a class="reference external" href="tohoku.html">Japanese Tohoku tsunami (Ocean-basin scale)</a></p></li>
-<li><p><a class="reference external" href="vessel.html">ship-wakes</a></p></li>
-<li><p><a class="reference external" href="vessel_morpho.html">ship-wakes + sediment transport</a></p></li>
+<li><p><a class="reference external" href="vessel.html">Ship-wakes</a></p></li>
+<li><p><a class="reference external" href="vessel_morpho.html">Ship-wakes + sediment transport</a></p></li>
 <li><p><a class="reference external" href="meteo.html">Meteotsunami</a></p></li>
 </ul>
 </div>
 <div class="section" id="download-benchmark-tests">
 <h2>Download benchmark tests<a class="headerlink" href="#download-benchmark-tests" title="Permalink to this headline">¶</a></h2>
-<p>Benchmark tests are validation and verification (V &amp; V) cases with model comparisons with lab or field experiment data. <a class="reference external" href="https://github.com/fengyanshi/BENCHMARK_FUNWAVE">Available benchmarks: click here to download from GitHub</a></p>
-</div>
-<div class="section" id="compile-and-setup">
-<h2>Compile and setup<a class="headerlink" href="#compile-and-setup" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic simple">
-<li><p>uncompress the code from the package downloaded</p></li>
-<li><p>modify <em>Makefile</em> if needed. There are several necessary flags in Makefile needed to specify below.</p></li>
-</ol>
-<ul class="simple">
-<<<<<<< HEAD
-<li>–DDOUBLE_PRECISION: use double precision, default is single precision.</li>
-<li>–DPARALLEL: use parallel mode, default is serial mode.</li>
-<li>–DCARTESIAN: Cartesian version, otherwise Spherical version</li>
-<li>–DINTEL: if INTEL compiler is used, this option can make use of FPORT for the RAND() function</li>
-<li>–DCRAY: for CRAY RAND() and system commands</li>
-<li>–DCOUPLING: nesting mode.</li>
-<li>–DSPHERICAL_IJ_STATION: in spherical mode, if you want your station locations defined by grid point (I,J). Otherwise, station locations should be defined by (lat lon).</li>
-<li>–DVESSLE: include shipwake module</li>
-<li>–DSEDIMENT: include sediment and morphological module</li>
-<li>–DWIND: include wind effect</li>
-<li>–DMETEO: include meteo tsunami module</li>
-<li>–DMANNING: use Manning formula for bottom friction</li>
-<li>–DCHECK_MASS_CONSERVATION: correct mass conservation problem caused by wetting/drying</li>
-<li>–DTRACKING: include Lagrangian tracking module</li>
-<li>CPP: path to CPP directory.</li>
-<li>FC: Fortran compiler.</li>
-=======
-<li><p>–DDOUBLE_PRECISION: use double precision, default is single precision.</p></li>
-<li><p>–DPARALLEL: use parallel mode, default is serial mode.</p></li>
-<li><p>–DCARTESIAN: Cartesian version, otherwise Spherical version</p></li>
-<li><p>–DINTEL: if INTEL compiler is used, this option can make use of FPORT for the RAND() function</p></li>
-<li><p>–DCRAY: for CRAY RAND() and system commands</p></li>
-<li><p>–DCOUPLING: nesting mode.</p></li>
-<li><p>–DSPHERICAL_IJ_STATION: in spherical mode, if you want your station locations defined by grid point (I,J). Otherwise, station locations should be defined by (lat lon).</p></li>
-<li><p>–DVESSLE: include shipwake module</p></li>
-<li><p>–DSEDIMENT: include sediment and morphological module</p></li>
-<li><p>–DWIND: include wind effect</p></li>
-<li><p>–DMETEO: include meteo tsunami module</p></li>
-<li><p>–DMANNING: use Manning formula for bottom friction</p></li>
-<li><p>–DCHECK_MASS_CONSERVATION: correct mass conservation problem caused by wetting/drying</p></li>
-<li><p>–DTRACKING: include Lagrangian tracking module</p></li>
-<li><p>CPP: path to CPP directory.</p></li>
-<li><p>FC: Fortran compiler.</p></li>
->>>>>>> origin/master
-</ul>
-<ol class="arabic simple" start="3">
-<li><p>compile the code</p></li>
-</ol>
-<p>in command line type</p>
-<p>&gt; make clean</p>
-<p>&gt; make</p>
-<p>The executable file such as ‘funwave’ or ‘mytvd’ (specified in <em>Makefile</em>) will be generated.   <strong>Note: always use ‘make clean’ after modifying Makefile</strong>.</p>
-<ol class="arabic simple" start="4">
-<li><p>run the model</p></li>
-</ol>
-<p>Modify input.txt if needed and run.</p>
+<p>Benchmark tests are validation and verification (V&amp;V) cases with model comparisons with lab or field experiment data. <a class="reference external" href="https://github.com/fengyanshi/BENCHMARK_FUNWAVE">Available benchmarks: click here to download from GitHub</a></p>
 </div>
 </div>
 
@@ -239,11 +375,7 @@ The simple examples serve as baseline cases for testing your system. You can als
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2019, Fengyan Shi.
-<<<<<<< HEAD
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
-=======
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
->>>>>>> origin/master
     </div>
   </body>
 </html>

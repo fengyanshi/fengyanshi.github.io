@@ -1,29 +1,3 @@
-<<<<<<< HEAD
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Tohoku Low Resolution &#8212; FUNWAVE Documentation</title>
-    <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-=======
 
 <!DOCTYPE html>
 
@@ -39,17 +13,11 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="_static/language_data.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
->>>>>>> origin/master
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Ship-wakes" href="vessel.html" />
     <link rel="prev" title="Basics for model setup" href="tohoku_info.html" /> 
-<<<<<<< HEAD
-  </head>
-  <body>
-=======
   </head><body>
->>>>>>> origin/master
 <div class="header">
  <p class="logo"><a href="https://fengyanshi.github.io/build/html/index.html">
   <img class="logo" src="_static/../../../images/Funwave.svg" alt="Logo"/>
@@ -75,26 +43,17 @@
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-<<<<<<< HEAD
-<h3><a href="index.html">Table Of Contents</a></h3>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="integration.html"><strong>INTEGRATION</strong></a></li>
-=======
 <h3><a href="index.html">Table of Contents</a></h3>
 <ul class="current">
->>>>>>> origin/master
 <li class="toctree-l1"><a class="reference internal" href="basics.html"><strong>BASICS</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="flowchart.html"><strong>ARCHITECTURE</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="setup.html"><strong>MODEL DOWNLOAD AND SETUP</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup.html">MODEL DOWNLOAD AND SETUP</a></li>
 <li class="toctree-l1"><a class="reference internal" href="definition.html"><strong>DEFINITIONS OF PARAMETERS</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="coupling_nesting.html"><strong>NESTING AND COUPLING</strong></a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="examples.html"><strong>EXAMPLES</strong></a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="examples.html#simple-tests-beginners-should-start-from-here">Simple tests <strong>(beginners should start from here)</strong></a></li>
 <li class="toctree-l2"><a class="reference internal" href="examples.html#benchmarks">Benchmarks</a></li>
-<<<<<<< HEAD
-=======
 <li class="toctree-l2"><a class="reference internal" href="examples.html#recent-usace-applications">Recent USACE Applications</a></li>
->>>>>>> origin/master
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="gallery.html"><strong>GALLERY</strong></a></li>
@@ -105,15 +64,6 @@
 </ul>
 
 <div id="searchbox" style="display: none" role="search">
-<<<<<<< HEAD
-  <h3>Quick search</h3>
-    <form class="search" action="search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-=======
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
@@ -121,7 +71,6 @@
       <input type="submit" value="Go" />
     </form>
     </div>
->>>>>>> origin/master
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -133,91 +82,57 @@
           <div class="body" role="main">
             
   <div class="section" id="tohoku-low-resolution">
-<h1>Tohoku Low Resolution<a class="headerlink" href="#tohoku-low-resolution" title="Permalink to this headline">¶</a></h1>
+<span id="section-tohoku-lowres"></span><h1>Tohoku Low Resolution<a class="headerlink" href="#tohoku-low-resolution" title="Permalink to this headline">¶</a></h1>
 <div class="align-center figure">
 <a class="reference internal image-reference" href="_images/tohoku_surface.jpg"><img alt="alternate text" src="_images/tohoku_surface.jpg" style="width: 400px; height: 600px;" /></a>
 </div>
-<p><strong>input.txt:</strong></p>
-<div class="line-block">
-<div class="line"><strong>Parallel(if applicable)</strong></div>
-<div class="line-block">
-<div class="line">PX = 2</div>
-<div class="line">PY = 2</div>
+<p>Here you will add the initial conditions to describe the Tohoku tsunami. The tsunami source is constructed in Grilli et al. (2012), which is based on the 3D FEM model of Masterlark (2003), denoted UA source. The non-hydrostatic model NHWAVE (Ma et al., 2012) is used to simulate the first 5 min of tsunami generation, as in Grilli et al. (2012), using a smaller and finer local 1 km resolution Cartesian grid, based on the UA source. The NHWAVE results of u, v eta are used as the initial conditions for FUNWAVE-TVD.</p>
+<blockquote>
+<div><p>Set the initial deformation in UVZ:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>!-----INITIAL UVZ-----
+ INI_UVZ = T
+
+ ! if true, input eta, u, v files names
+ ETA_FILE = ../external_files/ETA_30min.txt
+ U_FILE = ../external_files/U_30min.txt
+ V_FILE = ../external_files/V_30min.txt
+</pre></div>
 </div>
+<p>Set the sponge layer width to 100,000 m on all boundaries, the shock-capturing breaking ratio to 0.6, and the bottom friction coefficient to 0.001:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>!-----SPONGE LAYER-----
+ DIRECT_SPONGE = T
+ FRICTION_SPONGE = T
+ Sponge_west_width =  100000.0    ! in meters
+ Sponge_east_width =  100000.0
+ Sponge_south_width = 100000.0
+ Sponge_north_width = 100000.0
+
+ SWE_ETA_DEP = 0.6
+ Cd = 0.001
+</pre></div>
 </div>
-<div class="line-block">
-<div class="line"><strong>Specify bathymetry</strong></div>
-<div class="line-block">
-<div class="line">DEPTH_TYPE = DATA</div>
-<div class="line">DEPTH_FILE = ../external_files/depth_30min.txt</div>
+<p>Refer to <a class="reference internal" href="physics.html#section-physics"><span class="std std-ref">Physics (dispersion, breaking, friction)</span></a> and <a class="reference internal" href="sponge.html#sponge-definition"><span class="std std-ref">Sponge Layer</span></a> for parameter definitions.</p>
+<p>Set the CLF condition to 0.5 and maximum Froude number to 2.0:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>!-----NUMERICS-----
+ CFL = 0.5
+ FroudeCap = 2.0
+</pre></div>
 </div>
+<p>Set the minimum depth of wetting-drying to 10.0, and the minimum depth for friction to 10.0:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>!-----WET-DRY-----
+ MinDepth = 10.0
+ MinDepthFrc = 10.0
+</pre></div>
 </div>
-<div class="line-block">
-<div class="line"><strong>Dimensions</strong></div>
-<div class="line-block">
-<div class="line">Mglob = 320</div>
-<div class="line">Nglob = 240</div>
+<p>Add a station file to write the output:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>!-----OUTPUT-----
+ NumberStations = 78
+ STATIONS_FILE = stations-pacific.txt
+ ETA = T
+ Hmax = T
+</pre></div>
 </div>
-</div>
-<div class="line-block">
-<div class="line"><strong>Grid</strong></div>
-<div class="line-block">
-<div class="line">Lon_West = 132.0</div>
-<div class="line">Lat_South = -60.0</div>
-<div class="line">Dphi = 0.5</div>
-<div class="line">Dtheta = 0.5</div>
-</div>
-</div>
-<div class="line-block">
-<div class="line"><strong>Time</strong></div>
-<div class="line-block">
-<div class="line">TOTAL_TIME = 86400.0</div>
-<div class="line">PLOT_INTV = 3600.0</div>
-<div class="line">PLOT_INTV_STATION = 1.0</div>
-<div class="line">SCREEN_INTV = 3600.0</div>
-</div>
-</div>
-<div class="line-block">
-<div class="line"><strong>Add initial conditions</strong></div>
-<div class="line-block">
-<div class="line">INI_UVZ = T</div>
-<div class="line">ETA_FILE = ../external_files/ETA_30min.txt</div>
-<div class="line">U_FILE = ../external_files/U_30min.txt</div>
-<div class="line">V_FILE = ../external_files/V_30min.txt</div>
-</div>
-</div>
-<div class="line-block">
-<div class="line"><strong>Add Sponge layers</strong></div>
-<div class="line-block">
-<div class="line">DIRECT_SPONGE = T</div>
-<div class="line">FRICTION_SPONGE = T</div>
-<div class="line">Sponge_west_width =  100000.0</div>
-<div class="line">Sponge_east_width =  100000.0</div>
-<div class="line">Sponge_south_width = 100000.0</div>
-<div class="line">Sponge_north_width = 100000.0</div>
-</div>
-</div>
-<div class="line-block">
-<div class="line"><strong>Add friction</strong></div>
-<div class="line-block">
-<div class="line">Cd = 0.001</div>
-</div>
-</div>
-<div class="line-block">
-<div class="line"><strong>Avoid inundation in the basin scale</strong></div>
-<div class="line-block">
-<div class="line">MinDepth= 10.0</div>
-</div>
-</div>
-<div class="line-block">
-<div class="line"><strong>Output</strong></div>
-<div class="line-block">
-<div class="line">NumberStations = 78</div>
-<div class="line">STATIONS_FILE = stations-pacific.txt</div>
-<div class="line">ETA = T</div>
-<div class="line">Hmax = T</div>
-</div>
-</div>
+</div></blockquote>
 </div>
 
 
@@ -245,11 +160,7 @@
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2019, Fengyan Shi.
-<<<<<<< HEAD
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
-=======
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
->>>>>>> origin/master
     </div>
   </body>
 </html>

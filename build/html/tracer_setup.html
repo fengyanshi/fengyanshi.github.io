@@ -1,29 +1,3 @@
-<<<<<<< HEAD
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Lagrangian Tracer Setup &#8212; FUNWAVE Documentation</title>
-    <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-=======
 
 <!DOCTYPE html>
 
@@ -39,17 +13,11 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="_static/language_data.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
->>>>>>> origin/master
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Landslide" href="slide.html" />
     <link rel="prev" title="Wind and Pressure Field" href="meteo_tsu.html" /> 
-<<<<<<< HEAD
-  </head>
-  <body>
-=======
   </head><body>
->>>>>>> origin/master
 <div class="header">
  <p class="logo"><a href="https://fengyanshi.github.io/build/html/index.html">
   <img class="logo" src="_static/../../../images/Funwave.svg" alt="Logo"/>
@@ -74,25 +42,14 @@
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-<<<<<<< HEAD
-<h3><a href="index.html">Table Of Contents</a></h3>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="integration.html"><strong>INTEGRATION</strong></a></li>
-=======
 <h3><a href="index.html">Table of Contents</a></h3>
 <ul class="current">
->>>>>>> origin/master
 <li class="toctree-l1"><a class="reference internal" href="basics.html"><strong>BASICS</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="flowchart.html"><strong>ARCHITECTURE</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="setup.html"><strong>MODEL DOWNLOAD AND SETUP</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup.html">MODEL DOWNLOAD AND SETUP</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="definition.html"><strong>DEFINITIONS OF PARAMETERS</strong></a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="central_para.html">Parameters for Central Module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="spherical.html">Spherical Coordinates</a></li>
-<li class="toctree-l2"><a class="reference internal" href="shipwakes_para.html">Shipwakes Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sediment_para.html">Sediment Transport and Morphological Change</a></li>
-<li class="toctree-l2"><a class="reference internal" href="meteo_tsu.html">Wind and Pressure Field</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Lagrangian Tracer Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="slide.html">Landslide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="definition.html#input-txt">INPUT.TXT</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="definition.html#definitions">Definitions</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="coupling_nesting.html"><strong>NESTING AND COUPLING</strong></a></li>
@@ -105,15 +62,6 @@
 </ul>
 
 <div id="searchbox" style="display: none" role="search">
-<<<<<<< HEAD
-  <h3>Quick search</h3>
-    <form class="search" action="search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-=======
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
@@ -121,7 +69,6 @@
       <input type="submit" value="Go" />
     </form>
     </div>
->>>>>>> origin/master
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -134,40 +81,40 @@
             
   <div class="section" id="lagrangian-tracer-setup">
 <span id="section-tracer-setup"></span><h1>Lagrangian Tracer Setup<a class="headerlink" href="#lagrangian-tracer-setup" title="Permalink to this headline">¶</a></h1>
-<p>The formulas used for Lagrangian tracking can be found in <a class="reference internal" href="tracer.html#section-tracer-formula"><span class="std std-ref">Lagrangian Tracking Module</span></a></p>
-<div class="line-block">
-<div class="line">1) compile the code with -DTRACKING in Makefile</div>
-<div class="line">2) in input.txt specify</div>
-<div class="line">TRACER_FILE = tracers.txt</div>
-<div class="line-block">
-<div class="line">‘tracers.txt’ (you can use other names) is the file contains the initial positions of particles</div>
-</div>
-<div class="line">3) in tracers.txt, specify:</div>
-</div>
-<div class="line-block">
-<div class="line">give a header (the program does not read)</div>
-<div class="line">196  – number of tracers</div>
-<div class="line">1.0 – plot interval for output</div>
-<div class="line-block">
-<div class="line">3.5500000e+02   4.7500000e+02   0.0000000e+00   0.0000000e+00</div>
-<div class="line">3.5700000e+02   4.7500000e+02   0.0000000e+00   0.0000000e+00</div>
-<div class="line">3.5900000e+02   4.7500000e+02   0.0000000e+00   0.0000000e+00</div>
-<div class="line">3.6100000e+02   4.7500000e+02   0.0000000e+00   0.0000000e+00</div>
-<div class="line">…</div>
-</div>
-</div>
-<div class="line-block">
-<div class="line">The first line : give a header</div>
-<div class="line">The second line : give the number of tracers</div>
-<div class="line">The third line : give time interval for output</div>
-<div class="line">The following lines : specify x, y, 0, 0, where (x,y) are the inital positions of tracers (in meters).</div>
-</div>
+<p>The formulas used for Lagrangian tracking can be found in <a class="reference internal" href="tracer.html#section-tracer-formula"><span class="std std-ref">Lagrangian Tracking Module</span></a>.</p>
+<p>To set up the Lagrangian tracer feature:</p>
 <blockquote>
-<div><dl class="field-list simple">
-<dt class="field-odd">NOTE</dt>
-<dd class="field-odd"><p>The particle position <span class="math notranslate nohighlight">\((x,y)\)</span> is specified at the central point of a cell, the same as other model variables such as :math: <cite>u,v,eta</cite> etc. The orgin (0,0) is at the central point of the bottom-left (south-west) corner cell.</p>
-</dd>
-</dl>
+<div><ol class="arabic">
+<li><p>Compile the code using the <code class="code docutils literal notranslate"><span class="pre">make</span></code> command with <code class="code docutils literal notranslate"><span class="pre">-DTRACKING</span></code> active in “Makefile”. (Review compiling instructions <a class="reference internal" href="setup.html#section-download"><span class="std std-ref">here</span></a>)</p></li>
+<li><p>In “input.txt”, specify:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>TRACER_FILE = tracers.txt
+</pre></div>
+</div>
+<p>‘tracers.txt’ (you can use other names) is the file that contains the initial positions of particles.</p>
+</li>
+<li><p>In “tracers.txt”, specify:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>give a header  ! the program does not read
+196            ! number of tracers
+1.0            ! plot interval for output
+3.5500000e+02   4.7500000e+02   0.0000000e+00   0.0000000e+00
+3.5700000e+02   4.7500000e+02   0.0000000e+00   0.0000000e+00
+3.5900000e+02   4.7500000e+02   0.0000000e+00   0.0000000e+00
+<span class="gh">3.6100000e+02   4.7500000e+02   0.0000000e+00   0.0000000e+00</span>
+<span class="gh">...</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<blockquote>
+<div><p>The first line: give a header</p>
+<p>The second line: give the number of tracers</p>
+<p>The third line: give time interval for output</p>
+<p>The following lines: specify x, y, 0, 0, where (x,y) are the inital positions of tracers (in meters).</p>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The particle position <span class="math notranslate nohighlight">\((x,y)\)</span> is specified at the central point of a cell, the same as other model variables such as <span class="math notranslate nohighlight">\(u,v,\eta\)</span> etc. The orgin (0,0) is at the central point of the bottom-left (south-west) corner cell.</p>
+</div>
 </div></blockquote>
 </div>
 
@@ -195,11 +142,7 @@
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2019, Fengyan Shi.
-<<<<<<< HEAD
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
-=======
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
->>>>>>> origin/master
     </div>
   </body>
 </html>

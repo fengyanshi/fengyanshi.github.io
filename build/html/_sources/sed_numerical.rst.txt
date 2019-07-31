@@ -3,14 +3,14 @@
 Numerical Scheme for Sediment Transport
 ***************************************
 
-.. figure:: images/grid.jpg
-    :width: 300px
-    :align: center
-    :height: 300px
-    :alt: alternate text
-    :figclass: align-center
+Following `Shi et al. (2012) <http://www.sciencedirect.com/science/article/pii/S1463500311002010>`_, the finite-volume approach is used for solving the advection-diffusion equation. A modified interface construction method is proposed for the sediment concentration. For time-integration, the third-order Stability-Preserving (SSP) Runge-Kutta scheme is used. The bed evolution equation is solved directly using forward differencing. The numerical schemes for solving the Boussinesq equations are kept unchanged. The grid arrangement of variables for solving advection-diffusion is shown in the figure below. 
 
-Following `Shi et al. (2012) <http://www.sciencedirect.com/science/article/pii/S1463500311002010>`_, the finite-volume approach is used for solving the advection-diffusion equation. A modified interface construction method is proposed for the sediment concentration. For time-integration, the third-order Stability-Preserving (SSP) Runge-Kutta scheme is used. The bed evolution equation is solved directly using forward differencing. The numerical schemes for solving the Boussinesq equations are kept unchanged. The grid arrangement of variables for solving advection-diffusion is shown in the figure above. 
+.. figure:: images/grid.jpg
+    :width: 400px
+    :align: center
+    :height: 400px
+    :alt: alternate text
+    :figclass: align-center 
 
 Space-differencing
 ------------------

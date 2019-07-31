@@ -1,29 +1,3 @@
-<<<<<<< HEAD
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Grid and Computational Time &#8212; FUNWAVE Documentation</title>
-    <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-=======
 
 <!DOCTYPE html>
 
@@ -39,17 +13,11 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="_static/language_data.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
->>>>>>> origin/master
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Physics (dispersion, breaking, friction)" href="physics.html" />
     <link rel="prev" title="Parallelization" href="parallelization.html" /> 
-<<<<<<< HEAD
-  </head>
-  <body>
-=======
   </head><body>
->>>>>>> origin/master
 <div class="header">
  <p class="logo"><a href="https://fengyanshi.github.io/build/html/index.html">
   <img class="logo" src="_static/../../../images/Funwave.svg" alt="Logo"/>
@@ -75,25 +43,14 @@
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-<<<<<<< HEAD
-<h3><a href="index.html">Table Of Contents</a></h3>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="integration.html"><strong>INTEGRATION</strong></a></li>
-=======
 <h3><a href="index.html">Table of Contents</a></h3>
 <ul class="current">
->>>>>>> origin/master
 <li class="toctree-l1"><a class="reference internal" href="basics.html"><strong>BASICS</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="flowchart.html"><strong>ARCHITECTURE</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="setup.html"><strong>MODEL DOWNLOAD AND SETUP</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup.html">MODEL DOWNLOAD AND SETUP</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="definition.html"><strong>DEFINITIONS OF PARAMETERS</strong></a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="central_para.html">Parameters for Central Module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="spherical.html">Spherical Coordinates</a></li>
-<li class="toctree-l2"><a class="reference internal" href="shipwakes_para.html">Shipwakes Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sediment_para.html">Sediment Transport and Morphological Change</a></li>
-<li class="toctree-l2"><a class="reference internal" href="meteo_tsu.html">Wind and Pressure Field</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tracer_setup.html">Lagrangian Tracer Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="slide.html">Landslide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="definition.html#input-txt">INPUT.TXT</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="definition.html#definitions">Definitions</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="coupling_nesting.html"><strong>NESTING AND COUPLING</strong></a></li>
@@ -106,15 +63,6 @@
 </ul>
 
 <div id="searchbox" style="display: none" role="search">
-<<<<<<< HEAD
-  <h3>Quick search</h3>
-    <form class="search" action="search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-=======
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
@@ -122,7 +70,6 @@
       <input type="submit" value="Go" />
     </form>
     </div>
->>>>>>> origin/master
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -136,75 +83,56 @@
   <div class="section" id="grid-and-computational-time">
 <span id="definition-grid"></span><h1>Grid and Computational Time<a class="headerlink" href="#grid-and-computational-time" title="Permalink to this headline">¶</a></h1>
 <p><strong>SPECIFICATION OF DIMENSION</strong></p>
-<blockquote>
-<div><ul class="simple">
-<li><p>Mglob: global dimension in x direction.</p></li>
-<li><p>Nglob: global dimension in y direction.</p></li>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">Mglob</span></code>: global dimension in x direction.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">Nglob</span></code>: global dimension in y direction.</p></li>
 </ul>
-</div></blockquote>
-<p><strong>PECIFICATION OF GRID SIZE</strong></p>
-<blockquote>
-<div><ul class="simple">
-<li><p>DX: grid size(m) in x direction.</p></li>
-<li><p>DY:   grid size(m) in y direction.</p></li>
+<p><strong>SPECIFICATION OF GRID SIZE</strong></p>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">DX</span></code>: grid size(m) in x direction.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">DY</span></code>: grid size(n) in y direction.</p></li>
 </ul>
-</div></blockquote>
 <p><strong>SPECIFICATION OF WATER DEPTH</strong></p>
-<blockquote>
-<div><ul class="simple">
-<li><p>DEPTH_TYPE: depth input type.</p></li>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">DEPTH_TYPE</span></code>: depth input type.</p></li>
 </ul>
 <blockquote>
-<div><p>DEPTH_TYPE=DATA: from a depth file.</p>
-<p>The program includes several simple bathymetry configurations such as</p>
-<blockquote>
-<div><p>DEPTH_TYPE=FLAT:  flat bottom, need DEPTH_FLAT</p>
-<p>DEPTH_TYPE=SLOPE:  plane beach along x direction. It needs three parameters: slope,SLP,  slope starting point, Xslp and flat part of depth, DEPTH_FLAT</p>
-</div></blockquote>
+<div><p>The program includes several simple bathymetry configurations such as:</p>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">DEPTH_TYPE</span> <span class="pre">=</span> <span class="pre">DATA</span></code>: from a depth file.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">DEPTH_TYPE</span> <span class="pre">=</span> <span class="pre">FLAT</span></code>:  flat bottom, need <code class="code docutils literal notranslate"><span class="pre">DEPTH_FLAT</span></code></p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">DEPTH_TYPE</span> <span class="pre">=</span> <span class="pre">SLOPE</span></code>:  plane beach along x direction. It needs three parameters: slope, <code class="code docutils literal notranslate"><span class="pre">SLP</span></code>, slope starting point, <code class="code docutils literal notranslate"><span class="pre">Xslp</span></code> and flat part of depth, <code class="code docutils literal notranslate"><span class="pre">DEPTH_FLAT</span></code>.</p></li>
+</ul>
 </div></blockquote>
 <ul>
-<li><p>DEPTH_FILE: bathymetry file if  DEPTH_TYPE=DATA, file dimension should be Mglob x Nglob with the first point as the south-west corner.  The read format in the code is shown below.</p>
-<blockquote>
-<div><p>DO J=1,Nglob</p>
-<blockquote>
-<div><p>READ(1,*)(Depth(I,J),I=1,Mglob)</p>
-</div></blockquote>
-<p>ENDDO</p>
-</div></blockquote>
+<li><p><code class="code docutils literal notranslate"><span class="pre">DEPTH_FILE</span></code>: name of bathymetry file, if <code class="code docutils literal notranslate"><span class="pre">DEPTH_TYPE</span> <span class="pre">=</span> <span class="pre">DATA</span></code>. The file dimensions should be the same as <code class="code docutils literal notranslate"><span class="pre">Mglob</span> <span class="pre">x</span> <span class="pre">Nglob</span></code> with the first point as the south-west corner. The read format in the code is shown below:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>DO J=1,Nglob
+
+ READ(1,*)(Depth(I,J),I=1,Mglob)
+
+ENDDO
+</pre></div>
+</div>
 </li>
-<li><p>DEPTH_FLAT: water depth of flat bottom if DEPTH_TYPE=FLAT or DEPTH_TYPE=SLOPE (flat part of a plane beach).</p></li>
-<li><p>SLP: slope if DEPTH_TYPE=SLOPE</p></li>
-<li><p>Xslp: starting x (m) of a slope, if DEPTH_TYPE=SLOPE</p></li>
-<li><p>WaterLevel: Specify a water level which will be added to the input bathymetry and wavemaker depth such as DEP_WK (internal wave generator) and DepthWaveMaker (left boundary generator).</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">DEPTH_FLAT</span></code>: water depth of flat bottom if <code class="code docutils literal notranslate"><span class="pre">DEPTH_TYPE</span> <span class="pre">=</span> <span class="pre">FLAT</span></code> or <code class="code docutils literal notranslate"><span class="pre">DEPTH_TYPE</span> <span class="pre">=</span> <span class="pre">SLOPE</span></code> (flat part of a plane beach).</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">SLP</span></code>: slope if <code class="code docutils literal notranslate"><span class="pre">DEPTH_TYPE</span> <span class="pre">=</span> <span class="pre">SLOPE</span></code>.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">Xslp</span></code>: starting x (m) of a slope, if <code class="code docutils literal notranslate"><span class="pre">DEPTH_TYPE</span> <span class="pre">=</span> <span class="pre">SLOPE</span></code>.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">WaterLevel</span></code>: Specify a water level which will be added to the input bathymetry and wavemaker depth such as <code class="code docutils literal notranslate"><span class="pre">DEP_WK</span></code> (internal wave generator) and <code class="code docutils literal notranslate"><span class="pre">DepthWaveMaker</span></code> (left boundary generator).</p></li>
 </ul>
-<div class="admonition note">
-<<<<<<< HEAD
-<p class="first admonition-title">Note</p>
-<p class="last">IF you add surge or tide level using ‘WaterLevel’,  please keep DEP_WK the same as the original depth in the depth file because the water level will be automatically added to the model bathymetry.</p>
-=======
+<blockquote>
+<div><div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>IF you add surge or tide level using ‘WaterLevel’,  please keep DEP_WK the same as the original depth in the depth file because the water level will be automatically added to the model bathymetry.</p>
->>>>>>> origin/master
+<p>IF you add surge or tide level using <code class="code docutils literal notranslate"><span class="pre">WaterLevel</span></code>,  please keep <code class="code docutils literal notranslate"><span class="pre">DEP_WK</span></code> the same as the original depth in the depth file because the water level will be automatically added to the model bathymetry.</p>
 </div>
 </div></blockquote>
 <p><strong>SPECIFICATION OF TIME</strong></p>
-<blockquote>
-<div><ul class="simple">
-<<<<<<< HEAD
-<li>TOTAL_TIME: simulation time in seconds</li>
-<li>PLOT_INTV: output interval in seconds (Note, output time is not exact because adaptive dt is used.)</li>
-<li>SCREEN_INTV: time interval (s) of screen print.</li>
-<li>PLOT_INTV_STATION: time interval (s) of gauge output</li>
-<li>DT_fixed: time step (s) if use fixed DT. But DT_fixed will be checked by CFL. IF not satisfy CLF, DT/2, DT/4 … will be checked until it satisfy CFL. Default is using variable DT based on CFL.</li>
-=======
-<li><p>TOTAL_TIME: simulation time in seconds</p></li>
-<li><p>PLOT_INTV: output interval in seconds (Note, output time is not exact because adaptive dt is used.)</p></li>
-<li><p>SCREEN_INTV: time interval (s) of screen print.</p></li>
-<li><p>PLOT_INTV_STATION: time interval (s) of gauge output</p></li>
-<li><p>DT_fixed: time step (s) if use fixed DT. But DT_fixed will be checked by CFL. IF not satisfy CLF, DT/2, DT/4 … will be checked until it satisfy CFL. Default is using variable DT based on CFL.</p></li>
->>>>>>> origin/master
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">TOTAL_TIME</span></code>: simulation time in seconds.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">PLOT_INTV</span></code>: output interval in seconds (Note, output time is not exact because adaptive <code class="code docutils literal notranslate"><span class="pre">dt</span></code> is used.)</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">SCREEN_INTV</span></code>: time interval (s) of screen print.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">PLOT_INTV_STATION</span></code>: time interval (s) of gauge output.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">DT_fixed</span></code>: time step (s) if use fixed DT. But <code class="code docutils literal notranslate"><span class="pre">DT_fixed</span></code> will be checked by the CFL condition. IF <code class="code docutils literal notranslate"><span class="pre">DT_fixed</span></code> does not satisfy CLF, DT/2, DT/4 … will be checked until it satisfies CFL. Default is using variable DT based on CFL.</p></li>
 </ul>
-</div></blockquote>
 </div>
 
 
@@ -232,11 +160,7 @@
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2019, Fengyan Shi.
-<<<<<<< HEAD
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
-=======
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
->>>>>>> origin/master
     </div>
   </body>
 </html>

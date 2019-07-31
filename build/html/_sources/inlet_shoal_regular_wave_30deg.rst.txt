@@ -1,5 +1,7 @@
+.. _section-inlet-reg30:
+
 Regular wave 30 deg oblique incidence
-######################################
+#####################################
 
 .. figure:: images/simple_cases/eta_inlet_shoal_reg_30deg.jpg
     :width: 500px
@@ -8,21 +10,28 @@ Regular wave 30 deg oblique incidence
     :alt: alternate text
     :figclass: align-center
 
-**input.txt is the same as the baseline case (regular wave) except:**
+Update the title and incident wave angle in "input.txt" for this example. The domain setup was defined in :ref:`section-inlet-basics`, and the baseline case can be reviewed at :ref:`section-inlet-reg`.
 
-  `(Baseline case) <inlet_shoal_regular_wave.html>`_
+ Set descriptive title for your simulation:
 
-|  **Wavemaker** 
-|   WAVEMAKER = WK_REG
-|   DEP_WK = 10.0 
-|   Xc_WK = 250.0 
-|   Yc_WK = 0.0 
-|   Tperiod = 12.0 
-|   AMP_WK = 1.0 
-|   **Theta_WK = 30.0**
+ .. code-block:: rest
 
-  (refer to :ref:`definition_wavemaker`)
+        !-----TITLE-----
+         TITLE = inlet_reg_30deg
 
-|  **Add periodic boundary condition**
-|   PERIODIC = T   (refer to :ref:`info_periodic`)
+ Set the incident wave angle to 30 deg:
+
+ .. code-block:: rest
+
+        !-----WAVEMAKER-----
+         WAVEMAKER = WK_REG
+         DEP_WK = 10.0 
+         Xc_WK = 250.0 
+         Yc_WK = 0.0 
+         Tperiod = 12.0 
+         AMP_WK = 1.0 
+         Theta_WK = 30.0     ! here
+
+ (refer to :ref:`definition_wavemaker` for parameter definitions)
+
 

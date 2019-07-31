@@ -1,29 +1,3 @@
-<<<<<<< HEAD
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Single vessel + sediment (small domain for training session) &#8212; FUNWAVE Documentation</title>
-    <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-=======
 
 <!DOCTYPE html>
 
@@ -39,17 +13,11 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="_static/language_data.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
->>>>>>> origin/master
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Single vessel + sediment" href="vessel_morpho_single.html" />
     <link rel="prev" title="Compile the code for shipwake + sediment case" href="vessel_morpho_compile.html" /> 
-<<<<<<< HEAD
-  </head>
-  <body>
-=======
   </head><body>
->>>>>>> origin/master
 <div class="header">
  <p class="logo"><a href="https://fengyanshi.github.io/build/html/index.html">
   <img class="logo" src="_static/../../../images/Funwave.svg" alt="Logo"/>
@@ -75,26 +43,17 @@
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-<<<<<<< HEAD
-<h3><a href="index.html">Table Of Contents</a></h3>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="integration.html"><strong>INTEGRATION</strong></a></li>
-=======
 <h3><a href="index.html">Table of Contents</a></h3>
 <ul class="current">
->>>>>>> origin/master
 <li class="toctree-l1"><a class="reference internal" href="basics.html"><strong>BASICS</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="flowchart.html"><strong>ARCHITECTURE</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="setup.html"><strong>MODEL DOWNLOAD AND SETUP</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup.html">MODEL DOWNLOAD AND SETUP</a></li>
 <li class="toctree-l1"><a class="reference internal" href="definition.html"><strong>DEFINITIONS OF PARAMETERS</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="coupling_nesting.html"><strong>NESTING AND COUPLING</strong></a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="examples.html"><strong>EXAMPLES</strong></a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="examples.html#simple-tests-beginners-should-start-from-here">Simple tests <strong>(beginners should start from here)</strong></a></li>
 <li class="toctree-l2"><a class="reference internal" href="examples.html#benchmarks">Benchmarks</a></li>
-<<<<<<< HEAD
-=======
 <li class="toctree-l2"><a class="reference internal" href="examples.html#recent-usace-applications">Recent USACE Applications</a></li>
->>>>>>> origin/master
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="gallery.html"><strong>GALLERY</strong></a></li>
@@ -105,15 +64,6 @@
 </ul>
 
 <div id="searchbox" style="display: none" role="search">
-<<<<<<< HEAD
-  <h3>Quick search</h3>
-    <form class="search" action="search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-=======
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
@@ -121,7 +71,6 @@
       <input type="submit" value="Go" />
     </form>
     </div>
->>>>>>> origin/master
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -133,112 +82,134 @@
           <div class="body" role="main">
             
   <div class="section" id="single-vessel-sediment-small-domain-for-training-session">
-<h1>Single vessel + sediment (small domain for training session)<a class="headerlink" href="#single-vessel-sediment-small-domain-for-training-session" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li><p>Model setup</p></li>
-</ul>
+<span id="section-vessel-morpho-short"></span><h1>Single vessel + sediment (small domain for training session)<a class="headerlink" href="#single-vessel-sediment-small-domain-for-training-session" title="Permalink to this headline">¶</a></h1>
+<p>In this example, you will add sediment morphology to a single vessel ship wakes example. The primary “input.txt” and <code class="code docutils literal notranslate"><span class="pre">vessel_00001</span></code> files are located in <code class="code docutils literal notranslate"><span class="pre">/simple_cases/single_vessel_short_channel/work/</span></code>.</p>
+<p><strong>Model setup</strong></p>
 <div class="align-center figure">
 <a class="reference internal image-reference" href="_images/layout_single_vessel.jpg"><img alt="alternate text" src="_images/layout_single_vessel.jpg" style="width: 500px; height: 120px;" /></a>
 </div>
-<p>NOTE: simulation is performed in a half domain: y = 0 – 60 m</p>
-<ul class="simple">
-<li><p>input.txt
-is in the folder /simple_cases/single_vessel_short_channel/</p></li>
-</ul>
-<p><strong>In input.txt:</strong></p>
-<div class="line-block">
-<div class="line"><strong>Parallel Info (if use parallel)</strong></div>
-<div class="line-block">
-<div class="line">PX = 2</div>
-<div class="line">PY = 1</div>
-</div>
-</div>
-<div class="line-block">
-<div class="line"><strong>Depth</strong></div>
-<div class="line-block">
-<div class="line">DEPTH_TYPE = DATA</div>
-</div>
-</div>
+<p>NOTE: the simulation is performed in a half domain: y = 0 – 60 m</p>
+<p><strong>Setup in “input.txt”</strong></p>
 <blockquote>
-<div><p>DEPTH_FILE = depth.txt</p>
-<p>(refer to <a class="reference internal" href="grid.html#definition-grid"><span class="std std-ref">Grid and Computational Time</span></a>)</p>
-</div></blockquote>
-<div class="line-block">
-<div class="line"><strong>Dimensions</strong></div>
-<div class="line-block">
-<div class="line">Mglob = 400</div>
-<div class="line">Nglob = 60</div>
+<div><p>Set a descriptive title for your simulation:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>!-----TITLE-----
+ TITLE = vessel_sediment
+</pre></div>
 </div>
+<p>If running in parallel, set the number of processors in X and Y:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>!-----PARALLEL INFO-----
+ PX = 2
+ PY = 1
+</pre></div>
 </div>
-<div class="line-block">
-<div class="line"><strong>Grid sizes</strong></div>
-<div class="line-block">
-<div class="line">DX = 1.0</div>
-<div class="line">DY = 1.0</div>
+<p>Set the bathymetry to the provided depth file; comment out all other depth parameters:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>!-----DEPTH-----
+ DEPTH_TYPE = DATA
+ DEPTH_FILE = ../bathy/depth.txt
+</pre></div>
 </div>
+<p>(refer to <a class="reference internal" href="grid.html#definition-grid"><span class="std std-ref">Grid and Computational Time</span></a> for parameter definitions)</p>
+<p>Send the results to a folder named “output”:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>!-----PRINT-----
+ RESULT_FOLDER = output/
+</pre></div>
 </div>
-<div class="line-block">
-<div class="line"><strong>Set up time</strong></div>
-<div class="line-block">
-<div class="line">TOTAL_TIME = 60.0</div>
-<div class="line">PLOT_INTV = 2.0</div>
-<div class="line">PLOT_INTV_STATION = 10000.0</div>
-<div class="line">SCREEN_INTV = 2.0</div>
+<p>Set the dimension of the domain to 400 x 60 (x and y directions, respectively):</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>!-----DIMENSION-----
+ Mglob = 400
+ Nglob = 60
+</pre></div>
 </div>
+<p>Set the computational time, plot time, station printing interval, and screen interval to 60.0 s, 2.0 s, 0.1 s, and 2.0 s, respectively:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>!-----TIME-----
+ TOTAL_TIME = 60.0
+ PLOT_INTV = 2.0
+ PLOT_INTV_STATION = 10000.0
+ SCREEN_INTV = 2.0
+</pre></div>
 </div>
-<div class="line-block">
-<div class="line"><strong>Sediment</strong></div>
-<div class="line-block">
-<div class="line">Bed_Change = T</div>
-<div class="line">BedLoad = T</div>
-<div class="line">D50 = 0.0005</div>
-<div class="line">Sdensity = 2.68</div>
-<div class="line">n_porosity = 0.47</div>
-<div class="line">WS = 0.0125</div>
-<div class="line">Shields_cr = 0.055</div>
-<div class="line">Shields_cr_bedload = 0.047</div>
-<div class="line">Tan_phi = 0.7</div>
-<div class="line">Kappa1 = 0.3333</div>
-<div class="line">Kappa2 = 1.0</div>
-<div class="line">MinDepthPickup = 0.1</div>
+<p>Set the grid spacing in x and y to 1.0 m:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>!-----GRID-----
+ DX = 1.0
+ DY = 1.0
+</pre></div>
 </div>
+<p>Add single vessel with the following characteristics:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>!-----SHIP WAKES-----
+ VESSEL_FOLDER = ./
+ NumVessel = 1
+</pre></div>
 </div>
+<p>You need a vessel file <code class="code docutils literal notranslate"><span class="pre">vessel_00001</span></code> in the current folder. In <code class="code docutils literal notranslate"><span class="pre">vessel_00001</span></code>, specify:</p>
 <blockquote>
-<div><p>(refer to <a class="reference internal" href="sediment_para.html#definition-sediment"><span class="std std-ref">Sediment Transport and Morphological Change</span></a>)</p>
+<div><div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>Title: Vessel # 1
+Blue_Star_I
+Length(m), Width(m), Alpha(0.5), Beta(0.5), P(draft,m)
+10.0  5.0, 0.5, 0.5, 1.5
+Time, X(m), Y(m)  (relative to the orgin of the coordinates)
+0.0   40.0   60.0
+25523.0  180040.0  60.0
+</pre></div>
+</div>
 </div></blockquote>
-<div class="line-block">
-<div class="line"><strong>Add vessels</strong></div>
-<div class="line-block">
-<div class="line">VESSEL_FOLDER = ./</div>
-<div class="line">NumVessel = 1</div>
-<div class="line"><br /></div>
-<div class="line">You need a vessel file: vessel_00001 in the current folder.</div>
-<div class="line">In vessel_00001, specify:</div>
-<div class="line">Title: Vessel # 1</div>
-<div class="line">Blue_Star_I</div>
-<div class="line">Length(m), Width(m), Alpha(0.5), Beta(0.5), P(draft,m)</div>
-<div class="line">10.0  5.0, 0.5, 0.5, 1.5</div>
-<div class="line">Time, X(m), Y(m)  (relative to the orgin of the coordinates)</div>
-<div class="line">0.0   40.0   60.0</div>
-<div class="line">25523.0  180040.0  60.0</div>
+<p>(refer to <a class="reference internal" href="shipwakes.html#theory-shipwakes"><span class="std std-ref">Ship-wake Module</span></a> and <a class="reference internal" href="shipwakes_para.html#section-shipwakes-setup"><span class="std std-ref">Shipwakes Setup</span></a> for more information)</p>
+<p>Set the sponge layer parameters to the following:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>!-----SPONGE LAYER-----
+ FRICTION_SPONGE = T
+ DIRECT_SPONGE = T
+ Csp = 0.10
+ CDsponge = 10.0
+ Sponge_west_width =  0.0
+ Sponge_east_width =  0.0
+ Sponge_south_width = 0.0
+ Sponge_north_width = 0.0
+ R_sponge = 0.85
+ A_sponge = 5.0
+ ETA_LIMITER = F
+</pre></div>
 </div>
+<p>Set the following <code class="code docutils literal notranslate"><span class="pre">PHYSICS</span></code> and <code class="code docutils literal notranslate"><span class="pre">WET-DRY</span></code> parameters to the following:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>!-----PHYSICS-----
+ VISCOSITY_BREAKING = T
+ Cd = 0.0
+ CFL = 0.5
+ FroudeCap = 10.0
+
+!-----WET-DRY-----
+ MinDepth = 0.02
+ Cbrk1 = 0.70
+ Cbrk2 = 0.40
+</pre></div>
 </div>
-<blockquote>
-<div><p>(refer to <a class="reference internal" href="shipwakes.html#theory-shipwakes"><span class="std std-ref">Ship-wake Module</span></a> and <a class="reference internal" href="shipwakes_para.html#section-shipwakes-setup"><span class="std std-ref">Shipwakes Setup</span></a>)</p>
+<p>Add <code class="code docutils literal notranslate"><span class="pre">DEPTH_OUT,</span> <span class="pre">U,</span> <span class="pre">V,</span> <span class="pre">ETA,</span></code> and <code class="code docutils literal notranslate"><span class="pre">MASK</span></code> to the output:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>!-----OUTPUT-----
+ DEPTH_OUT = T
+ U = T
+ V = T
+ ETA = T
+ MASK = T
+</pre></div>
+</div>
+<p>Add the sediment morphology parameters:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>!-----SEDIMENT-----
+ Bed_Change = T
+ BedLoad = T
+ D50 = 0.0005
+ Sdensity = 2.68
+ n_porosity = 0.47
+ WS = 0.0125
+ Shields_cr = 0.055
+ Shields_cr_bedload = 0.047
+ Tan_phi = 0.7
+ Kappa1 = 0.3333
+ Kappa2 = 1.0
+ MinDepthPickup = 0.1
+</pre></div>
+</div>
+<p>(refer to <a class="reference internal" href="sediment_para.html#definition-sediment"><span class="std std-ref">Sediment Transport and Morphological Change</span></a> for sediment parameter definitions)</p>
 </div></blockquote>
-<div class="line-block">
-<div class="line"><strong>Output</strong></div>
-<div class="line-block">
-<div class="line">RESULT_FOLDER = output</div>
-<div class="line">ETA = T</div>
-</div>
-</div>
-<div class="line-block">
-<div class="line"><strong>post-processing</strong></div>
-<div class="line-block">
-<div class="line">matlab scripts in /simple_cases/single_vessel_short_channel/postprocessing/</div>
-</div>
-</div>
+<p><strong>Postprocessing</strong></p>
+<p>For postprocessing examples, MATLAB and Python scripts are located in <code class="code docutils literal notranslate"><span class="pre">/simple_cases/single_vessel_short_channel/postprocessing/</span></code>. An example model result is shown below:</p>
 <div class="align-center figure" id="id1">
 <a class="reference internal image-reference" href="_images/vessel_eta_sed_bed.jpg"><img alt="alternate text" src="_images/vessel_eta_sed_bed.jpg" style="width: 400px; height: 500px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">(Top) surface elevation, (middle) sediment concentration, (bottom) bed change</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
@@ -270,11 +241,7 @@ is in the folder /simple_cases/single_vessel_short_channel/</p></li>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2019, Fengyan Shi.
-<<<<<<< HEAD
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
-=======
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
->>>>>>> origin/master
     </div>
   </body>
 </html>

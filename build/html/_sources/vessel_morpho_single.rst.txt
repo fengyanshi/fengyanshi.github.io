@@ -1,7 +1,11 @@
-Single vessel + sediment 
-###################################
+.. _section-vessel-sediment-single:
 
-* Model setup
+Single vessel + sediment 
+########################
+
+In this example, you will add sediment morphology to a single vessel ship wakes example. The primary "input.txt" and :code:`vessel_00001` files are located in :code:`/simple_cases/single_vessel_morphology/`. 
+
+**Model setup**
 
 .. figure:: images/simple_cases/layout_single_vessel.jpg
     :width: 500px
@@ -11,72 +15,65 @@ Single vessel + sediment
     :figclass: align-center
 
 
-* input.txt
-  is in the folder /simple_cases/single_vessel_morphology/
+**Setup "input.txt"**
 
-**In input.txt:**
+This example is slightly different from the previous example described in :ref:`section-vessel-morpho-short`. Update the following sections:
 
-|  **Parallel Info (if use parallel)**  
-|   PX = 4 
-|   PY = 1
+Set a descriptive title for your simulation:
 
-|  **Depth**
-|   DEPTH_TYPE = DATA
+ .. code-block:: rest
 
-  DEPTH_FILE = depth.txt
+        !-----TITLE-----
+         TITLE = vessel_sediment_morph
 
-|  **Dimensions**
-|   Mglob = 2400
-|   Nglob = 60
+ If running in parallel, set the number of processors in X and Y:
 
-|  **Grid sizes**
-|   DX = 1.0
-|   DY = 1.0
+ .. code-block:: rest
 
-|  **Set up time**
-|   TOTAL_TIME = 2000.0
-|   PLOT_INTV = 5.0
-|   PLOT_INTV_STATION = 50000.0
-|   SCREEN_INTV = 5.0
+        !-----PARALLEL INFO-----
+         PX = 4 
+         PY = 1
 
-|  **Sediment**
-|   Bed_Change = T
-|   BedLoad = T
-|   D50 = 0.0005
-|   Sdensity = 2.68
-|   n_porosity = 0.47
-|   WS = 0.0125
-|   Shields_cr = 0.055
-|   Shields_cr_bedload = 0.047
-|   Tan_phi = 0.7
-|   Kappa1 = 0.3333
-|   Kappa2 = 1.0
-|   MinDepthPickup = 0.1 
+ Set the bathymetry to the provided depth file: 
 
-  (refer to :ref:`definition_sediment`)
+ .. code-block:: rest
 
-|  **Add vessels**
-|   VESSEL_FOLDER = ./
-|   NumVessel = 1
-| 
-|   You need a vessel file: vessel_00001 in the current folder. 
-|   In vessel_00001, specify:
-|   Title: Vessel # 1
-|   Blue_Star_I
-|   Length(m), Width(m), Alpha(0.5), Beta(0.5), P(draft,m)
-|   10.0  5.0, 0.5, 0.5, 1.5
-|   Time, X(m), Y(m)  (relative to the orgin of the coordinates)
-|   0.0   40.0   60.0
-|   25523.0  180040.0  60.0
+        !-----DEPTH-----
+         DEPTH_TYPE = DATA
+         DEPTH_FILE = ./depth.txt
 
-  (refer to :ref:`theory_shipwakes` and :ref:`section-shipwakes-setup`)
+ If a "depth.txt" is not located in the working directory, you will need to run the "mk_depth.f" Fortran script to generate a depth file, which uses the "bathy_param.txt" file as an input. You can do this by typing the following into your terminal: :code:`gfortran mk_depth.f`. Refer to :ref:`definition_grid` for parameter definitions.
 
-|  **Output**
-|   RESULT_FOLDER = output
-|   ETA = T
+ Send the results to a folder named "output":
 
-|  **post-processing**
-|   matlab scripts in /simple_cases/single_vessel_morphology/
+ .. code-block:: rest
+
+        !-----PRINT-----
+         RESULT_FOLDER = output/
+
+ Set the dimension of the domain to 2400 x 60 (x and y directions, respectively):
+
+ .. code-block:: rest
+
+        !-----DIMENSION-----
+         Mglob = 2400
+         Nglob = 60
+
+ Set the computational time, plot time, station printing interval, and screen interval to 2000.0 s, 5.0 s, 50,000.0 s, and 5.0 s, respectively:
+
+ .. code-block:: rest
+
+        !-----TIME-----
+         TOTAL_TIME = 2000.0
+         PLOT_INTV = 5.0
+         PLOT_INTV_STATION = 50000.0
+         SCREEN_INTV = 5.0
+
+ Keep the single vessel characteristics and sediment morphology parameters as :ref:`section-vessel-morpho-short`.
+
+**Postprocessing**
+
+For postprocessing examples, MATLAB and Python scripts are located in :code:`/simple_cases/single_vessel_morphology/postprocessing/`. An example model result is shown below:
 
 .. figure:: images/simple_cases/single_wave_conc.jpg
     :width: 400px

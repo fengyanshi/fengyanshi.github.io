@@ -1,3 +1,5 @@
+.. _section-examples:
+
 **EXAMPLES**
 ==============
 

@@ -1,10 +1,10 @@
 
 2D Beach
-########################
+########
 .. figure:: images/simple_cases/wave_irr_30deg.jpg
-    :width: 500px
+    :width: 600px
     :align: center
-    :height: 300px
+    :height: 400px
     :alt: alternate text
     :figclass: align-center
 

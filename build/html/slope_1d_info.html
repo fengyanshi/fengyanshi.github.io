@@ -1,29 +1,3 @@
-<<<<<<< HEAD
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Basics for model setup &#8212; FUNWAVE Documentation</title>
-    <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-=======
 
 <!DOCTYPE html>
 
@@ -39,17 +13,11 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="_static/language_data.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
->>>>>>> origin/master
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Regular wave" href="slope_1d_regular_wave.html" />
     <link rel="prev" title="Compile the code for 1D slope case" href="slope_1d_compile.html" /> 
-<<<<<<< HEAD
-  </head>
-  <body>
-=======
   </head><body>
->>>>>>> origin/master
 <div class="header">
  <p class="logo"><a href="https://fengyanshi.github.io/build/html/index.html">
   <img class="logo" src="_static/../../../images/Funwave.svg" alt="Logo"/>
@@ -75,26 +43,17 @@
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-<<<<<<< HEAD
-<h3><a href="index.html">Table Of Contents</a></h3>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="integration.html"><strong>INTEGRATION</strong></a></li>
-=======
 <h3><a href="index.html">Table of Contents</a></h3>
 <ul class="current">
->>>>>>> origin/master
 <li class="toctree-l1"><a class="reference internal" href="basics.html"><strong>BASICS</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="flowchart.html"><strong>ARCHITECTURE</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="setup.html"><strong>MODEL DOWNLOAD AND SETUP</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup.html">MODEL DOWNLOAD AND SETUP</a></li>
 <li class="toctree-l1"><a class="reference internal" href="definition.html"><strong>DEFINITIONS OF PARAMETERS</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="coupling_nesting.html"><strong>NESTING AND COUPLING</strong></a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="examples.html"><strong>EXAMPLES</strong></a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="examples.html#simple-tests-beginners-should-start-from-here">Simple tests <strong>(beginners should start from here)</strong></a></li>
 <li class="toctree-l2"><a class="reference internal" href="examples.html#benchmarks">Benchmarks</a></li>
-<<<<<<< HEAD
-=======
 <li class="toctree-l2"><a class="reference internal" href="examples.html#recent-usace-applications">Recent USACE Applications</a></li>
->>>>>>> origin/master
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="gallery.html"><strong>GALLERY</strong></a></li>
@@ -105,15 +64,6 @@
 </ul>
 
 <div id="searchbox" style="display: none" role="search">
-<<<<<<< HEAD
-  <h3>Quick search</h3>
-    <form class="search" action="search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-=======
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
@@ -121,7 +71,6 @@
       <input type="submit" value="Go" />
     </form>
     </div>
->>>>>>> origin/master
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -133,42 +82,88 @@
           <div class="body" role="main">
             
   <div class="section" id="basics-for-model-setup">
-<h1>Basics for model setup<a class="headerlink" href="#basics-for-model-setup" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li><p>computational domain</p></li>
-</ul>
+<span id="section-1d-basics"></span><h1>Basics for model setup<a class="headerlink" href="#basics-for-model-setup" title="Permalink to this headline">¶</a></h1>
+<p>In the directory <code class="code docutils literal notranslate"><span class="pre">/simple_cases/surface_wave_1d/input_files/</span></code>, you will find multiple instances of input files that are specific to different variations of this example, e.g., regular (“input_reg.txt) versus irregular (“input_irr.txt”) wavemaker configuration. It should be noted that the model will accept only the file named “input.txt”. Therefore, if you want to switch wavemaker cases, you will need to modify the primary “input.txt” file.</p>
+<p><strong>Computational domain</strong></p>
 <div class="align-center figure">
 <a class="reference internal image-reference" href="_images/layout_1dbeach.jpg"><img alt="alternate text" src="_images/layout_1dbeach.jpg" style="width: 600px; height: 275px;" /></a>
 </div>
-<p>Basic info</p>
+<p><strong>Setup in “input.txt”</strong></p>
+<p>See an example of a complete “input.txt” <a class="reference internal" href="definition.html#section-definitions"><span class="std std-ref">here</span></a>.</p>
+<p>For this example, you will set the following in “input.txt”. <strong>Remember that all parameters are case sensitive</strong>.</p>
 <blockquote>
-<div><p>Dimensions 1024 X 3 (at least 3 points in the y direction)</p>
-<p>DX = DY = 1.0 m</p>
-<p>Wavemaker located at x = 250.0 m (for monochromatic or JONSWAP wave cases)</p>
-<p>Sponge layer: x = 0.0 – 180.0 m</p>
+<div><p>If running in parallel, set the number of processors in X and Y:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>!-----PARALLEL INFO-----
+ PX = 2
+ PY = 1
+</pre></div>
+</div>
+<p>Set the bathymetry to match the figure above:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>!-----DEPTH-----
+ DEPTH_TYPE = SLOPE
+ DEPTH_FLAT = 10.0
+ SLP = 0.05
+ Xslp = 800.0
+</pre></div>
+</div>
+<p>(refer to <a class="reference internal" href="grid.html#definition-grid"><span class="std std-ref">Grid and Computational Time</span></a> for parameter descriptions)</p>
+<p>Send the results to a folder named “output”:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>!-----PRINT-----
+ RESULT_FOLDER = output/
+</pre></div>
+</div>
+<p>Set the dimensions of the domain to 1024 x 3 (need at least 3 points in the y-direction):</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>!------DIMENSION----
+  Mglob = 1024
+  Nglob = 3
+</pre></div>
+</div>
+<p>Set the total computational time, plot time, and screen intervals to 200.0 s, 10.0 s, and 10.0 s, respectively:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>!-----TIME-----
+ TOTAL_TIME = 200.0
+ PLOT_INTV = 10.0
+ SCREEN_INTV = 10.0
+</pre></div>
+</div>
+<p>Set the grid spacing in x and y to 1.0 m:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>!------GRID-----
+  DX = 1.0
+  DY = 1.0
+</pre></div>
+</div>
+<p><strong>Wavemaker</strong></p>
+<blockquote>
+<div><p>Wavemaker parameters will be defined on the respective <a class="reference internal" href="slope_1d_regular_wave.html#section-1d-reg"><span class="std std-ref">Regular wave</span></a>, <a class="reference internal" href="slope_1d_jonswap.html#section-1d-jonswap"><span class="std std-ref">JONSWAP spectral waves</span></a>, and <a class="reference internal" href="slope_1d_solitary.html#section-1d-solitary"><span class="std std-ref">Solitary wave</span></a> pages.</p>
 </div></blockquote>
-<ul>
-<<<<<<< HEAD
-<li><p class="first">input.txt
-=======
-<li><p>input.txt
->>>>>>> origin/master
-several input files in the folder /simple_cases/surface_wave_1d/input_files/ for different cases. When run a case, copy one of them to “input.txt”</p>
-<p>input_reg.txt – monochromatic wave</p>
-<p>input_irr.txt – JONSWAP spectral waves</p>
-<p>input_solitary.txt – solitary wave</p>
-</li>
-<li><p>bathymetry is specified in input.txt</p>
-<p>DEPTH_TYPE = SLOPE</p>
-<p>DEPTH_FLAT = 10.0</p>
-<p>SLP = 0.05</p>
-<p>Xslp = 800.0  (for solitary wave case Xslp = 750.0 because of large runup)</p>
-<p>(refer to <a class="reference internal" href="grid.html#definition-grid"><span class="std std-ref">Grid and Computational Time</span></a>)</p>
-</li>
-<li><p>postprocessing</p>
-<p>matlab examples of postprocessing are located in /simple_cases/surface_wave_1d/postprocessing/</p>
-</li>
-</ul>
+<p>Set the periodic boundary conditions to FALSE:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>!-----PERIODIC BOUNDARY CONDITION-----
+ PERIODIC = F
+</pre></div>
+</div>
+<p>Set the sponge layer width to 180.0 m on the left boundary:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>!-----SPONGE LAYER-----
+ DIFFUSION_SPONGE = F
+ FRICTION_SPONGE = T
+ DIRECT_SPONGE = T
+ Csp = 0.0
+ CDsponge = 1.0
+ Sponge_west_width = 180.0      ! this line
+ Sponge_east_width = 0.0
+ Sponge_south_width = 0.0
+ Sponge_north_width = 0.0
+</pre></div>
+</div>
+<p>(refer to <a class="reference internal" href="info_sponge.html#info-sponge"><span class="std std-ref">Sponge Layers</span></a> for example of 2D sponge case)</p>
+<p><strong>Keep the default values</strong> for the <code class="code docutils literal notranslate"><span class="pre">PHYSICS,</span> <span class="pre">NUMERICS,</span> <span class="pre">WET-DRY,</span> <span class="pre">BREAKING,</span></code> and <code class="code docutils literal notranslate"><span class="pre">WAVE</span> <span class="pre">AVERAGE</span></code> sections. Refer to <a class="reference internal" href="definition.html#section-definitions"><span class="std std-ref">DEFINITIONS OF PARAMETERS</span></a> for a description of all parameters.</p>
+<p>Set the <code class="code docutils literal notranslate"><span class="pre">ETA</span></code> and <code class="code docutils literal notranslate"><span class="pre">MASK</span></code> output files to TRUE:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>!-----OUTPUT-----
+ ETA = T
+ MASK = T
+</pre></div>
+</div>
+</div></blockquote>
+<p><strong>Postprocessing</strong></p>
+<p>For postprocessing examples, MATLAB and Python scripts are located in <code class="code docutils literal notranslate"><span class="pre">/simple_cases/surface_wave_1d/postprocessing/</span></code>.</p>
 </div>
 
 
@@ -196,11 +191,7 @@ several input files in the folder /simple_cases/surface_wave_1d/input_files/ for
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2019, Fengyan Shi.
-<<<<<<< HEAD
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
-=======
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
->>>>>>> origin/master
     </div>
   </body>
 </html>

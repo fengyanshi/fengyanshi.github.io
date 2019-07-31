@@ -1,5 +1,7 @@
+.. _section-workshop:
+
 **FUNWAVE-TVD WORKSHOP**
-==========================
+========================
 .. image:: images/workshop/group.png
 
 `ANNONCEMENT FOR WORKSHOP 2019 <workshop_2019.html>`_

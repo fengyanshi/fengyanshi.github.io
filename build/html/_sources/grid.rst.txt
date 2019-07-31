@@ -1,33 +1,35 @@
 .. _definition_grid:
 
 Grid and Computational Time
-*****************************
+***************************
 
 **SPECIFICATION OF DIMENSION**
 
- *  Mglob: global dimension in x direction.
+* :code:`Mglob`: global dimension in x direction.
 
- *  Nglob: global dimension in y direction.
+* :code:`Nglob`: global dimension in y direction.
 
-**PECIFICATION OF GRID SIZE**
+**SPECIFICATION OF GRID SIZE**
 
- *  DX: grid size(m) in x direction.
+* :code:`DX`: grid size(m) in x direction.
 
- *  DY:   grid size(m) in y direction.
+* :code:`DY`: grid size(n) in y direction.
 
 **SPECIFICATION OF WATER DEPTH**
  
- *  DEPTH\_TYPE: depth input type. 
+* :code:`DEPTH_TYPE`: depth input type. 
 
-   DEPTH\_TYPE=DATA: from a depth file. 
+ The program includes several simple bathymetry configurations such as:
+ 
+ * :code:`DEPTH_TYPE = DATA`: from a depth file. 
    
-   The program includes several simple bathymetry configurations such as
-   
-      DEPTH\_TYPE=FLAT:  flat bottom, need DEPTH\_FLAT 
+ * :code:`DEPTH_TYPE = FLAT`:  flat bottom, need :code:`DEPTH_FLAT` 
                 
-      DEPTH\_TYPE=SLOPE:  plane beach along x direction. It needs three parameters: slope,SLP,  slope starting point, Xslp and flat part of depth, DEPTH\_FLAT
+ * :code:`DEPTH_TYPE = SLOPE`:  plane beach along x direction. It needs three parameters: slope, :code:`SLP`, slope starting point, :code:`Xslp` and flat part of depth, :code:`DEPTH_FLAT`.
 
- *   DEPTH\_FILE: bathymetry file if  DEPTH\_TYPE=DATA, file dimension should be Mglob x Nglob with the first point as the south-west corner.  The read format in the code is shown below.
+* :code:`DEPTH_FILE`: name of bathymetry file, if :code:`DEPTH_TYPE = DATA`. The file dimensions should be the same as :code:`Mglob x Nglob` with the first point as the south-west corner. The read format in the code is shown below:
+
+  .. code-block:: rest
 
        DO J=1,Nglob
        
@@ -35,27 +37,27 @@ Grid and Computational Time
         
        ENDDO
  
- *  DEPTH\_FLAT: water depth of flat bottom if DEPTH\_TYPE=FLAT or DEPTH\_TYPE=SLOPE (flat part of a plane beach).
+* :code:`DEPTH_FLAT`: water depth of flat bottom if :code:`DEPTH_TYPE = FLAT` or :code:`DEPTH_TYPE = SLOPE` (flat part of a plane beach).
  
- *  SLP: slope if DEPTH\_TYPE=SLOPE
+* :code:`SLP`: slope if :code:`DEPTH_TYPE = SLOPE`.
 
- *  Xslp: starting x (m) of a slope, if DEPTH\_TYPE=SLOPE
+* :code:`Xslp`: starting x (m) of a slope, if :code:`DEPTH_TYPE = SLOPE`.
 
- *  WaterLevel: Specify a water level which will be added to the input bathymetry and wavemaker depth such as DEP_WK (internal wave generator) and DepthWaveMaker (left boundary generator). 
+* :code:`WaterLevel`: Specify a water level which will be added to the input bathymetry and wavemaker depth such as :code:`DEP_WK` (internal wave generator) and :code:`DepthWaveMaker` (left boundary generator). 
 
- .. note::   IF you add surge or tide level using 'WaterLevel',  please keep DEP\_WK the same as the original depth in the depth file because the water level will be automatically added to the model bathymetry. 
+ .. note::   IF you add surge or tide level using :code:`WaterLevel`,  please keep :code:`DEP_WK` the same as the original depth in the depth file because the water level will be automatically added to the model bathymetry. 
 
 **SPECIFICATION OF TIME**
  
- *  TOTAL\_TIME: simulation time in seconds
+* :code:`TOTAL_TIME`: simulation time in seconds.
 
- *  PLOT\_INTV: output interval in seconds (Note, output time is not exact because adaptive dt is used.)
+* :code:`PLOT_INTV`: output interval in seconds (Note, output time is not exact because adaptive :code:`dt` is used.)
 
- *  SCREEN\_INTV: time interval (s) of screen print. 
+* :code:`SCREEN_INTV`: time interval (s) of screen print. 
 
- *  PLOT\_INTV\_STATION: time interval (s) of gauge output
+* :code:`PLOT_INTV_STATION`: time interval (s) of gauge output.
 
- *  DT_fixed: time step (s) if use fixed DT. But DT_fixed will be checked by CFL. IF not satisfy CLF, DT/2, DT/4 ... will be checked until it satisfy CFL. Default is using variable DT based on CFL. 
+* :code:`DT_fixed`: time step (s) if use fixed DT. But :code:`DT_fixed` will be checked by the CFL condition. IF :code:`DT_fixed` does not satisfy CLF, DT/2, DT/4 ... will be checked until it satisfies CFL. Default is using variable DT based on CFL. 
 
 
 

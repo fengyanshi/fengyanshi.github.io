@@ -1,29 +1,3 @@
-<<<<<<< HEAD
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Irregular wave normal incidence &#8212; FUNWAVE Documentation</title>
-    <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-=======
 
 <!DOCTYPE html>
 
@@ -39,17 +13,11 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="_static/language_data.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
->>>>>>> origin/master
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Inlet + Sandbar + Beach" href="inlet_shoal.html" />
     <link rel="prev" title="Basics for model setup" href="rip_2d_info.html" /> 
-<<<<<<< HEAD
-  </head>
-  <body>
-=======
   </head><body>
->>>>>>> origin/master
 <div class="header">
  <p class="logo"><a href="https://fengyanshi.github.io/build/html/index.html">
   <img class="logo" src="_static/../../../images/Funwave.svg" alt="Logo"/>
@@ -75,26 +43,17 @@
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-<<<<<<< HEAD
-<h3><a href="index.html">Table Of Contents</a></h3>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="integration.html"><strong>INTEGRATION</strong></a></li>
-=======
 <h3><a href="index.html">Table of Contents</a></h3>
 <ul class="current">
->>>>>>> origin/master
 <li class="toctree-l1"><a class="reference internal" href="basics.html"><strong>BASICS</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="flowchart.html"><strong>ARCHITECTURE</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="setup.html"><strong>MODEL DOWNLOAD AND SETUP</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup.html">MODEL DOWNLOAD AND SETUP</a></li>
 <li class="toctree-l1"><a class="reference internal" href="definition.html"><strong>DEFINITIONS OF PARAMETERS</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="coupling_nesting.html"><strong>NESTING AND COUPLING</strong></a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="examples.html"><strong>EXAMPLES</strong></a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="examples.html#simple-tests-beginners-should-start-from-here">Simple tests <strong>(beginners should start from here)</strong></a></li>
 <li class="toctree-l2"><a class="reference internal" href="examples.html#benchmarks">Benchmarks</a></li>
-<<<<<<< HEAD
-=======
 <li class="toctree-l2"><a class="reference internal" href="examples.html#recent-usace-applications">Recent USACE Applications</a></li>
->>>>>>> origin/master
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="gallery.html"><strong>GALLERY</strong></a></li>
@@ -105,15 +64,6 @@
 </ul>
 
 <div id="searchbox" style="display: none" role="search">
-<<<<<<< HEAD
-  <h3>Quick search</h3>
-    <form class="search" action="search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-=======
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
@@ -121,7 +71,6 @@
       <input type="submit" value="Go" />
     </form>
     </div>
->>>>>>> origin/master
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -133,141 +82,88 @@
           <div class="body" role="main">
             
   <div class="section" id="irregular-wave-normal-incidence">
-<h1>Irregular wave normal incidence<a class="headerlink" href="#irregular-wave-normal-incidence" title="Permalink to this headline">¶</a></h1>
+<span id="section-rip-irregular"></span><h1>Irregular wave normal incidence<a class="headerlink" href="#irregular-wave-normal-incidence" title="Permalink to this headline">¶</a></h1>
 <div class="align-center figure">
 <a class="reference internal image-reference" href="_images/rip_vort.jpg"><img alt="alternate text" src="_images/rip_vort.jpg" style="width: 500px; height: 300px;" /></a>
 </div>
 <p>Figure: (left) snapshot of surface elevation, (middle) vorticity field, (right) mean current field</p>
-<p><strong>input.txt:</strong></p>
-<div class="line-block">
-<div class="line"><strong>Parallel(if applicable)</strong></div>
-<div class="line-block">
-<div class="line">PX = 4</div>
-<div class="line">PY = 4</div>
-</div>
-</div>
-<div class="line-block">
-<div class="line"><strong>Depth</strong></div>
-<div class="line-block">
-<div class="line">DEPTH_TYPE = DATA</div>
-<div class="line">DEPTH_FILE = ../bathy/depth_a15.txt</div>
-</div>
-</div>
+<p>The following sections wil be modified in “input.txt” for this example. The domain setup was defined in <a class="reference internal" href="rip_2d_info.html#section-rip-basics"><span class="std std-ref">Basics for model setup</span></a>.</p>
 <blockquote>
-<div><p>(refer to <a class="reference internal" href="grid.html#definition-grid"><span class="std std-ref">Grid and Computational Time</span></a>)</p>
-</div></blockquote>
-<div class="line-block">
-<div class="line"><strong>Output folder</strong></div>
-<div class="line-block">
-<div class="line">RESULT_FOLDER = output/</div>
+<div><p>Set a descriptive title for your simulation:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>!-----TITLE-----
+ TITLE = rip_2D
+</pre></div>
 </div>
+<p>Add an irregular wavemaker in a water depth of 13.0 m located 425.0 m from the left boundary with the following characteristics:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>!-----WAVEMAKER-----
+ WAVEMAKER = WK_IRR
+ DEP_WK = 13.0
+ Xc_WK = 425.0
+ Yc_WK = 0.0
+ FreqPeak = 0.1
+ FreqMin = 0.03
+ FreqMax = 0.5
+ Hmo = 1.0
+ GammaTMA = 5.0
+ ThetaPeak = 0.0
+ Sigma_Theta = 10.0
+</pre></div>
 </div>
-<div class="line-block">
-<div class="line"><strong>Dimensions</strong></div>
-<div class="line-block">
-<div class="line">Mglob = 512</div>
-<div class="line">Nglob = 250</div>
+<p>(refer to <a class="reference internal" href="wavemaker_para.html#definition-wavemaker"><span class="std std-ref">Wave-maker</span></a> for parameter definitions)</p>
+<p>Set the periodic boundary condition to TRUE:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>!-----PERIODIC BOUNDARY CONDITION-----
+ PERIODIC = T
+</pre></div>
 </div>
+<p>Set the sponge layer width to 60 m:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>!-----SPONGE LAYER-----
+ DIFFUSION_SPONGE = F
+ FRICTION_SPONGE = T
+ DIRECT_SPONGE = T
+ Csp = 0.0
+ CDsponge = 1.0
+ Sponge_west_width =  0.0
+ Sponge_east_width =  60.0
+ Sponge_south_width = 0.0
+ Sponge_north_width = 0.0
+</pre></div>
 </div>
-<div class="line-block">
-<div class="line"><strong>Time</strong></div>
-<div class="line-block">
-<div class="line">TOTAL_TIME = 1200.0</div>
-<div class="line">PLOT_INTV = 50.0</div>
-<div class="line">PLOT_INTV_STATION = 0.5</div>
-<div class="line">SCREEN_INTV = 50.0</div>
+<p>(refer to <a class="reference internal" href="info_sponge.html#info-sponge"><span class="std std-ref">Sponge Layers</span></a> for parameter definitions)</p>
+<p>Set the friction coefficient to 0.002:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>!-----PHYSICS-----
+ Cd = 0.002
+</pre></div>
 </div>
+<p><strong>Keep the default values</strong> for the <code class="code docutils literal notranslate"><span class="pre">NUMERICS</span></code>.</p>
+<p>Set the minimum depth for wetting and drying to 0.01:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>!-----WET-DRY-----
+ MinDepth = 0.01
+</pre></div>
 </div>
-<div class="line-block">
-<div class="line"><strong>Wave averaging property</strong></div>
-<div class="line-block">
-<div class="line">T_INTV_mean = 50.0</div>
-<div class="line">STEADY_TIME= 100.0</div>
+<p>Set the viscosity breaking scheme to FALSE:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>!-----BREAKING-----
+ VISCOSITY_BREAKING = F
+</pre></div>
 </div>
+<p>(refer to <a class="reference internal" href="info_breaking.html#example-breaking"><span class="std std-ref">Example: Breaking</span></a> for parameter definitions)</p>
+<p>Set the wave average parameters to the following:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>!-----WAVE AVERAGE-----
+ T_INTV_mean = 50.0
+ STEADY_TIME= 100.0
+</pre></div>
 </div>
-<div class="line-block">
-<div class="line"><strong>Grid sizes</strong></div>
-<div class="line-block">
-<div class="line">DX = 1.0</div>
-<div class="line">DY = 2.0</div>
+<p>Set the following output parameters to TRUE:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>!-----OUTPUT-----
+ ETA = T
+ U = T
+ V = T
+ Umean = T
+ Vmean = T
+ MASK = T
+ WaveHeight = T
+</pre></div>
 </div>
-</div>
-<div class="line-block">
-<div class="line"><strong>Wavemaker</strong></div>
-<div class="line-block">
-<div class="line">WAVEMAKER = WK_IRR</div>
-<div class="line">DEP_WK = 13.0</div>
-<div class="line">Xc_WK = 425.0</div>
-<div class="line">Yc_WK = 0.0</div>
-<div class="line">FreqPeak = 0.1</div>
-<div class="line">FreqMin = 0.03</div>
-<div class="line">FreqMax = 0.5</div>
-<div class="line">Hmo = 1.0</div>
-<div class="line">GammaTMA = 5.0</div>
-<div class="line">ThetaPeak = 0.0</div>
-<div class="line">Sigma_Theta = 10.0</div>
-</div>
-</div>
-<blockquote>
-<div><p>(refer to <a class="reference internal" href="wavemaker_para.html#definition-wavemaker"><span class="std std-ref">Wave-maker</span></a>)</p>
-</div></blockquote>
-<div class="line-block">
-<div class="line"><strong>Sponge layer</strong></div>
-<div class="line-block">
-<div class="line">FRICTION_SPONGE = T</div>
-<div class="line">DIRECT_SPONGE = T</div>
-<div class="line">Csp = 0.0</div>
-<div class="line">CDsponge = 1.0</div>
-<div class="line">Sponge_west_width =  0.0</div>
-<div class="line">Sponge_east_width =  60.0</div>
-<div class="line">Sponge_south_width = 0.0</div>
-<div class="line">Sponge_north_width = 0.0</div>
-</div>
-</div>
-<blockquote>
-<div><p>(refer to <a class="reference internal" href="info_sponge.html#info-sponge"><span class="std std-ref">Sponge Layers</span></a>)</p>
-</div></blockquote>
-<div class="line-block">
-<div class="line"><strong>Lateral boundary condition</strong></div>
-<div class="line-block">
-<div class="line">PERIODIC = T</div>
-</div>
-</div>
-<div class="line-block">
-<div class="line"><strong>Wetting and drying</strong></div>
-<div class="line-block">
-<div class="line">MinDepth=0.01</div>
-</div>
-</div>
-<div class="line-block">
-<div class="line"><strong>Physics</strong></div>
-<div class="line-block">
-<div class="line">Cd = 0.002</div>
-</div>
-</div>
-<div class="line-block">
-<div class="line"><strong>Breaking scheme</strong></div>
-<div class="line-block">
-<div class="line">VISCOSITY_BREAKING = F</div>
-</div>
-</div>
-<blockquote>
-<div><p>(refer to <a class="reference internal" href="info_breaking.html#example-breaking"><span class="std std-ref">Example: Breaking</span></a>)</p>
-</div></blockquote>
-<div class="line-block">
-<div class="line"><strong>Output</strong></div>
-<div class="line-block">
-<div class="line">ETA = T</div>
-<div class="line">U = T</div>
-<div class="line">V = T</div>
-<div class="line">Umean = T</div>
-<div class="line">Vmean = T</div>
-<div class="line">MASK = T</div>
-<div class="line">WaveHeight = T</div>
-</div>
-</div>
-<blockquote>
-<div><p>(refer to <a class="reference internal" href="output.html#definition-output"><span class="std std-ref">Output</span></a>)</p>
+<p>(refer to <a class="reference internal" href="output.html#definition-output"><span class="std std-ref">Output</span></a> for parameter definitions)</p>
 </div></blockquote>
 </div>
 
@@ -296,11 +192,7 @@
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2019, Fengyan Shi.
-<<<<<<< HEAD
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
-=======
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
->>>>>>> origin/master
     </div>
   </body>
 </html>
