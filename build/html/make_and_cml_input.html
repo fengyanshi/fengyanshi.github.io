@@ -1,0 +1,732 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Introduction to FUNWAVE-TVD Makefile &#8212; FUNWAVE Documentation</title>
+    <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="PROJECTS USING FUNWAVE-TVD" href="projects.html" /> 
+  </head><body>
+<div class="header">
+ <p class="logo"><a href="https://fengyanshi.github.io/build/html/index.html">
+  <img class="logo" src="_static/../../../images/Funwave.svg" alt="Logo"/>
+ </a></p>
+</div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="projects.html" title="PROJECTS USING FUNWAVE-TVD"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="addition.html" ><strong>ADDITIONAL INFORMATION</strong></a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="useful.html" accesskey="U">Useful links</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="basics.html"><strong>BASICS</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="flowchart.html"><strong>ARCHITECTURE</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup.html">MODEL DOWNLOAD AND SETUP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="definition.html"><strong>DEFINITIONS OF PARAMETERS</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="coupling_nesting.html"><strong>NESTING AND COUPLING</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html"><strong>EXAMPLES</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="gallery.html"><strong>GALLERY</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="news.html"><strong>FUNWAVE-TVD WORKSHOP</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html"><strong>BIBLIOGRAPHY</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="authors.html"><strong>AUTHORS</strong></a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="addition.html"><strong>ADDITIONAL INFORMATION</strong></a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="useful.html">Useful links</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="introduction-to-funwave-tvd-makefile">
+<h1>Introduction to FUNWAVE-TVD Makefile<a class="headerlink" href="#introduction-to-funwave-tvd-makefile" title="Permalink to this headline">¶</a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">Author</dt>
+<dd class="field-odd"><p>Zhouteng Ye</p>
+</dd>
+</dl>
+<div class="section" id="quick-start">
+<h2>Quick start<a class="headerlink" href="#quick-start" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="how-to-make">
+<h3>How to make<a class="headerlink" href="#how-to-make" title="Permalink to this headline">¶</a></h3>
+<p><strong>To whom load has the experience with GNU make, simply skip this
+section.</strong></p>
+<p>In FUNWAVE-TVD, the makefile is used to compile the FORTRAN code to an
+executable.</p>
+<p>If the makefile is named with <code class="docutils literal notranslate"><span class="pre">Makefile</span></code>, then in the terminal, <code class="docutils literal notranslate"><span class="pre">cd</span></code>
+into the path of the <code class="docutils literal notranslate"><span class="pre">Makefile</span></code> and simply type</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span>
+</pre></div>
+</div>
+<p>and the makefile will be executed (if not, make sure you have
+<code class="docutils literal notranslate"><span class="pre">GNU</span> <span class="pre">make</span></code> installed)</p>
+<p>If the the name of the makefile is not <code class="docutils literal notranslate"><span class="pre">Makefile</span></code>, for example,
+<code class="docutils literal notranslate"><span class="pre">foo</span></code>, then corresponding command to execute the <code class="docutils literal notranslate"><span class="pre">foo</span></code> makefile is</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="o">-</span><span class="n">f</span> <span class="n">foo</span>
+</pre></div>
+</div>
+<p>Sometimes the makefile has different options from the command line
+input. For example in FUNWAVE-TVD, there are options like <code class="docutils literal notranslate"><span class="pre">clean</span></code>,
+<code class="docutils literal notranslate"><span class="pre">clobber</span></code>. To execute the specific options, for example, <code class="docutils literal notranslate"><span class="pre">clean</span></code>,
+execute with</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">clean</span>
+</pre></div>
+</div>
+<p>for <code class="docutils literal notranslate"><span class="pre">Makefile</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="o">-</span><span class="n">f</span> <span class="n">foo</span> <span class="n">clean</span>
+</pre></div>
+</div>
+<p>for <code class="docutils literal notranslate"><span class="pre">foo</span></code>.</p>
+<p><strong>The following of the will assume the name of the makefile is Makefile
+so that there is no -f option.</strong></p>
+<p>If you are interested in how Makefile works and practice some simple
+examples, you can refer to the the <a class="reference external" href="#appendix">3</a>.</p>
+</div>
+<div class="section" id="two-ways-of-compiling">
+<h3>Two ways of compiling<a class="headerlink" href="#two-ways-of-compiling" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="compile-in-src-directory">
+<h4>Compile in src directory<a class="headerlink" href="#compile-in-src-directory" title="Permalink to this headline">¶</a></h4>
+<p>This is the way FUNWAVE-TVD used to work, the whole compile process is
+taken in <code class="docutils literal notranslate"><span class="pre">src</span></code> directory. To compile in this way, either copy the
+<code class="docutils literal notranslate"><span class="pre">Makefile</span></code> from <code class="docutils literal notranslate"><span class="pre">GNUMake/Old_Version_Makefiles</span></code> to <code class="docutils literal notranslate"><span class="pre">src</span></code> and type</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>make
+</pre></div>
+</div>
+<p>The executable will be generated in <code class="docutils literal notranslate"><span class="pre">src</span></code> path.</p>
+</div>
+<div class="section" id="compile-in-any-location-recommended">
+<h4>Compile in any location (Recommended)<a class="headerlink" href="#compile-in-any-location-recommended" title="Permalink to this headline">¶</a></h4>
+<p>copy one of the makefile in <code class="docutils literal notranslate"><span class="pre">GNUMake</span></code> directory to the location where
+you would like to compile FUNWAVE-TVD. By setting up the <strong>common
+variables</strong> in makefile and <strong>defined flags</strong>, then type</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>make
+</pre></div>
+</div>
+<p>to compile. A work directory will be generated and the executable will
+be in the work directory (if the <code class="docutils literal notranslate"><span class="pre">WORK_DIR</span> <span class="pre">=.</span></code> in makefile, then the
+work directory will be the current path).</p>
+</div>
+</div>
+<div class="section" id="example-of-compile-and-run-funwave-tvd">
+<h3>Example of compile and run FUNWAVE-TVD<a class="headerlink" href="#example-of-compile-and-run-funwave-tvd" title="Permalink to this headline">¶</a></h3>
+<p>In <code class="docutils literal notranslate"><span class="pre">simple_cases/surface_wave_1d</span></code>, an example <code class="docutils literal notranslate"><span class="pre">Makefile</span></code> could be
+found. In the example makefile, the <strong>common variable</strong> is</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">FUNWAVE_DIR</span> <span class="o">=</span> ../../..
+<span class="nv">WORK_DIR</span>    <span class="o">=</span> .
+<span class="nv">COMPILER</span>    <span class="o">=</span> gnu
+<span class="nv">PARALLEL</span>    <span class="o">=</span> <span class="nb">true</span>
+<span class="nv">PRECISION</span>   <span class="o">=</span> single
+<span class="nv">EXEC</span>        <span class="o">=</span> funwave
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">FUNWAVE_DIR</span></code> is set with a <em>relative path</em>, the <em>absolute path</em>
+is more recommended in practical usage. The <code class="docutils literal notranslate"><span class="pre">WORK_DIR</span> <span class="pre">=.</span></code> so that no
+new directory will be created. The <code class="docutils literal notranslate"><span class="pre">COMPILER</span> <span class="pre">=</span> <span class="pre">gnu</span></code>,
+<code class="docutils literal notranslate"><span class="pre">PARALLEL</span> <span class="pre">=</span> <span class="pre">true</span></code> and <code class="docutils literal notranslate"><span class="pre">PRECISION</span> <span class="pre">=</span> <span class="pre">single</span></code> so that this case will be
+compiled by <code class="docutils literal notranslate"><span class="pre">gnu</span> <span class="pre">compiler</span></code> and <code class="docutils literal notranslate"><span class="pre">mpi</span> <span class="pre">library</span></code> with simple precision.
+The final executable name will be <code class="docutils literal notranslate"><span class="pre">funwave--gnu-parallel-single</span></code>.</p>
+<div class="section" id="compile-the-executable">
+<h4>Compile the executable<a class="headerlink" href="#compile-the-executable" title="Permalink to this headline">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">cd</span></code> into <code class="docutils literal notranslate"><span class="pre">simple_cases/surface_wave_1d</span></code> directory and typing</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>make
+</pre></div>
+</div>
+<p>in , an executable named <code class="docutils literal notranslate"><span class="pre">funwave--gnu-parallel-single</span></code> will be
+created.</p>
+</div>
+<div class="section" id="run-the-executable">
+<h4>Run the executable<a class="headerlink" href="#run-the-executable" title="Permalink to this headline">¶</a></h4>
+<p>To run the executable without specify the file name, run</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>mpirun -np xxx ./funwave--gnu-parallel-single
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">xxx</span></code> is the number of the processor, which should be consistent to
+the value of <code class="docutils literal notranslate"><span class="pre">PX</span> <span class="pre">x</span> <span class="pre">PY</span></code> in the input file. In this case, the input file
+is <code class="docutils literal notranslate"><span class="pre">input.txt</span></code>.</p>
+<p>To specify the input file when running executable, executed with</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>mpirun -np xxx ./funwave--gnu-parallel-single FILENAME
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">FILENAME</span></code> is the name of the input file.</p>
+<p>In this case, we use the <code class="docutils literal notranslate"><span class="pre">input_solitary.txt</span></code> as the input file.
+<code class="docutils literal notranslate"><span class="pre">PX</span> <span class="pre">=</span> <span class="pre">4</span></code> and <code class="docutils literal notranslate"><span class="pre">PY</span> <span class="pre">=</span> <span class="pre">1</span></code>, so that the number of the processor is 4. The
+corresponding bash command would be</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>mpirun -np <span class="m">4</span> ./funwave--gnu-parallel-single input_solitary.txt
+</pre></div>
+</div>
+</div>
+<div class="section" id="clean-the-compiler-files">
+<h4>Clean the compiler files<a class="headerlink" href="#clean-the-compiler-files" title="Permalink to this headline">¶</a></h4>
+<p>To clean all the compiler related files, including objective files,
+module files and pre-processor FORTRAN files. Execute with</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>make clean
+</pre></div>
+</div>
+<p>To clean all the <code class="docutils literal notranslate"><span class="pre">compiler</span> <span class="pre">related</span> <span class="pre">files</span></code> and <code class="docutils literal notranslate"><span class="pre">the</span> <span class="pre">executable</span></code>,
+execute with</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>make clobber
+</pre></div>
+</div>
+<p>To clean up the whole work directory (<strong>Be careful with this option</strong>),
+execute with</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>make extra-clobber
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="common-variables-explained">
+<h3>Common variables explained<a class="headerlink" href="#common-variables-explained" title="Permalink to this headline">¶</a></h3>
+<p>An example of the <strong>common variables</strong> makefile</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">FUNWAVE_DIR</span> <span class="o">=</span> /home/FUNWAVE-TVD
+<span class="nv">WORK_DIR</span>    <span class="o">=</span> funwave-work
+<span class="nv">COMPILER</span>    <span class="o">=</span> gnu
+<span class="nv">PARALLEL</span>    <span class="o">=</span> <span class="nb">true</span>
+<span class="nv">EXEC</span>        <span class="o">=</span> funwave
+<span class="nv">PRECISION</span>   <span class="o">=</span> single
+</pre></div>
+</div>
+<ul>
+<li><p><strong>FUNWAVE_DIR</strong>:</p>
+<p>The path to FUNWAVE directory, can be either absolute path or
+reference path. To set to current directory, set <code class="docutils literal notranslate"><span class="pre">FUNWAVE_DIR</span> <span class="pre">=</span> <span class="pre">.</span></code></p>
+</li>
+<li><p><strong>WORK_DIR</strong>:</p>
+<p>The path to the work directory. A new directory will be created named
+$(WORK_DIR) To set to current directory, set <code class="docutils literal notranslate"><span class="pre">WORK_DIR</span> <span class="pre">=</span> <span class="pre">.</span></code></p>
+</li>
+<li><p><strong>COMPILER</strong>:</p>
+<p>Supported compiler: <code class="docutils literal notranslate"><span class="pre">gnu</span></code>, <code class="docutils literal notranslate"><span class="pre">intel</span></code>, and <code class="docutils literal notranslate"><span class="pre">pgi</span></code></p>
+</li>
+<li><p><strong>PARALLEL</strong>:</p>
+<p>parallel flags for the model, either <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code></p>
+</li>
+<li><p><strong>PRECISION</strong>:</p>
+<p>precision of the model, either <code class="docutils literal notranslate"><span class="pre">single</span></code> or <code class="docutils literal notranslate"><span class="pre">double</span></code></p>
+</li>
+<li><p><strong>EXEC</strong>:</p>
+<p>The name for executable. By default, the name of the executable will
+be “funwave-SUFFIX”. <code class="docutils literal notranslate"><span class="pre">SUFFIX</span></code> is a self-explanatory string
+depending on the values of the variables above. If the name of the
+executable is not <code class="docutils literal notranslate"><span class="pre">funwave</span></code>, for example, <code class="docutils literal notranslate"><span class="pre">foo</span></code>, then the
+executable name will be <code class="docutils literal notranslate"><span class="pre">foo</span></code> without any suffix.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="defined-flags-explained-unfinished">
+<h3>Defined flags explained (unfinished)<a class="headerlink" href="#defined-flags-explained-unfinished" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>FLAG_1 = -DCOUPLING</strong></p></li>
+<li><p><strong>FLAG_2 = -DZALPHA</strong></p></li>
+<li><p><strong>FLAG_3 = -DMANNING</strong></p></li>
+<li><p><strong>FLAG_4 = -DVESSEL</strong></p></li>
+<li><p><strong>FLAG_5 = -DMETEO</strong></p></li>
+<li><p><strong>FLAG_6 = -DWIND</strong></p></li>
+<li><p><strong>FLAG_7 = -DSEDIMENT</strong></p></li>
+<li><p><strong>FLAG_8 = -DCHECK_MASS_CONSERVATION</strong></p></li>
+<li><p><strong>FLAG_9 = -DTMP</strong></p></li>
+<li><p><strong>FLAG_10 = -DTRACKING</strong></p></li>
+</ul>
+</div>
+<div class="section" id="limitations-of-the-common-variables">
+<h3>Limitations of the Common variables<a class="headerlink" href="#limitations-of-the-common-variables" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="compiler-and-mpi-supported-by-the-basic-options">
+<h4>Compiler and MPI supported by the <strong>basic options</strong><a class="headerlink" href="#compiler-and-mpi-supported-by-the-basic-options" title="Permalink to this headline">¶</a></h4>
+<p>The combination of <code class="docutils literal notranslate"><span class="pre">COMPILER</span></code> and <code class="docutils literal notranslate"><span class="pre">PARALLEL</span></code> decides the name of the
+compiler command as below</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 46%" />
+<col style="width: 18%" />
+<col style="width: 18%" />
+<col style="width: 19%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p>gnu</p></th>
+<th class="head"><p>intel</p></th>
+<th class="head"><p>pgi</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>PARALLEL=false</p></td>
+<td><p>gfortran</p></td>
+<td><p>ifort</p></td>
+<td><p>pgfortran</p></td>
+</tr>
+<tr class="row-odd"><td><p>PARALLEL=true (openmpi)</p></td>
+<td><p>mpif90</p></td>
+<td><p>mpif90</p></td>
+<td><p>mpif90</p></td>
+</tr>
+<tr class="row-even"><td><p>PARALLEL=true (mpich)</p></td>
+<td><p>mpif90</p></td>
+<td><p>mpif90</p></td>
+<td><p>mpif90</p></td>
+</tr>
+<tr class="row-odd"><td><p>PARALLEL=true (intelmpi)</p></td>
+<td><p>mpif90</p></td>
+<td><p>mpiifort</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>the version of mpi can be specified by <code class="docutils literal notranslate"><span class="pre">MPI</span></code> in <code class="docutils literal notranslate"><span class="pre">uncommon</span> <span class="pre">variables</span></code>
+category. the</p>
+</div>
+</div>
+</div>
+<div class="section" id="customize-the-makefile">
+<h2>Customize the makefile<a class="headerlink" href="#customize-the-makefile" title="Permalink to this headline">¶</a></h2>
+<p>For some specific requirement, for example, computational environment,
+external libraries, one can either customize the main makefile or the
+essential makefile. Multiple versions of the makefiles and essential
+makefiles are</p>
+<div class="section" id="uncommon-variables-explained">
+<h3>Uncommon variables explained<a class="headerlink" href="#uncommon-variables-explained" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p><strong>SPHERICAL = false</strong></p>
+<p>Should be <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code>. If <code class="docutils literal notranslate"><span class="pre">true</span></code>, FUNWAVE-TVD will be
+compiled with spherical coordinate, if <code class="docutils literal notranslate"><span class="pre">false</span></code> (by default),
+FUNWAVE-TVD will be compiled wit Cartesian grid.</p>
+</li>
+<li><p><strong>DEBUG</strong></p>
+<p>Should be <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code>. The value of <code class="docutils literal notranslate"><span class="pre">DEBUG</span></code> Determine the
+debug and optimization flags as below</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 53%" />
+<col style="width: 31%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p>DEBUG=true</p></th>
+<th class="head"><p>DEBUG=false</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>gnu</p></td>
+<td><p>-O0 -g -Wall -fPIC</p></td>
+<td><p>-O2 -fPIC</p></td>
+</tr>
+<tr class="row-odd"><td><p>intel</p></td>
+<td><p>-O0 -check -warn -fPIC</p></td>
+<td><p>-O2 -fPIC</p></td>
+</tr>
+<tr class="row-even"><td><p>pgi</p></td>
+<td><p>-O0 -fPIC</p></td>
+<td><p>-O2 -fPIC -w</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p><strong>MPI</strong></p>
+<p>As mentioned before, the value of the <code class="docutils literal notranslate"><span class="pre">MPI</span></code> is referred to
+<a class="reference external" href="#FCOPTION">1.6.1</a>.</p>
+</li>
+<li><p><strong>DEF_FC</strong></p>
+<p>Use Defined compiler name for specific machine. If <code class="docutils literal notranslate"><span class="pre">DEF_FC</span></code> is
+empty, the compiler name would be determined by the <code class="docutils literal notranslate"><span class="pre">COMPILER</span></code>,
+<code class="docutils literal notranslate"><span class="pre">MPI</span></code> and <code class="docutils literal notranslate"><span class="pre">PARALLEL</span></code> (see <a class="reference external" href="#FCOPTION">1.6.1</a>). If <code class="docutils literal notranslate"><span class="pre">DEF_FC</span></code>
+has its value, for example, <code class="docutils literal notranslate"><span class="pre">DEF_FC</span> <span class="pre">=</span> <span class="pre">ftn</span></code>, then the code will be
+compiled with <code class="docutils literal notranslate"><span class="pre">fnt</span></code>.</p>
+</li>
+<li><p><strong>DEF_FC_FLAG</strong></p>
+<p>User Defined compiler flags. If <code class="docutils literal notranslate"><span class="pre">DEF_FC</span></code> is empty, <strong>DEF_FC_FLAG</strong>
+will do nothing to the makefile. While <code class="docutils literal notranslate"><span class="pre">DEF_FC</span></code> is non-empty,
+compiler flags will no long determined by <strong>DEBUG</strong>, but uses the
+value of <strong>DEF_FC_FLAG</strong>.</p>
+</li>
+<li><p><strong>INCS</strong></p>
+<p>Include file list (usually external libraries)</p>
+</li>
+<li><p><strong>LIBS</strong></p>
+<p>External libraries</p>
+</li>
+</ul>
+</div>
+<div class="section" id="customized-main-makefile">
+<h3>Customized main makefile<a class="headerlink" href="#customized-main-makefile" title="Permalink to this headline">¶</a></h3>
+<p>To customize the main makefile, simply adjust the uncommon variables.
+This is an easy way to do customization.</p>
+<p><strong>Some notes to the modification</strong></p>
+<ul>
+<li><p>To add <code class="docutils literal notranslate"><span class="pre">INC</span></code> or <code class="docutils literal notranslate"><span class="pre">LIBS</span></code>, one can add the value at the end or the
+line, or add new lines for any of the value in <code class="docutils literal notranslate"><span class="pre">LIBS</span></code>. For example,
+for some machine, the parallel intel compile is executed with
+<code class="docutils literal notranslate"><span class="pre">ifort</span></code> and <code class="docutils literal notranslate"><span class="pre">-lmpi</span></code> flag, then adding a new line with
+<code class="docutils literal notranslate"><span class="pre">MPILIB</span> <span class="pre">=</span> <span class="pre">-lmpi</span></code> will work.</p></li>
+<li><p>Be careful with <code class="docutils literal notranslate"><span class="pre">intel</span> <span class="pre">compiler</span></code> case. FUNWAVE-TVD actually has a
+<code class="docutils literal notranslate"><span class="pre">-DINTEL</span></code> flag, if the compiler actually relies on intel
+compiler(In some machine, sgi or Cray actually uses intel compiler),
+this flag should always be turned on.</p>
+<p>If the <code class="docutils literal notranslate"><span class="pre">DEF_FC</span></code> actually uses intel compiler, set
+<code class="docutils literal notranslate"><span class="pre">COMPILER</span> <span class="pre">=</span> <span class="pre">intel</span></code>.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="customized-the-essential-makefile">
+<h3>Customized the essential makefile<a class="headerlink" href="#customized-the-essential-makefile" title="Permalink to this headline">¶</a></h3>
+<p>There are different sections in the essential makefile. If you are
+familiar with GNU make, this way brings more flexibility.</p>
+<p><strong>Some notes to the modification</strong></p>
+<ul>
+<li><p>In this case, the <code class="docutils literal notranslate"><span class="pre">intel</span> <span class="pre">compiler</span></code> should also be taken care with
+as FUNWAVE-TVD has a <code class="docutils literal notranslate"><span class="pre">-DINTEL</span></code> flag, if the compiler actually
+relies on intel compiler(In some machine, sgi or Cray actually uses
+intel compiler), this flag should always be turned on.</p>
+<p>If you modify the Choice of <code class="docutils literal notranslate"><span class="pre">COMPILER</span></code> in the essential makefile,
+the following lines should be modified as well.</p>
+</li>
+</ul>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ifeq <span class="o">(</span><span class="k">$(</span>COMPILER<span class="k">)</span>,<span class="k">$(</span>filter <span class="k">$(</span>COMPILER<span class="k">)</span>, intel, sgi<span class="k">)</span><span class="o">)</span>
+  <span class="nv">FLAG_INTEL</span> <span class="o">=</span> -DINTEL
+endif
+</pre></div>
+</div>
+</div>
+<div class="section" id="convert-from-old-version-makefile-to-current-version">
+<h3>Convert from old version makefile to current version.<a class="headerlink" href="#convert-from-old-version-makefile-to-current-version" title="Permalink to this headline">¶</a></h3>
+<p>It is easy to convert the old version makefiles to the current version.
+The main difference are <code class="docutils literal notranslate"><span class="pre">FC</span></code>, <code class="docutils literal notranslate"><span class="pre">Defined</span> <span class="pre">flags</span></code>, <code class="docutils literal notranslate"><span class="pre">LIBS</span></code> and
+<code class="docutils literal notranslate"><span class="pre">INCS</span></code>. The following two examples shows how to modify the current
+version that works equivalent to the old version makefile.</p>
+<p><strong>NOTE: I do not have the access to ONYX or Topaz, the two examples are
+remaining to be tested. (July 25, 2019, Zhouteng Ye)</strong></p>
+<div class="section" id="example-of-editing-main-makefile">
+<h4>Example of editing main makefile<a class="headerlink" href="#example-of-editing-main-makefile" title="Permalink to this headline">¶</a></h4>
+<p>make a copy of <code class="docutils literal notranslate"><span class="pre">Makefile</span></code> named <code class="docutils literal notranslate"><span class="pre">Makefile_ONYX</span></code> and edit</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">DEF_FC</span> <span class="o">=</span> fnt
+<span class="nv">DEF_FC_FLAG</span> <span class="o">=</span> -module -O2 -g -fPic
+</pre></div>
+</div>
+<p>Since <code class="docutils literal notranslate"><span class="pre">DEF_FC</span></code> is not empty, the fortran compiler would be the value
+of <code class="docutils literal notranslate"><span class="pre">DEF_FC</span></code> and corresponding flags will be <code class="docutils literal notranslate"><span class="pre">DEF_FC_FLAG</span></code>.</p>
+</div>
+<div class="section" id="example-of-editing-essential-makefile">
+<h4>Example of editing essential makefile<a class="headerlink" href="#example-of-editing-essential-makefile" title="Permalink to this headline">¶</a></h4>
+<p>make a copy of <code class="docutils literal notranslate"><span class="pre">Make_Essential</span></code> named <code class="docutils literal notranslate"><span class="pre">Make_Essential_Topaz</span></code> and
+edit the <code class="docutils literal notranslate"><span class="pre">Fortran</span> <span class="pre">compiler</span></code> section as below.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ifneq <span class="o">(</span><span class="k">$(</span>DEF_FC<span class="k">)</span>,<span class="k">$(</span>filter <span class="k">$(</span>DEF_FC<span class="k">)</span>, <span class="s1">&#39;&#39;</span><span class="k">)</span><span class="o">)</span>
+  <span class="nv">FC</span> <span class="o">=</span> <span class="k">$(</span>DEF_FC<span class="k">)</span>
+<span class="k">else</span>
+ifeq <span class="o">(</span><span class="k">$(</span>COMPILER<span class="k">)</span>,<span class="k">$(</span>filter <span class="k">$(</span>COMPILER<span class="k">)</span>, intel<span class="k">)</span><span class="o">)</span>
+  <span class="nv">USE_MOD</span> <span class="o">=</span> -module <span class="k">$(</span>MOD_DIR<span class="k">)</span>
+  <span class="nv">FC</span> <span class="o">=</span> ifort
+  <span class="nv">MPILIB</span> <span class="o">=</span> -lmpi -Bdynamic
+<span class="k">else</span> ifeq <span class="o">(</span><span class="k">$(</span>COMPILER<span class="k">)</span>,<span class="k">$(</span>filter <span class="k">$(</span>COMPILER<span class="k">)</span>, sgi<span class="k">)</span><span class="o">)</span>
+  <span class="nv">USE_MOD</span> <span class="o">=</span> -module <span class="k">$(</span>MOD_DIR<span class="k">)</span>
+  <span class="nv">FC</span> <span class="o">=</span> mpiifort
+  <span class="nv">MPILIB</span> <span class="o">=</span> -Bdynamic
+<span class="k">else</span>
+<span class="k">$(</span>error Fatal ERROR: <span class="nv">COMPILER</span><span class="o">=</span><span class="k">$(</span>COMPILER<span class="k">)</span> and DEF_FC is empty, Please correct the COMPILER or customize the DEF_FC.<span class="k">)</span>
+endif
+endif
+</pre></div>
+</div>
+<p>Since both sgi and intel actually uses intel compiler, the following
+part should be modified as well</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ifeq <span class="o">(</span><span class="k">$(</span>COMPILER<span class="k">)</span>,<span class="k">$(</span>filter <span class="k">$(</span>COMPILER<span class="k">)</span>, intel, sgi<span class="k">)</span><span class="o">)</span>
+  <span class="nv">FLAG_INTEL</span> <span class="o">=</span> -DINTEL
+endif
+</pre></div>
+</div>
+<p>and in the main file, edit</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>include <span class="k">$(</span>FUNWAVE_DIR<span class="k">)</span>/GNUMake/Essential/Make_Essential_Topaz
+</pre></div>
+</div>
+<p>Now you should be able to choose <code class="docutils literal notranslate"><span class="pre">intel</span></code> or <code class="docutils literal notranslate"><span class="pre">sgi</span></code> from the
+<code class="docutils literal notranslate"><span class="pre">COMPILER</span></code> in the main makefile. When <code class="docutils literal notranslate"><span class="pre">COMPILER</span> <span class="pre">=</span> <span class="pre">sgi</span></code>,
+<code class="docutils literal notranslate"><span class="pre">FC</span> <span class="pre">=</span> <span class="pre">mpiifort</span></code>; when <code class="docutils literal notranslate"><span class="pre">COMPILER</span> <span class="pre">=</span> <span class="pre">intel</span></code>, <code class="docutils literal notranslate"><span class="pre">FC</span> <span class="pre">=</span> <span class="pre">ifort</span></code> and
+<code class="docutils literal notranslate"><span class="pre">MPILIB</span> <span class="pre">=</span> <span class="pre">-lmpi</span></code>. It should be noted that in this example,
+<code class="docutils literal notranslate"><span class="pre">PARALLEL</span></code> does nothing with the choice of compiler.</p>
+</div>
+</div>
+<div class="section" id="debug-during-customization">
+<h3>Debug during customization<a class="headerlink" href="#debug-during-customization" title="Permalink to this headline">¶</a></h3>
+<p>The following two commands would be useful while modifying the main
+makefile and essential makefile.</p>
+<ul class="simple">
+<li><p><strong>make check-env</strong> Print the compier version and mpi version</p></li>
+<li><p><strong>make print-foo</strong> Check the value of <code class="docutils literal notranslate"><span class="pre">foo</span></code> in Makefile (Or
+Makefile_Essential) For example, <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">print</span> <span class="pre">$(EXEC)</span></code> and you will
+see the final <code class="docutils literal notranslate"><span class="pre">$(EXEC)</span></code> name</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="appendix-compile-a-project-with-makefile">
+<h2>Appendix: Compile a project with Makefile<a class="headerlink" href="#appendix-compile-a-project-with-makefile" title="Permalink to this headline">¶</a></h2>
+<p>Starting with an example project with 2 files</p>
+<p><code class="docutils literal notranslate"><span class="pre">pre_processor.f90</span></code></p>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">program </span><span class="n">main</span>
+  <span class="k">Implicit None</span>
+<span class="cp">#if defined (double_precision)</span>
+  <span class="kt">Integer</span><span class="p">,</span> <span class="k">Parameter</span> <span class="kd">::</span> <span class="n">SP</span> <span class="o">=</span> <span class="mi">8</span>
+<span class="cp">#else</span>
+  <span class="kt">Integer</span><span class="p">,</span> <span class="k">Parameter</span> <span class="kd">::</span> <span class="n">SP</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="cp">#endif</span>
+
+  <span class="kt">Real</span><span class="p">(</span><span class="n">SP</span><span class="p">)</span> <span class="kd">::</span> <span class="n">test</span> <span class="o">=</span> <span class="mf">1.0_sp</span> <span class="o">/</span> <span class="mf">3.0_sp</span>
+
+<span class="cp">#if defined (method_1)</span>
+  <span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="s1">&#39;method_1, test = &#39;</span><span class="p">,</span> <span class="n">test</span>
+<span class="cp">#elif defined (method_2)</span>
+  <span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="s1">&#39;method_2, test = &#39;</span><span class="p">,</span> <span class="n">test</span>
+<span class="cp">#elif defined (method_3)</span>
+  <span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="s1">&#39;method_3, test = &#39;</span><span class="p">,</span> <span class="n">test</span>
+<span class="cp">#endif</span>
+<span class="k">end program </span><span class="n">main</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">sub.f90</span></code></p>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="cp">#if defined (method_1)</span>
+<span class="k">subroutine </span><span class="n">sub</span>
+  <span class="k">print</span> <span class="o">*</span><span class="p">,</span><span class="s1">&#39;method_1&#39;</span>
+<span class="k">end subroutine </span><span class="n">sub</span>
+<span class="cp">#elif defined (method_2)</span>
+<span class="k">subroutine </span><span class="n">sub</span>
+  <span class="k">print</span> <span class="o">*</span><span class="p">,</span><span class="s1">&#39;method_2&#39;</span>
+<span class="k">end subroutine </span><span class="n">sub</span>
+<span class="cp">#else</span>
+<span class="k">subroutine </span><span class="n">sub</span>
+  <span class="k">print</span> <span class="o">*</span><span class="p">,</span><span class="s1">&#39;method_3&#39;</span>
+<span class="k">end subroutine </span><span class="n">sub</span>
+<span class="cp">#endif</span>
+</pre></div>
+</div>
+<p>To compile the code with <code class="docutils literal notranslate"><span class="pre">method_1</span></code>, one way is to apply pre-processor
+to each <code class="docutils literal notranslate"><span class="pre">.f95</span></code> and compile the files to <code class="docutils literal notranslate"><span class="pre">.o</span></code> file and link the two
+<code class="docutils literal notranslate"><span class="pre">.o</span></code> files into an executable bu the following commands.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cpp -P -Ddouble_precision -Dmethod_1 pre_processor.f95 pre_processor.f90
+gfortran -c -O3 pre_processor.f90 -o pre_processor.o
+cpp -P -Ddouble_precision -Dmethod_1 sub.f95 sub.f90
+gfortran -c -O3 sub.f90 -o sub.o
+gfortran -O3 -o run pre_processor.o sub.o
+</pre></div>
+</div>
+<p>What if we have many files in a project? Do we have to modify the
+compile command every time a modification is made to the project? If you
+use makefile, that would never happen.</p>
+<p>In some aspect of view, Makefile is a way to assign rules to the compile
+process. In this way, when you modify your project with the rule written
+in makefile, you will not have to always modify the makefile.</p>
+<p><strong>if you are new to makefile, I recommend not only to execute file, but
+also see the popup scripts on screen and the new files generated by the
+makefile</strong></p>
+<div class="section" id="first-makefile">
+<h3>First makefile<a class="headerlink" href="#first-makefile" title="Permalink to this headline">¶</a></h3>
+<p>In the first makefile, the only rule is <code class="docutils literal notranslate"><span class="pre">run</span></code> and <code class="docutils literal notranslate"><span class="pre">clean</span></code>, the
+<code class="docutils literal notranslate"><span class="pre">run</span></code> part is exactly to execute the command line one by one. and the
+clean part will clean up all the pre processor files <code class="docutils literal notranslate"><span class="pre">.f90</span></code>, objective
+file <code class="docutils literal notranslate"><span class="pre">.o</span></code> and the executable <code class="docutils literal notranslate"><span class="pre">run</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Makefile-1</span></code></p>
+<div class="highlight-makefile notranslate"><div class="highlight"><pre><span></span><span class="nf">run</span><span class="o">:</span>
+  cpp -P -Ddouble_precision -Dmethod_1 pre_processor.f95 pre_processor.f90
+  gfortran -c -O3 pre_processor.f90 -o pre_processor.o
+  cpp -P -Ddouble_precision -Dmethod_1 sub.f95 sub.f90
+  gfortran -c -O3 sub.f90 -o sub.o
+  gfortran -O3 -o run pre_processor.o sub.o
+
+<span class="nf">clean</span><span class="o">:</span>
+  rm pre_processor.f90
+  rm pre_processor.o
+  rm sub.f90
+  rm sub.o
+  rm run
+</pre></div>
+</div>
+<p>To compile:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make -f Makefile-1
+</pre></div>
+</div>
+<p>to clean:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make -f Makefile-1 clean
+</pre></div>
+</div>
+<p>to run the code:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./run
+</pre></div>
+</div>
+</div>
+<div class="section" id="second-makefile">
+<h3>Second makefile<a class="headerlink" href="#second-makefile" title="Permalink to this headline">¶</a></h3>
+<p>Now, the execution part is the same as Makefile-1, the only difference
+is some of the command becomes variable If you want to modify something,
+such as compiler, optimization flag, pre-processor flag, you do not have
+to modify all the way through the execution part.</p>
+<p>If you look the the command windows, you will see the compiles command
+in the command window is almost the same as it is for <code class="docutils literal notranslate"><span class="pre">Makefile-1</span></code>
+(except for one additional flag)</p>
+<p><code class="docutils literal notranslate"><span class="pre">Makefile-2</span></code></p>
+<div class="highlight-makefile notranslate"><div class="highlight"><pre><span></span><span class="nv">EXEC</span> <span class="o">=</span> run <span class="c1"># the name of the execution file</span>
+<span class="nv">FC</span> <span class="o">=</span> gfortran <span class="c1"># the compiler, you can use intel, pgi, etc.</span>
+<span class="nv">FCOPT</span> <span class="o">=</span> -O3   <span class="c1"># OPT flag for fortran compiler</span>
+<span class="nv">PP</span> <span class="o">=</span> cpp  <span class="c1"># C pre-processor. cpp for GNU, fpp for intel</span>
+
+<span class="c"># pre processor flags, only the correct flag will affect the code,</span>
+<span class="c">#   the rest of the flags, either not exist in the fortran code, or</span>
+<span class="c">#   null, will not affect the result of the pre-processor.</span>
+<span class="nv">CPPFLAG</span> <span class="o">=</span> -P <span class="k">$(</span>FLAG_1<span class="k">)</span> <span class="k">$(</span>FLAG_2<span class="k">)</span> <span class="k">$(</span>FALG_3<span class="k">)</span> <span class="k">$(</span>FLAG_4<span class="k">)</span>
+<span class="nv">FLAG_1</span> <span class="o">=</span> -Ddouble_precision
+<span class="nv">FLAG_2</span> <span class="o">=</span> -Danything_is_okay
+<span class="c"># FLAG_3 = -Dor_not_used</span>
+<span class="nv">FLAG_4</span> <span class="o">=</span> -Dmethod_1
+
+<span class="nf">$(EXEC)</span><span class="o">:</span>
+  <span class="k">$(</span>PP<span class="k">)</span> <span class="k">$(</span>CPPFLAG<span class="k">)</span> <span class="k">$(</span>FLAG_1<span class="k">)</span> <span class="k">$(</span>FLAG_2<span class="k">)</span> <span class="k">$(</span>FLAG_3<span class="k">)</span> <span class="k">$(</span>FLAG_4<span class="k">)</span> pre_processor.f95 pre_processor.f90
+  <span class="k">$(</span>FC<span class="k">)</span> -c <span class="k">$(</span>FC_OPT<span class="k">)</span> pre_processor.f90 -o pre_processor.o
+  <span class="k">$(</span>PP<span class="k">)</span> <span class="k">$(</span>CPPFLAG<span class="k">)</span> <span class="k">$(</span>FLAG_1<span class="k">)</span> <span class="k">$(</span>FLAG_2<span class="k">)</span> <span class="k">$(</span>FLAG_3<span class="k">)</span> <span class="k">$(</span>FLAG_4<span class="k">)</span> -P -Ddouble_precision -Dmethod_1 sub.f95 sub.f90
+  <span class="k">$(</span>FC<span class="k">)</span> -c <span class="k">$(</span>FC_OPT<span class="k">)</span> sub.f90 -o sub.o
+  <span class="k">$(</span>FC<span class="k">)</span>  <span class="k">$(</span>FC_OPT<span class="k">)</span> -o <span class="k">$(</span>EXEC<span class="k">)</span> pre_processor.o sub.o
+
+<span class="nf">clean</span><span class="o">:</span>
+  rm *.f90
+  rm *.o
+  rm <span class="k">$(</span>EXEC<span class="k">)</span>
+</pre></div>
+</div>
+<p>To compile:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make -f Makefile-2
+</pre></div>
+</div>
+<p>to clean:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make -f Makefile-2 clean
+</pre></div>
+</div>
+<p>to run the code:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./run
+</pre></div>
+</div>
+</div>
+<div class="section" id="third-makefile">
+<h3>Third makefile<a class="headerlink" href="#third-makefile" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">Makefile-2</span></code> looks much better than <code class="docutils literal notranslate"><span class="pre">Makefile-1</span></code>, but not enough.
+What if we have 1000 .f95 files in a project? Here we have a rule for
+all *.95 to all *.o</p>
+<p>If you look the the command windows, you will see the compile command in
+the command window is identical to the case of Makefile-2</p>
+<p><code class="docutils literal notranslate"><span class="pre">Makefile-3</span></code></p>
+<div class="highlight-makefile notranslate"><div class="highlight"><pre><span></span><span class="nv">EXEC</span> <span class="o">=</span> run <span class="c1"># the name of the execution file</span>
+<span class="nv">FC</span> <span class="o">=</span> gfortran <span class="c1"># the compiler, you can use intel, pgi, etc.</span>
+<span class="nv">FCOPT</span> <span class="o">=</span> -O3   <span class="c1"># OPT flag for fortran compiler</span>
+<span class="nv">PP</span> <span class="o">=</span> cpp  <span class="c1"># C pre-processor. cpp for GNU, fpp for intel</span>
+
+<span class="c"># pre processor flags, only the correct flag will affect the code,</span>
+<span class="c">#   the rest of the flags, either not exist in the fortran code, or</span>
+<span class="c">#   null, will not affect the result of the pre-processor.</span>
+<span class="nv">CPPFLAG</span> <span class="o">=</span> -P <span class="k">$(</span>FLAG_1<span class="k">)</span> <span class="k">$(</span>FLAG_2<span class="k">)</span> <span class="k">$(</span>FALG_3<span class="k">)</span> <span class="k">$(</span>FLAG_4<span class="k">)</span>
+<span class="nv">FLAG_1</span> <span class="o">=</span> -Ddouble_precision
+<span class="nv">FLAG_2</span> <span class="o">=</span> -Danything_is_okay
+<span class="c"># FLAG_3 = -Dor_not_used</span>
+<span class="nv">FLAG_4</span> <span class="o">=</span> -Dmethod_1
+
+<span class="c"># if you know the dependency of the fortran file, you can simply</span>
+<span class="c">#   list them in one line</span>
+
+<span class="c"># rule for *.95 to *.o</span>
+<span class="nf">.SUFFIXES</span><span class="o">:</span> .<span class="n">o</span> .<span class="n">f</span>90 .<span class="n">f</span>95
+<span class="nv">SRCS</span> <span class="o">=</span> pre_processor.f95 sub.f95
+<span class="nv">OBJS</span> <span class="o">=</span> <span class="k">$(</span>SRCS:.f95<span class="o">=</span>.o<span class="k">)</span>
+<span class="nf">.f95.o</span><span class="o">:</span>
+  <span class="k">$(</span>PP<span class="k">)</span> <span class="k">$(</span>CPPFLAG<span class="k">)</span> <span class="nv">$*</span>.f95 &gt; <span class="nv">$*</span>.f90
+  <span class="k">$(</span>FC<span class="k">)</span>  -c <span class="k">$(</span>FFLAGS<span class="k">)</span> <span class="k">$(</span>INCS<span class="k">)</span> <span class="nv">$*</span>.f90
+
+<span class="c"># after all .o is gathered, link and generate the executable</span>
+<span class="nf">$(EXEC)</span><span class="o">:</span> <span class="k">$(</span><span class="nv">OBJS</span><span class="k">)</span>
+  <span class="k">$(</span>FC<span class="k">)</span>  <span class="k">$(</span>FC_OPT<span class="k">)</span> -o <span class="k">$(</span>EXEC<span class="k">)</span> <span class="k">$(</span>OBJS<span class="k">)</span>
+
+<span class="nf">clean</span><span class="o">:</span>
+  rm *.f90
+  rm *.o
+  rm <span class="k">$(</span>EXEC<span class="k">)</span>
+</pre></div>
+</div>
+<p>To compile:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make -f Makefile-3
+</pre></div>
+</div>
+<p>to clean:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make -f Makefile-3 clean
+</pre></div>
+</div>
+<p>For <code class="docutils literal notranslate"><span class="pre">makefile-3</span></code> you do not have to modify the <code class="docutils literal notranslate"><span class="pre">$(EXEC)</span></code> or
+<code class="docutils literal notranslate"><span class="pre">.f95.o</span></code> part, when anything change happens to the files in the
+project, you only need to modify <code class="docutils literal notranslate"><span class="pre">$(SRCS)</span></code>.</p>
+</div>
+<div class="section" id="more-about-makefile">
+<h3>More about makefile<a class="headerlink" href="#more-about-makefile" title="Permalink to this headline">¶</a></h3>
+<p>Actually, the <code class="docutils literal notranslate"><span class="pre">makefile-3</span></code> is very similar to the old version in
+<code class="docutils literal notranslate"><span class="pre">FUNWAVE-TVD</span></code>.</p>
+<p>If you can compile some of your simple code with the above three
+versions of makefile, you should be able to modify and used it for your
+daily project.</p>
+<p>But makefile can do much more for you. You can gradually modify your
+makefile to make it better.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="projects.html" title="PROJECTS USING FUNWAVE-TVD"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="addition.html" ><strong>ADDITIONAL INFORMATION</strong></a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="useful.html" >Useful links</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, Fengyan Shi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
+    </div>
+  </body>
+</html>
