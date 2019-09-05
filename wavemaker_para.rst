@@ -132,6 +132,8 @@ For theory about the wavemaker, see :ref:`section_wavemaker`
 
  * :code:`Xc_WK`: x coordinate (m) for Wei and Kirby (1999) wavemaker.
 
+ * :code:`Yc_WK`: y coordinate (m) for Wei and Kirby (1999) wavemaker.
+
  * :code:`Ywidth_WK`: width (m) in y direction for Wei and Kirby (1999) wavemaker. Default: LARGE (999999.0).
 
  * :code:`Tperiod`: period (s) of regular wave for Wei and Kirby (1999) wavemaker.
