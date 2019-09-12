@@ -1,7 +1,7 @@
 .. _section_sed_equation:
 
-Suspended Sediment Transport Equation
-**************************************
+Suspended Sediment Transport Equation (Non-cohesive)
+******************************************************
 
 The sediment transport module calculates sediment transport induced by both suspended load and bedload. The morphological module calculates the bed evolution based on the sediment continuity equation.
 

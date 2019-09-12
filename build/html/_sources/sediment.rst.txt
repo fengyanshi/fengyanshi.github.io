@@ -49,6 +49,7 @@ DETAILS
    :maxdepth: 2
 
    sed_equation
+   sed_equation_cohesive
    bedload
    bed_equation
    slope_limiting
