@@ -34,7 +34,7 @@ This version  features  several theoretical and numerical improvements, includin
 5. Lagrangian tracking;
 6. Option for parallel computation. 
 
-The most recent developments include ship-wake generation (`Shi et al., 2018 <https://www.sciencedirect.com/science/article/pii/S0378383917304246>`_), meteo-tsunami generation (`Woodruff et al., 2018 <https://icce-ojs-tamu.tdl.org/icce/index.php/icce/article/view/8470>`_), and sediment transport and morphological changes (`Tehranirad et al., 2016 <https://coastal.udel.edu/research-2/cacr-reports/>`_,`Malej et al., 2019 <https://apps.dtic.mil/dtic/tr/fulltext/u2/1074624.pdf>`_).
+The most recent developments include ship-wake generation (`Shi et al., 2018 <https://www.sciencedirect.com/science/article/pii/S0378383917304246>`_), meteo-tsunami generation (`Woodruff et al., 2018 <https://icce-ojs-tamu.tdl.org/icce/index.php/icce/article/view/8470>`_), and sediment transport and morphological changes (`Tehranirad et al., 2016 <https://coastal.udel.edu/research-2/cacr-reports/>`_, `Malej et al., 2019 <https://apps.dtic.mil/dtic/tr/fulltext/u2/1074624.pdf>`_).
 
 **Where to start**
 
