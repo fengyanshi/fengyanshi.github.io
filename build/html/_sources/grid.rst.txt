@@ -57,6 +57,8 @@ Grid and Computational Time
 
 * :code:`PLOT_INTV_STATION`: time interval (s) of gauge output.
 
+* :code:`PLOT_START_TIME`: start time for output of field results (s). Default: 0.0
+
 * :code:`DT_fixed`: time step (s) if use fixed DT. But :code:`DT_fixed` will be checked by the CFL condition. IF :code:`DT_fixed` does not satisfy CLF, DT/2, DT/4 ... will be checked until it satisfies CFL. Default is using variable DT based on CFL. 
 
 

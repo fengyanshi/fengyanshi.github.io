@@ -63,6 +63,7 @@ An example "input.txt" file is presented below. This file is from the :ref:`Wave
          PLOT_INTV = 10.0 
          PLOT_INTV_STATION = 0.5 
          SCREEN_INTV = 10.0 
+         PLOT_START_TIME = 100.0
 
         ! -----------------GRID---------------------------------- 
         ! if use spherical grid, in decimal degrees 
