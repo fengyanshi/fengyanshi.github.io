@@ -68,7 +68,7 @@ For theory about the wavemaker, see :ref:`section_wavemaker`
 
        0.01133044 0.00973217 ... (amplitude,m)
 
-  An example for preparing WaveCompFile can be found in /simple_cases/beach_2d/spectral_data/. It is a case which convert wave data from FRF to the model input. Run the matlab script mk_2d_1d_spec_frf.m to generate a file called wave2d_frf.txt. In input.txt, specify :code:`WaveCompFile = ../spectral_data/MATLAB/wave2d_frf.txt`
+  An example for preparing WaveCompFile can be found in /simple_cases/beach_2d/spectral_data/. It is a case which converts wave data from FRF to the model input. Run the matlab script mk_2d_1d_spec_frf.m to generate a file called wave2d_frf.txt. In input.txt, specify :code:`WaveCompFile = ../spectral_data/MATLAB/wave2d_frf.txt`
   
 
   The read format in fortran:
