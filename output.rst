@@ -92,16 +92,27 @@ To get time series of surface elevation, u and v at interested locations, you ca
 
   Example: refer to :ref:`example_station_file`
 
-Output for stations is a series of numbered files such as :code:`sta_0001, sta_0002 ....` (NOTE: four digit numbers here vs. five digit numbers for 2D output like :code:`eta_00001`).
+Output for stations is a series of numbered files such as :code:`sta_0001, sta_0002 ....` (NOTE: four digit numbers here vs. five digit numbers for 2D output like :code:`eta_00001`). The output file for stations contains four columns: time, eta, u, and v. 
 
- * ASCII format
+The version after 3.4 uses a buffer to write out stations to speed up the program on a large scale HPC. The array dimensions for the buffer are (StationOutputBuffer,NumberStations,4), where StationOutputBuffer =1000 by default. You can also specify StationOutputBuffer in input.txt. An example to set StationOutputBuffer is in /simple_cases/tide_constant/
+
+  .. code-block:: rest
+
+     TOTAL_TIME = 200.0 
+     PLOT_INTV = 1.0 
+     PLOT_INTV_STATION = 0.5 
+     SCREEN_INTV = 1.0 
+     StationOutputBuffer = 100
+
+
+* ASCII format
    
    The default format is ASCII.  The format and read algorithm are  consistent with a depth file.
 
    A station file contains four columns, which are values of time (s), eta (m), u (m/s) and v (m/s), respectively. 
 
 
- * BINARY format
+* BINARY format
 
    When :code:`FIELD_IO_TYPE = BINARY` is specified in "input.txt", the 2D output files such as :code:`eta_00001, ...` are in the binary format. Here's an example of reading in:
  
@@ -148,7 +159,7 @@ Output for stations is a series of numbered files such as :code:`sta_0001, sta_0
 
   Station files do not have Binary format. 
 
- * Other format
+* Other format
 
    Other formats such as NetCDF and HDF5 are also provided but not distributed in the master Github repository. 
 

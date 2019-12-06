@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Parameters for Central Module &#8212; FUNWAVE Documentation</title>
+    <title>Tide and Surge Boundary Conditions &#8212; FUNWAVE Documentation</title>
     <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -15,8 +15,8 @@
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Project" href="title.html" />
-    <link rel="prev" title="DEFINITIONS OF PARAMETERS" href="definition.html" /> 
+    <link rel="next" title="Wave Statistics" href="statistics.html" />
+    <link rel="prev" title="Periodic Boundary Condition" href="periodic.html" /> 
   </head><body>
 <div class="header">
  <p class="logo"><a href="https://fengyanshi.github.io/build/html/index.html">
@@ -31,13 +31,14 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="title.html" title="Project"
+          <a href="statistics.html" title="Wave Statistics"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="definition.html" title="DEFINITIONS OF PARAMETERS"
+          <a href="periodic.html" title="Periodic Boundary Condition"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="definition.html" accesskey="U"><strong>DEFINITIONS OF PARAMETERS</strong></a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="definition.html" ><strong>DEFINITIONS OF PARAMETERS</strong></a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="central_para.html" accesskey="U">Parameters for Central Module</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -79,26 +80,47 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="parameters-for-central-module">
-<span id="section-central-para"></span><h1>Parameters for Central Module<a class="headerlink" href="#parameters-for-central-module" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="title.html">Project</a></li>
-<li class="toctree-l1"><a class="reference internal" href="parallelization.html">Parallelization</a></li>
-<li class="toctree-l1"><a class="reference internal" href="grid.html">Grid and Computational Time</a></li>
-<li class="toctree-l1"><a class="reference internal" href="physics.html">Physics (dispersion, breaking, friction)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="numerics.html">Numerical Parameters</a></li>
-<li class="toctree-l1"><a class="reference internal" href="wavemaker_para.html">Wave-maker</a></li>
-<li class="toctree-l1"><a class="reference internal" href="periodic.html">Periodic Boundary Condition</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tide_surge.html">Tide and Surge Boundary Conditions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="statistics.html">Wave Statistics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sponge.html">Sponge Layer</a></li>
-<li class="toctree-l1"><a class="reference internal" href="breakwater.html">Breakwater and Obstacle</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bathymetry_correction.html">Bathymetry Correction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="hotstart.html">Hot Start</a></li>
-<li class="toctree-l1"><a class="reference internal" href="post.html">Post Processing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="output.html">Output</a></li>
+  <div class="section" id="tide-and-surge-boundary-conditions">
+<span id="section-tide"></span><h1>Tide and Surge Boundary Conditions<a class="headerlink" href="#tide-and-surge-boundary-conditions" title="Permalink to this headline">¶</a></h1>
+<p><strong>SPECIFICATION OF TIDE AND SURGE OPEN BOUNDARY CONDITIONS</strong></p>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">TIDAL_BC</span></code>: logical parameter for tide and surge open boundary conditions, T - tide and surge at open boundaries, F - no tide or surge.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">TideBcType</span></code>: string parameter for data types. Default: TideBcType = CONSTANT</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">TideWest_ETA</span></code>: constant eta value at the WEST boundary.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">TideWest_U</span></code>: constant u value at the WEST boundary, defalut: 0.0.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">TideWest_V</span></code>: constant v value at the WEST boundary, defalut: 0.0.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">TideEast_ETA</span></code>: constant eta value at the EAST boundary.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">TideEast_U</span></code>: constant u value at the EAST boundary, defalut: 0.0.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">TideEast_V</span></code>: constant v value at the EAST boundary, defalut: 0.0.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">TideSouth_ETA</span></code>: constant eta value at the SOUTH boundary.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">TideSouth_U</span></code>: constant u value at the SOUTH boundary, defalut: 0.0.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">TideSouth_V</span></code>: constant v value at the SOUTH boundary, defalut: 0.0.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">TideNorth_ETA</span></code>: constant eta value at the NORTH boundary.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">TideNorth_U</span></code>: constant u value at the NORTH boundary, defalut: 0.0.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">TideNorth_V</span></code>: constant v value at the NORTH boundary, defalut: 0.0.</p></li>
 </ul>
+<p>IF no ETA values at all four boundaries, Tide and Surge Boundary Condition is invalid.</p>
+<p>Example (in input.txt).</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>! ---------------- TIDE BOUNDARY ----------------------
+  TIDAL_BC = T
+  TideBcType = CONSTANT
+  TideWest_ETA = 1.0
+  TideEast_ETA = 1.0
+! ----------------WAVEMAKER------------------------------
+  WAVEMAKER = WK_REG
+  DEP_WK = 8.0
+  Xc_WK = 150.0
+  Yc_WK = 0.0
+  Tperiod = 8.0
+  AMP_WK = 0.5
+  Theta_WK = 0.0
+  Delta_WK = 3.0
+</pre></div>
+</div>
+<p>A simple case is tested in /simple_cases/tide_constant/</p>
+<p>This example specifies constant eta=1.0 m at both west and east boundaries. u and v are not specified and will be zero by default. Waves are generated at x=150m.</p>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="_images/tide_snap.jpg"><img alt="alternate text" src="_images/tide_snap.jpg" style="width: 500px; height: 200px;" /></a>
 </div>
 </div>
 
@@ -115,13 +137,14 @@
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="title.html" title="Project"
+          <a href="statistics.html" title="Wave Statistics"
              >next</a> |</li>
         <li class="right" >
-          <a href="definition.html" title="DEFINITIONS OF PARAMETERS"
+          <a href="periodic.html" title="Periodic Boundary Condition"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="definition.html" ><strong>DEFINITIONS OF PARAMETERS</strong></a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="definition.html" ><strong>DEFINITIONS OF PARAMETERS</strong></a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="central_para.html" >Parameters for Central Module</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
