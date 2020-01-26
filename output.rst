@@ -10,6 +10,7 @@ Output
 **SPECIFICATION OF OUTPUT VARIABLES**
 
 * :code:`NumberStations`: number of station for output. If NumberStations :math:`> 0`, need input i,j in :code:`STATIONS_FILE`
+* :code:`OUTPUT_RES`: integer parameter for output data resolution. e.g. 2 for print every 2 points 
 * :code:`DEPTH_OUT`: logical parameter for output depth. T or F. 
 * :code:`U`: logical parameter for output u. T or F. 
 * :code:`V`: logical parameter for output v. T or F. 
