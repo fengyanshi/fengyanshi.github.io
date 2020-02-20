@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Multiple vessels-induced morphology changes &#8212; FUNWAVE Documentation</title>
+    <title>Single vessel + cohesive sediment &#8212; FUNWAVE Documentation</title>
     <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -15,7 +15,7 @@
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Meteotsunami" href="meteo.html" />
+    <link rel="next" title="Multiple vessels-induced morphology changes" href="vessel_morpho_multiple.html" />
     <link rel="prev" title="Single vessel + non-cohesive sediment" href="vessel_morpho_single.html" /> 
   </head><body>
 <div class="header">
@@ -31,7 +31,7 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="meteo.html" title="Meteotsunami"
+          <a href="vessel_morpho_multiple.html" title="Multiple vessels-induced morphology changes"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="vessel_morpho_single.html" title="Single vessel + non-cohesive sediment"
@@ -81,54 +81,86 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="multiple-vessels-induced-morphology-changes">
-<span id="section-vessel-morpho-many"></span><h1>Multiple vessels-induced morphology changes<a class="headerlink" href="#multiple-vessels-induced-morphology-changes" title="Permalink to this headline">¶</a></h1>
-<p>In this example, you will add multiple vessels to the vessel-sediment morphology simulation. The primary “input.txt” and corresponding vessel files are located in <code class="code docutils literal notranslate"><span class="pre">/simple_cases/multi_vessel_morphology/</span></code>.</p>
+  <div class="section" id="single-vessel-cohesive-sediment">
+<span id="section-vessel-sediment-cohesive"></span><h1>Single vessel + cohesive sediment<a class="headerlink" href="#single-vessel-cohesive-sediment" title="Permalink to this headline">¶</a></h1>
+<p>In this example, you will add cohesive sediment morphology to a single vessel ship wakes example. The primary “input.txt” and <code class="code docutils literal notranslate"><span class="pre">vessel_00001</span></code> files are located in <code class="code docutils literal notranslate"><span class="pre">/simple_cases/single_vessel_cohesive/</span></code>.</p>
 <p><strong>Model setup</strong></p>
 <div class="align-center figure">
-<a class="reference internal image-reference" href="_images/layout_multi_vessel.jpg"><img alt="alternate text" src="_images/layout_multi_vessel.jpg" style="width: 500px; height: 120px;" /></a>
+<a class="reference internal image-reference" href="_images/layout_single_vessel.jpg"><img alt="alternate text" src="_images/layout_single_vessel.jpg" style="width: 500px; height: 120px;" /></a>
 </div>
-<p><strong>Setup in “input.txt”</strong></p>
-<p>Continue building from the previous two examples (<a class="reference internal" href="vessel_morpho_short.html#section-vessel-morpho-short"><span class="std std-ref">Single vessel + sediment (small domain for training session)</span></a> and <a class="reference internal" href="vessel_morpho_single.html#section-vessel-sediment-single"><span class="std std-ref">Single vessel + non-cohesive sediment</span></a>) by creating additional vessel files.</p>
+<p><strong>Setup “input.txt”</strong></p>
+<p>This example is slightly different from the previous example described in <a class="reference internal" href="vessel_morpho_short.html#section-vessel-morpho-short"><span class="std std-ref">Single vessel + sediment (small domain for training session)</span></a>. Update the following sections:</p>
+<p>Set a descriptive title for your simulation:</p>
 <blockquote>
-<div><p>Add up to 6 vessels to the simulation:</p>
-<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>!-----SHIP WAKES-----
- VESSEL_FOLDER = ./
- NumVessel = 6
+<div><div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>!-----TITLE-----
+ TITLE = vessel_sediment_morph
 </pre></div>
 </div>
-</div></blockquote>
-<p>You need 6 vessel files: <code class="code docutils literal notranslate"><span class="pre">vessel_00001,</span> <span class="pre">vessel_00002,</span> <span class="pre">...</span></code> in the current folder. In <code class="code docutils literal notranslate"><span class="pre">vessel_00001</span></code>, specify:</p>
-<blockquote>
-<div><div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>Title: Vessel # 1
-Pressure, 1
-Length(m), Width(m), Alpha1(0.5),Alpha2(0.5), Beta(0.5), P(draft,m)
-10.0  5.0, 0.5, 0.5,0.5, 1.5
-Time, X(m), Y(m)  (relative to the orgin of the coordinates)
-0.0   40.0   60.0
-25523.0  180040.0  60.0
+<p>If running in parallel, set the number of processors in X and Y:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>!-----PARALLEL INFO-----
+ PX = 4
+ PY = 1
 </pre></div>
 </div>
-<p>In <code class="code docutils literal notranslate"><span class="pre">vessel_00002</span></code>, specify:</p>
-<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>Title: Vessel # 2
-Pressure, 1
-Length(m), Width(m), Alpha1(0.5),Alpha2(0.5), Beta(0.5), P(draft,m)
-10.0  5.0, 0.5, 0.5, 0.5, 1.5
-Time, X(m), Y(m)  (relative to the orgin of the coordinates)
-0.0   50.0   60.0
-100.0   50.0   60.0 (release at 100.0 sec from x=50.0 m
-25623.0  180040.0  60.0
+<p>Set the bathymetry to the provided depth file:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>!-----DEPTH-----
+ DEPTH_TYPE = DATA
+ DEPTH_FILE = ./depth.txt
 </pre></div>
 </div>
-<p><code class="code docutils literal notranslate"><span class="pre">vessel_00003</span> <span class="pre">-</span> <span class="pre">vessel_00006</span></code> can be made in the same way.</p>
-<p>(refer to <a class="reference internal" href="shipwakes.html#theory-shipwakes"><span class="std std-ref">Ship-wake Module</span></a> and <a class="reference internal" href="shipwakes_para.html#section-shipwakes-setup"><span class="std std-ref">Shipwakes Setup</span></a> for more information)</p>
+<p>If a “depth.txt” is not located in the working directory, you will need to run the “mk_depth.F” Fortran script to generate a depth file, which uses the “bathy_param.txt” file as an input. You can do this by typing the following into your terminal: <code class="code docutils literal notranslate"><span class="pre">gfortran</span> <span class="pre">mk_depth.f</span></code>. Refer to <a class="reference internal" href="grid.html#definition-grid"><span class="std std-ref">Grid and Computational Time</span></a> for parameter definitions.</p>
+<p>Send the results to a folder named “output”:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>!-----PRINT-----
+ RESULT_FOLDER = output/
+</pre></div>
+</div>
+<p>Set the dimension of the domain to 2400 x 60 (x and y directions, respectively):</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>!-----DIMENSION-----
+ Mglob = 2400
+ Nglob = 60
+</pre></div>
+</div>
+<p>Set the computational time, plot time, station printing interval, and screen interval to 2000.0 s, 5.0 s, 50,000.0 s, and 5.0 s, respectively:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>!-----TIME-----
+ TOTAL_TIME = 700.0
+ PLOT_INTV = 5.0
+ PLOT_INTV_STATION = 50000.0
+ SCREEN_INTV = 5.0
+</pre></div>
+</div>
+<p>Keep the single vessel characteristics and sediment morphology parameters as <a class="reference internal" href="vessel_morpho_short.html#section-vessel-morpho-short"><span class="std std-ref">Single vessel + sediment (small domain for training session)</span></a> and somethng new for cohesive sediment</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>! ------  Sediment
+   Bed_Change = T
+   BedLoad = F
+   CohesiveSediment = T
+   SoftBed = T
+   E_coh = 0.0001
+! use default values for following parameters (comment out them)
+  !D50 = 0.000005
+  !Sdensity = 2.68
+  !n_porosity = 0.47
+  !WS = 0.0125  it will be calcuated by a formula
+  !Tan_phi = 0.7
+  !Kappa1 = 0.3333
+  !Kappa2 = 1.0
+  !MinDepthPickup = 0.1
+</pre></div>
+</div>
 </div></blockquote>
 <p><strong>Postprocessing</strong></p>
-<p>For postprocessing examples, MATLAB scripts located in <code class="code docutils literal notranslate"><span class="pre">/simple_cases/multi_vessel_morphology/</span></code>.</p>
-<div class="align-center figure">
-<a class="reference internal image-reference" href="_images/multi_wave_morpho.jpg"><img alt="alternate text" src="_images/multi_wave_morpho.jpg" style="width: 400px; height: 500px;" /></a>
+<p>For postprocessing examples, MATLAB scripts are located in <code class="code docutils literal notranslate"><span class="pre">/simple_cases/single_vessel_morphology/postprocessing/</span></code>. Example model results are shown below:</p>
+<div class="figure align-default" id="id1">
+<img alt="_images/wakes_cohesive_sed.jpg" src="_images/wakes_cohesive_sed.jpg" />
+<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">Shipwakes and sediment concentration at different times.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
-<p>From top to bottom: 1) sediment concentration induced by six vessels; 2) morphological change due to suspended load (not consider porosity); 3) morphological change due to bedload (not consider porosity); and morphological change due to total load.</p>
+<div class="figure align-default" id="id2">
+<img alt="_images/wakes_cohesive_morpho.jpg" src="_images/wakes_cohesive_morpho.jpg" />
+<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">Sediment concentration and bed change at t=600 sec.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="id3">
+<img alt="_images/section_mean_wave_morpho.jpg" src="_images/section_mean_wave_morpho.jpg" />
+<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">Bed change (upper) and wave envelope (lower) at t=600 sec.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
 </div>
 
 
@@ -144,7 +176,7 @@ Time, X(m), Y(m)  (relative to the orgin of the coordinates)
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="meteo.html" title="Meteotsunami"
+          <a href="vessel_morpho_multiple.html" title="Multiple vessels-induced morphology changes"
              >next</a> |</li>
         <li class="right" >
           <a href="vessel_morpho_single.html" title="Single vessel + non-cohesive sediment"

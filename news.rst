@@ -4,6 +4,9 @@
 ========================
 .. image:: images/workshop/group.png
 
+
+`WORKSHOP 2020 Announcement <workshop_2020.html>`_ 
+
 **Previous Workshops:**
 
 `WORKSHOP 2017 <workshop_2017.html>`_

@@ -1,7 +1,7 @@
 .. _section-vessel-sediment-single:
 
-Single vessel + sediment 
-########################
+Single vessel + non-cohesive sediment 
+########################################
 
 In this example, you will add sediment morphology to a single vessel ship wakes example. The primary "input.txt" and :code:`vessel_00001` files are located in :code:`/simple_cases/single_vessel_morphology/`. 
 

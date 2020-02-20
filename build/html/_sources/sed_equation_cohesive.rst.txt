@@ -20,7 +20,7 @@ For soft bed, `Parchure and Mehta's (1985) formula  <https://ascelibrary.org/doi
 where :math:`E` is the erodibility specified by users, :math:`\tau_b` is the bed shear stress, and :math:`\tau_{cr}` is the critical shear stress for erosion.  The bed shear stress can be calculated using Soulsby et al. (1993):
 
 
-.. math:: |\tau_b| = \frac{\rho_w k^2}{1+\ln (k_s/30 h)} U_c
+.. math:: \tau_b = \rho_w \left(\frac{ 0.4}{1+\ln (k_s/30 h)} \right)^2 U_c^2
 
 which is the same as for the non-cohesive sediment, and the critical bed shear stress is usually specified by users. For soft bed, :math:`\alpha` is a so-called alfa-coefficient specified by users. 
 
@@ -28,17 +28,26 @@ The erosion rate, :math:`P`, has the dimension of velocity (m/s) considering the
 
 The deposition rate :math:`D` can be calculated using the formula of `Krone (1962) <https://www.worldcat.org/title/flume-studies-of-the-transport-of-sediment-in-estuarial-shoaling-processes-final-report/oclc/8967084>`_:
 
-.. math:: D = w_s c_b p_d
+.. math:: D = w_s c_b p_d  
+   :label: depo
 
-where :math:`w_s` is the setting velocity calculated using Krone (1962):
+where :math:`w_s` is the setting velocity which can be evaluated using a number of formulas which were different sources and usually based on laboratory experiments. It should be related to processes of flocs, aggregate dimensions, drag, local concentration, salinity and other environmental factors. Users can their own formulas by modifying the sediment module. Here, we provide a general formulation that can describe the evolution in conditions of flocculation (In `Kombiadou and Krestenitis, 2014 <http://dx.doi.org/10.5772/51061>`_):
 
-.. math:: w_s = k_c \bar{c}^m 
+.. math:: w_s = \frac{a \bar{c}^n}{(\bar{c}^2 + b^2)^m}
 
-where :math:`k_c` and :math:`m` are empirically determined constants. :math:`c_b` is the near-bed concentration calculated by
+The coefficients have a large range, differing in various estuarine and riverine areas. :math:`a=0.01-0.23, b=1.3-25.0, n=0.4-2.8` and :math:`m=1.0-2.8`. The default vallues in the model are
+:math:`a=0.1;
+b=2.;
+n=0.5;
+m=1.5.`
+For :math:`\bar{c}=0.1 g/l`, for example, :math:`w_s = 3.9E^{-3} m/s`. 
+
+
+In :eq:`depo`, :math:`c_b` is the near-bed concentration calculated by
 
 .. math:: c_b = \beta \bar{c}
 
-in which :math:`\beta` is the parameter specified by
+in which :math:`\beta` is the parameter. By default, we use :math:`\beta = 1`. It can also be specified by
 
 .. math:: \beta = 1+\frac{P_e}{1.25+4.75 p_d^{2.5}}
 
@@ -58,17 +67,19 @@ where :math:`\tau_{cd}` is the critical shear stress for deposition defined by u
 
 **Summary of Input Parameters**
 
-1) :math:`k`: diffusion coefficient. Different from the non-cohesive sidement transport, this parameter needs to be specified by users. 
+1) :math:`k`: diffusion coefficient, k_coh (default 10E-6). Different from the non-cohesive sidement transport, this parameter needs to be specified by users. 
 
-2) :math:`\tau_{cr}`: critical shear stress for erosion. 
+2) :math:`\tau_{cr}`: critical shear stress for erosion, Tau_cr_coh (default 0.001)
 
-3) :math:`\tau_{cd}`: critical shear stress for deposition
+3) :math:`\tau_{cd}`: critical shear stress for deposition, Tau_crd_coh (default 0.001)
 
-4) :math:`k_c` and :math:`m`: Empirical parameters used to calculate settling velocity.
+4) :math:`a,b,m` and :math:`n`: Empirical parameters used to calculate settling velocity, default values are a_coh = 0.1, b_coh=2.0, n_coh=0.5, and m_coh=1.5
 
-5) :math:`E`: erodibility parameter
+5) :math:`E`: erodibility parameter, default E_coh=0.0001
 
-6) :math:`\alpha`: alfa-coefficient used to calculate the erosion rate for soft bed. 
+6) :math:`\alpha`: alfa-coefficient used to calculate the erosion rate for soft bed, default alpha_coh = 1.0 
+
+An example of model setup can be found in /simple_cases/single_vessel_cohesive/. See :ref:`section-vessel-sediment-cohesive` for documentation. 
 
 **References**
 
