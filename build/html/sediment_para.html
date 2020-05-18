@@ -111,7 +111,13 @@
 <ul class="simple">
 <li><p><code class="code docutils literal notranslate"><span class="pre">Bed_Change</span></code>: logical parameter,  T: update depth, F: no bed change.</p></li>
 <li><p><code class="code docutils literal notranslate"><span class="pre">Hard_bottom</span></code>: logical parameter,  T: hard bed, no erosion allowed, F: sediment bed</p></li>
-<li><p><code class="code docutils literal notranslate"><span class="pre">Hard_bottom_file</span></code>: the file contains the distribution of hard bed points (0:hard bed, 1: sediment bed). The format is the same as the depth file</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">Hard_bottom_file</span></code>: the file contains the distribution of the erodible layer thickness, <span class="math notranslate nohighlight">\(Z_s\)</span>. A negative value represents ‘non-erodible’. For example, <span class="math notranslate nohighlight">\(Z_s = 0.1\)</span> means the bed can be eroded at most 0.1 m. If you set -0.1 (m) at a grid point, the bed at this point will not be eroded. In practice, the bed can still be eroded when a deposition makes the  bottom level greater than 0.1 m (above the initial level). Therefore, specify a smaller value, such as -100.0, if you want to make this point non-erodible. The format is the same as the depth file.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The previous version before 3.4 used the hard bottom masks rather than erodible thickness.</p>
+</div>
+<ul class="simple">
 <li><p><code class="code docutils literal notranslate"><span class="pre">Morph_step</span></code>: ratio of Boussinesq model time step to the morphological updating step, <span class="math notranslate nohighlight">\(dt_{morph}\)</span>, defalt: <span class="math notranslate nohighlight">\(dt_{morph}\)</span> = 25</p></li>
 </ul>
 <p><strong>AVALANCHE</strong></p>

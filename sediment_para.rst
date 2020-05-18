@@ -41,7 +41,9 @@ Sediment Transport and Morphological Change
 
 * :code:`Hard_bottom`: logical parameter,  T: hard bed, no erosion allowed, F: sediment bed
 
-* :code:`Hard_bottom_file`: the file contains the distribution of hard bed points (0:hard bed, 1: sediment bed). The format is the same as the depth file
+* :code:`Hard_bottom_file`: the file contains the distribution of the erodible layer thickness, :math:`Z_s`. A negative value represents 'non-erodible'. For example, :math:`Z_s = 0.1` means the bed can be eroded at most 0.1 m. If you set -0.1 (m) at a grid point, the bed at this point will not be eroded. In practice, the bed can still be eroded when a deposition makes the  bottom level greater than 0.1 m (above the initial level). Therefore, specify a smaller value, such as -100.0, if you want to make this point non-erodible. The format is the same as the depth file.
+
+.. note:: The previous version before 3.4 used the hard bottom masks rather than erodible thickness.  
 
 * :code:`Morph_step`: ratio of Boussinesq model time step to the morphological updating step, :math:`dt_{morph}`, defalt: :math:`dt_{morph}` = 25
 
