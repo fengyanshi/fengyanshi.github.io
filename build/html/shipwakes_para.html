@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Shipwakes Setup &#8212; FUNWAVE Documentation</title>
+    <title>Shipwakes &#8212; FUNWAVE Documentation</title>
     <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -79,8 +79,10 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="shipwakes-setup">
-<span id="section-shipwakes-setup"></span><h1>Shipwakes Setup<a class="headerlink" href="#shipwakes-setup" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="shipwakes">
+<span id="section-shipwakes-setup"></span><h1>Shipwakes<a class="headerlink" href="#shipwakes" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="ship-wake-model-setup">
+<h2>Ship-wake Model Setup<a class="headerlink" href="#ship-wake-model-setup" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
 <li><p>Specify a folder which contains a number of vessel files, <code class="code docutils literal notranslate"><span class="pre">vessel_00001,</span> <span class="pre">vessel_00002,</span> <span class="pre">...</span></code></p>
 <p><code class="code docutils literal notranslate"><span class="pre">VESSEL_FOLDER</span> <span class="pre">=</span> <span class="pre">./</span></code></p>
@@ -156,6 +158,42 @@ Time, X(m), Y(m)  (relative to the origin of the coordinates)
 0.0   50.0   300.0
 100.0 1050.0 300.0
 </pre></div>
+</div>
+</div>
+<div class="section" id="deep-draft-vessels">
+<h2>Deep Draft Vessels<a class="headerlink" href="#deep-draft-vessels" title="Permalink to this headline">¶</a></h2>
+<p>An instability problem may occur in Boussnesq modeling a large-size vessel with a draft close to  channel depth. We developed three methods in the fully nonlinear Boussinesq model, FUNWAVE-TVD, to suppress high-frequency spikes generated near-field of a vessel. The three methods are the shock-capturing method, friction method, and viscosity method, respectively. Tests show that the combined shock-capturing and friction method is the most effective method to suppress the local high-frequency noises, while it does not affect the far-field solution. A strong test, in which the target draft is larger than the channel depth, showed that there are no high-frequency noises generated in the case of ship squat if the shock-capturing method is used.</p>
+<p><strong>Shock-capturing Method</strong>
+The shock-capturing method is used by switching to SWE solver at the bottom of a vessel. The method is consistent with the shock-capturing-based wave breaking scheme. MASK9 is used to mask the area of the vessel bottom, where SWE is solved.</p>
+<p><strong>Friction Method</strong>
+The Friction Method is one of the dissipation methods used for damping waves as in sponge layers. A large bottom friction is applied locally at the vessel bottom. A proper friction coefficient Cd can be specified by users.</p>
+<p><strong>Viscosity Method</strong>
+The Viscosity Method is also one of the dissipation methods used as in sponge layers. Wave damping rate is usually lower than that in the friction method.</p>
+<p><strong>Model Configuration</strong></p>
+<p>To use one of the three methods or combined methods, the code needs to be recompiled with the flag <strong>-DDEEP_DRAFT_VESSEL</strong> in Makefile.
+The default option (if nothing specified in input.txt) is the combined shock-capturing method and friction method with a friction coefficient of 0.1. This default option and associated parameter were obtained based on the best practice of the tests we have conducted. Users can also specify an option and parameters in input.txt by themselves.</p>
+<blockquote>
+<div><p><em>Setup of shock capturing method</em></p>
+<blockquote>
+<div><p>MaskMethod = T</p>
+</div></blockquote>
+<p><em>Setup of friction method</em></p>
+<blockquote>
+<div><p>FrictionMethod = T</p>
+<p>CdDeepDraft = <em>&lt;floating-point number&gt;</em>, suggested values: 0.1 – 1.0</p>
+</div></blockquote>
+<p><em>Setup of viscosity method</em></p>
+<blockquote>
+<div><p>ViscosityMethod = T</p>
+<p>VisDeepDraft = <em>&lt;floating-point number&gt;</em>, suggested values: 0.1 – 5.0</p>
+</div></blockquote>
+</div></blockquote>
+<p><strong>Examples</strong></p>
+<p>The test examples can be found in the github package (master) /simple_cases/vessel_deep_draft/</p>
+<p>The figure below shows the result from the strong test in which the target draft is even larger than channel depth. Although the model configuration is not realistic, it can serve as a strong test for numerical instability. Here, a target draft of 20 m versus a channel depth of 18 m was applied. We used the shock-capturing method in the test. The figure shows a large portion of grid cells are dry (white area). The dry points did not cause any high-frequency noises due to the application of the shock-capturing method.</p>
+<div class="figure align-default">
+<img alt="_images/strong_test_20m_1d_2d.jpg" src="_images/strong_test_20m_1d_2d.jpg" />
+</div>
 </div>
 </div>
 
