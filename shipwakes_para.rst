@@ -135,6 +135,10 @@ The default option (if nothing specified in input.txt) is the combined shock-cap
 
   VisDeepDraft = *<floating-point number>*, suggested values: 0.1 -- 5.0
 
+ *Setup of minimum clearance*
+
+  CLEARANCE = *<floating-point number>*, default value: 1.0 
+
 **Examples**
 
 The test examples can be found in the github package (master) /simple_cases/vessel_deep_draft/
