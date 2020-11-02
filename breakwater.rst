@@ -3,6 +3,34 @@
 Breakwater and Obstacle
 **************************
 
+**INTRODUCTION**
+
+Native to FUNWAVE are the addition of obstacles and/or breakwaters in the model domain. These features can be either fully reflective (i.e., impermeable) or partially reflecting / partially absorbing (e.g., permeable). There are three ways to add a breakwater or obstacle to the model:
+
+#. Modify the bathymetry directly, generating a raise *impermeable* feature in the along-shore beach profile (or cross-shore for jetties, groins, etc.)
+
+#. Generate a breakwater file that defines the width of a *dissipative sponge layer* at a location on the grid, and define the corresponding absorption strength of the sponge layer in the ``input.txt`` file. The dissipative sponge layer behaves as a frictional dissipative layer to the incoming waves.
+
+#. Generate an obstacle file that specifies the location of an infinitely tall, *impermeable* wall (i.e., fully reflective) in the model domain.
+
+More details about the specification of the breakwater and obstacle files are presented in the following section.
+
+A potential fourth method for incorporating a breakwater in the model domain involves the combination of options one and two – modifying the bathymetry to some extent and adding/defining the dissipative sponge layer over the raised feature. This method would essentially simulate a permeable structure of variable strength or *porosity* with an impermeable core.
+
+Several structure properties are available for simulation in the FUNWAVE numerical model. These properties include:
+
+* Smooth versus rough slope
+
+       * Through the incorporation of the bottom friction coefficient `Cd` over an impermeable feature defined via bathymetric modification, a rough structure surface can be added to the feature.
+
+* Impermeable versus permeable
+
+       * Utilizing a dissipative sponge layer of variable strength in the numerical domain allows for the simulation of a permeable or porous structure surface in the wave field.
+
+* Emergent versus submerged
+
+       * The height of the breakwater or coastal feature relative to the total water depth is variable, and as such the overall wave responses will differ greatly for a fully submerged breakwater compared to an emergent breakwater.
+
 **SPECIFICATION OF OBSTACLES or BREAKWATER**
 
 * :code:`OBSTACLE_FILE`: Name of obstacle file. 
