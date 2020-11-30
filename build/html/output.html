@@ -88,7 +88,8 @@
 </ul>
 <p><strong>SPECIFICATION OF OUTPUT VARIABLES</strong></p>
 <ul class="simple">
-<li><p><code class="code docutils literal notranslate"><span class="pre">NumberStations</span></code>: number of station for output. If NumberStations <span class="math notranslate nohighlight">\(&gt; 0\)</span>, need input i,j in <code class="code docutils literal notranslate"><span class="pre">STATION_FILE</span></code></p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">NumberStations</span></code>: number of station for output. If NumberStations <span class="math notranslate nohighlight">\(&gt; 0\)</span>, need input i,j in <code class="code docutils literal notranslate"><span class="pre">STATIONS_FILE</span></code></p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">OUTPUT_RES</span></code>: integer parameter for output data resolution. e.g. 2 for print every 2 points</p></li>
 <li><p><code class="code docutils literal notranslate"><span class="pre">DEPTH_OUT</span></code>: logical parameter for output depth. T or F.</p></li>
 <li><p><code class="code docutils literal notranslate"><span class="pre">U</span></code>: logical parameter for output u. T or F.</p></li>
 <li><p><code class="code docutils literal notranslate"><span class="pre">V</span></code>: logical parameter for output v. T or F.</p></li>
@@ -180,20 +181,32 @@
 <blockquote>
 <div><ul class="simple">
 <li><p>in “input.txt”, add <code class="code docutils literal notranslate"><span class="pre">NumberStations</span> <span class="pre">=</span> <span class="pre">&lt;integer</span> <span class="pre">number</span> <span class="pre">of</span> <span class="pre">stations&gt;</span></code></p></li>
-<li><p>in “input.txt”, <code class="code docutils literal notranslate"><span class="pre">STATION_FILE</span> <span class="pre">=</span> <span class="pre">&lt;file</span> <span class="pre">name,</span> <span class="pre">e.g.,</span> <span class="pre">gauges.txt&gt;</span></code></p></li>
-<li><p>format of <code class="code docutils literal notranslate"><span class="pre">STATION_FILE</span></code>: two integers for grid points in x and y, respectively.</p></li>
+<li><p>in “input.txt”, <code class="code docutils literal notranslate"><span class="pre">STATIONS_FILE</span> <span class="pre">=</span> <span class="pre">&lt;file</span> <span class="pre">name,</span> <span class="pre">e.g.,</span> <span class="pre">gauges.txt&gt;</span></code></p></li>
+<li><p>format of <code class="code docutils literal notranslate"><span class="pre">STATIONS_FILE</span></code>: two integers for grid points in x and y, respectively.</p></li>
 </ul>
 <p>Example: refer to <a class="reference internal" href="info_station_file.html#example-station-file"><span class="std std-ref">Example: station file</span></a></p>
 </div></blockquote>
-<p>Output for stations is a series of numbered files such as <code class="code docutils literal notranslate"><span class="pre">sta_0001,</span> <span class="pre">sta_0002</span> <span class="pre">....</span></code> (NOTE: four digit numbers here vs. five digit numbers for 2D output like <code class="code docutils literal notranslate"><span class="pre">eta_00001</span></code>).</p>
+<p>Output for stations is a series of numbered files such as <code class="code docutils literal notranslate"><span class="pre">sta_0001,</span> <span class="pre">sta_0002</span> <span class="pre">....</span></code> (NOTE: four digit numbers here vs. five digit numbers for 2D output like <code class="code docutils literal notranslate"><span class="pre">eta_00001</span></code>). The output file for stations contains four columns: time, eta, u, and v.</p>
+<p>The version after 3.4 uses a buffer to write out stations to speed up the program on a large scale HPC. The array dimensions for the buffer are (StationOutputBuffer,NumberStations,4), where StationOutputBuffer =1000 by default. You can also specify StationOutputBuffer in input.txt. An example to set StationOutputBuffer is in /simple_cases/tide_constant/</p>
 <blockquote>
-<div><ul>
+<div><div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>TOTAL_TIME = 200.0
+PLOT_INTV = 1.0
+PLOT_INTV_STATION = 0.5
+SCREEN_INTV = 1.0
+StationOutputBuffer = 100
+</pre></div>
+</div>
+</div></blockquote>
+<ul>
 <li><p>ASCII format</p>
-<p>The default format is ASCII.  The format and read algorithm are  consistent with a depth file.</p>
+<blockquote>
+<div><p>The default format is ASCII.  The format and read algorithm are  consistent with a depth file.</p>
 <p>A station file contains four columns, which are values of time (s), eta (m), u (m/s) and v (m/s), respectively.</p>
+</div></blockquote>
 </li>
 <li><p>BINARY format</p>
-<p>When <code class="code docutils literal notranslate"><span class="pre">FIELD_IO_TYPE</span> <span class="pre">=</span> <span class="pre">BINARY</span></code> is specified in “input.txt”, the 2D output files such as <code class="code docutils literal notranslate"><span class="pre">eta_00001,</span> <span class="pre">...</span></code> are in the binary format. Here’s an example of reading in:</p>
+<blockquote>
+<div><p>When <code class="code docutils literal notranslate"><span class="pre">FIELD_IO_TYPE</span> <span class="pre">=</span> <span class="pre">BINARY</span></code> is specified in “input.txt”, the 2D output files such as <code class="code docutils literal notranslate"><span class="pre">eta_00001,</span> <span class="pre">...</span></code> are in the binary format. Here’s an example of reading in:</p>
 <p>MATLAB:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fileID</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="s1">&#39;eta_00001&#39;</span><span class="p">);</span>
 
@@ -231,17 +244,15 @@
    <span class="k">return</span> <span class="n">bathy</span>
 </pre></div>
 </div>
-</li>
-</ul>
-<blockquote>
-<div><p>Station files do not have Binary format.</p>
 </div></blockquote>
-<ul>
+<p>Station files do not have Binary format.</p>
+</li>
 <li><p>Other format</p>
-<p>Other formats such as NetCDF and HDF5 are also provided but not distributed in the master Github repository.</p>
+<blockquote>
+<div><p>Other formats such as NetCDF and HDF5 are also provided but not distributed in the master Github repository.</p>
+</div></blockquote>
 </li>
 </ul>
-</div></blockquote>
 </div>
 
 

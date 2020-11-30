@@ -72,15 +72,9 @@
             
   <div class="section" id="funwave-tvd">
 <h1>FUNWAVE-TVD<a class="headerlink" href="#funwave-tvd" title="Permalink to this headline">¶</a></h1>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>There will be a FUNWAVE Workshop from 18-20 October 2019 held at Hohai University, Nanjing, China.
-For more info, visit <a class="reference internal" href="workshop_2019.html#workshop-2019-label"><span class="std std-ref">Workshop 2019</span></a>.</p>
-</div>
-<hr class="docutils" />
-<div class="section" id="what-is-funwave">
-<h2>What is FUNWAVE?<a class="headerlink" href="#what-is-funwave" title="Permalink to this headline">¶</a></h2>
-<p>FUNWAVE–TVD is the Total Variation Diminishing (TVD) version of the fully nonlinear Boussinesq wave model (FUNWAVE) initially developed by <a class="reference external" href="http://resolver.tudelft.nl/uuid:d79bba08-8d35-47e2-b901-881c86985ce4">Kirby et al. (1998)</a>. The development of the present version was motivated by recent needs for modeling of surfzone–scale optical properties in a Boussinesq model framework, and  modeling of Tsunami waves in both a regional/coastal scale for prediction of coastal inundation and a basin scale for wave propagation.</p>
+<div class="section" id="what-is-funwave-tvd">
+<h2>What is FUNWAVE-TVD?<a class="headerlink" href="#what-is-funwave-tvd" title="Permalink to this headline">¶</a></h2>
+<p>FUNWAVE–TVD is the Total Variation Diminishing (TVD) version of the fully nonlinear Boussinesq wave model (FUNWAVE) developed by <a class="reference external" href="http://www.sciencedirect.com/science/article/pii/S1463500311002010">Shi et al. (2012)</a>. The FUNWAVE model was initially developed by <a class="reference external" href="http://resolver.tudelft.nl/uuid:d79bba08-8d35-47e2-b901-881c86985ce4">Kirby et al. (1998)</a> based on <a class="reference external" href="https://doi.org/10.1017/S0022112095002813">Wei et al. (1995)</a>. The development of the present version was motivated by recent needs for modeling of surfzone–scale optical properties in a Boussinesq model framework, and  modeling of Tsunami waves in both a global/coastal scale for prediction of coastal inundation and a basin scale for wave propagation.</p>
 <p>This version  features  several theoretical and numerical improvements, including:</p>
 <a class="reference internal image-reference" href="_images/coverimage.jpg"><img alt="_images/coverimage.jpg" class="align-right" src="_images/coverimage.jpg" style="width: 500px; height: 200px;" /></a>
 <ol class="arabic simple">
@@ -88,17 +82,20 @@ For more info, visit <a class="reference internal" href="workshop_2019.html#work
 <li><p>Monotonic Upwind Scheme for Conservation Laws (MUSCL)–TVD solver with adaptive Runge–Kutta time stepping;</p></li>
 <li><p>Shock–capturing wave breaking scheme;</p></li>
 <li><p>Wetting–drying moving boundary condition with incorporation of Harten-Lax-van Leer (HLL) construction method into the scheme;</p></li>
+<li><p>Lagrangian tracking;</p></li>
 <li><p>Option for parallel computation.</p></li>
 </ol>
-<p>The most recent developments include ship-wake generation (<a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S0378383917304246">Shi et al., 2018</a>), meteo-tsunami generation (<a class="reference external" href="https://icce-ojs-tamu.tdl.org/icce/index.php/icce/article/view/8470">Woodruff et al., 2018</a>), and sediment transport and morphological changes (<a class="reference external" href="https://apps.dtic.mil/dtic/tr/fulltext/u2/1074624.pdf">Malej et al., 2019</a>).</p>
-<p><strong>Where to start</strong></p>
+<p>The most recent developments include ship-wake generation (<a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S0378383917304246">Shi et al., 2018</a>), meteo-tsunami generation (<a class="reference external" href="https://icce-ojs-tamu.tdl.org/icce/index.php/icce/article/view/8470">Woodruff et al., 2018</a>), and sediment transport and morphological changes (<a class="reference external" href="https://coastal.udel.edu/research-2/cacr-reports/">Tehranirad et al., 2016</a>, <a class="reference external" href="https://apps.dtic.mil/dtic/tr/fulltext/u2/1074624.pdf">Malej et al., 2019</a>).</p>
+</div>
+</div>
+<div class="section" id="where-to-start">
+<h1>Where to start<a class="headerlink" href="#where-to-start" title="Permalink to this headline">¶</a></h1>
 <p>This comprehensive Wiki provides general introductions to all model components and theory behind the numerical formulations in FUNWAVE-TVD. Simple examples and tutorials are presented for beginners, as well as download and installation instructions to begin using FUNWAVE–TVD locally. The detailed model equations and numerical schemes can be found in <a class="reference external" href="http://www.sciencedirect.com/science/article/pii/S1463500311002010">Shi et al. (2012)</a>.</p>
 <p>If you are new to FUNWAVE, we recommend first reviewing the coastal processes the model is capable of resolving (below), and the physics of how these processes are solved in the model. The theory behind each module can be found on the <a class="reference internal" href="basics.html#section-basics"><span class="std std-ref">Basics</span></a> page. Next, download and setup instructions can be found on the <a class="reference internal" href="setup.html#section-download"><span class="std std-ref">Model Download and Setup</span></a> page, where we list the prerequisites needed to begin running FUNWAVE locally and describe how to build your “Makefile”. In addition, take the time to review the input parameters for each module on the <a class="reference internal" href="definition.html#section-definitions"><span class="std std-ref">Definitions of Parameters</span></a> page. To begin running simple cases, review the example scenarios listed on the <a class="reference internal" href="examples.html#section-examples"><span class="std std-ref">Examples</span></a> page. If you run into any issues with model setup and execution, submit your questions to the FUNWAVE community by subscribing to the mailing group.</p>
 <p>Interested in attending a FUNWAVE workshop or learning from previous workshop materials? Visit the <a class="reference internal" href="news.html#section-workshop"><span class="std std-ref">FUNWAVE-TVD Workshop</span></a> page to learn more.</p>
 <p>For quick keyword searches, use the search bar to the left.</p>
 <div class="line-block">
 <div class="line"><br /></div>
-</div>
 </div>
 </div>
 <div class="section" id="subscribe">
@@ -134,8 +131,8 @@ For more info, visit <a class="reference internal" href="workshop_2019.html#work
 </div>
 <ul class="simple">
 <li><p>Nearshore wave propagation &amp; transformation</p></li>
-<li><p>Refraction, <strong>diffraction</strong> &amp; nonlinear shoaling</p></li>
-<li><p>Bottom friction &amp; wave-induced currents</p></li>
+<li><p>Refraction, diffraction, reflection &amp; nonlinear shoaling</p></li>
+<li><p>Wave-induced nearshore circulation</p></li>
 <li><p>Nonlinear wave–wave &amp; wave–current interactions</p></li>
 <li><p>Wave breaking with <strong>runup</strong> &amp; <strong>overtopping</strong></p></li>
 <li><p><strong>Partially absorbing/reflecting</strong> inner boundaries</p></li>

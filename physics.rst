@@ -15,7 +15,7 @@ Physics (dispersion, breaking, friction)
 
   :code:`Gamma1 = 1.0, Gamma2 = 1.0` for the fully nonlinear Boussinesq equations.
   
-* :code:`Gamma3`: parameter for linear shallow water equations (:code:`Gamma3 = 1.0`). When :code:`Gamma3 = 0.0, Gamma1` and :code:`Gamma2` automatically become zero. Default: 1.0.
+* :code:`Gamma3`: parameter for linear shallow water equations (:code:`Gamma3 = 0.0` for linear SWE). When :code:`Gamma3 = 0.0, Gamma1` and :code:`Gamma2` automatically become zero. Default: 1.0.
 
 * :code:`Beta_ref`:  parameter :math:`\beta` defined for the reference level. :math:`\beta` = -0.531 for NG's and FUNWAVE equations. Default: -0.531.
 

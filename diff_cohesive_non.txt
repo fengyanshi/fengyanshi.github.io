@@ -1,0 +1,40 @@
+
+#. Diffusion coefficient :math: k. 
+   for non-cohesive sediment, use (54)
+   for cohesive sediment, user specified, like in Kimiaghalam et al. (2019)
+
+#. Pick-up function
+   for non-cohesive sediment, use (56)
+   for cohesive sediment, a user needs to specify the erodibilty and alfa coefficient
+
+#. Deposition 
+   for non-cohesive sediment, use (60), settling velocity needs to be specified
+   for cohesive sediment, use (65), settling velocity is calculated based on sediment concentration. 
+
+#. Summary 
+
+parameters for non-cohesive sediment
+
+D50
+Sdensity
+n_porosity
+WS
+Shields_cr
+Shields_cr_bedload
+
+Parameters for cohesive sediment
+D50  -- is small, but only used in shear stress calculation (Soulsby et al. 1993)
+Sdensity
+n_porosity
+WS   -- optional, if not specified, will be calculated based on concentration. 
+Shields_cr
+
+extra parameter for cohesive sediment
+
+Shields_cd
+Diffusion_cohesive
+Erodibility
+Alfa_cohesive
+kc_cohesive_ws
+m_cohesive_ws
+

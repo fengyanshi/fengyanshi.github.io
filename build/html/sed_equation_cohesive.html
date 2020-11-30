@@ -1,0 +1,182 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Suspended Sediment Transport Equation (Cohesive) &#8212; FUNWAVE Documentation</title>
+    <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Bedload Sediment Transport" href="bedload.html" />
+    <link rel="prev" title="Suspended Sediment Transport Equation (Non-cohesive)" href="sed_equation.html" /> 
+  </head><body>
+<div class="header">
+ <p class="logo"><a href="https://fengyanshi.github.io/build/html/index.html">
+  <img class="logo" src="_static/../../../images/Funwave.svg" alt="Logo"/>
+ </a></p>
+</div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="bedload.html" title="Bedload Sediment Transport"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="sed_equation.html" title="Suspended Sediment Transport Equation (Non-cohesive)"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="basics.html" ><strong>BASICS</strong></a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="sediment.html" accesskey="U">Sediment Transport Module</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="basics.html"><strong>BASICS</strong></a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="boussinesq.html">Formulations and Numerical Schemes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="central.html">Central Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shipwakes.html">Ship-wake Module</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="sediment.html">Sediment Transport Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meteo_intro.html">Meteo Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tracer.html">Lagrangian Tracking Module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="flowchart.html"><strong>ARCHITECTURE</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup.html">MODEL DOWNLOAD AND SETUP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="definition.html"><strong>DEFINITIONS OF PARAMETERS</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="coupling_nesting.html"><strong>NESTING AND COUPLING</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html"><strong>EXAMPLES</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="gallery.html"><strong>GALLERY</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="news.html"><strong>FUNWAVE-TVD WORKSHOP</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html"><strong>BIBLIOGRAPHY</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="authors.html"><strong>AUTHORS</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="addition.html"><strong>ADDITIONAL INFORMATION</strong></a></li>
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="suspended-sediment-transport-equation-cohesive">
+<span id="section-sed-equation-cohesive"></span><h1>Suspended Sediment Transport Equation (Cohesive)<a class="headerlink" href="#suspended-sediment-transport-equation-cohesive" title="Permalink to this headline">¶</a></h1>
+<p>The transport equation for cohesive sediment uses the same 2D form of advection and diffusion equation as that used for non-cohesive sediment:</p>
+<div class="math notranslate nohighlight" id="equation-sed-equation-cohesive-0">
+<span class="eqno">(61)<a class="headerlink" href="#equation-sed-equation-cohesive-0" title="Permalink to this equation">¶</a></span>\[(\bar{c} H)_t + \nabla_h \cdot (\bar{c} H ({\bf u}_\alpha + \bar{{\bf u} }_2)) =\nabla_h \cdot (k H (\nabla_h \bar{c})) + P - D \label{ad}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\bar{c}\)</span> is the non-dimensional depth-averaged sediment concentration normalized by sediment density. <span class="math notranslate nohighlight">\(H(\bf{u}_\alpha + \bar{\bf{u}}_2) =M\)</span> represents the flow rate per unit width defined in <a class="reference external" href="http://www.sciencedirect.com/science/article/pii/S1463500311002010">Shi et al. (2012)</a>, in which <span class="math notranslate nohighlight">\(H=h+\eta\)</span> is the total water depth. The roller-induced extra undertow can be taken into account as an option (see <a class="reference internal" href="wavebreaking.html#section-wavebreaking"><span class="std std-ref">Wave Breaking, roller and undertow</span></a>, and <a class="reference internal" href="physics.html#section-physics"><span class="std std-ref">Physics (dispersion, breaking, friction)</span></a>). <span class="math notranslate nohighlight">\(k\)</span> is the horizontal sediment diffusion coefficient used for cohesive sediment and is usually defined by users (such as in the <a class="reference external" href="https://www.mikepoweredbydhi.com/products/mike-21/sediments">DHI model</a>). Some reseaches showed that the the diffusion coefficient is a function of current flux, such as in <a class="reference external" href="http://www.nrcresearchpress.com/doi/abs/10.1139/cjce-2015-0361#.XXo-2ZNKjjA">Kimiaghalam et al. (2019)</a> who connected the diffusion coefficient to river dischanges.</p>
+<p>In the advection-diffusion equation, <span class="math notranslate nohighlight">\(P\)</span> and <span class="math notranslate nohighlight">\(D\)</span> represent, respectively, the erosion rate and deposition rate for cohesive sediment. There are two sets of formulas to calculate the erosion rate. For hard bed, <a class="reference external" href="https://cedb.asce.org/CEDBsearch/record.jsp?dockey=0013640">Partheniades’ (1965) formula</a> is used:</p>
+<div class="math notranslate nohighlight" id="equation-sed-equation-cohesive-1">
+<span class="eqno">(62)<a class="headerlink" href="#equation-sed-equation-cohesive-1" title="Permalink to this equation">¶</a></span>\[P = E \left(\frac{\tau_b}{\tau_{cr}} -1 \right)\]</div>
+<p>For soft bed, <a class="reference external" href="https://ascelibrary.org/doi/10.1061/%28ASCE%290733-9429%281985%29111%3A10%281308%29">Parchure and Mehta’s (1985) formula</a> is applied:</p>
+<div class="math notranslate nohighlight" id="equation-sed-equation-cohesive-2">
+<span class="eqno">(63)<a class="headerlink" href="#equation-sed-equation-cohesive-2" title="Permalink to this equation">¶</a></span>\[P = E e^{\alpha \sqrt{\tau_b-\tau_{cr}}}\]</div>
+<p>where <span class="math notranslate nohighlight">\(E\)</span> is the erodibility specified by users, <span class="math notranslate nohighlight">\(\tau_b\)</span> is the bed shear stress, and <span class="math notranslate nohighlight">\(\tau_{cr}\)</span> is the critical shear stress for erosion.  The bed shear stress can be calculated using Soulsby et al. (1993):</p>
+<div class="math notranslate nohighlight" id="equation-sed-equation-cohesive-3">
+<span class="eqno">(64)<a class="headerlink" href="#equation-sed-equation-cohesive-3" title="Permalink to this equation">¶</a></span>\[\tau_b = \rho_w \left(\frac{ 0.4}{1+\ln (k_s/30 h)} \right)^2 U_c^2\]</div>
+<p>which is the same as for the non-cohesive sediment, and the critical bed shear stress is usually specified by users. For soft bed, <span class="math notranslate nohighlight">\(\alpha\)</span> is a so-called alfa-coefficient specified by users.</p>
+<p>The erosion rate, <span class="math notranslate nohighlight">\(P\)</span>, has the dimension of velocity (m/s) considering the convection-diffusion equation for non-dimensional sediment concentration.</p>
+<p>The deposition rate <span class="math notranslate nohighlight">\(D\)</span> can be calculated using the formula of <a class="reference external" href="https://www.worldcat.org/title/flume-studies-of-the-transport-of-sediment-in-estuarial-shoaling-processes-final-report/oclc/8967084">Krone (1962)</a>:</p>
+<div class="math notranslate nohighlight" id="equation-depo">
+<span class="eqno">(65)<a class="headerlink" href="#equation-depo" title="Permalink to this equation">¶</a></span>\[D = w_s c_b p_d\]</div>
+<p>where <span class="math notranslate nohighlight">\(w_s\)</span> is the setting velocity which can be evaluated using a number of formulas which were different sources and usually based on laboratory experiments. It should be related to processes of flocs, aggregate dimensions, drag, local concentration, salinity and other environmental factors. Users can their own formulas by modifying the sediment module. Here, we provide a general formulation that can describe the evolution in conditions of flocculation (In <a class="reference external" href="http://dx.doi.org/10.5772/51061">Kombiadou and Krestenitis, 2014</a>):</p>
+<div class="math notranslate nohighlight" id="equation-sed-equation-cohesive-4">
+<span class="eqno">(66)<a class="headerlink" href="#equation-sed-equation-cohesive-4" title="Permalink to this equation">¶</a></span>\[w_s = \frac{a \bar{c}^n}{(\bar{c}^2 + b^2)^m}\]</div>
+<p>The coefficients have a large range, differing in various estuarine and riverine areas. <span class="math notranslate nohighlight">\(a=0.01-0.23, b=1.3-25.0, n=0.4-2.8\)</span> and <span class="math notranslate nohighlight">\(m=1.0-2.8\)</span>. The default vallues in the model are
+<span class="math notranslate nohighlight">\(a=0.1;
+b=2.;
+n=0.5;
+m=1.5.\)</span>
+For <span class="math notranslate nohighlight">\(\bar{c}=0.1 g/l\)</span>, for example, <span class="math notranslate nohighlight">\(w_s = 3.9E^{-3} m/s\)</span>.</p>
+<p>In <a class="reference internal" href="#equation-depo">(65)</a>, <span class="math notranslate nohighlight">\(c_b\)</span> is the near-bed concentration calculated by</p>
+<div class="math notranslate nohighlight" id="equation-sed-equation-cohesive-5">
+<span class="eqno">(67)<a class="headerlink" href="#equation-sed-equation-cohesive-5" title="Permalink to this equation">¶</a></span>\[c_b = \beta \bar{c}\]</div>
+<p>in which <span class="math notranslate nohighlight">\(\beta\)</span> is the parameter. By default, we use <span class="math notranslate nohighlight">\(\beta = 1\)</span>. It can also be specified by</p>
+<div class="math notranslate nohighlight" id="equation-sed-equation-cohesive-6">
+<span class="eqno">(68)<a class="headerlink" href="#equation-sed-equation-cohesive-6" title="Permalink to this equation">¶</a></span>\[\beta = 1+\frac{P_e}{1.25+4.75 p_d^{2.5}}\]</div>
+<p>where <span class="math notranslate nohighlight">\(P_e\)</span> is the Peclet number:</p>
+<div class="math notranslate nohighlight" id="equation-sed-equation-cohesive-7">
+<span class="eqno">(69)<a class="headerlink" href="#equation-sed-equation-cohesive-7" title="Permalink to this equation">¶</a></span>\[P_e = \frac{6 w_s}{\kappa u_{*c}}\]</div>
+<p>in which <span class="math notranslate nohighlight">\(\kappa\)</span> is von Kaman constant and <span class="math notranslate nohighlight">\(u_{*c}\)</span> is the friction velocity which can be calculated by <a class="reference external" href="10.1061/(ASCE)0733-9429(1984)110:10(1494)">van Rijn (1984)</a>:</p>
+<div class="math notranslate nohighlight" id="equation-sed-equation-cohesive-8">
+<span class="eqno">(70)<a class="headerlink" href="#equation-sed-equation-cohesive-8" title="Permalink to this equation">¶</a></span>\[u_{*c} = \frac{\kappa}{-1 + \log (30 H / k_s)} U_c\]</div>
+<p><span class="math notranslate nohighlight">\(P_d\)</span> is the probablity of deposition defined by</p>
+<div class="math notranslate nohighlight" id="equation-sed-equation-cohesive-9">
+<span class="eqno">(71)<a class="headerlink" href="#equation-sed-equation-cohesive-9" title="Permalink to this equation">¶</a></span>\[P_d = 1- \left( \frac{\tau_b}{\tau_{cd}} \right)\]</div>
+<p>where <span class="math notranslate nohighlight">\(\tau_{cd}\)</span> is the critical shear stress for deposition defined by users.</p>
+<p><strong>Summary of Input Parameters</strong></p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(k\)</span>: diffusion coefficient, k_coh (default 10E-6). Different from the non-cohesive sidement transport, this parameter needs to be specified by users.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\tau_{cr}\)</span>: critical shear stress for erosion, Tau_cr_coh (default 0.001)</p></li>
+<li><p><span class="math notranslate nohighlight">\(\tau_{cd}\)</span>: critical shear stress for deposition, Tau_crd_coh (default 0.001)</p></li>
+<li><p><span class="math notranslate nohighlight">\(a,b,m\)</span> and <span class="math notranslate nohighlight">\(n\)</span>: Empirical parameters used to calculate settling velocity, default values are a_coh = 0.1, b_coh=2.0, n_coh=0.5, and m_coh=1.5</p></li>
+<li><p><span class="math notranslate nohighlight">\(E\)</span>: erodibility parameter, default E_coh=0.0001</p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha\)</span>: alfa-coefficient used to calculate the erosion rate for soft bed, default alpha_coh = 1.0</p></li>
+</ol>
+<p>An example of model setup can be found in /simple_cases/single_vessel_cohesive/. See <a class="reference internal" href="vessel_morpho_cohesive.html#section-vessel-sediment-cohesive"><span class="std std-ref">Single vessel + cohesive sediment</span></a> for documentation.</p>
+<p><strong>References</strong></p>
+<p>Kimiaghalam, N., Goharrokhi,M., Clark, S. P., 2016, Estimating cohesive sediment erosion and deposition rates in wide rivers, Canadian Journal of Civil Engineering, 43(2): 164-172 <a class="reference external" href="http://www.nrcresearchpress.com/doi/abs/10.1139/cjce-2015-0361#.XXo-2ZNKjjA">doi.org/10.1139/cjce-2015-0361</a></p>
+<p>Krone, R. B., 1962, Flume Studies of the Transport of Sediment in Estuarine Shoaling Processes. Final Report to San Francisco District U. S. Army Corps of Engineers, Washington D.C. <a class="reference external" href="https://www.worldcat.org/title/flume-studies-of-the-transport-of-sediment-in-estuarial-shoaling-processes-final-report/oclc/8967084">website for Krone 1962</a></p>
+<p>Parchure, T. M. and A. J. Mehta, 1985, Erosion of soft cohesive sediment deposits, Journal of Hydraulic Engineering – ASCE 111 no. 10: 1308–1326 <a class="reference external" href="https://ascelibrary.org/doi/10.1061/%28ASCE%290733-9429%281985%29111%3A10%281308%29">doi/10.1061</a></p>
+<p>Partheniades, E. 1965, Erosion and deposition of cohesive soils, Journal of the hydraulics division. Proceedings of the ASCE 91 no. HY1: 105–139 <a class="reference external" href="https://cedb.asce.org/CEDBsearch/record.jsp?dockey=0013640">website for Partheniades 1965</a></p>
+<p>Parchure, T. M. and A. J. Mehta, 1985, Erosion of soft cohesive sediment deposits, Journal of Hydraulic Engineering – ASCE 111 no. 10: 1308–1326 <a class="reference external" href="https://ascelibrary.org/doi/10.1061/%28ASCE%290733-9429%281985%29111%3A10%281308%29">doi:10.1061</a></p>
+<p>Shi, F., J.T. Kirby, J.C. Harris, J.D. Geiman, and S.T. Grilli, 2012, A high-order adaptive time-stepping TVD solver for Boussinesq modeling of breaking waves and coastal inundation. Ocean Modelling, 43-44: 36-51. <a class="reference external" href="http://www.sciencedirect.com/science/article/pii/S1463500311002010">DOI: 10.1016/j.ocemod.2011.12.004</a></p>
+<p>Soulsby R. L., Hamm L., Klopman, G., Myrhaug, D., Simons R.R., Thomas, G. P., 1993, Wave-current interaction within and outside the bottom boundary layer, Coastal Engineering, Volume 21, Issues 1–3, December 1993, Pages 41-69, <a class="reference external" href="https://doi.org/10.1016/0378-3839(93)90045-A">doi:10.1016/0378-3839(93)90045-A</a></p>
+<p>van Rijn, L.C., 1984, Sediment Pick‐Up Functions, Journal of Hydraulic Engineering
+Vol. 110, Issue 10 (October 1984) <a class="reference external" href="https://doi.org/10.1061/(ASCE)0733-9429(1984)110:10(1494)">doi:10.1061/(ASCE)0733-9429(1984)110:10(1494)</a></p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="bedload.html" title="Bedload Sediment Transport"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="sed_equation.html" title="Suspended Sediment Transport Equation (Non-cohesive)"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="basics.html" ><strong>BASICS</strong></a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="sediment.html" >Sediment Transport Module</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, Fengyan Shi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
+    </div>
+  </body>
+</html>

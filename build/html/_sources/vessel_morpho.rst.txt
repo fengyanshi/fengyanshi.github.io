@@ -14,4 +14,5 @@ Ship-wakes + Sediment Transport
    vessel_morpho_compile
    vessel_morpho_short
    vessel_morpho_single
+   vessel_morpho_cohesive
    vessel_morpho_multiple

@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Tide and Surge Boundary Conditions &#8212; FUNWAVE Documentation</title>
+    <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Wave Statistics" href="statistics.html" />
+    <link rel="prev" title="Periodic Boundary Condition" href="periodic.html" /> 
+  </head><body>
+<div class="header">
+ <p class="logo"><a href="https://fengyanshi.github.io/build/html/index.html">
+  <img class="logo" src="_static/../../../images/Funwave.svg" alt="Logo"/>
+ </a></p>
+</div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="statistics.html" title="Wave Statistics"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="periodic.html" title="Periodic Boundary Condition"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="definition.html" ><strong>DEFINITIONS OF PARAMETERS</strong></a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="central_para.html" accesskey="U">Parameters for Central Module</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="basics.html"><strong>BASICS</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="flowchart.html"><strong>ARCHITECTURE</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup.html">MODEL DOWNLOAD AND SETUP</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="definition.html"><strong>DEFINITIONS OF PARAMETERS</strong></a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="definition.html#input-txt">INPUT.TXT</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="definition.html#definitions">Definitions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="coupling_nesting.html"><strong>NESTING AND COUPLING</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html"><strong>EXAMPLES</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="gallery.html"><strong>GALLERY</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="news.html"><strong>FUNWAVE-TVD WORKSHOP</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html"><strong>BIBLIOGRAPHY</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="authors.html"><strong>AUTHORS</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="addition.html"><strong>ADDITIONAL INFORMATION</strong></a></li>
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="tide-and-surge-boundary-conditions">
+<span id="section-tide"></span><h1>Tide and Surge Boundary Conditions<a class="headerlink" href="#tide-and-surge-boundary-conditions" title="Permalink to this headline">¶</a></h1>
+<p><strong>SPECIFICATION OF TIDE AND SURGE OPEN BOUNDARY CONDITIONS</strong></p>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">TIDAL_BC</span></code>: logical parameter for tide and surge open boundary conditions, T - tide and surge at open boundaries, F - no tide or surge.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">TideBcType</span></code>: string parameter for data types. Default: TideBcType = CONSTANT</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">TideWest_ETA</span></code>: constant eta value at the WEST boundary.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">TideWest_U</span></code>: constant u value at the WEST boundary, defalut: 0.0.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">TideWest_V</span></code>: constant v value at the WEST boundary, defalut: 0.0.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">TideEast_ETA</span></code>: constant eta value at the EAST boundary.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">TideEast_U</span></code>: constant u value at the EAST boundary, defalut: 0.0.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">TideEast_V</span></code>: constant v value at the EAST boundary, defalut: 0.0.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">TideSouth_ETA</span></code>: constant eta value at the SOUTH boundary.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">TideSouth_U</span></code>: constant u value at the SOUTH boundary, defalut: 0.0.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">TideSouth_V</span></code>: constant v value at the SOUTH boundary, defalut: 0.0.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">TideNorth_ETA</span></code>: constant eta value at the NORTH boundary.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">TideNorth_U</span></code>: constant u value at the NORTH boundary, defalut: 0.0.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">TideNorth_V</span></code>: constant v value at the NORTH boundary, defalut: 0.0.</p></li>
+</ul>
+<p>IF no ETA values at all four boundaries, Tide and Surge Boundary Condition is invalid.</p>
+<p>Example (in input.txt).</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>! ---------------- TIDE BOUNDARY ----------------------
+  TIDAL_BC = T
+  TideBcType = CONSTANT
+  TideWest_ETA = 1.0
+  TideEast_ETA = 1.0
+! ----------------WAVEMAKER------------------------------
+  WAVEMAKER = WK_REG
+  DEP_WK = 8.0
+  Xc_WK = 150.0
+  Yc_WK = 0.0
+  Tperiod = 8.0
+  AMP_WK = 0.5
+  Theta_WK = 0.0
+  Delta_WK = 3.0
+</pre></div>
+</div>
+<p>A simple case is tested in /simple_cases/tide_constant/</p>
+<p>This example specifies constant eta=1.0 m at both west and east boundaries. u and v are not specified and will be zero by default. Waves are generated at x=150m.</p>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="_images/tide_snap.jpg"><img alt="alternate text" src="_images/tide_snap.jpg" style="width: 500px; height: 200px;" /></a>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="statistics.html" title="Wave Statistics"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="periodic.html" title="Periodic Boundary Condition"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="definition.html" ><strong>DEFINITIONS OF PARAMETERS</strong></a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="central_para.html" >Parameters for Central Module</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, Fengyan Shi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
+    </div>
+  </body>
+</html>

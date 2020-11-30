@@ -1,7 +1,11 @@
 .. _section-shipwakes-setup:
 
-Shipwakes Setup
+Shipwakes
 ***************
+
+************************
+Ship-wake Model Setup
+************************
 
 1) Specify a folder which contains a number of vessel files, :code:`vessel_00001, vessel_00002, ...`
    
@@ -100,9 +104,47 @@ Figure: Vessel types (from bottom to top): 1) Pressure Type I, 2) Pressure Type 
          100.0 1050.0 300.0
 
 
+************************
+Deep Draft Vessels
+************************
 
+An instability problem may occur in Boussnesq modeling a large-size vessel with a draft close to  channel depth. We developed three methods in the fully nonlinear Boussinesq model, FUNWAVE-TVD, to suppress high-frequency spikes generated near-field of a vessel. The three methods are the shock-capturing method, friction method, and viscosity method, respectively. Tests show that the combined shock-capturing and friction method is the most effective method to suppress the local high-frequency noises, while it does not affect the far-field solution. A strong test, in which the target draft is larger than the channel depth, showed that there are no high-frequency noises generated in the case of ship squat if the shock-capturing method is used.  **Shock-capturing Method** 
+The shock-capturing method is used by switching to SWE solver at the bottom of a vessel. The method is consistent with the shock-capturing-based wave breaking scheme. MASK9 is used to mask the area of the vessel bottom, where SWE is solved. 
+**Friction Method**
+The Friction Method is one of the dissipation methods used for damping waves as in sponge layers. A large bottom friction is applied locally at the vessel bottom. A proper friction coefficient Cd can be specified by users.  
+**Viscosity Method**
+The Viscosity Method is also one of the dissipation methods used as in sponge layers. Wave damping rate is usually lower than that in the friction method.  
+**Model Configuration**
 
+To use one of the three methods or combined methods, the code needs to be recompiled with the flag **-DDEEP_DRAFT_VESSEL** in Makefile. 
+The default option (if nothing specified in input.txt) is the combined shock-capturing method and friction method with a friction coefficient of 0.1. This default option and associated parameter were obtained based on the best practice of the tests we have conducted. Users can also specify an option and parameters in input.txt by themselves.
 
+ *Setup of shock capturing method*
 
+  MaskMethod = T 
+
+ *Setup of friction method*
+
+  FrictionMethod = T 
+  
+  CdDeepDraft = *<floating-point number>*, suggested values: 0.1 -- 1.0
+
+ *Setup of viscosity method*
+
+  ViscosityMethod = T
+
+  VisDeepDraft = *<floating-point number>*, suggested values: 0.1 -- 5.0
+
+ *Setup of minimum clearance*
+
+  CLEARANCE = *<floating-point number>*, default value: 1.0 
+
+**Examples**
+
+The test examples can be found in the github package (master) /simple_cases/vessel_deep_draft/
+
+The figure below shows the result from the strong test in which the target draft is even larger than channel depth. Although the model configuration is not realistic, it can serve as a strong test for numerical instability. Here, a target draft of 20 m versus a channel depth of 18 m was applied. We used the shock-capturing method in the test. The figure shows a large portion of grid cells are dry (white area). The dry points did not cause any high-frequency noises due to the application of the shock-capturing method.
+
+.. figure:: images/simple_cases/strong_test_20m_1d_2d.jpg
 
 

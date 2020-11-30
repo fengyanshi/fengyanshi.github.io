@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Suspended Sediment Transport Equation &#8212; FUNWAVE Documentation</title>
+    <title>Suspended Sediment Transport Equation (Non-cohesive) &#8212; FUNWAVE Documentation</title>
     <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -15,7 +15,7 @@
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Bedload Sediment Transport" href="bedload.html" />
+    <link rel="next" title="Suspended Sediment Transport Equation (Cohesive)" href="sed_equation_cohesive.html" />
     <link rel="prev" title="Sediment Transport Module" href="sediment.html" /> 
   </head><body>
 <div class="header">
@@ -31,7 +31,7 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="bedload.html" title="Bedload Sediment Transport"
+          <a href="sed_equation_cohesive.html" title="Suspended Sediment Transport Equation (Cohesive)"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="sediment.html" title="Sediment Transport Module"
@@ -84,8 +84,8 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="suspended-sediment-transport-equation">
-<span id="section-sed-equation"></span><h1>Suspended Sediment Transport Equation<a class="headerlink" href="#suspended-sediment-transport-equation" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="suspended-sediment-transport-equation-non-cohesive">
+<span id="section-sed-equation"></span><h1>Suspended Sediment Transport Equation (Non-cohesive)<a class="headerlink" href="#suspended-sediment-transport-equation-non-cohesive" title="Permalink to this headline">¶</a></h1>
 <p>The sediment transport module calculates sediment transport induced by both suspended load and bedload. The morphological module calculates the bed evolution based on the sediment continuity equation.</p>
 <p>Suspended sediment motion is governed by the depth-averaged sediment concentration equation as follows:</p>
 <div class="math notranslate nohighlight" id="equation-sed-equation-0">
@@ -98,20 +98,20 @@
 <span class="eqno">(55)<a class="headerlink" href="#equation-sed-equation-2" title="Permalink to this equation">¶</a></span>\[u_{*c} = \frac{\kappa}{-1 + \log (30 H / k_s)} U_c\]</div>
 <p>in which <span class="math notranslate nohighlight">\(U_c\)</span> is the depth-averaged total velocity (m/s), <span class="math notranslate nohighlight">\(k_s = 2.5 d_{50}\)</span> is Nikuradse roughness coefficient, and <span class="math notranslate nohighlight">\(d_{50}\)</span> is the median grain diameter (mm).</p>
 <p>In the advection-diffusion equation, <span class="math notranslate nohighlight">\(P\)</span> and <span class="math notranslate nohighlight">\(D\)</span> represent the erosion rate and deposition rate, respectively. The erosion rate can be calculated using van Rijn’s (1984) pickup function:</p>
-<div class="math notranslate nohighlight" id="equation-sed-equation-3">
-<span class="eqno">(56)<a class="headerlink" href="#equation-sed-equation-3" title="Permalink to this equation">¶</a></span>\[P = 0.015 \frac{d_{50}}{a} \left ( \frac{|\tau_b| - \tau_{cr}}{\tau_{cr}}\right ) d^{-0.3}_{*} w_f \label{p}\]</div>
+<div class="math notranslate nohighlight" id="equation-p">
+<span class="eqno">(56)<a class="headerlink" href="#equation-p" title="Permalink to this equation">¶</a></span>\[P = 0.015 \frac{d_{50}}{a} \left ( \frac{|\tau_b| - \tau_{cr}}{\tau_{cr}}\right ) d^{-0.3}_{*} w_f\]</div>
 <p>where <span class="math notranslate nohighlight">\(a\)</span> is a reference elevation and is a function of total depth (<span class="math notranslate nohighlight">\(a = 0.01 H\)</span>), <span class="math notranslate nohighlight">\(\tau_b\)</span> is the bed shear stress, and <span class="math notranslate nohighlight">\(\tau_{cr}\)</span> is the critical shear stress. <span class="math notranslate nohighlight">\(P\)</span> has the dimension of velocity (m/s) considering the convection-diffusion equation for non-dimensional sediment concentration. <span class="math notranslate nohighlight">\(d_{*}\)</span> is dimensionless grain size defined as:</p>
+<div class="math notranslate nohighlight" id="equation-sed-equation-3">
+<span class="eqno">(57)<a class="headerlink" href="#equation-sed-equation-3" title="Permalink to this equation">¶</a></span>\[d_{*} = d_{50} \left( \frac{(s-1)g}{\nu^2} \right)^{1/3}\]</div>
+<p>where <span class="math notranslate nohighlight">\(s\)</span> is the specified gravity of the sediment, and <span class="math notranslate nohighlight">\(\nu\)</span> is the kinematic viscosity coefficient. The critical bed shear stress <span class="math notranslate nohighlight">\(\tau_{cr}\)</span> used in <a class="reference internal" href="#equation-p">(56)</a> is defined as:</p>
 <div class="math notranslate nohighlight" id="equation-sed-equation-4">
-<span class="eqno">(57)<a class="headerlink" href="#equation-sed-equation-4" title="Permalink to this equation">¶</a></span>\[d_{*} = d_{50} \left( \frac{(s-1)g}{\nu^2} \right)^{1/3}\]</div>
-<p>where <span class="math notranslate nohighlight">\(s\)</span> is the specified gravity of the sediment, and <span class="math notranslate nohighlight">\(\nu\)</span> is the kinematic viscosity coefficient. The critical bed shear stress <span class="math notranslate nohighlight">\(\tau_{cr}\)</span> used in (ref{p}) is defined as:</p>
-<div class="math notranslate nohighlight" id="equation-sed-equation-5">
-<span class="eqno">(58)<a class="headerlink" href="#equation-sed-equation-5" title="Permalink to this equation">¶</a></span>\[\tau_{cr} = \rho_w (s-1)gd_{50} \theta_{cr}\]</div>
+<span class="eqno">(58)<a class="headerlink" href="#equation-sed-equation-4" title="Permalink to this equation">¶</a></span>\[\tau_{cr} = \rho_w (s-1)gd_{50} \theta_{cr}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\theta_{cr}\)</span> is the critical Shields parameter, approximately equal to 0.05. Based on the roughness estimate, the shear stress is expressed as:</p>
-<div class="math notranslate nohighlight" id="equation-sed-equation-6">
-<span class="eqno">(59)<a class="headerlink" href="#equation-sed-equation-6" title="Permalink to this equation">¶</a></span>\[|\tau_b| = \frac{\rho_w k^2}{1+\ln (k_s/30 h)} U_c\]</div>
+<div class="math notranslate nohighlight" id="equation-sed-equation-5">
+<span class="eqno">(59)<a class="headerlink" href="#equation-sed-equation-5" title="Permalink to this equation">¶</a></span>\[\tau_b = \rho_w \left(\frac{ 0.4}{1+\ln (k_s/30 h)} \right)^2 U_c^2\]</div>
 <p>The deposition rate <span class="math notranslate nohighlight">\(D\)</span> can be calculated using the formula of <a class="reference external" href="https://ascelibrary.org/doi/pdf/10.1061/%28ASCE%290733-9429%281999%29125%3A12%281270%29">Cao (1999)</a>:</p>
-<div class="math notranslate nohighlight" id="equation-sed-equation-7">
-<span class="eqno">(60)<a class="headerlink" href="#equation-sed-equation-7" title="Permalink to this equation">¶</a></span>\[D = \gamma c w_f (1-\gamma \bar{c})^{m_o}\]</div>
+<div class="math notranslate nohighlight" id="equation-sed-equation-6">
+<span class="eqno">(60)<a class="headerlink" href="#equation-sed-equation-6" title="Permalink to this equation">¶</a></span>\[D = \gamma c w_f (1-\gamma \bar{c})^{m_o}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\gamma = \min [2,(1-n/\bar{c})]\)</span>, <span class="math notranslate nohighlight">\(n\)</span> is the sediment porosity, and <span class="math notranslate nohighlight">\(m_0\)</span> is a constant number given as 2.0.</p>
 <p><strong>References</strong></p>
 <p>Cao, Z. (1999) “Equilibrium near-bed concentration of suspended sediment”. <em>J. of Hydraulic Eng.</em>, 125(12): 1270-1278. DOI: 10.1061/(ASCE)0733-9429(1999)125:12(1270).</p>
@@ -132,7 +132,7 @@
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="bedload.html" title="Bedload Sediment Transport"
+          <a href="sed_equation_cohesive.html" title="Suspended Sediment Transport Equation (Cohesive)"
              >next</a> |</li>
         <li class="right" >
           <a href="sediment.html" title="Sediment Transport Module"
