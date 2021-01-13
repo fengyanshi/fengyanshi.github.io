@@ -7,11 +7,11 @@ Breakwater and Obstacle
 
 Native to FUNWAVE are the addition of obstacles and/or breakwaters in the model domain. These features can be either fully reflective (i.e., impermeable) or partially reflecting / partially absorbing (e.g., permeable). There are three ways to add a breakwater or obstacle to the model:
 
-#. Modify the bathymetry directly, generating a raise *impermeable* feature in the along-shore beach profile (or cross-shore for jetties, groins, etc.)
+#. Modify the bathymetry directly, generating a raise *impermeable* feature in the along-shore beach profile (or cross-shore for jetties, groins, etc.). See an example of this at :ref:`example_bathy_breakwater`.
 
-#. Generate a breakwater file that defines the width of a *dissipative sponge layer* at a location on the grid, and define the corresponding absorption strength of the sponge layer in the ``input.txt`` file. The dissipative sponge layer behaves as a frictional dissipative layer to the incoming waves.
+#. Generate a breakwater file that defines the width of a *dissipative sponge layer* at a location on the grid, and define the corresponding absorption strength of the sponge layer in the ``input.txt`` file. The dissipative sponge layer behaves as a frictional dissipative layer to the incoming waves. See an example of this at :ref:`example_partial_breakwater`.
 
-#. Generate an obstacle file that specifies the location of an infinitely tall, *impermeable* wall (i.e., fully reflective) in the model domain.
+#. Generate an obstacle file that specifies the location of an infinitely tall, *impermeable* wall (i.e., fully reflective) in the model domain. See an example of this at :ref:`example_obstacle`. 
 
 More details about the specification of the breakwater and obstacle files are presented in the following section.
 
