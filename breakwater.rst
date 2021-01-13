@@ -31,6 +31,8 @@ Several structure properties are available for simulation in the FUNWAVE numeric
 
        * The height of the breakwater or coastal feature relative to the total water depth is variable, and as such the overall wave responses will differ greatly for a fully submerged breakwater compared to an emergent breakwater.
 
+These methods are not limited to breakwaters. Other structures of interest may include, but are not limited to, jetties, groins, revetments, and sea walls. These structure types and their configurations may be added to the numerical domain using similar techniques described above. For more information on wave-structure interactions, visit :ref:`literature_interactions`.
+
 **SPECIFICATION OF OBSTACLES or BREAKWATER**
 
 * :code:`OBSTACLE_FILE`: Name of obstacle file. 
