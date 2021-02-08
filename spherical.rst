@@ -13,6 +13,7 @@ All input parameters, except the following grid information, are the same as for
 * :code:`Lat_South`: latitude (degrees) of south boundary.
 * :code:`Dphi`: :math:`d\phi` (degrees)
 * :code:`Dtheta`: :math:`d\theta` (degrees) 
+* :code:`ArrTimeMinH`: threshold to detect tsunami wave (m), for output files of tsunami arrival time with :code:`OUT_Time = T`.   
 
 In addition, it is not necessary to specify :code:`Gamma2` (for nonlinear dispersive terms) in the spherical code.  
 

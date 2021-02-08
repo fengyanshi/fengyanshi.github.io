@@ -30,7 +30,8 @@ Output
 * :code:`HMIN`: logical parameter for output of recorded minimum surface elevation . T or F. 
 * :code:`UMAX`: logical parameter for output of recorded maximum velocity . T or F. 
 * :code:`VORMAX`: logical parameter for output of recorded maximum vorticity . T or F. 
-* :code:`MFMAX`: logical parameter for output of recorded maximum momentum flux . T or F. 
+* :code:`MFMAX`: logical parameter for output of recorded maximum momentum flux . T or F.
+* :code:`OUT_Time`: logical parameter for output of recorded tsunami arrival time . T or F. 
 * :code:`WaveHeight`: logical parameter for output of wave height, Hsig, Hrms, Havg. T or F.
 * :code:`OUT_METEO`: logical parameter for output of pressure field. T or F.
 * :code:`ROLLER`: logical parameter for output of roller-induced flux. T or F.
@@ -52,6 +53,7 @@ The output files are saved in the result directory defined by :code:`RESULT_FOLD
  * :code:`umax_xxxxx`: maximum velocity
  * :code:`MFmax_xxxxx`: maximum momentum flux
  * :code:`VORmax_xxxxx`: maximum vertical vorticiy
+ * :code:`time_xxxxx`: tsunami arrival time
  * :code:`p_xxxxx`: volume flux in the x direction
  * :code:`q_xxxxx`: volume flux in the y direction
  * :code:`nubrk_xxxxx`: breaking induced eddy vviscosity (when viscosity breaker is on)
