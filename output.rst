@@ -36,6 +36,7 @@ Output
 * :code:`OUT_METEO`: logical parameter for output of pressure field. T or F.
 * :code:`ROLLER`: logical parameter for output of roller-induced flux. T or F.
 * :code:`UNDERTOW`: logical parameter for output of undertow. T or F.
+* :code:`OUT_NU`: logical parameter for output of breaking location. T or F.
 
 **OUTPUT FILES**
 
@@ -56,7 +57,7 @@ The output files are saved in the result directory defined by :code:`RESULT_FOLD
  * :code:`time_xxxxx`: tsunami arrival time
  * :code:`p_xxxxx`: volume flux in the x direction
  * :code:`q_xxxxx`: volume flux in the y direction
- * :code:`nubrk_xxxxx`: breaking induced eddy vviscosity (when viscosity breaker is on)
+ * :code:`nubrk_xxxxx`: breaking induced eddy viscosity (when viscosity breaker is on)
  * :code:`etat_xxxxx`: :math:`\eta_t`
  * :code:`age_xxxxx`: breaking age (in seconds) 
  * :code:`roller_xxxxx`: roller-induced mass flux
