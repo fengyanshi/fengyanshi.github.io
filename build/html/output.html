@@ -115,6 +115,7 @@
 <li><p><code class="code docutils literal notranslate"><span class="pre">OUT_METEO</span></code>: logical parameter for output of pressure field. T or F.</p></li>
 <li><p><code class="code docutils literal notranslate"><span class="pre">ROLLER</span></code>: logical parameter for output of roller-induced flux. T or F.</p></li>
 <li><p><code class="code docutils literal notranslate"><span class="pre">UNDERTOW</span></code>: logical parameter for output of undertow. T or F.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">OUT_NU</span></code>: logical parameter for output of breaking location. T or F.</p></li>
 </ul>
 <p><strong>OUTPUT FILES</strong></p>
 <p>The output files are saved in the result directory defined by <code class="code docutils literal notranslate"><span class="pre">RESULT_FOLDER</span></code> in “input.txt”. Output file names are a combination of variable name and an output series number such as <code class="code docutils literal notranslate"><span class="pre">eta_00001,</span> <span class="pre">eta_00002,</span> <span class="pre">....</span></code>. The format and read/write algorithm are consistent with a depth file.</p>
@@ -136,7 +137,7 @@
 <li><p><code class="code docutils literal notranslate"><span class="pre">time_xxxxx</span></code>: tsunami arrival time</p></li>
 <li><p><code class="code docutils literal notranslate"><span class="pre">p_xxxxx</span></code>: volume flux in the x direction</p></li>
 <li><p><code class="code docutils literal notranslate"><span class="pre">q_xxxxx</span></code>: volume flux in the y direction</p></li>
-<li><p><code class="code docutils literal notranslate"><span class="pre">nubrk_xxxxx</span></code>: breaking induced eddy vviscosity (when viscosity breaker is on)</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">nubrk_xxxxx</span></code>: breaking induced eddy viscosity (when viscosity breaker is on)</p></li>
 <li><p><code class="code docutils literal notranslate"><span class="pre">etat_xxxxx</span></code>: <span class="math notranslate nohighlight">\(\eta_t\)</span></p></li>
 <li><p><code class="code docutils literal notranslate"><span class="pre">age_xxxxx</span></code>: breaking age (in seconds)</p></li>
 <li><p><code class="code docutils literal notranslate"><span class="pre">roller_xxxxx</span></code>: roller-induced mass flux</p></li>
