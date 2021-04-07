@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Basics for model setup &#8212; FUNWAVE Documentation</title>
+    <title>IG Wave Generation &#8212; FUNWAVE Documentation</title>
     <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -15,8 +15,8 @@
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Regular waves with normal incidence" href="tracking_rip_regular.html" />
-    <link rel="prev" title="Compile the code for tracking" href="tracking_rip_compile.html" /> 
+    <link rel="next" title="IG wave generation with 2nd-order correction" href="ig_theory.html" />
+    <link rel="prev" title="30 deg irregular waves, a submerged breakwater with partial reflection" href="inlet_shoal_irregular_wave_30deg_brkwtr_abs.html" /> 
   </head><body>
 <div class="header">
  <p class="logo"><a href="https://fengyanshi.github.io/build/html/index.html">
@@ -31,14 +31,13 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="tracking_rip_regular.html" title="Regular waves with normal incidence"
+          <a href="ig_theory.html" title="IG wave generation with 2nd-order correction"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="tracking_rip_compile.html" title="Compile the code for tracking"
+          <a href="inlet_shoal_irregular_wave_30deg_brkwtr_abs.html" title="30 deg irregular waves, a submerged breakwater with partial reflection"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="examples.html" ><strong>EXAMPLES</strong></a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="tracking_rip.html" accesskey="U">Lagrangian tracking in 2D rip channels</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="examples.html" accesskey="U"><strong>EXAMPLES</strong></a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -81,30 +80,18 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="basics-for-model-setup">
-<h1>Basics for model setup<a class="headerlink" href="#basics-for-model-setup" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li><p>computational domain</p></li>
-</ul>
-<div class="align-center figure" id="id1">
-<a class="reference internal image-reference" href="_images/bathy_tracer.png"><img alt="alternate text" src="_images/bathy_tracer.png" style="width: 400px; height: 320px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">The bathymetry file: /simple_cases/rip_tracking/bathy/depth_115.txt</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+  <div class="section" id="ig-wave-generation">
+<span id="section-ig-wave"></span><h1>IG Wave Generation<a class="headerlink" href="#ig-wave-generation" title="Permalink to this headline">¶</a></h1>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="_images/envelope_IG.jpg"><img alt="alternate text" src="_images/envelope_IG.jpg" style="width: 500px; height: 300px;" /></a>
 </div>
-<p>Basic info</p>
-<blockquote>
-<div><p>Dimensions 312 X 100 (note: we only read 100 rows of the depth file shown in the figure)</p>
-<p>DX = 1.0 m
-DY = 2.0 m</p>
-<p>Wavemaker located at x = 280.0 m</p>
-<p>Sponge layer: x = 252.0 – 312.0 m  (width = 60.0 m)</p>
-</div></blockquote>
+<div class="toctree-wrapper compound">
 <ul>
-<li><p>input.txt
-the input file is in the folder /simple_cases/rip_tracking/work/</p></li>
-<li><p>postprocessing</p>
-<p>matlab examples of postprocessing are located in /simple_cases/rip_tracking/postprocessing/</p>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="ig_theory.html">IG wave generation with 2nd-order correction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ig_2components.html">Example of IG wave generation with two wave components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ig_spectrum.html">Example of IG wave generation from measured data</a></li>
 </ul>
+</div>
 </div>
 
 
@@ -120,14 +107,13 @@ the input file is in the folder /simple_cases/rip_tracking/work/</p></li>
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="tracking_rip_regular.html" title="Regular waves with normal incidence"
+          <a href="ig_theory.html" title="IG wave generation with 2nd-order correction"
              >next</a> |</li>
         <li class="right" >
-          <a href="tracking_rip_compile.html" title="Compile the code for tracking"
+          <a href="inlet_shoal_irregular_wave_30deg_brkwtr_abs.html" title="30 deg irregular waves, a submerged breakwater with partial reflection"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="examples.html" ><strong>EXAMPLES</strong></a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="tracking_rip.html" >Lagrangian tracking in 2D rip channels</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="examples.html" ><strong>EXAMPLES</strong></a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">

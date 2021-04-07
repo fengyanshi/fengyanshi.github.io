@@ -15,6 +15,7 @@ Simple tests **(beginners should start from here)**
    beach_2d
    rip_2d
    inlet_shoal
+   ig_wave
    tohoku
    vessel
    vessel_morpho

@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Basics for model setup &#8212; FUNWAVE Documentation</title>
+    <title>Example of IG wave generation with two wave components &#8212; FUNWAVE Documentation</title>
     <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -15,8 +15,8 @@
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Regular waves with normal incidence" href="tracking_rip_regular.html" />
-    <link rel="prev" title="Compile the code for tracking" href="tracking_rip_compile.html" /> 
+    <link rel="next" title="Example of IG wave generation from measured data" href="ig_spectrum.html" />
+    <link rel="prev" title="IG wave generation with 2nd-order correction" href="ig_theory.html" /> 
   </head><body>
 <div class="header">
  <p class="logo"><a href="https://fengyanshi.github.io/build/html/index.html">
@@ -31,14 +31,14 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="tracking_rip_regular.html" title="Regular waves with normal incidence"
+          <a href="ig_spectrum.html" title="Example of IG wave generation from measured data"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="tracking_rip_compile.html" title="Compile the code for tracking"
+          <a href="ig_theory.html" title="IG wave generation with 2nd-order correction"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="examples.html" ><strong>EXAMPLES</strong></a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="tracking_rip.html" accesskey="U">Lagrangian tracking in 2D rip channels</a> &#187;</li> 
+          <li class="nav-item nav-item-2"><a href="ig_wave.html" accesskey="U">IG Wave Generation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -81,30 +81,59 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="basics-for-model-setup">
-<h1>Basics for model setup<a class="headerlink" href="#basics-for-model-setup" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li><p>computational domain</p></li>
-</ul>
-<div class="align-center figure" id="id1">
-<a class="reference internal image-reference" href="_images/bathy_tracer.png"><img alt="alternate text" src="_images/bathy_tracer.png" style="width: 400px; height: 320px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">The bathymetry file: /simple_cases/rip_tracking/bathy/depth_115.txt</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+  <div class="section" id="example-of-ig-wave-generation-with-two-wave-components">
+<h1>Example of IG wave generation with two wave components<a class="headerlink" href="#example-of-ig-wave-generation-with-two-wave-components" title="Permalink to this headline">¶</a></h1>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="_images/windwave_and_IG_2comp.jpg"><img alt="alternate text" src="_images/windwave_and_IG_2comp.jpg" style="width: 500px; height: 300px;" /></a>
 </div>
-<p>Basic info</p>
+<ol class="arabic simple">
+<li><p>Prepare four files containing wave parameters of two wave components</p></li>
+</ol>
 <blockquote>
-<div><p>Dimensions 312 X 100 (note: we only read 100 rows of the depth file shown in the figure)</p>
-<p>DX = 1.0 m
-DY = 2.0 m</p>
-<p>Wavemaker located at x = 280.0 m</p>
-<p>Sponge layer: x = 252.0 – 312.0 m  (width = 60.0 m)</p>
-</div></blockquote>
-<ul>
-<li><p>input.txt
-the input file is in the folder /simple_cases/rip_tracking/work/</p></li>
-<li><p>postprocessing</p>
-<p>matlab examples of postprocessing are located in /simple_cases/rip_tracking/postprocessing/</p>
-</li>
+<div><ul class="simple">
+<li><p>SPC_dep_pf.txt: contains depth and peak frequency</p></li>
 </ul>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>13.0 - depth
+0.1  - peak frequency
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>SPC_frq.txt:    contains frequency components</p></li>
+</ul>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>0.09
+0.11
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>SPC_angle.txt:  contains wave angle (single angle)</p></li>
+</ul>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>0.0
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>SPC_HMO.txt:    contains Hmo of wave components (note: not amplitude)</p></li>
+</ul>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>1.4142
+1.4142
+
+Note: 1.4142 is Hmo for a wave amplitude of 0.5m
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic" start="2">
+<li><p>Run matlab script IG_wave_generation.m</p>
+<p>output file: spectrum_two_components.txt will be used in input.txt</p>
+</li>
+<li><p>Modify input.txt</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>WAVEMAKER = LEFT_BC_IRR
+WAVE_DATA_TYPE=DATA
+WaveCompFile = spectrum_two_components.tx
+DEP_WK = 13.0
+</pre></div>
+</div>
+</div></blockquote>
 </div>
 
 
@@ -120,14 +149,14 @@ the input file is in the folder /simple_cases/rip_tracking/work/</p></li>
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="tracking_rip_regular.html" title="Regular waves with normal incidence"
+          <a href="ig_spectrum.html" title="Example of IG wave generation from measured data"
              >next</a> |</li>
         <li class="right" >
-          <a href="tracking_rip_compile.html" title="Compile the code for tracking"
+          <a href="ig_theory.html" title="IG wave generation with 2nd-order correction"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="examples.html" ><strong>EXAMPLES</strong></a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="tracking_rip.html" >Lagrangian tracking in 2D rip channels</a> &#187;</li> 
+          <li class="nav-item nav-item-2"><a href="ig_wave.html" >IG Wave Generation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">

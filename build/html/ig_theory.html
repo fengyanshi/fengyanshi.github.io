@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Basics for model setup &#8212; FUNWAVE Documentation</title>
+    <title>IG wave generation with 2nd-order correction &#8212; FUNWAVE Documentation</title>
     <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -15,8 +15,8 @@
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Regular waves with normal incidence" href="tracking_rip_regular.html" />
-    <link rel="prev" title="Compile the code for tracking" href="tracking_rip_compile.html" /> 
+    <link rel="next" title="Example of IG wave generation with two wave components" href="ig_2components.html" />
+    <link rel="prev" title="IG Wave Generation" href="ig_wave.html" /> 
   </head><body>
 <div class="header">
  <p class="logo"><a href="https://fengyanshi.github.io/build/html/index.html">
@@ -31,14 +31,14 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="tracking_rip_regular.html" title="Regular waves with normal incidence"
+          <a href="ig_2components.html" title="Example of IG wave generation with two wave components"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="tracking_rip_compile.html" title="Compile the code for tracking"
+          <a href="ig_wave.html" title="IG Wave Generation"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="examples.html" ><strong>EXAMPLES</strong></a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="tracking_rip.html" accesskey="U">Lagrangian tracking in 2D rip channels</a> &#187;</li> 
+          <li class="nav-item nav-item-2"><a href="ig_wave.html" accesskey="U">IG Wave Generation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -81,30 +81,25 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="basics-for-model-setup">
-<h1>Basics for model setup<a class="headerlink" href="#basics-for-model-setup" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li><p>computational domain</p></li>
-</ul>
-<div class="align-center figure" id="id1">
-<a class="reference internal image-reference" href="_images/bathy_tracer.png"><img alt="alternate text" src="_images/bathy_tracer.png" style="width: 400px; height: 320px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">The bathymetry file: /simple_cases/rip_tracking/bathy/depth_115.txt</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
-</div>
-<p>Basic info</p>
-<blockquote>
-<div><p>Dimensions 312 X 100 (note: we only read 100 rows of the depth file shown in the figure)</p>
-<p>DX = 1.0 m
-DY = 2.0 m</p>
-<p>Wavemaker located at x = 280.0 m</p>
-<p>Sponge layer: x = 252.0 – 312.0 m  (width = 60.0 m)</p>
-</div></blockquote>
-<ul>
-<li><p>input.txt
-the input file is in the folder /simple_cases/rip_tracking/work/</p></li>
-<li><p>postprocessing</p>
-<p>matlab examples of postprocessing are located in /simple_cases/rip_tracking/postprocessing/</p>
-</li>
-</ul>
+  <div class="section" id="ig-wave-generation-with-2nd-order-correction">
+<h1>IG wave generation with 2nd-order correction<a class="headerlink" href="#ig-wave-generation-with-2nd-order-correction" title="Permalink to this headline">¶</a></h1>
+<p>The wavemaker can take into account bound IG waves based on the weakly-nonlinear second-order finite-depth wave theory of Hasselmann (1962). A time series of wave surface elevation (<span class="math notranslate nohighlight">\(\eta\)</span>) can be described by the linear superposition of free wave components, as in</p>
+<div class="math notranslate nohighlight" id="equation-ig-theory-0">
+<span class="eqno">(103)<a class="headerlink" href="#equation-ig-theory-0" title="Permalink to this equation">¶</a></span>\[\eta = \sum_{i=1}^N a_i \cos(2 \pi f_i t + \phi_i),\]</div>
+<p>where <span class="math notranslate nohighlight">\(f_i\)</span> is the frequency and <span class="math notranslate nohighlight">\(\phi_i\)</span> is the phase of <span class="math notranslate nohighlight">\(i^{th}\)</span> wave component.  <span class="math notranslate nohighlight">\(N\)</span> is the total number of free wave components.
+The sub-harmonic component (<span class="math notranslate nohighlight">\(\eta_{ij}\)</span>) generated by two free waves <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(j\)</span>, is given by</p>
+<div class="math notranslate nohighlight" id="equation-ig-theory-1">
+<span class="eqno">(104)<a class="headerlink" href="#equation-ig-theory-1" title="Permalink to this equation">¶</a></span>\[\eta_{ij} = D_{ij} a_i a_j \cos(f_{ij} t + \phi_{ij}),\]</div>
+<p>where <span class="math notranslate nohighlight">\(f_{ij} = f_j - f_i\)</span> and <span class="math notranslate nohighlight">\(\phi_{ij}= \phi_j - \phi_i\)</span> (note <span class="math notranslate nohighlight">\(f_j &gt; f_i\)</span>), which represent the frequency and the phase of the sub-harmonic component, respectively.  <span class="math notranslate nohighlight">\(D_{ij}\)</span> is the interaction coefficient given by</p>
+<div class="math notranslate nohighlight" id="equation-ig-theory-2">
+<span class="eqno">(105)<a class="headerlink" href="#equation-ig-theory-2" title="Permalink to this equation">¶</a></span>\[D_{ij} = -\frac{gk_i k_j}{2 \omega_i \omega_j} + \frac{\omega^2_i - \omega_i \omega_j + \omega^2_j}{2g} - C \frac{g(\omega_i - \omega_j)}{\omega_i \omega_j [gk_{ij}\tanh(k_{ij}h) - (\omega_i - \omega_j)^2]},\]</div>
+<p>where <span class="math notranslate nohighlight">\(\omega = 2 \pi f\)</span> is the radial frequency, and <span class="math notranslate nohighlight">\(k_{ij} = k_i - k_j\)</span> is the wave number of the sub-harmonic component. <span class="math notranslate nohighlight">\(C\)</span> is a coefficient given by</p>
+<div class="math notranslate nohighlight" id="equation-ig-theory-3">
+<span class="eqno">(106)<a class="headerlink" href="#equation-ig-theory-3" title="Permalink to this equation">¶</a></span>\[C = (\omega_i - \omega_j) \left( \frac{\omega_i^2 \omega_j^2}{g^2} + k_i k_j \right) - \frac{1}{2} \left (\frac{\omega_i k_j^2}{\cosh^2(k_j h)} - \frac{\omega_j k_i^2}{\cosh^2(k_i h)} \right).\]</div>
+<p>The total surface elevation including the sub-harmonics can be described by</p>
+<div class="math notranslate nohighlight" id="equation-ig-theory-4">
+<span class="eqno">(107)<a class="headerlink" href="#equation-ig-theory-4" title="Permalink to this equation">¶</a></span>\[\eta = \sum_{i=1}^n a_i \cos(2 \pi f_i t + \phi_i) + \sum_{i=n_1}^{n_2-2} \sum_{i+1}^{n_2} D_{ij} a_i a_j \cos(2 \pi f_{ij} + \phi_{ij}),\]</div>
+<p>where <span class="math notranslate nohighlight">\((n_1, n_2)\)</span> represent the range of free wave components for the sub-harmonic generation. In Li et al. (2020), for example, the range was selected from <span class="math notranslate nohighlight">\(f(n_1)=0.5 f_p\)</span> to <span class="math notranslate nohighlight">\(f(n_2)=1.5 f_p\)</span>, where <span class="math notranslate nohighlight">\(f_p\)</span> was the spectral peak frequency. The range seclected in Malej (2021) is from <span class="math notranslate nohighlight">\(f(n_1)=0.7 f_p\)</span> to <span class="math notranslate nohighlight">\(f(n_2)=1.3 f_p\)</span>, smaller than Li et al. (2020).</p>
 </div>
 
 
@@ -120,14 +115,14 @@ the input file is in the folder /simple_cases/rip_tracking/work/</p></li>
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="tracking_rip_regular.html" title="Regular waves with normal incidence"
+          <a href="ig_2components.html" title="Example of IG wave generation with two wave components"
              >next</a> |</li>
         <li class="right" >
-          <a href="tracking_rip_compile.html" title="Compile the code for tracking"
+          <a href="ig_wave.html" title="IG Wave Generation"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="examples.html" ><strong>EXAMPLES</strong></a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="tracking_rip.html" >Lagrangian tracking in 2D rip channels</a> &#187;</li> 
+          <li class="nav-item nav-item-2"><a href="ig_wave.html" >IG Wave Generation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
