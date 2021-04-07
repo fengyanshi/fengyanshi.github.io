@@ -22,6 +22,6 @@ The total surface elevation including the sub-harmonics can be described by
 
 .. math:: \eta = \sum_{i=1}^n a_i \cos(2 \pi f_i t + \phi_i) + \sum_{i=n_1}^{n_2-2} \sum_{i+1}^{n_2} D_{ij} a_i a_j \cos(2 \pi f_{ij} + \phi_{ij}), 
 
-where :math:`(n_1, n_2)` represent the range of free wave components for the sub-harmonic generation. In Li et al. (2020), for example, the range was selected from :math:`f(n_1)=0.5 f_p` to :math:`f(n_2)=1.5 f_p`, where :math:`f_p` was the spectral peak frequency. The range seclected in Malej (2021) is from :math:`f(n_1)=0.7 f_p` to :math:`f(n_2)=1.3 f_p`, smaller than Li et al. (2020). 
+where :math:`(n_1, n_2)` represent the range of free wave components for the sub-harmonic generation. In Li et al. (2020), for example, the range was selected from :math:`f(n_1)=0.5 f_p` to :math:`f(n_2)=1.5 f_p`, where :math:`f_p` was the spectral peak frequency. The range selected in Malej (2021) is from :math:`f(n_1)=0.7 f_p` to :math:`f(n_2)=1.3 f_p`, smaller than Li et al. (2020). 
 
 
