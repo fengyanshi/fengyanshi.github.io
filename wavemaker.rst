@@ -118,6 +118,11 @@ in which y--axis is oriented along the main axis of the wave maker. :math:`D_{mn
 
 The model also provides an option for 1--D spectral wave generation (uni--directional). 
 
+Wavemaker with user-specified wave coherence
+------------------------------------------------
+
+Users can specify degree of wave cohenrence according to the technique proposed by Salatin et al. (2021). The instruction for such a wavemaker setup and examples and be found in :ref:`definition_wavemaker`. 
+
 References
 ==========
 Bouws, E., G\ddot{u}nther, H., Rosenthal, W., Vincent, C.L., 1985. "Similarity of the Wind Wave Spectrum in Finite Depth Water: 1. Spectral Form". J. of Geophysical Research, 90, NO. C1, 975-986. DOI: 10.1029/JC090iC01p00975.
@@ -127,6 +132,8 @@ Chawla, A., and Kirby, J.T., 2000. "A source function method for generation of w
 Chen, Q., Kirby, J.T., Dalrymple, R.A., Shi, F., Thorton, E.B., 2003. "Boussinesq modeling of longshore currents". J. of Geophysical Research, 108, NO. C11, 3362. DOI: 10.1029/2002JC001308
 
 Kirby, J.T., Wei, G., Chen, Q., Kennedy, A.B., Dalrymple, R.A., 1998. "Funwave 1.0: Fully Nonlinear Boussinesq Wave Model -- Documentation and User's Manual". Hydraulic Eng. Reports: NO. CACR-98-06. University of Delaware.
+
+Salatin, R., Chen, Q., Bak, A. S., Shi, F., and Brandt, S. R., 2021, Effects of Wave Coherence on Longshore Variability of Nearshore Wave Processes, Journal of Geophysical Research - Ocean,  `DOI:1029/2021JC017641 <https://doi.org/10.1029/2021JC017641>`_
 
 Wei, G., Kirby J.T., Sinha, A., 1999. "Generation of waves in Boussinesq models using a source function method". Coastal Eng. 36 (4), 271-299. DOI: 10.1016/S0378-3839(99)00009-5
 
