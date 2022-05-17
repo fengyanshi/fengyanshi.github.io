@@ -1,5 +1,6 @@
 .. _literature_interactions:
 
+***************************
 Wave-Structure Interactions
 ***************************
 
