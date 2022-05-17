@@ -30,6 +30,8 @@ This version  features  several theoretical and numerical improvements, includin
 
 The most recent developments include ship-wake generation (`Shi et al., 2018 <https://www.sciencedirect.com/science/article/pii/S0378383917304246>`_), meteo-tsunami generation (`Woodruff et al., 2018 <https://icce-ojs-tamu.tdl.org/icce/index.php/icce/article/view/8470>`_), and sediment transport and morphological changes (`Tehranirad et al., 2016 <https://coastal.udel.edu/research-2/cacr-reports/>`_, `Malej et al., 2019 <https://apps.dtic.mil/dtic/tr/fulltext/u2/1074624.pdf>`_).
 
+|
+
 =================
 Where to start
 =================
@@ -54,6 +56,8 @@ Stay connected to the global FUNWAVE community by subscribing to the mailing gro
 .. raw:: html
    :file: google_group.html
    
+Stay up-to-date on the latest video tutorials and examples on YouTube by subscribing to `FUNWAVE Tutorials <https://www.youtube.com/channel/UCIWsla9RSOGaxoVFExGuK_w>`_ and `Fengyan Shi <https://www.youtube.com/channel/UCWmlY0Lpr8e0qnLGvlYLW1g>`_.
+
 |
 
 =============
@@ -122,6 +126,10 @@ Benefits of transitioning
 * Direct and fast link to more information (basic + extensive Wiki) without searching any printed of electronic manual/publication
 * Parameter bound and input safety checking – reduces number of initial failures
 * Larger USACE/DoD user base because of a *reduced* learning curve
+
+**NEW**
+*******
+Check out the latest video tutorial series providing an overview of the DoD HPC Portal FUNWAVE-TVD Application on the :ref:`Video Tutorials <tutorials>` page.
 
 .. note::
    The HPC Portal is accessible only to employees of USACE and the greater DoD. For more information on the HPC Portal, visit `<https://portal.hpc.mil>`_. If you currently have access to ERDC HPC systems, you can log into the ERDC HPC Portal on this webpage. Questions about getting access to the ERDC HPC Portal can be directed to Dr. Matt Malej (matt.malej@usace.army.mil).
