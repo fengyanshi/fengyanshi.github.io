@@ -1,9 +1,9 @@
 .. _literature_interactions:
 
-**UNDER CONSTRUCTION**
-******************************
+Wave-Structure Interactions
+***************************
 
-.. Wave-Structure Interactions
+**UNDER CONSTRUCTION**
 
 
 .. Insert introductory text here
