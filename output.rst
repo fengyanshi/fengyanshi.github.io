@@ -98,7 +98,7 @@ To get time series of surface elevation, u and v at interested locations, you ca
 
 Output for stations is a series of numbered files such as :code:`sta_0001, sta_0002 ....` (NOTE: four digit numbers here vs. five digit numbers for 2D output like :code:`eta_00001`). The output file for stations contains four columns: time, eta, u, and v. 
 
-The version after 3.4 uses a buffer to write out stations to speed up the program on a large scale HPC. The array dimensions for the buffer are (StationOutputBuffer,NumberStations,4), where StationOutputBuffer =1000 by default. You can also specify StationOutputBuffer in input.txt. An example to set StationOutputBuffer is in /simple_cases/tide_constant/
+The version after 3.4 uses a buffer to write out stations to speed up the program on a large scale HPC. The array dimensions for the buffer are (:code:`StationOutputBuffer,NumberStations,4`), where :code:`StationOutputBuffer = 1000` by default. You can also specify StationOutputBuffer in input.txt. An example to set :code:`StationOutputBuffer` is in :code:`/simple_cases/tide_constant/`.
 
   .. code-block:: rest
 
