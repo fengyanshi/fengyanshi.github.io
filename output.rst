@@ -91,8 +91,8 @@ The output files are saved in the result directory defined by :code:`RESULT_FOLD
 To get time series of surface elevation, u and v at interested locations, you can specify a station file which includes the locations for output. 
 
   * in "input.txt", add :code:`NumberStations = <integer number of stations>`
-  * in "input.txt", :code:`STATION_FILE = <file name, e.g., gauges.txt>`
-  * format of :code:`STATION_FILE`: two integers for grid points in x and y, respectively.
+  * in "input.txt", :code:`STATIONS_FILE = <file name, e.g., gauges.txt>`
+  * format of :code:`STATIONS_FILE`: two integers for grid points in x and y, respectively.
 
   Example: refer to :ref:`example_station_file`
 
