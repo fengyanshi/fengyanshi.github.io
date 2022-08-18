@@ -117,7 +117,7 @@ html_theme = 'logilab'
 # documentation.
 #
 html_theme_options = {
-        'logo':'../../../images/Delaware.svg',
+        'logo':'../../../images/Funwave.svg',
         'logo_url':'https://fengyanshi.github.io/build/html/index.html'
         }
 
