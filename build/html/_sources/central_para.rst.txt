@@ -19,5 +19,6 @@ Parameters for Central Module
    breakwater
    bathymetry_correction
    hotstart
+   radiation_stress
    post
    output
