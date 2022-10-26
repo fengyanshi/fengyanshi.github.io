@@ -10,5 +10,6 @@
    central
    shipwakes
    sediment
+   tide_module
    meteo_intro
    tracer

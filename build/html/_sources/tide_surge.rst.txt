@@ -5,7 +5,9 @@ Tide and Surge Boundary Conditions
 
 **SPECIFICATION OF TIDE AND SURGE OPEN BOUNDARY CONDITIONS** 
 
-* :code:`TIDAL_BC`: logical parameter for tide and surge open boundary conditions, T - tide and surge at open boundaries, F - no tide or surge.
+* :code:`TIDAL_BC_ABS`: logical parameter for tidal absorbing boundary conditions, T - tide and surge at open boundaries, F - no tide or surge.
+
+* :code:`TIDAL_BC_GEN_ABS`: logical parameter for the combined tidal and absorbing-generating boundary conditions, T - ture, F - false.
 
 * :code:`TideBcType`: string parameter for data types. Default: TideBcType = CONSTANT
 
@@ -33,39 +35,15 @@ Tide and Surge Boundary Conditions
 
 * :code:`TideNorth_V`: constant v value at the NORTH boundary, defalut: 0.0.
 
-IF no ETA values at all four boundaries, Tide and Surge Boundary Condition is invalid.
+* :code:`TideWestFileName`: file name for WEST boundary data.
 
-Example (in input.txt). 
+* :code:`TideEastFileName`: file name for EAST boundary data.
 
-.. code-block:: rest
+* :code:`TideSouthFileName`: file name for SOUTH boundary data.
 
-  ! ---------------- TIDE BOUNDARY ----------------------
-    TIDAL_BC = T
-    TideBcType = CONSTANT
-    TideWest_ETA = 1.0
-    TideEast_ETA = 1.0
-  ! ----------------WAVEMAKER------------------------------ 
-    WAVEMAKER = WK_REG
-    DEP_WK = 8.0 
-    Xc_WK = 150.0 
-    Yc_WK = 0.0 
-    Tperiod = 8.0 
-    AMP_WK = 0.5 
-    Theta_WK = 0.0 
-    Delta_WK = 3.0
+* :code:`TideNorthFileName`: file name for NORTH boundary data. 
 
-A simple case is tested in /simple_cases/tide_constant/
-
-This example specifies constant eta=1.0 m at both west and east boundaries. u and v are not specified and will be zero by default. Waves are generated at x=150m. 
-
-.. figure:: images/simple_cases/tide_snap.jpg
-    :width: 500px
-    :align: center
-    :height: 200px
-    :alt: alternate text
-    :figclass: align-center
-
-
+Examples can be found in /simple_cases/, or see `Tidal module <https://fengyanshi.github.io/build/html/tide_module.html>`_  
 
 
  

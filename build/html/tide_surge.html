@@ -84,7 +84,8 @@
 <span id="section-tide"></span><h1>Tide and Surge Boundary Conditions<a class="headerlink" href="#tide-and-surge-boundary-conditions" title="Permalink to this headline">¶</a></h1>
 <p><strong>SPECIFICATION OF TIDE AND SURGE OPEN BOUNDARY CONDITIONS</strong></p>
 <ul class="simple">
-<li><p><code class="code docutils literal notranslate"><span class="pre">TIDAL_BC</span></code>: logical parameter for tide and surge open boundary conditions, T - tide and surge at open boundaries, F - no tide or surge.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">TIDAL_BC_ABS</span></code>: logical parameter for tidal absorbing boundary conditions, T - tide and surge at open boundaries, F - no tide or surge.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">TIDAL_BC_GEN_ABS</span></code>: logical parameter for the combined tidal and absorbing-generating boundary conditions, T - ture, F - false.</p></li>
 <li><p><code class="code docutils literal notranslate"><span class="pre">TideBcType</span></code>: string parameter for data types. Default: TideBcType = CONSTANT</p></li>
 <li><p><code class="code docutils literal notranslate"><span class="pre">TideWest_ETA</span></code>: constant eta value at the WEST boundary.</p></li>
 <li><p><code class="code docutils literal notranslate"><span class="pre">TideWest_U</span></code>: constant u value at the WEST boundary, defalut: 0.0.</p></li>
@@ -98,30 +99,12 @@
 <li><p><code class="code docutils literal notranslate"><span class="pre">TideNorth_ETA</span></code>: constant eta value at the NORTH boundary.</p></li>
 <li><p><code class="code docutils literal notranslate"><span class="pre">TideNorth_U</span></code>: constant u value at the NORTH boundary, defalut: 0.0.</p></li>
 <li><p><code class="code docutils literal notranslate"><span class="pre">TideNorth_V</span></code>: constant v value at the NORTH boundary, defalut: 0.0.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">TideWestFileName</span></code>: file name for WEST boundary data.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">TideEastFileName</span></code>: file name for EAST boundary data.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">TideSouthFileName</span></code>: file name for SOUTH boundary data.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">TideNorthFileName</span></code>: file name for NORTH boundary data.</p></li>
 </ul>
-<p>IF no ETA values at all four boundaries, Tide and Surge Boundary Condition is invalid.</p>
-<p>Example (in input.txt).</p>
-<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>! ---------------- TIDE BOUNDARY ----------------------
-  TIDAL_BC = T
-  TideBcType = CONSTANT
-  TideWest_ETA = 1.0
-  TideEast_ETA = 1.0
-! ----------------WAVEMAKER------------------------------
-  WAVEMAKER = WK_REG
-  DEP_WK = 8.0
-  Xc_WK = 150.0
-  Yc_WK = 0.0
-  Tperiod = 8.0
-  AMP_WK = 0.5
-  Theta_WK = 0.0
-  Delta_WK = 3.0
-</pre></div>
-</div>
-<p>A simple case is tested in /simple_cases/tide_constant/</p>
-<p>This example specifies constant eta=1.0 m at both west and east boundaries. u and v are not specified and will be zero by default. Waves are generated at x=150m.</p>
-<div class="align-center figure">
-<a class="reference internal image-reference" href="_images/tide_snap.jpg"><img alt="alternate text" src="_images/tide_snap.jpg" style="width: 500px; height: 200px;" /></a>
-</div>
+<p>Examples can be found in /simple_cases/, or see <a class="reference external" href="https://fengyanshi.github.io/build/html/tide_module.html">Tidal module</a></p>
 </div>
 
 
