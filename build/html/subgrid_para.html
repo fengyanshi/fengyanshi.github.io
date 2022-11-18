@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Basics for model setup &#8212; FUNWAVE Documentation</title>
+    <title>Subgrid Parameters &#8212; FUNWAVE Documentation</title>
     <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -15,8 +15,8 @@
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Regular waves with normal incidence" href="tracking_rip_regular.html" />
-    <link rel="prev" title="Compile the code for tracking" href="tracking_rip_compile.html" /> 
+    <link rel="next" title="NESTING AND COUPLING" href="coupling_nesting.html" />
+    <link rel="prev" title="Landslide" href="slide.html" /> 
   </head><body>
 <div class="header">
  <p class="logo"><a href="https://fengyanshi.github.io/build/html/index.html">
@@ -31,14 +31,13 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="tracking_rip_regular.html" title="Regular waves with normal incidence"
+          <a href="coupling_nesting.html" title="NESTING AND COUPLING"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="tracking_rip_compile.html" title="Compile the code for tracking"
+          <a href="slide.html" title="Landslide"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="examples.html" ><strong>EXAMPLES</strong></a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="tracking_rip.html" accesskey="U">Lagrangian tracking in 2D rip channels</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="definition.html" accesskey="U"><strong>DEFINITIONS OF PARAMETERS</strong></a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -48,14 +47,13 @@
 <li class="toctree-l1"><a class="reference internal" href="basics.html"><strong>BASICS</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="flowchart.html"><strong>ARCHITECTURE</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="setup.html">MODEL DOWNLOAD AND SETUP</a></li>
-<li class="toctree-l1"><a class="reference internal" href="definition.html"><strong>DEFINITIONS OF PARAMETERS</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="coupling_nesting.html"><strong>NESTING AND COUPLING</strong></a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="examples.html"><strong>EXAMPLES</strong></a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="examples.html#simple-tests-beginners-should-start-from-here">Simple tests <strong>(beginners should start from here)</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples.html#benchmarks">Benchmarks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples.html#recent-usace-applications">Recent USACE Applications</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="definition.html"><strong>DEFINITIONS OF PARAMETERS</strong></a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="definition.html#input-txt">INPUT.TXT</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="definition.html#definitions">Definitions</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="coupling_nesting.html"><strong>NESTING AND COUPLING</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html"><strong>EXAMPLES</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="gallery.html"><strong>GALLERY</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="news.html"><strong>FUNWAVE-TVD WORKSHOP</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="references.html"><strong>BIBLIOGRAPHY</strong></a></li>
@@ -81,30 +79,14 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="basics-for-model-setup">
-<h1>Basics for model setup<a class="headerlink" href="#basics-for-model-setup" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="subgrid-parameters">
+<span id="section-subgridpara"></span><h1>Subgrid Parameters<a class="headerlink" href="#subgrid-parameters" title="Permalink to this headline">¶</a></h1>
+<p><strong>SPECIFICATION OF TIDE AND SURGE OPEN BOUNDARY CONDITIONS</strong></p>
 <ul class="simple">
-<li><p>computational domain</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">SubMainGridRatio</span></code>: integer parameter for subgrid ratio</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">DEPTH_SUBGRID_FILE</span></code>: string name of the file containing subgrid data</p></li>
 </ul>
-<div class="align-center figure" id="id1">
-<a class="reference internal image-reference" href="_images/bathy_tracer.png"><img alt="alternate text" src="_images/bathy_tracer.png" style="width: 400px; height: 320px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 16 </span><span class="caption-text">The bathymetry file: /simple_cases/rip_tracking/bathy/depth_115.txt</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
-</div>
-<p>Basic info</p>
-<blockquote>
-<div><p>Dimensions 312 X 100 (note: we only read 100 rows of the depth file shown in the figure)</p>
-<p>DX = 1.0 m
-DY = 2.0 m</p>
-<p>Wavemaker located at x = 280.0 m</p>
-<p>Sponge layer: x = 252.0 – 312.0 m  (width = 60.0 m)</p>
-</div></blockquote>
-<ul>
-<li><p>input.txt
-the input file is in the folder /simple_cases/rip_tracking/work/</p></li>
-<li><p>postprocessing</p>
-<p>matlab examples of postprocessing are located in /simple_cases/rip_tracking/postprocessing/</p>
-</li>
-</ul>
+<p>Examples can be found in /simple_cases/, or see <a class="reference external" href="https://fengyanshi.github.io/build/html/subgrid_module.html">Subgrid module</a></p>
 </div>
 
 
@@ -120,14 +102,13 @@ the input file is in the folder /simple_cases/rip_tracking/work/</p></li>
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="tracking_rip_regular.html" title="Regular waves with normal incidence"
+          <a href="coupling_nesting.html" title="NESTING AND COUPLING"
              >next</a> |</li>
         <li class="right" >
-          <a href="tracking_rip_compile.html" title="Compile the code for tracking"
+          <a href="slide.html" title="Landslide"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="examples.html" ><strong>EXAMPLES</strong></a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="tracking_rip.html" >Lagrangian tracking in 2D rip channels</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="definition.html" ><strong>DEFINITIONS OF PARAMETERS</strong></a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">

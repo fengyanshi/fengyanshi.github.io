@@ -1,0 +1,172 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Subgrid Module &#8212; FUNWAVE Documentation</title>
+    <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="ARCHITECTURE" href="flowchart.html" />
+    <link rel="prev" title="Lagrangian Tracking Module" href="tracer.html" /> 
+  </head><body>
+<div class="header">
+ <p class="logo"><a href="https://fengyanshi.github.io/build/html/index.html">
+  <img class="logo" src="_static/../../../images/Funwave.svg" alt="Logo"/>
+ </a></p>
+</div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="flowchart.html" title="ARCHITECTURE"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="tracer.html" title="Lagrangian Tracking Module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="basics.html" accesskey="U"><strong>BASICS</strong></a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="basics.html"><strong>BASICS</strong></a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="boussinesq.html">Formulations and Numerical Schemes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="central.html">Central Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shipwakes.html">Ship-wake Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sediment.html">Sediment Transport Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tide_module.html">Tide Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meteo_intro.html">Meteo Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tracer.html">Lagrangian Tracking Module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Subgrid Module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="flowchart.html"><strong>ARCHITECTURE</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup.html">MODEL DOWNLOAD AND SETUP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="definition.html"><strong>DEFINITIONS OF PARAMETERS</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="coupling_nesting.html"><strong>NESTING AND COUPLING</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html"><strong>EXAMPLES</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="gallery.html"><strong>GALLERY</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="news.html"><strong>FUNWAVE-TVD WORKSHOP</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html"><strong>BIBLIOGRAPHY</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="authors.html"><strong>AUTHORS</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="addition.html"><strong>ADDITIONAL INFORMATION</strong></a></li>
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="subgrid-module">
+<span id="section-subgrid-module"></span><h1>Subgrid Module<a class="headerlink" href="#subgrid-module" title="Permalink to this headline">¶</a></h1>
+<p>The subgrid module can be used to simulate wave interactions with porous constructures, rocky shorelines, and bathymetry/topography with a resolution higher than the model grid.</p>
+<div class="section" id="theory">
+<h2>Theory<a class="headerlink" href="#theory" title="Permalink to this headline">¶</a></h2>
+<p>The phased-averaged (spacing-averaged) the equations are used. The theory will be documented later.</p>
+</div>
+<div class="section" id="subgrid-configuration">
+<h2>Subgrid configuration<a class="headerlink" href="#subgrid-configuration" title="Permalink to this headline">¶</a></h2>
+<p>To set up a higher-resolution subgrid system, a user should provide a file with data at the subgrid level. To avoid a large space in data/computer memory, only grid points with available subgrid data is provided. For example, you have a computational grid of 200 x 100 with grid size of 2m x 2m. A higher resolution data with 0.5m x 0.5m are available at grid points (150,50) and (150,51). The subgrid ratio is 4 (2/0.5). The subgrid file should contain the grid point numbers followed by 16 (4x4) data with the higher resolution. In this example, two lines (for the two grid points) of data should be provided as below</p>
+<blockquote>
+<div><div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>150 50 8.5 7.5 5.5 -1.2 -2.2 0.0 1.5 3.8 8.5 7.5 5.5 -1.2 -2.2 0.0 1.5 3.8
+150 51 9.1 7.2 5.1 -1.0 -2.0 0.5 1.4 3.1 8.0 7.1 5.1 -1.1 -2.9 0.2 1.1 4.9
+</pre></div>
+</div>
+</div></blockquote>
+<p>In each line, the first two numbers are numbers of grid points (150,50) and (150,51). The following numbers are 16 float numbers of the higher resolution data.</p>
+</div>
+<div class="section" id="model-setup">
+<h2>Model setup<a class="headerlink" href="#model-setup" title="Permalink to this headline">¶</a></h2>
+<p>input.txt should include the information about the subgrid in addition to the regular grid. For example,</p>
+<blockquote>
+<div><div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>DEPTH_FILE = depthe_200x100.txt
+SubMainGridRatio = 4
+DEPTH_SUBGRID_FILE = dep_sub_info.txt
+</pre></div>
+</div>
+</div></blockquote>
+<p>DEPTH_FILE defines the regular grid as in the regular model and DEPTH_SUBGRID_FILE contains the subgrid data. SubMainGridRatio is the subgrid ratio.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The code should be compiled with the option <strong>-DSUBGRID</strong> before execute</p>
+</div>
+</div>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<p>In the following example, the regular computational grid has dimensions of 500 x 30 with grid sizes of 2m x 2m as shown in the figure below. The bathymetry is a plane beach with a 10m flat bottom at the wave generation region and a slope of 0.025 starting from x = 560m. Block structures (next figure below) are configured in the shallow water region from x = 800 m to the end of the domain. The data for block structures have a resolution of 0.5 m (subgrid ratie = 4).</p>
+<div class="figure align-default" id="id1">
+<img alt="_images/layout_subgrid.jpg" src="_images/layout_subgrid.jpg" />
+<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">Layout of the computational domain.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="id2">
+<img alt="_images/blocks.jpg" src="_images/blocks.jpg" />
+<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">Block structures superimposed on the plane beach</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<p>The figure below shows comparisons of wave surface and wave setup between models with and without block structures.</p>
+<div class="figure align-default" id="id3">
+<img alt="_images/etam_comp.jpg" src="_images/etam_comp.jpg" />
+<p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">Comparations of wave surface and wave setup between models with and without block structures.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="more-information">
+<h2>More information<a class="headerlink" href="#more-information" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://fengyanshi.github.io/build/html/subgrid_para.html">List of parameters for subgrid module setup can be found here</a></p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="flowchart.html" title="ARCHITECTURE"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="tracer.html" title="Lagrangian Tracking Module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="basics.html" ><strong>BASICS</strong></a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, Fengyan Shi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
+    </div>
+  </body>
+</html>
