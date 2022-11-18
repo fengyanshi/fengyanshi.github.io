@@ -90,22 +90,22 @@
 <p>The subgrid module can be used to simulate wave interactions with porous constructures, rocky shorelines, and bathymetry/topography with a resolution higher than the model grid.</p>
 <div class="section" id="theory">
 <h2>Theory<a class="headerlink" href="#theory" title="Permalink to this headline">¶</a></h2>
-<p>The phased-averaged (space-averaged) equations are used. The theory will be documented later.</p>
+<p>The phase-averaged (space-averaged) equations are used. The theory will be documented later.</p>
 </div>
 <div class="section" id="subgrid-configuration">
 <h2>Subgrid configuration<a class="headerlink" href="#subgrid-configuration" title="Permalink to this headline">¶</a></h2>
-<p>To set up a higher-resolution subgrid system, a user should provide a file with data at the subgrid level. To avoid a large space in data/computer memory, only grid points with available subgrid data is provided. For example, you have a computational grid of 200 x 100 with grid sizes of 2m x 2m. A higher resolution data with 0.5m x 0.5m are available at grid points (150,50) and (150,51). The subgrid ratio is 4 (2/0.5). The subgrid file should contain the grid point numbers followed by 16 (4x4) data with a higher resolution. In this example, two lines (for the two grid points) of data should be provided below</p>
+<p>To set up a higher-resolution subgrid system, a user should provide a file with data at the subgrid level. To avoid a large space and memory requirement, only grid points with available subgrid data are provided in the file. For example, you have a computational grid of 200 x 100 with grid sizes of 2m x 2m. A higher resolution data with 0.5m x 0.5m are available at grid points (150,50) and (150,51). The subgrid ratio is 4 (2/0.5). The subgrid file should contain the grid point numbers followed by 16 (4x4) bathy/topo data with the higher resolution of 0.5m x 0.5m. In this example, two lines (for the two grid points) of data should be provided:</p>
 <blockquote>
 <div><div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>150 50 8.5 7.5 5.5 -1.2 -2.2 0.0 1.5 3.8 8.5 7.5 5.5 -1.2 -2.2 0.0 1.5 3.8
 150 51 9.1 7.2 5.1 -1.0 -2.0 0.5 1.4 3.1 8.0 7.1 5.1 -1.1 -2.9 0.2 1.1 4.9
 </pre></div>
 </div>
 </div></blockquote>
-<p>In each line, the first two numbers are numbers of grid points (150,50) and (150,51). The following numbers are 16 float numbers of the higher resolution data.</p>
+<p>In each line, the first two numbers are numbers of a grid point. The following numbers are 16 float numbers of the higher resolution data.</p>
 </div>
 <div class="section" id="model-setup">
 <h2>Model setup<a class="headerlink" href="#model-setup" title="Permalink to this headline">¶</a></h2>
-<p>input.txt should include the information about the subgrid in addition to the regular grid. For example,</p>
+<p>The following statements should be included in input.txt. For example</p>
 <blockquote>
 <div><div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>DEPTH_FILE = depthe_200x100.txt
 SubMainGridRatio = 4
@@ -113,7 +113,7 @@ DEPTH_SUBGRID_FILE = dep_sub_info.txt
 </pre></div>
 </div>
 </div></blockquote>
-<p>DEPTH_FILE defines the regular grid as in the regular model and DEPTH_SUBGRID_FILE contains the subgrid data. SubMainGridRatio is the subgrid ratio.</p>
+<p>DEPTH_FILE defines the regular grid as for the regular model and DEPTH_SUBGRID_FILE contains the subgrid data. SubMainGridRatio is the subgrid ratio.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The code should be compiled with the option <strong>-DSUBGRID</strong> before execute</p>
