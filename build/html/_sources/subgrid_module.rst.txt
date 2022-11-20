@@ -9,7 +9,9 @@ The subgrid module can be used to simulate wave interactions with porous constru
 Theory
 ====================
 
-The phase-averaged (space-averaged) equations are used. The theory will be documented later.  
+The phase-averaged (space-averaged) equations are used. The figure below shows cartoons of the subgrid strategy used in the NearCoM model. The theory will be documented later. 
+
+.. figure:: images/simple_cases/subgrid_wu.jpg 
 
 ====================================
 Subgrid configuration 
