@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Post Processing &#8212; FUNWAVE Documentation</title>
+    <title>Subgrid Parameters &#8212; FUNWAVE Documentation</title>
     <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -15,8 +15,8 @@
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Output" href="output.html" />
-    <link rel="prev" title="Calculation of radiation stresses" href="radiation_stress.html" /> 
+    <link rel="next" title="NESTING AND COUPLING" href="coupling_nesting.html" />
+    <link rel="prev" title="Landslide" href="slide.html" /> 
   </head><body>
 <div class="header">
  <p class="logo"><a href="https://fengyanshi.github.io/build/html/index.html">
@@ -31,14 +31,13 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="output.html" title="Output"
+          <a href="coupling_nesting.html" title="NESTING AND COUPLING"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="radiation_stress.html" title="Calculation of radiation stresses"
+          <a href="slide.html" title="Landslide"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="definition.html" ><strong>DEFINITIONS OF PARAMETERS</strong></a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="central_para.html" accesskey="U">Parameters for Central Module</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="definition.html" accesskey="U"><strong>DEFINITIONS OF PARAMETERS</strong></a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -80,15 +79,14 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="post-processing">
-<span id="section-post"></span><h1>Post Processing<a class="headerlink" href="#post-processing" title="Permalink to this headline">¶</a></h1>
-<p><strong>Wave height calculation</strong></p>
-<p>For spectral wave simulations, both average wave height and root-mean-square (RMS) wave height are calculated using zero-crossing at each grid point. Significant wave height is evaluated using Goda’s (2000) formula:</p>
-<div class="math notranslate nohighlight" id="equation-post-0">
-<span class="eqno">(112)<a class="headerlink" href="#equation-post-0" title="Permalink to this equation">¶</a></span>\[H_{1/3} = 4.004\sqrt{m_0}\]</div>
-<p>where,</p>
-<div class="math notranslate nohighlight" id="equation-post-1">
-<span class="eqno">(113)<a class="headerlink" href="#equation-post-1" title="Permalink to this equation">¶</a></span>\[m_0 = \frac{1}{t_2-t_1} \int^{t_2}_{t_1} \eta^2 dt\]</div>
+  <div class="section" id="subgrid-parameters">
+<span id="section-subgridpara"></span><h1>Subgrid Parameters<a class="headerlink" href="#subgrid-parameters" title="Permalink to this headline">¶</a></h1>
+<p><strong>SPECIFICATION OF TIDE AND SURGE OPEN BOUNDARY CONDITIONS</strong></p>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">SubMainGridRatio</span></code>: integer parameter for subgrid ratio</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">DEPTH_SUBGRID_FILE</span></code>: string name of the file containing subgrid data</p></li>
+</ul>
+<p>Examples can be found in /simple_cases/, or see <a class="reference external" href="https://fengyanshi.github.io/build/html/subgrid_module.html">Subgrid module</a></p>
 </div>
 
 
@@ -104,14 +102,13 @@
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="output.html" title="Output"
+          <a href="coupling_nesting.html" title="NESTING AND COUPLING"
              >next</a> |</li>
         <li class="right" >
-          <a href="radiation_stress.html" title="Calculation of radiation stresses"
+          <a href="slide.html" title="Landslide"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="definition.html" ><strong>DEFINITIONS OF PARAMETERS</strong></a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="central_para.html" >Parameters for Central Module</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="definition.html" ><strong>DEFINITIONS OF PARAMETERS</strong></a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
