@@ -14,7 +14,7 @@ Users are advised to take care when starting a wave modeling study specific to a
 
 * **Energy content**: Consider the desired wave height and energy density that needs to interact with the structure. Even for regular wave (monochromatic) simulations, the total wave energy is expected to decrease over the domain due to numerical dissipation (Torres et. al. 2022). It is recommended to perform a sensitivity analysis of your simulation setup to determine the optimal input wave height, domain size, and domain resolution (among other parameters) for your specific application.
 
-* **Model domain setup**: Some recommendations to consider when setting up the model domain --
+* **Model domain setup**: Some recommendations to consider when setting up the model domain include
 	* The spatial resolution :math:`DX, DY` should be at least 60 points per wavelength for the wavelength most needed to be resolved (this could be the peak wavelength of a wave spectrum or the shortest wavelength expected to be produced): :math:`DX < \frac{h}{60}`
 	* The ratio of spatial resolution to water depth should be greater than 1/15 for model stability: :math:`\frac{DX}{h} > \frac{1}{15}`
 	* To help reduce wave reflections in the domain, boundary sponge layers should have a width of at least half of the peak or longest expected wavelength.
@@ -26,4 +26,4 @@ Stay tuned for more guidance and recommendations regarding implementing coastal 
 ============
 References
 ============
-Torres, M. J., M. Y.-H. Lam, and M. Malej. 2022. Practical Guidance for Numerical Modeling in FUNWAVE-TVD. ERDC TN-22-1. Hanover, NH: U.S. Army Engineer Research and Development Center.
+Torres, M. J., M. Y.-H. Lam, and M. Malej. 2022. Practical Guidance for Numerical Modeling in FUNWAVE-TVD. ERDC TN-22-1. Hanover, NH: U.S. Army Engineer Research and Development Center. DOI: `http://dx.doi.org/10.21079/11681/45641 <http://dx.doi.org/10.21079/11681/45641>`_.
