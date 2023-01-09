@@ -5,7 +5,7 @@
 .. image:: images/workshop/group.png
 
 
-`WORKSHOP 2020 Announcement <workshop_2020.html>`_ 
+`WORKSHOP 2023 Announcement <workshop_2023.html>`_ 
 
 **Previous Workshops:**
 
@@ -16,5 +16,7 @@
 `MINI-WORKSHOP 2019 at UD <workshop_2019_UD.html>`_
 
 `WORKSHOP 2019 at Hohai University <workshop_2019.html>`_
+
+
 
 
