@@ -48,6 +48,9 @@
 <li class="toctree-l1"><a class="reference internal" href="basics.html"><strong>BASICS</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="flowchart.html"><strong>ARCHITECTURE</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="setup.html">MODEL DOWNLOAD AND SETUP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Video Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html#how-to">HOW TO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html#dod-hpc-portal">DoD HPC Portal</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="definition.html"><strong>DEFINITIONS OF PARAMETERS</strong></a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="definition.html#input-txt">INPUT.TXT</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="definition.html#definitions">Definitions</a></li>
@@ -85,8 +88,8 @@
 <p><strong>INTRODUCTION</strong></p>
 <p>Native to FUNWAVE are the addition of obstacles and/or breakwaters in the model domain. These features can be either fully reflective (i.e., impermeable) or partially reflecting / partially absorbing (e.g., permeable). There are three ways to add a breakwater or obstacle to the model:</p>
 <ol class="arabic simple">
-<li><p>Modify the bathymetry directly, generating a raise <em>impermeable</em> feature in the along-shore beach profile (or cross-shore for jetties, groins, etc.). See an example of this at <a class="reference internal" href="info_bathy_breakwater.html#example-bathy-breakwater"><span class="std std-ref">Example: add breakwater using bathymetry file</span></a>.</p></li>
-<li><p>Generate a breakwater file that defines the width of a <em>dissipative sponge layer</em> at a location on the grid, and define the corresponding absorption strength of the sponge layer in the <code class="docutils literal notranslate"><span class="pre">input.txt</span></code> file. The dissipative sponge layer behaves as a frictional dissipative layer to the incoming waves. See an example of this at <a class="reference internal" href="info_partial_breakwater.html#example-partial-breakwater"><span class="std std-ref">Example: add partially reflecting/absorbing breakwater</span></a>.</p></li>
+<li><p>Modify the bathymetry directly, generating a raised <em>impermeable</em> feature in the along-shore beach profile (or cross-shore for jetties, groins, etc.). See an example of this at <a class="reference internal" href="info_bathy_breakwater.html#example-bathy-breakwater"><span class="std std-ref">Example: add breakwater using bathymetry file</span></a>.</p></li>
+<li><p>Generate a breakwater file that defines the width of a <em>dissipative sponge layer</em> at a location on the grid, and define the corresponding absorption strength of the sponge layer in the <code class="docutils literal notranslate"><span class="pre">input.txt</span></code> file. The dissipative sponge layer behaves as a friction-type layer to the incoming waves - similar to (but not exactly the same as) adding a strong bottom friction in the area. See an example of this at <a class="reference internal" href="info_partial_breakwater.html#example-partial-breakwater"><span class="std std-ref">Example: add partially reflecting/absorbing breakwater</span></a>.</p></li>
 <li><p>Generate an obstacle file that specifies the location of an infinitely tall, <em>impermeable</em> wall (i.e., fully reflective) in the model domain. See an example of this at <a class="reference internal" href="info_obstacle.html#example-obstacle"><span class="std std-ref">Example: add obstacle</span></a>.</p></li>
 </ol>
 <p>More details about the specification of the breakwater and obstacle files are presented in the following section.</p>
@@ -115,7 +118,7 @@
 </div></blockquote>
 </li>
 </ul>
-<p>These methods are not limited to breakwaters. Other structures of interest may include, but are not limited to, jetties, groins, revetments, and sea walls. These structure types and their configurations may be added to the numerical domain using similar techniques described above. For more information on wave-structure interactions, visit <a class="reference internal" href="info_wave_structure_interactions.html#literature-interactions"><span class="std std-ref">Wave-Structure Interactions</span></a>.</p>
+<p>These methods are not limited to breakwaters. Other structures of interest may include, but are not limited to, jetties, groins, revetments, and sea walls. These structure types and their configurations may be added to the numerical domain using similar techniques described above. Work is ongoing with the U.S. Army Engineer Research and Development Center to provide guidance and recommendations for these numerical parameters and how they relate to physical structure properties and expected wave responses. For more information on wave-structure interactions, visit <a class="reference internal" href="info_wave_structure_interactions.html#literature-interactions"><span class="std std-ref">Wave-Structure Interactions</span></a>.</p>
 <p><strong>SPECIFICATION OF OBSTACLES or BREAKWATER</strong></p>
 <ul>
 <li><dl class="simple">
@@ -123,13 +126,16 @@
 </dd>
 </dl>
 </li>
-<li><dl class="simple">
-<dt><code class="code docutils literal notranslate"><span class="pre">BREAKWATER_FILE</span></code>: Name of breakwater file.</dt><dd><p>Breakwater file contains the same dimenstions and format as the computational domain. Values of 0 designate non-breakwater points. The breakwater is specified in terms of its width (in meters). The width is not the breakwater width explicitly, but the width of a sponge layer placed at the breakwater points. For a field case, use 10m - 30m for weak absorption and &gt;30m for strong absorption. Calibration may be needed case by case. Breakwater absorption is made by using large bottom friction locally (large <span class="math notranslate nohighlight">\(Cd\)</span>) around breakwater points. The maximum <span class="math notranslate nohighlight">\(Cd\)</span> is specified by <code class="code docutils literal notranslate"><span class="pre">BreakWaterAbsorbCoef</span></code>. <strong>Default:</strong> no breakwater.</p>
+<li><dl>
+<dt><code class="code docutils literal notranslate"><span class="pre">BREAKWATER_FILE</span></code>: Name of breakwater file.</dt><dd><p>Breakwater file contains the same dimenstions and format as the computational domain. Values of 0 designate non-breakwater points. The breakwater is specified in terms of its width (in meters). This width is not the breakwater width explicitly (from toe to toe), but rather the width of the sponge layer. Cells with a non-zero value represent the center of the sponge layer, where the value represents a width to the left and right of that cell (for 1D applications) or a radius around that cell (for 2D applications). Ex: if 1D, a width of 30m corresponds to a sponge layer width of 15m to the left and right of that cell; if 2D, a width of 30m corresponds to a circular sponge layer with radius 15m around the cell. No partial cells are considered.</p>
+<blockquote>
+<div><p>For a field case, use 10m - 30m for weak absorption and &gt;30m for strong absorption. Calibration may be needed case by case. Breakwater absorption is made by using large bottom friction locally (large <span class="math notranslate nohighlight">\(Cd\)</span>) around breakwater points. The maximum <span class="math notranslate nohighlight">\(Cd\)</span> is specified by <code class="code docutils literal notranslate"><span class="pre">BreakWaterAbsorbCoef</span></code>. <strong>Default:</strong> no breakwater.</p>
+</div></blockquote>
 </dd>
 </dl>
 </li>
 <li><dl>
-<dt><code class="code docutils literal notranslate"><span class="pre">BreakWaterAbsorbCoef</span></code>: Value of maximum <span class="math notranslate nohighlight">\(Cd\)</span>.</dt><dd><p>This parameter provides the maximum <span class="math notranslate nohighlight">\(Cd\)</span> in the bottom friction formulation at breakwater locations. The <strong>default</strong> value is 10.0.</p>
+<dt><code class="code docutils literal notranslate"><span class="pre">BreakWaterAbsorbCoef</span></code>: Value of maximum <span class="math notranslate nohighlight">\(Cd\)</span>.</dt><dd><p>This parameter provides the maximum <span class="math notranslate nohighlight">\(Cd\)</span> in the bottom friction formulation at breakwater locations. The frictional dissipation is treated slightly differently than the quadratic drag formulation in the model. The <strong>default</strong> value is 10.0.</p>
 <p><strong>Note</strong>: for large waves (e.g., significant wave height &gt; 10m) in the field case, a large parameter can cause imbalance of the momentum equations. Use a smaller parameter in a large wave case to avoid this issue.</p>
 </dd>
 </dl>

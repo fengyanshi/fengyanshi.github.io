@@ -9,7 +9,7 @@ There are two types of boundary conditions developed to incorporate tidal level 
 Theory
 ====================
 
-The basic technique follows the sponge layer theory introduced by Larsen and Dancy (1983). Instead of attenuating the surface elevation and flow velocity to zero at the end of a sponge layer, we dampen shortwaves with respect to a reference level based on the method proposed by Chen et al. (1999). The dependent variables (:math:`\eta, u, v`) are attenuated as
+The basic technique follows the sponge layer theory introduced by `Larsen and Dancy (1983) <https://www.sciencedirect.com/science/article/abs/pii/0378383983900224>`_. Instead of attenuating the surface elevation and flow velocity to zero at the end of a sponge layer, we dampen shortwaves with respect to a reference level based on the method proposed by `Chen et al. (1999) <https://ascelibrary.org/doi/abs/10.1061/(ASCE)0733-950X(1999)125:4(176)>`_. The dependent variables (:math:`\eta, u, v`) are attenuated as
 
 .. math:: \eta_i = \eta_{ref} + (\eta_i - \eta_{ref})/C_s
 
@@ -126,5 +126,11 @@ The format of tidal data is the same as the tidal absorbing boundary condition. 
 More information
 ==============================================================
 
-`List of parameters for tidal module setup can be found here <https://fengyanshi.github.io/build/html/tide_surge.html>`_
+List of parameters for tidal module setup can be found `here <https://fengyanshi.github.io/build/html/tide_surge.html>`_
 
+============
+References
+============
+Chen, Q., Madsen, P.A., Basco, D.R., 1999. “Current Effects on Nonlinear Interactions of Shallow–Water Waves”. J. of Waterway, Port, Coastal, and Ocean Eng. 125 (4).
+
+Larsen, J. and Dancy, H., 1983. “Open boundaries in short wave simulations – A new approach”. Coastal Eng. 7 (3), 285-297. DOI: `10.1016/0378-3839(83)90022-4 <https://doi.org/10.1016/0378-3839(83)90022-4>`_.

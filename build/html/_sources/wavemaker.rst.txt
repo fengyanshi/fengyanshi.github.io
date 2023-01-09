@@ -125,7 +125,7 @@ Users can specify degree of wave cohenrence according to the technique proposed 
 
 References
 ==========
-Bouws, E., G\ddot{u}nther, H., Rosenthal, W., Vincent, C.L., 1985. "Similarity of the Wind Wave Spectrum in Finite Depth Water: 1. Spectral Form". J. of Geophysical Research, 90, NO. C1, 975-986. DOI: 10.1029/JC090iC01p00975.
+Bouws, E., Günther, H., Rosenthal, W., Vincent, C.L., 1985. "Similarity of the Wind Wave Spectrum in Finite Depth Water: 1. Spectral Form". J. of Geophysical Research, 90, NO. C1, 975-986. DOI: 10.1029/JC090iC01p00975.
 
 Chawla, A., and Kirby, J.T., 2000. "A source function method for generation of waves on currents in Boussinesq models". App. Ocean Research, 22 (2), 75-83. DOI: 10.1016/S0141-1187(00)00005-5.
 

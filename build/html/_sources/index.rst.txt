@@ -143,6 +143,7 @@ Wiki Content
    basics
    flowchart
    setup
+   tutorials
    definition
    coupling_nesting
    examples

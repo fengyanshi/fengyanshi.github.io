@@ -48,6 +48,9 @@
 <li class="toctree-l1"><a class="reference internal" href="basics.html"><strong>BASICS</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="flowchart.html"><strong>ARCHITECTURE</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="setup.html">MODEL DOWNLOAD AND SETUP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Video Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html#how-to">HOW TO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html#dod-hpc-portal">DoD HPC Portal</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="definition.html"><strong>DEFINITIONS OF PARAMETERS</strong></a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="definition.html#input-txt">INPUT.TXT</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="definition.html#definitions">Definitions</a></li>
@@ -190,7 +193,7 @@
 <p>Example: refer to <a class="reference internal" href="info_station_file.html#example-station-file"><span class="std std-ref">Example: station file</span></a></p>
 </div></blockquote>
 <p>Output for stations is a series of numbered files such as <code class="code docutils literal notranslate"><span class="pre">sta_0001,</span> <span class="pre">sta_0002</span> <span class="pre">....</span></code> (NOTE: four digit numbers here vs. five digit numbers for 2D output like <code class="code docutils literal notranslate"><span class="pre">eta_00001</span></code>). The output file for stations contains four columns: time, eta, u, and v.</p>
-<p>The version after 3.4 uses a buffer to write out stations to speed up the program on a large scale HPC. The array dimensions for the buffer are (StationOutputBuffer,NumberStations,4), where StationOutputBuffer =1000 by default. You can also specify StationOutputBuffer in input.txt. An example to set StationOutputBuffer is in /simple_cases/tide_constant/</p>
+<p>The version after 3.4 uses a buffer to write out stations to speed up the program on a large scale HPC. The array dimensions for the buffer are (<code class="code docutils literal notranslate"><span class="pre">StationOutputBuffer,NumberStations,4</span></code>), where <code class="code docutils literal notranslate"><span class="pre">StationOutputBuffer</span> <span class="pre">=</span> <span class="pre">1000</span></code> by default. You can also specify StationOutputBuffer in input.txt. An example to set <code class="code docutils literal notranslate"><span class="pre">StationOutputBuffer</span></code> is in <code class="code docutils literal notranslate"><span class="pre">/simple_cases/tide_constant/</span></code>.</p>
 <blockquote>
 <div><div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>TOTAL_TIME = 200.0
 PLOT_INTV = 1.0
