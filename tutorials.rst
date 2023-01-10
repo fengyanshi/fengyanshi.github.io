@@ -1,4 +1,4 @@
-.. _tutorials:
+.. _section-tutorials:
 
 ================
 Video Tutorials
