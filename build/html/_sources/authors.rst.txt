@@ -6,14 +6,7 @@
   Center for Applied Coastal Research, Department of Civil and Environmental Engineering, University of Delaware
 
 
-* Jeffrey C. Harris 
-
-  Department of Ocean Engineering, University of Rhode Island
-
-**Guest authors**
-
-
-* Matt Malej 
+* Matt Malej and Marissa J. Torres
 
   U.S. Army Engineer Research and Development Center
 
@@ -22,11 +15,11 @@
 
   Korea Institute of Ocean Science and Technology
 
+
+* Stephan Grilli and Jeffrey C. Harris 
+
+  Department of Ocean Engineering, University of Rhode Island
+
 * Ye Yuan
 
   Tsunami Warning Division, National Marine Environmental Forecasting Center of China 
-
-* Marissa J. Torres
-
-  U.S. Army Engineer Research and Development Center
-
