@@ -1,6 +1,18 @@
 **GALLERY** 
 ===============
 
+* Waves at Norfolk by Chris Lashley
+
+.. raw:: html
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/jgOEwuCIzjk?rel=0" frameborder="0" allowfullscreen></iframe>
+
+* Waves and runup at Norfolk by Chris Lashley
+
+.. raw:: html
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/4OQv2Cem-UQ?rel=0" frameborder="0" allowfullscreen></iframe>
+
 * Waves and foam at FRF Duck NC
 
 .. raw:: html
@@ -55,6 +67,12 @@
 .. raw:: html
 
  <iframe width="560" height="315" src="https://www.youtube.com/embed/jHnd0APkWro?rel=0" frameborder="0" allowfullscreen></iframe>
+
+* Waves and inundation at South Betheny  
+
+.. raw:: html
+
+ <iframe width="560" height="315" src="https://www.youtube.com/embed/DwPDEcyfef8?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 * Tsunami waves  debris tracking 
 

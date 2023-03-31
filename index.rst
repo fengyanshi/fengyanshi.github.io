@@ -6,6 +6,8 @@
 .. role:: raw-html(raw)
    :format: html
 
+.. note:: `FUNWAVE-TVD Workshop 2023 Registratin Starts <https://fengyanshi.github.io/build/html/workshop_2023.html>`_ . The workshop will be held on July 25-27 at the `Northeastern University <https://www.northeastern.edu/>`_, Boston, MA. See `Announcement. <https://fengyanshi.github.io/build/html/workshop_2023.html>`_
+
 ============
 FUNWAVE-TVD
 ============

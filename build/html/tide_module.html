@@ -52,10 +52,14 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Tide Module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="meteo_intro.html">Meteo Module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tracer.html">Lagrangian Tracking Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="subgrid_module.html">Subgrid Module</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="flowchart.html"><strong>ARCHITECTURE</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="setup.html">MODEL DOWNLOAD AND SETUP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Video Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html#how-to">HOW TO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html#dod-hpc-portal">DoD HPC Portal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="definition.html"><strong>DEFINITIONS OF PARAMETERS</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="coupling_nesting.html"><strong>NESTING AND COUPLING</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples.html"><strong>EXAMPLES</strong></a></li>
@@ -89,7 +93,7 @@
 <p>There are two types of boundary conditions developed to incorporate tidal level and/or tidal current into model boundaries. One is an absorbing tidal boundary condition, which is essentially a sponge layer but takes into account a reference value, such as tidal level and tidal current, in the sponge regime. The other a so-called absorbing-generating boundary condition, which treats tidal level and/or tidal current as the background elevation/flow.</p>
 <div class="section" id="theory">
 <h2>Theory<a class="headerlink" href="#theory" title="Permalink to this headline">¶</a></h2>
-<p>The basic technique follows the sponge layer theory introduced by Larsen and Dancy (1983). Instead of attenuating the surface elevation and flow velocity to zero at the end of a sponge layer, we dampen shortwaves with respect to a reference level based on the method proposed by Chen et al. (1999). The dependent variables (<span class="math notranslate nohighlight">\(\eta, u, v\)</span>) are attenuated as</p>
+<p>The basic technique follows the sponge layer theory introduced by <a class="reference external" href="https://www.sciencedirect.com/science/article/abs/pii/0378383983900224">Larsen and Dancy (1983)</a>. Instead of attenuating the surface elevation and flow velocity to zero at the end of a sponge layer, we dampen shortwaves with respect to a reference level based on the method proposed by <a class="reference external" href="https://ascelibrary.org/doi/abs/10.1061/(ASCE)0733-950X(1999)125:4(176)">Chen et al. (1999)</a>. The dependent variables (<span class="math notranslate nohighlight">\(\eta, u, v\)</span>) are attenuated as</p>
 <div class="math notranslate nohighlight" id="equation-tide-module-0">
 <span class="eqno">(90)<a class="headerlink" href="#equation-tide-module-0" title="Permalink to this equation">¶</a></span>\[\eta_i = \eta_{ref} + (\eta_i - \eta_{ref})/C_s\]</div>
 <div class="math notranslate nohighlight" id="equation-tide-module-1">
@@ -125,9 +129,9 @@ Delta_WK = 3.0
 </div>
 </div></blockquote>
 <p>The figure shows a snapshot of surface elevation from the model. Note that the irregularity of wave surface is caused by the tidal propagation from both boundaries.</p>
-<div class="figure align-default" id="id1">
+<div class="figure align-default" id="id2">
 <img alt="_images/tide_snap.jpg" src="_images/tide_snap.jpg" />
-<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Output from the case of tidal absorbing boundary condition.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Output from the case of tidal absorbing boundary condition.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <p>For a time-varying tidal condition, the tidal level and velocity are specified in a file named in input.txt. For example, in the 2D case of tide_abs_2bc_data (same folder), tidal elevations are specified in two files, tide_data_west.txt, tide_data_east.txt,  with the parameter TideBcType  set as DATA type,</p>
 <blockquote>
@@ -139,13 +143,13 @@ TideEastFileName = tide_data_east.txt
 </div>
 </div></blockquote>
 <p>The format of tidal data follows a list of ‘time, eta, u, v’ as shown in the figure below.  In this case, a flat bottom of 8 m is applied in a 2D domain and a regular wavemaker is specified . The following figure demonstrates 2D and 1D section views of surface elevation at different times. Black solid lines denote tidal levels.</p>
-<div class="align-center figure" id="id2">
-<a class="reference internal image-reference" href="_images/layout_tide_abs_only.jpg"><img alt="alternate text" src="_images/layout_tide_abs_only.jpg" style="width: 550px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Layout of tidal absorbing boundary (west and east).</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
-</div>
 <div class="align-center figure" id="id3">
+<a class="reference internal image-reference" href="_images/layout_tide_abs_only.jpg"><img alt="alternate text" src="_images/layout_tide_abs_only.jpg" style="width: 550px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Layout of tidal absorbing boundary (west and east).</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<div class="align-center figure" id="id4">
 <a class="reference internal image-reference" href="_images/tide_abs_only.jpg"><img alt="alternate text" src="_images/tide_abs_only.jpg" style="width: 550px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Case: /simple_cases/tide_abs_2bc_data/. Demonstration of 2D and 1D section views of surface elevation at different times. Black solid lines denote tidal levels.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Case: /simple_cases/tide_abs_2bc_data/. Demonstration of 2D and 1D section views of surface elevation at different times. Black solid lines denote tidal levels.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="combined-tidal-and-absorbing-generating-boundary-condition">
@@ -165,18 +169,23 @@ TideWestFileName = tide_data_west.txt
 </div>
 </div></blockquote>
 <p>The format of tidal data is the same as the tidal absorbing boundary condition. The model is set up in a 2D sloping beach domain. Figure ref{gen_abs} shows snapshots of surface elevation at different times.</p>
-<div class="align-center figure" id="id4">
-<a class="reference internal image-reference" href="_images/layout_tide_gen_abs.jpg"><img alt="alternate text" src="_images/layout_tide_gen_abs.jpg" style="width: 550px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">Layout of generating and absorbing boundary (left only)</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
-</div>
 <div class="align-center figure" id="id5">
+<a class="reference internal image-reference" href="_images/layout_tide_gen_abs.jpg"><img alt="alternate text" src="_images/layout_tide_gen_abs.jpg" style="width: 550px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">Layout of generating and absorbing boundary (left only)</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+<div class="align-center figure" id="id6">
 <a class="reference internal image-reference" href="_images/tide_gen_abs.jpg"><img alt="alternate text" src="_images/tide_gen_abs.jpg" style="width: 550px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">Case: /simple_cases/tide_gen_abs_data/. Thick dashed lines represent tidal levels. Thin black line denotes the beach slope.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">Case: /simple_cases/tide_gen_abs_data/. Thick dashed lines represent tidal levels. Thin black line denotes the beach slope.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="more-information">
 <h2>More information<a class="headerlink" href="#more-information" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="https://fengyanshi.github.io/build/html/tide_surge.html">List of parameters for tidal module setup can be found here</a></p>
+<p>List of parameters for tidal module setup can be found <a class="reference external" href="https://fengyanshi.github.io/build/html/tide_surge.html">here</a></p>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<p>Chen, Q., Madsen, P.A., Basco, D.R., 1999. “Current Effects on Nonlinear Interactions of Shallow–Water Waves”. J. of Waterway, Port, Coastal, and Ocean Eng. 125 (4).</p>
+<p>Larsen, J. and Dancy, H., 1983. “Open boundaries in short wave simulations – A new approach”. Coastal Eng. 7 (3), 285-297. DOI: <a class="reference external" href="https://doi.org/10.1016/0378-3839(83)90022-4">10.1016/0378-3839(83)90022-4</a>.</p>
 </div>
 </div>
 
