@@ -51,7 +51,7 @@ where :math:`a`, :math:`b` and :math:`c` are form parameters. For a slender body
 
 For the slender-type source, the additional volume flux induced by ship motion is applied in the mass conservation equation:
 
-.. math:: dQ = F * \sin (2\pi (\tilde{x}-x^*(t)/L) * \cos (2\pi (\tilde{y}-y^*(t))/W)
+.. math:: dQ = F * \sin (2\pi (\tilde{x}-x^*(t))/L) * \cos (2\pi (\tilde{y}-y^*(t))/W)
 
 where :math:`dQ` represents the flux gradient. :math:`F` is a parameter which can be determined by the block ratio. The formula is calculated in the rectangle :math:`- L/2 \le \tilde{x} - x^*(t) \le L/2`  and  :math:`- W/2 \le \tilde{y} - y^*(t) \le R/2`, and zero outside this region.
 
