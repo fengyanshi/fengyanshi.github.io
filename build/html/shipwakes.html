@@ -49,12 +49,17 @@
 <li class="toctree-l2"><a class="reference internal" href="central.html">Central Module</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Ship-wake Module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sediment.html">Sediment Transport Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tide_module.html">Tide Module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="meteo_intro.html">Meteo Module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tracer.html">Lagrangian Tracking Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="subgrid_module.html">Subgrid Module</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="flowchart.html"><strong>ARCHITECTURE</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="setup.html">MODEL DOWNLOAD AND SETUP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Video Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html#how-to">HOW TO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html#dod-hpc-portal">DoD HPC Portal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="definition.html"><strong>DEFINITIONS OF PARAMETERS</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="coupling_nesting.html"><strong>NESTING AND COUPLING</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples.html"><strong>EXAMPLES</strong></a></li>
@@ -115,7 +120,7 @@
 <p><strong>3) SLENDER SOURCE TYPE I</strong></p>
 <p>For the slender-type source, the additional volume flux induced by ship motion is applied in the mass conservation equation:</p>
 <div class="math notranslate nohighlight" id="equation-shipwakes-6">
-<span class="eqno">(46)<a class="headerlink" href="#equation-shipwakes-6" title="Permalink to this equation">¶</a></span>\[dQ = F * \sin (2\pi (\tilde{x}-x^*(t)/L) * \cos (2\pi (\tilde{y}-y^*(t))/W)\]</div>
+<span class="eqno">(46)<a class="headerlink" href="#equation-shipwakes-6" title="Permalink to this equation">¶</a></span>\[dQ = F * \sin (2\pi (\tilde{x}-x^*(t))/L) * \cos (2\pi (\tilde{y}-y^*(t))/W)\]</div>
 <p>where <span class="math notranslate nohighlight">\(dQ\)</span> represents the flux gradient. <span class="math notranslate nohighlight">\(F\)</span> is a parameter which can be determined by the block ratio. The formula is calculated in the rectangle <span class="math notranslate nohighlight">\(- L/2 \le \tilde{x} - x^*(t) \le L/2\)</span>  and  <span class="math notranslate nohighlight">\(- W/2 \le \tilde{y} - y^*(t) \le R/2\)</span>, and zero outside this region.</p>
 <p><strong>4) SLENDER SOURCE TYPE II</strong></p>
 <p>The Type II of the slender source is similar to the Type I but with two additional parameters representing sizes of bow and stern:</p>
