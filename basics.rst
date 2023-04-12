@@ -14,3 +14,4 @@
    meteo_intro
    tracer
    subgrid_module
+   bubble_foam_module

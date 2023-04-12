@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Parameters for Central Module &#8212; FUNWAVE Documentation</title>
+    <title>Bubble and Foam Module &#8212; FUNWAVE Documentation</title>
     <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -15,8 +15,8 @@
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Project" href="title.html" />
-    <link rel="prev" title="DEFINITIONS OF PARAMETERS" href="definition.html" /> 
+    <link rel="next" title="ARCHITECTURE" href="flowchart.html" />
+    <link rel="prev" title="Subgrid Module" href="subgrid_module.html" /> 
   </head><body>
 <div class="header">
  <p class="logo"><a href="https://fengyanshi.github.io/build/html/index.html">
@@ -31,28 +31,35 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="title.html" title="Project"
+          <a href="flowchart.html" title="ARCHITECTURE"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="definition.html" title="DEFINITIONS OF PARAMETERS"
+          <a href="subgrid_module.html" title="Subgrid Module"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="definition.html" accesskey="U"><strong>DEFINITIONS OF PARAMETERS</strong></a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="basics.html" accesskey="U"><strong>BASICS</strong></a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
 <h3><a href="index.html">Table of Contents</a></h3>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="basics.html"><strong>BASICS</strong></a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="basics.html"><strong>BASICS</strong></a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="boussinesq.html">Formulations and Numerical Schemes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="central.html">Central Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shipwakes.html">Ship-wake Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sediment.html">Sediment Transport Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tide_module.html">Tide Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meteo_intro.html">Meteo Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tracer.html">Lagrangian Tracking Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="subgrid_module.html">Subgrid Module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Bubble and Foam Module</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="flowchart.html"><strong>ARCHITECTURE</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="setup.html"><strong>MODEL DOWNLOAD AND SETUP</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials.html"><strong>Video Tutorials</strong></a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="definition.html"><strong>DEFINITIONS OF PARAMETERS</strong></a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="definition.html#input-txt">INPUT.TXT</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="definition.html#definitions">Definitions</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="definition.html"><strong>DEFINITIONS OF PARAMETERS</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="coupling_nesting.html"><strong>NESTING AND COUPLING</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples.html"><strong>EXAMPLES</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="gallery.html"><strong>GALLERY</strong></a></li>
@@ -80,33 +87,41 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="parameters-for-central-module">
-<span id="section-central-para"></span><h1>Parameters for Central Module<a class="headerlink" href="#parameters-for-central-module" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="title.html">Project</a></li>
-<li class="toctree-l1"><a class="reference internal" href="parallelization.html">Parallelization</a></li>
-<li class="toctree-l1"><a class="reference internal" href="grid.html">Grid and Computational Time</a></li>
-<li class="toctree-l1"><a class="reference internal" href="physics.html">Physics (dispersion, breaking, friction)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="numerics.html">Numerical Parameters</a></li>
-<li class="toctree-l1"><a class="reference internal" href="wavemaker_para.html">Wave-maker specification</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="wavemaker_general.html">Wave-maker specification</a></li>
-<li class="toctree-l2"><a class="reference internal" href="wavemaker_coherence.html">Wave-maker with wave coherence specification</a></li>
-<li class="toctree-l2"><a class="reference internal" href="wavemaker_tsunami.html">Tsunami wave generation</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="periodic.html">Periodic Boundary Condition</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tide_surge.html">Tide and Surge Boundary Conditions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="foam_para.html">Parameters for Bubble and Foam</a></li>
-<li class="toctree-l1"><a class="reference internal" href="statistics.html">Wave Statistics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sponge.html">Sponge Layer</a></li>
-<li class="toctree-l1"><a class="reference internal" href="breakwater.html">Breakwater and Obstacle</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bathymetry_correction.html">Bathymetry Correction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="hotstart.html">Hot Start</a></li>
-<li class="toctree-l1"><a class="reference internal" href="radiation_stress.html">Calculation of radiation stresses</a></li>
-<li class="toctree-l1"><a class="reference internal" href="post.html">Post Processing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="output.html">Output</a></li>
-</ul>
+  <div class="section" id="bubble-and-foam-module">
+<span id="section-tide-module"></span><h1>Bubble and Foam Module<a class="headerlink" href="#bubble-and-foam-module" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="theory">
+<h2>Theory<a class="headerlink" href="#theory" title="Permalink to this headline">¶</a></h2>
+<p>Bubble entrainment, foam tranfer rate and burst rate are formulated based on emperical formulas developed in the previous study. Details will be documented later (Malej et al. 2023, in preparation).</p>
+</div>
+<div class="section" id="model-configuration-and-input">
+<h2>Model configuration and input<a class="headerlink" href="#model-configuration-and-input" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Modify Makefile with -DFOAM</p></li>
+<li><p>Specify parameters related to bubble and foam entrainments, etc.</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>PLOT_INTV_FOAM = &lt;float number&gt; (default: same as PLOT_INTV)
+BurstRate = &lt;float number&gt; (default: 0.01)
+MinThick = &lt;float number&gt; (default: 0.01)
+TransferRate = &lt;float number&gt; (default: 0.1)
+CdFoam = &lt;float number&gt; (default: 0.5)
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>An example is provided In /rip_2D_foam/.  The figure below shows the model result from default parameters.</p></li>
+</ol>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="_images/foam.jpg"><img alt="alternate text" src="_images/foam.jpg" style="width: 550px;" /></a>
+</div>
+</div>
+<div class="section" id="more-information">
+<h2>More information<a class="headerlink" href="#more-information" title="Permalink to this headline">¶</a></h2>
+<p>List of parameters for tidal module setup can be found <a class="reference external" href="https://fengyanshi.github.io/build/html/tide_surge.html">here</a></p>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<p>Malej et al. (2023), in preparation</p>
 </div>
 </div>
 
@@ -123,13 +138,13 @@
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="title.html" title="Project"
+          <a href="flowchart.html" title="ARCHITECTURE"
              >next</a> |</li>
         <li class="right" >
-          <a href="definition.html" title="DEFINITIONS OF PARAMETERS"
+          <a href="subgrid_module.html" title="Subgrid Module"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="definition.html" ><strong>DEFINITIONS OF PARAMETERS</strong></a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="basics.html" ><strong>BASICS</strong></a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">

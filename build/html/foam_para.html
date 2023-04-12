@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Parameters for Central Module &#8212; FUNWAVE Documentation</title>
+    <title>Parameters for Bubble and Foam &#8212; FUNWAVE Documentation</title>
     <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -15,8 +15,8 @@
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Project" href="title.html" />
-    <link rel="prev" title="DEFINITIONS OF PARAMETERS" href="definition.html" /> 
+    <link rel="next" title="Wave Statistics" href="statistics.html" />
+    <link rel="prev" title="Tide and Surge Boundary Conditions" href="tide_surge.html" /> 
   </head><body>
 <div class="header">
  <p class="logo"><a href="https://fengyanshi.github.io/build/html/index.html">
@@ -31,13 +31,14 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="title.html" title="Project"
+          <a href="statistics.html" title="Wave Statistics"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="definition.html" title="DEFINITIONS OF PARAMETERS"
+          <a href="tide_surge.html" title="Tide and Surge Boundary Conditions"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="definition.html" accesskey="U"><strong>DEFINITIONS OF PARAMETERS</strong></a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="definition.html" ><strong>DEFINITIONS OF PARAMETERS</strong></a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="central_para.html" accesskey="U">Parameters for Central Module</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -80,34 +81,15 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="parameters-for-central-module">
-<span id="section-central-para"></span><h1>Parameters for Central Module<a class="headerlink" href="#parameters-for-central-module" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="title.html">Project</a></li>
-<li class="toctree-l1"><a class="reference internal" href="parallelization.html">Parallelization</a></li>
-<li class="toctree-l1"><a class="reference internal" href="grid.html">Grid and Computational Time</a></li>
-<li class="toctree-l1"><a class="reference internal" href="physics.html">Physics (dispersion, breaking, friction)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="numerics.html">Numerical Parameters</a></li>
-<li class="toctree-l1"><a class="reference internal" href="wavemaker_para.html">Wave-maker specification</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="wavemaker_general.html">Wave-maker specification</a></li>
-<li class="toctree-l2"><a class="reference internal" href="wavemaker_coherence.html">Wave-maker with wave coherence specification</a></li>
-<li class="toctree-l2"><a class="reference internal" href="wavemaker_tsunami.html">Tsunami wave generation</a></li>
+  <div class="section" id="parameters-for-bubble-and-foam">
+<span id="section-foam"></span><h1>Parameters for Bubble and Foam<a class="headerlink" href="#parameters-for-bubble-and-foam" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">PLOT_INTV_FOAM</span></code>: time interval for plots of foam, default: same as PLOT_INTERV</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">MinThick</span></code>: float number, default: 0.01</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">TransferRate</span></code>: float number, default: 0.1</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">CdFoam</span></code>: float number, default: 0.5</p></li>
 </ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="periodic.html">Periodic Boundary Condition</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tide_surge.html">Tide and Surge Boundary Conditions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="foam_para.html">Parameters for Bubble and Foam</a></li>
-<li class="toctree-l1"><a class="reference internal" href="statistics.html">Wave Statistics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sponge.html">Sponge Layer</a></li>
-<li class="toctree-l1"><a class="reference internal" href="breakwater.html">Breakwater and Obstacle</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bathymetry_correction.html">Bathymetry Correction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="hotstart.html">Hot Start</a></li>
-<li class="toctree-l1"><a class="reference internal" href="radiation_stress.html">Calculation of radiation stresses</a></li>
-<li class="toctree-l1"><a class="reference internal" href="post.html">Post Processing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="output.html">Output</a></li>
-</ul>
-</div>
+<p>Examples can be found in /simple_cases/rip_2D_foam.</p>
 </div>
 
 
@@ -123,13 +105,14 @@
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="title.html" title="Project"
+          <a href="statistics.html" title="Wave Statistics"
              >next</a> |</li>
         <li class="right" >
-          <a href="definition.html" title="DEFINITIONS OF PARAMETERS"
+          <a href="tide_surge.html" title="Tide and Surge Boundary Conditions"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="definition.html" ><strong>DEFINITIONS OF PARAMETERS</strong></a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="definition.html" ><strong>DEFINITIONS OF PARAMETERS</strong></a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="central_para.html" >Parameters for Central Module</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
