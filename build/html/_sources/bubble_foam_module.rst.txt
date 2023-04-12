@@ -38,7 +38,7 @@ Model configuration and input
 More information
 ==============================================================
 
-List of parameters for tidal module setup can be found `here <https://fengyanshi.github.io/build/html/tide_surge.html>`_
+List of parameters for foam module setup can be found `here <https://fengyanshi.github.io/build/html/foam_para.html>`_
 
 ============
 References
