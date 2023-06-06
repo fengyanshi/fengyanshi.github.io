@@ -14,6 +14,7 @@ HOW TO
 Set up Linux on Windows to run FUNWAVE-TVD
 ******************************************
 |
+|
 .. raw:: html
 
     <iframe width="560" height="315" src="https://www.youtube.com/embed/TLg1XLelk6s" frameborder="0" allowfullscreen></iframe>
@@ -22,6 +23,7 @@ Set up Linux on Windows to run FUNWAVE-TVD
 Run FUNWAVE-TVD with Amazon Web Service
 *****************************************
 |
+|
 .. raw:: html
 
     <iframe width="560" height="315" src="https://www.youtube.com/embed/4Z9DJflk2vM" frameborder="0" allowfullscreen></iframe>
@@ -29,6 +31,7 @@ Run FUNWAVE-TVD with Amazon Web Service
 
 Create movies and animations of FUNWAVE-TVD outputs with MATLAB
 ***************************************************************
+|
 |
 .. raw:: html
 
@@ -42,6 +45,7 @@ DoD HPC Portal
 
 Introduction
 ************
+|
 |
 .. raw:: html
 
