@@ -7,7 +7,7 @@ The transport equation for cohesive sediment uses the same 2D form of advection 
 
 .. math:: (\bar{c} H)_t + \nabla_h \cdot (\bar{c} H ({\bf u}_\alpha + \bar{{\bf u} }_2)) =\nabla_h \cdot (k H (\nabla_h \bar{c})) + P - D \label{ad}
 
-where :math:`\bar{c}` is the non-dimensional depth-averaged sediment concentration normalized by sediment density. :math:`H(\bf{u}_\alpha + \bar{\bf{u}}_2) =M` represents the flow rate per unit width defined in `Shi et al. (2012) <http://www.sciencedirect.com/science/article/pii/S1463500311002010>`_, in which :math:`H=h+\eta` is the total water depth. The roller-induced extra undertow can be taken into account as an option (see :ref:`section-wavebreaking`, and :ref:`section-physics`). :math:`k` is the horizontal sediment diffusion coefficient used for cohesive sediment and is usually defined by users (such as in the `DHI model <https://www.mikepoweredbydhi.com/products/mike-21/sediments>`_). Some reseaches showed that the the diffusion coefficient is a function of current flux, such as in `Kimiaghalam et al. (2019) <http://www.nrcresearchpress.com/doi/abs/10.1139/cjce-2015-0361#.XXo-2ZNKjjA>`_ who connected the diffusion coefficient to river dischanges. 
+where :math:`\bar{c}` is the non-dimensional depth-averaged sediment concentration normalized by sediment density. :math:`H(\bf{u}_\alpha + \bar{\bf{u}}_2) =M` represents the flow rate per unit width defined in `Shi et al. (2012) <http://www.sciencedirect.com/science/article/pii/S1463500311002010>`_, in which :math:`H=h+\eta` is the total water depth. The roller-induced extra undertow can be taken into account as an option (see :ref:`section-wavebreaking`, and :ref:`section-physics`). :math:`k` is the horizontal sediment diffusion coefficient used for cohesive sediment and is usually defined by users (such as in the `DHI model <https://www.mikepoweredbydhi.com/products/mike-21/sediments>`_). Some reseachers showed that the diffusion coefficient is a function of current flux, such as in `Kimiaghalam et al. (2019) <http://www.nrcresearchpress.com/doi/abs/10.1139/cjce-2015-0361#.XXo-2ZNKjjA>`_ who connected the diffusion coefficient to river discharges. 
  
 In the advection-diffusion equation, :math:`P` and :math:`D` represent, respectively, the erosion rate and deposition rate for cohesive sediment. There are two sets of formulas to calculate the erosion rate. For hard bed, `Partheniades' (1965) formula <https://cedb.asce.org/CEDBsearch/record.jsp?dockey=0013640>`_ is used:
 
@@ -22,7 +22,7 @@ where :math:`E` is the erodibility specified by users, :math:`\tau_b` is the bed
 
 .. math:: \tau_b = \rho_w \left(\frac{ 0.4}{1+\ln (k_s/30 h)} \right)^2 U_c^2
 
-which is the same as for the non-cohesive sediment, and the critical bed shear stress is usually specified by users. For soft bed, :math:`\alpha` is a so-called alfa-coefficient specified by users. 
+which is the same as for the non-cohesive sediment, and the critical bed shear stress is usually specified by users. For soft bed, :math:`\alpha` is a so-called alpha-coefficient specified by users. 
 
 The erosion rate, :math:`P`, has the dimension of velocity (m/s) considering the convection-diffusion equation for non-dimensional sediment concentration. 
 
@@ -31,13 +31,13 @@ The deposition rate :math:`D` can be calculated using the formula of `Krone (196
 .. math:: D = w_s c_b p_d  
    :label: depo
 
-where :math:`w_s` is the setting velocity which can be evaluated using a number of formulas which were different sources and usually based on laboratory experiments. It should be related to processes of flocs, aggregate dimensions, drag, local concentration, salinity and other environmental factors. Users can their own formulas by modifying the sediment module. Here, we provide a general formulation that can describe the evolution in conditions of flocculation (In `Kombiadou and Krestenitis, 2014 <http://dx.doi.org/10.5772/51061>`_):
+where :math:`w_s` is the settling velocity which can be evaluated using a number of formulas from different sources and usually based on laboratory experiments. It should be related to processes of flocs, aggregate dimensions, drag, local concentration, salinity and other environmental factors. Users can define their own formulas by modifying the sediment module. Here, we provide a general formulation that can describe the evolution in conditions of flocculation (In `Kombiadou and Krestenitis, 2014 <http://dx.doi.org/10.5772/51061>`_):
 
 .. math:: w_s = \frac{a \bar{c}^n}{(\bar{c}^2 + b^2)^m}
 
-The coefficients have a large range, differing in various estuarine and riverine areas. :math:`a=0.01-0.23, b=1.3-25.0, n=0.4-2.8` and :math:`m=1.0-2.8`. The default vallues in the model are
+The coefficients have a large range, differing in various estuarine and riverine areas. :math:`a=0.01-0.23, b=1.3-25.0, n=0.4-2.8` and :math:`m=1.0-2.8`. The default values in the model are
 :math:`a=0.1;
-b=2.;
+b=2.0;
 n=0.5;
 m=1.5.`
 For :math:`\bar{c}=0.1 g/l`, for example, :math:`w_s = 3.9E^{-3} m/s`. 
@@ -55,11 +55,11 @@ where :math:`P_e` is the Peclet number:
 
 .. math:: P_e = \frac{6 w_s}{\kappa u_{*c}}
 
-in which :math:`\kappa` is von Kaman constant and :math:`u_{*c}` is the friction velocity which can be calculated by `van Rijn (1984) <10.1061/(ASCE)0733-9429(1984)110:10(1494)>`_:
+in which :math:`\kappa` is von Karman constant and :math:`u_{*c}` is the friction velocity which can be calculated by `van Rijn (1984) <10.1061/(ASCE)0733-9429(1984)110:10(1494)>`_:
 
 .. math:: u_{*c} = \frac{\kappa}{-1 + \log (30 H / k_s)} U_c
 
-:math:`P_d` is the probablity of deposition defined by
+:math:`P_d` is the probability of deposition defined by
 
 .. math:: P_d = 1- \left( \frac{\tau_b}{\tau_{cd}} \right)
 
@@ -67,7 +67,7 @@ where :math:`\tau_{cd}` is the critical shear stress for deposition defined by u
 
 **Summary of Input Parameters**
 
-1) :math:`k`: diffusion coefficient, k_coh (default 10E-6). Different from the non-cohesive sidement transport, this parameter needs to be specified by users. 
+1) :math:`k`: diffusion coefficient, k_coh (default 10E-6). Different from the non-cohesive sediment transport, this parameter needs to be specified by users. 
 
 2) :math:`\tau_{cr}`: critical shear stress for erosion, Tau_cr_coh (default 0.001)
 
@@ -77,7 +77,7 @@ where :math:`\tau_{cd}` is the critical shear stress for deposition defined by u
 
 5) :math:`E`: erodibility parameter, default E_coh=0.0001
 
-6) :math:`\alpha`: alfa-coefficient used to calculate the erosion rate for soft bed, default alpha_coh = 1.0 
+6) :math:`\alpha`: alpha-coefficient used to calculate the erosion rate for soft bed, default alpha_coh = 1.0 
 
 An example of model setup can be found in /simple_cases/single_vessel_cohesive/. See :ref:`section-vessel-sediment-cohesive` for documentation. 
 
