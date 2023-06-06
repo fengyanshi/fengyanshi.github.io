@@ -1,7 +1,7 @@
 .. _section-tutorials:
 
 ================
-Video Tutorials
+VIDEO TUTORIALS
 ================
 
 Review these "how-to" video tutorials to get started with FUNWAVE-TVD either locally or on the DoD HPC Portal.
