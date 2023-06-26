@@ -1,4 +1,4 @@
-.. _section_tide_module:
+.. _tide_module:
 
 Tide Module
 ************

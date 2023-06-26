@@ -1,7 +1,7 @@
 .. _section-download:
 
-MODEL DOWNLOAD AND SETUP
-************************
+**MODEL DOWNLOAD AND SETUP**
+****************************
 
 =============
 Prerequisites

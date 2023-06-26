@@ -14,6 +14,7 @@ Parameters for Central Module
    wavemaker_para
    periodic 
    tide_surge
+   foam_para
    statistics
    sponge
    breakwater

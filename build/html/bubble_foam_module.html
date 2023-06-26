@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Useful links &#8212; FUNWAVE Documentation</title>
+    <title>Bubble and Foam Module &#8212; FUNWAVE Documentation</title>
     <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -15,8 +15,8 @@
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="How to run FUNWAVE-TVD on Windows" href="windows.html" />
-    <link rel="prev" title="FAQ" href="faq.html" /> 
+    <link rel="next" title="ARCHITECTURE" href="flowchart.html" />
+    <link rel="prev" title="Subgrid Module" href="subgrid_module.html" /> 
   </head><body>
 <div class="header">
  <p class="logo"><a href="https://fengyanshi.github.io/build/html/index.html">
@@ -31,20 +31,31 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="windows.html" title="How to run FUNWAVE-TVD on Windows"
+          <a href="flowchart.html" title="ARCHITECTURE"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="faq.html" title="FAQ"
+          <a href="subgrid_module.html" title="Subgrid Module"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="addition.html" accesskey="U"><strong>ADDITIONAL INFORMATION</strong></a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="basics.html" accesskey="U"><strong>BASICS</strong></a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
 <h3><a href="index.html">Table of Contents</a></h3>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="basics.html"><strong>BASICS</strong></a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="basics.html"><strong>BASICS</strong></a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="boussinesq.html">Formulations and Numerical Schemes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="central.html">Central Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shipwakes.html">Ship-wake Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sediment.html">Sediment Transport Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tide_module.html">Tide Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meteo_intro.html">Meteo Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tracer.html">Lagrangian Tracking Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="subgrid_module.html">Subgrid Module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Bubble and Foam Module</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="flowchart.html"><strong>ARCHITECTURE</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="setup.html"><strong>MODEL DOWNLOAD AND SETUP</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials.html"><strong>Video Tutorials</strong></a></li>
@@ -55,12 +66,7 @@
 <li class="toctree-l1"><a class="reference internal" href="news.html"><strong>FUNWAVE-TVD WORKSHOP</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="references.html"><strong>BIBLIOGRAPHY</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="authors.html"><strong>AUTHORS</strong></a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="addition.html"><strong>ADDITIONAL INFORMATION</strong></a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="faq.html">FAQ</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Useful links</a></li>
-<li class="toctree-l2"><a class="reference internal" href="info_wave_structure_interactions.html">Wave-Structure Interactions</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="addition.html"><strong>ADDITIONAL INFORMATION</strong></a></li>
 </ul>
 
 <div id="searchbox" style="display: none" role="search">
@@ -81,35 +87,41 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="useful-links">
-<h1>Useful links<a class="headerlink" href="#useful-links" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="windows.html">How to run FUNWAVE-TVD on Windows</a></li>
-<li class="toctree-l1"><a class="reference internal" href="workshop_2017.html">FUNWAVE-TVD Workshop 2017</a></li>
-<li class="toctree-l1"><a class="reference internal" href="workshop_2018.html">FUNWAVE-TVD Workshop 2018</a></li>
-<li class="toctree-l1"><a class="reference internal" href="workshop_2019.html">Workshop 2019</a></li>
-<li class="toctree-l1"><a class="reference internal" href="workshop_2019.html#participants">Participants</a></li>
-<li class="toctree-l1"><a class="reference internal" href="workshop_2019.html#presentations">Presentations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="workshop_2019_UD.html">MINI-FUNWAVE-TVD Workshop 2019</a></li>
-<li class="toctree-l1"><a class="reference internal" href="workshop_2020.html">ANNOUNCEMENT</a></li>
-<li class="toctree-l1"><a class="reference internal" href="workshop_2023.html">ANNOUNCEMENT</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ocean_city_dune.html">Ocean City Tsunami Inundation Map</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tohoku_crescent.html">2011 Tohoku-Oki tsunami impact in Crescent City, CA harbor</a></li>
-<li class="toctree-l1"><a class="reference internal" href="carrara.html">Carrara, Itly, Harbor Resonance</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pusan.html">The Port of Busan, Wave modeling</a></li>
-<li class="toctree-l1"><a class="reference internal" href="info_periodic.html">Periodic Boundary Condition</a></li>
-<li class="toctree-l1"><a class="reference internal" href="info_equal_energy.html">Spectrum: Equal Energy Splitting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="info_sponge.html">Sponge Layers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="info_breaking.html">Example: Breaking</a></li>
-<li class="toctree-l1"><a class="reference internal" href="info_obstacle.html">Example: add obstacle</a></li>
-<li class="toctree-l1"><a class="reference internal" href="info_bathy_breakwater.html">Example: add breakwater using bathymetry file</a></li>
-<li class="toctree-l1"><a class="reference internal" href="info_partial_breakwater.html">Example: add partially reflecting/absorbing breakwater</a></li>
-<li class="toctree-l1"><a class="reference internal" href="info_station_file.html">Example: station file</a></li>
-<li class="toctree-l1"><a class="reference internal" href="projects.html">PROJECTS USING FUNWAVE-TVD</a></li>
-<li class="toctree-l1"><a class="reference internal" href="make_and_cml_input.html">Introduction to FUNWAVE-TVD Makefile</a></li>
-<li class="toctree-l1"><a class="reference internal" href="under_construction.html">Workshop Registration Page</a></li>
-</ul>
+  <div class="section" id="bubble-and-foam-module">
+<span id="section-tide-module"></span><h1>Bubble and Foam Module<a class="headerlink" href="#bubble-and-foam-module" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="theory">
+<h2>Theory<a class="headerlink" href="#theory" title="Permalink to this headline">¶</a></h2>
+<p>Bubble entrainment, foam tranfer rate and burst rate are formulated based on emperical formulas developed in the previous study. Details will be documented later (Malej et al. 2023, in preparation).</p>
+</div>
+<div class="section" id="model-configuration-and-input">
+<h2>Model configuration and input<a class="headerlink" href="#model-configuration-and-input" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Modify Makefile with -DFOAM</p></li>
+<li><p>Specify parameters related to bubble and foam entrainments, etc.</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>PLOT_INTV_FOAM = &lt;float number&gt; (default: same as PLOT_INTV)
+BurstRate = &lt;float number&gt; (default: 0.01)
+MinThick = &lt;float number&gt; (default: 0.01)
+TransferRate = &lt;float number&gt; (default: 0.1)
+CdFoam = &lt;float number&gt; (default: 0.5)
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>An example is provided In /rip_2D_foam/.  The figure below shows the model result from default parameters.</p></li>
+</ol>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="_images/foam.jpg"><img alt="alternate text" src="_images/foam.jpg" style="width: 550px;" /></a>
+</div>
+</div>
+<div class="section" id="more-information">
+<h2>More information<a class="headerlink" href="#more-information" title="Permalink to this headline">¶</a></h2>
+<p>List of parameters for foam module setup can be found <a class="reference external" href="https://fengyanshi.github.io/build/html/foam_para.html">here</a></p>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<p>Malej et al. (2023), in preparation</p>
 </div>
 </div>
 
@@ -126,13 +138,13 @@
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="windows.html" title="How to run FUNWAVE-TVD on Windows"
+          <a href="flowchart.html" title="ARCHITECTURE"
              >next</a> |</li>
         <li class="right" >
-          <a href="faq.html" title="FAQ"
+          <a href="subgrid_module.html" title="Subgrid Module"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="addition.html" ><strong>ADDITIONAL INFORMATION</strong></a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="basics.html" ><strong>BASICS</strong></a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
