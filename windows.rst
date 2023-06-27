@@ -44,7 +44,7 @@ Then turn on **Windows Subsystem for Linux** in *Control Panel*:
     :alt: alternate text
     :figclass: align-center
 
-Now Download a Linux distribution in *Microsoft Store*. Personally I prefer Ubuntu 16.04 LTS.
+Now Download a Linux distribution in *Microsoft Store*. Personally I prefer Ubuntu 16.04 LTS, but if this is unavailable, download the latest version (e.g., 18.04 LTS).
 
 .. figure:: windows/funwave_img/3.JPG
     :width: 800px
