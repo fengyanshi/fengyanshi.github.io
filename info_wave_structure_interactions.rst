@@ -1,4 +1,4 @@
-.. _literature_interactions:
+.. _info_structures:
 
 **************************************
 Wave Response with Coastal Structures
