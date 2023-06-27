@@ -152,7 +152,7 @@ The version after 3.4 uses a buffer to write out stations to speed up the progra
                 Ny = args.nglob    # if not included in args, manually set Nx, Ny
                 Nx = args.mglob
                 fin = open(bathyFileName, mode='rb')
-                dataType = np.dtype(['elev', '<f8', Ny*Nx])
+                dataType = np.dtype([('elev', '<f8', Ny*Nx)])
                 bathyNotParsed = np.fromfile(fin, dtype=dataType)
                 bathy = np.zeros([Ny,Nx])
                 for j in range(Nx):
