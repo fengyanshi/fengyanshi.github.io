@@ -88,7 +88,7 @@ The output files are saved in the result directory defined by :code:`RESULT_FOLD
 
 **Station files**
 
-To get time series of surface elevation, u and v at interested locations, you can specify a station file which includes the locations for output. 
+To get time series of surface elevation, u and v at interested locations, you can specify a station file which includes the locations for output. Station input files (e.g., gauges.txt) have size (# of stations) x 2, where column 1 contains Mglob location (unit = grid points) and column 2 contains Nglob location (unit = grid points). In 1D cases, the Nglob location (second column) needs to be set to 1 for all gauges; if set to 0, station files will not be outputted.
 
   * in "input.txt", add :code:`NumberStations = <integer number of stations>`
   * in "input.txt", :code:`STATIONS_FILE = <file name, e.g., gauges.txt>`
@@ -151,6 +151,17 @@ The version after 3.4 uses a buffer to write out stations to speed up the progra
              else:
                 Ny = args.nglob    # if not included in args, manually set Nx, Ny
                 Nx = args.mglob
+				
+				# option 1
+				bathy = np.fromfile(bathyFileName).reshape(Ny,Nx)
+				
+				# option 2
+				with open(bathyFileName, 'rb') as file: # 'rb' is used to read binary in windows, on linux you can use 'r'
+					bathy_file = file.read()
+					bathy = np.frombuffer(bathy_file, dtype=np.float32)
+					bathy = bathy.reshape(Ny, Nx)
+				
+				# option 3
                 fin = open(bathyFileName, mode='rb')
                 dataType = np.dtype([('elev', '<f8', Ny*Nx)])
                 bathyNotParsed = np.fromfile(fin, dtype=dataType)
@@ -161,7 +172,7 @@ The version after 3.4 uses a buffer to write out stations to speed up the progra
                 
              return bathy
 
-  Station files do not have Binary format. 
+  **Station files do not have Binary format**. 
 
 * Other format
 
