@@ -1,4 +1,4 @@
-.. _info_structures:
+.. _info-structures:
 
 **************************************
 Wave Response with Coastal Structures
