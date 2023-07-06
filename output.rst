@@ -151,8 +151,10 @@ The version after 3.4 uses a buffer to write out stations to speed up the progra
              else:
                 Ny = args.nglob    # if not included in args, manually set Nx, Ny
                 Nx = args.mglob                                                                                                       
+				
                 # option 1
                 bathy = np.fromfile(bathyFileName).reshape(Ny,Nx)                                                                               
+				
                 # option 2
                 with open(bathyFileName, 'rb') as file: # 'rb' is used to read binary in windows, on linux you can use 'r'
                 bathy_file = file.read()
