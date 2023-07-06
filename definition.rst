@@ -183,7 +183,7 @@ Definitions
 
 ***************************************
 
-.._subsection-checklist:
+.. _subsection-checklist:
 
 ====================
 Simulation Checklist
@@ -195,11 +195,11 @@ Below is a simple checklist to review before hitting “go” on a simulation. T
 
 #. Input wave conditions are within the :ref:`valid range <info-structures>` of the model.
 #. For stability, the ratio of DX and water depth is greater than 1/15, :ref:`DX/h > 1/15 <info-structures>`. 
-#. The number of processors to request on the HPC or local machine matches the product of PX and PY from input.txt. This number should be a divisor of the number of available processors or cores per compute node (e.g., if 1 node supports 44 processors, -np must be 1, 2, 4, 11, 22, or 44).
+#. The number of processors to request on the HPC or local machine matches the product of PX and PY from "input.txt". This number should be a divisor of the number of available processors or cores per compute node (e.g., if 1 node supports 44 processors, -np must be 1, 2, 4, 11, 22, or 44).
 #. Cross-reference the name and path of the FUNWAVE executable file to be used for the simulation in the run command or PBS script (if submitting a job on an HPC environment).
-#. Cross-reference input file names (input.txt, depth.txt, gauges.txt or stations.txt, friction.txt, etc.) across the working directory, input.txt, and the PBS script (if submitting a job on an HPC environment).
+#. Cross-reference input file names (input.txt, depth.txt, gauges.txt or stations.txt, friction.txt, etc.) across the working directory, "input.txt", and the PBS script (if submitting a job on an HPC environment).
 #. Global input filetypes (e.g., depth.txt and friction.txt) are the same size as the domain (Mglob x Nglob) starting from the south-west corner. If generating files in Python, the bathy array will have Nglob rows and Mglob columns.
-#. If using a depth type of FLAT or SLOPE, the DEPTH_FLAT = DEP_WK at the wavemaker. If using a depth type of DATA, ensure that the DEP_WK at XC_WK matches the depth at that location in the bathy.txt. For stability, it is best to artificially smooth the bathymetry to a constant depth at and around the wavemaker.
+#. If using a depth type of FLAT or SLOPE, the DEPTH_FLAT = DEP_WK at the wavemaker. If using a depth type of DATA, ensure that the DEP_WK at XC_WK matches the depth at that location in the "bathy.txt". For stability, it is best to artificially smooth the bathymetry to a constant depth at and around the wavemaker.
 #. If transferring files from a Windows to a Linux machine (in an HPC environment, for example), run :code:`dos2unix [filename]` on input files to eliminate any possible Windows return characters (^M) at the end of a line.
 
 If you have experience with running many FUNWAVE-TVD simulations and have recommendations to add to this simple checklist with respect to the Central, Vessel, Sediment, or Meteo modules, please send an email the FUNWAVE user group with the subject “Checklist Recommendations”. We will consider your recommendations and include them on the Wiki as appropriate. We appreciate your support and engagement as the modeling community and the model itself continues to evolve and grow.
