@@ -21,7 +21,7 @@ in which :math:`U_c` is the depth-averaged total velocity (m/s), :math:`k_s = 2.
  
 In the advection-diffusion equation, :math:`P` and :math:`D` represent the erosion rate and deposition rate, respectively. The erosion rate can be calculated using van Rijn's (1984) pickup function:
 
-.. math:: P = 0.015 \frac{d_{50}}{a} \left ( \frac{|\tau_b| - \tau_{cr}}{\tau_{cr}}\right ) d^{-0.3}_{*} w_f 
+.. math:: P = 0.015 \frac{d_{50}}{a} \left ( \frac{|\tau_b| - \tau_{cr}}{\tau_{cr}}\right )^{1.5} d^{-0.3}_{*} w_f 
     :label: p
 
 where :math:`a` is a reference elevation and is a function of total depth (:math:`a = 0.01 H`), :math:`\tau_b` is the bed shear stress, and :math:`\tau_{cr}` is the critical shear stress. :math:`P` has the dimension of velocity (m/s) considering the convection-diffusion equation for non-dimensional sediment concentration. :math:`d_{*}` is dimensionless grain size defined as:
