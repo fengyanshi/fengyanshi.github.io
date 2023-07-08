@@ -74,6 +74,8 @@ Sediment Transport and Morphological Change
 
 * :code:`dep_xxxxx`: depth (with considering porosity) UPTO xxxxx output step
 
+* :code:`BedStr_xxxxx`: bed shear stress UPTO xxxxx output step
+
 
 
 
