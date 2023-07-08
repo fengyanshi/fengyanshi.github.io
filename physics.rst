@@ -36,7 +36,7 @@ Physics (dispersion, breaking, friction)
 
 **SPECIFICATION OF FRICTION**
   
-* :code:`FRICTION_MATRIX`: logical parameter for homogeneous and inhomogeneous frction feild.  T - inhomogeneous, F - homogeneous. Default: F.
+* :code:`FRICTION_MATRIX`: logical parameter for homogeneous and inhomogeneous frction field.  T - inhomogeneous, F - homogeneous. Default: F.
 
 * :code:`FRICTION_FILE`: name of friction file if :code:`FRICTION_MATRIX = T`; the file dimensions should be :code:`Mglob x Nglob` with the first point as the south-west corner. The read format in the code is shown below:
 
