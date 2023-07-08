@@ -50,6 +50,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#"><strong>DEFINITIONS OF PARAMETERS</strong></a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#input-txt">INPUT.TXT</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#definitions">Definitions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#simulation-checklist">Simulation Checklist</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="coupling_nesting.html"><strong>NESTING AND COUPLING</strong></a></li>
@@ -278,6 +279,23 @@
 <li class="toctree-l1"><a class="reference internal" href="subgrid_para.html">Subgrid Parameters</a></li>
 </ul>
 </div>
+<hr class="docutils" />
+</div>
+<div class="section" id="simulation-checklist">
+<span id="subsection-checklist"></span><h2>Simulation Checklist<a class="headerlink" href="#simulation-checklist" title="Permalink to this headline">¶</a></h2>
+<p>After the FUNWAVE-TVD model has been downloaded and compiled on either your local machine or remote computing environment (e.g., HPC or AWS Cloud), and you’ve familiarized yourself with the <a class="reference internal" href="examples.html#section-examples"><span class="std std-ref">simple cases</span></a> in the model repository, you’re ready to begin running numerical wave simulations for your application. If you haven’t yet downloaded and compiled the model, follow the instructions on the <a class="reference internal" href="setup.html#section-download"><span class="std std-ref">Model Download and Setup</span></a> page.</p>
+<p>Below is a simple checklist to review before hitting “go” on a simulation. This checklist was designed to reduce the probability of experiencing an error when initiating a new simulation; however, it is not comprehensive of all possible input parameters and input file conditions for all applications.</p>
+<ol class="arabic simple">
+<li><p>Input wave conditions are within the <a class="reference internal" href="info_structures.html#info-structures"><span class="std std-ref">valid range</span></a> of the model.</p></li>
+<li><p>For stability, the ratio of DX and water depth is greater than 1/15, <a class="reference internal" href="info_structures.html#info-structures"><span class="std std-ref">DX/h &gt; 1/15</span></a>.</p></li>
+<li><p>The number of processors to request on the HPC or local machine matches the product of PX and PY from “input.txt”. This number should be a divisor of the number of available processors or cores per compute node (e.g., if 1 node supports 44 processors, -np must be 1, 2, 4, 11, 22, or 44).</p></li>
+<li><p>Cross-reference the name and path of the FUNWAVE executable file to be used for the simulation in the run command or PBS script (if submitting a job on an HPC environment).</p></li>
+<li><p>Cross-reference input file names (input.txt, depth.txt, gauges.txt or stations.txt, friction.txt, etc.) across the working directory, “input.txt”, and the PBS script (if submitting a job on an HPC environment).</p></li>
+<li><p>Global input filetypes (e.g., depth.txt and friction.txt) are the same size as the domain (Mglob x Nglob) starting from the south-west corner. If generating files in Python, the bathy array will have Nglob rows and Mglob columns.</p></li>
+<li><p>If using a depth type of FLAT or SLOPE, the DEPTH_FLAT = DEP_WK at the wavemaker. If using a depth type of DATA, ensure that the DEP_WK at XC_WK matches the depth at that location in the “bathy.txt”. For stability, it is best to artificially smooth the bathymetry to a constant depth at and around the wavemaker.</p></li>
+<li><p>If transferring files from a Windows to a Linux machine (in an HPC environment, for example), run <code class="code docutils literal notranslate"><span class="pre">dos2unix</span> <span class="pre">[filename]</span></code> on input files to eliminate any possible Windows return characters (^M) at the end of a line.</p></li>
+</ol>
+<p>If you have experience with running many FUNWAVE-TVD simulations and have recommendations to add to this simple checklist with respect to the Central, Vessel, Sediment, or Meteo modules, please send an email the FUNWAVE user group with the subject “Checklist Recommendations”. We will consider your recommendations and include them on the Wiki as appropriate. We appreciate your support and engagement as the modeling community and the model itself continues to evolve and grow.</p>
 </div>
 </div>
 

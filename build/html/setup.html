@@ -332,8 +332,8 @@ make
 <div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>mpirun -np 4 /src/funwave_vessel
 </pre></div>
 </div>
-<p>Here, the parallel processing MPI is established and the number of processors, <code class="code docutils literal notranslate"><span class="pre">-np</span></code> is set to 4. This number will change depending on the capacity of your local machine. Next, the path to the FUNWAVE exectuable <code class="code docutils literal notranslate"><span class="pre">funwave_vessel</span></code> is called upon, and the model begins the simulation.</p>
-<p>If you are running FUNWAVE on a HPC machine …</p>
+<p>Here, the parallel processing MPI is established and the number of processors, <code class="code docutils literal notranslate"><span class="pre">-np</span></code> is set to 4. This number will change depending on the capacity of your local machine. If your computer uses an Intel processor, visit <a class="reference external" href="https://www.intel.com/content/www/us/en/support/articles/000006059/processors.html">this webpage</a> to assist with identifying the number of processors available to you. Next, the path to the FUNWAVE exectuable <code class="code docutils literal notranslate"><span class="pre">funwave_vessel</span></code> is called upon, and the model begins the simulation.</p>
+<p>If you are running FUNWAVE in an HPC environment, you will need to review the requirements for submitting jobs in that respective environment (e.g., preparing a PBS script).</p>
 </li>
 </ol>
 </div>

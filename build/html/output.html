@@ -47,13 +47,12 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="basics.html"><strong>BASICS</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="flowchart.html"><strong>ARCHITECTURE</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="setup.html">MODEL DOWNLOAD AND SETUP</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Video Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorials.html#how-to">HOW TO</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorials.html#dod-hpc-portal">DoD HPC Portal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup.html"><strong>MODEL DOWNLOAD AND SETUP</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html"><strong>Video Tutorials</strong></a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="definition.html"><strong>DEFINITIONS OF PARAMETERS</strong></a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="definition.html#input-txt">INPUT.TXT</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="definition.html#definitions">Definitions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="definition.html#simulation-checklist">Simulation Checklist</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="coupling_nesting.html"><strong>NESTING AND COUPLING</strong></a></li>
@@ -183,7 +182,7 @@
 </ul>
 </div></blockquote>
 <p><strong>Station files</strong></p>
-<p>To get time series of surface elevation, u and v at interested locations, you can specify a station file which includes the locations for output.</p>
+<p>To get time series of surface elevation, u and v at interested locations, you can specify a station file which includes the locations for output. Station input files (e.g., gauges.txt) have size (# of stations) x 2, where column 1 contains Mglob location (unit = grid points) and column 2 contains Nglob location (unit = grid points). In 1D cases, the Nglob location (second column) needs to be set to 1 for all gauges; if set to 0, station files will not be outputted.</p>
 <blockquote>
 <div><ul class="simple">
 <li><p>in “input.txt”, add <code class="code docutils literal notranslate"><span class="pre">NumberStations</span> <span class="pre">=</span> <span class="pre">&lt;integer</span> <span class="pre">number</span> <span class="pre">of</span> <span class="pre">stations&gt;</span></code></p></li>
@@ -239,8 +238,19 @@ StationOutputBuffer = 100
    <span class="k">else</span><span class="p">:</span>
       <span class="n">Ny</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">nglob</span>    <span class="c1"># if not included in args, manually set Nx, Ny</span>
       <span class="n">Nx</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">mglob</span>
+
+      <span class="c1"># option 1</span>
+      <span class="n">bathy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fromfile</span><span class="p">(</span><span class="n">bathyFileName</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">Ny</span><span class="p">,</span><span class="n">Nx</span><span class="p">)</span>
+
+      <span class="c1"># option 2</span>
+      <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">bathyFileName</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="nb">file</span><span class="p">:</span> <span class="c1"># &#39;rb&#39; is used to read binary in windows, on linux you can use &#39;r&#39;</span>
+      <span class="n">bathy_file</span> <span class="o">=</span> <span class="nb">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+      <span class="n">bathy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">frombuffer</span><span class="p">(</span><span class="n">bathy_file</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+      <span class="n">bathy</span> <span class="o">=</span> <span class="n">bathy</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">Ny</span><span class="p">,</span> <span class="n">Nx</span><span class="p">)</span>
+
+      <span class="c1"># option 3</span>
       <span class="n">fin</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">bathyFileName</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;rb&#39;</span><span class="p">)</span>
-      <span class="n">dataType</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">([</span><span class="s1">&#39;elev&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;f8&#39;</span><span class="p">,</span> <span class="n">Ny</span><span class="o">*</span><span class="n">Nx</span><span class="p">])</span>
+      <span class="n">dataType</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">([(</span><span class="s1">&#39;elev&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;f8&#39;</span><span class="p">,</span> <span class="n">Ny</span><span class="o">*</span><span class="n">Nx</span><span class="p">)])</span>
       <span class="n">bathyNotParsed</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fromfile</span><span class="p">(</span><span class="n">fin</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dataType</span><span class="p">)</span>
       <span class="n">bathy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">Ny</span><span class="p">,</span><span class="n">Nx</span><span class="p">])</span>
       <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">Nx</span><span class="p">):</span>
@@ -251,7 +261,7 @@ StationOutputBuffer = 100
 </pre></div>
 </div>
 </div></blockquote>
-<p>Station files do not have Binary format.</p>
+<p><strong>Station files do not have Binary format</strong>.</p>
 </li>
 <li><p>Other format</p>
 <blockquote>
