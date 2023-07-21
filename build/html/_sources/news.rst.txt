@@ -5,7 +5,7 @@
 .. image:: images/workshop/group.png
 
 
-`WORKSHOP 2023 Announcement <workshop_2023.html>`_ 
+`WORKSHOP 2023 is coming soon <workshop_2023.html>`_ 
 
 **Previous Workshops:**
 
@@ -17,6 +17,7 @@
 
 `WORKSHOP 2019 at Hohai University <workshop_2019.html>`_
 
+`WORKSHOP 2023 at Northeastern University <workshop_2023.html>`_
 
 
 
