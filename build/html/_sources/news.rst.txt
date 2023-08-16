@@ -5,8 +5,6 @@
 .. image:: images/workshop/group.png
 
 
-`WORKSHOP 2023 is coming soon <workshop_2023.html>`_ 
-
 **Previous Workshops:**
 
 `WORKSHOP 2017 <workshop_2017.html>`_
