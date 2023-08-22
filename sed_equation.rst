@@ -40,7 +40,7 @@ The deposition rate :math:`D` can be calculated using the formula of `Cao (1999)
 
 .. math:: D = \gamma c w_f (1-\gamma \bar{c})^{m_o}
 
-where :math:`\gamma = \min [2,(1-n/\bar{c})]`, :math:`n` is the sediment porosity, and :math:`m_0` is a constant number given as 2.0. 
+where :math:`\gamma = \min [2,(1-(1-n)/\bar{c})]`, :math:`n` is the sediment porosity, and :math:`m_0` is a constant number given as 2.0. 
 
 **References**
 
