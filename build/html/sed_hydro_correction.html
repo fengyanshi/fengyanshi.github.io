@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Hydrodynamic Correction for High Concentration Sediment &#8212; FUNWAVE Documentation</title>
+    <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Slope Limiting Methodology" href="slope_limiting.html" />
+    <link rel="prev" title="Morphological Evolution" href="bed_equation.html" /> 
+  </head><body>
+<div class="header">
+ <p class="logo"><a href="https://fengyanshi.github.io/build/html/index.html">
+  <img class="logo" src="_static/../../../images/Funwave.svg" alt="Logo"/>
+ </a></p>
+</div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="slope_limiting.html" title="Slope Limiting Methodology"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="bed_equation.html" title="Morphological Evolution"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="basics.html" ><strong>BASICS</strong></a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="sediment.html" accesskey="U">Sediment Transport Module</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="basics.html"><strong>BASICS</strong></a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="boussinesq.html">Formulations and Numerical Schemes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="central.html">Central Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shipwakes.html">Ship-wake Module</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="sediment.html">Sediment Transport Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tide_module.html">Tide Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meteo_intro.html">Meteo Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tracer.html">Lagrangian Tracking Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="subgrid_module.html">Subgrid Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bubble_foam_module.html">Bubble and Foam Module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="flowchart.html"><strong>ARCHITECTURE</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup.html"><strong>MODEL DOWNLOAD AND SETUP</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html"><strong>Video Tutorials</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="definition.html"><strong>DEFINITIONS OF PARAMETERS</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="coupling_nesting.html"><strong>NESTING AND COUPLING</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html"><strong>EXAMPLES</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="gallery.html"><strong>GALLERY</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="news.html"><strong>FUNWAVE-TVD WORKSHOP</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html"><strong>BIBLIOGRAPHY</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="authors.html"><strong>AUTHORS</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="addition.html"><strong>ADDITIONAL INFORMATION</strong></a></li>
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="hydrodynamic-correction-for-high-concentration-sediment">
+<h1>Hydrodynamic Correction for High Concentration Sediment<a class="headerlink" href="#hydrodynamic-correction-for-high-concentration-sediment" title="Permalink to this headline">¶</a></h1>
+<p>Following <a class="reference external" href="https://ascelibrary-org.udel.idm.oclc.org/doi/10.1061/%28ASCE%290733-9429%282004%29130%3A7%28689%29">Cao et al. (2004)</a>, hydrodynamic corrections were made for high concentration sediment. Three extra terms were added into mass and momentum conservation equations, respectively. According to Cao et al.’s (5) and (6), which were based on SWE in x-direction:</p>
+<div class="math notranslate nohighlight" id="equation-sed-hydro-correction-0">
+<span class="eqno">(75)<a class="headerlink" href="#equation-sed-hydro-correction-0" title="Permalink to this equation">¶</a></span>\[\frac{\partial h}{\partial t} + \frac{\partial \eta}{\partial t}+ \frac{\partial Hu}{\partial x} = \frac{P-D}{1-n}\]</div>
+<div class="math notranslate nohighlight" id="equation-sed-hydro-correction-1">
+<span class="eqno">(76)<a class="headerlink" href="#equation-sed-hydro-correction-1" title="Permalink to this equation">¶</a></span>\[\frac{\partial Hu}{\partial t} + \frac{\partial }{\partial x} \left(Hu^2+\frac{1}{2}g H^2\right) = gH \left(-\frac{\partial z}{\partial x} - S_f \right) - \frac{(\rho_s-\rho_w)gH^2}{2\rho}\frac{\partial c}{\partial x} - \frac{(\rho_0-\rho)(P-D)u}{\rho(1-n)}\]</div>
+<p>where <span class="math notranslate nohighlight">\(S_f\)</span> is the bottom friction term.  Notice that the definition of <span class="math notranslate nohighlight">\(h\)</span> defined in Cao et al. is the total water level <span class="math notranslate nohighlight">\(H=(h+\eta)\)</span>, we rewrote the momentum equation above using <span class="math notranslate nohighlight">\((h+\eta)\)</span> or <span class="math notranslate nohighlight">\(H\)</span> instead of <span class="math notranslate nohighlight">\(h\)</span>, which is the still water depth defined here. The 1D SWEs are consistent with the SWE form of FUNWAVE-TVD equations except the extra terms in the mass and momentum equations. The definitions of density of water-sediment mixture and satuarated bed are</p>
+<blockquote>
+<div><p>Density of water-sedient mixture: <span class="math notranslate nohighlight">\(\rho = \rho_w(1-c) + \rho_s c\)</span></p>
+<p>Density of satuated bed: <span class="math notranslate nohighlight">\(\rho_0 = \rho_w n + \rho_s (1-n)\)</span></p>
+</div></blockquote>
+<p>The FUNWAVE-TVD equstions become</p>
+<div class="math notranslate nohighlight" id="equation-sed-hydro-correction-2">
+<span class="eqno">(77)<a class="headerlink" href="#equation-sed-hydro-correction-2" title="Permalink to this equation">¶</a></span>\[\eta_t + \nabla \cdot {\bf M} = M_{ext}\]</div>
+<div class="math notranslate nohighlight" id="equation-sed-hydro-correction-3">
+<span class="eqno">(78)<a class="headerlink" href="#equation-sed-hydro-correction-3" title="Permalink to this equation">¶</a></span>\[{\bf M}_t + \nabla \cdot \left( \frac{{\bf MM}}{H} \right) + \nabla \left(\frac{1}{2}g(\eta^2 + 2h\eta) \right) = H {\bf V}_{dis} + g\eta \nabla h + {\bf DC}_{ext} + {\bf EXG}_{ext}\]</div>
+<p>where <span class="math notranslate nohighlight">\({\bf V}_{dis}\)</span> represents the nonlinear dispersive terms; <span class="math notranslate nohighlight">\(M_{ext}\)</span> is the additional term due to the total mass balance; <span class="math notranslate nohighlight">\({\bf DC}_{ext}\)</span> is the extra term representing the effect of spatial variation of sediment concentration; <span class="math notranslate nohighlight">\({\bf EXG}_{ext}\)</span> is the extra term caused by the momentum transfer due to sediment exchange between the water column and erodible bed.</p>
+<p>We define <span class="math notranslate nohighlight">\(s=\rho_s/\rho_w\)</span> which is consistent with the previous defination in FUNWAVE-TVD (Tehranirad et al., 2020), and note that <span class="math notranslate nohighlight">\(s\)</span> here is different from Cao et al. who defined it as <span class="math notranslate nohighlight">\(s =\rho_s/\rho_w -1\)</span>. The extra term in the mass conservation equation is</p>
+<div class="math notranslate nohighlight" id="equation-sed-hydro-correction-4">
+<span class="eqno">(79)<a class="headerlink" href="#equation-sed-hydro-correction-4" title="Permalink to this equation">¶</a></span>\[M_{ext} = - \frac{\partial h}{\partial t} - \frac{P-D}{1-n}\]</div>
+<p>The extra terms in the momentum equation are</p>
+<div class="math notranslate nohighlight" id="equation-sed-hydro-correction-5">
+<span class="eqno">(80)<a class="headerlink" href="#equation-sed-hydro-correction-5" title="Permalink to this equation">¶</a></span>\[{\bf DC}_{ext} = - \frac{(s-1)gH^2}{[1+c(s-1)]} \nabla c\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight" id="equation-sed-hydro-correction-6">
+<span class="eqno">(81)<a class="headerlink" href="#equation-sed-hydro-correction-6" title="Permalink to this equation">¶</a></span>\[{\bf EXG}_{ext} = - \frac{(s-1)(1-n-c)}{[1+c(s-1)](1-n)} (P-D) {\bf \bar{u}}\]</div>
+<p>where <span class="math notranslate nohighlight">\({\bf \bar{u}}\)</span> represents the depth-averaged velocity and can be estimated by <span class="math notranslate nohighlight">\({\bf u}_\alpha\)</span> for simplicity. Notice that <span class="math notranslate nohighlight">\(1-n-c \ge 0\)</span> in equations above.</p>
+<p>To simulate the effects of the extra terms, we provide three logical parameters</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>SedimentMassSource = T ! or F, if T extra term in mass equation calculated
+SedimentMomentDC = T ! or F, if T concentraton gradient term calculated
+SedimentMomentEXG = T ! or F, if T momentum exchange term calculated
+</pre></div>
+</div>
+<p>The default values for all three parameters are F.</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="slope_limiting.html" title="Slope Limiting Methodology"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="bed_equation.html" title="Morphological Evolution"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="basics.html" ><strong>BASICS</strong></a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="sediment.html" >Sediment Transport Module</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, Fengyan Shi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
+    </div>
+  </body>
+</html>
