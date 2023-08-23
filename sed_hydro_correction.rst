@@ -3,7 +3,7 @@ Hydrodynamic Correction for High Concentration Sediment
 
 Following `Cao et al. (2004) <https://ascelibrary-org.udel.idm.oclc.org/doi/10.1061/%28ASCE%290733-9429%282004%29130%3A7%28689%29>`_, hydrodynamic corrections were made for high concentration sediment. Three extra terms were added into mass and momentum conservation equations, respectively. According to Cao et al.'s (5) and (6), which were based on SWE in x-direction:
 
-.. math:: \frac{\partial h}{\partial t} + \frac{\partial \eta}{\partial t}+ \frac{\partial Hu}{\partial x} = \frac{P-D}{1-n}
+.. math:: \frac{\partial H}{\partial t} + \frac{\partial Hu}{\partial x} = \frac{P-D}{1-n}
 
 .. math:: \frac{\partial Hu}{\partial t} + \frac{\partial }{\partial x} \left(Hu^2+\frac{1}{2}g H^2\right) = gH \left(-\frac{\partial z}{\partial x} - S_f \right) - \frac{(\rho_s-\rho_w)gH^2}{2\rho}\frac{\partial c}{\partial x} - \frac{(\rho_0-\rho)(P-D)u}{\rho(1-n)}
 
@@ -23,7 +23,7 @@ where :math:`{\bf V}_{dis}` represents the nonlinear dispersive terms; :math:`M_
 
 We define :math:`s=\rho_s/\rho_w` which is consistent with the previous defination in FUNWAVE-TVD (Tehranirad et al., 2020), and note that :math:`s` here is different from Cao et al. who defined it as :math:`s =\rho_s/\rho_w -1`. The extra term in the mass conservation equation is
 
-.. math:: M_{ext} = - \frac{\partial h}{\partial t} - \frac{P-D}{1-n}
+.. math:: M_{ext} = - \frac{P-D}{1-n}
 
 The extra terms in the momentum equation are
 
