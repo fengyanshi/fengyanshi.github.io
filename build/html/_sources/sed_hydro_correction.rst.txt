@@ -23,7 +23,7 @@ where :math:`{\bf V}_{dis}` represents the nonlinear dispersive terms; :math:`M_
 
 We define :math:`s=\rho_s/\rho_w` which is consistent with the previous defination in FUNWAVE-TVD (Tehranirad et al., 2020), and note that :math:`s` here is different from Cao et al. who defined it as :math:`s =\rho_s/\rho_w -1`. The extra term in the mass conservation equation is
 
-.. math:: M_{ext} = - \frac{P-D}{1-n}
+.. math:: M_{ext} =  \frac{P-D}{1-n}
 
 The extra terms in the momentum equation are
 
