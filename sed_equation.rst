@@ -15,7 +15,7 @@ where :math:`\bar{c}` is the non-dimensional depth-averaged sediment concentrati
 
 where :math:`u_{*c}` is the shear velocity and can be calculated by `van Rijn (1984) <10.1061/(ASCE)0733-9429(1984)110:10(1494)>`_:
 
-.. math:: u_{*c} = \frac{\kappa}{-1 + \log (30 H / k_s)} U_c
+.. math:: u_{*c} = \frac{\kappa}{-1 + \ln (30 H / k_s)} U_c
 
 in which :math:`U_c` is the depth-averaged total velocity (m/s), :math:`k_s = 2.5 d_{50}` is Nikuradse roughness coefficient, and :math:`d_{50}` is the median grain diameter (mm).  
  

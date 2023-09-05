@@ -53,13 +53,12 @@
 <li class="toctree-l2"><a class="reference internal" href="meteo_intro.html">Meteo Module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tracer.html">Lagrangian Tracking Module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="subgrid_module.html">Subgrid Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bubble_foam_module.html">Bubble and Foam Module</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="flowchart.html"><strong>ARCHITECTURE</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="setup.html">MODEL DOWNLOAD AND SETUP</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Video Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorials.html#how-to">HOW TO</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorials.html#dod-hpc-portal">DoD HPC Portal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup.html"><strong>MODEL DOWNLOAD AND SETUP</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html"><strong>Video Tutorials</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="definition.html"><strong>DEFINITIONS OF PARAMETERS</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="coupling_nesting.html"><strong>NESTING AND COUPLING</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples.html"><strong>EXAMPLES</strong></a></li>
@@ -101,14 +100,28 @@
 </div>
 <div class="section" id="boundary-conditions">
 <h2>Boundary Conditions<a class="headerlink" href="#boundary-conditions" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><dl class="simple">
+<dl class="simple">
 <dt><strong>Wall boundary condition</strong></dt><dd><p>A mirror boundary condition is used for a fully reflective wall.</p>
 </dd>
 <dt><strong>Periodic boundary condition</strong></dt><dd><p>The periodic boundary condition in <em>y</em> (south/north) direction was implemented in the code.</p>
 </dd>
 </dl>
-</div></blockquote>
+<p><strong>Lateral frictional boundary condition</strong>
+The lateral frictional boundary condition applied to “coarsely” resolved ocean models was discussed in <a class="reference external" href="https://www.ma.imperial.ac.uk/~pberloff/OM_deremble_et_al_2011.pdf">Deremble et al. (2011)</a>. Following this idea, the lateral mixing terms in FUNWAVE-TVD can be expressed in the equations below</p>
+<div class="math notranslate nohighlight" id="equation-central-0">
+<span class="eqno">(40)<a class="headerlink" href="#equation-central-0" title="Permalink to this equation">¶</a></span>\[{\bf M}_t + \nabla \cdot \left( \frac{{\bf MM}}{H} \right) + \nabla \left(\frac{1}{2}g(\eta^2 + 2h\eta) \right) = H {\bf V}_{dis} + g\eta \nabla h + H \nabla \cdot \vec{\tau}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\vec{\tau}\)</span> represents the lateral shear stress. We use the Law of the Wall where the molecular processes are the dominant mechnisc in a frictional sublayer at Kolmogorov scales. Outside this layer, viscosity becomes unimportant. The scaling arguments based on the free stream flow lead to</p>
+<div class="math notranslate nohighlight" id="equation-central-1">
+<span class="eqno">(41)<a class="headerlink" href="#equation-central-1" title="Permalink to this equation">¶</a></span>\[u_y = \frac{u_*}{\kappa y}\]</div>
+<p>where <span class="math notranslate nohighlight">\(u\)</span> is teh along-wall flow velocity (velocity in x-direction, for example), <span class="math notranslate nohighlight">\(y\)</span> is the distance from the wall, <span class="math notranslate nohighlight">\(\kappa \sim 0.4\)</span> is the von Karman constant, <span class="math notranslate nohighlight">\(u_*\)</span> is friction velocity, and <span class="math notranslate nohighlight">\(k_s\)</span> denotes a roughness length. The solution of the equation above is</p>
+<div class="math notranslate nohighlight" id="equation-central-2">
+<span class="eqno">(42)<a class="headerlink" href="#equation-central-2" title="Permalink to this equation">¶</a></span>\[u(y) = \frac{u_*}{\kappa} \ln \left( \frac{y}{k_s} \right)\]</div>
+<p>The shear stress at the computational grid mostly close to the wall can be expressed as</p>
+<div class="math notranslate nohighlight" id="equation-central-3">
+<span class="eqno">(43)<a class="headerlink" href="#equation-central-3" title="Permalink to this equation">¶</a></span>\[\tau_x = \frac{(u \kappa)^2}{[\ln(\frac{\Delta y}{2 k_s})]^2} sgn(u)\]</div>
+<p>where <span class="math notranslate nohighlight">\(\Delta y\)</span> is the grid size, and note that the distance from the grid cell center to the wall is <span class="math notranslate nohighlight">\(\Delta y / 2\)</span> for the FV grid used in FUNWAVE-TVD, <span class="math notranslate nohighlight">\(sgn\)</span> represents the sign factor. A similar expression can be derived for shear stress in y-direction at the wall perpendicular to x-direciton,</p>
+<div class="math notranslate nohighlight" id="equation-central-4">
+<span class="eqno">(44)<a class="headerlink" href="#equation-central-4" title="Permalink to this equation">¶</a></span>\[\tau_y = \frac{(v \kappa)^2}{[\ln(\frac{\Delta x}{2 k_s})]^2} sgn(v)\]</div>
 </div>
 </div>
 

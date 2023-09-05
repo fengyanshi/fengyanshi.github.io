@@ -15,7 +15,7 @@
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Slope Limiting Methodology" href="slope_limiting.html" />
+    <link rel="next" title="Hydrodynamic Correction for High Concentration Sediment" href="sed_hydro_correction.html" />
     <link rel="prev" title="Bedload Sediment Transport" href="bedload.html" /> 
   </head><body>
 <div class="header">
@@ -31,7 +31,7 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="slope_limiting.html" title="Slope Limiting Methodology"
+          <a href="sed_hydro_correction.html" title="Hydrodynamic Correction for High Concentration Sediment"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="bedload.html" title="Bedload Sediment Transport"
@@ -50,12 +50,16 @@
 <li class="toctree-l2"><a class="reference internal" href="central.html">Central Module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="shipwakes.html">Ship-wake Module</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="sediment.html">Sediment Transport Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tide_module.html">Tide Module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="meteo_intro.html">Meteo Module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tracer.html">Lagrangian Tracking Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="subgrid_module.html">Subgrid Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bubble_foam_module.html">Bubble and Foam Module</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="flowchart.html"><strong>ARCHITECTURE</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="setup.html">MODEL DOWNLOAD AND SETUP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup.html"><strong>MODEL DOWNLOAD AND SETUP</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html"><strong>Video Tutorials</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="definition.html"><strong>DEFINITIONS OF PARAMETERS</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="coupling_nesting.html"><strong>NESTING AND COUPLING</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples.html"><strong>EXAMPLES</strong></a></li>
@@ -88,7 +92,7 @@
 <span id="section-bed-equation"></span><h1>Morphological Evolution<a class="headerlink" href="#morphological-evolution" title="Permalink to this headline">¶</a></h1>
 <p>Morphological evolution is computed using the sediment continuity equation, in which the time-averaged pickup and deposition rates are used. The sediment continuity equation is written as:</p>
 <div class="math notranslate nohighlight" id="equation-bed-equation-0">
-<span class="eqno">(74)<a class="headerlink" href="#equation-bed-equation-0" title="Permalink to this equation">¶</a></span>\[\frac{d \bar{Z}_b}{dt} = \frac{1}{1-n}(\bar{P} - \bar{D} - \nabla \cdot {\bar{\mathbf q}_b})\]</div>
+<span class="eqno">(79)<a class="headerlink" href="#equation-bed-equation-0" title="Permalink to this equation">¶</a></span>\[\frac{d \bar{Z}_b}{dt} = \frac{1}{1-n}(\bar{P} - \bar{D} - \nabla \cdot {\bar{\mathbf q}_b})\]</div>
 <p>where <span class="math notranslate nohighlight">\(\bar{Z}_b\)</span> are the time-averaged depth changes with positive values for erosion and negative values for deposition, <span class="math notranslate nohighlight">\(\bar{P}\)</span> and <span class="math notranslate nohighlight">\(\bar{D}\)</span> are the time-averaged pickup and deposition rates averaged over <span class="math notranslate nohighlight">\(dt_{\mbox{morph}}\)</span> in the suspended load model. <span class="math notranslate nohighlight">\({\bar{\mathbf q}_b}\)</span> represents the bedload flux vector averaged over the same time interval in the bedload model.</p>
 <p>In <a class="reference external" href="https://personal.egr.uri.edu/grilli/COPRI_Babak_2015.pdf">Tehranirad et al. (2016)</a>, <span class="math notranslate nohighlight">\(dt_{\mbox{morph}} = 5 \sim 20\)</span> is recommended to be small enough to capture bed changes induced by tsunami waves. In ship-wake applications, <span class="math notranslate nohighlight">\(dt_{\mbox{morph}}\)</span> should be smaller than the long wave cases. A specific range of morphological time step (<span class="math notranslate nohighlight">\(dt_{\mbox{morph}}\)</span>) for ship-wake applications, however, needs a further investigation based on numerical simulations carried out against measured data.</p>
 <p><strong>References</strong></p>
@@ -108,7 +112,7 @@
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="slope_limiting.html" title="Slope Limiting Methodology"
+          <a href="sed_hydro_correction.html" title="Hydrodynamic Correction for High Concentration Sediment"
              >next</a> |</li>
         <li class="right" >
           <a href="bedload.html" title="Bedload Sediment Transport"
