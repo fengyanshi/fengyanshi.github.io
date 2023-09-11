@@ -15,3 +15,4 @@
    tracer
    subgrid_module
    bubble_foam_module
+   precipitation

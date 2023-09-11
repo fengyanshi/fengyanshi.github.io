@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Example &#8212; FUNWAVE Documentation</title>
+    <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="ARCHITECTURE" href="flowchart.html" />
+    <link rel="prev" title="Compile the code for a precipitation case" href="precip_compile.html" /> 
+  </head><body>
+<div class="header">
+ <p class="logo"><a href="https://fengyanshi.github.io/build/html/index.html">
+  <img class="logo" src="_static/../../../images/Funwave.svg" alt="Logo"/>
+ </a></p>
+</div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="flowchart.html" title="ARCHITECTURE"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="precip_compile.html" title="Compile the code for a precipitation case"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="basics.html" ><strong>BASICS</strong></a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="precipitation.html" accesskey="U">Percipitation Module</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="basics.html"><strong>BASICS</strong></a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="boussinesq.html">Formulations and Numerical Schemes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="central.html">Central Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shipwakes.html">Ship-wake Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sediment.html">Sediment Transport Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tide_module.html">Tide Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meteo_intro.html">Meteo Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tracer.html">Lagrangian Tracking Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="subgrid_module.html">Subgrid Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bubble_foam_module.html">Bubble and Foam Module</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="precipitation.html">Percipitation Module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="flowchart.html"><strong>ARCHITECTURE</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup.html"><strong>MODEL DOWNLOAD AND SETUP</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html"><strong>Video Tutorials</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="definition.html"><strong>DEFINITIONS OF PARAMETERS</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="coupling_nesting.html"><strong>NESTING AND COUPLING</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html"><strong>EXAMPLES</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="gallery.html"><strong>GALLERY</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="news.html"><strong>FUNWAVE-TVD WORKSHOP</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html"><strong>BIBLIOGRAPHY</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="authors.html"><strong>AUTHORS</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="addition.html"><strong>ADDITIONAL INFORMATION</strong></a></li>
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="example">
+<h1>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h1>
+<div class="align-right figure align-center">
+<a class="reference internal image-reference" href="_images/rain_depth_mesh.jpg"><img alt="alternate text" src="_images/rain_depth_mesh.jpg" style="width: 400px; height: 250px;" /></a>
+</div>
+<p>After compiling with -DPRECIPITATION in Makefile, the program includes the precipitation function. Two simple examples are included in /simple_cases/rain_on_hills/. One is a basic test of precipitation rate to check if rainfall volume is consistent with the precipitation rate specified. It can be tested on a water area with a flat bottom as demonstrated in input_basic_test.txt. The other test is an more realistic case which is rainfall on a sloping coastal area with random hills distributed on the slope. The bathymetry/topography data can be generated using mk_1_random_bathy.m. The generated data is shown in the figure on the right.</p>
+<div class="align-right figure align-center">
+<a class="reference internal image-reference" href="_images/rain_snap.jpg"><img alt="alternate text" src="_images/rain_snap.jpg" style="width: 500px; height: 400px;" /></a>
+</div>
+<p>The precipitation file is specified in input.txt</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>RAINFALL_FILE = precipitation.txt
+</pre></div>
+</div>
+<p>precipitation.txt includes</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>dimensions m x n which should cover the entire area of domain
+2 2
+following are time (s) and file names, unit in file is mm/hr
+0.0
+rain_01.txt
+10000.0
+rain_02.txt
+</pre></div>
+</div>
+<p>In precipitation.txt, the first line is a comment line, informing the dimensions of the data, m x n, which should cover the entire computational domain. In this example, m = 2, n = 2, specified on the second line. The data resolution is automatically calculated based on (m,n) and grid sizes (Mglob,Nglob) specified in input.txt.</p>
+<p>The third line is a comment line. Following the third line, you can specify time, rainfall files sequentially. In the example, time=0.0 s, file=rain_01.txt, time=10000.0 s, file = rain_02.txt. When the program read out of data, the model will continue to run with the last data read.</p>
+<p>The rainfall file includes the percipitation rate in (m x n). The data will be interpolated into the computational grid automatically.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The unit of percipitation rate is mm/hour. It will converted into m/s automatically by the program.</p>
+</div>
+<p>Model results can be plotted using plot_uv.m or movie_uvz.m as shown in the figure.</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="flowchart.html" title="ARCHITECTURE"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="precip_compile.html" title="Compile the code for a precipitation case"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="basics.html" ><strong>BASICS</strong></a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="precipitation.html" >Percipitation Module</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, Fengyan Shi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
+    </div>
+  </body>
+</html>
