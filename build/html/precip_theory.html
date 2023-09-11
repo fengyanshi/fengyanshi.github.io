@@ -15,7 +15,7 @@
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Compile the code for meteotsunami case" href="precip_compile.html" />
+    <link rel="next" title="Compile the code for a precipitation case" href="precip_compile.html" />
     <link rel="prev" title="Percipitation Module" href="precipitation.html" /> 
   </head><body>
 <div class="header">
@@ -31,7 +31,7 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="precip_compile.html" title="Compile the code for meteotsunami case"
+          <a href="precip_compile.html" title="Compile the code for a precipitation case"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="precipitation.html" title="Percipitation Module"
@@ -93,7 +93,7 @@
 <h1>Theory<a class="headerlink" href="#theory" title="Permalink to this headline">¶</a></h1>
 <p>To simulate rainfall effects, especially in modeling compound flooding, the percipitation rate is added in the mass conservation equation</p>
 <div class="math notranslate nohighlight" id="equation-precip-theory-0">
-<span class="eqno">(118)<a class="headerlink" href="#equation-precip-theory-0" title="Permalink to this equation">¶</a></span>\[{\bf M}_t + \nabla \cdot \left( \frac{{\bf MM}}{H} \right) + \nabla \left(\frac{1}{2}g(\eta^2 + 2h\eta) \right) = R_p\]</div>
+<span class="eqno">(118)<a class="headerlink" href="#equation-precip-theory-0" title="Permalink to this equation">¶</a></span>\[\frac{\partial H}{\partial t} + \frac{\partial Hu}{\partial x} = R_p\]</div>
 <p>where <span class="math notranslate nohighlight">\(R_p\)</span> represents the precipitation rate. The unit for <span class="math notranslate nohighlight">\(R_p\)</span> is mm/hour. It is converted to m/s in the equation.</p>
 </div>
 
@@ -110,7 +110,7 @@
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="precip_compile.html" title="Compile the code for meteotsunami case"
+          <a href="precip_compile.html" title="Compile the code for a precipitation case"
              >next</a> |</li>
         <li class="right" >
           <a href="precipitation.html" title="Percipitation Module"
