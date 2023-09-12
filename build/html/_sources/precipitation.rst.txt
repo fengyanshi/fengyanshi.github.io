@@ -1,5 +1,5 @@
 
-Percipitation Module
+Precipitation Module
 ########################
 
 .. figure:: images/simple_cases/rain_snap.jpg
