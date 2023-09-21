@@ -56,6 +56,7 @@ DETAILS
    slope_limiting
    non_erodible
    sed_numerical
+   sed_propeller
 
 APPLICATIONS
 ============

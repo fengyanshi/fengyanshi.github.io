@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Theory &#8212; FUNWAVE Documentation</title>
+    <title>Ship Propeller Effects on Sediment Transport &#8212; FUNWAVE Documentation</title>
     <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -15,8 +15,8 @@
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Compile the code for a precipitation case" href="precip_compile.html" />
-    <link rel="prev" title="Precipitation Module" href="precipitation.html" /> 
+    <link rel="next" title="Tide Module" href="tide_module.html" />
+    <link rel="prev" title="Numerical Scheme for Sediment Transport" href="sed_numerical.html" /> 
   </head><body>
 <div class="header">
  <p class="logo"><a href="https://fengyanshi.github.io/build/html/index.html">
@@ -31,14 +31,14 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="precip_compile.html" title="Compile the code for a precipitation case"
+          <a href="tide_module.html" title="Tide Module"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="precipitation.html" title="Precipitation Module"
+          <a href="sed_numerical.html" title="Numerical Scheme for Sediment Transport"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="basics.html" ><strong>BASICS</strong></a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="precipitation.html" accesskey="U">Precipitation Module</a> &#187;</li> 
+          <li class="nav-item nav-item-2"><a href="sediment.html" accesskey="U">Sediment Transport Module</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -49,13 +49,13 @@
 <li class="toctree-l2"><a class="reference internal" href="boussinesq.html">Formulations and Numerical Schemes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="central.html">Central Module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="shipwakes.html">Ship-wake Module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sediment.html">Sediment Transport Module</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="sediment.html">Sediment Transport Module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tide_module.html">Tide Module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="meteo_intro.html">Meteo Module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tracer.html">Lagrangian Tracking Module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="subgrid_module.html">Subgrid Module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="bubble_foam_module.html">Bubble and Foam Module</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="precipitation.html">Precipitation Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="precipitation.html">Precipitation Module</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="flowchart.html"><strong>ARCHITECTURE</strong></a></li>
@@ -89,12 +89,20 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="theory">
-<h1>Theory<a class="headerlink" href="#theory" title="Permalink to this headline">¶</a></h1>
-<p>To simulate rainfall effects, especially in modeling compound flooding, the percipitation rate is added in the mass conservation equation</p>
-<div class="math notranslate nohighlight" id="equation-precip-theory-0">
-<span class="eqno">(119)<a class="headerlink" href="#equation-precip-theory-0" title="Permalink to this equation">¶</a></span>\[\frac{\partial H}{\partial t} + \frac{\partial Hu}{\partial x} = R_p\]</div>
-<p>where <span class="math notranslate nohighlight">\(R_p\)</span> represents the precipitation rate. The unit for <span class="math notranslate nohighlight">\(R_p\)</span> is mm/hour. It is converted to m/s in the equation.</p>
+  <div class="section" id="ship-propeller-effects-on-sediment-transport">
+<h1>Ship Propeller Effects on Sediment Transport<a class="headerlink" href="#ship-propeller-effects-on-sediment-transport" title="Permalink to this headline">¶</a></h1>
+<p>The effects of ship propeller-induced jet flow on sediment transport were presented by Colangeli et al. (2023).</p>
+<div class="section" id="efflux-velocity">
+<h2>Efflux velocity<a class="headerlink" href="#efflux-velocity" title="Permalink to this headline">¶</a></h2>
+<p>The efflux velocity generated by a propeller was estimated by the emperical formula (XXX)</p>
+<div class="math notranslate nohighlight" id="equation-sed-propeller-0">
+<span class="eqno">(104)<a class="headerlink" href="#equation-sed-propeller-0" title="Permalink to this equation">¶</a></span>\[U_p = V_0 \exp \left( -2 \frac{y^{\prime 2} + h_p^2}{D_p^2} \right) \mbox{  in ZFE: } x^\prime \le \frac{D_p}{2c}\]</div>
+<div class="align-right figure align-center">
+<a class="reference internal image-reference" href="_images/ship_prop.png"><img alt="alternate text" src="_images/ship_prop.png" style="width: 400px; height: 300px;" /></a>
+</div>
+<p><strong>References</strong></p>
+<p>Colangeli, C., Leftheriotis, G., Dimas, A., and Brocchini, M., 2023, Ship-forced sediment transport: a new model for the propeller jet flow, The 13th Symposium on River, Coastal, and Estuarine Morphodynamics, RCEM2023, Urbana-Champaign, Sept. 25-28, 2023</p>
+</div>
 </div>
 
 
@@ -110,14 +118,14 @@
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="precip_compile.html" title="Compile the code for a precipitation case"
+          <a href="tide_module.html" title="Tide Module"
              >next</a> |</li>
         <li class="right" >
-          <a href="precipitation.html" title="Precipitation Module"
+          <a href="sed_numerical.html" title="Numerical Scheme for Sediment Transport"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="basics.html" ><strong>BASICS</strong></a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="precipitation.html" >Precipitation Module</a> &#187;</li> 
+          <li class="nav-item nav-item-2"><a href="sediment.html" >Sediment Transport Module</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
