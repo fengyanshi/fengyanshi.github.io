@@ -88,21 +88,13 @@ An example can be found in /simples\_cases/vessel\_propeller\_effect\. Two vesse
     :alt: alternate text
     :figclass: align-center
 
-Animations:
+Animation:
 
 * Comparison between cases with and without propeller effects
 
 .. raw:: html
 
-    <iframe width="560" height="315" src="https://youtu.be/HPrqSPE0090?rel=0" frameborder="0" allowfullscreen></iframe>
-
-* Propeller effects on sediment concentration and morphology
-
-.. raw:: html
-
-    <iframe width="560" height="315" src="https://youtube.com/shorts/axHOTEUO3XI?rel=0" frameborder="0" allowfullscreen></iframe>
-
-
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/HPrqSPE0090?si=XC13o5-20FFjmfH0?rel=0" frameborder="0" allowfullscreen></iframe>
 
 
 **References**
