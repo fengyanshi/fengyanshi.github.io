@@ -95,12 +95,12 @@
 <h2>Theory<a class="headerlink" href="#theory" title="Permalink to this headline">¶</a></h2>
 <p>The basic technique follows the sponge layer theory introduced by <a class="reference external" href="https://www.sciencedirect.com/science/article/abs/pii/0378383983900224">Larsen and Dancy (1983)</a>. Instead of attenuating the surface elevation and flow velocity to zero at the end of a sponge layer, we dampen shortwaves with respect to a reference level based on the method proposed by <a class="reference external" href="https://ascelibrary.org/doi/abs/10.1061/(ASCE)0733-950X(1999)125:4(176)">Chen et al. (1999)</a>. The dependent variables (<span class="math notranslate nohighlight">\(\eta, u, v\)</span>) are attenuated as</p>
 <div class="math notranslate nohighlight" id="equation-tide-module-0">
-<span class="eqno">(105)<a class="headerlink" href="#equation-tide-module-0" title="Permalink to this equation">¶</a></span>\[\eta_i = \eta_{ref} + (\eta_i - \eta_{ref})/C_s\]</div>
+<span class="eqno">(109)<a class="headerlink" href="#equation-tide-module-0" title="Permalink to this equation">¶</a></span>\[\eta_i = \eta_{ref} + (\eta_i - \eta_{ref})/C_s\]</div>
 <div class="math notranslate nohighlight" id="equation-tide-module-1">
-<span class="eqno">(106)<a class="headerlink" href="#equation-tide-module-1" title="Permalink to this equation">¶</a></span>\[u_i = u_{ref} + (\eta_i - u_{ref})/C_s\]</div>
+<span class="eqno">(110)<a class="headerlink" href="#equation-tide-module-1" title="Permalink to this equation">¶</a></span>\[u_i = u_{ref} + (\eta_i - u_{ref})/C_s\]</div>
 <p>where <span class="math notranslate nohighlight">\(( )_{ref}\)</span> denotes the reference values which either tidal level or tidal current or both. <span class="math notranslate nohighlight">\(C_s\)</span> is the damping coefficient which is the same as that used in a sponge layer (see sponge layer section for detail), i.e.,</p>
 <div class="math notranslate nohighlight" id="equation-tide-module-2">
-<span class="eqno">(107)<a class="headerlink" href="#equation-tide-module-2" title="Permalink to this equation">¶</a></span>\[C_s = \alpha_s^{\gamma_s^{(i-1)}}\]</div>
+<span class="eqno">(111)<a class="headerlink" href="#equation-tide-module-2" title="Permalink to this equation">¶</a></span>\[C_s = \alpha_s^{\gamma_s^{(i-1)}}\]</div>
 <p>in which <span class="math notranslate nohighlight">\(i\)</span> is grid numbers, (<span class="math notranslate nohighlight">\(i = 1, 2, ...\)</span>).</p>
 </div>
 <div class="section" id="absorbing-tidal-boundary-condition">
