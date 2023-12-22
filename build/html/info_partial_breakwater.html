@@ -1,18 +1,16 @@
-
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en" data-content_root="./">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>Example: add partially reflecting/absorbing breakwater &#8212; FUNWAVE Documentation</title>
-    <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="_static/lglb-sphinx-doc.css?v=3078a223" />
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Example: station file" href="info_station_file.html" />
@@ -38,7 +36,8 @@
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="addition.html" ><strong>ADDITIONAL INFORMATION</strong></a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="useful.html" accesskey="U">Useful links</a> &#187;</li> 
+          <li class="nav-item nav-item-2"><a href="useful.html" accesskey="U">Useful links</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Example: add partially reflecting/absorbing breakwater</a></li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -48,7 +47,7 @@
 <li class="toctree-l1"><a class="reference internal" href="basics.html"><strong>BASICS</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="flowchart.html"><strong>ARCHITECTURE</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="setup.html"><strong>MODEL DOWNLOAD AND SETUP</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorials.html"><strong>Video Tutorials</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html"><strong>VIDEO TUTORIALS</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="definition.html"><strong>DEFINITIONS OF PARAMETERS</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="coupling_nesting.html"><strong>NESTING AND COUPLING</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples.html"><strong>EXAMPLES</strong></a></li>
@@ -68,12 +67,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
 
@@ -82,13 +81,18 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="example-add-partially-reflecting-absorbing-breakwater">
-<span id="example-partial-breakwater"></span><h1>Example: add partially reflecting/absorbing breakwater<a class="headerlink" href="#example-add-partially-reflecting-absorbing-breakwater" title="Permalink to this headline">¶</a></h1>
-<p>model setup refer to <a class="reference internal" href="breakwater.html#definition-breakwater"><span class="std std-ref">Breakwater and Obstacle</span></a></p>
+  <section id="example-add-partially-reflecting-absorbing-breakwater">
+<span id="example-partial-breakwater"></span><h1>Example: add partially reflecting/absorbing breakwater<a class="headerlink" href="#example-add-partially-reflecting-absorbing-breakwater" title="Link to this heading">¶</a></h1>
+<p>For model setup, refer back to <a class="reference internal" href="breakwater.html#definition-breakwater"><span class="std std-ref">Breakwater and Obstacle</span></a>.</p>
 <img alt="_images/partial_breakwater.jpg" src="_images/partial_breakwater.jpg" />
-</div>
+<p>In the <code class="docutils literal notranslate"><span class="pre">BREAKWATER_FILE</span></code>, non-zero points specify the location and width - or area of influence - of the internal sponge layer. In the below diagram, the grid of 1’s and 0’s represent the breakwater file input, where 1’s are in meters defining the radius of the sponge width. The area of influence, shown here as blue circles, covers up to one grid point in each direction if DX = DY = 1. If DX = DY = 0.5, for example, the area of influence would cover two grid points in each direction with the 1’s at the center. At these grid points, the BreakWaterAbsorbCoef is applied.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="_images/diagram_BreakWaterAbsorptionCoef.png"><img alt="Diagram of how the breakwater file and breakwater absorption coef are applied in FUNWAVE" src="_images/diagram_BreakWaterAbsorptionCoef.png" style="width: 750px; height: 450px;" /></a>
+</figure>
+</section>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -108,12 +112,13 @@
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="addition.html" ><strong>ADDITIONAL INFORMATION</strong></a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="useful.html" >Useful links</a> &#187;</li> 
+          <li class="nav-item nav-item-2"><a href="useful.html" >Useful links</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Example: add partially reflecting/absorbing breakwater</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2019, Fengyan Shi.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
+    &#169; Copyright 2019, Fengyan Shi.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
   </body>
 </html>

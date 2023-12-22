@@ -1,4 +1,4 @@
-.. _section_tide_module:
+.. _section_foam_module:
 
 Bubble and Foam Module
 **************************
@@ -7,13 +7,13 @@ Bubble and Foam Module
 Theory
 ====================
 
-Bubble entrainment, foam tranfer rate and burst rate are formulated based on emperical formulas developed in the previous study. Details will be documented later (Malej et al. 2023, in preparation). 
+Bubble entrainment, foam transfer rate and burst rate are formulated based on empirical formulas developed in a previous study. Details will be documented in Malej et al. 2023 (in preparation). 
 
 =================================================================
 Model configuration and input
 =================================================================
 
-1) Modify Makefile with -DFOAM
+1) Modify Makefile with :code:`-DFOAM`
 
 2) Specify parameters related to bubble and foam entrainments, etc.
 
@@ -25,7 +25,7 @@ Model configuration and input
   TransferRate = <float number> (default: 0.1)
   CdFoam = <float number> (default: 0.5)
 
-3) An example is provided In /rip\_2D\_foam/.  The figure below shows the model result from default parameters. 
+3) An example is provided in :code:`/rip\_2D\_foam/`.  The figure below shows the model result from default parameters. 
 
 
 .. figure:: images/simple_cases/foam.jpg
@@ -38,10 +38,10 @@ Model configuration and input
 More information
 ==============================================================
 
-List of parameters for foam module setup can be found `here <https://fengyanshi.github.io/build/html/foam_para.html>`_
+List of parameters for foam module setup can be found `here <https://fengyanshi.github.io/build/html/foam_para.html>`_.
 
 ============
 References
 ============
 
-Malej et al. (2023), in preparation
+Malej et al. (2023), in preparation.

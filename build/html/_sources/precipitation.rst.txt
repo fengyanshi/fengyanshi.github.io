@@ -1,3 +1,4 @@
+.. _section_precip_module:
 
 Precipitation Module
 ########################
