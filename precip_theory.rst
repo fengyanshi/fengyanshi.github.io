@@ -1,6 +1,6 @@
 Theory
 ########################################
-To simulate rainfall effects, especially in modeling compound flooding, the percipitation rate is added in the mass conservation equation
+To simulate rainfall effects, especially in modeling compound flooding, the precipitation rate is added in the mass conservation equation
 
 .. math:: \frac{\partial H}{\partial t} + \frac{\partial Hu}{\partial x} = R_p  
 

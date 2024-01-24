@@ -1,3 +1,4 @@
+.. _section_meteo_module:
 
 Meteotsunami
 ########################

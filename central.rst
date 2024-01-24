@@ -1,3 +1,5 @@
+.. _section_central_module:
+
 *******************
 Central Module
 *******************

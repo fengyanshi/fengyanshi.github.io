@@ -1,18 +1,17 @@
-
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en" data-content_root="./">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>Coupling (Manually) &#8212; FUNWAVE Documentation</title>
-    <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="_static/lglb-sphinx-doc.css?v=3078a223" />
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Multi-Grid Nesting (Automatically)" href="nesting.html" />
@@ -37,7 +36,8 @@
           <a href="coupling_nesting.html" title="NESTING AND COUPLING"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="coupling_nesting.html" accesskey="U"><strong>NESTING AND COUPLING</strong></a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="coupling_nesting.html" accesskey="U"><strong>NESTING AND COUPLING</strong></a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Coupling (Manually)</a></li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -47,7 +47,7 @@
 <li class="toctree-l1"><a class="reference internal" href="basics.html"><strong>BASICS</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="flowchart.html"><strong>ARCHITECTURE</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="setup.html"><strong>MODEL DOWNLOAD AND SETUP</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorials.html"><strong>Video Tutorials</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html"><strong>VIDEO TUTORIALS</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="definition.html"><strong>DEFINITIONS OF PARAMETERS</strong></a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="coupling_nesting.html"><strong>NESTING AND COUPLING</strong></a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Coupling (Manually)</a></li>
@@ -66,12 +66,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
 
@@ -80,8 +80,8 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="coupling-manually">
-<span id="definition-coupling"></span><h1>Coupling (Manually)<a class="headerlink" href="#coupling-manually" title="Permalink to this headline">¶</a></h1>
+  <section id="coupling-manually">
+<span id="definition-coupling"></span><h1>Coupling (Manually)<a class="headerlink" href="#coupling-manually" title="Link to this heading">¶</a></h1>
 <p>The present version has a capability for one-way coupling with other models such as NHWAVE or FUNWAVE-TVD itself. The nesting scheme passes surface elevation and velocity components calculated from other models or FUNWAVE-TVD in a large domain to a nested small domain through ghost cells at nesting boundaries. To run a nested model, the following procedures should be performed.</p>
 <ol class="arabic simple">
 <li><p>The coupling option in Makefile should be defined as ‘-Dcoupling’. The program should be re–compiled.</p></li>
@@ -165,9 +165,10 @@ COUPLING_FILE = coupling.txt
 <blockquote>
 <div><p>where “coupling.txt” is the file saved in procedure 2.</p>
 </div></blockquote>
-</div>
+</section>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -186,12 +187,13 @@ COUPLING_FILE = coupling.txt
           <a href="coupling_nesting.html" title="NESTING AND COUPLING"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="coupling_nesting.html" ><strong>NESTING AND COUPLING</strong></a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="coupling_nesting.html" ><strong>NESTING AND COUPLING</strong></a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Coupling (Manually)</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2019, Fengyan Shi.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
+    &#169; Copyright 2019, Fengyan Shi.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
   </body>
 </html>

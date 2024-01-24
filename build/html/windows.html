@@ -1,18 +1,16 @@
-
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en" data-content_root="./">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>How to run FUNWAVE-TVD on Windows &#8212; FUNWAVE Documentation</title>
-    <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="_static/lglb-sphinx-doc.css?v=3078a223" />
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="FUNWAVE-TVD Workshop 2017" href="workshop_2017.html" />
@@ -38,7 +36,8 @@
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="addition.html" ><strong>ADDITIONAL INFORMATION</strong></a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="useful.html" accesskey="U">Useful links</a> &#187;</li> 
+          <li class="nav-item nav-item-2"><a href="useful.html" accesskey="U">Useful links</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">How to run FUNWAVE-TVD on Windows</a></li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -48,7 +47,7 @@
 <li class="toctree-l1"><a class="reference internal" href="basics.html"><strong>BASICS</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="flowchart.html"><strong>ARCHITECTURE</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="setup.html"><strong>MODEL DOWNLOAD AND SETUP</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorials.html"><strong>Video Tutorials</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html"><strong>VIDEO TUTORIALS</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="definition.html"><strong>DEFINITIONS OF PARAMETERS</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="coupling_nesting.html"><strong>NESTING AND COUPLING</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples.html"><strong>EXAMPLES</strong></a></li>
@@ -68,12 +67,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
 
@@ -82,8 +81,8 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="how-to-run-funwave-tvd-on-windows">
-<span id="section-win10-install"></span><h1>How to run FUNWAVE-TVD on Windows<a class="headerlink" href="#how-to-run-funwave-tvd-on-windows" title="Permalink to this headline">¶</a></h1>
+  <section id="how-to-run-funwave-tvd-on-windows">
+<span id="section-win10-install"></span><h1>How to run FUNWAVE-TVD on Windows<a class="headerlink" href="#how-to-run-funwave-tvd-on-windows" title="Link to this heading">¶</a></h1>
 <p>This document is provided by
 <a class="reference external" href="https://zyeeee.com/2019/01/04/compile-funwave-on-windows-10-via-linux-subsystem/">Zhouteng Ye</a>.</p>
 <p><strong>Preface</strong></p>
@@ -102,23 +101,23 @@ virtual machine in the following aspects:</p>
 <p><strong>Install Linux Subsystem for Windows 10</strong></p>
 <p>Make sure you have installed Windows 10 and logged in with your Microsoft account.</p>
 <p>The first step is to enable the <em>Developer mode</em> in windows settings:</p>
-<div class="align-center figure">
+<figure class="align-center">
 <a class="reference internal image-reference" href="_images/1.JPG"><img alt="alternate text" src="_images/1.JPG" style="width: 800px; height: 500px;" /></a>
-</div>
+</figure>
 <p>Then turn on <strong>Windows Subsystem for Linux</strong> in <em>Control Panel</em>:</p>
-<div class="align-center figure">
+<figure class="align-center">
 <a class="reference internal image-reference" href="_images/2.JPG"><img alt="alternate text" src="_images/2.JPG" style="width: 800px; height: 500px;" /></a>
-</div>
+</figure>
 <p>Now Download a Linux distribution in <em>Microsoft Store</em>. Personally I prefer Ubuntu 16.04 LTS, but if this is unavailable, download the latest version (e.g., 18.04 LTS).</p>
-<div class="align-center figure">
+<figure class="align-center">
 <a class="reference internal image-reference" href="_images/3.JPG"><img alt="alternate text" src="_images/3.JPG" style="width: 800px; height: 400px;" /></a>
-</div>
+</figure>
 <p>After install, you should be able to launch the Linux subsystem.</p>
 <p><strong>Get ready with Linux Subsytem</strong></p>
 <p>The first time one launch the Linux subsystem, it takes a couple minutes to initialize. After the initialization, one would be requested to set the username and password.</p>
-<div class="align-center figure">
+<figure class="align-center">
 <a class="reference internal image-reference" href="_images/5.JPG"><img alt="alternate text" src="_images/5.JPG" style="width: 800px; height: 500px;" /></a>
-</div>
+</figure>
 <p>Type the following commands then you are all set</p>
 <div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>sudo apt update
 sudo apt upgrade
@@ -131,21 +130,22 @@ sudo apt install mpich
 <p><strong>Compile and run FUNWAVE</strong></p>
 <p>To launch the Linux subsystem, you can simply run <code class="code docutils literal notranslate"><span class="pre">bash</span></code> in <em>Windows command window</em>, then you are in the real Linux.</p>
 <p>It should be noted that you may not get access to all folders. If so, try to get the permission.</p>
-<div class="align-center figure">
+<figure class="align-center">
 <a class="reference internal image-reference" href="_images/7.JPG"><img alt="alternate text" src="_images/7.JPG" style="width: 800px; height: 400px;" /></a>
-</div>
+</figure>
 <p>With the example <code class="code docutils literal notranslate"><span class="pre">vessel_flat_bottom</span></code> and number of processors set to 4:</p>
 <div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>make
 mpirun -np 4 ./funwave_vessel
 </pre></div>
 </div>
 <p>The code will be rnuning in the Linux subsystem. Do not worry about the communication between Linux and Windows. As you run the code in Linux, you can get real-time access to the data files generated by the Linux excutive.</p>
-<div class="align-center figure">
+<figure class="align-center">
 <a class="reference internal image-reference" href="_images/8.JPG"><img alt="alternate text" src="_images/8.JPG" style="width: 800px; height: 500px;" /></a>
-</div>
-</div>
+</figure>
+</section>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -165,12 +165,13 @@ mpirun -np 4 ./funwave_vessel
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="addition.html" ><strong>ADDITIONAL INFORMATION</strong></a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="useful.html" >Useful links</a> &#187;</li> 
+          <li class="nav-item nav-item-2"><a href="useful.html" >Useful links</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">How to run FUNWAVE-TVD on Windows</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2019, Fengyan Shi.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
+    &#169; Copyright 2019, Fengyan Shi.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
   </body>
 </html>
