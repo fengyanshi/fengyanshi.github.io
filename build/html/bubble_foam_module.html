@@ -1,16 +1,18 @@
+
 <!DOCTYPE html>
 
-<html lang="en" data-content_root="./">
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
     <title>Bubble and Foam Module &#8212; FUNWAVE Documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
-    <link rel="stylesheet" type="text/css" href="_static/lglb-sphinx-doc.css?v=3078a223" />
-    <script src="_static/documentation_options.js?v=5929fcd5"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Precipitation Module" href="precipitation.html" />
@@ -35,8 +37,7 @@
           <a href="subgrid_module.html" title="Subgrid Module"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="basics.html" accesskey="U"><strong>BASICS</strong></a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Bubble and Foam Module</a></li> 
+          <li class="nav-item nav-item-1"><a href="basics.html" accesskey="U"><strong>BASICS</strong></a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -73,12 +74,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>document.getElementById('searchbox').style.display = "block"</script>
+<script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
 
@@ -87,14 +88,14 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <section id="bubble-and-foam-module">
-<span id="section-foam-module"></span><h1>Bubble and Foam Module<a class="headerlink" href="#bubble-and-foam-module" title="Link to this heading">¶</a></h1>
-<section id="theory">
-<h2>Theory<a class="headerlink" href="#theory" title="Link to this heading">¶</a></h2>
+  <div class="section" id="bubble-and-foam-module">
+<span id="section-foam-module"></span><h1>Bubble and Foam Module<a class="headerlink" href="#bubble-and-foam-module" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="theory">
+<h2>Theory<a class="headerlink" href="#theory" title="Permalink to this headline">¶</a></h2>
 <p>Bubble entrainment, foam transfer rate and burst rate are formulated based on empirical formulas developed in a previous study. Details will be documented in Malej et al. 2023 (in preparation).</p>
-</section>
-<section id="model-configuration-and-input">
-<h2>Model configuration and input<a class="headerlink" href="#model-configuration-and-input" title="Link to this heading">¶</a></h2>
+</div>
+<div class="section" id="model-configuration-and-input">
+<h2>Model configuration and input<a class="headerlink" href="#model-configuration-and-input" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Modify Makefile with <code class="code docutils literal notranslate"><span class="pre">-DFOAM</span></code></p></li>
 <li><p>Specify parameters related to bubble and foam entrainments, etc.</p></li>
@@ -109,24 +110,23 @@ CdFoam = &lt;float number&gt; (default: 0.5)
 </div>
 </div></blockquote>
 <ol class="arabic simple" start="3">
-<li><p>An example is provided in <code class="code docutils literal notranslate"><span class="pre">/rip_2D_foam/</span></code>.  The figure below shows the model result from default parameters.</p></li>
+<li><p>An example is provided in <code class="code docutils literal notranslate"><span class="pre">/rip\_2D\_foam/</span></code>.  The figure below shows the model result from default parameters.</p></li>
 </ol>
-<figure class="align-center">
+<div class="align-center figure">
 <a class="reference internal image-reference" href="_images/foam.jpg"><img alt="alternate text" src="_images/foam.jpg" style="width: 550px;" /></a>
-</figure>
-</section>
-<section id="more-information">
-<h2>More information<a class="headerlink" href="#more-information" title="Link to this heading">¶</a></h2>
+</div>
+</div>
+<div class="section" id="more-information">
+<h2>More information<a class="headerlink" href="#more-information" title="Permalink to this headline">¶</a></h2>
 <p>List of parameters for foam module setup can be found <a class="reference external" href="https://fengyanshi.github.io/build/html/foam_para.html">here</a>.</p>
-</section>
-<section id="references">
-<h2>References<a class="headerlink" href="#references" title="Link to this heading">¶</a></h2>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
 <p>Malej et al. (2023), in preparation.</p>
-</section>
-</section>
+</div>
+</div>
 
 
-            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -145,13 +145,12 @@ CdFoam = &lt;float number&gt; (default: 0.5)
           <a href="subgrid_module.html" title="Subgrid Module"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="basics.html" ><strong>BASICS</strong></a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Bubble and Foam Module</a></li> 
+          <li class="nav-item nav-item-1"><a href="basics.html" ><strong>BASICS</strong></a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2019, Fengyan Shi.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+        &#169; Copyright 2019, Fengyan Shi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
     </div>
   </body>
 </html>

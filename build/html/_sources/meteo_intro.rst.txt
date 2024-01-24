@@ -1,4 +1,4 @@
-.. _section_meteo_module:
+.. _section_meteo_module_intro:
 
 Meteo Module
 ************

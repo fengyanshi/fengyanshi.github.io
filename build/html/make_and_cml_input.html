@@ -1,16 +1,18 @@
+
 <!DOCTYPE html>
 
-<html lang="en" data-content_root="./">
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
     <title>Introduction to FUNWAVE-TVD Makefile &#8212; FUNWAVE Documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
-    <link rel="stylesheet" type="text/css" href="_static/lglb-sphinx-doc.css?v=3078a223" />
-    <script src="_static/documentation_options.js?v=5929fcd5"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Workshop Registration Page" href="under_construction.html" />
@@ -36,8 +38,7 @@
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="addition.html" ><strong>ADDITIONAL INFORMATION</strong></a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="useful.html" accesskey="U">Useful links</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Introduction to FUNWAVE-TVD Makefile</a></li> 
+          <li class="nav-item nav-item-2"><a href="useful.html" accesskey="U">Useful links</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -67,12 +68,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>document.getElementById('searchbox').style.display = "block"</script>
+<script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
 
@@ -81,17 +82,17 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <section id="introduction-to-funwave-tvd-makefile">
-<h1>Introduction to FUNWAVE-TVD Makefile<a class="headerlink" href="#introduction-to-funwave-tvd-makefile" title="Link to this heading">¶</a></h1>
+  <div class="section" id="introduction-to-funwave-tvd-makefile">
+<h1>Introduction to FUNWAVE-TVD Makefile<a class="headerlink" href="#introduction-to-funwave-tvd-makefile" title="Permalink to this headline">¶</a></h1>
 <dl class="field-list simple">
-<dt class="field-odd">Author<span class="colon">:</span></dt>
+<dt class="field-odd">Author</dt>
 <dd class="field-odd"><p>Zhouteng Ye</p>
 </dd>
 </dl>
-<section id="quick-start">
-<h2>Quick start<a class="headerlink" href="#quick-start" title="Link to this heading">¶</a></h2>
-<section id="how-to-make">
-<h3>How to make<a class="headerlink" href="#how-to-make" title="Link to this heading">¶</a></h3>
+<div class="section" id="quick-start">
+<h2>Quick start<a class="headerlink" href="#quick-start" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="how-to-make">
+<h3>How to make<a class="headerlink" href="#how-to-make" title="Permalink to this headline">¶</a></h3>
 <p><strong>To whom load has the experience with GNU make, simply skip this
 section.</strong></p>
 <p>In FUNWAVE-TVD, the makefile is used to compile the FORTRAN code to an
@@ -124,11 +125,11 @@ execute with</p>
 so that there is no -f option.</strong></p>
 <p>If you are interested in how Makefile works and practice some simple
 examples, you can refer to the the <a class="reference external" href="#appendix">3</a>.</p>
-</section>
-<section id="two-ways-of-compiling">
-<h3>Two ways of compiling<a class="headerlink" href="#two-ways-of-compiling" title="Link to this heading">¶</a></h3>
-<section id="compile-in-src-directory">
-<h4>Compile in src directory<a class="headerlink" href="#compile-in-src-directory" title="Link to this heading">¶</a></h4>
+</div>
+<div class="section" id="two-ways-of-compiling">
+<h3>Two ways of compiling<a class="headerlink" href="#two-ways-of-compiling" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="compile-in-src-directory">
+<h4>Compile in src directory<a class="headerlink" href="#compile-in-src-directory" title="Permalink to this headline">¶</a></h4>
 <p>This is the way FUNWAVE-TVD used to work, the whole compile process is
 taken in <code class="docutils literal notranslate"><span class="pre">src</span></code> directory. To compile in this way, either copy the
 <code class="docutils literal notranslate"><span class="pre">Makefile</span></code> from <code class="docutils literal notranslate"><span class="pre">GNUMake/Old_Version_Makefiles</span></code> to <code class="docutils literal notranslate"><span class="pre">src</span></code> and type</p>
@@ -136,9 +137,9 @@ taken in <code class="docutils literal notranslate"><span class="pre">src</span>
 </pre></div>
 </div>
 <p>The executable will be generated in <code class="docutils literal notranslate"><span class="pre">src</span></code> path.</p>
-</section>
-<section id="compile-in-any-location-recommended">
-<h4>Compile in any location (Recommended)<a class="headerlink" href="#compile-in-any-location-recommended" title="Link to this heading">¶</a></h4>
+</div>
+<div class="section" id="compile-in-any-location-recommended">
+<h4>Compile in any location (Recommended)<a class="headerlink" href="#compile-in-any-location-recommended" title="Permalink to this headline">¶</a></h4>
 <p>copy one of the makefile in <code class="docutils literal notranslate"><span class="pre">GNUMake</span></code> directory to the location where
 you would like to compile FUNWAVE-TVD. By setting up the <strong>common
 variables</strong> in makefile and <strong>defined flags</strong>, then type</p>
@@ -148,18 +149,18 @@ variables</strong> in makefile and <strong>defined flags</strong>, then type</p>
 <p>to compile. A work directory will be generated and the executable will
 be in the work directory (if the <code class="docutils literal notranslate"><span class="pre">WORK_DIR</span> <span class="pre">=.</span></code> in makefile, then the
 work directory will be the current path).</p>
-</section>
-</section>
-<section id="example-of-compile-and-run-funwave-tvd">
-<h3>Example of compile and run FUNWAVE-TVD<a class="headerlink" href="#example-of-compile-and-run-funwave-tvd" title="Link to this heading">¶</a></h3>
+</div>
+</div>
+<div class="section" id="example-of-compile-and-run-funwave-tvd">
+<h3>Example of compile and run FUNWAVE-TVD<a class="headerlink" href="#example-of-compile-and-run-funwave-tvd" title="Permalink to this headline">¶</a></h3>
 <p>In <code class="docutils literal notranslate"><span class="pre">simple_cases/surface_wave_1d</span></code>, an example <code class="docutils literal notranslate"><span class="pre">Makefile</span></code> could be
 found. In the example makefile, the <strong>common variable</strong> is</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">FUNWAVE_DIR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>../../..
-<span class="nv">WORK_DIR</span><span class="w">    </span><span class="o">=</span><span class="w"> </span>.
-<span class="nv">COMPILER</span><span class="w">    </span><span class="o">=</span><span class="w"> </span>gnu
-<span class="nv">PARALLEL</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span>
-<span class="nv">PRECISION</span><span class="w">   </span><span class="o">=</span><span class="w"> </span>single
-<span class="nv">EXEC</span><span class="w">        </span><span class="o">=</span><span class="w"> </span>funwave
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">FUNWAVE_DIR</span> <span class="o">=</span> ../../..
+<span class="nv">WORK_DIR</span>    <span class="o">=</span> .
+<span class="nv">COMPILER</span>    <span class="o">=</span> gnu
+<span class="nv">PARALLEL</span>    <span class="o">=</span> <span class="nb">true</span>
+<span class="nv">PRECISION</span>   <span class="o">=</span> single
+<span class="nv">EXEC</span>        <span class="o">=</span> funwave
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">FUNWAVE_DIR</span></code> is set with a <em>relative path</em>, the <em>absolute path</em>
@@ -168,64 +169,64 @@ new directory will be created. The <code class="docutils literal notranslate"><s
 <code class="docutils literal notranslate"><span class="pre">PARALLEL</span> <span class="pre">=</span> <span class="pre">true</span></code> and <code class="docutils literal notranslate"><span class="pre">PRECISION</span> <span class="pre">=</span> <span class="pre">single</span></code> so that this case will be
 compiled by <code class="docutils literal notranslate"><span class="pre">gnu</span> <span class="pre">compiler</span></code> and <code class="docutils literal notranslate"><span class="pre">mpi</span> <span class="pre">library</span></code> with simple precision.
 The final executable name will be <code class="docutils literal notranslate"><span class="pre">funwave--gnu-parallel-single</span></code>.</p>
-<section id="compile-the-executable">
-<h4>Compile the executable<a class="headerlink" href="#compile-the-executable" title="Link to this heading">¶</a></h4>
+<div class="section" id="compile-the-executable">
+<h4>Compile the executable<a class="headerlink" href="#compile-the-executable" title="Permalink to this headline">¶</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">cd</span></code> into <code class="docutils literal notranslate"><span class="pre">simple_cases/surface_wave_1d</span></code> directory and typing</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>make
 </pre></div>
 </div>
 <p>in , an executable named <code class="docutils literal notranslate"><span class="pre">funwave--gnu-parallel-single</span></code> will be
 created.</p>
-</section>
-<section id="run-the-executable">
-<h4>Run the executable<a class="headerlink" href="#run-the-executable" title="Link to this heading">¶</a></h4>
+</div>
+<div class="section" id="run-the-executable">
+<h4>Run the executable<a class="headerlink" href="#run-the-executable" title="Permalink to this headline">¶</a></h4>
 <p>To run the executable without specify the file name, run</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>mpirun<span class="w"> </span>-np<span class="w"> </span>xxx<span class="w"> </span>./funwave--gnu-parallel-single
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>mpirun -np xxx ./funwave--gnu-parallel-single
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">xxx</span></code> is the number of the processor, which should be consistent to
 the value of <code class="docutils literal notranslate"><span class="pre">PX</span> <span class="pre">x</span> <span class="pre">PY</span></code> in the input file. In this case, the input file
 is <code class="docutils literal notranslate"><span class="pre">input.txt</span></code>.</p>
 <p>To specify the input file when running executable, executed with</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>mpirun<span class="w"> </span>-np<span class="w"> </span>xxx<span class="w"> </span>./funwave--gnu-parallel-single<span class="w"> </span>FILENAME
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>mpirun -np xxx ./funwave--gnu-parallel-single FILENAME
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">FILENAME</span></code> is the name of the input file.</p>
 <p>In this case, we use the <code class="docutils literal notranslate"><span class="pre">input_solitary.txt</span></code> as the input file.
 <code class="docutils literal notranslate"><span class="pre">PX</span> <span class="pre">=</span> <span class="pre">4</span></code> and <code class="docutils literal notranslate"><span class="pre">PY</span> <span class="pre">=</span> <span class="pre">1</span></code>, so that the number of the processor is 4. The
 corresponding bash command would be</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>mpirun<span class="w"> </span>-np<span class="w"> </span><span class="m">4</span><span class="w"> </span>./funwave--gnu-parallel-single<span class="w"> </span>input_solitary.txt
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>mpirun -np <span class="m">4</span> ./funwave--gnu-parallel-single input_solitary.txt
 </pre></div>
 </div>
-</section>
-<section id="clean-the-compiler-files">
-<h4>Clean the compiler files<a class="headerlink" href="#clean-the-compiler-files" title="Link to this heading">¶</a></h4>
+</div>
+<div class="section" id="clean-the-compiler-files">
+<h4>Clean the compiler files<a class="headerlink" href="#clean-the-compiler-files" title="Permalink to this headline">¶</a></h4>
 <p>To clean all the compiler related files, including objective files,
 module files and pre-processor FORTRAN files. Execute with</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>clean
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>make clean
 </pre></div>
 </div>
 <p>To clean all the <code class="docutils literal notranslate"><span class="pre">compiler</span> <span class="pre">related</span> <span class="pre">files</span></code> and <code class="docutils literal notranslate"><span class="pre">the</span> <span class="pre">executable</span></code>,
 execute with</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>clobber
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>make clobber
 </pre></div>
 </div>
 <p>To clean up the whole work directory (<strong>Be careful with this option</strong>),
 execute with</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>extra-clobber
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>make extra-clobber
 </pre></div>
 </div>
-</section>
-</section>
-<section id="common-variables-explained">
-<h3>Common variables explained<a class="headerlink" href="#common-variables-explained" title="Link to this heading">¶</a></h3>
+</div>
+</div>
+<div class="section" id="common-variables-explained">
+<h3>Common variables explained<a class="headerlink" href="#common-variables-explained" title="Permalink to this headline">¶</a></h3>
 <p>An example of the <strong>common variables</strong> makefile</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">FUNWAVE_DIR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>/home/FUNWAVE-TVD
-<span class="nv">WORK_DIR</span><span class="w">    </span><span class="o">=</span><span class="w"> </span>funwave-work
-<span class="nv">COMPILER</span><span class="w">    </span><span class="o">=</span><span class="w"> </span>gnu
-<span class="nv">PARALLEL</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span>
-<span class="nv">EXEC</span><span class="w">        </span><span class="o">=</span><span class="w"> </span>funwave
-<span class="nv">PRECISION</span><span class="w">   </span><span class="o">=</span><span class="w"> </span>single
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">FUNWAVE_DIR</span> <span class="o">=</span> /home/FUNWAVE-TVD
+<span class="nv">WORK_DIR</span>    <span class="o">=</span> funwave-work
+<span class="nv">COMPILER</span>    <span class="o">=</span> gnu
+<span class="nv">PARALLEL</span>    <span class="o">=</span> <span class="nb">true</span>
+<span class="nv">EXEC</span>        <span class="o">=</span> funwave
+<span class="nv">PRECISION</span>   <span class="o">=</span> single
 </pre></div>
 </div>
 <ul>
@@ -254,9 +255,9 @@ executable is not <code class="docutils literal notranslate"><span class="pre">f
 executable name will be <code class="docutils literal notranslate"><span class="pre">foo</span></code> without any suffix.</p>
 </li>
 </ul>
-</section>
-<section id="defined-flags-explained-unfinished">
-<h3>Defined flags explained (unfinished)<a class="headerlink" href="#defined-flags-explained-unfinished" title="Link to this heading">¶</a></h3>
+</div>
+<div class="section" id="defined-flags-explained-unfinished">
+<h3>Defined flags explained (unfinished)<a class="headerlink" href="#defined-flags-explained-unfinished" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>FLAG_1 = -DCOUPLING</strong></p></li>
 <li><p><strong>FLAG_2 = -DZALPHA</strong></p></li>
@@ -269,14 +270,20 @@ executable name will be <code class="docutils literal notranslate"><span class="
 <li><p><strong>FLAG_9 = -DTMP</strong></p></li>
 <li><p><strong>FLAG_10 = -DTRACKING</strong></p></li>
 </ul>
-</section>
-<section id="limitations-of-the-common-variables">
-<h3>Limitations of the Common variables<a class="headerlink" href="#limitations-of-the-common-variables" title="Link to this heading">¶</a></h3>
-<section id="compiler-and-mpi-supported-by-the-basic-options">
-<h4>Compiler and MPI supported by the <strong>basic options</strong><a class="headerlink" href="#compiler-and-mpi-supported-by-the-basic-options" title="Link to this heading">¶</a></h4>
+</div>
+<div class="section" id="limitations-of-the-common-variables">
+<h3>Limitations of the Common variables<a class="headerlink" href="#limitations-of-the-common-variables" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="compiler-and-mpi-supported-by-the-basic-options">
+<h4>Compiler and MPI supported by the <strong>basic options</strong><a class="headerlink" href="#compiler-and-mpi-supported-by-the-basic-options" title="Permalink to this headline">¶</a></h4>
 <p>The combination of <code class="docutils literal notranslate"><span class="pre">COMPILER</span></code> and <code class="docutils literal notranslate"><span class="pre">PARALLEL</span></code> decides the name of the
 compiler command as below</p>
 <table class="docutils align-default">
+<colgroup>
+<col style="width: 46%" />
+<col style="width: 18%" />
+<col style="width: 18%" />
+<col style="width: 19%" />
+</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"></th>
 <th class="head"><p>gnu</p></th>
@@ -309,17 +316,17 @@ compiler command as below</p>
 </table>
 <p>the version of mpi can be specified by <code class="docutils literal notranslate"><span class="pre">MPI</span></code> in <code class="docutils literal notranslate"><span class="pre">uncommon</span> <span class="pre">variables</span></code>
 category. the</p>
-</section>
-</section>
-</section>
-<section id="customize-the-makefile">
-<h2>Customize the makefile<a class="headerlink" href="#customize-the-makefile" title="Link to this heading">¶</a></h2>
+</div>
+</div>
+</div>
+<div class="section" id="customize-the-makefile">
+<h2>Customize the makefile<a class="headerlink" href="#customize-the-makefile" title="Permalink to this headline">¶</a></h2>
 <p>For some specific requirement, for example, computational environment,
 external libraries, one can either customize the main makefile or the
 essential makefile. Multiple versions of the makefiles and essential
 makefiles are</p>
-<section id="uncommon-variables-explained">
-<h3>Uncommon variables explained<a class="headerlink" href="#uncommon-variables-explained" title="Link to this heading">¶</a></h3>
+<div class="section" id="uncommon-variables-explained">
+<h3>Uncommon variables explained<a class="headerlink" href="#uncommon-variables-explained" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p><strong>SPHERICAL = false</strong></p>
 <p>Should be <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code>. If <code class="docutils literal notranslate"><span class="pre">true</span></code>, FUNWAVE-TVD will be
@@ -330,6 +337,11 @@ FUNWAVE-TVD will be compiled wit Cartesian grid.</p>
 <p>Should be <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code>. The value of <code class="docutils literal notranslate"><span class="pre">DEBUG</span></code> Determine the
 debug and optimization flags as below</p>
 <table class="docutils align-default">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 53%" />
+<col style="width: 31%" />
+</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"></th>
 <th class="head"><p>DEBUG=true</p></th>
@@ -376,9 +388,9 @@ value of <strong>DEF_FC_FLAG</strong>.</p>
 <p>External libraries</p>
 </li>
 </ul>
-</section>
-<section id="customized-main-makefile">
-<h3>Customized main makefile<a class="headerlink" href="#customized-main-makefile" title="Link to this heading">¶</a></h3>
+</div>
+<div class="section" id="customized-main-makefile">
+<h3>Customized main makefile<a class="headerlink" href="#customized-main-makefile" title="Permalink to this headline">¶</a></h3>
 <p>To customize the main makefile, simply adjust the uncommon variables.
 This is an easy way to do customization.</p>
 <p><strong>Some notes to the modification</strong></p>
@@ -396,9 +408,9 @@ this flag should always be turned on.</p>
 <code class="docutils literal notranslate"><span class="pre">COMPILER</span> <span class="pre">=</span> <span class="pre">intel</span></code>.</p>
 </li>
 </ul>
-</section>
-<section id="customized-the-essential-makefile">
-<h3>Customized the essential makefile<a class="headerlink" href="#customized-the-essential-makefile" title="Link to this heading">¶</a></h3>
+</div>
+<div class="section" id="customized-the-essential-makefile">
+<h3>Customized the essential makefile<a class="headerlink" href="#customized-the-essential-makefile" title="Permalink to this headline">¶</a></h3>
 <p>There are different sections in the essential makefile. If you are
 familiar with GNU make, this way brings more flexibility.</p>
 <p><strong>Some notes to the modification</strong></p>
@@ -411,60 +423,60 @@ intel compiler), this flag should always be turned on.</p>
 the following lines should be modified as well.</p>
 </li>
 </ul>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ifeq<span class="w"> </span><span class="o">(</span><span class="k">$(</span>COMPILER<span class="k">)</span>,<span class="k">$(</span>filter<span class="w"> </span><span class="k">$(</span>COMPILER<span class="k">)</span>,<span class="w"> </span>intel,<span class="w"> </span>sgi<span class="k">)</span><span class="o">)</span>
-<span class="w">  </span><span class="nv">FLAG_INTEL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-DINTEL
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ifeq <span class="o">(</span><span class="k">$(</span>COMPILER<span class="k">)</span>,<span class="k">$(</span>filter <span class="k">$(</span>COMPILER<span class="k">)</span>, intel, sgi<span class="k">)</span><span class="o">)</span>
+  <span class="nv">FLAG_INTEL</span> <span class="o">=</span> -DINTEL
 endif
 </pre></div>
 </div>
-</section>
-<section id="convert-from-old-version-makefile-to-current-version">
-<h3>Convert from old version makefile to current version.<a class="headerlink" href="#convert-from-old-version-makefile-to-current-version" title="Link to this heading">¶</a></h3>
+</div>
+<div class="section" id="convert-from-old-version-makefile-to-current-version">
+<h3>Convert from old version makefile to current version.<a class="headerlink" href="#convert-from-old-version-makefile-to-current-version" title="Permalink to this headline">¶</a></h3>
 <p>It is easy to convert the old version makefiles to the current version.
 The main difference are <code class="docutils literal notranslate"><span class="pre">FC</span></code>, <code class="docutils literal notranslate"><span class="pre">Defined</span> <span class="pre">flags</span></code>, <code class="docutils literal notranslate"><span class="pre">LIBS</span></code> and
 <code class="docutils literal notranslate"><span class="pre">INCS</span></code>. The following two examples shows how to modify the current
 version that works equivalent to the old version makefile.</p>
 <p><strong>NOTE: I do not have the access to ONYX or Topaz, the two examples are
 remaining to be tested. (July 25, 2019, Zhouteng Ye)</strong></p>
-<section id="example-of-editing-main-makefile">
-<h4>Example of editing main makefile<a class="headerlink" href="#example-of-editing-main-makefile" title="Link to this heading">¶</a></h4>
+<div class="section" id="example-of-editing-main-makefile">
+<h4>Example of editing main makefile<a class="headerlink" href="#example-of-editing-main-makefile" title="Permalink to this headline">¶</a></h4>
 <p>make a copy of <code class="docutils literal notranslate"><span class="pre">Makefile</span></code> named <code class="docutils literal notranslate"><span class="pre">Makefile_ONYX</span></code> and edit</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">DEF_FC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>fnt
-<span class="nv">DEF_FC_FLAG</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-module<span class="w"> </span>-O2<span class="w"> </span>-g<span class="w"> </span>-fPic
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">DEF_FC</span> <span class="o">=</span> fnt
+<span class="nv">DEF_FC_FLAG</span> <span class="o">=</span> -module -O2 -g -fPic
 </pre></div>
 </div>
 <p>Since <code class="docutils literal notranslate"><span class="pre">DEF_FC</span></code> is not empty, the fortran compiler would be the value
 of <code class="docutils literal notranslate"><span class="pre">DEF_FC</span></code> and corresponding flags will be <code class="docutils literal notranslate"><span class="pre">DEF_FC_FLAG</span></code>.</p>
-</section>
-<section id="example-of-editing-essential-makefile">
-<h4>Example of editing essential makefile<a class="headerlink" href="#example-of-editing-essential-makefile" title="Link to this heading">¶</a></h4>
+</div>
+<div class="section" id="example-of-editing-essential-makefile">
+<h4>Example of editing essential makefile<a class="headerlink" href="#example-of-editing-essential-makefile" title="Permalink to this headline">¶</a></h4>
 <p>make a copy of <code class="docutils literal notranslate"><span class="pre">Make_Essential</span></code> named <code class="docutils literal notranslate"><span class="pre">Make_Essential_Topaz</span></code> and
 edit the <code class="docutils literal notranslate"><span class="pre">Fortran</span> <span class="pre">compiler</span></code> section as below.</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ifneq<span class="w"> </span><span class="o">(</span><span class="k">$(</span>DEF_FC<span class="k">)</span>,<span class="k">$(</span>filter<span class="w"> </span><span class="k">$(</span>DEF_FC<span class="k">)</span>,<span class="w"> </span><span class="s1">&#39;&#39;</span><span class="k">)</span><span class="o">)</span>
-<span class="w">  </span><span class="nv">FC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">$(</span>DEF_FC<span class="k">)</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ifneq <span class="o">(</span><span class="k">$(</span>DEF_FC<span class="k">)</span>,<span class="k">$(</span>filter <span class="k">$(</span>DEF_FC<span class="k">)</span>, <span class="s1">&#39;&#39;</span><span class="k">)</span><span class="o">)</span>
+  <span class="nv">FC</span> <span class="o">=</span> <span class="k">$(</span>DEF_FC<span class="k">)</span>
 <span class="k">else</span>
-ifeq<span class="w"> </span><span class="o">(</span><span class="k">$(</span>COMPILER<span class="k">)</span>,<span class="k">$(</span>filter<span class="w"> </span><span class="k">$(</span>COMPILER<span class="k">)</span>,<span class="w"> </span>intel<span class="k">)</span><span class="o">)</span>
-<span class="w">  </span><span class="nv">USE_MOD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-module<span class="w"> </span><span class="k">$(</span>MOD_DIR<span class="k">)</span>
-<span class="w">  </span><span class="nv">FC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>ifort
-<span class="w">  </span><span class="nv">MPILIB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-lmpi<span class="w"> </span>-Bdynamic
-<span class="k">else</span><span class="w"> </span>ifeq<span class="w"> </span><span class="o">(</span><span class="k">$(</span>COMPILER<span class="k">)</span>,<span class="k">$(</span>filter<span class="w"> </span><span class="k">$(</span>COMPILER<span class="k">)</span>,<span class="w"> </span>sgi<span class="k">)</span><span class="o">)</span>
-<span class="w">  </span><span class="nv">USE_MOD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-module<span class="w"> </span><span class="k">$(</span>MOD_DIR<span class="k">)</span>
-<span class="w">  </span><span class="nv">FC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>mpiifort
-<span class="w">  </span><span class="nv">MPILIB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-Bdynamic
+ifeq <span class="o">(</span><span class="k">$(</span>COMPILER<span class="k">)</span>,<span class="k">$(</span>filter <span class="k">$(</span>COMPILER<span class="k">)</span>, intel<span class="k">)</span><span class="o">)</span>
+  <span class="nv">USE_MOD</span> <span class="o">=</span> -module <span class="k">$(</span>MOD_DIR<span class="k">)</span>
+  <span class="nv">FC</span> <span class="o">=</span> ifort
+  <span class="nv">MPILIB</span> <span class="o">=</span> -lmpi -Bdynamic
+<span class="k">else</span> ifeq <span class="o">(</span><span class="k">$(</span>COMPILER<span class="k">)</span>,<span class="k">$(</span>filter <span class="k">$(</span>COMPILER<span class="k">)</span>, sgi<span class="k">)</span><span class="o">)</span>
+  <span class="nv">USE_MOD</span> <span class="o">=</span> -module <span class="k">$(</span>MOD_DIR<span class="k">)</span>
+  <span class="nv">FC</span> <span class="o">=</span> mpiifort
+  <span class="nv">MPILIB</span> <span class="o">=</span> -Bdynamic
 <span class="k">else</span>
-<span class="k">$(</span>error<span class="w"> </span>Fatal<span class="w"> </span>ERROR:<span class="w"> </span><span class="nv">COMPILER</span><span class="o">=</span><span class="k">$(</span>COMPILER<span class="k">)</span><span class="w"> </span>and<span class="w"> </span>DEF_FC<span class="w"> </span>is<span class="w"> </span>empty,<span class="w"> </span>Please<span class="w"> </span>correct<span class="w"> </span>the<span class="w"> </span>COMPILER<span class="w"> </span>or<span class="w"> </span>customize<span class="w"> </span>the<span class="w"> </span>DEF_FC.<span class="k">)</span>
+<span class="k">$(</span>error Fatal ERROR: <span class="nv">COMPILER</span><span class="o">=</span><span class="k">$(</span>COMPILER<span class="k">)</span> and DEF_FC is empty, Please correct the COMPILER or customize the DEF_FC.<span class="k">)</span>
 endif
 endif
 </pre></div>
 </div>
 <p>Since both sgi and intel actually uses intel compiler, the following
 part should be modified as well</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ifeq<span class="w"> </span><span class="o">(</span><span class="k">$(</span>COMPILER<span class="k">)</span>,<span class="k">$(</span>filter<span class="w"> </span><span class="k">$(</span>COMPILER<span class="k">)</span>,<span class="w"> </span>intel,<span class="w"> </span>sgi<span class="k">)</span><span class="o">)</span>
-<span class="w">  </span><span class="nv">FLAG_INTEL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-DINTEL
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ifeq <span class="o">(</span><span class="k">$(</span>COMPILER<span class="k">)</span>,<span class="k">$(</span>filter <span class="k">$(</span>COMPILER<span class="k">)</span>, intel, sgi<span class="k">)</span><span class="o">)</span>
+  <span class="nv">FLAG_INTEL</span> <span class="o">=</span> -DINTEL
 endif
 </pre></div>
 </div>
 <p>and in the main file, edit</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>include<span class="w"> </span><span class="k">$(</span>FUNWAVE_DIR<span class="k">)</span>/GNUMake/Essential/Make_Essential_Topaz
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>include <span class="k">$(</span>FUNWAVE_DIR<span class="k">)</span>/GNUMake/Essential/Make_Essential_Topaz
 </pre></div>
 </div>
 <p>Now you should be able to choose <code class="docutils literal notranslate"><span class="pre">intel</span></code> or <code class="docutils literal notranslate"><span class="pre">sgi</span></code> from the
@@ -472,10 +484,10 @@ endif
 <code class="docutils literal notranslate"><span class="pre">FC</span> <span class="pre">=</span> <span class="pre">mpiifort</span></code>; when <code class="docutils literal notranslate"><span class="pre">COMPILER</span> <span class="pre">=</span> <span class="pre">intel</span></code>, <code class="docutils literal notranslate"><span class="pre">FC</span> <span class="pre">=</span> <span class="pre">ifort</span></code> and
 <code class="docutils literal notranslate"><span class="pre">MPILIB</span> <span class="pre">=</span> <span class="pre">-lmpi</span></code>. It should be noted that in this example,
 <code class="docutils literal notranslate"><span class="pre">PARALLEL</span></code> does nothing with the choice of compiler.</p>
-</section>
-</section>
-<section id="debug-during-customization">
-<h3>Debug during customization<a class="headerlink" href="#debug-during-customization" title="Link to this heading">¶</a></h3>
+</div>
+</div>
+<div class="section" id="debug-during-customization">
+<h3>Debug during customization<a class="headerlink" href="#debug-during-customization" title="Permalink to this headline">¶</a></h3>
 <p>The following two commands would be useful while modifying the main
 makefile and essential makefile.</p>
 <ul class="simple">
@@ -484,28 +496,28 @@ makefile and essential makefile.</p>
 Makefile_Essential) For example, <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">print</span> <span class="pre">$(EXEC)</span></code> and you will
 see the final <code class="docutils literal notranslate"><span class="pre">$(EXEC)</span></code> name</p></li>
 </ul>
-</section>
-</section>
-<section id="appendix-compile-a-project-with-makefile">
-<h2>Appendix: Compile a project with Makefile<a class="headerlink" href="#appendix-compile-a-project-with-makefile" title="Link to this heading">¶</a></h2>
+</div>
+</div>
+<div class="section" id="appendix-compile-a-project-with-makefile">
+<h2>Appendix: Compile a project with Makefile<a class="headerlink" href="#appendix-compile-a-project-with-makefile" title="Permalink to this headline">¶</a></h2>
 <p>Starting with an example project with 2 files</p>
 <p><code class="docutils literal notranslate"><span class="pre">pre_processor.f90</span></code></p>
 <div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">program </span><span class="n">main</span>
-<span class="w">  </span><span class="k">Implicit None</span>
+  <span class="k">Implicit None</span>
 <span class="cp">#if defined (double_precision)</span>
-<span class="w">  </span><span class="kt">Integer</span><span class="p">,</span><span class="w"> </span><span class="k">Parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">SP</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span>
+  <span class="kt">Integer</span><span class="p">,</span> <span class="k">Parameter</span> <span class="kd">::</span> <span class="n">SP</span> <span class="o">=</span> <span class="mi">8</span>
 <span class="cp">#else</span>
-<span class="w">  </span><span class="kt">Integer</span><span class="p">,</span><span class="w"> </span><span class="k">Parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">SP</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span>
+  <span class="kt">Integer</span><span class="p">,</span> <span class="k">Parameter</span> <span class="kd">::</span> <span class="n">SP</span> <span class="o">=</span> <span class="mi">4</span>
 <span class="cp">#endif</span>
 
-<span class="w">  </span><span class="kt">Real</span><span class="p">(</span><span class="n">SP</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">test</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0_sp</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">3.0_sp</span>
+  <span class="kt">Real</span><span class="p">(</span><span class="n">SP</span><span class="p">)</span> <span class="kd">::</span> <span class="n">test</span> <span class="o">=</span> <span class="mf">1.0_sp</span> <span class="o">/</span> <span class="mf">3.0_sp</span>
 
 <span class="cp">#if defined (method_1)</span>
-<span class="w">  </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;method_1, test = &#39;</span><span class="p">,</span><span class="w"> </span><span class="n">test</span>
+  <span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="s1">&#39;method_1, test = &#39;</span><span class="p">,</span> <span class="n">test</span>
 <span class="cp">#elif defined (method_2)</span>
-<span class="w">  </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;method_2, test = &#39;</span><span class="p">,</span><span class="w"> </span><span class="n">test</span>
+  <span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="s1">&#39;method_2, test = &#39;</span><span class="p">,</span> <span class="n">test</span>
 <span class="cp">#elif defined (method_3)</span>
-<span class="w">  </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;method_3, test = &#39;</span><span class="p">,</span><span class="w"> </span><span class="n">test</span>
+  <span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="s1">&#39;method_3, test = &#39;</span><span class="p">,</span> <span class="n">test</span>
 <span class="cp">#endif</span>
 <span class="k">end program </span><span class="n">main</span>
 </pre></div>
@@ -513,15 +525,15 @@ see the final <code class="docutils literal notranslate"><span class="pre">$(EXE
 <p><code class="docutils literal notranslate"><span class="pre">sub.f90</span></code></p>
 <div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="cp">#if defined (method_1)</span>
 <span class="k">subroutine </span><span class="n">sub</span>
-<span class="w">  </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="s1">&#39;method_1&#39;</span>
+  <span class="k">print</span> <span class="o">*</span><span class="p">,</span><span class="s1">&#39;method_1&#39;</span>
 <span class="k">end subroutine </span><span class="n">sub</span>
 <span class="cp">#elif defined (method_2)</span>
 <span class="k">subroutine </span><span class="n">sub</span>
-<span class="w">  </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="s1">&#39;method_2&#39;</span>
+  <span class="k">print</span> <span class="o">*</span><span class="p">,</span><span class="s1">&#39;method_2&#39;</span>
 <span class="k">end subroutine </span><span class="n">sub</span>
 <span class="cp">#else</span>
 <span class="k">subroutine </span><span class="n">sub</span>
-<span class="w">  </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="s1">&#39;method_3&#39;</span>
+  <span class="k">print</span> <span class="o">*</span><span class="p">,</span><span class="s1">&#39;method_3&#39;</span>
 <span class="k">end subroutine </span><span class="n">sub</span>
 <span class="cp">#endif</span>
 </pre></div>
@@ -529,11 +541,11 @@ see the final <code class="docutils literal notranslate"><span class="pre">$(EXE
 <p>To compile the code with <code class="docutils literal notranslate"><span class="pre">method_1</span></code>, one way is to apply pre-processor
 to each <code class="docutils literal notranslate"><span class="pre">.f95</span></code> and compile the files to <code class="docutils literal notranslate"><span class="pre">.o</span></code> file and link the two
 <code class="docutils literal notranslate"><span class="pre">.o</span></code> files into an executable bu the following commands.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cpp<span class="w"> </span>-P<span class="w"> </span>-Ddouble_precision<span class="w"> </span>-Dmethod_1<span class="w"> </span>pre_processor.f95<span class="w"> </span>pre_processor.f90
-gfortran<span class="w"> </span>-c<span class="w"> </span>-O3<span class="w"> </span>pre_processor.f90<span class="w"> </span>-o<span class="w"> </span>pre_processor.o
-cpp<span class="w"> </span>-P<span class="w"> </span>-Ddouble_precision<span class="w"> </span>-Dmethod_1<span class="w"> </span>sub.f95<span class="w"> </span>sub.f90
-gfortran<span class="w"> </span>-c<span class="w"> </span>-O3<span class="w"> </span>sub.f90<span class="w"> </span>-o<span class="w"> </span>sub.o
-gfortran<span class="w"> </span>-O3<span class="w"> </span>-o<span class="w"> </span>run<span class="w"> </span>pre_processor.o<span class="w"> </span>sub.o
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cpp -P -Ddouble_precision -Dmethod_1 pre_processor.f95 pre_processor.f90
+gfortran -c -O3 pre_processor.f90 -o pre_processor.o
+cpp -P -Ddouble_precision -Dmethod_1 sub.f95 sub.f90
+gfortran -c -O3 sub.f90 -o sub.o
+gfortran -O3 -o run pre_processor.o sub.o
 </pre></div>
 </div>
 <p>What if we have many files in a project? Do we have to modify the
@@ -545,43 +557,43 @@ in makefile, you will not have to always modify the makefile.</p>
 <p><strong>if you are new to makefile, I recommend not only to execute file, but
 also see the popup scripts on screen and the new files generated by the
 makefile</strong></p>
-<section id="first-makefile">
-<h3>First makefile<a class="headerlink" href="#first-makefile" title="Link to this heading">¶</a></h3>
+<div class="section" id="first-makefile">
+<h3>First makefile<a class="headerlink" href="#first-makefile" title="Permalink to this headline">¶</a></h3>
 <p>In the first makefile, the only rule is <code class="docutils literal notranslate"><span class="pre">run</span></code> and <code class="docutils literal notranslate"><span class="pre">clean</span></code>, the
 <code class="docutils literal notranslate"><span class="pre">run</span></code> part is exactly to execute the command line one by one. and the
 clean part will clean up all the pre processor files <code class="docutils literal notranslate"><span class="pre">.f90</span></code>, objective
 file <code class="docutils literal notranslate"><span class="pre">.o</span></code> and the executable <code class="docutils literal notranslate"><span class="pre">run</span></code>.</p>
 <p><code class="docutils literal notranslate"><span class="pre">Makefile-1</span></code></p>
 <div class="highlight-makefile notranslate"><div class="highlight"><pre><span></span><span class="nf">run</span><span class="o">:</span>
-<span class="w">  </span>cpp<span class="w"> </span>-P<span class="w"> </span>-Ddouble_precision<span class="w"> </span>-Dmethod_1<span class="w"> </span>pre_processor.f95<span class="w"> </span>pre_processor.f90
-<span class="w">  </span>gfortran<span class="w"> </span>-c<span class="w"> </span>-O3<span class="w"> </span>pre_processor.f90<span class="w"> </span>-o<span class="w"> </span>pre_processor.o
-<span class="w">  </span>cpp<span class="w"> </span>-P<span class="w"> </span>-Ddouble_precision<span class="w"> </span>-Dmethod_1<span class="w"> </span>sub.f95<span class="w"> </span>sub.f90
-<span class="w">  </span>gfortran<span class="w"> </span>-c<span class="w"> </span>-O3<span class="w"> </span>sub.f90<span class="w"> </span>-o<span class="w"> </span>sub.o
-<span class="w">  </span>gfortran<span class="w"> </span>-O3<span class="w"> </span>-o<span class="w"> </span>run<span class="w"> </span>pre_processor.o<span class="w"> </span>sub.o
+  cpp -P -Ddouble_precision -Dmethod_1 pre_processor.f95 pre_processor.f90
+  gfortran -c -O3 pre_processor.f90 -o pre_processor.o
+  cpp -P -Ddouble_precision -Dmethod_1 sub.f95 sub.f90
+  gfortran -c -O3 sub.f90 -o sub.o
+  gfortran -O3 -o run pre_processor.o sub.o
 
 <span class="nf">clean</span><span class="o">:</span>
-<span class="w">  </span>rm<span class="w"> </span>pre_processor.f90
-<span class="w">  </span>rm<span class="w"> </span>pre_processor.o
-<span class="w">  </span>rm<span class="w"> </span>sub.f90
-<span class="w">  </span>rm<span class="w"> </span>sub.o
-<span class="w">  </span>rm<span class="w"> </span>run
+  rm pre_processor.f90
+  rm pre_processor.o
+  rm sub.f90
+  rm sub.o
+  rm run
 </pre></div>
 </div>
 <p>To compile:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>-f<span class="w"> </span>Makefile-1
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make -f Makefile-1
 </pre></div>
 </div>
 <p>to clean:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>-f<span class="w"> </span>Makefile-1<span class="w"> </span>clean
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make -f Makefile-1 clean
 </pre></div>
 </div>
 <p>to run the code:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./run
 </pre></div>
 </div>
-</section>
-<section id="second-makefile">
-<h3>Second makefile<a class="headerlink" href="#second-makefile" title="Link to this heading">¶</a></h3>
+</div>
+<div class="section" id="second-makefile">
+<h3>Second makefile<a class="headerlink" href="#second-makefile" title="Permalink to this headline">¶</a></h3>
 <p>Now, the execution part is the same as Makefile-1, the only difference
 is some of the command becomes variable If you want to modify something,
 such as compiler, optimization flag, pre-processor flag, you do not have
@@ -590,103 +602,103 @@ to modify all the way through the execution part.</p>
 in the command window is almost the same as it is for <code class="docutils literal notranslate"><span class="pre">Makefile-1</span></code>
 (except for one additional flag)</p>
 <p><code class="docutils literal notranslate"><span class="pre">Makefile-2</span></code></p>
-<div class="highlight-makefile notranslate"><div class="highlight"><pre><span></span><span class="nv">EXEC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>run<span class="w"> </span><span class="c1"># the name of the execution file</span>
-<span class="nv">FC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>gfortran<span class="w"> </span><span class="c1"># the compiler, you can use intel, pgi, etc.</span>
-<span class="nv">FCOPT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-O3<span class="w">   </span><span class="c1"># OPT flag for fortran compiler</span>
-<span class="nv">PP</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>cpp<span class="w">  </span><span class="c1"># C pre-processor. cpp for GNU, fpp for intel</span>
+<div class="highlight-makefile notranslate"><div class="highlight"><pre><span></span><span class="nv">EXEC</span> <span class="o">=</span> run <span class="c1"># the name of the execution file</span>
+<span class="nv">FC</span> <span class="o">=</span> gfortran <span class="c1"># the compiler, you can use intel, pgi, etc.</span>
+<span class="nv">FCOPT</span> <span class="o">=</span> -O3   <span class="c1"># OPT flag for fortran compiler</span>
+<span class="nv">PP</span> <span class="o">=</span> cpp  <span class="c1"># C pre-processor. cpp for GNU, fpp for intel</span>
 
 <span class="c"># pre processor flags, only the correct flag will affect the code,</span>
 <span class="c">#   the rest of the flags, either not exist in the fortran code, or</span>
 <span class="c">#   null, will not affect the result of the pre-processor.</span>
-<span class="nv">CPPFLAG</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-P<span class="w"> </span><span class="k">$(</span>FLAG_1<span class="k">)</span><span class="w"> </span><span class="k">$(</span>FLAG_2<span class="k">)</span><span class="w"> </span><span class="k">$(</span>FALG_3<span class="k">)</span><span class="w"> </span><span class="k">$(</span>FLAG_4<span class="k">)</span>
-<span class="nv">FLAG_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-Ddouble_precision
-<span class="nv">FLAG_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-Danything_is_okay
+<span class="nv">CPPFLAG</span> <span class="o">=</span> -P <span class="k">$(</span>FLAG_1<span class="k">)</span> <span class="k">$(</span>FLAG_2<span class="k">)</span> <span class="k">$(</span>FALG_3<span class="k">)</span> <span class="k">$(</span>FLAG_4<span class="k">)</span>
+<span class="nv">FLAG_1</span> <span class="o">=</span> -Ddouble_precision
+<span class="nv">FLAG_2</span> <span class="o">=</span> -Danything_is_okay
 <span class="c"># FLAG_3 = -Dor_not_used</span>
-<span class="nv">FLAG_4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-Dmethod_1
+<span class="nv">FLAG_4</span> <span class="o">=</span> -Dmethod_1
 
 <span class="nf">$(EXEC)</span><span class="o">:</span>
-<span class="w">  </span><span class="k">$(</span>PP<span class="k">)</span><span class="w"> </span><span class="k">$(</span>CPPFLAG<span class="k">)</span><span class="w"> </span><span class="k">$(</span>FLAG_1<span class="k">)</span><span class="w"> </span><span class="k">$(</span>FLAG_2<span class="k">)</span><span class="w"> </span><span class="k">$(</span>FLAG_3<span class="k">)</span><span class="w"> </span><span class="k">$(</span>FLAG_4<span class="k">)</span><span class="w"> </span>pre_processor.f95<span class="w"> </span>pre_processor.f90
-<span class="w">  </span><span class="k">$(</span>FC<span class="k">)</span><span class="w"> </span>-c<span class="w"> </span><span class="k">$(</span>FC_OPT<span class="k">)</span><span class="w"> </span>pre_processor.f90<span class="w"> </span>-o<span class="w"> </span>pre_processor.o
-<span class="w">  </span><span class="k">$(</span>PP<span class="k">)</span><span class="w"> </span><span class="k">$(</span>CPPFLAG<span class="k">)</span><span class="w"> </span><span class="k">$(</span>FLAG_1<span class="k">)</span><span class="w"> </span><span class="k">$(</span>FLAG_2<span class="k">)</span><span class="w"> </span><span class="k">$(</span>FLAG_3<span class="k">)</span><span class="w"> </span><span class="k">$(</span>FLAG_4<span class="k">)</span><span class="w"> </span>-P<span class="w"> </span>-Ddouble_precision<span class="w"> </span>-Dmethod_1<span class="w"> </span>sub.f95<span class="w"> </span>sub.f90
-<span class="w">  </span><span class="k">$(</span>FC<span class="k">)</span><span class="w"> </span>-c<span class="w"> </span><span class="k">$(</span>FC_OPT<span class="k">)</span><span class="w"> </span>sub.f90<span class="w"> </span>-o<span class="w"> </span>sub.o
-<span class="w">  </span><span class="k">$(</span>FC<span class="k">)</span><span class="w">  </span><span class="k">$(</span>FC_OPT<span class="k">)</span><span class="w"> </span>-o<span class="w"> </span><span class="k">$(</span>EXEC<span class="k">)</span><span class="w"> </span>pre_processor.o<span class="w"> </span>sub.o
+  <span class="k">$(</span>PP<span class="k">)</span> <span class="k">$(</span>CPPFLAG<span class="k">)</span> <span class="k">$(</span>FLAG_1<span class="k">)</span> <span class="k">$(</span>FLAG_2<span class="k">)</span> <span class="k">$(</span>FLAG_3<span class="k">)</span> <span class="k">$(</span>FLAG_4<span class="k">)</span> pre_processor.f95 pre_processor.f90
+  <span class="k">$(</span>FC<span class="k">)</span> -c <span class="k">$(</span>FC_OPT<span class="k">)</span> pre_processor.f90 -o pre_processor.o
+  <span class="k">$(</span>PP<span class="k">)</span> <span class="k">$(</span>CPPFLAG<span class="k">)</span> <span class="k">$(</span>FLAG_1<span class="k">)</span> <span class="k">$(</span>FLAG_2<span class="k">)</span> <span class="k">$(</span>FLAG_3<span class="k">)</span> <span class="k">$(</span>FLAG_4<span class="k">)</span> -P -Ddouble_precision -Dmethod_1 sub.f95 sub.f90
+  <span class="k">$(</span>FC<span class="k">)</span> -c <span class="k">$(</span>FC_OPT<span class="k">)</span> sub.f90 -o sub.o
+  <span class="k">$(</span>FC<span class="k">)</span>  <span class="k">$(</span>FC_OPT<span class="k">)</span> -o <span class="k">$(</span>EXEC<span class="k">)</span> pre_processor.o sub.o
 
 <span class="nf">clean</span><span class="o">:</span>
-<span class="w">  </span>rm<span class="w"> </span>*.f90
-<span class="w">  </span>rm<span class="w"> </span>*.o
-<span class="w">  </span>rm<span class="w"> </span><span class="k">$(</span>EXEC<span class="k">)</span>
+  rm *.f90
+  rm *.o
+  rm <span class="k">$(</span>EXEC<span class="k">)</span>
 </pre></div>
 </div>
 <p>To compile:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>-f<span class="w"> </span>Makefile-2
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make -f Makefile-2
 </pre></div>
 </div>
 <p>to clean:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>-f<span class="w"> </span>Makefile-2<span class="w"> </span>clean
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make -f Makefile-2 clean
 </pre></div>
 </div>
 <p>to run the code:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./run
 </pre></div>
 </div>
-</section>
-<section id="third-makefile">
-<h3>Third makefile<a class="headerlink" href="#third-makefile" title="Link to this heading">¶</a></h3>
+</div>
+<div class="section" id="third-makefile">
+<h3>Third makefile<a class="headerlink" href="#third-makefile" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">Makefile-2</span></code> looks much better than <code class="docutils literal notranslate"><span class="pre">Makefile-1</span></code>, but not enough.
 What if we have 1000 .f95 files in a project? Here we have a rule for
 all *.95 to all *.o</p>
 <p>If you look the the command windows, you will see the compile command in
 the command window is identical to the case of Makefile-2</p>
 <p><code class="docutils literal notranslate"><span class="pre">Makefile-3</span></code></p>
-<div class="highlight-makefile notranslate"><div class="highlight"><pre><span></span><span class="nv">EXEC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>run<span class="w"> </span><span class="c1"># the name of the execution file</span>
-<span class="nv">FC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>gfortran<span class="w"> </span><span class="c1"># the compiler, you can use intel, pgi, etc.</span>
-<span class="nv">FCOPT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-O3<span class="w">   </span><span class="c1"># OPT flag for fortran compiler</span>
-<span class="nv">PP</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>cpp<span class="w">  </span><span class="c1"># C pre-processor. cpp for GNU, fpp for intel</span>
+<div class="highlight-makefile notranslate"><div class="highlight"><pre><span></span><span class="nv">EXEC</span> <span class="o">=</span> run <span class="c1"># the name of the execution file</span>
+<span class="nv">FC</span> <span class="o">=</span> gfortran <span class="c1"># the compiler, you can use intel, pgi, etc.</span>
+<span class="nv">FCOPT</span> <span class="o">=</span> -O3   <span class="c1"># OPT flag for fortran compiler</span>
+<span class="nv">PP</span> <span class="o">=</span> cpp  <span class="c1"># C pre-processor. cpp for GNU, fpp for intel</span>
 
 <span class="c"># pre processor flags, only the correct flag will affect the code,</span>
 <span class="c">#   the rest of the flags, either not exist in the fortran code, or</span>
 <span class="c">#   null, will not affect the result of the pre-processor.</span>
-<span class="nv">CPPFLAG</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-P<span class="w"> </span><span class="k">$(</span>FLAG_1<span class="k">)</span><span class="w"> </span><span class="k">$(</span>FLAG_2<span class="k">)</span><span class="w"> </span><span class="k">$(</span>FALG_3<span class="k">)</span><span class="w"> </span><span class="k">$(</span>FLAG_4<span class="k">)</span>
-<span class="nv">FLAG_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-Ddouble_precision
-<span class="nv">FLAG_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-Danything_is_okay
+<span class="nv">CPPFLAG</span> <span class="o">=</span> -P <span class="k">$(</span>FLAG_1<span class="k">)</span> <span class="k">$(</span>FLAG_2<span class="k">)</span> <span class="k">$(</span>FALG_3<span class="k">)</span> <span class="k">$(</span>FLAG_4<span class="k">)</span>
+<span class="nv">FLAG_1</span> <span class="o">=</span> -Ddouble_precision
+<span class="nv">FLAG_2</span> <span class="o">=</span> -Danything_is_okay
 <span class="c"># FLAG_3 = -Dor_not_used</span>
-<span class="nv">FLAG_4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-Dmethod_1
+<span class="nv">FLAG_4</span> <span class="o">=</span> -Dmethod_1
 
 <span class="c"># if you know the dependency of the fortran file, you can simply</span>
 <span class="c">#   list them in one line</span>
 
 <span class="c"># rule for *.95 to *.o</span>
-<span class="nf">.SUFFIXES</span><span class="o">:</span><span class="w"> </span>.<span class="n">o</span> .<span class="n">f</span>90 .<span class="n">f</span>95
-<span class="nv">SRCS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>pre_processor.f95<span class="w"> </span>sub.f95
-<span class="nv">OBJS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">$(</span>SRCS:.f95<span class="o">=</span>.o<span class="k">)</span>
+<span class="nf">.SUFFIXES</span><span class="o">:</span> .<span class="n">o</span> .<span class="n">f</span>90 .<span class="n">f</span>95
+<span class="nv">SRCS</span> <span class="o">=</span> pre_processor.f95 sub.f95
+<span class="nv">OBJS</span> <span class="o">=</span> <span class="k">$(</span>SRCS:.f95<span class="o">=</span>.o<span class="k">)</span>
 <span class="nf">.f95.o</span><span class="o">:</span>
-<span class="w">  </span><span class="k">$(</span>PP<span class="k">)</span><span class="w"> </span><span class="k">$(</span>CPPFLAG<span class="k">)</span><span class="w"> </span><span class="nv">$*</span>.f95<span class="w"> </span>&gt;<span class="w"> </span><span class="nv">$*</span>.f90
-<span class="w">  </span><span class="k">$(</span>FC<span class="k">)</span><span class="w">  </span>-c<span class="w"> </span><span class="k">$(</span>FFLAGS<span class="k">)</span><span class="w"> </span><span class="k">$(</span>INCS<span class="k">)</span><span class="w"> </span><span class="nv">$*</span>.f90
+  <span class="k">$(</span>PP<span class="k">)</span> <span class="k">$(</span>CPPFLAG<span class="k">)</span> <span class="nv">$*</span>.f95 &gt; <span class="nv">$*</span>.f90
+  <span class="k">$(</span>FC<span class="k">)</span>  -c <span class="k">$(</span>FFLAGS<span class="k">)</span> <span class="k">$(</span>INCS<span class="k">)</span> <span class="nv">$*</span>.f90
 
 <span class="c"># after all .o is gathered, link and generate the executable</span>
-<span class="nf">$(EXEC)</span><span class="o">:</span><span class="w"> </span><span class="k">$(</span><span class="nv">OBJS</span><span class="k">)</span>
-<span class="w">  </span><span class="k">$(</span>FC<span class="k">)</span><span class="w">  </span><span class="k">$(</span>FC_OPT<span class="k">)</span><span class="w"> </span>-o<span class="w"> </span><span class="k">$(</span>EXEC<span class="k">)</span><span class="w"> </span><span class="k">$(</span>OBJS<span class="k">)</span>
+<span class="nf">$(EXEC)</span><span class="o">:</span> <span class="k">$(</span><span class="nv">OBJS</span><span class="k">)</span>
+  <span class="k">$(</span>FC<span class="k">)</span>  <span class="k">$(</span>FC_OPT<span class="k">)</span> -o <span class="k">$(</span>EXEC<span class="k">)</span> <span class="k">$(</span>OBJS<span class="k">)</span>
 
 <span class="nf">clean</span><span class="o">:</span>
-<span class="w">  </span>rm<span class="w"> </span>*.f90
-<span class="w">  </span>rm<span class="w"> </span>*.o
-<span class="w">  </span>rm<span class="w"> </span><span class="k">$(</span>EXEC<span class="k">)</span>
+  rm *.f90
+  rm *.o
+  rm <span class="k">$(</span>EXEC<span class="k">)</span>
 </pre></div>
 </div>
 <p>To compile:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>-f<span class="w"> </span>Makefile-3
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make -f Makefile-3
 </pre></div>
 </div>
 <p>to clean:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>-f<span class="w"> </span>Makefile-3<span class="w"> </span>clean
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make -f Makefile-3 clean
 </pre></div>
 </div>
 <p>For <code class="docutils literal notranslate"><span class="pre">makefile-3</span></code> you do not have to modify the <code class="docutils literal notranslate"><span class="pre">$(EXEC)</span></code> or
 <code class="docutils literal notranslate"><span class="pre">.f95.o</span></code> part, when anything change happens to the files in the
 project, you only need to modify <code class="docutils literal notranslate"><span class="pre">$(SRCS)</span></code>.</p>
-</section>
-<section id="more-about-makefile">
-<h3>More about makefile<a class="headerlink" href="#more-about-makefile" title="Link to this heading">¶</a></h3>
+</div>
+<div class="section" id="more-about-makefile">
+<h3>More about makefile<a class="headerlink" href="#more-about-makefile" title="Permalink to this headline">¶</a></h3>
 <p>Actually, the <code class="docutils literal notranslate"><span class="pre">makefile-3</span></code> is very similar to the old version in
 <code class="docutils literal notranslate"><span class="pre">FUNWAVE-TVD</span></code>.</p>
 <p>If you can compile some of your simple code with the above three
@@ -694,12 +706,11 @@ versions of makefile, you should be able to modify and used it for your
 daily project.</p>
 <p>But makefile can do much more for you. You can gradually modify your
 makefile to make it better.</p>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
-            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -719,13 +730,12 @@ makefile to make it better.</p>
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="addition.html" ><strong>ADDITIONAL INFORMATION</strong></a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="useful.html" >Useful links</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Introduction to FUNWAVE-TVD Makefile</a></li> 
+          <li class="nav-item nav-item-2"><a href="useful.html" >Useful links</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2019, Fengyan Shi.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+        &#169; Copyright 2019, Fengyan Shi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
     </div>
   </body>
 </html>
