@@ -93,46 +93,46 @@
 <span id="section-sed-equation-cohesive"></span><h1>Suspended Sediment Transport Equation (Cohesive)<a class="headerlink" href="#suspended-sediment-transport-equation-cohesive" title="Permalink to this headline">¶</a></h1>
 <p>The transport equation for cohesive sediment uses the same 2D form of advection and diffusion equation as that used for non-cohesive sediment:</p>
 <div class="math notranslate nohighlight" id="equation-sed-equation-cohesive-0">
-<span class="eqno">(68)<a class="headerlink" href="#equation-sed-equation-cohesive-0" title="Permalink to this equation">¶</a></span>\[(\bar{c} H)_t + \nabla_h \cdot (\bar{c} H ({\bf u}_\alpha + \bar{{\bf u} }_2)) =\nabla_h \cdot (k H (\nabla_h \bar{c})) + P - D \label{ad}\]</div>
+<span class="eqno">(71)<a class="headerlink" href="#equation-sed-equation-cohesive-0" title="Permalink to this equation">¶</a></span>\[(\bar{c} H)_t + \nabla_h \cdot (\bar{c} H ({\bf u}_\alpha + \bar{{\bf u} }_2)) =\nabla_h \cdot (k H (\nabla_h \bar{c})) + P - D \label{ad}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\bar{c}\)</span> is the non-dimensional depth-averaged sediment concentration normalized by sediment density. <span class="math notranslate nohighlight">\(H(\bf{u}_\alpha + \bar{\bf{u}}_2) =M\)</span> represents the flow rate per unit width defined in <a class="reference external" href="http://www.sciencedirect.com/science/article/pii/S1463500311002010">Shi et al. (2012)</a>, in which <span class="math notranslate nohighlight">\(H=h+\eta\)</span> is the total water depth. The roller-induced extra undertow can be taken into account as an option (see <a class="reference internal" href="wavebreaking.html#section-wavebreaking"><span class="std std-ref">Wave Breaking, roller and undertow</span></a>, and <a class="reference internal" href="physics.html#section-physics"><span class="std std-ref">Physics (dispersion, breaking, friction)</span></a>). <span class="math notranslate nohighlight">\(k\)</span> is the horizontal sediment diffusion coefficient used for cohesive sediment and is usually defined by users (such as in the <a class="reference external" href="https://www.mikepoweredbydhi.com/products/mike-21/sediments">DHI model</a>). Some researchers showed that the diffusion coefficient is a function of current flux, such as in <a class="reference external" href="http://www.nrcresearchpress.com/doi/abs/10.1139/cjce-2015-0361#.XXo-2ZNKjjA">Kimiaghalam et al. (2019)</a> who connected the diffusion coefficient to river discharges.</p>
 <p>In the advection-diffusion equation, <span class="math notranslate nohighlight">\(P\)</span> and <span class="math notranslate nohighlight">\(D\)</span> represent, respectively, the erosion rate and deposition rate for cohesive sediment. There are two sets of formulas to calculate the erosion rate. For hard bed, <a class="reference external" href="https://cedb.asce.org/CEDBsearch/record.jsp?dockey=0013640">Partheniades’ (1965) formula</a> is used:</p>
 <div class="math notranslate nohighlight" id="equation-sed-equation-cohesive-1">
-<span class="eqno">(69)<a class="headerlink" href="#equation-sed-equation-cohesive-1" title="Permalink to this equation">¶</a></span>\[P = E \left(\frac{\tau_b}{\tau_{cr}} -1 \right)\]</div>
+<span class="eqno">(72)<a class="headerlink" href="#equation-sed-equation-cohesive-1" title="Permalink to this equation">¶</a></span>\[P = E \left(\frac{\tau_b}{\tau_{cr}} -1 \right)\]</div>
 <p>For soft bed, <a class="reference external" href="https://ascelibrary.org/doi/10.1061/%28ASCE%290733-9429%281985%29111%3A10%281308%29">Parchure and Mehta’s (1985) formula</a> is applied:</p>
 <div class="math notranslate nohighlight" id="equation-sed-equation-cohesive-2">
-<span class="eqno">(70)<a class="headerlink" href="#equation-sed-equation-cohesive-2" title="Permalink to this equation">¶</a></span>\[P = E e^{\alpha \sqrt{\tau_b-\tau_{cr}}}\]</div>
+<span class="eqno">(73)<a class="headerlink" href="#equation-sed-equation-cohesive-2" title="Permalink to this equation">¶</a></span>\[P = E e^{\alpha \sqrt{\tau_b-\tau_{cr}}}\]</div>
 <p>where <span class="math notranslate nohighlight">\(E\)</span> is the erodibility specified by users, <span class="math notranslate nohighlight">\(\tau_b\)</span> is the bed shear stress, and <span class="math notranslate nohighlight">\(\tau_{cr}\)</span> is the critical shear stress for erosion.  The bed shear stress can be calculated using Soulsby et al. (1993):</p>
 <div class="math notranslate nohighlight" id="equation-sed-equation-cohesive-3">
-<span class="eqno">(71)<a class="headerlink" href="#equation-sed-equation-cohesive-3" title="Permalink to this equation">¶</a></span>\[\tau_b = \rho_w \left(\frac{ 0.4}{1+\ln (k_s/30 h)} \right)^2 U_c^2\]</div>
+<span class="eqno">(74)<a class="headerlink" href="#equation-sed-equation-cohesive-3" title="Permalink to this equation">¶</a></span>\[\tau_b = \rho_w \left(\frac{ 0.4}{1+\ln (k_s/30 h)} \right)^2 U_c^2\]</div>
 <p>which is the same as for the non-cohesive sediment, and the critical bed shear stress is usually specified by users. For soft bed, <span class="math notranslate nohighlight">\(\alpha\)</span> is a so-called alpha-coefficient specified by users.</p>
 <p>The erosion rate, <span class="math notranslate nohighlight">\(P\)</span>, has the dimension of velocity (m/s) considering the convection-diffusion equation for non-dimensional sediment concentration.</p>
 <p>The deposition rate <span class="math notranslate nohighlight">\(D\)</span> can be calculated using the formula of <a class="reference external" href="https://www.worldcat.org/title/flume-studies-of-the-transport-of-sediment-in-estuarial-shoaling-processes-final-report/oclc/8967084">Krone (1962)</a>:</p>
 <div class="math notranslate nohighlight" id="equation-depo">
-<span class="eqno">(72)<a class="headerlink" href="#equation-depo" title="Permalink to this equation">¶</a></span>\[D = w_s c_b p_d\]</div>
+<span class="eqno">(75)<a class="headerlink" href="#equation-depo" title="Permalink to this equation">¶</a></span>\[D = w_s c_b p_d\]</div>
 <p>where <span class="math notranslate nohighlight">\(w_s\)</span> is the settling velocity which can be evaluated using a number of formulas from different sources and usually based on laboratory experiments. It should be related to processes of flocs, aggregate dimensions, drag, local concentration, salinity and other environmental factors. Users can define their own formulas by modifying the sediment module. Here, we provide a general formulation that can describe the evolution in conditions of flocculation (In <a class="reference external" href="http://dx.doi.org/10.5772/51061">Kombiadou and Krestenitis, 2014</a>):</p>
 <div class="math notranslate nohighlight" id="equation-sed-equation-cohesive-4">
-<span class="eqno">(73)<a class="headerlink" href="#equation-sed-equation-cohesive-4" title="Permalink to this equation">¶</a></span>\[w_s = \frac{a \bar{c}^n}{(\bar{c}^2 + b^2)^m}\]</div>
+<span class="eqno">(76)<a class="headerlink" href="#equation-sed-equation-cohesive-4" title="Permalink to this equation">¶</a></span>\[w_s = \frac{a \bar{c}^n}{(\bar{c}^2 + b^2)^m}\]</div>
 <p>The coefficients have a large range, differing in various estuarine and riverine areas. <span class="math notranslate nohighlight">\(a=0.01-0.23, b=1.3-25.0, n=0.4-2.8\)</span> and <span class="math notranslate nohighlight">\(m=1.0-2.8\)</span>. The default values in the model are
 <span class="math notranslate nohighlight">\(a=0.1;
 b=2.0;
 n=0.5;
 m=1.5.\)</span>
 For <span class="math notranslate nohighlight">\(\bar{c}=0.1 g/l\)</span>, for example, <span class="math notranslate nohighlight">\(w_s = 3.9E^{-3} m/s\)</span>.</p>
-<p>In <a class="reference internal" href="#equation-depo">(72)</a>, <span class="math notranslate nohighlight">\(c_b\)</span> is the near-bed concentration calculated by</p>
+<p>In <a class="reference internal" href="#equation-depo">(75)</a>, <span class="math notranslate nohighlight">\(c_b\)</span> is the near-bed concentration calculated by</p>
 <div class="math notranslate nohighlight" id="equation-sed-equation-cohesive-5">
-<span class="eqno">(74)<a class="headerlink" href="#equation-sed-equation-cohesive-5" title="Permalink to this equation">¶</a></span>\[c_b = \beta \bar{c}\]</div>
+<span class="eqno">(77)<a class="headerlink" href="#equation-sed-equation-cohesive-5" title="Permalink to this equation">¶</a></span>\[c_b = \beta \bar{c}\]</div>
 <p>in which <span class="math notranslate nohighlight">\(\beta\)</span> is the parameter. By default, we use <span class="math notranslate nohighlight">\(\beta = 1\)</span>. It can also be specified by</p>
 <div class="math notranslate nohighlight" id="equation-sed-equation-cohesive-6">
-<span class="eqno">(75)<a class="headerlink" href="#equation-sed-equation-cohesive-6" title="Permalink to this equation">¶</a></span>\[\beta = 1+\frac{P_e}{1.25+4.75 p_d^{2.5}}\]</div>
+<span class="eqno">(78)<a class="headerlink" href="#equation-sed-equation-cohesive-6" title="Permalink to this equation">¶</a></span>\[\beta = 1+\frac{P_e}{1.25+4.75 p_d^{2.5}}\]</div>
 <p>where <span class="math notranslate nohighlight">\(P_e\)</span> is the Peclet number:</p>
 <div class="math notranslate nohighlight" id="equation-sed-equation-cohesive-7">
-<span class="eqno">(76)<a class="headerlink" href="#equation-sed-equation-cohesive-7" title="Permalink to this equation">¶</a></span>\[P_e = \frac{6 w_s}{\kappa u_{*c}}\]</div>
+<span class="eqno">(79)<a class="headerlink" href="#equation-sed-equation-cohesive-7" title="Permalink to this equation">¶</a></span>\[P_e = \frac{6 w_s}{\kappa u_{*c}}\]</div>
 <p>in which <span class="math notranslate nohighlight">\(\kappa\)</span> is von Karman constant and <span class="math notranslate nohighlight">\(u_{*c}\)</span> is the friction velocity which can be calculated by <a class="reference external" href="10.1061/(ASCE)0733-9429(1984)110:10(1494)">van Rijn (1984)</a>:</p>
 <div class="math notranslate nohighlight" id="equation-sed-equation-cohesive-8">
-<span class="eqno">(77)<a class="headerlink" href="#equation-sed-equation-cohesive-8" title="Permalink to this equation">¶</a></span>\[u_{*c} = \frac{\kappa}{-1 + \log (30 H / k_s)} U_c\]</div>
+<span class="eqno">(80)<a class="headerlink" href="#equation-sed-equation-cohesive-8" title="Permalink to this equation">¶</a></span>\[u_{*c} = \frac{\kappa}{-1 + \log (30 H / k_s)} U_c\]</div>
 <p><span class="math notranslate nohighlight">\(P_d\)</span> is the probability of deposition defined by</p>
 <div class="math notranslate nohighlight" id="equation-sed-equation-cohesive-9">
-<span class="eqno">(78)<a class="headerlink" href="#equation-sed-equation-cohesive-9" title="Permalink to this equation">¶</a></span>\[P_d = 1- \left( \frac{\tau_b}{\tau_{cd}} \right)\]</div>
+<span class="eqno">(81)<a class="headerlink" href="#equation-sed-equation-cohesive-9" title="Permalink to this equation">¶</a></span>\[P_d = 1- \left( \frac{\tau_b}{\tau_{cd}} \right)\]</div>
 <p>where <span class="math notranslate nohighlight">\(\tau_{cd}\)</span> is the critical shear stress for deposition defined by users.</p>
 <p><strong>Summary of Input Parameters</strong></p>
 <ol class="arabic simple">

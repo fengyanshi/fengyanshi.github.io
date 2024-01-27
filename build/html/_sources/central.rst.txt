@@ -14,6 +14,7 @@ Visit each of the following pages to learn more about the theory of these featur
    wavebreaking
    spongelayer
    wavemaker
+   absorbing_generating_wavemaker
 
 Boundary Conditions
 ===================
