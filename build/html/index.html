@@ -1,16 +1,18 @@
+
 <!DOCTYPE html>
 
-<html lang="en" data-content_root="./">
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
     <title>FUNWAVE-TVD &#8212; FUNWAVE Documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
-    <link rel="stylesheet" type="text/css" href="_static/lglb-sphinx-doc.css?v=3078a223" />
-    <script src="_static/documentation_options.js?v=5929fcd5"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="BASICS" href="basics.html" /> 
@@ -30,8 +32,7 @@
         <li class="right" >
           <a href="basics.html" title="BASICS"
              accesskey="N">next</a> |</li>
-        <li class="nav-item nav-item-0"><a href="#">FUNWAVE Documentation</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">FUNWAVE-TVD</a></li> 
+        <li class="nav-item nav-item-0"><a href="#">FUNWAVE Documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -56,12 +57,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>document.getElementById('searchbox').style.display = "block"</script>
+<script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
 
@@ -70,10 +71,10 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <section id="funwave-tvd">
-<h1>FUNWAVE-TVD<a class="headerlink" href="#funwave-tvd" title="Link to this heading">¶</a></h1>
-<section id="what-is-funwave-tvd">
-<h2>What is FUNWAVE-TVD?<a class="headerlink" href="#what-is-funwave-tvd" title="Link to this heading">¶</a></h2>
+  <div class="section" id="funwave-tvd">
+<h1>FUNWAVE-TVD<a class="headerlink" href="#funwave-tvd" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="what-is-funwave-tvd">
+<h2>What is FUNWAVE-TVD?<a class="headerlink" href="#what-is-funwave-tvd" title="Permalink to this headline">¶</a></h2>
 <p>FUNWAVE–TVD is the Total Variation Diminishing (TVD) version of the fully nonlinear Boussinesq wave model (FUNWAVE) developed by <a class="reference external" href="http://www.sciencedirect.com/science/article/pii/S1463500311002010">Shi et al. (2012)</a>. The FUNWAVE model was initially developed by <a class="reference external" href="http://resolver.tudelft.nl/uuid:d79bba08-8d35-47e2-b901-881c86985ce4">Kirby et al. (1998)</a> based on <a class="reference external" href="https://doi.org/10.1017/S0022112095002813">Wei et al. (1995)</a>. The development of the present version was motivated by recent needs for modeling of surfzone–scale optical properties in a Boussinesq model framework, and  modeling of Tsunami waves in both a global/coastal scale for prediction of coastal inundation and a basin scale for wave propagation.</p>
 <p>This version  features  several theoretical and numerical improvements, including:</p>
 <a class="reference internal image-reference" href="_images/coverimage.jpg"><img alt="_images/coverimage.jpg" class="align-right" src="_images/coverimage.jpg" style="width: 500px; height: 200px;" /></a>
@@ -89,10 +90,10 @@
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-</section>
-</section>
-<section id="where-to-start">
-<h1>Where to start<a class="headerlink" href="#where-to-start" title="Link to this heading">¶</a></h1>
+</div>
+</div>
+<div class="section" id="where-to-start">
+<h1>Where to start<a class="headerlink" href="#where-to-start" title="Permalink to this headline">¶</a></h1>
 <p>This comprehensive Wiki provides general introductions to all model components and theory behind the numerical formulations in FUNWAVE-TVD. Simple examples and tutorials are presented for beginners, as well as download and installation instructions to begin using FUNWAVE–TVD locally. The detailed model equations and numerical schemes can be found in <a class="reference external" href="http://www.sciencedirect.com/science/article/pii/S1463500311002010">Shi et al. (2012)</a>.</p>
 <p>If you are new to FUNWAVE, we recommend first reviewing the coastal processes the model is capable of resolving (below), and the physics of how these processes are solved in the model. The theory behind each module can be found on the <a class="reference internal" href="basics.html#section-basics"><span class="std std-ref">Basics</span></a> page. Next, download and setup instructions can be found on the <a class="reference internal" href="setup.html#section-download"><span class="std std-ref">Model Download and Setup</span></a> page, where we list the prerequisites needed to begin running FUNWAVE locally and describe how to build your “Makefile”. In addition, take the time to review the input parameters for each module on the <a class="reference internal" href="definition.html#section-definitions"><span class="std std-ref">Definitions of Parameters</span></a> page. To begin running simple cases, review the example scenarios listed on the <a class="reference internal" href="examples.html#section-examples"><span class="std std-ref">Examples</span></a> page and refer to the <a class="reference internal" href="definition.html#subsection-checklist"><span class="std std-ref">Simulation Checklist</span></a> as needed. If you run into any issues with model setup and execution, submit your questions to the FUNWAVE community by subscribing to the mailing group.</p>
 <p>Interested in attending a FUNWAVE workshop or learning from previous workshop materials? Visit the <a class="reference internal" href="news.html#section-workshop"><span class="std std-ref">FUNWAVE-TVD Workshop</span></a> page to learn more.</p>
@@ -100,9 +101,9 @@
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-</section>
-<section id="subscribe">
-<h1>Subscribe<a class="headerlink" href="#subscribe" title="Link to this heading">¶</a></h1>
+</div>
+<div class="section" id="subscribe">
+<h1>Subscribe<a class="headerlink" href="#subscribe" title="Permalink to this headline">¶</a></h1>
 <p>Stay connected to the global FUNWAVE community by subscribing to the mailing group. Submit general or specific questions to new and experienced users alike to solve problems and enhance solutions.</p>
           
 <table border=1 style="padding: 5px;" cellspacing=1>
@@ -125,14 +126,14 @@
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-</section>
-<section id="capabilities">
-<h1>Capabilities<a class="headerlink" href="#capabilities" title="Link to this heading">¶</a></h1>
+</div>
+<div class="section" id="capabilities">
+<h1>Capabilities<a class="headerlink" href="#capabilities" title="Permalink to this headline">¶</a></h1>
 <p>As a nearshore shallow-to-intermediate water phase-resolving Boussinesq-type numerical wave model, FUNWAVE can resolve many coastal processes such as:</p>
-<aside class="sidebar">
+<div class="sidebar">
 <p class="sidebar-title"><strong>Exclusive to phase-resolving</strong></p>
 <p>Coastal processes highlighted in bold indicate process-based capabilities that are <em>not</em> naturally resolved in <em>phase-averaging</em> wave models. These features are exclusive to <em>phase-resolving</em> wave models.</p>
-</aside>
+</div>
 <ul class="simple">
 <li><p>Nearshore wave propagation &amp; transformation</p></li>
 <li><p>Refraction, diffraction, reflection &amp; nonlinear shoaling</p></li>
@@ -145,8 +146,8 @@
 <li><p>Adaptive mesh refinement (AMR) module for refined moving and two–wave coupled grids</p></li>
 </ul>
 <a class="reference internal image-reference" href="_images/wavecombined.jpg"><img alt="_images/wavecombined.jpg" class="align-center" src="_images/wavecombined.jpg" style="width: 700px; height: 200px;" /></a>
-<section id="applications">
-<h2>Applications<a class="headerlink" href="#applications" title="Link to this heading">¶</a></h2>
+<div class="section" id="applications">
+<h2>Applications<a class="headerlink" href="#applications" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Nearshore shallow water to finite depth coastal environments</p></li>
 <li><p>Navigation channels</p></li>
@@ -157,15 +158,15 @@
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-</section>
-</section>
-<section id="transitioning-to-hpc-portal-for-usace">
-<h1>Transitioning to HPC-Portal for USACE<a class="headerlink" href="#transitioning-to-hpc-portal-for-usace" title="Link to this heading">¶</a></h1>
+</div>
+</div>
+<div class="section" id="transitioning-to-hpc-portal-for-usace">
+<h1>Transitioning to HPC-Portal for USACE<a class="headerlink" href="#transitioning-to-hpc-portal-for-usace" title="Permalink to this headline">¶</a></h1>
 <p>FUNWAVE–TVD is both the <strong>approved</strong> and <strong>recommended</strong> U.S. Army Corps of Engineers (USACE) numerical Boussinesq wave model, funded by both Civil Works (CW) research programs (Navigation Systems and Flood and Coastal Systems). In addition, it is supported by the Coastal Working Group (CWG) and the Hydrology, Hydraulics, and Coastal (HH&amp;C) USACE communities of practice (CoP).</p>
 <p>In 2019, USACE and the greater DoD will be capable of running FUNWAVE remotely on hundreds and/or thousands of cores/processors in a Graphical User Interface (GUI) environment using a web browser!</p>
 <a class="reference internal image-reference" href="_images/hpcportal.jpg"><img alt="_images/hpcportal.jpg" class="align-center" src="_images/hpcportal.jpg" style="width: 700px; height: 400px;" /></a>
-<section id="benefits-of-transitioning">
-<h2>Benefits of transitioning<a class="headerlink" href="#benefits-of-transitioning" title="Link to this heading">¶</a></h2>
+<div class="section" id="benefits-of-transitioning">
+<h2>Benefits of transitioning<a class="headerlink" href="#benefits-of-transitioning" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Represents a completely new model delivery approach! <strong>Paradigm shift</strong> – from <em>local</em> to <em>“cloud”</em></p></li>
 <li><p><em>Centralized</em> ERDC Hydro Toolkit with <em>guidance on what to use and when</em> (model wise)</p></li>
@@ -181,18 +182,18 @@
 <li><p>Parameter bound and input safety checking – reduces number of initial failures</p></li>
 <li><p>Larger USACE/DoD user base because of a <em>reduced</em> learning curve</p></li>
 </ul>
-</section>
-<section id="new">
-<h2><strong>NEW</strong><a class="headerlink" href="#new" title="Link to this heading">¶</a></h2>
+</div>
+<div class="section" id="new">
+<h2><strong>NEW</strong><a class="headerlink" href="#new" title="Permalink to this headline">¶</a></h2>
 <p>Check out the latest video tutorial series providing an overview of the DoD HPC Portal FUNWAVE-TVD Application on the <a class="reference internal" href="tutorials.html#tutorials"><span class="std std-ref">Video Tutorials</span></a> page.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The HPC Portal is accessible only to employees of USACE and the greater DoD. For more information on the HPC Portal, visit <a class="reference external" href="https://portal.hpc.mil">https://portal.hpc.mil</a>. If you currently have access to ERDC HPC systems, you can log into the ERDC HPC Portal on this webpage. Questions about getting access to the ERDC HPC Portal can be directed to Dr. Matt Malej (<a class="reference external" href="mailto:matt&#46;malej&#37;&#52;&#48;usace&#46;army&#46;mil">matt<span>&#46;</span>malej<span>&#64;</span>usace<span>&#46;</span>army<span>&#46;</span>mil</a>).</p>
 </div>
-</section>
-</section>
-<section id="wiki-content">
-<h1>Wiki Content<a class="headerlink" href="#wiki-content" title="Link to this heading">¶</a></h1>
+</div>
+</div>
+<div class="section" id="wiki-content">
+<h1>Wiki Content<a class="headerlink" href="#wiki-content" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="basics.html"><strong>BASICS</strong></a><ul>
@@ -256,18 +257,17 @@
 </li>
 </ul>
 </div>
-<section id="indices-and-tables">
-<h2>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Link to this heading">¶</a></h2>
+<div class="section" id="indices-and-tables">
+<h2>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
 <li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
 <li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
 </ul>
-</section>
-</section>
+</div>
+</div>
 
 
-            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -282,13 +282,12 @@
         <li class="right" >
           <a href="basics.html" title="BASICS"
              >next</a> |</li>
-        <li class="nav-item nav-item-0"><a href="#">FUNWAVE Documentation</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">FUNWAVE-TVD</a></li> 
+        <li class="nav-item nav-item-0"><a href="#">FUNWAVE Documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2019, Fengyan Shi.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+        &#169; Copyright 2019, Fengyan Shi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
     </div>
   </body>
 </html>

@@ -1,16 +1,18 @@
+
 <!DOCTYPE html>
 
-<html lang="en" data-content_root="./">
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
     <title>Subgrid Module &#8212; FUNWAVE Documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
-    <link rel="stylesheet" type="text/css" href="_static/lglb-sphinx-doc.css?v=3078a223" />
-    <script src="_static/documentation_options.js?v=5929fcd5"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Bubble and Foam Module" href="bubble_foam_module.html" />
@@ -35,8 +37,7 @@
           <a href="tracer.html" title="Lagrangian Tracking Module"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="basics.html" accesskey="U"><strong>BASICS</strong></a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Subgrid Module</a></li> 
+          <li class="nav-item nav-item-1"><a href="basics.html" accesskey="U"><strong>BASICS</strong></a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -73,12 +74,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>document.getElementById('searchbox').style.display = "block"</script>
+<script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
 
@@ -87,18 +88,18 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <section id="subgrid-module">
-<span id="section-subgrid-module"></span><h1>Subgrid Module<a class="headerlink" href="#subgrid-module" title="Link to this heading">¶</a></h1>
+  <div class="section" id="subgrid-module">
+<span id="section-subgrid-module"></span><h1>Subgrid Module<a class="headerlink" href="#subgrid-module" title="Permalink to this headline">¶</a></h1>
 <p>The subgrid module can be used to simulate wave interactions with porous constructures, rocky shorelines, and bathymetry/topography with a resolution higher than the model grid.</p>
-<section id="theory">
-<h2>Theory<a class="headerlink" href="#theory" title="Link to this heading">¶</a></h2>
+<div class="section" id="theory">
+<h2>Theory<a class="headerlink" href="#theory" title="Permalink to this headline">¶</a></h2>
 <p>The phase-averaged (space-averaged) equations are used. The figure below shows cartoons of the subgrid strategy used in the NearCoM model. The theory will be documented later.</p>
-<figure class="align-default">
+<div class="figure align-default">
 <img alt="_images/subgrid_wu.jpg" src="_images/subgrid_wu.jpg" />
-</figure>
-</section>
-<section id="subgrid-configuration">
-<h2>Subgrid configuration<a class="headerlink" href="#subgrid-configuration" title="Link to this heading">¶</a></h2>
+</div>
+</div>
+<div class="section" id="subgrid-configuration">
+<h2>Subgrid configuration<a class="headerlink" href="#subgrid-configuration" title="Permalink to this headline">¶</a></h2>
 <p>To set up a higher-resolution subgrid system, a user should provide a file with data at the subgrid level. To avoid a large space and memory requirement, only grid points with available subgrid data are provided in the file. For example, you have a computational grid of 200 x 100 with grid sizes of 2m x 2m. A higher resolution data with 0.5m x 0.5m are available at grid points (150,50) and (150,51). The subgrid ratio is 4 (2/0.5). The subgrid file should contain the grid point numbers followed by 16 (4x4) bathy/topo data with the higher resolution of 0.5m x 0.5m. In this example, two lines (for the two grid points) of data should be provided:</p>
 <blockquote>
 <div><div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>150 50 8.5 7.5 5.5 -1.2 -2.2 0.0 1.5 3.8 8.5 7.5 5.5 -1.2 -2.2 0.0 1.5 3.8
@@ -107,9 +108,9 @@
 </div>
 </div></blockquote>
 <p>In each line, the first two numbers are numbers of a grid point. The following numbers are 16 float numbers of the higher resolution data.</p>
-</section>
-<section id="model-setup">
-<h2>Model setup<a class="headerlink" href="#model-setup" title="Link to this heading">¶</a></h2>
+</div>
+<div class="section" id="model-setup">
+<h2>Model setup<a class="headerlink" href="#model-setup" title="Permalink to this headline">¶</a></h2>
 <p>The following statements should be included in input.txt. For example</p>
 <blockquote>
 <div><div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>DEPTH_FILE = depthe_200x100.txt
@@ -123,38 +124,31 @@ DEPTH_SUBGRID_FILE = dep_sub_info.txt
 <p class="admonition-title">Note</p>
 <p>The code should be compiled with the option <strong>-DSUBGRID</strong> before execute</p>
 </div>
-</section>
-<section id="example">
-<h2>Example<a class="headerlink" href="#example" title="Link to this heading">¶</a></h2>
+</div>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
 <p>In the following example, the regular computational grid has dimensions of 500 x 30 with grid sizes of 2m x 2m as shown in the figure below. The bathymetry is a plane beach with a 10m flat bottom at the wave generation region and a slope of 0.025 starting from x = 560m. Block structures (next figure below) are configured in the shallow water region from x = 800 m to the end of the domain. The data for block structures have a resolution of 0.5 m (subgrid ratio = 4).</p>
-<figure class="align-default" id="id1">
+<div class="figure align-default" id="id1">
 <img alt="_images/layout_subgrid.jpg" src="_images/layout_subgrid.jpg" />
-<figcaption>
-<p><span class="caption-number">Fig. 6 </span><span class="caption-text">The layout of the computational domain.</span><a class="headerlink" href="#id1" title="Link to this image">¶</a></p>
-</figcaption>
-</figure>
-<figure class="align-default" id="id2">
+<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">The layout of the computational domain.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="id2">
 <img alt="_images/blocks.jpg" src="_images/blocks.jpg" />
-<figcaption>
-<p><span class="caption-number">Fig. 7 </span><span class="caption-text">Block structures superimposed on the plane beach</span><a class="headerlink" href="#id2" title="Link to this image">¶</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">Block structures superimposed on the plane beach</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
 <p>The figure compares of wave surface and wave setup between models with and without block structures.</p>
-<figure class="align-default" id="id3">
+<div class="figure align-default" id="id3">
 <img alt="_images/etam_comp.jpg" src="_images/etam_comp.jpg" />
-<figcaption>
-<p><span class="caption-number">Fig. 8 </span><span class="caption-text">Comparations of wave surface and wave setup between models with and without block structures.</span><a class="headerlink" href="#id3" title="Link to this image">¶</a></p>
-</figcaption>
-</figure>
-</section>
-<section id="more-information">
-<h2>More information<a class="headerlink" href="#more-information" title="Link to this heading">¶</a></h2>
+<p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">Comparations of wave surface and wave setup between models with and without block structures.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="more-information">
+<h2>More information<a class="headerlink" href="#more-information" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://fengyanshi.github.io/build/html/subgrid_para.html">List of parameters for subgrid module setup can be found here</a></p>
-</section>
-</section>
+</div>
+</div>
 
 
-            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -173,13 +167,12 @@ DEPTH_SUBGRID_FILE = dep_sub_info.txt
           <a href="tracer.html" title="Lagrangian Tracking Module"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="basics.html" ><strong>BASICS</strong></a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Subgrid Module</a></li> 
+          <li class="nav-item nav-item-1"><a href="basics.html" ><strong>BASICS</strong></a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2019, Fengyan Shi.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+        &#169; Copyright 2019, Fengyan Shi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
     </div>
   </body>
 </html>

@@ -1,7 +1,7 @@
 .. _section_wavemaker:
 
-Wave--maker
-***********
+Internal Wavemaker (traditional)
+**********************************
 
 There are two primary types of numerical wave--makers: Internal and Boundary. In this section, we will discuss internal wave--maker theory.
 

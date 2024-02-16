@@ -1,17 +1,18 @@
+
 <!DOCTYPE html>
 
-<html lang="en" data-content_root="./">
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
     <title>Bedload Sediment Transport &#8212; FUNWAVE Documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
-    <link rel="stylesheet" type="text/css" href="_static/lglb-sphinx-doc.css?v=3078a223" />
-    <script src="_static/documentation_options.js?v=5929fcd5"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Morphological Evolution" href="bed_equation.html" />
@@ -37,8 +38,7 @@
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="basics.html" ><strong>BASICS</strong></a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="sediment.html" accesskey="U">Sediment Transport Module</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Bedload Sediment Transport</a></li> 
+          <li class="nav-item nav-item-2"><a href="sediment.html" accesskey="U">Sediment Transport Module</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -75,12 +75,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>document.getElementById('searchbox').style.display = "block"</script>
+<script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
 
@@ -89,23 +89,22 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <section id="bedload-sediment-transport">
-<span id="section-bedload"></span><h1>Bedload Sediment Transport<a class="headerlink" href="#bedload-sediment-transport" title="Link to this heading">¶</a></h1>
+  <div class="section" id="bedload-sediment-transport">
+<span id="section-bedload"></span><h1>Bedload Sediment Transport<a class="headerlink" href="#bedload-sediment-transport" title="Permalink to this headline">¶</a></h1>
 <p>Bedload sediment transport can be calculated using several bedload sediment transport formulas developed for steady flows. As stated in Soulsby (1997), those formulas can be used on an instantaneous basis in tidal flows, and under waves or combined waves and currents, because the response time of a sand grain in bedload motion is very short compared to a tidal period or a wave period. In test examples provided in the wiki, we used Meyer-Peter and Muller’s (1948) bedload transport formula to estimate the bedload sediment transport rate and its effect on bed evolution.  The unit-width volume transport rate can be expressed as</p>
 <div class="math notranslate nohighlight" id="equation-bedload-0">
-<span class="eqno">(79)<a class="headerlink" href="#equation-bedload-0" title="Link to this equation">¶</a></span>\[q_b = 8 [g(s-1)d^3]^{1/2}(\theta-\theta^b_{cr})^{3/2}\]</div>
+<span class="eqno">(82)<a class="headerlink" href="#equation-bedload-0" title="Permalink to this equation">¶</a></span>\[q_b = 8 [g(s-1)d^3]^{1/2}(\theta-\theta^b_{cr})^{3/2}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\theta\)</span> is the Shields parameter and <span class="math notranslate nohighlight">\(\theta^b_{cr}\)</span> is the critical Shields parameter for bedload motion. In <a class="reference external" href="http://resolver.tudelft.nl/uuid:4fda9b61-be28-4703-ab06-43cdc2a21bd7">Meyer-Peter and Muller (1948)</a>,  <span class="math notranslate nohighlight">\(\theta^b_{cr} = 0.047\)</span>.</p>
 <p>After reorganizing the formula using the bed shear stress form, the formula can be rewritten as</p>
 <div class="math notranslate nohighlight" id="equation-bedload-1">
-<span class="eqno">(80)<a class="headerlink" href="#equation-bedload-1" title="Link to this equation">¶</a></span>\[q_b = \frac{8 [(\tau_b-\tau^b_{cr})/\rho_w]^{3/2}}{g(s-1)}\]</div>
+<span class="eqno">(83)<a class="headerlink" href="#equation-bedload-1" title="Permalink to this equation">¶</a></span>\[q_b = \frac{8 [(\tau_b-\tau^b_{cr})/\rho_w]^{3/2}}{g(s-1)}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\tau^b_{cr}\)</span> is the critical shear stress for bedload motion which can be calculated using <span class="math notranslate nohighlight">\(\theta^b_{cr}\)</span>.</p>
 <p><strong>References</strong></p>
 <p>Meyer-Peter, E., and Muller, R., (1948). “Formulas for Bed-Load transport”. Hydraulic Eng. Reports: IAHSR 2nd meeting, Stockholm, Appendix 2. IAHSR.</p>
 <p>Soulsby, R. (1997). <em>Dynamics of Marine Sands</em>. London: Thomas Telford.</p>
-</section>
+</div>
 
 
-            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -125,13 +124,12 @@
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="basics.html" ><strong>BASICS</strong></a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="sediment.html" >Sediment Transport Module</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Bedload Sediment Transport</a></li> 
+          <li class="nav-item nav-item-2"><a href="sediment.html" >Sediment Transport Module</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2019, Fengyan Shi.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+        &#169; Copyright 2019, Fengyan Shi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
     </div>
   </body>
 </html>
