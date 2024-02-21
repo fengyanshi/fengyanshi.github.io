@@ -1,18 +1,17 @@
-
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en" data-content_root="./">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>Lagrangian Tracking Module &#8212; FUNWAVE Documentation</title>
-    <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="_static/lglb-sphinx-doc.css?v=3078a223" />
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Subgrid Module" href="subgrid_module.html" />
@@ -37,7 +36,8 @@
           <a href="meteo_intro.html" title="Meteo Module"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="basics.html" accesskey="U"><strong>BASICS</strong></a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="basics.html" accesskey="U"><strong>BASICS</strong></a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Lagrangian Tracking Module</a></li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -74,12 +74,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
 
@@ -88,25 +88,26 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="lagrangian-tracking-module">
-<span id="section-tracer-formula"></span><h1>Lagrangian Tracking Module<a class="headerlink" href="#lagrangian-tracking-module" title="Permalink to this headline">¶</a></h1>
+  <section id="lagrangian-tracking-module">
+<span id="section-tracer-formula"></span><h1>Lagrangian Tracking Module<a class="headerlink" href="#lagrangian-tracking-module" title="Link to this heading">¶</a></h1>
 <p>The Lagrangian tracking module is implemented using the individual-based particle-tracking method which treats  particles as if they exactly follow the fluid dynamics. In the current version, the Lagrangian evolution of the position of a particle is expressed as:</p>
 <div class="math notranslate nohighlight" id="equation-tracer-0">
-<span class="eqno">(123)<a class="headerlink" href="#equation-tracer-0" title="Permalink to this equation">¶</a></span>\[d {\bf x}/dt = {\bf u}_\alpha ({\bf x})\]</div>
+<span class="eqno">(123)<a class="headerlink" href="#equation-tracer-0" title="Link to this equation">¶</a></span>\[d {\bf x}/dt = {\bf u}_\alpha ({\bf x})\]</div>
 <p>where <span class="math notranslate nohighlight">\({\bf x}\)</span> is the particle’s position and <span class="math notranslate nohighlight">\({\bf u}_\alpha\)</span> is the fluid velocity at the reference level. The accuracy of the calculated particle trajectory depends on both the magnitude of the time-step and the order-accuracy of the velocity field. The time step used to update the particle position is the same as the time step used in solving the Boussinesq equation, which is assumed to be small. The first order discrete form of the above equation is used in the model.</p>
 <p>The particle position <span class="math notranslate nohighlight">\((x,y)\)</span> is specified at the central point of a cell, which is the same as other model variables such as <span class="math notranslate nohighlight">\(u,v,\eta\)</span>, etc. The orgin (0,0) is at the central point of the bottom-left (south-west) corner cell. A linear interpolation is used to get the instantaneous velocity at the particle position. In particular, an interpolation value is obtained from the values at three nearest points. The areas of four triangles constructed by the four points (3 nearest points and the particle point itself) can be calculated using:</p>
 <div class="math notranslate nohighlight" id="equation-tracer-1">
-<span class="eqno">(124)<a class="headerlink" href="#equation-tracer-1" title="Permalink to this equation">¶</a></span>\[\begin{split}S_{\alpha \beta \gamma} = \left | \begin{array}{ccc} x_\alpha &amp; y_\alpha &amp; 1 \\  x_\beta &amp; y_\beta &amp; 1 \\ x_\gamma &amp; y_\gamma &amp; 1 \end{array} \right|\end{split}\]</div>
+<span class="eqno">(124)<a class="headerlink" href="#equation-tracer-1" title="Link to this equation">¶</a></span>\[\begin{split}S_{\alpha \beta \gamma} = \left | \begin{array}{ccc} x_\alpha &amp; y_\alpha &amp; 1 \\  x_\beta &amp; y_\beta &amp; 1 \\ x_\gamma &amp; y_\gamma &amp; 1 \end{array} \right|\end{split}\]</div>
 <p>where <span class="math notranslate nohighlight">\(S_{\alpha \beta \gamma}\)</span> represents the area of the triangle <span class="math notranslate nohighlight">\((\alpha \beta \gamma)\)</span>, counter-clockwise. The interpolation value is evaluated using:</p>
 <div class="math notranslate nohighlight" id="equation-tracer-2">
-<span class="eqno">(125)<a class="headerlink" href="#equation-tracer-2" title="Permalink to this equation">¶</a></span>\[F_A = (F_1 S_{23A} + F_2S_{31A} + F_3S_{12A})/S_{123}\]</div>
+<span class="eqno">(125)<a class="headerlink" href="#equation-tracer-2" title="Link to this equation">¶</a></span>\[F_A = (F_1 S_{23A} + F_2S_{31A} + F_3S_{12A})/S_{123}\]</div>
 <p>where <span class="math notranslate nohighlight">\(F_1, F_2, F_3\)</span> and <span class="math notranslate nohighlight">\(F_A\)</span> represent values at points (1,2,3) and the partical point A, respectively.</p>
 <p>To set up particle tracking in the model, see <a class="reference internal" href="tracer_setup.html#section-tracer-setup"><span class="std std-ref">Lagrangian Tracer Setup</span></a></p>
 <p><strong>Animation</strong></p>
 <p>Tsunami waves debris tracking (path):</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/rJXbP-IZaXU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/rJXbP-IZaXU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></section>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -125,12 +126,13 @@
           <a href="meteo_intro.html" title="Meteo Module"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="basics.html" ><strong>BASICS</strong></a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="basics.html" ><strong>BASICS</strong></a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Lagrangian Tracking Module</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2019, Fengyan Shi.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
+    &#169; Copyright 2019, Fengyan Shi.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
   </body>
 </html>

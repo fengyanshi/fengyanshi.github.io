@@ -7,4 +7,4 @@ A non-erodible bed can be specified in the morphological module to represent som
 
 .. math:: P = \bar{P}, \hspace{1cm} \bar{Z}_b \leq Z_s
 
-In the model input, a user can specify an erodible thickness :math:`Z_s` with :code:`HARD_BOTTOM = F` and :code:`HARD_BOTTOM FILE = your_filname.txt`, where zero or negative values represent non-erodible bed and positive values represent erodible bed up to :math:`Z_s` thickness. See :ref:`_definition_sediment` for more information.
+In the model input, a user can specify an erodible thickness :math:`Z_s` with :code:`HARD_BOTTOM = F` and :code:`HARD_BOTTOM_FILE = your_filname.txt`, where zero or negative values represent non-erodible bed and positive values represent erodible bed up to :math:`Z_s` thickness. See :ref:`definition_sediment` for more information.

@@ -1,18 +1,17 @@
-
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en" data-content_root="./">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>Post Processing &#8212; FUNWAVE Documentation</title>
-    <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="_static/lglb-sphinx-doc.css?v=3078a223" />
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Output" href="output.html" />
@@ -38,7 +37,8 @@
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="definition.html" ><strong>DEFINITIONS OF PARAMETERS</strong></a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="central_para.html" accesskey="U">Parameters for Central Module</a> &#187;</li> 
+          <li class="nav-item nav-item-2"><a href="central_para.html" accesskey="U">Parameters for Central Module</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Post Processing</a></li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -68,12 +68,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
 
@@ -82,18 +82,19 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="post-processing">
-<span id="section-post"></span><h1>Post Processing<a class="headerlink" href="#post-processing" title="Permalink to this headline">¶</a></h1>
+  <section id="post-processing">
+<span id="section-post"></span><h1>Post Processing<a class="headerlink" href="#post-processing" title="Link to this heading">¶</a></h1>
 <p><strong>Wave height calculation</strong></p>
 <p>For spectral wave simulations, both average wave height and root-mean-square (RMS) wave height are calculated using zero-crossing at each grid point. Significant wave height is evaluated using Goda’s (2000) formula:</p>
 <div class="math notranslate nohighlight" id="equation-post-0">
-<span class="eqno">(135)<a class="headerlink" href="#equation-post-0" title="Permalink to this equation">¶</a></span>\[H_{1/3} = 4.004\sqrt{m_0}\]</div>
+<span class="eqno">(135)<a class="headerlink" href="#equation-post-0" title="Link to this equation">¶</a></span>\[H_{1/3} = 4.004\sqrt{m_0}\]</div>
 <p>where,</p>
 <div class="math notranslate nohighlight" id="equation-post-1">
-<span class="eqno">(136)<a class="headerlink" href="#equation-post-1" title="Permalink to this equation">¶</a></span>\[m_0 = \frac{1}{t_2-t_1} \int^{t_2}_{t_1} \eta^2 dt\]</div>
-</div>
+<span class="eqno">(136)<a class="headerlink" href="#equation-post-1" title="Link to this equation">¶</a></span>\[m_0 = \frac{1}{t_2-t_1} \int^{t_2}_{t_1} \eta^2 dt\]</div>
+</section>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -113,12 +114,13 @@
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="definition.html" ><strong>DEFINITIONS OF PARAMETERS</strong></a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="central_para.html" >Parameters for Central Module</a> &#187;</li> 
+          <li class="nav-item nav-item-2"><a href="central_para.html" >Parameters for Central Module</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Post Processing</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2019, Fengyan Shi.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
+    &#169; Copyright 2019, Fengyan Shi.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
   </body>
 </html>

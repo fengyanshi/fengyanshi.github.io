@@ -49,7 +49,7 @@ In :eq:`depo`, :math:`c_b` is the near-bed concentration calculated by
 
 in which :math:`\beta` is the parameter. By default, we use :math:`\beta = 1`. It can also be specified by
 
-.. math:: \beta = 1+\frac{P_e}{1.25+4.75 p_d^{2.5}}
+.. math:: \beta = 1+\frac{P_e}{1.25+4.75 P_d^{2.5}}
 
 where :math:`P_e` is the Peclet number:
 

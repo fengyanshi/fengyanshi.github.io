@@ -132,7 +132,7 @@ Benefits of transitioning
 Check out the latest video tutorial series providing an overview of the DoD HPC Portal FUNWAVE-TVD Application on the :ref:`Video Tutorials <tutorials>` page.
 
 .. note::
-   The HPC Portal is accessible only to employees of USACE and the greater DoD. For more information on the HPC Portal, visit `<https://portal.hpc.mil>`_. If you currently have access to ERDC HPC systems, you can log into the ERDC HPC Portal on this webpage. Questions about getting access to the ERDC HPC Portal can be directed to Dr. Matt Malej (matt.malej@usace.army.mil).
+   The HPC Portal is accessible only to employees of USACE and the greater DoD. For more information on the HPC Portal, visit `<https://portal.erdc.hpc.mil>`_. If you currently have access to ERDC HPC systems, you can log into the ERDC HPC Portal on this webpage. Questions about getting access to the ERDC HPC Portal can be directed to Dr. Matt Malej (matt.malej@usace.army.mil).
 
 ============
 Wiki Content

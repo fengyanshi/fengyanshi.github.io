@@ -17,18 +17,18 @@ where :math:`u_{*c}` is the shear velocity and can be calculated by `van Rijn (1
 
 .. math:: u_{*c} = \frac{\kappa}{-1 + \ln (30 H / k_s)} U_c
 
-in which :math:`U_c` is the depth-averaged total velocity (m/s), :math:`k_s = 2.5 d_{50}` is Nikuradse roughness coefficient, and :math:`d_{50}` is the median grain diameter (mm).  
+in which :math:`U_c` is the depth-averaged total velocity (m/s), :math:`k_s = 2.5 d_{50}` is Nikuradse roughness coefficient, :math:`d_{50}` is the median grain diameter (mm), and :math:`\kappa` is the von Karman constant.  
  
 In the advection-diffusion equation, :math:`P` and :math:`D` represent the erosion rate and deposition rate, respectively. The erosion rate can be calculated using van Rijn's (1984) pickup function:
 
 .. math:: P = 0.015 \frac{d_{50}}{a} \left ( \frac{|\tau_b| - \tau_{cr}}{\tau_{cr}}\right )^{1.5} d^{-0.3}_{*} w_f 
     :label: p
 
-where :math:`a` is a reference elevation and is a function of total depth (:math:`a = 0.01 H`), :math:`\tau_b` is the bed shear stress, and :math:`\tau_{cr}` is the critical shear stress. :math:`P` has the dimension of velocity (m/s) considering the convection-diffusion equation for non-dimensional sediment concentration. :math:`d_{*}` is dimensionless grain size defined as:
+where :math:`a` is a reference elevation and is a function of total depth (:math:`a = 0.01 H`), :math:`\tau_b` is the bed shear stress, :math:`\tau_{cr}` is the critical shear stress, and :math:`w_f` is the settling velocity. :math:`P` has the dimension of velocity (m/s) considering the convection-diffusion equation for non-dimensional sediment concentration. :math:`d_{*}` is dimensionless grain size defined as:
 
 .. math:: d_{*} = d_{50} \left( \frac{(s-1)g}{\nu^2} \right)^{1/3}
 
-where :math:`s` is the specified gravity of the sediment, and :math:`\nu` is the kinematic viscosity coefficient. The critical bed shear stress :math:`\tau_{cr}` used in :eq:`p` is defined as:
+where :math:`s` is the specific gravity of the sediment, and :math:`\nu` is the kinematic viscosity coefficient. The critical bed shear stress :math:`\tau_{cr}` used in :eq:`p` is defined as:
 
 .. math:: \tau_{cr} = \rho_w (s-1)gd_{50} \theta_{cr}
 

@@ -7,13 +7,13 @@ Following `Cao et al. (2004) <https://ascelibrary-org.udel.idm.oclc.org/doi/10.1
 
 .. math:: \frac{\partial Hu}{\partial t} + \frac{\partial }{\partial x} \left(Hu^2+\frac{1}{2}g H^2\right) = gH \left(-\frac{\partial z}{\partial x} - S_f \right) - \frac{(\rho_s-\rho_w)gH^2}{2\rho}\frac{\partial c}{\partial x} - \frac{(\rho_0-\rho)(P-D)u}{\rho(1-n)}
 
-where :math:`S_f` is the bottom friction term.  Notice that the definition of :math:`h` defined in Cao et al. is the total water level :math:`H=(h+\eta)`, we rewrote the momentum equation above using :math:`(h+\eta)` or :math:`H` instead of :math:`h`, which is the still water depth defined here. The 1D SWEs are consistent with the SWE form of FUNWAVE-TVD equations except the extra terms in the mass and momentum equations. The definitions of density of water-sediment mixture and satuarated bed are
+where :math:`S_f` is the bottom friction term.  Notice that the definition of :math:`h` defined in Cao et al. is the total water level :math:`H=(h+\eta)`, we rewrote the momentum equation above using :math:`(h+\eta)` or :math:`H` instead of :math:`h`, which is the still water depth defined here. The 1D SWEs are consistent with the SWE form of FUNWAVE-TVD equations except the extra terms in the mass and momentum equations. The definitions of density of water-sediment mixture and saturated bed are
 
-  Density of water-sedient mixture: :math:`\rho = \rho_w(1-c) + \rho_s c`
+  Density of water-sediment mixture: :math:`\rho = \rho_w(1-c) + \rho_s c`
 
-  Density of satuated bed: :math:`\rho_0 = \rho_w n + \rho_s (1-n)`
+  Density of saturated bed: :math:`\rho_0 = \rho_w n + \rho_s (1-n)`
 
-The FUNWAVE-TVD equstions become
+The FUNWAVE-TVD equations become
 
 .. math:: \eta_t + \nabla \cdot {\bf M} = M_{ext}
 
@@ -21,7 +21,7 @@ The FUNWAVE-TVD equstions become
 
 where :math:`{\bf V}_{dis}` represents the nonlinear dispersive terms; :math:`M_{ext}` is the additional term due to the total mass balance; :math:`{\bf DC}_{ext}` is the extra term representing the effect of spatial variation of sediment concentration; :math:`{\bf EXG}_{ext}` is the extra term caused by the momentum transfer due to sediment exchange between the water column and erodible bed. 
 
-We define :math:`s=\rho_s/\rho_w` which is consistent with the previous defination in FUNWAVE-TVD (Tehranirad et al., 2020), and note that :math:`s` here is different from Cao et al. who defined it as :math:`s =\rho_s/\rho_w -1`. The extra term in the mass conservation equation is
+We define :math:`s=\rho_s/\rho_w` which is consistent with the previous definition in FUNWAVE-TVD (Tehranirad et al., 2020), and note that :math:`s` here is different from Cao et al. who defined it as :math:`s =\rho_s/\rho_w -1`. The extra term in the mass conservation equation is
 
 .. math:: M_{ext} =  \frac{P-D}{1-n}
 

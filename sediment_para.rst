@@ -39,7 +39,7 @@ Sediment Transport and Morphological Change
 
 *Cohesive*
 
-* :code:`CohesiveSediment` : flag for cohesive sediment, default FALSE
+* :code:`CohesiveSediment`: flag for cohesive sediment, default FALSE
 
 * :code:`k_coh`: diffusion coefficient, default :math:`k = 10E-6` (different from the non-cohesive sediment transport)
 
@@ -47,7 +47,7 @@ Sediment Transport and Morphological Change
 
 * :code:`Tau_crd_coh`: critical shear stress for deposition, default :math:`\tau_{cd} = 0.001`
 
-* :code:`a_coh, b_coh, n_coh` and :math:`m_coh`: Empirical parameters used to calculate settling velocity, default values are :math:`a = 0.1`, :math:`b = 2.0`, :math:`n = 0.5`, and :math:`m = 1.5`
+* :code:`a_coh, b_coh, n_coh` and :code:`m_coh`: Empirical parameters used to calculate settling velocity, default values are :math:`a = 0.1`, :math:`b = 2.0`, :math:`n = 0.5`, and :math:`m = 1.5`
 
 * :code:`E_coh`: erodibility parameter, default :math:`E = 0.0001`
 
