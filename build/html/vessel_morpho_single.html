@@ -1,18 +1,16 @@
-
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en" data-content_root="./">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>Single vessel + non-cohesive sediment &#8212; FUNWAVE Documentation</title>
-    <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="_static/lglb-sphinx-doc.css?v=3078a223" />
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Single vessel + cohesive sediment" href="vessel_morpho_cohesive.html" />
@@ -38,7 +36,8 @@
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="examples.html" ><strong>EXAMPLES</strong></a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="vessel_morpho.html" accesskey="U">Ship-wakes + Sediment Transport</a> &#187;</li> 
+          <li class="nav-item nav-item-2"><a href="vessel_morpho.html" accesskey="U">Ship-wakes + Sediment Transport</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Single vessel + non-cohesive sediment</a></li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -68,12 +67,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
 
@@ -82,13 +81,13 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="single-vessel-non-cohesive-sediment">
-<span id="section-vessel-sediment-single"></span><h1>Single vessel + non-cohesive sediment<a class="headerlink" href="#single-vessel-non-cohesive-sediment" title="Permalink to this headline">¶</a></h1>
+  <section id="single-vessel-non-cohesive-sediment">
+<span id="section-vessel-sediment-single"></span><h1>Single vessel + non-cohesive sediment<a class="headerlink" href="#single-vessel-non-cohesive-sediment" title="Link to this heading">¶</a></h1>
 <p>In this example, you will add sediment morphology to a single vessel ship wakes example. The primary “input.txt” and <code class="code docutils literal notranslate"><span class="pre">vessel_00001</span></code> files are located in <code class="code docutils literal notranslate"><span class="pre">/simple_cases/single_vessel_morphology/</span></code>.</p>
 <p><strong>Model setup</strong></p>
-<div class="align-center figure">
+<figure class="align-center">
 <a class="reference internal image-reference" href="_images/layout_single_vessel.jpg"><img alt="alternate text" src="_images/layout_single_vessel.jpg" style="width: 500px; height: 120px;" /></a>
-</div>
+</figure>
 <p><strong>Setup “input.txt”</strong></p>
 <p>This example is slightly different from the previous example described in <a class="reference internal" href="vessel_morpho_short.html#section-vessel-morpho-short"><span class="std std-ref">Single vessel + sediment (small domain for training session)</span></a>. Update the following sections:</p>
 <p>Set a descriptive title for your simulation:</p>
@@ -133,13 +132,16 @@
 </div></blockquote>
 <p><strong>Postprocessing</strong></p>
 <p>For postprocessing examples, MATLAB and Python scripts are located in <code class="code docutils literal notranslate"><span class="pre">/simple_cases/single_vessel_morphology/postprocessing/</span></code>. An example model result is shown below:</p>
-<div class="align-center figure" id="id1">
+<figure class="align-center" id="id1">
 <a class="reference internal image-reference" href="_images/single_wave_conc.jpg"><img alt="alternate text" src="_images/single_wave_conc.jpg" style="width: 400px; height: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 12 </span><span class="caption-text">Shipwakes and sediment concentration at different times.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
-</div>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 12 </span><span class="caption-text">Shipwakes and sediment concentration at different times.</span><a class="headerlink" href="#id1" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -159,12 +161,13 @@
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="examples.html" ><strong>EXAMPLES</strong></a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="vessel_morpho.html" >Ship-wakes + Sediment Transport</a> &#187;</li> 
+          <li class="nav-item nav-item-2"><a href="vessel_morpho.html" >Ship-wakes + Sediment Transport</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Single vessel + non-cohesive sediment</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2019, Fengyan Shi.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
+    &#169; Copyright 2019, Fengyan Shi.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
   </body>
 </html>

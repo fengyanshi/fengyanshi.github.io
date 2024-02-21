@@ -36,7 +36,7 @@ For a constant tidal condition, (:math:`\eta_{ref}, u_{ref}, v_{ref}`) are const
   TideWest_ETA = 1.0 
   TideEast_ETA = 1.0 
 
-This is a 1D case with a tidal absorbing condition and constant tidal level specified above. The wavemaker can be any types of wavemaker available in the model. In this case, we used  WK\_REG,
+This is a 1D case with a tidal absorbing condition and constant tidal level specified above. The wavemaker can be any types of wavemaker available in the model. In this case, we used  :code:`WK\_REG`,
 
  .. code-block:: rest
 
@@ -55,7 +55,7 @@ The figure shows a snapshot of surface elevation from the model. Note that the i
 
    Output from the case of tidal absorbing boundary condition.
 
-For a time-varying tidal condition, the tidal level and velocity are specified in a file named in input.txt. For example, in the 2D case of tide\_abs\_2bc\_data (same folder), tidal elevations are specified in two files, tide\_data\_west.txt, tide\_data\_east.txt,  with the parameter TideBcType  set as DATA type,
+For a time-varying tidal condition, the tidal level and velocity are specified in a file named in :code:`input.txt`. For example, in the 2D case of :code:`tide\_abs\_2bc\_data` (same folder), tidal elevations are specified in two files, :code:`tide\_data\_west.txt`, :code:`tide\_data\_east.txt`,  with the parameter :code:`TideBcType` set as DATA type,
 
  .. code-block:: rest
 
@@ -81,7 +81,7 @@ The format of tidal data follows a list of 'time, eta, u, v' as shown in the fig
    :alt: alternate text
    :figclass: align-center
 
-   Case: /simple\_cases/tide\_abs\_2bc\_data/. Demonstration of 2D and 1D section views of surface elevation at different times. Black solid lines denote tidal levels.
+   Case: :code:`/simple\_cases/tide\_abs\_2bc\_data/`. Demonstration of 2D and 1D section views of surface elevation at different times. Black solid lines denote tidal levels.
 
 ==============================================================
 Combined tidal and absorbing-generating boundary condition
@@ -91,7 +91,7 @@ The combined tidal and absorbing-generating boundary condition incorporates the 
 
 The reference values (:math:`\eta_{ref}, u_{ref}, v_{ref}`) are tidal levels and tidal current velocities specified either in input.txt or in a separate tide/surge file. Different from the tidal absorbing boundary condition, the reference values (:math:`\eta_{ref}, u_{ref}/v_{ref}`) combine the tidal condition and wave solution, and specified over the entire computational domain. Inside the sponge layer, the differences between the reference  values :math:`( )_{ref}` and model solution :math:`( )_i` are dampened by the sponge. Outside the sponge layer, independent variables are calculated directly from the model because :math:`C_s` is 1.0. In this study, the west-side absorbing-generating boundary condition is implemented. 
 
-An example is provided In /tide\_gen\_abs\_data/.  Figure \ref{layout_gen} shows the model setup with a west-side absorbing-generating boundary condition. In input.txt
+An example is provided In :code:`/tide\_gen\_abs\_data/`.  Figure 4 shows the model setup with a west-side absorbing-generating boundary condition. In input.txt
 
  .. code-block:: rest
 
@@ -103,8 +103,9 @@ An example is provided In /tide\_gen\_abs\_data/.  Figure \ref{layout_gen} shows
   TideBcType = DATA 
   TideWestFileName = tide_data_west.txt
 
-The format of tidal data is the same as the tidal absorbing boundary condition. The model is set up in a 2D sloping beach domain. Figure \ref{gen_abs} shows snapshots of surface elevation at different times. 
+The format of tidal data is the same as the tidal absorbing boundary condition. The model is set up in a 2D sloping beach domain. Figure 5 shows snapshots of surface elevation at different times. 
 
+.. _layout_gen:
 .. figure:: images/simple_cases/layout_tide_gen_abs.jpg
    :width: 550px
    :align: center
@@ -113,20 +114,20 @@ The format of tidal data is the same as the tidal absorbing boundary condition. 
 
    Layout of generating and absorbing boundary (left only)
 
-
+.. _gen_abs:
 .. figure:: images/simple_cases/tide_gen_abs.jpg
    :width: 550px
    :align: center
    :alt: alternate text
    :figclass: align-center
 
-   Case: /simple\_cases/tide\_gen\_abs\_data/. Thick dashed lines represent tidal levels. Thin black line denotes the beach slope.
+   Case: :code:`/simple_cases/tide_gen_abs_data/`. Thick dashed lines represent tidal levels. Thin black line denotes the beach slope.
 
 ==============================================================
 More information
 ==============================================================
 
-List of parameters for tidal module setup can be found `here <https://fengyanshi.github.io/build/html/tide_surge.html>`_
+List of parameters for tidal module setup can be found `here <https://fengyanshi.github.io/build/html/tide_surge.html>`_.
 
 ============
 References

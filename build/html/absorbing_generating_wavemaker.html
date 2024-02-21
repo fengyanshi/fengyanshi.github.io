@@ -1,18 +1,17 @@
-
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en" data-content_root="./">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>Time-varying Wavemaker &#8212; FUNWAVE Documentation</title>
-    <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="_static/lglb-sphinx-doc.css?v=3078a223" />
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Ship-wake Module" href="shipwakes.html" />
@@ -38,7 +37,8 @@
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="basics.html" ><strong>BASICS</strong></a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="central.html" accesskey="U">Central Module</a> &#187;</li> 
+          <li class="nav-item nav-item-2"><a href="central.html" accesskey="U">Central Module</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Time-varying Wavemaker</a></li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -75,12 +75,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
 
@@ -89,29 +89,29 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="time-varying-wavemaker">
-<span id="section-time-spectra-module"></span><h1>Time-varying Wavemaker<a class="headerlink" href="#time-varying-wavemaker" title="Permalink to this headline">¶</a></h1>
+  <section id="time-varying-wavemaker">
+<span id="section-time-spectra-module"></span><h1>Time-varying Wavemaker<a class="headerlink" href="#time-varying-wavemaker" title="Link to this heading">¶</a></h1>
 <p>The wavemaker combines the absorbing-generating boundary condition (similar to the wavemaker in the tide module) and the linear wave solutions at the WEST boundary. Users can specify a time series of spectra at the west boundary.</p>
-<div class="section" id="combined-tidal-and-absorbing-generating-boundary-condition">
-<h2>Combined tidal and absorbing-generating boundary condition<a class="headerlink" href="#combined-tidal-and-absorbing-generating-boundary-condition" title="Permalink to this headline">¶</a></h2>
+<section id="combined-tidal-and-absorbing-generating-boundary-condition">
+<h2>Combined tidal and absorbing-generating boundary condition<a class="headerlink" href="#combined-tidal-and-absorbing-generating-boundary-condition" title="Link to this heading">¶</a></h2>
 <p>The basic technique follows the sponge layer theory used in the tide module <a class="reference internal" href="tide_module.html#section-tide-module"><span class="std std-ref">Tide Module</span></a>. Instead of attenuating the surface elevation and flow velocity to zero at the end of a sponge layer, we dampen shortwaves with respect to a reference level based on the method proposed by <a class="reference external" href="https://ascelibrary.org/doi/abs/10.1061/(ASCE)0733-950X(1999)125:4(176)">Chen et al. (1999)</a>. <a class="reference external" href="https://doi.org/10.1016/j.coastaleng.2013.10.019">Zhang et al.(2014)</a> provided a detailed analysis on the numerical method. The dependent variables (<span class="math notranslate nohighlight">\(\eta, u, v\)</span>) are attenuated as</p>
 <div class="math notranslate nohighlight" id="equation-absorbing-generating-wavemaker-0">
-<span class="eqno">(40)<a class="headerlink" href="#equation-absorbing-generating-wavemaker-0" title="Permalink to this equation">¶</a></span>\[\eta_i = \eta_{ref} + (\eta_i - \eta_{ref})/C_s\]</div>
+<span class="eqno">(40)<a class="headerlink" href="#equation-absorbing-generating-wavemaker-0" title="Link to this equation">¶</a></span>\[\eta_i = \eta_{ref} + (\eta_i - \eta_{ref})/C_s\]</div>
 <div class="math notranslate nohighlight" id="equation-absorbing-generating-wavemaker-1">
-<span class="eqno">(41)<a class="headerlink" href="#equation-absorbing-generating-wavemaker-1" title="Permalink to this equation">¶</a></span>\[u_i = u_{ref} + (\eta_i - u_{ref})/C_s\]</div>
+<span class="eqno">(41)<a class="headerlink" href="#equation-absorbing-generating-wavemaker-1" title="Link to this equation">¶</a></span>\[u_i = u_{ref} + (\eta_i - u_{ref})/C_s\]</div>
 <p>where <span class="math notranslate nohighlight">\(( )_{ref}\)</span> denotes the reference values which either tidal level or tidal current or both. <span class="math notranslate nohighlight">\(C_s\)</span> is the damping coefficient which is the same as that used in a sponge layer (see sponge layer section for detail), i.e.,</p>
 <div class="math notranslate nohighlight" id="equation-absorbing-generating-wavemaker-2">
-<span class="eqno">(42)<a class="headerlink" href="#equation-absorbing-generating-wavemaker-2" title="Permalink to this equation">¶</a></span>\[C_s = \alpha_s^{\gamma_s^{(i-1)}}\]</div>
+<span class="eqno">(42)<a class="headerlink" href="#equation-absorbing-generating-wavemaker-2" title="Link to this equation">¶</a></span>\[C_s = \alpha_s^{\gamma_s^{(i-1)}}\]</div>
 <p>in which <span class="math notranslate nohighlight">\(i\)</span> is grid numbers, (<span class="math notranslate nohighlight">\(i = 1, 2, ...\)</span>).</p>
 <p>The combined tidal and absorbing-generating boundary condition incorporates the solution of the linear wave theory and tidal elevation and velocity in the sponge layer.</p>
 <p>The reference values (<span class="math notranslate nohighlight">\(\eta_{ref}, u_{ref}, v_{ref}\)</span>) are tidal levels and tidal current velocities specified either in input.txt or in a separate tide/surge file. Different from the tidal absorbing boundary condition, the reference values (<span class="math notranslate nohighlight">\(\eta_{ref}, u_{ref}/v_{ref}\)</span>) combine the tidal condition and wave solution, and specified over the entire computational domain. Inside the sponge layer, the differences between the reference  values <span class="math notranslate nohighlight">\(( )_{ref}\)</span> and model solution <span class="math notranslate nohighlight">\(( )_i\)</span> are dampened by the sponge. Outside the sponge layer, independent variables are calculated directly from the model because <span class="math notranslate nohighlight">\(C_s\)</span> is 1.0. In this study, the west-side absorbing-generating boundary condition is implemented.</p>
-</div>
-<div class="section" id="time-varying-spectra">
-<h2>Time varying spectra<a class="headerlink" href="#time-varying-spectra" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="time-varying-spectra">
+<h2>Time varying spectra<a class="headerlink" href="#time-varying-spectra" title="Link to this heading">¶</a></h2>
 <p>Time-dependent wave spectra can be specified in a series of data files containing wave spectra. The files keep the same number of wave components thus that an instant wave energy in each bin can be interpolated in time. The figure below shows two TMA spectra at different times, TMA spectra 1 and TMA spectra 2, respectively. The upper panel shows 2D plots of directional spectra, and the bottom panel shows the wave amplitudes in the discrete bins. Here, the wave energy in each bin is converted to the wave amplitude for the traditional reason. Model input includes the same number of spectra bins, i.e., Nfreq = 44 and Ndire = 23. Note that the values of (Freq(i),i=1:44) and (Dire(j), j=1:23) will not change in the entire simulation. The only change in the input is the amplitude in different time. For a wave energy bin <span class="math notranslate nohighlight">\(E(i,j)\)</span> the wave amplitude can be calculated by <span class="math notranslate nohighlight">\(a(i,j) = \sqrt{2E(i,j)}\)</span>.</p>
-<div class="align-center figure">
+<figure class="align-center">
 <a class="reference internal image-reference" href="_images/spec2d.png"><img alt="alternate text" src="_images/spec2d.png" style="width: 550px;" /></a>
-</div>
+</figure>
 <p>An example is provided in /time_spectra/. In input.txt, set</p>
 <blockquote>
 <div><div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>WAVEMAKER = TIME_SPECTRA
@@ -153,16 +153,17 @@ ENDDO
 </div></blockquote>
 <p>Tide module is used in this application. For tide setup, see tide module example <a class="reference internal" href="tide_module.html#section-tide-module"><span class="std std-ref">Tide Module</span></a>.</p>
 <p>The following figure shows a snapshot surface elevation at 198s from the matlab script plot_wave.m</p>
-</div>
-<div class="section" id="references">
-<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Link to this heading">¶</a></h2>
 <p>Chen, Q., Madsen, P.A., Basco, D.R., 1999. “Current Effects on Nonlinear Interactions of Shallow–Water Waves”. J. of Waterway, Port, Coastal, and Ocean Eng. 125 (4).</p>
 <p>Larsen, J. and Dancy, H., 1983. “Open boundaries in short wave simulations – A new approach”. Coastal Eng. 7 (3), 285-297. DOI: <a class="reference external" href="https://doi.org/10.1016/0378-3839(83)90022-4">10.1016/0378-3839(83)90022-4</a>.</p>
 <p>Zhang, Y., Kennedy, A.B., Panda,N., Dawson,C., Westerink, J.J., 2014, Generating–absorbing sponge layers for phase-resolving wave models, Coastal Engineering, 84., 1-9.</p>
-</div>
-</div>
+</section>
+</section>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -182,12 +183,13 @@ ENDDO
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="basics.html" ><strong>BASICS</strong></a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="central.html" >Central Module</a> &#187;</li> 
+          <li class="nav-item nav-item-2"><a href="central.html" >Central Module</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Time-varying Wavemaker</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2019, Fengyan Shi.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
+    &#169; Copyright 2019, Fengyan Shi.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
   </body>
 </html>

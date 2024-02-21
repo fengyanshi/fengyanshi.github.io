@@ -1,18 +1,17 @@
-
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en" data-content_root="./">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>Tide Module &#8212; FUNWAVE Documentation</title>
-    <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="_static/lglb-sphinx-doc.css?v=3078a223" />
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Meteo Module" href="meteo_intro.html" />
@@ -37,7 +36,8 @@
           <a href="sed_propeller.html" title="Ship Propeller Effects on Sediment Transport"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="basics.html" accesskey="U"><strong>BASICS</strong></a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="basics.html" accesskey="U"><strong>BASICS</strong></a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Tide Module</a></li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -74,12 +74,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
 
@@ -88,23 +88,23 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="tide-module">
-<span id="section-tide-module"></span><h1>Tide Module<a class="headerlink" href="#tide-module" title="Permalink to this headline">¶</a></h1>
+  <section id="tide-module">
+<span id="section-tide-module"></span><h1>Tide Module<a class="headerlink" href="#tide-module" title="Link to this heading">¶</a></h1>
 <p>There are two types of boundary conditions developed to incorporate tidal level and/or tidal current into model boundaries. One is an absorbing tidal boundary condition, which is essentially a sponge layer but takes into account a reference value, such as tidal level and tidal current, in the sponge regime. The other a so-called absorbing-generating boundary condition, which treats tidal level and/or tidal current as the background elevation/flow.</p>
-<div class="section" id="theory">
-<h2>Theory<a class="headerlink" href="#theory" title="Permalink to this headline">¶</a></h2>
+<section id="theory">
+<h2>Theory<a class="headerlink" href="#theory" title="Link to this heading">¶</a></h2>
 <p>The basic technique follows the sponge layer theory introduced by <a class="reference external" href="https://www.sciencedirect.com/science/article/abs/pii/0378383983900224">Larsen and Dancy (1983)</a>. Instead of attenuating the surface elevation and flow velocity to zero at the end of a sponge layer, we dampen shortwaves with respect to a reference level based on the method proposed by <a class="reference external" href="https://ascelibrary.org/doi/abs/10.1061/(ASCE)0733-950X(1999)125:4(176)">Chen et al. (1999)</a>. The dependent variables (<span class="math notranslate nohighlight">\(\eta, u, v\)</span>) are attenuated as</p>
 <div class="math notranslate nohighlight" id="equation-tide-module-0">
-<span class="eqno">(112)<a class="headerlink" href="#equation-tide-module-0" title="Permalink to this equation">¶</a></span>\[\eta_i = \eta_{ref} + (\eta_i - \eta_{ref})/C_s\]</div>
+<span class="eqno">(112)<a class="headerlink" href="#equation-tide-module-0" title="Link to this equation">¶</a></span>\[\eta_i = \eta_{ref} + (\eta_i - \eta_{ref})/C_s\]</div>
 <div class="math notranslate nohighlight" id="equation-tide-module-1">
-<span class="eqno">(113)<a class="headerlink" href="#equation-tide-module-1" title="Permalink to this equation">¶</a></span>\[u_i = u_{ref} + (\eta_i - u_{ref})/C_s\]</div>
+<span class="eqno">(113)<a class="headerlink" href="#equation-tide-module-1" title="Link to this equation">¶</a></span>\[u_i = u_{ref} + (\eta_i - u_{ref})/C_s\]</div>
 <p>where <span class="math notranslate nohighlight">\(( )_{ref}\)</span> denotes the reference values which either tidal level or tidal current or both. <span class="math notranslate nohighlight">\(C_s\)</span> is the damping coefficient which is the same as that used in a sponge layer (see sponge layer section for detail), i.e.,</p>
 <div class="math notranslate nohighlight" id="equation-tide-module-2">
-<span class="eqno">(114)<a class="headerlink" href="#equation-tide-module-2" title="Permalink to this equation">¶</a></span>\[C_s = \alpha_s^{\gamma_s^{(i-1)}}\]</div>
+<span class="eqno">(114)<a class="headerlink" href="#equation-tide-module-2" title="Link to this equation">¶</a></span>\[C_s = \alpha_s^{\gamma_s^{(i-1)}}\]</div>
 <p>in which <span class="math notranslate nohighlight">\(i\)</span> is grid numbers, (<span class="math notranslate nohighlight">\(i = 1, 2, ...\)</span>).</p>
-</div>
-<div class="section" id="absorbing-tidal-boundary-condition">
-<h2>Absorbing tidal boundary condition<a class="headerlink" href="#absorbing-tidal-boundary-condition" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="absorbing-tidal-boundary-condition">
+<h2>Absorbing tidal boundary condition<a class="headerlink" href="#absorbing-tidal-boundary-condition" title="Link to this heading">¶</a></h2>
 <p>For the absorbing tidal boundary condition, the reference values (<span class="math notranslate nohighlight">\(\eta_{ref}, u_{ref}, v_{ref}\)</span>) are tidal levels and tidal current velocities specified either in input.txt or in a separate tide/surge file.</p>
 <p>For a constant tidal condition, (<span class="math notranslate nohighlight">\(\eta_{ref}, u_{ref}, v_{ref}\)</span>) are constant, which are specified in input.txt. For example, in the case of tide_abs_1bc_constant in the directory of simple cases,</p>
 <blockquote>
@@ -115,7 +115,7 @@ TideEast_ETA = 1.0
 </pre></div>
 </div>
 </div></blockquote>
-<p>This is a 1D case with a tidal absorbing condition and constant tidal level specified above. The wavemaker can be any types of wavemaker available in the model. In this case, we used  WK_REG,</p>
+<p>This is a 1D case with a tidal absorbing condition and constant tidal level specified above. The wavemaker can be any types of wavemaker available in the model. In this case, we used  <code class="code docutils literal notranslate"><span class="pre">WK_REG</span></code>,</p>
 <blockquote>
 <div><div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>WAVEMAKER = WK_REG
 DEP_WK = 8.0
@@ -129,11 +129,13 @@ Delta_WK = 3.0
 </div>
 </div></blockquote>
 <p>The figure shows a snapshot of surface elevation from the model. Note that the irregularity of wave surface is caused by the tidal propagation from both boundaries.</p>
-<div class="figure align-default" id="id2">
+<figure class="align-default" id="id2">
 <img alt="_images/tide_snap.jpg" src="_images/tide_snap.jpg" />
-<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Output from the case of tidal absorbing boundary condition.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
-</div>
-<p>For a time-varying tidal condition, the tidal level and velocity are specified in a file named in input.txt. For example, in the 2D case of tide_abs_2bc_data (same folder), tidal elevations are specified in two files, tide_data_west.txt, tide_data_east.txt,  with the parameter TideBcType  set as DATA type,</p>
+<figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Output from the case of tidal absorbing boundary condition.</span><a class="headerlink" href="#id2" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>For a time-varying tidal condition, the tidal level and velocity are specified in a file named in <code class="code docutils literal notranslate"><span class="pre">input.txt</span></code>. For example, in the 2D case of <code class="code docutils literal notranslate"><span class="pre">tide_abs_2bc_data</span></code> (same folder), tidal elevations are specified in two files, <code class="code docutils literal notranslate"><span class="pre">tide_data_west.txt</span></code>, <code class="code docutils literal notranslate"><span class="pre">tide_data_east.txt</span></code>,  with the parameter <code class="code docutils literal notranslate"><span class="pre">TideBcType</span></code> set as DATA type,</p>
 <blockquote>
 <div><div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>TIDAL_BC_ABS = T
 TideBcType = DATA
@@ -143,20 +145,24 @@ TideEastFileName = tide_data_east.txt
 </div>
 </div></blockquote>
 <p>The format of tidal data follows a list of ‘time, eta, u, v’ as shown in the figure below.  In this case, a flat bottom of 8 m is applied in a 2D domain and a regular wavemaker is specified . The following figure demonstrates 2D and 1D section views of surface elevation at different times. Black solid lines denote tidal levels.</p>
-<div class="align-center figure" id="id3">
+<figure class="align-center" id="id3">
 <a class="reference internal image-reference" href="_images/layout_tide_abs_only.jpg"><img alt="alternate text" src="_images/layout_tide_abs_only.jpg" style="width: 550px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Layout of tidal absorbing boundary (west and east).</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
-</div>
-<div class="align-center figure" id="id4">
+<figcaption>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Layout of tidal absorbing boundary (west and east).</span><a class="headerlink" href="#id3" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id4">
 <a class="reference internal image-reference" href="_images/tide_abs_only.jpg"><img alt="alternate text" src="_images/tide_abs_only.jpg" style="width: 550px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Case: /simple_cases/tide_abs_2bc_data/. Demonstration of 2D and 1D section views of surface elevation at different times. Black solid lines denote tidal levels.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
-</div>
-</div>
-<div class="section" id="combined-tidal-and-absorbing-generating-boundary-condition">
-<h2>Combined tidal and absorbing-generating boundary condition<a class="headerlink" href="#combined-tidal-and-absorbing-generating-boundary-condition" title="Permalink to this headline">¶</a></h2>
+<figcaption>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Case: <code class="code docutils literal notranslate"><span class="pre">/simple_cases/tide_abs_2bc_data/</span></code>. Demonstration of 2D and 1D section views of surface elevation at different times. Black solid lines denote tidal levels.</span><a class="headerlink" href="#id4" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="combined-tidal-and-absorbing-generating-boundary-condition">
+<h2>Combined tidal and absorbing-generating boundary condition<a class="headerlink" href="#combined-tidal-and-absorbing-generating-boundary-condition" title="Link to this heading">¶</a></h2>
 <p>The combined tidal and absorbing-generating boundary condition incorporates the solution of the linear wave theory and tidal elevation and velocity in the sponge layer.</p>
 <p>The reference values (<span class="math notranslate nohighlight">\(\eta_{ref}, u_{ref}, v_{ref}\)</span>) are tidal levels and tidal current velocities specified either in input.txt or in a separate tide/surge file. Different from the tidal absorbing boundary condition, the reference values (<span class="math notranslate nohighlight">\(\eta_{ref}, u_{ref}/v_{ref}\)</span>) combine the tidal condition and wave solution, and specified over the entire computational domain. Inside the sponge layer, the differences between the reference  values <span class="math notranslate nohighlight">\(( )_{ref}\)</span> and model solution <span class="math notranslate nohighlight">\(( )_i\)</span> are dampened by the sponge. Outside the sponge layer, independent variables are calculated directly from the model because <span class="math notranslate nohighlight">\(C_s\)</span> is 1.0. In this study, the west-side absorbing-generating boundary condition is implemented.</p>
-<p>An example is provided In /tide_gen_abs_data/.  Figure ref{layout_gen} shows the model setup with a west-side absorbing-generating boundary condition. In input.txt</p>
+<p>An example is provided In <code class="code docutils literal notranslate"><span class="pre">/tide_gen_abs_data/</span></code>.  Figure 4 shows the model setup with a west-side absorbing-generating boundary condition. In input.txt</p>
 <blockquote>
 <div><div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>WAVEMAKER = ABSORBING_GENERATING
 WAVE_DATA_TYPE = DATA
@@ -168,28 +174,33 @@ TideWestFileName = tide_data_west.txt
 </pre></div>
 </div>
 </div></blockquote>
-<p>The format of tidal data is the same as the tidal absorbing boundary condition. The model is set up in a 2D sloping beach domain. Figure ref{gen_abs} shows snapshots of surface elevation at different times.</p>
-<div class="align-center figure" id="id5">
-<a class="reference internal image-reference" href="_images/layout_tide_gen_abs.jpg"><img alt="alternate text" src="_images/layout_tide_gen_abs.jpg" style="width: 550px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">Layout of generating and absorbing boundary (left only)</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
-</div>
-<div class="align-center figure" id="id6">
-<a class="reference internal image-reference" href="_images/tide_gen_abs.jpg"><img alt="alternate text" src="_images/tide_gen_abs.jpg" style="width: 550px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">Case: /simple_cases/tide_gen_abs_data/. Thick dashed lines represent tidal levels. Thin black line denotes the beach slope.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
-</div>
-</div>
-<div class="section" id="more-information">
-<h2>More information<a class="headerlink" href="#more-information" title="Permalink to this headline">¶</a></h2>
-<p>List of parameters for tidal module setup can be found <a class="reference external" href="https://fengyanshi.github.io/build/html/tide_surge.html">here</a></p>
-</div>
-<div class="section" id="references">
-<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<p>The format of tidal data is the same as the tidal absorbing boundary condition. The model is set up in a 2D sloping beach domain. Figure 5 shows snapshots of surface elevation at different times.</p>
+<figure class="align-center" id="id5">
+<span id="layout-gen"></span><a class="reference internal image-reference" href="_images/layout_tide_gen_abs.jpg"><img alt="alternate text" src="_images/layout_tide_gen_abs.jpg" style="width: 550px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Layout of generating and absorbing boundary (left only)</span><a class="headerlink" href="#id5" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id6">
+<span id="gen-abs"></span><a class="reference internal image-reference" href="_images/tide_gen_abs.jpg"><img alt="alternate text" src="_images/tide_gen_abs.jpg" style="width: 550px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Case: <code class="code docutils literal notranslate"><span class="pre">/simple_cases/tide_gen_abs_data/</span></code>. Thick dashed lines represent tidal levels. Thin black line denotes the beach slope.</span><a class="headerlink" href="#id6" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="more-information">
+<h2>More information<a class="headerlink" href="#more-information" title="Link to this heading">¶</a></h2>
+<p>List of parameters for tidal module setup can be found <a class="reference external" href="https://fengyanshi.github.io/build/html/tide_surge.html">here</a>.</p>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Link to this heading">¶</a></h2>
 <p>Chen, Q., Madsen, P.A., Basco, D.R., 1999. “Current Effects on Nonlinear Interactions of Shallow–Water Waves”. J. of Waterway, Port, Coastal, and Ocean Eng. 125 (4).</p>
 <p>Larsen, J. and Dancy, H., 1983. “Open boundaries in short wave simulations – A new approach”. Coastal Eng. 7 (3), 285-297. DOI: <a class="reference external" href="https://doi.org/10.1016/0378-3839(83)90022-4">10.1016/0378-3839(83)90022-4</a>.</p>
-</div>
-</div>
+</section>
+</section>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -208,12 +219,13 @@ TideWestFileName = tide_data_west.txt
           <a href="sed_propeller.html" title="Ship Propeller Effects on Sediment Transport"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="basics.html" ><strong>BASICS</strong></a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="basics.html" ><strong>BASICS</strong></a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Tide Module</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2019, Fengyan Shi.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
+    &#169; Copyright 2019, Fengyan Shi.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
   </body>
 </html>

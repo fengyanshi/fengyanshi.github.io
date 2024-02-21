@@ -1,18 +1,17 @@
-
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en" data-content_root="./">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>Sediment Transport Module &#8212; FUNWAVE Documentation</title>
-    <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="_static/lglb-sphinx-doc.css?v=3078a223" />
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Suspended Sediment Transport Equation (Non-cohesive)" href="sed_equation.html" />
@@ -37,7 +36,8 @@
           <a href="shipwakes.html" title="Ship-wake Module"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="basics.html" accesskey="U"><strong>BASICS</strong></a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="basics.html" accesskey="U"><strong>BASICS</strong></a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Sediment Transport Module</a></li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -74,12 +74,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
 
@@ -88,34 +88,34 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="sediment-transport-module">
-<span id="section-sedi-module"></span><h1>Sediment Transport Module<a class="headerlink" href="#sediment-transport-module" title="Permalink to this headline">¶</a></h1>
+  <section id="sediment-transport-module">
+<span id="section-sedi-module"></span><h1>Sediment Transport Module<a class="headerlink" href="#sediment-transport-module" title="Link to this heading">¶</a></h1>
 <p>Module framework:</p>
-<div class="align-center figure">
+<figure class="align-center">
 <a class="reference internal image-reference" href="_images/sediment_chart_1.png"><img alt="alternate text" src="_images/sediment_chart_1.png" style="width: 400px; height: 275px;" /></a>
-</div>
-<div class="section" id="fundamental-equations">
-<h2>Fundamental equations<a class="headerlink" href="#fundamental-equations" title="Permalink to this headline">¶</a></h2>
+</figure>
+<section id="fundamental-equations">
+<h2>Fundamental equations<a class="headerlink" href="#fundamental-equations" title="Link to this heading">¶</a></h2>
 <p><strong>Depth-averaged sediment concentration equation</strong></p>
 <div class="math notranslate nohighlight" id="equation-sediment-0">
-<span class="eqno">(58)<a class="headerlink" href="#equation-sediment-0" title="Permalink to this equation">¶</a></span>\[(\bar{c}H)_{t} + \nabla_{h} \cdot (\bar{c}H(\textbf{u}_{\alpha} + \bar{\textbf{u}}_2)) = \nabla_{h} \cdot (kH(\nabla_{h}\bar{c})) + P - D\]</div>
+<span class="eqno">(58)<a class="headerlink" href="#equation-sediment-0" title="Link to this equation">¶</a></span>\[(\bar{c}H)_{t} + \nabla_{h} \cdot (\bar{c}H(\textbf{u}_{\alpha} + \bar{\textbf{u}}_2)) = \nabla_{h} \cdot (kH(\nabla_{h}\bar{c})) + P - D\]</div>
 <p>Pick up function (<a class="reference external" href="https://doi.org/10.1061/(ASCE)0733-9429(1984)110:10(1494)">van Rijn 1984</a>):</p>
 <div class="math notranslate nohighlight" id="equation-sediment-1">
-<span class="eqno">(59)<a class="headerlink" href="#equation-sediment-1" title="Permalink to this equation">¶</a></span>\[P = 0.015\frac{d_{50}}{a} \left( \frac{|\tau_b|-\tau_{cr}}{\tau_{cr}} \right)^{1.5} d_{*}^{-0.3} \omega_{f}, \ \ \ \ \ |\tau_b| &gt; \tau_{cr}\]</div>
+<span class="eqno">(59)<a class="headerlink" href="#equation-sediment-1" title="Link to this equation">¶</a></span>\[P = 0.015\frac{d_{50}}{a} \left( \frac{|\tau_b|-\tau_{cr}}{\tau_{cr}} \right)^{1.5} d_{*}^{-0.3} \omega_{f}, \ \ \ \ \ |\tau_b| &gt; \tau_{cr}\]</div>
 <p>Deposition rate (<a class="reference external" href="https://doi.org/10.1061/(ASCE)0733-9429(1999)125:12(1270)">Cao 1999</a>):</p>
 <div class="math notranslate nohighlight" id="equation-sediment-2">
-<span class="eqno">(60)<a class="headerlink" href="#equation-sediment-2" title="Permalink to this equation">¶</a></span>\[D = \gamma \bar{c} \omega_{f} (1-\gamma\bar{c})^{m_o}\]</div>
+<span class="eqno">(60)<a class="headerlink" href="#equation-sediment-2" title="Link to this equation">¶</a></span>\[D = \gamma \bar{c} \omega_{f} (1-\gamma\bar{c})^{m_o}\]</div>
 <p><strong>Bedload formula</strong></p>
 <p><a class="reference external" href="http://resolver.tudelft.nl/uuid:4fda9b61-be28-4703-ab06-43cdc2a21bd7">Meyer-Peter and Muller (1948)</a>:</p>
 <div class="math notranslate nohighlight" id="equation-sediment-3">
-<span class="eqno">(61)<a class="headerlink" href="#equation-sediment-3" title="Permalink to this equation">¶</a></span>\[q_b = \frac{8 [(\tau_b - \tau_{cr}^b) / \rho_{\omega}]^{3/2}}{g(s-1)}\]</div>
+<span class="eqno">(61)<a class="headerlink" href="#equation-sediment-3" title="Link to this equation">¶</a></span>\[q_b = \frac{8 [(\tau_b - \tau_{cr}^b) / \rho_{\omega}]^{3/2}}{g(s-1)}\]</div>
 <p><strong>Bed evolution equation</strong></p>
 <div class="math notranslate nohighlight" id="equation-sediment-4">
-<span class="eqno">(62)<a class="headerlink" href="#equation-sediment-4" title="Permalink to this equation">¶</a></span>\[\frac{dZ_{b}}{dt} = \frac{1}{1-n} (D-P-\nabla \cdot \overrightarrow{q}_b )\]</div>
+<span class="eqno">(62)<a class="headerlink" href="#equation-sediment-4" title="Link to this equation">¶</a></span>\[\frac{dZ_{b}}{dt} = \frac{1}{1-n} (D-P-\nabla \cdot \overrightarrow{q}_b )\]</div>
 <a class="reference internal image-reference" href="_images/sediment.png"><img alt="_images/sediment.png" class="align-center" src="_images/sediment.png" style="width: 500px; height: 250px;" /></a>
-</div>
-<div class="section" id="details">
-<h2>DETAILS<a class="headerlink" href="#details" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="details">
+<h2>DETAILS<a class="headerlink" href="#details" title="Link to this heading">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="sed_equation.html">Suspended Sediment Transport Equation (Non-cohesive)</a></li>
@@ -139,9 +139,9 @@
 </li>
 </ul>
 </div>
-</div>
-<div class="section" id="applications">
-<h2>APPLICATIONS<a class="headerlink" href="#applications" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="applications">
+<h2>APPLICATIONS<a class="headerlink" href="#applications" title="Link to this heading">¶</a></h2>
 <ul>
 <li><p><a class="reference external" href="ocean_city_dune.html">Ocean City Tsunami Inundation Map</a></p></li>
 <li><p><a class="reference external" href="tohoku_crescent.html">2011 Tohoku-Oki tsunami impact in Crescent City harbor</a></p>
@@ -155,10 +155,11 @@
 <p>Meyer-Peter, E., and Muller, R., (1948). “Formulas for Bed-Load transport”. Hydraulic Eng. Reports: IAHSR 2nd meeting, Stockholm, Appendix 2. IAHSR.</p>
 <p>van Rijn, L.C., (1984). “Sediment Pick-Up Functions”. J. of Hydraulic Eng., 110 (10). DOI: 10.1061/(ASCE)0733-9429(1984)110:10(1494).</p>
 <p><a class="reference external" href="https://fengyanshi.github.io/build/html/index.html">Back to FUNWAVE-TVD Page</a></p>
-</div>
-</div>
+</section>
+</section>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -177,12 +178,13 @@
           <a href="shipwakes.html" title="Ship-wake Module"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="basics.html" ><strong>BASICS</strong></a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="basics.html" ><strong>BASICS</strong></a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Sediment Transport Module</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2019, Fengyan Shi.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
+    &#169; Copyright 2019, Fengyan Shi.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
   </body>
 </html>

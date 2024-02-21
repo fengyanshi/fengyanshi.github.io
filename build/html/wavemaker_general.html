@@ -1,18 +1,17 @@
-
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en" data-content_root="./">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>Wave-maker specification &#8212; FUNWAVE Documentation</title>
-    <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="_static/lglb-sphinx-doc.css?v=3078a223" />
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Wave-maker with wave coherence specification" href="wavemaker_coherence.html" />
@@ -39,7 +38,8 @@
         <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="definition.html" ><strong>DEFINITIONS OF PARAMETERS</strong></a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="central_para.html" >Parameters for Central Module</a> &#187;</li>
-          <li class="nav-item nav-item-3"><a href="wavemaker_para.html" accesskey="U">Wave-maker specification</a> &#187;</li> 
+          <li class="nav-item nav-item-3"><a href="wavemaker_para.html" accesskey="U">Wave-maker specification</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Wave-maker specification</a></li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -69,12 +69,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
 
@@ -83,10 +83,10 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="wave-maker-specification">
-<h1>Wave-maker specification<a class="headerlink" href="#wave-maker-specification" title="Permalink to this headline">¶</a></h1>
+  <section id="wave-maker-specification">
+<h1>Wave-maker specification<a class="headerlink" href="#wave-maker-specification" title="Link to this heading">¶</a></h1>
 <p><strong>SPECIFICATION OF WAVEMAKER</strong></p>
-<p>For theory about the wavemaker, see <a class="reference internal" href="wavemaker.html#section-wavemaker"><span class="std std-ref">Wave–maker</span></a></p>
+<p>For theory about the wavemaker, see <a class="reference internal" href="wavemaker.html#section-wavemaker"><span class="std std-ref">Internal Wavemaker (traditional)</span></a></p>
 <ul>
 <li><p><code class="code docutils literal notranslate"><span class="pre">WAVEMAKER</span></code>: wavemaker type.</p></li>
 <li><dl class="simple">
@@ -214,10 +214,10 @@
 <li><p><code class="code docutils literal notranslate"><span class="pre">AMP</span></code>: amplitude (m) of initial <span class="math notranslate nohighlight">\(\eta\)</span>, if <code class="code docutils literal notranslate"><span class="pre">WAVEMAKER</span> <span class="pre">=</span> <span class="pre">INI_REC,</span> <span class="pre">WAVEMAKER</span> <span class="pre">=</span> <span class="pre">INI_SOL,</span> <span class="pre">WAVEMAKER</span> <span class="pre">=</span> <span class="pre">LEF_SOL</span></code>.</p></li>
 <li><p><code class="code docutils literal notranslate"><span class="pre">DEP</span></code>: water depth at wavemaker location, if <code class="code docutils literal notranslate"><span class="pre">WAVEMAKER</span> <span class="pre">=</span> <span class="pre">INI_SOL,</span> <span class="pre">WAVEMAKER</span> <span class="pre">=</span> <span class="pre">LEF_SOL</span></code>.</p></li>
 <li><p><code class="code docutils literal notranslate"><span class="pre">LAGTIME</span></code>, time lag (s) for the solitary wave generated on the left boundary, e.g., <code class="code docutils literal notranslate"><span class="pre">WAVEMAKER</span> <span class="pre">=</span> <span class="pre">LEF_SOL</span></code>.</p></li>
-<li><p><code class="code docutils literal notranslate"><span class="pre">XWAVEMAKER</span></code>: x (m) coordinate for <code class="code docutils literal notranslate"><span class="pre">WAVEMAKER</span> <span class="pre">=</span> <span class="pre">INI\_SOL</span></code>.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">XWAVEMAKER</span></code>: x (m) coordinate for <code class="code docutils literal notranslate"><span class="pre">WAVEMAKER</span> <span class="pre">=</span> <span class="pre">INI_SOL</span></code>.</p></li>
 <li><p><code class="code docutils literal notranslate"><span class="pre">Xc</span></code>: x (m) coordinate of the center of  a rectangular hump if <code class="code docutils literal notranslate"><span class="pre">WAVEMAKER</span> <span class="pre">=</span> <span class="pre">INI_REC</span></code>.</p></li>
 <li><p><code class="code docutils literal notranslate"><span class="pre">Yc</span></code>: y (m) coordinate of the center of  a rectangular hump if <code class="code docutils literal notranslate"><span class="pre">WAVEMAKER</span> <span class="pre">=</span> <span class="pre">INI_REC</span></code>.</p></li>
-<li><p><code class="code docutils literal notranslate"><span class="pre">WID</span></code>: width (m) of  a rectangular hump if <code class="code docutils literal notranslate"><span class="pre">WAVEMAKER</span> <span class="pre">=</span> <span class="pre">INI\_REC,</span> <span class="pre">or</span> <span class="pre">INI\_GAU</span></code>.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">WID</span></code>: width (m) of  a rectangular hump if <code class="code docutils literal notranslate"><span class="pre">WAVEMAKER</span> <span class="pre">=</span> <span class="pre">INI_REC,</span> <span class="pre">or</span> <span class="pre">INI_GAU</span></code>.</p></li>
 <li><p><code class="code docutils literal notranslate"><span class="pre">Time_ramp</span></code>: time ramp (s) for Wei and Kirby (1999) wavemaker. Default: 0.0.</p></li>
 <li><p><code class="code docutils literal notranslate"><span class="pre">Delta_WK</span></code>: width parameter <span class="math notranslate nohighlight">\(\delta\)</span>  for Wei and Kirby (1999) wavemaker.    Need trial and error, usually, <span class="math notranslate nohighlight">\(\delta\)</span> =  <span class="math notranslate nohighlight">\(1.0 \sim 3.0\)</span>.</p></li>
 <li><p><code class="code docutils literal notranslate"><span class="pre">DEP_WK</span></code>: water depth (m) for Wei and Kirby (1999) wavemaker.</p></li>
@@ -238,9 +238,10 @@
 <li><p><code class="code docutils literal notranslate"><span class="pre">Sigma_Theta</span></code>: parameter of directional spectrum for Wei and Kirby (1999) irregular wavemaker.</p></li>
 </ul>
 </div></blockquote>
-</div>
+</section>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -261,12 +262,13 @@
         <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="definition.html" ><strong>DEFINITIONS OF PARAMETERS</strong></a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="central_para.html" >Parameters for Central Module</a> &#187;</li>
-          <li class="nav-item nav-item-3"><a href="wavemaker_para.html" >Wave-maker specification</a> &#187;</li> 
+          <li class="nav-item nav-item-3"><a href="wavemaker_para.html" >Wave-maker specification</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Wave-maker specification</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2019, Fengyan Shi.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
+    &#169; Copyright 2019, Fengyan Shi.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
   </body>
 </html>
