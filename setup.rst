@@ -23,7 +23,7 @@ You will need:
         
         cd ~
         mkdir homebrew
-        curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
+        curl -L https://raw.github.com/Homebrew/brew/tarball/master
         tar xz --strip 1 -C homebrew
         
     If you didn't previously have these compilers on your system (say via Xcode), then the :code:`gcc, g++, gfortran` compilers would be placed under :code:`/usr/local/bin/` directory; otherwise they could be placed under :code:`/usr/local/Cellar/gcc/9.1.0/bin/`. You will then need to install the GNU suite of compilers using :code:`brew`, where the current versions are 9.1.0.
@@ -47,8 +47,8 @@ You will need:
     
     .. code-block:: rest
     
-        export HOMEBREW_FC = /usr/local/Cellar/gcc/9.1.0/bin/gfortran
-        export HOMEBREW_CC = /usr/local/Cellar/gcc/9.1.0/bin/gcc
+        export HOMEBREW_FC = /usr/local/Cellar/gcc/9.1.0/bin/gfortran &&
+        export HOMEBREW_CC = /usr/local/Cellar/gcc/9.1.0/bin/gcc &&
         export HOMEBREW_CCX = /usr/local/Cellar/gcc/9.1.0/bin/g++
 
   * **If you are using a Linux machine**
