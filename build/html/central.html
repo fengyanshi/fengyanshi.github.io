@@ -1,17 +1,18 @@
+
 <!DOCTYPE html>
 
-<html lang="en" data-content_root="./">
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
     <title>Central Module &#8212; FUNWAVE Documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
-    <link rel="stylesheet" type="text/css" href="_static/lglb-sphinx-doc.css?v=3078a223" />
-    <script src="_static/documentation_options.js?v=5929fcd5"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Wave Breaking, roller and undertow" href="wavebreaking.html" />
@@ -36,8 +37,7 @@
           <a href="boussinesq.html" title="Formulations and Numerical Schemes"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="basics.html" accesskey="U"><strong>BASICS</strong></a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Central Module</a></li> 
+          <li class="nav-item nav-item-1"><a href="basics.html" accesskey="U"><strong>BASICS</strong></a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -74,12 +74,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>document.getElementById('searchbox').style.display = "block"</script>
+<script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
 
@@ -88,8 +88,8 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <section id="central-module">
-<span id="section-central-module"></span><h1>Central Module<a class="headerlink" href="#central-module" title="Link to this heading">¶</a></h1>
+  <div class="section" id="central-module">
+<span id="section-central-module"></span><h1>Central Module<a class="headerlink" href="#central-module" title="Permalink to this headline">¶</a></h1>
 <p>The central module solves the Boussinesq equations and also takes care basic functions such as wavemaker, wave breaking, spongelayers, boundary conditions and model input and output.</p>
 <p>Visit each of the following pages to learn more about the theory of these features:</p>
 <div class="toctree-wrapper compound">
@@ -100,8 +100,8 @@
 <li class="toctree-l1"><a class="reference internal" href="absorbing_generating_wavemaker.html">Time-varying Wavemaker</a></li>
 </ul>
 </div>
-<section id="boundary-conditions">
-<h2>Boundary Conditions<a class="headerlink" href="#boundary-conditions" title="Link to this heading">¶</a></h2>
+<div class="section" id="boundary-conditions">
+<h2>Boundary Conditions<a class="headerlink" href="#boundary-conditions" title="Permalink to this headline">¶</a></h2>
 <dl class="simple">
 <dt><strong>Wall boundary condition</strong></dt><dd><p>A mirror boundary condition is used for a fully reflective wall.</p>
 </dd>
@@ -111,37 +111,36 @@
 <p><strong>Lateral frictional boundary condition</strong>
 The lateral frictional boundary condition applied to “coarsely” resolved ocean models was discussed in <a class="reference external" href="https://www.ma.imperial.ac.uk/~pberloff/OM_deremble_et_al_2011.pdf">Deremble et al. (2011)</a>. Following this idea, the lateral mixing terms in FUNWAVE-TVD can be expressed in the equations below</p>
 <div class="math notranslate nohighlight" id="equation-central-0">
-<span class="eqno">(43)<a class="headerlink" href="#equation-central-0" title="Link to this equation">¶</a></span>\[{\bf M}_t + \nabla \cdot \left( \frac{{\bf MM}}{H} \right) + \nabla \left(\frac{1}{2}g(\eta^2 + 2h\eta) \right) = H {\bf V}_{dis} + g\eta \nabla h + H \nabla \cdot \vec{\tau}\]</div>
+<span class="eqno">(43)<a class="headerlink" href="#equation-central-0" title="Permalink to this equation">¶</a></span>\[{\bf M}_t + \nabla \cdot \left( \frac{{\bf MM}}{H} \right) + \nabla \left(\frac{1}{2}g(\eta^2 + 2h\eta) \right) = H {\bf V}_{dis} + g\eta \nabla h + H \nabla \cdot \vec{\tau}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\vec{\tau} = (\tau_x, \tau_y)\)</span> represents the lateral shear stress. We use the Law of the Wall where the molecular processes are the dominant mechnisc in a frictional sublayer at Kolmogorov scales. Outside this layer, viscosity becomes unimportant. The scaling arguments based on the free stream flow lead to</p>
 <div class="math notranslate nohighlight" id="equation-central-1">
-<span class="eqno">(44)<a class="headerlink" href="#equation-central-1" title="Link to this equation">¶</a></span>\[u_y = \frac{u_*}{\kappa y}\]</div>
+<span class="eqno">(44)<a class="headerlink" href="#equation-central-1" title="Permalink to this equation">¶</a></span>\[u_y = \frac{u_*}{\kappa y}\]</div>
 <p>where <span class="math notranslate nohighlight">\(u\)</span> is teh along-wall flow velocity (velocity in x-direction, for example), <span class="math notranslate nohighlight">\(y\)</span> is the distance from the wall, <span class="math notranslate nohighlight">\(\kappa \sim 0.4\)</span> is the von Karman constant, <span class="math notranslate nohighlight">\(u_*\)</span> is friction velocity, and <span class="math notranslate nohighlight">\(k_s\)</span> denotes a roughness length. The solution of the equation above is</p>
 <div class="math notranslate nohighlight" id="equation-central-2">
-<span class="eqno">(45)<a class="headerlink" href="#equation-central-2" title="Link to this equation">¶</a></span>\[u(y) = \frac{u_*}{\kappa} \ln \left( \frac{y}{k_s} \right)\]</div>
+<span class="eqno">(45)<a class="headerlink" href="#equation-central-2" title="Permalink to this equation">¶</a></span>\[u(y) = \frac{u_*}{\kappa} \ln \left( \frac{y}{k_s} \right)\]</div>
 <p>The shear stress at the computational grid mostly close to the wall can be expressed as</p>
 <div class="math notranslate nohighlight" id="equation-central-3">
-<span class="eqno">(46)<a class="headerlink" href="#equation-central-3" title="Link to this equation">¶</a></span>\[\tau_x|_{y=\Delta y} = \frac{(u \kappa)^2}{[\ln(\frac{\Delta y}{2 k_s})]^2} sgn(u)\]</div>
+<span class="eqno">(46)<a class="headerlink" href="#equation-central-3" title="Permalink to this equation">¶</a></span>\[\tau_x|_{y=\Delta y} = \frac{(u \kappa)^2}{[\ln(\frac{\Delta y}{2 k_s})]^2} sgn(u)\]</div>
 <p>where <span class="math notranslate nohighlight">\(\Delta y\)</span> is the grid size, and note that the distance from the grid cell center to the wall is <span class="math notranslate nohighlight">\(\Delta y / 2\)</span> for the FV grid used in FUNWAVE-TVD, <span class="math notranslate nohighlight">\(sgn\)</span> represents the sign factor. A similar expression can be derived for shear stress in y-direction at the wall perpendicular to x-direciton,</p>
 <div class="math notranslate nohighlight" id="equation-central-4">
-<span class="eqno">(47)<a class="headerlink" href="#equation-central-4" title="Link to this equation">¶</a></span>\[\tau_y|_{x=\Delta x} = \frac{(v \kappa)^2}{[\ln(\frac{\Delta x}{2 k_s})]^2} sgn(v)\]</div>
+<span class="eqno">(47)<a class="headerlink" href="#equation-central-4" title="Permalink to this equation">¶</a></span>\[\tau_y|_{x=\Delta x} = \frac{(v \kappa)^2}{[\ln(\frac{\Delta x}{2 k_s})]^2} sgn(v)\]</div>
 <p>It is a general practice in the oceanographic and meteorological fields to introduce a drag coefficient <span class="math notranslate nohighlight">\(C_d\)</span> relating the stress to the velocity at some “standard” (Deremble et al., 2011) distance, for example, for wind-induced stress at the ocean surface, 10 m above the sea surface can be adopted as a standard distance used to parameterize the shear stress in air-sea momentum flux. <span class="math notranslate nohighlight">\(C_d\)</span> is in the range of <span class="math notranslate nohighlight">\(1-3 \times 10^{-3}\)</span>.</p>
 <p>In our case, the shear stress above can also be parameterized as</p>
 <div class="math notranslate nohighlight" id="equation-central-5">
-<span class="eqno">(48)<a class="headerlink" href="#equation-central-5" title="Link to this equation">¶</a></span>\[\tau_x |_{y=\Delta y} = C_d^x u^2 sgn(u)\]</div>
+<span class="eqno">(48)<a class="headerlink" href="#equation-central-5" title="Permalink to this equation">¶</a></span>\[\tau_x |_{y=\Delta y} = C_d^x u^2 sgn(u)\]</div>
 <div class="math notranslate nohighlight" id="equation-central-6">
-<span class="eqno">(49)<a class="headerlink" href="#equation-central-6" title="Link to this equation">¶</a></span>\[\tau_y |_{x=\Delta x} = C_d^y v^2 sgn(v)\]</div>
+<span class="eqno">(49)<a class="headerlink" href="#equation-central-6" title="Permalink to this equation">¶</a></span>\[\tau_y |_{x=\Delta x} = C_d^y v^2 sgn(v)\]</div>
 <p>where <span class="math notranslate nohighlight">\(C_d^x =\frac{\kappa^2}{[\ln(\frac{\Delta y}{2 k_s})]^2}\)</span> and <span class="math notranslate nohighlight">\(C_d^y =\frac{\kappa^2}{[\ln(\frac{\Delta x}{2 k_s})]^2}\)</span>, noting that <span class="math notranslate nohighlight">\(C_d^x = C_d^y\)</span> if <span class="math notranslate nohighlight">\(\Delta x = \Delta y\)</span>, which is a regular case in FUNWAVE-TVD applications. The figures below show the range of <span class="math notranslate nohighlight">\(C_d\)</span> in different roughness length <span class="math notranslate nohighlight">\(k_s = 2.5 D50\)</span> and grid sizes.</p>
-<figure class="align-center">
+<div class="figure align-center">
 <a class="reference internal image-reference" href="_images/cd_dy.jpg"><img alt="_images/cd_dy.jpg" src="_images/cd_dy.jpg" style="width: 400px; height: 300px;" /></a>
-</figure>
-<figure class="align-center">
+</div>
+<div class="figure align-center">
 <a class="reference internal image-reference" href="_images/cd_d50.jpg"><img alt="_images/cd_d50.jpg" src="_images/cd_d50.jpg" style="width: 400px; height: 300px;" /></a>
-</figure>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
-            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -160,13 +159,12 @@ The lateral frictional boundary condition applied to “coarsely” resolved oce
           <a href="boussinesq.html" title="Formulations and Numerical Schemes"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="basics.html" ><strong>BASICS</strong></a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Central Module</a></li> 
+          <li class="nav-item nav-item-1"><a href="basics.html" ><strong>BASICS</strong></a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2019, Fengyan Shi.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+        &#169; Copyright 2019, Fengyan Shi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
     </div>
   </body>
 </html>

@@ -1,17 +1,18 @@
+
 <!DOCTYPE html>
 
-<html lang="en" data-content_root="./">
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
     <title>Internal Wavemaker (traditional) &#8212; FUNWAVE Documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
-    <link rel="stylesheet" type="text/css" href="_static/lglb-sphinx-doc.css?v=3078a223" />
-    <script src="_static/documentation_options.js?v=5929fcd5"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Time-varying Wavemaker" href="absorbing_generating_wavemaker.html" />
@@ -37,8 +38,7 @@
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="basics.html" ><strong>BASICS</strong></a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="central.html" accesskey="U">Central Module</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Internal Wavemaker (traditional)</a></li> 
+          <li class="nav-item nav-item-2"><a href="central.html" accesskey="U">Central Module</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -75,12 +75,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>document.getElementById('searchbox').style.display = "block"</script>
+<script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
 
@@ -89,47 +89,47 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <section id="internal-wavemaker-traditional">
-<span id="section-wavemaker"></span><h1>Internal Wavemaker (traditional)<a class="headerlink" href="#internal-wavemaker-traditional" title="Link to this heading">¶</a></h1>
+  <div class="section" id="internal-wavemaker-traditional">
+<span id="section-wavemaker"></span><h1>Internal Wavemaker (traditional)<a class="headerlink" href="#internal-wavemaker-traditional" title="Permalink to this headline">¶</a></h1>
 <p>There are two primary types of numerical wave–makers: Internal and Boundary. In this section, we will discuss internal wave–maker theory.</p>
-<section id="internal-wave-maker-theory">
-<h2>Internal wave–maker theory<a class="headerlink" href="#internal-wave-maker-theory" title="Link to this heading">¶</a></h2>
+<div class="section" id="internal-wave-maker-theory">
+<h2>Internal wave–maker theory<a class="headerlink" href="#internal-wave-maker-theory" title="Permalink to this headline">¶</a></h2>
 <p>The internal wavemaker was implemented based on <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S0378383999000095">Wei et al. (1999)</a> two–way internal wavemaker and <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S0141118700000055">Chawla and Kirby (2000)</a> one–way internal wavemaker (under development). Here, we briefly summarize the formulations used in the wavemakers. Detailed theory can be found in Wei and Kirby (1999) and Chawla and Kirby (2000).</p>
 <p>Wei and Kirby (1999) followed the approach of <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/0378383983900224">Larsen and Dancy (1983)</a> who used an ad–hoc source mechanism where water mass is added and subtracted along a straight source/sink line inside the computing domain. This approach works well in a staggered–grid differencing scheme, where water is essentially being added to or drained from a single grid block. In applying this technique to the Boussinesq model on an unstaggered grid, however, Wei and Kirby found that use of a single source line accused high frequency noise, leading to blowup of the model. They then used a partially distributed mass source <span class="math notranslate nohighlight">\(f(x,y,t)\)</span>:</p>
 <div class="math notranslate nohighlight" id="equation-wavemaker-0">
-<span class="eqno">(20)<a class="headerlink" href="#equation-wavemaker-0" title="Link to this equation">¶</a></span>\[f(x,y,t) = g(x) s(y,t)\]</div>
+<span class="eqno">(20)<a class="headerlink" href="#equation-wavemaker-0" title="Permalink to this equation">¶</a></span>\[f(x,y,t) = g(x) s(y,t)\]</div>
 <p>where <span class="math notranslate nohighlight">\(g(x)\)</span> is a Gaussian shape function and <span class="math notranslate nohighlight">\(s(y,t)\)</span> the input time series of the magnitude of source function with an assumption that the center of the source region is parallel to the y–axis. The functions <span class="math notranslate nohighlight">\(g(x)\)</span> and <span class="math notranslate nohighlight">\(s(y,t)\)</span> are defined as:</p>
 <div class="math notranslate nohighlight" id="equation-wavemaker-1">
-<span class="eqno">(21)<a class="headerlink" href="#equation-wavemaker-1" title="Link to this equation">¶</a></span>\[g(x) = \mbox{exp}[-\beta(x-x_s)^2]\]</div>
+<span class="eqno">(21)<a class="headerlink" href="#equation-wavemaker-1" title="Permalink to this equation">¶</a></span>\[g(x) = \mbox{exp}[-\beta(x-x_s)^2]\]</div>
 <div class="math notranslate nohighlight" id="equation-wavemaker-2">
-<span class="eqno">(22)<a class="headerlink" href="#equation-wavemaker-2" title="Link to this equation">¶</a></span>\[s(y,t) = D \mbox{sin} (\lambda y -\omega t)\]</div>
+<span class="eqno">(22)<a class="headerlink" href="#equation-wavemaker-2" title="Permalink to this equation">¶</a></span>\[s(y,t) = D \mbox{sin} (\lambda y -\omega t)\]</div>
 <p>where <span class="math notranslate nohighlight">\(\beta\)</span> is the shape coefficient for the source function, and <span class="math notranslate nohighlight">\(x_s\)</span> is the central location of the source in the <span class="math notranslate nohighlight">\(x\)</span> direction, for a source oriented parallel to the <span class="math notranslate nohighlight">\(y\)</span> axis, as shown in the figure below. <span class="math notranslate nohighlight">\(D\)</span> is the magnitude of the source function, <span class="math notranslate nohighlight">\(\lambda = k \mbox{sin} (\theta)\)</span> the wavenumber in the <span class="math notranslate nohighlight">\(y\)</span> direction, and <span class="math notranslate nohighlight">\(k\)</span> is the linear wavenumber.</p>
 <p>For a monochromatic wave or a single wave component of a random wave train, the magnitude <span class="math notranslate nohighlight">\(D\)</span> of source function can be determined by:</p>
 <div class="math notranslate nohighlight" id="equation-wavemaker-3">
-<span class="eqno">(23)<a class="headerlink" href="#equation-wavemaker-3" title="Link to this equation">¶</a></span>\[D = \frac{2 a_0 \cos (\theta) (\omega^2 - \alpha_1 g k^4 h^3) }{\omega k I [1-\alpha(kh)^2]}\]</div>
+<span class="eqno">(23)<a class="headerlink" href="#equation-wavemaker-3" title="Permalink to this equation">¶</a></span>\[D = \frac{2 a_0 \cos (\theta) (\omega^2 - \alpha_1 g k^4 h^3) }{\omega k I [1-\alpha(kh)^2]}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\alpha = -0.390, \alpha_1 = \alpha + 1/3\)</span>, and <span class="math notranslate nohighlight">\(I\)</span> is the integral given by:</p>
 <div class="math notranslate nohighlight" id="equation-wavemaker-4">
-<span class="eqno">(24)<a class="headerlink" href="#equation-wavemaker-4" title="Link to this equation">¶</a></span>\[I = \int^\infty_{-\infty} \exp (-\beta x^2) \exp (-ilx) dx = \sqrt{\frac{\pi}{\beta}} \exp(- l^2/4\beta)\]</div>
+<span class="eqno">(24)<a class="headerlink" href="#equation-wavemaker-4" title="Permalink to this equation">¶</a></span>\[I = \int^\infty_{-\infty} \exp (-\beta x^2) \exp (-ilx) dx = \sqrt{\frac{\pi}{\beta}} \exp(- l^2/4\beta)\]</div>
 <p>where <span class="math notranslate nohighlight">\(l=k\cos (\theta)\)</span> is the wavenumber in the <span class="math notranslate nohighlight">\(x\)</span> direction. In theory, the shape coefficient <span class="math notranslate nohighlight">\(\beta\)</span> can be any number. The larger the value of <span class="math notranslate nohighlight">\(\beta\)</span> is, the narrower the source function becomes. The definition of the source function width <span class="math notranslate nohighlight">\(W\)</span> is not unique, and here we define <span class="math notranslate nohighlight">\(W\)</span> to be the distance between two coordinates <span class="math notranslate nohighlight">\(x_1\)</span> and <span class="math notranslate nohighlight">\(x_2\)</span> where the corresponding source function heights are equal to <span class="math notranslate nohighlight">\(\exp (-5) = 0.0067\)</span> times the maximum height <span class="math notranslate nohighlight">\(D\)</span>. Then <span class="math notranslate nohighlight">\(x_1\)</span> and <span class="math notranslate nohighlight">\(x_2\)</span> must satisfy the quadratic equation:</p>
 <div class="math notranslate nohighlight" id="equation-wavemaker-5">
-<span class="eqno">(25)<a class="headerlink" href="#equation-wavemaker-5" title="Link to this equation">¶</a></span>\[\beta (x-x_s)^2 = 5\]</div>
+<span class="eqno">(25)<a class="headerlink" href="#equation-wavemaker-5" title="Permalink to this equation">¶</a></span>\[\beta (x-x_s)^2 = 5\]</div>
 <p>from which the width of source function is given by:</p>
 <div class="math notranslate nohighlight" id="equation-wavemaker-6">
-<span class="eqno">(26)<a class="headerlink" href="#equation-wavemaker-6" title="Link to this equation">¶</a></span>\[W = |x_2 - x_1| = 2\sqrt{\frac{5}{\beta}}\]</div>
+<span class="eqno">(26)<a class="headerlink" href="#equation-wavemaker-6" title="Permalink to this equation">¶</a></span>\[W = |x_2 - x_1| = 2\sqrt{\frac{5}{\beta}}\]</div>
 <p>In the previous version of FUNWAVE (<a class="reference external" href="http://resolver.tudelft.nl/uuid:d79bba08-8d35-47e2-b901-881c86985ce4">Kirby et al., 1998</a>), it is suggested that <span class="math notranslate nohighlight">\(W\)</span> equals about half of the wavelength for monochromatic wave. If <span class="math notranslate nohighlight">\(L\)</span> is the wavelength, the requirement of <span class="math notranslate nohighlight">\(W=\delta L/2\)</span> (where <span class="math notranslate nohighlight">\(\delta\)</span> is of order 1) results in:</p>
 <div class="math notranslate nohighlight" id="equation-wavemaker-7">
-<span class="eqno">(27)<a class="headerlink" href="#equation-wavemaker-7" title="Link to this equation">¶</a></span>\[\beta = \frac{5}{(\delta L/4)^2} = \frac{80}{\delta^2 L^2}\]</div>
+<span class="eqno">(27)<a class="headerlink" href="#equation-wavemaker-7" title="Permalink to this equation">¶</a></span>\[\beta = \frac{5}{(\delta L/4)^2} = \frac{80}{\delta^2 L^2}\]</div>
 <p>For random waves, the value of <span class="math notranslate nohighlight">\(\beta\)</span> is determined according to the peak frequency component and then used for all components in the wave train. FUNWAVE–TVD follows the criteria for determining <span class="math notranslate nohighlight">\(\beta\)</span>, though a narrow <span class="math notranslate nohighlight">\(W\)</span> does not seem to cause any problem.</p>
-<figure class="align-center">
+<div class="align-center figure">
 <a class="reference internal image-reference" href="_images/wavemaker.jpg"><img alt="alternate text" src="_images/wavemaker.jpg" style="width: 300px; height: 250px;" /></a>
-</figure>
+</div>
 <p>For the irregular wavemaker, an extension was made to incorporate an  alongshore periodicity into wave generation,  in order to eliminate a boundary effect on wave simulations. The technique exactly follows the strategy in <a class="reference external" href="https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1029/2002JC001308">Chen et al. (2003)</a>, who adjusted the distribution of wave directions in each frequency bin to obtain alongshore periodicity. This approach is effective in modeling of  breaking wave–induced nearshore circulation such as alongshore currents and rip currents.</p>
-<section id="regular-wave-generation">
-<h3>Regular wave generation<a class="headerlink" href="#regular-wave-generation" title="Link to this heading">¶</a></h3>
+<div class="section" id="regular-wave-generation">
+<h3>Regular wave generation<a class="headerlink" href="#regular-wave-generation" title="Permalink to this headline">¶</a></h3>
 <p>The generation of monochromatic wave using the internal wavemaker is straightforward. Following the formulations given in 3.7.1, the magnitude of source function <span class="math notranslate nohighlight">\(D\)</span> is calculated by Equation 13 shown above for given wave amplitude <span class="math notranslate nohighlight">\(a_0\)</span>, wave angle <span class="math notranslate nohighlight">\(\theta\)</span>, water depth <span class="math notranslate nohighlight">\(h\)</span> and wave period <span class="math notranslate nohighlight">\(T=1/2\pi\omega\)</span>. The source function can be obtained using the Source function above.</p>
-</section>
-<section id="irregular-wave-generation">
-<h3>Irregular wave generation<a class="headerlink" href="#irregular-wave-generation" title="Link to this heading">¶</a></h3>
+</div>
+<div class="section" id="irregular-wave-generation">
+<h3>Irregular wave generation<a class="headerlink" href="#irregular-wave-generation" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Using directional spectral data</p></li>
 </ul>
@@ -139,59 +139,58 @@
 </ul>
 <p>The input for the wavemaker can be wave bulk parameters or directional spectral data. TMA shallow–water spectrum, JONSWAP spectrum and a wrapped–normal directional–spreading function are used to simulate a directional sea state. The combined spectrum function can be expressed as:</p>
 <div class="math notranslate nohighlight" id="equation-wavemaker-8">
-<span class="eqno">(28)<a class="headerlink" href="#equation-wavemaker-8" title="Link to this equation">¶</a></span>\[S(f,h,\theta) = E(f,h) G(\theta)\]</div>
+<span class="eqno">(28)<a class="headerlink" href="#equation-wavemaker-8" title="Permalink to this equation">¶</a></span>\[S(f,h,\theta) = E(f,h) G(\theta)\]</div>
 <p><span class="math notranslate nohighlight">\(E\)</span> is the energy density distribution as follows:</p>
 <div class="math notranslate nohighlight" id="equation-wavemaker-9">
-<span class="eqno">(29)<a class="headerlink" href="#equation-wavemaker-9" title="Link to this equation">¶</a></span>\[E (f,h) = \alpha g^2 f^{-5} (2 \pi)^{-4} \Phi (2\pi f, h) e^{-5/4(f/f_p)^{-4}} \gamma^{e^{[-(f/f_p -1)^2 /2\sigma^2]}}\]</div>
+<span class="eqno">(29)<a class="headerlink" href="#equation-wavemaker-9" title="Permalink to this equation">¶</a></span>\[E (f,h) = \alpha g^2 f^{-5} (2 \pi)^{-4} \Phi (2\pi f, h) e^{-5/4(f/f_p)^{-4}} \gamma^{e^{[-(f/f_p -1)^2 /2\sigma^2]}}\]</div>
 <p>in which <span class="math notranslate nohighlight">\(f_p\)</span> is the peak frequency.  <span class="math notranslate nohighlight">\(\gamma\)</span> presents a frequency spreading parameter, and <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\sigma\)</span> are coefficients which may be found in <a class="reference external" href="https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1029/JC090iC01p00975">Bouws et al. (1985)</a> <span class="math notranslate nohighlight">\(\alpha\)</span> is obtained using the input <span class="math notranslate nohighlight">\(H_{mo}/H_{sig}\)</span>:</p>
 <div class="math notranslate nohighlight" id="equation-wavemaker-10">
-<span class="eqno">(30)<a class="headerlink" href="#equation-wavemaker-10" title="Link to this equation">¶</a></span>\[\sigma = 0.07  \ \ \ \  f \leq f_p\]</div>
+<span class="eqno">(30)<a class="headerlink" href="#equation-wavemaker-10" title="Permalink to this equation">¶</a></span>\[\sigma = 0.07  \ \ \ \  f \leq f_p\]</div>
 <div class="math notranslate nohighlight" id="equation-wavemaker-11">
-<span class="eqno">(31)<a class="headerlink" href="#equation-wavemaker-11" title="Link to this equation">¶</a></span>\[\sigma = 0.09  \ \ \ \  f &gt; f_p\]</div>
+<span class="eqno">(31)<a class="headerlink" href="#equation-wavemaker-11" title="Permalink to this equation">¶</a></span>\[\sigma = 0.09  \ \ \ \  f &gt; f_p\]</div>
 <p><span class="math notranslate nohighlight">\(\Phi\)</span> = 1.0 for the JONSWAP spectrum. For TMA, <span class="math notranslate nohighlight">\(\Phi\)</span> may be expressed as:</p>
 <div class="math notranslate nohighlight" id="equation-wavemaker-12">
-<span class="eqno">(32)<a class="headerlink" href="#equation-wavemaker-12" title="Link to this equation">¶</a></span>\[\Phi (2 \pi f, h) =\frac{1}{2} \omega_h^2 \ \ \ \  \omega_h \leq 1\]</div>
+<span class="eqno">(32)<a class="headerlink" href="#equation-wavemaker-12" title="Permalink to this equation">¶</a></span>\[\Phi (2 \pi f, h) =\frac{1}{2} \omega_h^2 \ \ \ \  \omega_h \leq 1\]</div>
 <div class="math notranslate nohighlight" id="equation-wavemaker-13">
-<span class="eqno">(33)<a class="headerlink" href="#equation-wavemaker-13" title="Link to this equation">¶</a></span>\[\Phi (2 \pi f, h) = 1-\frac{1}{2}(2-\omega_h)^2 \ \ \ \ 2 &gt; \omega_h &gt;1\]</div>
+<span class="eqno">(33)<a class="headerlink" href="#equation-wavemaker-13" title="Permalink to this equation">¶</a></span>\[\Phi (2 \pi f, h) = 1-\frac{1}{2}(2-\omega_h)^2 \ \ \ \ 2 &gt; \omega_h &gt;1\]</div>
 <div class="math notranslate nohighlight" id="equation-wavemaker-14">
-<span class="eqno">(34)<a class="headerlink" href="#equation-wavemaker-14" title="Link to this equation">¶</a></span>\[\Phi (2 \pi f, h) = 1    \ \ \ \  \omega_h \geq 2\]</div>
+<span class="eqno">(34)<a class="headerlink" href="#equation-wavemaker-14" title="Permalink to this equation">¶</a></span>\[\Phi (2 \pi f, h) = 1    \ \ \ \  \omega_h \geq 2\]</div>
 <p>where,</p>
 <div class="math notranslate nohighlight" id="equation-wavemaker-15">
-<span class="eqno">(35)<a class="headerlink" href="#equation-wavemaker-15" title="Link to this equation">¶</a></span>\[\omega_h = 2 \pi f (\frac{h}{g})^{1/2}\]</div>
+<span class="eqno">(35)<a class="headerlink" href="#equation-wavemaker-15" title="Permalink to this equation">¶</a></span>\[\omega_h = 2 \pi f (\frac{h}{g})^{1/2}\]</div>
 <p>Here, <span class="math notranslate nohighlight">\(G(\theta)\)</span> is the wrapped normal directional spreading function written as:</p>
 <div class="math notranslate nohighlight" id="equation-wavemaker-16">
-<span class="eqno">(36)<a class="headerlink" href="#equation-wavemaker-16" title="Link to this equation">¶</a></span>\[G(\theta) = \frac{1}{2\pi} +\frac{1}{\pi} \sum^N_{n=1} e^{[-\frac{( \sigma_{\theta})^2}{2}]} \cos n\theta\]</div>
+<span class="eqno">(36)<a class="headerlink" href="#equation-wavemaker-16" title="Permalink to this equation">¶</a></span>\[G(\theta) = \frac{1}{2\pi} +\frac{1}{\pi} \sum^N_{n=1} e^{[-\frac{( \sigma_{\theta})^2}{2}]} \cos n\theta\]</div>
 <p>where <span class="math notranslate nohighlight">\(\sigma_{\theta}\)</span> denotes circular deviation of the wrapped normal
 spreading function. To avoid the computational underflow, <span class="math notranslate nohighlight">\(N = 20\)</span> in the model.</p>
 <p>In the spectral wavemaker, the directional spectrum is first divided into <span class="math notranslate nohighlight">\(1000\)</span> frequency components and then reconstructed into a user–specified number of components with the equal energy. The directional components are evenly split in each frequency. The source function technique (Wei, et al., 1999) is then used for each component and the final surface elevation function can be written as:</p>
 <div class="math notranslate nohighlight" id="equation-wavemaker-17">
-<span class="eqno">(37)<a class="headerlink" href="#equation-wavemaker-17" title="Link to this equation">¶</a></span>\[\eta = \sum^M_{m=1} C_m \cos \omega _m t + \sum^M_{m=1} S_m \sin \omega _m t\]</div>
+<span class="eqno">(37)<a class="headerlink" href="#equation-wavemaker-17" title="Permalink to this equation">¶</a></span>\[\eta = \sum^M_{m=1} C_m \cos \omega _m t + \sum^M_{m=1} S_m \sin \omega _m t\]</div>
 <p>where,</p>
 <div class="math notranslate nohighlight" id="equation-wavemaker-18">
-<span class="eqno">(38)<a class="headerlink" href="#equation-wavemaker-18" title="Link to this equation">¶</a></span>\[C_m  = \sum^k_{n=1} D_{mn} \cos (k_{mn}y + \varepsilon_{mn})\]</div>
+<span class="eqno">(38)<a class="headerlink" href="#equation-wavemaker-18" title="Permalink to this equation">¶</a></span>\[C_m  = \sum^k_{n=1} D_{mn} \cos (k_{mn}y + \varepsilon_{mn})\]</div>
 <div class="math notranslate nohighlight" id="equation-wavemaker-19">
-<span class="eqno">(39)<a class="headerlink" href="#equation-wavemaker-19" title="Link to this equation">¶</a></span>\[S_m =  \sum^k_{n=1} D_{mn} \sin (k_{mn}y + \varepsilon_{mn})\]</div>
+<span class="eqno">(39)<a class="headerlink" href="#equation-wavemaker-19" title="Permalink to this equation">¶</a></span>\[S_m =  \sum^k_{n=1} D_{mn} \sin (k_{mn}y + \varepsilon_{mn})\]</div>
 <p>in which y–axis is oriented along the main axis of the wave maker. <span class="math notranslate nohighlight">\(D_{mn}, k _{mn}\)</span> and <span class="math notranslate nohighlight">\(\varepsilon_{mn}\)</span> are the amplitude, wave number in the y direction and phase of a component, respectively. The phase can be random.</p>
 <p>The model also provides an option for 1–D spectral wave generation (uni–directional).</p>
-</section>
-<section id="wavemaker-with-user-specified-wave-coherence">
-<h3>Wavemaker with user-specified wave coherence<a class="headerlink" href="#wavemaker-with-user-specified-wave-coherence" title="Link to this heading">¶</a></h3>
+</div>
+<div class="section" id="wavemaker-with-user-specified-wave-coherence">
+<h3>Wavemaker with user-specified wave coherence<a class="headerlink" href="#wavemaker-with-user-specified-wave-coherence" title="Permalink to this headline">¶</a></h3>
 <p>Users can specify degree of wave cohenrence according to the technique proposed by Salatin et al. (2021). The instruction for such a wavemaker setup and examples and be found in <a class="reference internal" href="wavemaker_para.html#definition-wavemaker"><span class="std std-ref">Wave-maker specification</span></a>.</p>
-</section>
-</section>
-<section id="references">
-<h2>References<a class="headerlink" href="#references" title="Link to this heading">¶</a></h2>
+</div>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
 <p>Bouws, E., Günther, H., Rosenthal, W., Vincent, C.L., 1985. “Similarity of the Wind Wave Spectrum in Finite Depth Water: 1. Spectral Form”. J. of Geophysical Research, 90, NO. C1, 975-986. DOI: 10.1029/JC090iC01p00975.</p>
 <p>Chawla, A., and Kirby, J.T., 2000. “A source function method for generation of waves on currents in Boussinesq models”. App. Ocean Research, 22 (2), 75-83. DOI: 10.1016/S0141-1187(00)00005-5.</p>
 <p>Chen, Q., Kirby, J.T., Dalrymple, R.A., Shi, F., Thorton, E.B., 2003. “Boussinesq modeling of longshore currents”. J. of Geophysical Research, 108, NO. C11, 3362. DOI: 10.1029/2002JC001308</p>
 <p>Kirby, J.T., Wei, G., Chen, Q., Kennedy, A.B., Dalrymple, R.A., 1998. “Funwave 1.0: Fully Nonlinear Boussinesq Wave Model – Documentation and User’s Manual”. Hydraulic Eng. Reports: NO. CACR-98-06. University of Delaware.</p>
 <p>Salatin, R., Chen, Q., Bak, A. S., Shi, F., and Brandt, S. R., 2021, Effects of Wave Coherence on Longshore Variability of Nearshore Wave Processes, Journal of Geophysical Research - Ocean,  <a class="reference external" href="https://doi.org/10.1029/2021JC017641">DOI:1029/2021JC017641</a></p>
 <p>Wei, G., Kirby J.T., Sinha, A., 1999. “Generation of waves in Boussinesq models using a source function method”. Coastal Eng. 36 (4), 271-299. DOI: 10.1016/S0378-3839(99)00009-5</p>
-</section>
-</section>
+</div>
+</div>
 
 
-            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -211,13 +210,12 @@ spreading function. To avoid the computational underflow, <span class="math notr
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="basics.html" ><strong>BASICS</strong></a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="central.html" >Central Module</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Internal Wavemaker (traditional)</a></li> 
+          <li class="nav-item nav-item-2"><a href="central.html" >Central Module</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2019, Fengyan Shi.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+        &#169; Copyright 2019, Fengyan Shi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
     </div>
   </body>
 </html>

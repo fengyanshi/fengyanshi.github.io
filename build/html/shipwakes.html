@@ -1,17 +1,18 @@
+
 <!DOCTYPE html>
 
-<html lang="en" data-content_root="./">
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
     <title>Ship-wake Module &#8212; FUNWAVE Documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
-    <link rel="stylesheet" type="text/css" href="_static/lglb-sphinx-doc.css?v=3078a223" />
-    <script src="_static/documentation_options.js?v=5929fcd5"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Sediment Transport Module" href="sediment.html" />
@@ -36,8 +37,7 @@
           <a href="absorbing_generating_wavemaker.html" title="Time-varying Wavemaker"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="basics.html" accesskey="U"><strong>BASICS</strong></a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Ship-wake Module</a></li> 
+          <li class="nav-item nav-item-1"><a href="basics.html" accesskey="U"><strong>BASICS</strong></a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -74,12 +74,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>document.getElementById('searchbox').style.display = "block"</script>
+<script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
 
@@ -88,48 +88,48 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <section id="ship-wake-module">
-<span id="theory-shipwakes"></span><h1>Ship-wake Module<a class="headerlink" href="#ship-wake-module" title="Link to this heading">¶</a></h1>
+  <div class="section" id="ship-wake-module">
+<span id="theory-shipwakes"></span><h1>Ship-wake Module<a class="headerlink" href="#ship-wake-module" title="Permalink to this headline">¶</a></h1>
 <p>We have implemented various types of source functions for ship-wave generation.</p>
 <p><strong>1) PRESSURE SOURCE TYPE I</strong></p>
 <p>Following <a class="reference external" href="https://doi.org/10.1017/S0022112086000630">Ertekin et al. (1986)</a>, <a class="reference external" href="https://doi.org/10.1017/S0022112087002817">Wu (1987)</a>, and <a class="reference external" href="https://doi.org/10.1061/(ASCE)0733-950X(2009)135:3(120)">Torsvik et al. (2008)</a>, the pressure disturbance with a center point at <span class="math notranslate nohighlight">\((x^*, y^*)\)</span> is given by:</p>
 <div class="math notranslate nohighlight" id="equation-shipwakes-0">
-<span class="eqno">(50)<a class="headerlink" href="#equation-shipwakes-0" title="Link to this equation">¶</a></span>\[p_a(\tilde{x},\tilde{y},t) = P f(\tilde{x},t) q(\tilde{y},t),\]</div>
+<span class="eqno">(50)<a class="headerlink" href="#equation-shipwakes-0" title="Permalink to this equation">¶</a></span>\[p_a(\tilde{x},\tilde{y},t) = P f(\tilde{x},t) q(\tilde{y},t),\]</div>
 <p>where:</p>
 <div class="math notranslate nohighlight" id="equation-shipwakes-1">
-<span class="eqno">(51)<a class="headerlink" href="#equation-shipwakes-1" title="Link to this equation">¶</a></span>\[\begin{split}f(\tilde{x},t) = \left \{ \begin{array}{rl} \cos^2\left [\frac{\pi(\tilde{x}-x^*(t)-\frac{1}{2}\alpha_1 L)}{(1-\alpha_1) L} \right ], &amp; \frac{1}{2}\alpha_1 L &lt; \tilde{x} - x^*(t) \le \frac{1}{2}L \\ \cos^2\left [\frac{\pi(x^*(t)-\tilde{x}-\frac{1}{2}\alpha_2 L)}{(1-\alpha_2) L} \right ], &amp; -\frac{1}{2}L \le \tilde{x}-x^*(t) \lt -\frac{1}{2}\alpha_2 L \\1, &amp;  - \frac{1}{2}\alpha_2 L \le \tilde{x} - x^*(t) \le \frac{1}{2}\alpha_1 L \end{array} \right.\end{split}\]</div>
+<span class="eqno">(51)<a class="headerlink" href="#equation-shipwakes-1" title="Permalink to this equation">¶</a></span>\[\begin{split}f(\tilde{x},t) = \left \{ \begin{array}{rl} \cos^2\left [\frac{\pi(\tilde{x}-x^*(t)-\frac{1}{2}\alpha_1 L)}{(1-\alpha_1) L} \right ], &amp; \frac{1}{2}\alpha_1 L &lt; \tilde{x} - x^*(t) \le \frac{1}{2}L \\ \cos^2\left [\frac{\pi(x^*(t)-\tilde{x}-\frac{1}{2}\alpha_2 L)}{(1-\alpha_2) L} \right ], &amp; -\frac{1}{2}L \le \tilde{x}-x^*(t) \lt -\frac{1}{2}\alpha_2 L \\1, &amp;  - \frac{1}{2}\alpha_2 L \le \tilde{x} - x^*(t) \le \frac{1}{2}\alpha_1 L \end{array} \right.\end{split}\]</div>
 <div class="math notranslate nohighlight" id="equation-shipwakes-2">
-<span class="eqno">(52)<a class="headerlink" href="#equation-shipwakes-2" title="Link to this equation">¶</a></span>\[\begin{split}q(\tilde{y},t) = \left \{ \begin{array}{rl} \cos^2 \left [\frac{\pi(|\tilde{y}-y^*(t)|-\frac{1}{2}\beta W)}{(1-\beta) W} \right ], &amp; \frac{1}{2}\beta W &lt; |\tilde{y} - y^*(t)| \le \frac{1}{2}W \\ 1, &amp;  |\tilde{y} - y^*(t)| \le \frac{1}{2}\beta W \end{array} \right.\end{split}\]</div>
+<span class="eqno">(52)<a class="headerlink" href="#equation-shipwakes-2" title="Permalink to this equation">¶</a></span>\[\begin{split}q(\tilde{y},t) = \left \{ \begin{array}{rl} \cos^2 \left [\frac{\pi(|\tilde{y}-y^*(t)|-\frac{1}{2}\beta W)}{(1-\beta) W} \right ], &amp; \frac{1}{2}\beta W &lt; |\tilde{y} - y^*(t)| \le \frac{1}{2}W \\ 1, &amp;  |\tilde{y} - y^*(t)| \le \frac{1}{2}\beta W \end{array} \right.\end{split}\]</div>
 <p>In the rectangle, <span class="math notranslate nohighlight">\(- L/2 \le \tilde{x} - x^*(t) \le L/2\)</span>  and  <span class="math notranslate nohighlight">\(- W/2 \le \tilde{y} - y^*(t) \le R/2\)</span>, and zero outside this region; <span class="math notranslate nohighlight">\(L\)</span> and <span class="math notranslate nohighlight">\(W\)</span> represent the length and width of the pressure source, respectively. <span class="math notranslate nohighlight">\(\alpha_1\)</span>, <span class="math notranslate nohighlight">\(\alpha_2\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span> are parameters representing the shape of the draft region, and <span class="math notranslate nohighlight">\(0\le(\alpha_1, \alpha_2, \beta)&lt;1\)</span>. They can be evaluated using the block coefficient of a watercraft as described below. (<span class="math notranslate nohighlight">\(\tilde{x}, \tilde{y}\)</span>) is the coordinate system for the pressure disturbance which may be rotated by an angle relative to the Boussinesq coordinate system (<span class="math notranslate nohighlight">\(x,y\)</span>). <span class="math notranslate nohighlight">\(P\)</span> is a parameter controlling the surface displacement. In fact, <span class="math notranslate nohighlight">\(p_a\)</span> is the static depression around the vessel.</p>
 <p>In contrast to the formulation of the pressure distribution in the previous study (<a class="reference external" href="https://doi.org/10.1061/(ASCE)0733-950X(2009)135:3(120)">Torsvik et al., 2008</a>),  <span class="math notranslate nohighlight">\(P\)</span> has a unit of meters and can be interpreted as the inverse barometer effect corresponding to the static surface depression for a stationary vessel.</p>
 <p>The values of <span class="math notranslate nohighlight">\(\alpha_1\)</span>, <span class="math notranslate nohighlight">\(\alpha_2\)</span>, and <span class="math notranslate nohighlight">\(\beta\)</span> are shape parameters and can be obtained by adjusting <span class="math notranslate nohighlight">\(\alpha_1\)</span>, <span class="math notranslate nohighlight">\(\alpha_1\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span> to get the displaced volume (static submerged volume of the vessel):</p>
 <div class="math notranslate nohighlight" id="equation-shipwakes-3">
-<span class="eqno">(53)<a class="headerlink" href="#equation-shipwakes-3" title="Link to this equation">¶</a></span>\[V_{\mbox{sub}} = \iint p_a d\tilde{x} d\tilde{y}\]</div>
+<span class="eqno">(53)<a class="headerlink" href="#equation-shipwakes-3" title="Permalink to this equation">¶</a></span>\[V_{\mbox{sub}} = \iint p_a d\tilde{x} d\tilde{y}\]</div>
 <p>which should match a given block coefficient <span class="math notranslate nohighlight">\(C_B\)</span> defined by:</p>
 <div class="math notranslate nohighlight" id="equation-shipwakes-4">
-<span class="eqno">(54)<a class="headerlink" href="#equation-shipwakes-4" title="Link to this equation">¶</a></span>\[C_B = \frac{V_{\mbox{sub}} }{L \cdot W \cdot D}\]</div>
+<span class="eqno">(54)<a class="headerlink" href="#equation-shipwakes-4" title="Permalink to this equation">¶</a></span>\[C_B = \frac{V_{\mbox{sub}} }{L \cdot W \cdot D}\]</div>
 <p>in which <span class="math notranslate nohighlight">\(D\)</span> represents draft of a vessel. An example of how the pressure source is implemented in FUNWAVE is shown in the figure below for <span class="math notranslate nohighlight">\(\alpha_1, \alpha_2,\)</span> and <span class="math notranslate nohighlight">\(\beta = 0.25, 0.5,\)</span> and <span class="math notranslate nohighlight">\(0.5\)</span>, respectively. Click on the image to enlarge it.</p>
-<figure class="align-center">
+<div class="figure align-center">
 <a class="reference internal image-reference" href="_images/pressure_source_001.png"><img alt="alternate text" src="_images/pressure_source_001.png" style="width: 800px;" /></a>
-</figure>
+</div>
 <p><strong>2) PRESSURE SOURCE TYPE II</strong></p>
 <p>Type II of the pressure-type source is formulated following <a class="reference external" href="https://doi.org/10.1016/j.oceaneng.2012.12.025">Bayrakter and Beji (2013)</a>. <a class="reference external" href="https://doi.org/10.1016/j.coastaleng.2017.07.001">David et al. (2017)</a> used this formulation in their tests. The pressure source can be written as:</p>
 <div class="math notranslate nohighlight" id="equation-shipwakes-5">
-<span class="eqno">(55)<a class="headerlink" href="#equation-shipwakes-5" title="Link to this equation">¶</a></span>\[p_a(\tilde{x},\tilde{y},t) = P \left[1-a(\tilde{x}/L)^4  \right] \left[1-b(\tilde{y}/W)^2  \right] e^{-c(\tilde{y}/W)^2}\]</div>
+<span class="eqno">(55)<a class="headerlink" href="#equation-shipwakes-5" title="Permalink to this equation">¶</a></span>\[p_a(\tilde{x},\tilde{y},t) = P \left[1-a(\tilde{x}/L)^4  \right] \left[1-b(\tilde{y}/W)^2  \right] e^{-c(\tilde{y}/W)^2}\]</div>
 <p>where <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span> and <span class="math notranslate nohighlight">\(c\)</span> are form parameters. For a slender body, <span class="math notranslate nohighlight">\(a=16.0\)</span>, <span class="math notranslate nohighlight">\(b=2.0\)</span> and <span class="math notranslate nohighlight">\(c=16.0\)</span>.</p>
 <p><strong>3) SLENDER SOURCE TYPE I</strong></p>
 <p>For the slender-type source, the additional volume flux induced by ship motion is applied in the mass conservation equation:</p>
 <div class="math notranslate nohighlight" id="equation-shipwakes-6">
-<span class="eqno">(56)<a class="headerlink" href="#equation-shipwakes-6" title="Link to this equation">¶</a></span>\[dQ = F * \sin (2\pi (\tilde{x}-x^*(t))/L) * \cos (2\pi (\tilde{y}-y^*(t))/W)\]</div>
+<span class="eqno">(56)<a class="headerlink" href="#equation-shipwakes-6" title="Permalink to this equation">¶</a></span>\[dQ = F * \sin (2\pi (\tilde{x}-x^*(t))/L) * \cos (2\pi (\tilde{y}-y^*(t))/W)\]</div>
 <p>where <span class="math notranslate nohighlight">\(dQ\)</span> represents the flux gradient. <span class="math notranslate nohighlight">\(F\)</span> is a parameter which can be determined by the block ratio. The formula is calculated in the rectangle <span class="math notranslate nohighlight">\(- L/2 \le \tilde{x} - x^*(t) \le L/2\)</span>  and  <span class="math notranslate nohighlight">\(- W/2 \le \tilde{y} - y^*(t) \le R/2\)</span>, and zero outside this region.</p>
 <p><strong>4) SLENDER SOURCE TYPE II</strong></p>
 <p>The Type II of the slender source is similar to the Type I but with two additional parameters representing sizes of bow and stern:</p>
 <div class="math notranslate nohighlight" id="equation-shipwakes-7">
-<span class="eqno">(57)<a class="headerlink" href="#equation-shipwakes-7" title="Link to this equation">¶</a></span>\[\begin{split}dQ = \left \{ \begin{array}{rl} F * \sin (2\pi ((\tilde{x}-x^*(t)-\frac{1}{2}\alpha_1 L)/(1-\alpha_1)L) * \cos (\pi \tilde{y}/W), &amp;  \frac{1}{2}\alpha_1 L &lt; \tilde{x} - x^*(t) \le \frac{1}{2}L \\ F * \sin (2\pi ((\tilde{x}-x^*(t)+\frac{1}{2}\alpha_2 L)/(1-\alpha_2)L) * \cos (\pi \tilde{y}/W), &amp;  -\frac{1}{2}L \le \tilde{x}-x^*(t) \lt -\frac{1}{2}\alpha_2 L \\ 0, &amp; - \frac{1}{2}\alpha_2 L \le \tilde{x} - x^*(t) \le \frac{1}{2}\alpha_1 L \end{array} \right.\end{split}\]</div>
+<span class="eqno">(57)<a class="headerlink" href="#equation-shipwakes-7" title="Permalink to this equation">¶</a></span>\[\begin{split}dQ = \left \{ \begin{array}{rl} F * \sin (2\pi ((\tilde{x}-x^*(t)-\frac{1}{2}\alpha_1 L)/(1-\alpha_1)L) * \cos (\pi \tilde{y}/W), &amp;  \frac{1}{2}\alpha_1 L &lt; \tilde{x} - x^*(t) \le \frac{1}{2}L \\ F * \sin (2\pi ((\tilde{x}-x^*(t)+\frac{1}{2}\alpha_2 L)/(1-\alpha_2)L) * \cos (\pi \tilde{y}/W), &amp;  -\frac{1}{2}L \le \tilde{x}-x^*(t) \lt -\frac{1}{2}\alpha_2 L \\ 0, &amp; - \frac{1}{2}\alpha_2 L \le \tilde{x} - x^*(t) \le \frac{1}{2}\alpha_1 L \end{array} \right.\end{split}\]</div>
 <p>The formula is calculated in the rectangle <span class="math notranslate nohighlight">\(- L/2 \le \tilde{x} - x^*(t) \le L/2\)</span>  and  <span class="math notranslate nohighlight">\(- W/2 \le \tilde{y} - y^*(t) \le R/2\)</span>, and zero outside this region. An example of lengthening the pressure source by increasing <span class="math notranslate nohighlight">\(\alpha_1\)</span> to 0.75.</p>
-<figure class="align-center">
+<div class="figure align-center">
 <a class="reference internal image-reference" href="_images/pressure_source_004.png"><img alt="alternate text" src="_images/pressure_source_004.png" style="width: 800px;" /></a>
-</figure>
+</div>
 <p>To set up vessels in the model, see <a class="reference internal" href="shipwakes_para.html#section-shipwakes-setup"><span class="std std-ref">Shipwakes</span></a>.</p>
 <p><strong>References</strong></p>
 <p>Bayrakter, D., and S. Beji, (2013). “Numerical simulation of waves generated by a moving pressure field”. <em>Ocean Engineering</em>, 59: 231-239. DOI: 10.1016/j.oceaneng.2012.12.025.</p>
@@ -137,10 +137,9 @@
 <p>Ertekin, R.C., Webster, W.C., Wehausen, J.V., 1986. “Waves caused by a moving disturbance in a shallow channel of finite width”. Cambridge University Press, 169: 275-292. DOI: 10.1017/S0022112086000630.</p>
 <p>Torsvik, T., Pederson, G., Dysthe, K., 2009. “Waves Generated by a Pressure Disturbance Moving in a Channel with Variable Cross-Sectional Topography”. <em>J. of Waterway, Port, Coastal, and Ocean Eng.</em>, 135 (3). DOI: 10.1061/(ASCE)0733-950X(2009)135:3(120).</p>
 <p>Wu, T.Y., 1987. “Generation of upstream advancing solitons by moving disturbances”. Cambridge University Press, 184: 75-99. DOI: 10.1017/S0022112087002817.</p>
-</section>
+</div>
 
 
-            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -159,13 +158,12 @@
           <a href="absorbing_generating_wavemaker.html" title="Time-varying Wavemaker"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="basics.html" ><strong>BASICS</strong></a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Ship-wake Module</a></li> 
+          <li class="nav-item nav-item-1"><a href="basics.html" ><strong>BASICS</strong></a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2019, Fengyan Shi.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+        &#169; Copyright 2019, Fengyan Shi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
     </div>
   </body>
 </html>

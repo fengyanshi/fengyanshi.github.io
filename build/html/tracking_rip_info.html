@@ -1,16 +1,18 @@
+
 <!DOCTYPE html>
 
-<html lang="en" data-content_root="./">
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
     <title>Basics for model setup &#8212; FUNWAVE Documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
-    <link rel="stylesheet" type="text/css" href="_static/lglb-sphinx-doc.css?v=3078a223" />
-    <script src="_static/documentation_options.js?v=5929fcd5"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Regular waves with normal incidence" href="tracking_rip_regular.html" />
@@ -36,8 +38,7 @@
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="examples.html" ><strong>EXAMPLES</strong></a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="tracking_rip.html" accesskey="U">Lagrangian tracking in 2D rip channels</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Basics for model setup</a></li> 
+          <li class="nav-item nav-item-2"><a href="tracking_rip.html" accesskey="U">Lagrangian tracking in 2D rip channels</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -67,12 +68,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>document.getElementById('searchbox').style.display = "block"</script>
+<script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
 
@@ -81,17 +82,15 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <section id="basics-for-model-setup">
-<h1>Basics for model setup<a class="headerlink" href="#basics-for-model-setup" title="Link to this heading">¶</a></h1>
+  <div class="section" id="basics-for-model-setup">
+<h1>Basics for model setup<a class="headerlink" href="#basics-for-model-setup" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
 <li><p>computational domain</p></li>
 </ul>
-<figure class="align-center" id="id1">
+<div class="align-center figure" id="id1">
 <a class="reference internal image-reference" href="_images/bathy_tracer.png"><img alt="alternate text" src="_images/bathy_tracer.png" style="width: 400px; height: 320px;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 16 </span><span class="caption-text">The bathymetry file: /simple_cases/rip_tracking/bathy/depth_115.txt</span><a class="headerlink" href="#id1" title="Link to this image">¶</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-number">Fig. 16 </span><span class="caption-text">The bathymetry file: /simple_cases/rip_tracking/bathy/depth_115.txt</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
 <p>Basic info</p>
 <blockquote>
 <div><p>Dimensions 312 X 100 (note: we only read 100 rows of the depth file shown in the figure)</p>
@@ -107,10 +106,9 @@ the input file is in the folder /simple_cases/rip_tracking/work/</p></li>
 <p>matlab examples of postprocessing are located in /simple_cases/rip_tracking/postprocessing/</p>
 </li>
 </ul>
-</section>
+</div>
 
 
-            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -130,13 +128,12 @@ the input file is in the folder /simple_cases/rip_tracking/work/</p></li>
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="examples.html" ><strong>EXAMPLES</strong></a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="tracking_rip.html" >Lagrangian tracking in 2D rip channels</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Basics for model setup</a></li> 
+          <li class="nav-item nav-item-2"><a href="tracking_rip.html" >Lagrangian tracking in 2D rip channels</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2019, Fengyan Shi.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+        &#169; Copyright 2019, Fengyan Shi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
     </div>
   </body>
 </html>

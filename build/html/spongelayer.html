@@ -1,17 +1,18 @@
+
 <!DOCTYPE html>
 
-<html lang="en" data-content_root="./">
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
     <title>Sponge Layer &#8212; FUNWAVE Documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
-    <link rel="stylesheet" type="text/css" href="_static/lglb-sphinx-doc.css?v=3078a223" />
-    <script src="_static/documentation_options.js?v=5929fcd5"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Internal Wavemaker (traditional)" href="wavemaker.html" />
@@ -37,8 +38,7 @@
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="basics.html" ><strong>BASICS</strong></a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="central.html" accesskey="U">Central Module</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Sponge Layer</a></li> 
+          <li class="nav-item nav-item-2"><a href="central.html" accesskey="U">Central Module</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -75,12 +75,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>document.getElementById('searchbox').style.display = "block"</script>
+<script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
 
@@ -89,36 +89,35 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <section id="sponge-layer">
-<span id="section-sponge-layer"></span><h1>Sponge Layer<a class="headerlink" href="#sponge-layer" title="Link to this heading">¶</a></h1>
+  <div class="section" id="sponge-layer">
+<span id="section-sponge-layer"></span><h1>Sponge Layer<a class="headerlink" href="#sponge-layer" title="Permalink to this headline">¶</a></h1>
 <p>The sponge layer technique introduced by <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/0378383983900224">Larsen and Dancy (L–D type, 1983)</a> is implemented in the code. In this method, the variables <span class="math notranslate nohighlight">\(\phi\)</span> (i.e., <span class="math notranslate nohighlight">\(\eta, u, v\)</span>) are directly attenuated at every time step:</p>
 <div class="math notranslate nohighlight" id="equation-spongelayer-0">
-<span class="eqno">(16)<a class="headerlink" href="#equation-spongelayer-0" title="Link to this equation">¶</a></span>\[\phi = \phi /C_s\]</div>
+<span class="eqno">(16)<a class="headerlink" href="#equation-spongelayer-0" title="Permalink to this equation">¶</a></span>\[\phi = \phi /C_s\]</div>
 <p>where <span class="math notranslate nohighlight">\(C_s\)</span> is a damping coefficient function defined by:</p>
 <div class="math notranslate nohighlight" id="equation-spongelayer-1">
-<span class="eqno">(17)<a class="headerlink" href="#equation-spongelayer-1" title="Link to this equation">¶</a></span>\[C_s = \alpha_s^{\gamma_x^{i-1}}, \ \ \ \ \ i=1,2, ..., n\]</div>
+<span class="eqno">(17)<a class="headerlink" href="#equation-spongelayer-1" title="Permalink to this equation">¶</a></span>\[C_s = \alpha_s^{\gamma_x^{i-1}}, \ \ \ \ \ i=1,2, ..., n\]</div>
 <p>in which <span class="math notranslate nohighlight">\(\alpha_s\)</span> and <span class="math notranslate nohighlight">\(\gamma_s\)</span> are two free parameters. <span class="math notranslate nohighlight">\(i\)</span> represents grid numbers. <a class="reference external" href="https://ascelibrary.org/doi/abs/10.1061/(ASCE)0733-950X(1999)125:4(176)">Chen et al. (1999)</a> suggested that <span class="math notranslate nohighlight">\(\alpha_s =2\)</span>, <span class="math notranslate nohighlight">\(\gamma_s = 0.88 - 0.92\)</span>, and <span class="math notranslate nohighlight">\(n=50 - 100\)</span>. <strong>The length of the sponge layer is usually taken to be one or two times the typical wavelength.</strong> Chen et al. also pointed out that the damping coefficients for optimal absorption are somewhat case–sensitive.</p>
 <p>Recently, some problem was found in application of L–D type sponge layer for long–term simulations. The direct damping method combined with the TVD scheme generates sawtooth noises with a <span class="math notranslate nohighlight">\(2 dx\)</span> wave length. The sawtooth noises are usually not noticeable due to small magnitudes. However, they grow gradually with time and may become significant in a long term simulation. If this problem occurs, we suggest using the following friction–type or viscous–type sponge layers. Using the combination of L–D and friction/viscous sponge layers may remove the sawtooth noises and also make the wave damping more efficient.</p>
-<section id="friction-type-and-diffusion-type">
-<h2>Friction type and Diffusion type<a class="headerlink" href="#friction-type-and-diffusion-type" title="Link to this heading">¶</a></h2>
+<div class="section" id="friction-type-and-diffusion-type">
+<h2>Friction type and Diffusion type<a class="headerlink" href="#friction-type-and-diffusion-type" title="Permalink to this headline">¶</a></h2>
 <p>The friction–type and viscous type sponge layers directly use the friction terms and diffusion terms existing in the model. The source term for the friction–type sponge can be described as:</p>
 <div class="math notranslate nohighlight" id="equation-spongelayer-2">
-<span class="eqno">(18)<a class="headerlink" href="#equation-spongelayer-2" title="Link to this equation">¶</a></span>\[F_{frc} = - C_{sponge} |{\bf u_\alpha}|  (u_\alpha, v_\alpha) h\]</div>
+<span class="eqno">(18)<a class="headerlink" href="#equation-spongelayer-2" title="Permalink to this equation">¶</a></span>\[F_{frc} = - C_{sponge} |{\bf u_\alpha}|  (u_\alpha, v_\alpha) h\]</div>
 <p>Note that depth <span class="math notranslate nohighlight">\(h\)</span> is added in the formula above to make the source term depth–independent in terms of the flux–type momentum equations. For the diffusion–type sponge, the description of diffusion term follows exactly the eddy–viscosity breaking formulation with spatial varying viscosity coefficients <span class="math notranslate nohighlight">\(\nu_{sponge}\)</span>.  Both coefficients are smoothly ramped in space at the sponge layer boundaries. For example, for a sponge layer on the left end of the domain, <span class="math notranslate nohighlight">\(C_{sponge}\)</span> can be written as:</p>
 <div class="math notranslate nohighlight" id="equation-spongelayer-3">
-<span class="eqno">(19)<a class="headerlink" href="#equation-spongelayer-3" title="Link to this equation">¶</a></span>\[C_{sponge} = C_{max} \left (1-  \mbox{tanh} \frac{10 (i-1)}{I_{\mbox{width}}-1} \right)\]</div>
+<span class="eqno">(19)<a class="headerlink" href="#equation-spongelayer-3" title="Permalink to this equation">¶</a></span>\[C_{sponge} = C_{max} \left (1-  \mbox{tanh} \frac{10 (i-1)}{I_{\mbox{width}}-1} \right)\]</div>
 <p>where <span class="math notranslate nohighlight">\(C_{max}\)</span> is the maximum value of <span class="math notranslate nohighlight">\(C_{sponge}\)</span> used in the sponger layer. <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(I_{\mbox{width}}\)</span> represent the point number and the layer width in points, respectively. Similar expressions can be obtained for sponge layers on three other ends of the domain as well as the viscous sponge layer.</p>
 <p>The width of the sponge layer is usually taken to be two or three wave lengths for the friction–type and viscous sponge layers. Narrow sponge layers can be used for L–D type sponge layer with a good efficiency but sawtooth noise generated by the method is a concern for long–term simulation.</p>
-<section id="references">
-<h3>References<a class="headerlink" href="#references" title="Link to this heading">¶</a></h3>
+<div class="section" id="references">
+<h3>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h3>
 <p>Chen, Q., Madsen, P.A., Basco, D.R., 1999. “Current Effects on Nonlinear Interactions of Shallow–Water Waves”. J. of Waterway, Port, Coastal, and Ocean Eng. 125 (4).</p>
 <p>Larsen, J. and Dancy, H., 1983. “Open boundaries in short wave simulations – A new approach”. Coastal Eng. 7 (3), 285-297.</p>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
-            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -138,13 +137,12 @@
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="basics.html" ><strong>BASICS</strong></a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="central.html" >Central Module</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Sponge Layer</a></li> 
+          <li class="nav-item nav-item-2"><a href="central.html" >Central Module</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2019, Fengyan Shi.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+        &#169; Copyright 2019, Fengyan Shi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
     </div>
   </body>
 </html>

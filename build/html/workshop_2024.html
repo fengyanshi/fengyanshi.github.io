@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Coupling procedure &#8212; FUNWAVE Documentation</title>
+    <title>Workshop 2024 &#8212; FUNWAVE Documentation</title>
     <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -14,9 +14,7 @@
     <script type="text/javascript" src="_static/language_data.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="GRID A (solitary wave case)" href="coupling_sph_solitary_a.html" />
-    <link rel="prev" title="Compile the code for tracking" href="coupling_sph_compile.html" /> 
+    <link rel="search" title="Search" href="search.html" /> 
   </head><body>
 <div class="header">
  <p class="logo"><a href="https://fengyanshi.github.io/build/html/index.html">
@@ -30,33 +28,20 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="coupling_sph_solitary_a.html" title="GRID A (solitary wave case)"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="coupling_sph_compile.html" title="Compile the code for tracking"
-             accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="examples.html" ><strong>EXAMPLES</strong></a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="coupling_sph.html" accesskey="U">Coupling grid A and B</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
 <h3><a href="index.html">Table of Contents</a></h3>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="basics.html"><strong>BASICS</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="flowchart.html"><strong>ARCHITECTURE</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="setup.html"><strong>MODEL DOWNLOAD AND SETUP</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials.html"><strong>VIDEO TUTORIALS</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="definition.html"><strong>DEFINITIONS OF PARAMETERS</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="coupling_nesting.html"><strong>NESTING AND COUPLING</strong></a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="examples.html"><strong>EXAMPLES</strong></a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="examples.html#simple-tests-beginners-should-start-from-here">Simple tests <strong>(beginners should start from here)</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples.html#benchmarks">Benchmarks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples.html#recent-usace-applications">Recent USACE Applications</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html"><strong>EXAMPLES</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="gallery.html"><strong>GALLERY</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="news.html"><strong>FUNWAVE-TVD WORKSHOP</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="references.html"><strong>BIBLIOGRAPHY</strong></a></li>
@@ -82,14 +67,22 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="coupling-procedure">
-<h1>Coupling procedure<a class="headerlink" href="#coupling-procedure" title="Permalink to this headline">¶</a></h1>
-<p>The case has two grids in the spherical system, the coarse grid (GRID A) and fine grid (GRID B). GRID B is nested in GRID A at i = 500 (point). A solitary wave is specified in GRID A as the initial condition.</p>
-<ul class="simple">
-<li><p>Run GRID A using funwave_nocoupling compiled without -DCOUPLING. Specify a station file ‘station.txt’ for output at the coupling boundaries.</p></li>
-<li><p>Make a coupling file ‘coupling.txt’ using the output from GRID A.</p></li>
-<li><p>Run GRID B using funwave_coupling compiled with -DCOUPLING. Specify the coupling file ‘coupling.txt’ in input.txt.</p></li>
-</ul>
+  <div class="section" id="workshop-2024">
+<span id="workshop24"></span><h1>Workshop 2024<a class="headerlink" href="#workshop-2024" title="Permalink to this headline">¶</a></h1>
+<p>We are pleased to announce that the sixth FUNWAVE-TVD Training Workshop will be held on July 23-25, 2024, at the University of Delaware, Newark, DE.  This workshop is organized by the Center for Applied Coastal Research (CACR), University of Delaware, and the US Army Engineer Research and Development Center (ERDC). The workshop is open to all FUNWAVE users and interested parties.</p>
+<p>This workshop will cover general topics, including the modeling of nearshore surface waves and processes such as harbor resonance, nearshore wave transformation, refraction and diffraction with complex geometries, non-coherent internal wavemaker, nearshore circulation, and tsunami propagation and inundation from ocean basin- to nearshore-scales. It will also introduce some new features added to the model recently, such as varying water level boundary condition in a tide/surge module, sub-gridding, and bubble/foam. The three-day workshop will include hands-on training sessions for new users, as well as technical talks from the community of practice and experienced users.</p>
+<p>Registration and participation in the workshop is <em>free</em>. Please be advised that breakfast and lunch <em>will not</em> be provided. There are several lunch options through the UDel campus within walking distance. A list of recommended lunch options will be provided at the workshop.</p>
+<p>Please submit your <a class="reference external" href="https://forms.osi.apps.mil/r/Eqb8Ax55Gx">registration</a> by 1 JULY 2024.</p>
+<p>Recommended lodging: Embassy Suites by Hilton Newark Wilmington South
+The Embassy Suites is ~5 min drive from UDel campus and provides a hot breakfast as well as an afternoon social hour with beverages and snacks.
+Nearby lodging options:
+Homewood Suites by Hilton Newark-Wilmington South Area
+Courtyard Newark-University of Delaware</p>
+<p>Recommended airport: Philadelphia International Airport (PHL)
+PHL is ~40 min from UDel campus. Airport shuttle service can be reserved with <a class="reference external" href="https://delexpress.com/">Go Delaware Express</a> if rental car options are limited. Carpool options from the Embassy Suites or Homewood Suites to UDel can be arranged as needed.
+Any questions can be directed to Marissa Torres at <a class="reference external" href="mailto:marissa&#46;j&#46;torres&#37;&#52;&#48;usace&#46;army&#46;mil">marissa<span>&#46;</span>j<span>&#46;</span>torres<span>&#64;</span>usace<span>&#46;</span>army<span>&#46;</span>mil</a> or Fengyan Shi at <a class="reference external" href="mailto:fyshi&#37;&#52;&#48;udel&#46;edu">fyshi<span>&#64;</span>udel<span>&#46;</span>edu</a>.</p>
+<p>Agenda and tutorial documentation will be distributed prior to the workshop.</p>
+<p><a class="reference external" href="https://fengyanshi.github.io/build/html/index.html">Back to funwave-tvd page</a></p>
 </div>
 
 
@@ -104,15 +97,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="right" >
-          <a href="coupling_sph_solitary_a.html" title="GRID A (solitary wave case)"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="coupling_sph_compile.html" title="Compile the code for tracking"
-             >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="examples.html" ><strong>EXAMPLES</strong></a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="coupling_sph.html" >Coupling grid A and B</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
