@@ -5,7 +5,12 @@ Useful links
 
 .. toctree::
    :maxdepth: 1
-
+   
+   index_non_usace
+   what_is_funwave
+   where_start
+   capabilities
+   usace_app
    windows
    workshop_2017
    workshop_2018

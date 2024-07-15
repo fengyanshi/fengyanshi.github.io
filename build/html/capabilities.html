@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Capabilities &#8212; FUNWAVE Documentation</title>
+    <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="USACE Applications" href="usace_app.html" />
+    <link rel="prev" title="Where to start?" href="where_start.html" /> 
+  </head><body>
+<div class="header">
+ <p class="logo"><a href="https://fengyanshi.github.io/build/html/index.html">
+  <img class="logo" src="_static/../../../images/Funwave.svg" alt="Logo"/>
+ </a></p>
+</div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="usace_app.html" title="USACE Applications"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="where_start.html" title="Where to start?"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="addition.html" ><strong>ADDITIONAL INFORMATION</strong></a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="useful.html" accesskey="U">Useful links</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="basics.html"><strong>BASICS</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="flowchart.html"><strong>ARCHITECTURE</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup.html"><strong>MODEL DOWNLOAD AND SETUP</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html"><strong>VIDEO TUTORIALS</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="definition.html"><strong>DEFINITIONS OF PARAMETERS</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="coupling_nesting.html"><strong>NESTING AND COUPLING</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html"><strong>EXAMPLES</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="gallery.html"><strong>GALLERY</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="news.html"><strong>FUNWAVE-TVD WORKSHOP</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html"><strong>BIBLIOGRAPHY</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="authors.html"><strong>AUTHORS</strong></a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="addition.html"><strong>ADDITIONAL INFORMATION</strong></a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="useful.html">Useful links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="info_structures.html">Wave Response with Coastal Structures</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="capabilities">
+<h1><strong>Capabilities</strong><a class="headerlink" href="#capabilities" title="Permalink to this headline">¶</a></h1>
+<p>As a nearshore shallow-to-intermediate water phase-resolving Boussinesq-type numerical wave model, FUNWAVE can resolve many coastal processes such as:</p>
+<div class="sidebar">
+<p class="sidebar-title"><strong>Exclusive to phase-resolving</strong></p>
+<p>Coastal processes highlighted in bold indicate process-based capabilities that are <em>not</em> naturally resolved in <em>phase-averaging</em> wave models. These features are exclusive to <em>phase-resolving</em> wave models.</p>
+</div>
+<ul class="simple">
+<li><p>Nearshore wave propagation &amp; transformation</p></li>
+<li><p>Refraction, diffraction, reflection &amp; nonlinear shoaling</p></li>
+<li><p>Wave-induced nearshore circulation</p></li>
+<li><p>Nonlinear wave–wave &amp; wave–current interactions</p></li>
+<li><p>Wave breaking with <strong>runup</strong> &amp; <strong>overtopping</strong></p></li>
+<li><p><strong>Partially absorbing/reflecting</strong> inner boundaries</p></li>
+<li><p><strong>Harbor resonance</strong> &amp; <strong>Infragravity (IG) waves</strong></p></li>
+<li><p><strong>Vessel–generated waves</strong> &amp; related sediment transport with morphology change</p></li>
+<li><p>Adaptive mesh refinement (AMR) module for refined moving and two–wave coupled grids</p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/wavecombined.jpg"><img alt="_images/wavecombined.jpg" class="align-center" src="_images/wavecombined.jpg" style="width: 700px; height: 200px;" /></a>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="usace_app.html" title="USACE Applications"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="where_start.html" title="Where to start?"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="addition.html" ><strong>ADDITIONAL INFORMATION</strong></a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="useful.html" >Useful links</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, Fengyan Shi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
+    </div>
+  </body>
+</html>

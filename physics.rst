@@ -44,7 +44,7 @@ Physics (dispersion, breaking, friction)
 
        DO J=1,Nglob
        
-        READ(1,*)(Cd(I,J),I=1,Mglob)a
+        READ(1,*)(Cd(I,J),I=1,Mglob)
         
        ENDDO
 

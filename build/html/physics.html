@@ -61,7 +61,12 @@
 <li class="toctree-l1"><a class="reference internal" href="news.html"><strong>FUNWAVE-TVD WORKSHOP</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="references.html"><strong>BIBLIOGRAPHY</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="authors.html"><strong>AUTHORS</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="addition.html"><strong>ADDITIONAL INFORMATION</strong></a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="addition.html"><strong>ADDITIONAL INFORMATION</strong></a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="useful.html">Useful links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="info_structures.html">Wave Response with Coastal Structures</a></li>
+</ul>
+</li>
 </ul>
 
 <div id="searchbox" style="display: none" role="search">
@@ -119,7 +124,7 @@
 <li><p><code class="code docutils literal notranslate"><span class="pre">FRICTION_FILE</span></code>: name of friction file if <code class="code docutils literal notranslate"><span class="pre">FRICTION_MATRIX</span> <span class="pre">=</span> <span class="pre">T</span></code>; the file dimensions should be <code class="code docutils literal notranslate"><span class="pre">Mglob</span> <span class="pre">x</span> <span class="pre">Nglob</span></code> with the first point as the south-west corner. The read format in the code is shown below:</p>
 <div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>DO J=1,Nglob
 
- READ(1,*)(Cd(I,J),I=1,Mglob)a
+ READ(1,*)(Cd(I,J),I=1,Mglob)
 
 ENDDO
 </pre></div>

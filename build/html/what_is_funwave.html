@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>What is FUNWAVE-TVD? &#8212; FUNWAVE Documentation</title>
+    <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Where to start?" href="where_start.html" />
+    <link rel="prev" title="FUNWAVE-TVD" href="index_non_usace.html" /> 
+  </head><body>
+<div class="header">
+ <p class="logo"><a href="https://fengyanshi.github.io/build/html/index.html">
+  <img class="logo" src="_static/../../../images/Funwave.svg" alt="Logo"/>
+ </a></p>
+</div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="where_start.html" title="Where to start?"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index_non_usace.html" title="FUNWAVE-TVD"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="addition.html" ><strong>ADDITIONAL INFORMATION</strong></a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="useful.html" >Useful links</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="index_non_usace.html" accesskey="U">FUNWAVE-TVD</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="basics.html"><strong>BASICS</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="flowchart.html"><strong>ARCHITECTURE</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup.html"><strong>MODEL DOWNLOAD AND SETUP</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html"><strong>VIDEO TUTORIALS</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="definition.html"><strong>DEFINITIONS OF PARAMETERS</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="coupling_nesting.html"><strong>NESTING AND COUPLING</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html"><strong>EXAMPLES</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="gallery.html"><strong>GALLERY</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="news.html"><strong>FUNWAVE-TVD WORKSHOP</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html"><strong>BIBLIOGRAPHY</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="authors.html"><strong>AUTHORS</strong></a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="addition.html"><strong>ADDITIONAL INFORMATION</strong></a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="useful.html">Useful links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="info_structures.html">Wave Response with Coastal Structures</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="what-is-funwave-tvd">
+<h1><strong>What is FUNWAVE-TVD?</strong><a class="headerlink" href="#what-is-funwave-tvd" title="Permalink to this headline">¶</a></h1>
+<p>FUNWAVE–TVD is the Total Variation Diminishing (TVD) version of the fully nonlinear Boussinesq wave model (FUNWAVE) developed by <a class="reference external" href="http://www.sciencedirect.com/science/article/pii/S1463500311002010">Shi et al. (2012)</a>. The FUNWAVE model was initially developed by <a class="reference external" href="http://resolver.tudelft.nl/uuid:d79bba08-8d35-47e2-b901-881c86985ce4">Kirby et al. (1998)</a> based on <a class="reference external" href="https://doi.org/10.1017/S0022112095002813">Wei et al. (1995)</a>. The development of the present version was motivated by recent needs for modeling of surfzone–scale optical properties in a Boussinesq model framework, and  modeling of Tsunami waves in both a global/coastal scale for prediction of coastal inundation and a basin scale for wave propagation.</p>
+<p>This version  features  several theoretical and numerical improvements, including:</p>
+<a class="reference internal image-reference" href="_images/coverimage.jpg"><img alt="_images/coverimage.jpg" class="align-right" src="_images/coverimage.jpg" style="width: 500px; height: 200px;" /></a>
+<ol class="arabic simple">
+<li><p>A more complete set of fully nonlinear Boussinesq equations;</p></li>
+<li><p>Monotonic Upwind Scheme for Conservation Laws (MUSCL)–TVD solver with adaptive Runge–Kutta time stepping;</p></li>
+<li><p>Shock–capturing wave breaking scheme;</p></li>
+<li><p>Wetting–drying moving boundary condition with incorporation of Harten-Lax-van Leer (HLL) construction method into the scheme;</p></li>
+<li><p>Lagrangian tracking;</p></li>
+<li><p>Option for parallel computation.</p></li>
+</ol>
+<p>The most recent developments include ship-wake generation (<a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S0378383917304246">Shi et al., 2018</a>), meteo-tsunami generation (<a class="reference external" href="https://icce-ojs-tamu.tdl.org/icce/index.php/icce/article/view/8470">Woodruff et al., 2018</a>), and sediment transport and morphological changes (<a class="reference external" href="https://coastal.udel.edu/research-2/cacr-reports/">Tehranirad et al., 2016</a>, <a class="reference external" href="https://apps.dtic.mil/dtic/tr/fulltext/u2/1074624.pdf">Malej et al., 2019</a>).</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="where_start.html" title="Where to start?"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index_non_usace.html" title="FUNWAVE-TVD"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="addition.html" ><strong>ADDITIONAL INFORMATION</strong></a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="useful.html" >Useful links</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="index_non_usace.html" >FUNWAVE-TVD</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, Fengyan Shi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
+    </div>
+  </body>
+</html>
