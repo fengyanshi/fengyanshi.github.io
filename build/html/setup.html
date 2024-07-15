@@ -100,10 +100,7 @@
 <ul>
 <li><p><strong>If you are using a Mac OS X machine</strong></p>
 <p>We recommend you install GNU compilers (e.g., <code class="code docutils literal notranslate"><span class="pre">gcc,</span> <span class="pre">g++,</span> <span class="pre">gfortran</span></code>) via Homebrew. If you don’t have Homebrew installed, type the following in your terminal:</p>
-<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>cd ~
-mkdir homebrew
-curl -L https://raw.github.com/Homebrew/brew/tarball/master
-tar xz --strip 1 -C homebrew
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;
 </pre></div>
 </div>
 <p>If you didn’t previously have these compilers on your system (say via Xcode), then the <code class="code docutils literal notranslate"><span class="pre">gcc,</span> <span class="pre">g++,</span> <span class="pre">gfortran</span></code> compilers would be placed under <code class="code docutils literal notranslate"><span class="pre">/usr/local/bin/</span></code> directory; otherwise they could be placed under <code class="code docutils literal notranslate"><span class="pre">/usr/local/Cellar/gcc/9.1.0/bin/</span></code>. You will then need to install the GNU suite of compilers using <code class="code docutils literal notranslate"><span class="pre">brew</span></code>, where the current versions are 9.1.0.</p>
