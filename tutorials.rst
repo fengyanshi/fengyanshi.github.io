@@ -11,8 +11,15 @@ Subscribe to `FUNWAVE Tutorials <https://www.youtube.com/channel/UCIWsla9RSOGaxo
 HOW TO
 =======
 
-Set up Linux on Windows to run FUNWAVE-TVD
-******************************************
+Set up Linux on **Windows 11** to run FUNWAVE-TVD (for workshop 2024)
+*************************************************************************
+|
+.. raw:: html
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/_uOtQqwJHsU" frameborder="0" allowfullscreen></iframe>
+
+Set up Linux on **Windows 10** to run FUNWAVE-TVD
+**************************************************
 |
 .. raw:: html
 
