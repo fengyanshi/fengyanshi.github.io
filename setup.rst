@@ -100,7 +100,9 @@ Download source code
 
 `Version beta: not fully tested. click here to download/clone from GitHub <https://github.com/fengyanshi/FUNWAVE-TVD>`_
 
-`Version 3.4 Released May 19 2023: click here to download from GitHub <https://github.com/fengyanshi/FUNWAVE-TVD/releases>`_
+`Version 3.6 Released May 19 2023: click here to download from GitHub <https://github.com/fengyanshi/FUNWAVE-TVD/releases>`_
+
+`Version 3.5 Released Oct 12 2019: click here to download from GitHub <https://github.com/fengyanshi/FUNWAVE-TVD/releases>`_
 
 `Version 3.4 Released July 12 2019: click here to download from GitHub <https://github.com/fengyanshi/FUNWAVE-TVD/releases>`_
 
