@@ -13,7 +13,7 @@ FUNWAVE-TVD (USACE Version)
 
 .. note::
    **2024 FUNWAVE Workshop**
-   The workshop will take place 23-25 July at Gore Hall 116, the University of Delaware.  Agenda can be found :ref:`here <workshop24_agenda>`.
+   The workshop will take place 23-25 July at Gore Hall 116, University of Delaware.  Agenda can be found :ref:`here <workshop24_agenda>`.
 
 
 
