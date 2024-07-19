@@ -6,6 +6,7 @@ Useful links
 .. toctree::
    :maxdepth: 1
    
+   agenda_2024
    index_non_usace
    what_is_funwave
    where_start
