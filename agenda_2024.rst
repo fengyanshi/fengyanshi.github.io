@@ -57,7 +57,7 @@ Ice-breaker social:  5:30pm-7:30pm, Embassy Suites by Hilton
 
  * 8:00 am Breakfast (on your own)
  * 9:00-9:30 Danial Golbaz (UD), Rain impacts on wave dynamics: the precipitation module in FUNWAVE-TVD
- * 9:30-10:00  Zaid Abdallah Khalil AL Husban (UD), Modeling coastal flooding caused by storm wave events in Lewes Beach, Delaware
+ * 9:30-10:00  Zaid Abdallah Khalil AL Husban (UD), Modeling the effects of Nor'easters on southern Delaware Bay shoreline
  * 10:00-10:30  Michael Lam (ERDC/CHL), Ship-induced Waves and Assessment of Erosion/Scour Hotspots and Potential Impacts to Hurricane-Flood Protection System in SNWW (Houston-Galveston)
  * 10:30-11:00 Break
  * 11:00-11:30 Marissa Torres (ERDC/CRREL), Leveraging FUNWAVE for natural and nature-based features applications
