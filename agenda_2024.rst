@@ -57,13 +57,13 @@ Ice-breaker social:  5:30pm-7:30pm, Embassy Suites by Hilton
 
  * 8:00 am Breakfast (on your own)
  * 9:00-9:30 Danial Golbaz (UD), Rain impacts on wave dynamics: the precipitation module in FUNWAVE-TVD
- * 9:30-10:00  Michael Lam (ERDC/CHL), Ship-induced Waves and Assessment of Erosion/Scour Hotspots and Potential Impacts to Hurricane-Flood Protection System in SNWW (Houston-Galveston)
- * 10:00-10:30  Modeling tips (Torres/Shi)
+ * 9:30-10:00  Zaid Abdallah Khalil AL Husban (UD), Modeling coastal flooding caused by storm wave events in Lewes Beach, Delaware
+ * 10:00-10:30  Michael Lam (ERDC/CHL), Ship-induced Waves and Assessment of Erosion/Scour Hotspots and Potential Impacts to Hurricane-Flood Protection System in SNWW (Houston-Galveston)
  * 10:30-11:00 Break
  * 11:00-11:30 Marissa Torres (ERDC/CRREL), Leveraging FUNWAVE for natural and nature-based features applications
- * 11:30-12:00 Group session – Defining problems and Future Model Development Efforts and Enhancements (Lead: Shi/Malej/Lam/Torres)
+ * 11:30-12:00 Modeling tips (Torres/Shi)
  * 12:00-1:30 Lunch
- * 1:30-3:00 Problem-solving in groups (Training session #5)
+ * 1:30-3:00 Group session – Defining problems and Future Model Development Efforts and Enhancements (Lead: Shi/Malej/Lam/Torres), followd by problem-solving in groups (Training session #5)
  * 3:00-3:30 Break
  * 3:30-5:00 Problem-solving in groups and conclusions (Training session #6)
 
