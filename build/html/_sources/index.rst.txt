@@ -13,7 +13,7 @@ FUNWAVE-TVD (USACE Version)
 
 .. note::
    **2024 FUNWAVE Workshop**
-   Registration is open for the 2024 FUNWAVE workshop! The workshop will take place 23-25 July at the University of Delaware. Please register `here <https://forms.osi.apps.mil/r/Eqb8Ax55Gx>`_ by **1 July 2024**. More details can be found :ref:`here <workshop24>`.
+   The workshop will take place 23-25 July at Gore Hall 116, the University of Delaware.  Agenda can be found :ref:`here <workshop24_agenda>`.
 
 
 

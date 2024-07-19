@@ -12,7 +12,7 @@ FUNWAVE-TVD
 
 .. note::
    **2024 FUNWAVE Workshop**
-   Registration is open for the 2024 FUNWAVE workshop! The workshop will take place 23-25 July at the University of Delaware. Please register `here <https://forms.osi.apps.mil/r/Eqb8Ax55Gx>`_ by **1 July 2024**. More details can be found :ref:`here <workshop24>`.
+      The workshop will take place 23-25 July at Gore Hall 116, the University of Delaware.  Agenda can be found :ref:`here <workshop24_agenda>`.
 
 
 FUNWAVE--TVD is the Total Variation Diminishing (TVD) version of the fully nonlinear Boussinesq wave model (FUNWAVE) developed by `Shi et al. (2012) <http://www.sciencedirect.com/science/article/pii/S1463500311002010>`_. The FUNWAVE model was initially developed by `Kirby et al. (1998) <http://resolver.tudelft.nl/uuid:d79bba08-8d35-47e2-b901-881c86985ce4>`_ based on `Wei et al. (1995) <https://doi.org/10.1017/S0022112095002813>`_. The development of the present version was motivated by recent needs for modeling of surfzone--scale optical properties in a Boussinesq model framework, and  modeling of Tsunami waves in both a global/coastal scale for prediction of coastal inundation and a basin scale for wave propagation.
