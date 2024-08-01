@@ -1,18 +1,16 @@
-
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en" data-content_root="./">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>FAQ &#8212; FUNWAVE Documentation</title>
-    <link rel="stylesheet" href="_static/lglb-sphinx-doc.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/lglb-sphinx-doc.css?v=3078a223" />
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Useful links" href="useful.html" />
@@ -24,7 +22,7 @@
  </a></p>
 </div>
 
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -37,10 +35,11 @@
           <a href="addition.html" title="ADDITIONAL INFORMATION"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="addition.html" accesskey="U"><strong>ADDITIONAL INFORMATION</strong></a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="addition.html" accesskey="U"><strong>ADDITIONAL INFORMATION</strong></a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">FAQ</a></li> 
       </ul>
     </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
 <h3><a href="index.html">Table of Contents</a></h3>
 <ul class="current">
@@ -63,16 +62,16 @@
 </li>
 </ul>
 
-<div id="searchbox" style="display: none" role="search">
+<search id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
 
@@ -81,18 +80,18 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="faq">
-<span id="section-faq"></span><h1>FAQ<a class="headerlink" href="#faq" title="Permalink to this headline">¶</a></h1>
+  <section id="faq">
+<span id="section-faq"></span><h1>FAQ<a class="headerlink" href="#faq" title="Link to this heading">¶</a></h1>
 <ul>
 <li><p>Can I run FUNWAVE-TVD on a Windows machine?</p>
-<p>Yes, an easy way to do this is to install Windows Subsystem for Linux (WSL) on a Windows 10. <a class="reference external" href="windows.html">HERE</a> is an example telling you how to install it and run FUNWAVE-TVD. You can also download the tutorial - <a class="reference download internal" download="" href="_downloads/0161f56a09b9a13d24e9d9fd52e5156f/funwave_windows.pdf"><code class="xref download docutils literal notranslate"><span class="pre">click</span> <span class="pre">here</span></code></a>.</p>
+<p>Yes, an easy way to do this is to install Windows Subsystem for Linux (WSL) on a Windows 10. <a class="reference external" href="windows.html">HERE</a> is an example telling you how to install it and run FUNWAVE-TVD. You can also download the tutorial - <a class="reference download internal" download="" href="_downloads/2ed735be9935a23ec29341471c9640a0/funwave_windows.pdf"><code class="xref download docutils literal notranslate"><span class="pre">click</span> <span class="pre">here</span></code></a>.</p>
 </li>
 <li><p>How to report bugs?</p>
 <p>If you have either forked over your repo instead of cloning directly from the FUNWAVE-TVD repo, or have cloned from the repo and have branched out to fix this bug, please do a PULL REQUEST on Github. This way we can automatically check the validity of the update and do our own internal testing to avoid conflicts before merging into the master branch.</p>
 <p>You can also report bugs in the FUNWAVE-TVD <a class="reference external" href="../../google_group.html">forum</a> or send email directly to fyshi AT udel.edu, matt.malej AT gmail.com. (AT is &#64; if you are human).</p>
 </li>
 <li><p>Can I run the model using Cloud Computating Service?</p>
-<p>Yes, the tutorial provides an example using Amazon AWS Cloud Computing - <a class="reference download internal" download="" href="_downloads/d01ab2dd800a1ef05e04ffeb98725241/2018_FUNWAVE_WORKSHOP_TUTORIAL.pdf"><code class="xref download docutils literal notranslate"><span class="pre">click</span> <span class="pre">here</span></code></a> (In Appendix)</p>
+<p>Yes, the tutorial provides an example using Amazon AWS Cloud Computing - <a class="reference download internal" download="" href="_downloads/64d55dd50ef3b82daf9ad16e6412159f/2018_FUNWAVE_WORKSHOP_TUTORIAL.pdf"><code class="xref download docutils literal notranslate"><span class="pre">click</span> <span class="pre">here</span></code></a> (In Appendix)</p>
 </li>
 <li><p>Which version should I download from the Github repository?</p>
 <p>We suggest downloading the latest release version on Github. You could use the beta version but be aware that it is not fully tested through all test cases. Download page: <a class="reference internal" href="setup.html#section-download"><span class="std std-ref">MODEL DOWNLOAD AND SETUP</span></a>.</p>
@@ -102,15 +101,16 @@
 </li>
 </ul>
 <p><a class="reference external" href="https://fengyanshi.github.io/build/html/index.html">Back to FUNWAVE-TVD Page</a></p>
-</div>
+</section>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -123,12 +123,13 @@
           <a href="addition.html" title="ADDITIONAL INFORMATION"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="addition.html" ><strong>ADDITIONAL INFORMATION</strong></a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="addition.html" ><strong>ADDITIONAL INFORMATION</strong></a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">FAQ</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2019, Fengyan Shi.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
+    &#169; Copyright 2019, Fengyan Shi.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.4.7.
     </div>
   </body>
 </html>
