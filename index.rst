@@ -7,7 +7,7 @@
    :format: html
 
 ==================================================================================
-FUNWAVE-TVD (USACE Version) 
+FUNWAVE-TVD (USACE Version of Documentation) 
 ==================================================================================
 `Switch to General Version <index_non_usace.html>`_
 
