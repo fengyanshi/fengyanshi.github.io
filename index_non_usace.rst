@@ -54,7 +54,8 @@ Wiki Content
    coupling_nesting
    examples
    gallery
-   news
+   workshop
+   media
    references
    authors
 
