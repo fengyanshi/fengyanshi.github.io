@@ -17,5 +17,7 @@
 
 `WORKSHOP 2023 at Northeastern University <workshop_2023.html>`_
 
+`WORKSHOP 2024 at University of Delaware <workshop_2024.html>`_
+
 
 

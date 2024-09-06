@@ -2,22 +2,12 @@
 .. _workshop24_agenda:
 
 AGENDA - FUNWAVE-TVD WORKSHOP 2024
-=====================================
-
- .. note:: 
-   The workshop is hold at Gore Hall, Room 116, UD campus (`map <https://css-rdms1.win.udel.edu/maps/>`_). 
-    Use Perkins Center Garage (4C, pay at Park kiosk) if driving. You can also take UD shuttle bus (`Bus Service <https://sites.udel.edu/transportation/bus-routes-2022-2023/>`_). 
-    For internet access, visit `UDelNet Guest Access <https://services.udel.edu/TDClient/32/Portal/KB/ArticleDet?ID=570>`_.
-
 
 **Monday July 22nd:** 
-==============================
 
 Ice-breaker social:  5:30pm-7:30pm, Embassy Suites by Hilton
 
 **Day 1: Tuesday July 23rd**
-==============================
-
  * 8:00 am Registration and breakfast (on your own)
  * 9:00-9:05 Welcome (Jack Puleo, Department Chair)
  * 9:05-9:15 Introductions (Lead: Malej/Torres)
