@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>FUNWAVE-TVD WORKSHOP &#8212; FUNWAVE Documentation</title>
+    <title>INTRODUCTION &#8212; FUNWAVE Documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="_static/lglb-sphinx-doc.css?v=3078a223" />
     <script src="_static/documentation_options.js?v=5929fcd5"></script>
@@ -13,8 +13,8 @@
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="BIBLIOGRAPHY" href="references.html" />
-    <link rel="prev" title="GALLERY" href="gallery.html" /> 
+    <link rel="next" title="THEORY" href="high_dispersion_theory.html" />
+    <link rel="prev" title="Fully dispersive model’s documentation!" href="highly_dispersive_model.html" /> 
   </head><body>
 <div class="header">
  <p class="logo"><a href="https://fengyanshi.github.io/build/html/index.html">
@@ -29,13 +29,16 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="references.html" title="BIBLIOGRAPHY"
+          <a href="high_dispersion_theory.html" title="THEORY"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="gallery.html" title="GALLERY"
+          <a href="highly_dispersive_model.html" title="Fully dispersive model’s documentation!"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href=""><strong>FUNWAVE-TVD WORKSHOP</strong></a></li> 
+          <li class="nav-item nav-item-1"><a href="addition.html" ><strong>ADDITIONAL INFORMATION</strong></a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="useful.html" >Useful links</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="highly_dispersive_model.html" accesskey="U">Fully dispersive model’s documentation!</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">INTRODUCTION</a></li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="Main">
@@ -50,7 +53,8 @@
 <li class="toctree-l1"><a class="reference internal" href="coupling_nesting.html"><strong>NESTING AND COUPLING</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples.html"><strong>EXAMPLES</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="gallery.html"><strong>GALLERY</strong></a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#"><strong>FUNWAVE-TVD WORKSHOP</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="workshop.html"><strong>FUNWAVE-TVD WORKSHOP</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="media.html"><strong>MEDIA</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="references.html"><strong>BIBLIOGRAPHY</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="authors.html"><strong>AUTHORS</strong></a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="addition.html"><strong>ADDITIONAL INFORMATION</strong></a><ul class="current">
@@ -79,15 +83,10 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <section id="funwave-tvd-workshop">
-<span id="section-workshop"></span><h1><strong>FUNWAVE-TVD WORKSHOP</strong><a class="headerlink" href="#funwave-tvd-workshop" title="Link to this heading">¶</a></h1>
-<img alt="_images/group.png" src="_images/group.png" />
-<p><strong>Previous Workshops:</strong></p>
-<p><a class="reference external" href="workshop_2017.html">WORKSHOP 2017</a></p>
-<p><a class="reference external" href="workshop_2018.html">WORKSHOP 2018</a></p>
-<p><a class="reference external" href="workshop_2019_UD.html">MINI-WORKSHOP 2019 at UD</a></p>
-<p><a class="reference external" href="workshop_2019.html">WORKSHOP 2019 at Hohai University</a></p>
-<p><a class="reference external" href="workshop_2023.html">WORKSHOP 2023 at Northeastern University</a></p>
+  <section id="introduction">
+<h1>INTRODUCTION<a class="headerlink" href="#introduction" title="Link to this heading">¶</a></h1>
+<p>The success of the FUNWAVE-TVD model is well noted in modeling the surface wave evolution from intermediate water depth to the swash zone. It removes the restriction of the weak nonlinearity, demonstrating significant improvements of wave dispersion property and nonlinearity. Currently, however, there are two major limitations in practical applications of the model: (1) highly dispersive waves common in intermediate to deep water regions and (2) external forcing associated with large-scale processes such as tides and storm surges.</p>
+<p>The current version of the model resolves waves up to kh ~ 3.14, where kh is a parameter to measure wave dispersion. For surface waves beyond this range, the model accuracy decreases considerably due to errors in calculating wave celerity; thereby not resolving properly the shorter wave component. This is a considerable limitation, as the model is increasingly being applied across larger computational domains. Simulation times are also steadily increasing, up to even several days of wave propagation. As such, the model needs to be able to adopt to changing water levels during the course of a run, which is currently not possible. The proposed work seeks to overcome these limitations and enhance the computational utility of the model.</p>
 </section>
 
 
@@ -104,13 +103,16 @@
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="references.html" title="BIBLIOGRAPHY"
+          <a href="high_dispersion_theory.html" title="THEORY"
              >next</a> |</li>
         <li class="right" >
-          <a href="gallery.html" title="GALLERY"
+          <a href="highly_dispersive_model.html" title="Fully dispersive model’s documentation!"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href=""><strong>FUNWAVE-TVD WORKSHOP</strong></a></li> 
+          <li class="nav-item nav-item-1"><a href="addition.html" ><strong>ADDITIONAL INFORMATION</strong></a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="useful.html" >Useful links</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="highly_dispersive_model.html" >Fully dispersive model’s documentation!</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">INTRODUCTION</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">

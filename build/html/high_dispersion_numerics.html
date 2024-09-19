@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>NUMERICAL SCHEME OF HIGHLY DISPERSIVE MODEL &#8212; FUNWAVE Documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/lglb-sphinx-doc.css?v=3078a223" />
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Wave Response with Coastal Structures" href="info_structures.html" />
+    <link rel="prev" title="THEORY OF FULLY DISPERSIVE MODEL" href="high_dispersion_theory.html" /> 
+  </head><body>
+<div class="header">
+ <p class="logo"><a href="https://fengyanshi.github.io/build/html/index.html">
+  <img class="logo" src="_static/../../../images/Funwave.svg" alt="Logo"/>
+ </a></p>
+</div>
+
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="info_structures.html" title="Wave Response with Coastal Structures"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="high_dispersion_theory.html" title="THEORY OF FULLY DISPERSIVE MODEL"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="addition.html" ><strong>ADDITIONAL INFORMATION</strong></a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="useful.html" >Useful links</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="highly_dispersive_model.html" accesskey="U">Fully dispersive model’s documentation!</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">NUMERICAL SCHEME OF HIGHLY DISPERSIVE MODEL</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="basics.html"><strong>BASICS</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="flowchart.html"><strong>ARCHITECTURE</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup.html"><strong>MODEL DOWNLOAD AND SETUP</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html"><strong>VIDEO TUTORIALS</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="definition.html"><strong>DEFINITIONS OF PARAMETERS</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="coupling_nesting.html"><strong>NESTING AND COUPLING</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html"><strong>EXAMPLES</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="gallery.html"><strong>GALLERY</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="workshop.html"><strong>FUNWAVE-TVD WORKSHOP</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="media.html"><strong>MEDIA</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html"><strong>BIBLIOGRAPHY</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="authors.html"><strong>AUTHORS</strong></a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="addition.html"><strong>ADDITIONAL INFORMATION</strong></a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="useful.html">Useful links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="info_structures.html">Wave Response with Coastal Structures</a></li>
+</ul>
+</li>
+</ul>
+
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="numerical-scheme-of-highly-dispersive-model">
+<h1>NUMERICAL SCHEME OF HIGHLY DISPERSIVE MODEL<a class="headerlink" href="#numerical-scheme-of-highly-dispersive-model" title="Link to this heading">¶</a></h1>
+<p>A combined finite-volume and finite-difference scheme with a Godunov-type method was applied to discretize equation (Shi et al., 2012). The two-step projection method, which splits the time integration into a hydrostatic predictor phase and the non-hydrostatic corrector phase, is used within each R-K stage. In the hydrostatic phase, an intermediate quantity <span class="math notranslate nohighlight">\(\bf{\Psi}^\prime\)</span> is evaluated using the momentum equations with dynamic pressure term neglected. For the momentum equations, components 2,3,4 (refer to the theory).</p>
+<div class="math notranslate nohighlight" id="equation-high-dispersion-numerics-0">
+<span class="eqno">(150)<a class="headerlink" href="#equation-high-dispersion-numerics-0" title="Link to this equation">¶</a></span>\[\frac{{\bf \Psi}^* - {\bf \Psi}^n}{\Delta t} = - \nabla \cdot {\bf \Theta}({\bf \Psi})^n + {\bf S}_h^n +   + {\bf S}_\tau^n\]</div>
+<p>In the non-hydrostatic phase, the velocity field is corrected using the momentum equations with only the dynamic pressure term included. The non-hydrostatic phase involves solving the Poisson equation of the dynamic pressure derived from coupling the momentum equation and mass conservation equation, resulting in the following equation of dynamic pressure</p>
+<blockquote>
+<div><div class="math notranslate nohighlight" id="equation-high-dispersion-numerics-1">
+<span class="eqno">(151)<a class="headerlink" href="#equation-high-dispersion-numerics-1" title="Link to this equation">¶</a></span>\[\frac{\partial}{\partial x} \left [ \frac{\partial p}{\partial x}+\frac{\partial p}{\partial \sigma} \frac{\partial \sigma}{\partial x^*} \right ] + \frac{\partial}{\partial y} \left [ \frac{\partial p}{\partial y}+\frac{\partial p}{\partial \sigma} \frac{\partial \sigma}{\partial y^*} \right ]\]</div>
+<div class="math notranslate nohighlight" id="equation-high-dispersion-numerics-2">
+<span class="eqno">(152)<a class="headerlink" href="#equation-high-dispersion-numerics-2" title="Link to this equation">¶</a></span>\[+ \frac{\partial }{\partial \sigma} \left ( \frac{\partial p}{\partial x} \right) \frac{\partial \sigma}{\partial x^*} + \frac{\partial }{\partial \sigma} \left ( \frac{\partial p}{\partial y} \right) \frac{\partial \sigma}{\partial y^*}+ \left[  \left (\frac{\partial \sigma}{\partial x^*} \right )^2+\left ( \frac{\partial \sigma}{\partial y^*} \right )^2+\frac{1}{D^2}  \right] \frac{\partial }{\partial \sigma} \left( \frac{\partial p}{\partial \sigma} \right)\]</div>
+<div class="math notranslate nohighlight" id="equation-high-dispersion-numerics-3">
+<span class="eqno">(153)<a class="headerlink" href="#equation-high-dispersion-numerics-3" title="Link to this equation">¶</a></span>\[=  \frac{\rho}{\Delta t} \left( \frac{\partial u^*}{\partial x} +\frac{\partial u^*}{\partial \sigma} \frac{\partial \sigma}{\partial x^*} + \frac{\partial v^*}{\partial y} +\frac{\partial v^*}{\partial \sigma} \frac{\partial \sigma}{\partial y^*} + \frac{1}{D} \frac{\partial w^*}{\partial \sigma} \right)\]</div>
+</div></blockquote>
+<p>After the dynamic pressure <span class="math notranslate nohighlight">\(p\)</span> is solved, the velocity field is corrected by</p>
+<blockquote>
+<div><div class="math notranslate nohighlight" id="equation-high-dispersion-numerics-4">
+<span class="eqno">(154)<a class="headerlink" href="#equation-high-dispersion-numerics-4" title="Link to this equation">¶</a></span>\[\frac{{\bf \Psi}^{n+1} - {\bf \Psi}^*}{\Delta t} =  {\bf S}_p^{n+1}\]</div>
+</div></blockquote>
+<figure class="align-right align-center">
+<a class="reference internal image-reference" href="_images/PIFD.png"><img alt="alternate text" src="_images/PIFD.png" style="width: 500px; height: 300px;" />
+</a>
+</figure>
+<p>A great challenge in a surface flow-type non-hydrostatic model is to solve the pressure Poisson equation, which is computational expensive. The recent studies have showed that the vertical grid configuration and construction of pressure value matrices are crucial for model efficiency and accuracy. The non-hydrostatic models using a Keller-box scheme in the vertical grid configuration (Stelling and Zijlema, 2003, Ma et al., 2012, Shi et al., 2016) were proved to be efficient and accurate in simulating highly dispersive waves with a very small number (3-5) of vertical layers. The re-arranging the Poisson equation to reduce the implicit values of the matrix has shown significant improvement of model efficiency. Liu et al. (2016) proposed a Partially Implicit Finite Difference (PIFD) scheme versus the Fully Implicit Finite Difference (FIFD) scheme by moving some minor terms from implicit to explicit evaluations in two steps. In the first step, the pressure gradient terms associated with the $sigma$-derivatives are moved from the non-hydrostatic phase to the hydrostatic phase. In the second step, the cross-derivative terms in the pressure Poisson equation are solved explicitly. In this way, the 15-point of the solution matrix in FIFD reduce to a 7-point implicit matrix, improving the computational efficiency greatly. In this study, we followed the Keller-box scheme of Ma et al. (2012) and adopted the second step of PIFD in Liu et al. (2016).  Our tests shows that the first step of PIFD is not necessary and the reconstruction of the solution matrix in the Poisson equation saves the similar amount of computational time as claimed by Liu et al. (2016), up to  50% compared to FIFD.</p>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="info_structures.html" title="Wave Response with Coastal Structures"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="high_dispersion_theory.html" title="THEORY OF FULLY DISPERSIVE MODEL"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="addition.html" ><strong>ADDITIONAL INFORMATION</strong></a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="useful.html" >Useful links</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="highly_dispersive_model.html" >Fully dispersive model’s documentation!</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">NUMERICAL SCHEME OF HIGHLY DISPERSIVE MODEL</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2019, Fengyan Shi.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.4.7.
+    </div>
+  </body>
+</html>

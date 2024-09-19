@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>THEORY OF FULLY DISPERSIVE MODEL &#8212; FUNWAVE Documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/lglb-sphinx-doc.css?v=3078a223" />
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="NUMERICAL SCHEME" href="high_dispersion_numerics.html" />
+    <link rel="prev" title="INTRODUCTION" href="high_dispersion_intro.html" /> 
+  </head><body>
+<div class="header">
+ <p class="logo"><a href="https://fengyanshi.github.io/build/html/index.html">
+  <img class="logo" src="_static/../../../images/Funwave.svg" alt="Logo"/>
+ </a></p>
+</div>
+
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="high_dispersion_numerics.html" title="NUMERICAL SCHEME"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="high_dispersion_intro.html" title="INTRODUCTION"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="addition.html" ><strong>ADDITIONAL INFORMATION</strong></a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="useful.html" >Useful links</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="highly_dispersive_model.html" accesskey="U">Fully dispersive model’s documentation!</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">THEORY OF FULLY DISPERSIVE MODEL</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="basics.html"><strong>BASICS</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="flowchart.html"><strong>ARCHITECTURE</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup.html"><strong>MODEL DOWNLOAD AND SETUP</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html"><strong>VIDEO TUTORIALS</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="definition.html"><strong>DEFINITIONS OF PARAMETERS</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="coupling_nesting.html"><strong>NESTING AND COUPLING</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html"><strong>EXAMPLES</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="gallery.html"><strong>GALLERY</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="workshop.html"><strong>FUNWAVE-TVD WORKSHOP</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="media.html"><strong>MEDIA</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html"><strong>BIBLIOGRAPHY</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="authors.html"><strong>AUTHORS</strong></a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="addition.html"><strong>ADDITIONAL INFORMATION</strong></a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="useful.html">Useful links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="info_structures.html">Wave Response with Coastal Structures</a></li>
+</ul>
+</li>
+</ul>
+
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="theory-of-fully-dispersive-model">
+<h1>THEORY OF FULLY DISPERSIVE MODEL<a class="headerlink" href="#theory-of-fully-dispersive-model" title="Link to this heading">¶</a></h1>
+<section id="equations">
+<h2>Equations<a class="headerlink" href="#equations" title="Link to this heading">¶</a></h2>
+<p>The 3D equations, describing fully dispersive non-hydrodynamic motion, can be written in a generalized conservative form as</p>
+<div class="math notranslate nohighlight" id="equation-high-dispersion-theory-0">
+<span class="eqno">(142)<a class="headerlink" href="#equation-high-dispersion-theory-0" title="Link to this equation">¶</a></span>\[\frac{\partial {\bf \Psi}}{\partial t} + \nabla \cdot {\bf \Theta}({\bf \Psi}) = {\bf S}\]</div>
+<dl>
+<dt>where <span class="math notranslate nohighlight">\(\nabla = \left(\frac{\partial }{\partial x}, \frac{\partial }{\partial y}, \frac{\partial }{\partial \sigma} \right)\)</span>. <span class="math notranslate nohighlight">\({\bf \Psi}\)</span> and <span class="math notranslate nohighlight">\({\bf \Theta}({\bf \Psi})\)</span> are  the vector of conserved variables and  the flux vector function respectively.</dt><dd><div class="math notranslate nohighlight" id="equation-high-dispersion-theory-1">
+<span class="eqno">(143)<a class="headerlink" href="#equation-high-dispersion-theory-1" title="Link to this equation">¶</a></span>\[ \begin{align}\begin{aligned}{\bf \Psi} = \begin{bmatrix}\\\begin{split}                      D  \\\end{split}\\\begin{split}                      Du  \\\end{split}\\\begin{split}                      Dv  \\\end{split}\\                      D\omega\\              \end{bmatrix}\end{aligned}\end{align} \]</div>
+<div class="math notranslate nohighlight" id="equation-high-dispersion-theory-2">
+<span class="eqno">(144)<a class="headerlink" href="#equation-high-dispersion-theory-2" title="Link to this equation">¶</a></span>\[ \begin{align}\begin{aligned}{\bf \Theta} =  \begin{bmatrix}\\\begin{split}               Du {\bf i} + Dv {\bf j} + \omega {\bf k} \\
+               (Duu+(\frac{1}{2}g \eta^2+gh\eta)) {\bf i} + Duv{\bf j}  + u\omega {\bf k} \\
+               Duv {\bf i} + (Dvv +(\frac{1}{2}g \eta^2+gh\eta) ){\bf j}  + v\omega {\bf k}  \\
+               Duw  {\bf i} + Dvw{\bf j}  + w \omega {\bf k}\end{split}\\             \end{bmatrix}\end{aligned}\end{align} \]</div>
+</dd>
+</dl>
+<p>where  <span class="math notranslate nohighlight">\(D = h + \eta\)</span>, <span class="math notranslate nohighlight">\(h\)</span> is water depth and <span class="math notranslate nohighlight">\(\eta\)</span> is surface elevation,  (<span class="math notranslate nohighlight">\(u,v,w\)</span>) represent velocity components in the Cartesian coordinate system  (<span class="math notranslate nohighlight">\(x^*, y^*, z^*\)</span>) and <span class="math notranslate nohighlight">\(\omega\)</span> is the vertical velocity defined in the <span class="math notranslate nohighlight">\(\sigma\)</span> coordinate image domain. The reason for using the <span class="math notranslate nohighlight">\(\sigma\)</span> coordinate system will be described in the Flow Surface Technique in the next section.</p>
+<p>The source term on the right hand side includes three source components:</p>
+<blockquote>
+<div><div class="math notranslate nohighlight" id="equation-high-dispersion-theory-3">
+<span class="eqno">(145)<a class="headerlink" href="#equation-high-dispersion-theory-3" title="Link to this equation">¶</a></span>\[{\bf S} = {\bf S}_h +{\bf S}_p+{\bf S}_\tau\]</div>
+</div></blockquote>
+<p>where <span class="math notranslate nohighlight">\({\bf S}_h, {\bf S}_p\)</span>, and  <span class="math notranslate nohighlight">\({\bf S}_\tau\)</span> represent the bottom slope term, dynamic pressure gradient and turbulent mixing respectively. Associated with the splitting method in the study, the dynamic pressure term is expressed below.</p>
+<blockquote>
+<div><div class="math notranslate nohighlight" id="equation-high-dispersion-theory-4">
+<span class="eqno">(146)<a class="headerlink" href="#equation-high-dispersion-theory-4" title="Link to this equation">¶</a></span>\[ \begin{align}\begin{aligned}{\bf S}_h = \begin{bmatrix}\\\begin{split}    g\eta\frac{\partial{h}}{\partial{x}} \\
+                 g\eta\frac{\partial{h}}{\partial{y}} \\
+                   0\end{split}\\            \end{bmatrix}\end{aligned}\end{align} \]</div>
+<div class="math notranslate nohighlight" id="equation-high-dispersion-theory-5">
+<span class="eqno">(147)<a class="headerlink" href="#equation-high-dispersion-theory-5" title="Link to this equation">¶</a></span>\[ \begin{align}\begin{aligned}{\bf S}_p =  \begin{bmatrix}\\\begin{split}                -\frac{D}{\rho}(\frac{\partial p}{\partial x}+\frac{\partial p}{\partial \sigma} \frac{\partial \sigma}{\partial x^*})  \\
+                -\frac{D}{\rho}(\frac{\partial p}{\partial y}+\frac{\partial p}{\partial \sigma} \frac{\partial \sigma}{\partial y^*})  \\
+                 -\frac{1}{\rho}\frac{\partial p}{\partial \sigma}\end{split}\\              \end{bmatrix}\end{aligned}\end{align} \]</div>
+<div class="math notranslate nohighlight" id="equation-high-dispersion-theory-6">
+<span class="eqno">(148)<a class="headerlink" href="#equation-high-dispersion-theory-6" title="Link to this equation">¶</a></span>\[ \begin{align}\begin{aligned}{\bf S}_{\tau} =  \begin{bmatrix}\\\begin{split}                     DS_{\tau x} \\
+                     DS_{\tau y} \\
+                     DS_{\tau z}\end{split}\\                  \end{bmatrix}\end{aligned}\end{align} \]</div>
+</div></blockquote>
+<p>where <span class="math notranslate nohighlight">\(p\)</span> represents the dynamic pressure.</p>
+</section>
+<section id="flow-surface-technique">
+<h2>Flow Surface Technique<a class="headerlink" href="#flow-surface-technique" title="Link to this heading">¶</a></h2>
+<p>Different from a traditional CFD model where the water surface is governed by a separate surface equation such as in the Volume of Fluid method (VOF) or the Marker and Cell (MAC) method, a so-called``surface flow” technique was used by transforming the Navier-Stokes equations in Cartesian coordinates into the $sigma$ coordinates. The governing equation for free surface can be written as</p>
+<div class="math notranslate nohighlight" id="equation-high-dispersion-theory-7">
+<span class="eqno">(149)<a class="headerlink" href="#equation-high-dispersion-theory-7" title="Link to this equation">¶</a></span>\[\frac{\partial D}{\partial t}+\frac{\partial }{\partial x} (D \int_0^1 u d \sigma)+\frac{\partial }{\partial y} (D \int_0^1 v d \sigma)=0\]</div>
+<p>The use of <span class="math notranslate nohighlight">\(\sigma\)</span> coordinate is consistent with FUNWAVE-TVD, in which the reference elevation <span class="math notranslate nohighlight">\(z_\alpha\)</span> is in the <span class="math notranslate nohighlight">\(\sigma\)</span> coordinate as in Kennedy et al. (2001).</p>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="high_dispersion_numerics.html" title="NUMERICAL SCHEME"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="high_dispersion_intro.html" title="INTRODUCTION"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="addition.html" ><strong>ADDITIONAL INFORMATION</strong></a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="useful.html" >Useful links</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="highly_dispersive_model.html" >Fully dispersive model’s documentation!</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">THEORY OF FULLY DISPERSIVE MODEL</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2019, Fengyan Shi.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.4.7.
+    </div>
+  </body>
+</html>

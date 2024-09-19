@@ -130,6 +130,10 @@ Benefits of transitioning
 
 **NEW**
 *******
+
+* development of `the highly dispersive version <highly_dispersive_model.html>`_
+* new tutorial videos
+
 Check out the latest video tutorial series providing an overview of the DoD HPC Portal FUNWAVE-TVD Application on the :ref:`Video Tutorials <tutorials>` page.
 
 .. note::
