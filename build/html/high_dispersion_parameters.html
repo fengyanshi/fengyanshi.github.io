@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>DEFINITIONS OF PARAMETERS &#8212; FUNWAVE Documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/lglb-sphinx-doc.css?v=3078a223" />
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="EXAMPLES" href="high_dispersion_examples.html" />
+    <link rel="prev" title="NUMERICAL SCHEME OF HIGHLY DISPERSIVE MODEL" href="high_dispersion_numerics.html" /> 
+  </head><body>
+<div class="header">
+ <p class="logo"><a href="https://fengyanshi.github.io/build/html/index.html">
+  <img class="logo" src="_static/../../../images/Funwave.svg" alt="Logo"/>
+ </a></p>
+</div>
+
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="high_dispersion_examples.html" title="EXAMPLES"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="high_dispersion_numerics.html" title="NUMERICAL SCHEME OF HIGHLY DISPERSIVE MODEL"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="addition.html" ><strong>ADDITIONAL INFORMATION</strong></a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="useful.html" >Useful links</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="highly_dispersive_model.html" accesskey="U">Highly dispersive module</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">DEFINITIONS OF PARAMETERS</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="basics.html"><strong>BASICS</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="flowchart.html"><strong>ARCHITECTURE</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup.html"><strong>MODEL DOWNLOAD AND SETUP</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html"><strong>VIDEO TUTORIALS</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="definition.html"><strong>DEFINITIONS OF PARAMETERS</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="coupling_nesting.html"><strong>NESTING AND COUPLING</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html"><strong>EXAMPLES</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="gallery.html"><strong>GALLERY</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="workshop.html"><strong>FUNWAVE-TVD WORKSHOP</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="media.html"><strong>MEDIA</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html"><strong>BIBLIOGRAPHY</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="authors.html"><strong>AUTHORS</strong></a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="addition.html"><strong>ADDITIONAL INFORMATION</strong></a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="useful.html">Useful links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="info_structures.html">Wave Response with Coastal Structures</a></li>
+</ul>
+</li>
+</ul>
+
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="definitions-of-parameters">
+<h1>DEFINITIONS OF PARAMETERS<a class="headerlink" href="#definitions-of-parameters" title="Link to this heading">¶</a></h1>
+<section id="parallelization">
+<h2>Parallelization<a class="headerlink" href="#parallelization" title="Link to this heading">¶</a></h2>
+<dl>
+<dt>Note that the numbers defined in the following statement are only for example</dt><dd><div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>! --------------------PROCESSOR NUMBER-------------------------
+! processors in x and y direction (for parallel run)
+PX = 4 (for example)
+PY = 2
+</pre></div>
+</div>
+</dd>
+</dl>
+</section>
+<section id="grid">
+<h2>Grid<a class="headerlink" href="#grid" title="Link to this heading">¶</a></h2>
+<blockquote>
+<div><div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>! --------------------DIMENSION---------------------------------
+! cell numbers
+Mglob = 256
+Nglob = 128
+Kglob = 3
+! ------------------------GRID----------------------------------
+! grid sizes
+DX = 2.0
+DY = 2.0
+</pre></div>
+</div>
+</div></blockquote>
+</section>
+<section id="time">
+<h2>Time<a class="headerlink" href="#time" title="Link to this heading">¶</a></h2>
+<blockquote>
+<div><div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>! -----------------------TIME----------------------------------
+! all in seconds
+TOTAL_TIME =100.0
+PLOT_START = 0.0
+PLOT_INTV = 1.0
+SCREEN_INTV = 1.0
+</pre></div>
+</div>
+</div></blockquote>
+</section>
+<section id="numerics">
+<h2>Numerics<a class="headerlink" href="#numerics" title="Link to this heading">¶</a></h2>
+<blockquote>
+<div><div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>! ----------------------NUMERICS------------------------------------
+HIGH_ORDER = SECOND
+TIME_ORDER = SECOND
+HLLC = F
+CONVECTION = NOTVD
+CFL = 0.5
+FROUDE_CAP = 10.0
+MinDep = 0.20
+</pre></div>
+</div>
+</div></blockquote>
+</section>
+<section id="physics">
+<h2>Physics<a class="headerlink" href="#physics" title="Link to this heading">¶</a></h2>
+<blockquote>
+<div><div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>! --------------------VISCOUS NUMBER----------------------------------
+VISCOUS_NUMBER = 0.1666667
+! -------------------BOUNDARY_TYPE---------------------------------------
+! bc_type=1: free-slip
+!         2: no-slip
+!         3: influx
+!         4: outflux
+!         5: bottom friction
+BC_X0 = 1
+BC_Xn = 1
+BC_Y0 = 1
+BC_Yn = 1
+BC_Z0 = 5
+BC_Zn = 1
+</pre></div>
+</div>
+</div></blockquote>
+</section>
+<section id="wavemaker">
+<h2>Wavemaker<a class="headerlink" href="#wavemaker" title="Link to this heading">¶</a></h2>
+<blockquote>
+<div><div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>! ---------------------WAVEMAKER-----------------------------------------
+! wavemaker
+! AMP - wave height; PER - wave period; DEP - incident water depth
+! THETA - incident wave angle
+! LEF_SOL - left boundary solitary wave, need AMP,DEP
+! LEF_LIN - left boundary linear wave, need AMP,PER,DEP
+! LEF_CON - left boundary cnoidal wave, need AMP,PER,DEP
+! LEF_STK - left boundary stokes wave, need AMP,PER,DEP
+! LEF_TID - left boundary tide wave, has to specify in subroutine
+! LEF_SPC - left boundary 2D spectral, need spectral input spc2d.txt
+! INI_ETA - initial surface elevation specified in subroutine initial
+! INT_LIN - internal wavemaker for linear wave
+! INT_CON - internal wavemaker for cnoidal wave
+! INT_SOL - internal wavemaker for solitary wave
+! INT_SPC - internal wavemaker for random wave
+!WAVEMAKER = INT_LIN
+WAVEMAKER = INT_LIN (example)
+AMP = 0.5
+PER = 10.0
+DEP = 8.0
+THETA = 0.0
+</pre></div>
+</div>
+</div></blockquote>
+</section>
+<section id="sponge-layer">
+<h2>Sponge layer<a class="headerlink" href="#sponge-layer" title="Link to this heading">¶</a></h2>
+<blockquote>
+<div><div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>! ----------------SPONGE LAYER------------------------------------
+SPONGE_ON = T
+Sponge_West_Width =  35.0
+Sponge_East_Width =  0.0
+Sponge_South_Width = 0.0
+Sponge_North_Width = 0.0
+R_Sponge = 0.85
+A_Sponge = 5.0
+</pre></div>
+</div>
+</div></blockquote>
+</section>
+<section id="output">
+<h2>Output<a class="headerlink" href="#output" title="Link to this heading">¶</a></h2>
+<blockquote>
+<div><div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>! --------------------FIELD OUTPUT---------------------------------
+! output variables, T=.TRUE, F = .FALSE.
+ OUT_H = T (water depth)
+ OUT_E = T (surface elevation)
+ OUT_U = T (velocity in x direction)
+ OUT_V = T (velocity in y direction)
+ OUT_W = T (velocity in z direction)
+ OUT_P = T (dynamic pressure)
+ OUT_K = T (turbulent kinetic energy)
+ OUT_D = T (turbulent dissipation rate)
+ OUT_S = T (shear production)
+ OUT_C = T (eddy viscosity)
+</pre></div>
+</div>
+</div></blockquote>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="high_dispersion_examples.html" title="EXAMPLES"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="high_dispersion_numerics.html" title="NUMERICAL SCHEME OF HIGHLY DISPERSIVE MODEL"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="addition.html" ><strong>ADDITIONAL INFORMATION</strong></a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="useful.html" >Useful links</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="highly_dispersive_model.html" >Highly dispersive module</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">DEFINITIONS OF PARAMETERS</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2019, Fengyan Shi.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.4.7.
+    </div>
+  </body>
+</html>

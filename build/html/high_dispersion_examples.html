@@ -5,17 +5,16 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Highly dispersive module &#8212; FUNWAVE Documentation</title>
+    <title>EXAMPLES &#8212; FUNWAVE Documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="_static/lglb-sphinx-doc.css?v=3078a223" />
     <script src="_static/documentation_options.js?v=5929fcd5"></script>
     <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="INTRODUCTION" href="high_dispersion_intro.html" />
-    <link rel="prev" title="Workshop Registration Page" href="under_construction.html" /> 
+    <link rel="next" title="Wave Response with Coastal Structures" href="info_structures.html" />
+    <link rel="prev" title="NUMERICAL SCHEME OF HIGHLY DISPERSIVE MODEL" href="high_dispersion_numerics.html" /> 
   </head><body>
 <div class="header">
  <p class="logo"><a href="https://fengyanshi.github.io/build/html/index.html">
@@ -30,15 +29,16 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="high_dispersion_intro.html" title="INTRODUCTION"
+          <a href="info_structures.html" title="Wave Response with Coastal Structures"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="under_construction.html" title="Workshop Registration Page"
+          <a href="high_dispersion_numerics.html" title="NUMERICAL SCHEME OF HIGHLY DISPERSIVE MODEL"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="addition.html" ><strong>ADDITIONAL INFORMATION</strong></a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="useful.html" accesskey="U">Useful links</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Highly dispersive module</a></li> 
+          <li class="nav-item nav-item-2"><a href="useful.html" >Useful links</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="highly_dispersive_model.html" accesskey="U">Fully dispersive model’s documentation!</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">EXAMPLES</a></li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="Main">
@@ -83,41 +83,40 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <section id="highly-dispersive-module">
-<h1>Highly dispersive module<a class="headerlink" href="#highly-dispersive-module" title="Link to this heading">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="high_dispersion_intro.html">INTRODUCTION</a></li>
-<li class="toctree-l1"><a class="reference internal" href="high_dispersion_theory.html">THEORY OF FULLY DISPERSIVE MODEL</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="high_dispersion_theory.html#equations">Equations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="high_dispersion_theory.html#flow-surface-technique">Flow Surface Technique</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="high_dispersion_numerics.html">NUMERICAL SCHEME OF HIGHLY DISPERSIVE MODEL</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="high_dispersion_numerics.html#two-step-projection-method">Two-step projection method</a></li>
-<li class="toctree-l2"><a class="reference internal" href="high_dispersion_numerics.html#partially-implicit-finite-difference-pifd-scheme">Partially Implicit Finite Difference (PIFD) scheme</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="high_dispersion_parameters.html">DEFINITIONS OF PARAMETERS</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="high_dispersion_parameters.html#parallelization">Parallelization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="high_dispersion_parameters.html#grid">Grid</a></li>
-<li class="toctree-l2"><a class="reference internal" href="high_dispersion_parameters.html#time">Time</a></li>
-<li class="toctree-l2"><a class="reference internal" href="high_dispersion_parameters.html#numerics">Numerics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="high_dispersion_parameters.html#physics">Physics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="high_dispersion_parameters.html#wavemaker">Wavemaker</a></li>
-<li class="toctree-l2"><a class="reference internal" href="high_dispersion_parameters.html#sponge-layer">Sponge layer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="high_dispersion_parameters.html#output">Output</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="high_dispersion_examples.html">EXAMPLES</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="high_dispersion_examples.html#dispersion-test">Dispersion test</a></li>
-<li class="toctree-l2"><a class="reference internal" href="high_dispersion_examples.html#waves-on-a-plane-beach">Waves on a plane beach</a></li>
-<li class="toctree-l2"><a class="reference internal" href="high_dispersion_examples.html#ship-wake-kevin-wave-test">Ship-wake Kevin wave test</a></li>
-<li class="toctree-l2"><a class="reference internal" href="high_dispersion_examples.html#ship-wakes-in-continuously-stratified-condition">Ship-wakes in continuously stratified condition</a></li>
-</ul>
-</li>
-</ul>
-</div>
+  <section id="examples">
+<h1>EXAMPLES<a class="headerlink" href="#examples" title="Link to this heading">¶</a></h1>
+<section id="dispersion-test">
+<h2>Dispersion test<a class="headerlink" href="#dispersion-test" title="Link to this heading">¶</a></h2>
+<figure class="align-right align-center">
+<a class="reference internal image-reference" href="_images/Err.jpg"><img alt="alternate text" src="_images/Err.jpg" style="width: 500px; height: 300px;" />
+</a>
+</figure>
+</section>
+<section id="waves-on-a-plane-beach">
+<h2>Waves on a plane beach<a class="headerlink" href="#waves-on-a-plane-beach" title="Link to this heading">¶</a></h2>
+<figure class="align-right align-center">
+<a class="reference internal image-reference" href="_images/plane_beach.jpg"><img alt="alternate text" src="_images/plane_beach.jpg" style="width: 500px; height: 300px;" />
+</a>
+</figure>
+</section>
+<section id="ship-wake-kevin-wave-test">
+<h2>Ship-wake Kevin wave test<a class="headerlink" href="#ship-wake-kevin-wave-test" title="Link to this heading">¶</a></h2>
+<figure class="align-right align-center">
+<a class="reference internal image-reference" href="_images/spectro_f12_3layers.jpg"><img alt="alternate text" src="_images/spectro_f12_3layers.jpg" style="width: 500px;" />
+</a>
+</figure>
+<figure class="align-right align-center">
+<a class="reference internal image-reference" href="_images/spectro_f12_6layers.jpg"><img alt="alternate text" src="_images/spectro_f12_6layers.jpg" style="width: 500px;" />
+</a>
+</figure>
+</section>
+<section id="ship-wakes-in-continuously-stratified-condition">
+<h2>Ship-wakes in continuously stratified condition<a class="headerlink" href="#ship-wakes-in-continuously-stratified-condition" title="Link to this heading">¶</a></h2>
+<figure class="align-right align-center">
+<a class="reference internal image-reference" href="_images/timestack_Ap10_Um120_Hu15.jpg"><img alt="alternate text" src="_images/timestack_Ap10_Um120_Hu15.jpg" style="width: 500px; height: 300px;" />
+</a>
+</figure>
+</section>
 </section>
 
 
@@ -134,15 +133,16 @@
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="high_dispersion_intro.html" title="INTRODUCTION"
+          <a href="info_structures.html" title="Wave Response with Coastal Structures"
              >next</a> |</li>
         <li class="right" >
-          <a href="under_construction.html" title="Workshop Registration Page"
+          <a href="high_dispersion_numerics.html" title="NUMERICAL SCHEME OF HIGHLY DISPERSIVE MODEL"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">FUNWAVE Documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="addition.html" ><strong>ADDITIONAL INFORMATION</strong></a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="useful.html" >Useful links</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Highly dispersive module</a></li> 
+          <li class="nav-item nav-item-3"><a href="highly_dispersive_model.html" >Fully dispersive model’s documentation!</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">EXAMPLES</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
